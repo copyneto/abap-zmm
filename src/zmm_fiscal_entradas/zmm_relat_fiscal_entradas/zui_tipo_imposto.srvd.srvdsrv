@@ -1,0 +1,4 @@
+@EndUserText.label: 'Tipo de Imposto vs Grupo de Imposto'
+define service ZUI_TIPO_IMPOSTO {
+  expose ZC_MM_TIPO_IMPOSTO;
+}

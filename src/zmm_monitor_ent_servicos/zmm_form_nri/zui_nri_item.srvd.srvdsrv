@@ -1,0 +1,4 @@
+@EndUserText.label: 'Def. Serviço'
+define service ZUI_NRI_ITEM {
+  expose zc_mm_02_nri_item as nrItem;
+}

@@ -1,0 +1,28 @@
+projection;
+
+define behavior for ZC_MM_MONIT_SERV_HEADER alias _Header
+{
+  use update;
+
+  use action simularfatura;
+  use action registrarfatura;
+  use action estornarfatura;
+  use action excluirfatura;
+
+  use association _Anexo;
+  use association _Item;
+}
+
+define behavior for ZC_MM_MONIT_SERV_ANEXO alias _Anexo
+{
+  use delete;
+
+  use association _Header;
+}
+
+define behavior for ZC_MM_MONIT_SERV_ITEM alias _Item
+{
+  use update;
+
+  use association _Header;
+}

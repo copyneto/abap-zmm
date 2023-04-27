@@ -1,0 +1,4 @@
+@EndUserText.label: 'Visão de Unidade de Medida'
+define service ZUI_VISAO_UNID_MEDIDA {
+  expose ZC_MM_VISAO_UNID_MEDIDA;
+}

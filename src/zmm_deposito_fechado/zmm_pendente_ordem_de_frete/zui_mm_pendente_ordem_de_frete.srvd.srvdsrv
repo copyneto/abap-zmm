@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def. Pendente em Ordem de Frete'
+define service ZUI_MM_PENDENTE_ORDEM_DE_FRETE {
+  expose ZC_MM_PENDENTE_ORDEM_FRETE_APP;
+}

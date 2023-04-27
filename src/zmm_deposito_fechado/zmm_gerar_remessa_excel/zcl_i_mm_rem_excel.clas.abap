@@ -1,0 +1,5 @@
+CLASS zcl_i_mm_rem_excel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_rem_excel.
+ENDCLASS.
+
+CLASS zcl_i_mm_rem_excel IMPLEMENTATION.
+ENDCLASS.

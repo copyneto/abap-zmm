@@ -1,0 +1,9 @@
+@EndUserText.label: 'Service Definition APP'
+define service ZUI_MM_LIB_PGTO {
+  expose ZC_MM_LIB_PGTO_APP;
+  expose ZC_MM_LIB_PGTO_FAT;
+  expose ZC_MM_LIB_PGTO_ADI;
+  expose ZC_MM_LIB_PGTO_DEV;
+  expose ZC_MM_LIB_PGTO_DES;
+  expose ZC_MM_LIB_PGTO_DES_FIN_COM;
+}

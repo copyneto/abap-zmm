@@ -1,0 +1,11 @@
+@EndUserText.label: 'Autorização'
+@MappingRole: true
+define role ZI_MM_3C_NF_FATURADA {
+//    grant
+//        select
+//            on
+//                ZI_MM_3C_NF_FATURADA
+//                    where
+//                        ( CompanyCode ) = aspect pfcg_auth( ZMMBUKRS, BUKRS, ACTVT = '03' );
+                        
+}

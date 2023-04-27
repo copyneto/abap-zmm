@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_MM_NBS alias _NBS
+{
+  use create;
+  use update;
+  use delete;
+}

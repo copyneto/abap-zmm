@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def para Dados de Paletização para Materiais'
+define service ZUI_MM_PALETIZACAO {
+  expose ZC_MM_PALETIZACAO;
+}

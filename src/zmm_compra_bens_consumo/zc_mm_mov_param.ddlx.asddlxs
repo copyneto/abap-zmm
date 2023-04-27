@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Parâmetro',
+        typeNamePlural: 'Parâmetros',
+        title: { type: #STANDARD,
+          label: 'Parâmetros direitos fiscais',
+          value: 'Shipfrom'} },
+
+ presentationVariant: [{ sortOrder: [{by: 'Shipfrom', direction: #DESC }] }]}
+annotate view ZC_MM_MOV_PARAM with
+{
+  @UI.facet: [ { id:              'Shipfrom',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Emissor',
+                 position:        10 },
+
+               { id:              'Opcao',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Opção',
+                 position:        20,
+                 targetQualifier: 'Opcao' }]
+
+  @UI: { lineItem: [{ position: 10 }],
+       identification: [{ position: 10 }],
+       selectionField: [{ position: 10 }]
+  }
+  Shipfrom;
+  @UI: { lineItem: [{ position: 20 }],
+     identification: [{ position: 20 }],
+     selectionField: [{ position: 20 }]
+  }
+  Direcao;
+  @UI: { lineItem: [{ position: 30 }],
+     identification: [{ position: 30 }],
+     selectionField: [{ position: 30 }]
+  }
+  Cfop;
+  @UI: { lineItem:       [{ position: 40 }],
+         fieldGroup:     [{ position: 10, qualifier: 'Opcao' }],
+         selectionField: [{ position: 40 }]
+  }
+  Ativo;
+  @UI: { lineItem: [{ position: 50 }],
+         identification: [{ position: 50 }],
+         selectionField: [{ position: 50 }]
+  }
+  Matnr;
+  @UI: { lineItem: [{ position: 60 }],
+     identification: [{ position: 60 }],
+     selectionField: [{ position: 60 }]
+  }
+  Matkl;
+  @UI: { lineItem: [{ position: 70 }],
+     identification: [{ position: 70 }],
+     selectionField: [{ position: 70 }]
+  }
+  Taxlw1;
+  @UI: { lineItem: [{ position: 80 }],
+     identification: [{ position: 80 }],
+     selectionField: [{ position: 80 }]
+  }
+  Taxlw2;
+  @UI: { lineItem: [{ position: 90 }],
+     identification: [{ position: 90 }],
+     selectionField: [{ position: 90 }]
+  }
+  Taxlw5;
+  @UI: { lineItem: [{ position: 100 }],
+     identification: [{ position: 100 }],
+     selectionField: [{ position: 100 }]
+  }
+  Taxlw4;
+  @UI: { lineItem: [{ position: 110 }],
+     identification: [{ position: 110 }],
+     selectionField: [{ position: 110 }]
+  }
+  Taxsit;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

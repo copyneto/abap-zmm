@@ -1,0 +1,44 @@
+managed implementation in class zclmm_argo_param unique;
+
+define behavior for ZI_MM_ARGO_PARAM alias argo
+persistent table ztmm_argo_param
+lock master
+authorization master ( instance )
+etag master locallastchangedat
+{
+  create;
+  update;
+  //delete;
+
+  field ( readonly ) active, createdby, createdat, lastchangedby, lastchangedat, locallastchangedat;
+  field ( readonly : update ) bukrs, werks, knttp, lifnr, bkgrp;
+  field ( mandatory : create ) bukrs, werks, knttp, lifnr, bkgrp, begda;
+
+//  determination setInitialStatus on save { create; }
+
+  validation authorityCreate on save { create; }
+
+  validation checkDate on save { create; update; }
+
+  action (features : instance) activateParam result [1] $self;
+  action (features : instance) deactivateParam result [1] $self;
+
+  mapping for ztmm_argo_param
+  {
+    BUKRS = bukrs;
+    WERKS = werks;
+    KNTTP = knttp;
+    LIFNR = lifnr;
+    BKGRP = bkgrp;
+    BEGDA = begda;
+    ZTERM = zterm;
+    MWSKZ = mwskz;
+    ACTIVE = active;
+    CREATEDBY = created_by;
+    CREATEDAT = created_at;
+    LASTCHANGEDBY = last_changed_by;
+    LASTCHANGEDAT = last_changed_at;
+    LOCALLASTCHANGEDAT = local_last_changed_at;
+  }
+
+}

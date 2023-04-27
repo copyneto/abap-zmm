@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Requisição de compras</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Erro ao executar FM &quot;READ_TEXT&quot;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Classe zifmt_id_detalhe_solicitacao, erro ao buscar detalhes.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Erro ao enviar anexo ME.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Item &amp;1 integrado ao M.E. Entrar em contato com a área de suprimentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Item &amp;1 não pode ser eliminado. Entrar em contato com a área suprimentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Item &amp;1 já foi integrado ao ME, não pode ser modificado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Tipo de pedido inválido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Grupo de compras inválido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_REQ_COMPRAS</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Requisição &amp;1 item &amp;2 cancelada Ordem PM &amp;3.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

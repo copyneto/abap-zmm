@@ -1,0 +1,8 @@
+@EndUserText.label: 'Emissão de NF de Inventário'
+define service ZUI_MM_INVENTARIO_NFE {
+  expose ZC_MM_INVENTARIO_NFE_EMISSAO as InventarioNfe;
+  expose ZC_MM_DIRFISCAIS as DireitosFiscais;
+  expose ZC_MM_CGC_COLIGADA as Coligadas;
+  expose ZC_MM_ALIVIUM_ACCOUNT as ContasAlivium;
+  expose ZC_MM_ALIVIUM_CC as CentroCustoAlivium;
+}

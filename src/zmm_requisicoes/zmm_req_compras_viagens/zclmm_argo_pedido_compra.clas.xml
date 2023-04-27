@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_ARGO_PEDIDO_COMPRA</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>ARGO - Cria pedido de compra</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Consulta realizada com sucesso.</ENTRY>
+     <LENGTH>62</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Número da Fatura:</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Data da Fatura:</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>Valor Total da Fatura: R$</ENTRY>
+     <LENGTH>52</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>Link Fatura:</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_HEADER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Pedido dds.cabeçalho</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_HEADERX</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados do cabeçalho do pedido (barra de modificação)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_FATURAS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Proxy Table Type (generated)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CALCULA_VALOR_TOTAL</CMPNAME>
+     <SCONAME>IT_REVERSA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Proxy Table Type (generated)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GERA_PEDIDO</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ARGO_PARAMETROS</CMPNAME>
+     <SCONAME>IV_CATEGORIA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de classificação contábil</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ARGO_PARAMETROS</CMPNAME>
+     <SCONAME>IV_CENTRO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Centro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ARGO_PARAMETROS</CMPNAME>
+     <SCONAME>RS_ARGO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetros de Compra ARGO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PARAMETROS</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de Parâmetros - Valores</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REQUISITION</CMPNAME>
+     <SCONAME>IT_REVERSA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Proxy Table Type (generated)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REQUISITION</CMPNAME>
+     <SCONAME>RT_REQUISITION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>requisição de compra</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

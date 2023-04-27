@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>O percentual informado deverá estar entre 0,00 % e 100,00 %.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Campo percentual, informar valores entre 0,00 % e 100,00 %.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Percentual informado de &amp;1 é diferente de 100,00 %.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Item &amp;1 do pedido marcado para eliminação.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>O campo &quot;Preço por embalagem Embarque&quot; deve ser maior ou igual a 0.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_CLASSIF_LOTE</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Recebimento de material já efetuado parcial ou completamente.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

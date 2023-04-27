@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Mercado Eletrônico</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_MERCADOELETRONICOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_MERCADOELETRONICO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_DELETE_ITEM</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Deletar itens requisição</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_REQUISITION</PARAMETER>
+       <TYP>CHAR10</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_ITEM</PARAMETER>
+       <DBSTRUCT>MEREQ_ITEM</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ITEMX</PARAMETER>
+       <DBSTRUCT>MEREQ_ITEMX</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_REQUISITION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de caracteres do comprimento 10</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ITEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Requisição de compra OO: status item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ITEMX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Requisição de compra OO: barra modificação item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RETURN</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_TRIGGER_STATUSME</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Enviar status workflow para o ME</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_STATUS</PARAMETER>
+       <TYP>MEPROCSTATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_PEDIDO_ME</PARAMETER>
+       <TYP>ZTMM_PEDIDO_ME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_SIBFLPORB</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SIBFLPORB</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_CONTRATO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZTMM_ME_CONTRATO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_PROCESSO</PARAMETER>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_STATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Elemento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_PEDIDO_ME</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_SIBFLPORB</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_CONTRATO</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_PROCESSO</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

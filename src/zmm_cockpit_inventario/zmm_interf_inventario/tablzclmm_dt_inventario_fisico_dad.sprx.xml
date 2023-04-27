@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLMM_DT_INVENTARIO_FISICO</OBJ_NAME_M>
+     <HASH_ID>E087424C8D17634461633C749DD90BEC07FE4CA5</HASH_ID>
+     <ID>&lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dados</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLMM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</X-ML_NSPCE>
+     <X-ML_NAME>dados</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CARACTERISTICAS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CARACTERISTICAS</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZCLMM_DT_INVENTARIO_FISIC_TAB1</OBJ_NAME_R>
+     <ID>&lt;element&gt; caracteristicas &lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>caracteristicas</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CARACTERISTICAS</R3_NAME>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DATE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DATE</OBJ_NAME2>
+     <ID>&lt;element&gt; date &lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>date</IFR_NAME>
+     <IFR_TEXT>Data prevista para a contagem do inventário</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DATE</R3_NAME>
+     <R3_TEXT>Data prevista para a contagem do inventário</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ENTRY_QNT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ENTRY_QNT</OBJ_NAME2>
+     <ID>&lt;element&gt; entry_qnt &lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>entry_qnt</IFR_NAME>
+     <IFR_TEXT>Quantidade na unidade de medida do registro</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>13</IFR_PREC>
+     <IFR_SCALE>3</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ENTRY_QNT</R3_NAME>
+     <R3_TEXT>Quantidade na unidade de medida do registro</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ENTRY_UOM</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ENTRY_UOM</OBJ_NAME2>
+     <ID>&lt;element&gt; entry_uom &lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>entry_uom</IFR_NAME>
+     <IFR_TEXT>Unidade de medida do registro</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>3</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ENTRY_UOM</R3_NAME>
+     <R3_TEXT>Unidade de medida do registro</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000003</R3_LENGTH>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>MATERIAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>MATERIAL</OBJ_NAME2>
+     <ID>&lt;element&gt; material &lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>material</IFR_NAME>
+     <IFR_TEXT>Nº do material (18 caracteres)</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>18</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>MATERIAL</R3_NAME>
+     <R3_TEXT>Nº do material (18 caracteres)</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000018</R3_LENGTH>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PLANT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PLANT</OBJ_NAME2>
+     <ID>&lt;element&gt; plant &lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>plant</IFR_NAME>
+     <IFR_TEXT>Centro</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>4</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PLANT</R3_NAME>
+     <R3_TEXT>Centro</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000004</R3_LENGTH>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>STGE_LOC</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>STGE_LOC</OBJ_NAME2>
+     <ID>&lt;element&gt; stge_loc &lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>stge_loc</IFR_NAME>
+     <IFR_TEXT>Depósito</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>4</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>STGE_LOC</R3_NAME>
+     <R3_TEXT>Depósito</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000004</R3_LENGTH>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLMM_DT_INVENTARIO_FISICO_DAD</OBJ_NAME2>
+     <ID>&lt;type&gt; dados &lt;element&gt; dados &lt;type&gt; dtInventarioFisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico http://trescoracoes.com.br/gerenciamentoestoque/inventariofisico</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dados</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLMM_DT_INVENTARIO_FISICO_DAD</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

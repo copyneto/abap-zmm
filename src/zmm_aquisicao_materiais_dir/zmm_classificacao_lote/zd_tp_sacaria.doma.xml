@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_TP_SACARIA</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>NUMC</DATATYPE>
+    <LENG>000002</LENG>
+    <OUTPUTLEN>000002</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Tipo de sacaria</DDTEXT>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>01</DOMVALUE_L>
+     <DDTEXT>Nova</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>02</DOMVALUE_L>
+     <DDTEXT>Usada 1ª</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>03</DOMVALUE_L>
+     <DDTEXT>Imprestável</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>04</DOMVALUE_L>
+     <DDTEXT>Usada 2ª</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>05</DOMVALUE_L>
+     <DDTEXT>Usada 3ª</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Visão de Dados Básicos'
+define service ZUI_VISAO_DADOS_BASICOS {
+  expose ZC_MM_VISAO_DADOS_BASICOS;
+}

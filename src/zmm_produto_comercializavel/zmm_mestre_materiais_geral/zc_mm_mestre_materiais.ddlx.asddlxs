@@ -1,0 +1,12 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Número de Visões' ,
+                  typeName: 'Relatório Geral - Mestre de Materiais'}
+annotate view ZC_MM_MESTRE_MATERIAIS with
+{
+  @UI.hidden: true
+  VisionId;
+  @UI.lineItem: [{ position: 10, type: #WITH_URL, url: 'URL' }]
+  VisionName;
+  @UI.hidden: true
+  URL;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Alivium: Dados Contab NF-e'
+define service ZUI_MM_ALIVIUM_ACCOUNT {
+  expose ZC_MM_ALIVIUM_ACCOUNT;
+}

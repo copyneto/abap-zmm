@@ -1,0 +1,32 @@
+unmanaged implementation in class zclmm_reserva_subcontr unique;
+
+define behavior for zi_mm_rkpf_reserva //alias <alias_name>
+//late numbering
+//lock master
+//etag master <field_name>
+{
+//  create;
+  update;
+//  delete;
+  association _Item { internal create; }
+}
+
+define behavior for zi_mm_resb_reserva_item //alias <alias_name>
+//late numbering
+//lock dependent by <association>
+//etag master <field_name>
+{
+//  create;
+  update  ( features : instance );
+  delete;
+
+//  action Duplicar;
+//  action ( features : instance ) message result [1] $self;
+  action  Duplicar; //  result [1..*] zi_mm_resb_reserva_item;
+//  action ( features : instance ) Duplicar result [1..*] zi_mm_resb_reserva_item;
+
+  action  ( features :  instance )  Expedicao  parameter ZC_MM_PARAM_TRANSP ;
+
+  field ( readonly ) Rsnum, Rspos, Matnr, Werks, Status, Ebeln, Ebelp;
+
+}

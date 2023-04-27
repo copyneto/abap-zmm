@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_COND_BST0</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DOMNAME>XFELD</DOMNAME>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Condição de ST na Saída - BST0</DDTEXT>
+    <REPTEXT>Condição de ST na entrada - BST0</REPTEXT>
+    <SCRTEXT_S>Cond.BST0</SCRTEXT_S>
+    <SCRTEXT_M>Condição ST BST0</SCRTEXT_M>
+    <SCRTEXT_L>Condição de ST na entrada - BST0</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

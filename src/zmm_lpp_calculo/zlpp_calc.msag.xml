@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZLPP_CALC</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens erro cálculo LPP</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>O preenchimento do IVA é obrigatório</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>O preenchimento dos dados da remessa são obrigatórios</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Não foi encontrado as condições para o IVA &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Parâmetros não encontrados na transação ZMM_LPP_PARAMETROS</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Mapeamento não encontrados na transação ZMM_LPP_CONDITIONS_MAP</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Condição &amp; não encontrada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZLPP_CALC</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Mapeamento não encontrado para a condição &amp;</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

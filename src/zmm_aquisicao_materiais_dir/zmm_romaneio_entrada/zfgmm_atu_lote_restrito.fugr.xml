@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Atualiza Lote Restrito</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_ATU_LOTE_RESTRITOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_ATU_LOTE_RESTRITO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_ATU_LOTE_RESTRITO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Baixar Insumo para Ordem de Produção</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <DBSTRUCT>MSEG</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Segmento de documento - material</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

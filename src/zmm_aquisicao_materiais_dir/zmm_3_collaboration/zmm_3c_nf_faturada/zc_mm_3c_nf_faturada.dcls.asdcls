@@ -1,0 +1,11 @@
+@EndUserText.label: 'Autorização'
+@MappingRole: true
+define role ZC_MM_3C_NF_FATURADA {
+//    grant
+//        select
+//            on
+//                ZC_MM_3C_NF_FATURADA
+//                    where
+//                        inheriting conditions from entity ZI_MM_3C_NF_FATURADA;
+                        
+}

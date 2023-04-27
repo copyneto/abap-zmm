@@ -1,0 +1,4 @@
+@EndUserText.label: 'ReRegra para não emissão de Nota Fiscal'
+define service ZUI_MM_REGRA_EMISSAO_NF {
+  expose ZC_MM_REGRA_EMISSAO_NF as App_Emissao;
+}

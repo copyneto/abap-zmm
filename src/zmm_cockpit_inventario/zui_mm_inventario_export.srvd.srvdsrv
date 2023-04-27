@@ -1,0 +1,4 @@
+@EndUserText.label: 'Cockpit de Inventario - Exportação'
+define service ZUI_MM_INVENTARIO_EXPORT {
+  expose ZC_MM_INVENTARIO_ITEM;
+}

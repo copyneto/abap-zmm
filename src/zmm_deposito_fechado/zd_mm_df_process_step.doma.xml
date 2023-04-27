@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_MM_DF_PROCESS_STEP</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000003</LENG>
+    <OUTPUTLEN>000003</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Processo Depósito Fechado - Etapa</DDTEXT>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>F02</DOMVALUE_L>
+     <DDTEXT>Administrar Emissão  de Notas Fiscais</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>F05</DOMVALUE_L>
+     <DDTEXT>Administrar Retorno Armazenagem</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>F12</DOMVALUE_L>
+     <DDTEXT>Pendente em Ordem de Frete</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>F13</DOMVALUE_L>
+     <DDTEXT>Reservas Pendentes</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>ENH</DOMVALUE_L>
+     <DDTEXT>Automatização do processo para remessas simbólicas</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZSMM_DT_ENTRADA_NF</OBJ_NAME_M>
+     <HASH_ID>E1B068F7A401531D64078D804EAC07021B2AF2F9</HASH_ID>
+     <ID>&lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtEntradaNF</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/nf/entrada</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/nf/entrada</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZSMM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/nf/entrada</X-ML_NSPCE>
+     <X-ML_NAME>dtEntradaNF</X-ML_NAME>
+     <VERSION_ID>fe94a16e168a11edcdbe00000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CENTRO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CENTRO</OBJ_NAME2>
+     <ID>&lt;element&gt; centro &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>centro</IFR_NAME>
+     <IFR_TEXT>PLANT</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>4</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CENTRO</R3_NAME>
+     <R3_TEXT>PLANT</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000004</R3_LENGTH>
+     <R3_SEQNUM>000009</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CFOP</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CFOP</OBJ_NAME2>
+     <ID>&lt;element&gt; cfop &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>cfop</IFR_NAME>
+     <IFR_TEXT>BR_CFOPCode</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CFOP</R3_NAME>
+     <R3_TEXT>BR_CFOPCode</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000012</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CHAVE_NFE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CHAVE_NFE</OBJ_NAME2>
+     <ID>&lt;element&gt; chave_nfe &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>chave_nfe</IFR_NAME>
+     <IFR_TEXT>Valores concatenados do item 2</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>44</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CHAVE_NFE</R3_NAME>
+     <R3_TEXT>Valores concatenados do item 2</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000044</R3_LENGTH>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CNPJ_FORNECEDOR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CNPJ_FORNECEDOR</OBJ_NAME2>
+     <ID>&lt;element&gt; cnpj_fornecedor &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>cnpj_fornecedor</IFR_NAME>
+     <IFR_TEXT>Se IBRNFDOCUMENT- BR_NFPARTNERCNPJ &lt;&gt; ‘ ’, então IBRNFDOCUMENT- BR_NFPARTNERCNPJ, se não IBRNFDOCUME</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>14</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CNPJ_FORNECEDOR</R3_NAME>
+     <R3_TEXT>Se IBRNFDOCUMENT- BR_NFPARTNERCNPJ &lt;&gt; ‘ ’, então IBRNFDOCUME</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000014</R3_LENGTH>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DOC_COMPRA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DOC_COMPRA</OBJ_NAME2>
+     <ID>&lt;element&gt; doc_compra &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>doc_compra</IFR_NAME>
+     <IFR_TEXT>IBRNFITEM- PURCHASEORDER</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DOC_COMPRA</R3_NAME>
+     <R3_TEXT>IBRNFITEM- PURCHASEORDER</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DTDOC</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DTDOC</OBJ_NAME2>
+     <ID>&lt;element&gt; dtdoc &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>dtdoc</IFR_NAME>
+     <IFR_TEXT>CDS_M_M2S_PD_ITM- AEDAT</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DTDOC</R3_NAME>
+     <R3_TEXT>CDS_M_M2S_PD_ITM- AEDAT</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DTLANC</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DTLANC</OBJ_NAME2>
+     <ID>&lt;element&gt; dtlanc &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>dtlanc</IFR_NAME>
+     <IFR_TEXT>IBRNFDOCUMENT- BR_NFPOSTINGDATE</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DTLANC</R3_NAME>
+     <R3_TEXT>IBRNFDOCUMENT- BR_NFPOSTINGDATE</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ID_FORNECEDOR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ID_FORNECEDOR</OBJ_NAME2>
+     <ID>&lt;element&gt; id_fornecedor &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>id_fornecedor</IFR_NAME>
+     <IFR_TEXT>IBRNFDOCUMENT- BR_NFPARTNER</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ID_FORNECEDOR</R3_NAME>
+     <R3_TEXT>IBRNFDOCUMENT- BR_NFPARTNER</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ID_MATERIAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ID_MATERIAL</OBJ_NAME2>
+     <ID>&lt;element&gt; id_material &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>id_material</IFR_NAME>
+     <IFR_TEXT>IBRNFITEM-MATERIAL</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>18</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ID_MATERIAL</R3_NAME>
+     <R3_TEXT>IBRNFITEM-MATERIAL</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000018</R3_LENGTH>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NITEM</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NITEM</OBJ_NAME2>
+     <ID>&lt;element&gt; nitem &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>nitem</IFR_NAME>
+     <IFR_TEXT>BR_NFSOURCEDOCUMENTITEM </IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>integer</IFR_XSDTYP>
+     <IFR_PREC>6</IFR_PREC>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NITEM</R3_NAME>
+     <R3_TEXT>BR_NFSOURCEDOCUMENTITEM </R3_TEXT>
+     <R3_DATATYP>INT4</R3_DATATYP>
+     <R3_SEQNUM>000011</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>QTDE_MATERIAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>QTDE_MATERIAL</OBJ_NAME2>
+     <ID>&lt;element&gt; qtde_material &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>qtde_material</IFR_NAME>
+     <IFR_TEXT>CDS_M_M2S_PD_ITM-MENGE</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>13</IFR_PREC>
+     <IFR_SCALE>3</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>QTDE_MATERIAL</R3_NAME>
+     <R3_TEXT>CDS_M_M2S_PD_ITM-MENGE</R3_TEXT>
+     <R3_DATATYP>DEC</R3_DATATYP>
+     <R3_LENGTH>000016</R3_LENGTH>
+     <R3_DECIMAL>000003</R3_DECIMAL>
+     <R3_SEQNUM>000008</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>REFERENCIA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>REFERENCIA</OBJ_NAME2>
+     <ID>&lt;element&gt; referencia &lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>referencia</IFR_NAME>
+     <IFR_TEXT>BR_NFSOURCEDOCUMENTNUMBER </IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>50</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>REFERENCIA</R3_NAME>
+     <R3_TEXT>BR_NFSOURCEDOCUMENTNUMBER </R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000050</R3_LENGTH>
+     <R3_SEQNUM>000010</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZSMM_DT_ENTRADA_NF</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZSMM_DT_ENTRADA_NF</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZSMM_DT_ENTRADA_NF</OBJ_NAME2>
+     <ID>&lt;type&gt; dtEntradaNF http://trescoracoes.com.br/nf/entrada http://trescoracoes.com.br/nf/entrada</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtEntradaNF</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZSMM_DT_ENTRADA_NF</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

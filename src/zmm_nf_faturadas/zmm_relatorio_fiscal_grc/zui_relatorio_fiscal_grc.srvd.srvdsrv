@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition relatorio fiscal grc'
+define service Zui_relatorio_fiscal_grc {
+  expose zc_mm_relatorio_fiscal_grc;
+}

@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de autorização'
+@MappingRole: true
+define role ZI_VISAO_REMESSA_RETORNO {
+    grant 
+        select
+            on
+                ZI_VISAO_REMESSA_RETORNO
+                    where
+                        ( OriginPlant ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                        
+}

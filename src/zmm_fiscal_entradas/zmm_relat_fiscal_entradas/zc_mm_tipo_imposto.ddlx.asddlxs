@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Cadastro Tipo Imposto vs Grupo Imposto',
+        typeNamePlural: 'Cadastro Tipo Imposto',
+        title: {
+            type: #STANDARD,
+            label: 'Cadastro',
+            value: 'TaxType'
+        }
+    }
+}
+annotate view ZC_MM_TIPO_IMPOSTO
+  with 
+{
+  @UI.facet: [  { id: 'Cadastro',
+                  purpose: #STANDARD,
+                  position: 10,
+                  label: 'Dados Gerais',
+                  type: #IDENTIFICATION_REFERENCE }]
+                  
+  @UI: { selectionField: [{ position: 10 }],
+         lineItem:       [{ position: 10 }], 
+         identification: [{ position: 10}]}
+  TaxType;
+  @UI: { lineItem:       [{ position: 20 }], 
+         identification: [{ position: 20}]}
+  TaxTypeText;
+  @UI: { selectionField: [{ position: 30 }],
+         lineItem:       [{ position: 30 }], 
+         identification: [{ position: 30}]}
+  TaxGroup;
+  @UI: { lineItem:       [{ position: 40 }], 
+         identification: [{ position: 40}]}
+  TaxGroupText;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  
+}

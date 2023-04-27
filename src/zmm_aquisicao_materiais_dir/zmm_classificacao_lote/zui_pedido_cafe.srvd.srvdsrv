@@ -1,0 +1,4 @@
+@EndUserText.label: 'Relatório Pedido de Café'
+define service ZUI_PEDIDO_CAFE {
+  expose ZC_MM_PEDIDO_CAFE;
+}

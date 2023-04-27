@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Processa PDF Romaneio</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_ROMANEIO_PDFTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_ROMANEIO_PDF</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_GET_ROMANEIO_PDF</FUNCNAME>
+     <SHORT_TEXT>Gerar PDF MDFE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_KEY_ROM</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZCTGMM_ROMANEIO_KEY</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_FILE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XSTRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_FILESIZE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_LINES</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TLINE_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_OTF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>TSFOTF</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>ERRO_GET_FORM</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>CONVERSION_EXCEPTION</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_KEY_ROM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave para ImpressÃo Romaneio</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FILE</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FILESIZE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº inteiro com sinal 4 bytes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Linhas texto_T</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_OTF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Smart Form: tabela OTF</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ERRO_GET_FORM</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Erro ao buscar Smartform</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONVERSION_EXCEPTION</PARAMETER>
+       <KIND>X</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

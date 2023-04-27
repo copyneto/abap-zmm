@@ -1,0 +1,12 @@
+unmanaged;
+
+define behavior for ZI_MM_EXPED_SUBCONTRAT alias Subcont
+implementation in class zclmm_exped_subcontrat unique
+
+{
+
+
+  action ( features : instance ) AtribPicking parameter ZC_MM_PARAM_PICKING_SUBC result [1] $self;
+  action ( features : instance ) Expedicao parameter ZC_MM_PARAM_TRANSP;
+
+}

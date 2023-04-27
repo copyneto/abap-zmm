@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_VISAO</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000001</LENG>
+    <OUTPUTLEN>000001</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Visão</DDTEXT>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>K</DOMVALUE_L>
+     <DDTEXT>Dados Gerais</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>V</DOMVALUE_L>
+     <DDTEXT>Dados de Vendas</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E</DOMVALUE_L>
+     <DDTEXT>Dados de Compras</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>B</DOMVALUE_L>
+     <DDTEXT>Dados de Avaliação</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>Q</DOMVALUE_L>
+     <DDTEXT>Dados de Qualidade</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>C</DOMVALUE_L>
+     <DDTEXT>Dados de Classificação</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>D</DOMVALUE_L>
+     <DDTEXT>Dados de MRP</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

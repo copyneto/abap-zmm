@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Pré-pedido</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Erro ao executar o FM &apos;BAPI_REQUISITION_RELEASE&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro ao executar o FM &apos;BAPI_PO_CREATE1&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Erro ao executar o FM &apos;BAPI_PO_CHANGE&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro ao executar o GAP &apos;415|R01&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Erro ao executar a interface 023.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro ao executar a interface 012.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Erro ao executar o FM &apos;BAPI_CONTRACT_CREATE&apos;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Erro ao executar o FM &apos;BAPI_CONTRACT_CHANGE&apos;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Erro ao executar a interface 09(Processar mensagem Status).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Erro ao executar o FM &apos;BAPI_REQUISITION_RESET_RELEASE&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Erro ao executar a interface 04.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Erro ao executar interface 014.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PRE_PEDIDO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Pedido &amp;1 cancelado.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

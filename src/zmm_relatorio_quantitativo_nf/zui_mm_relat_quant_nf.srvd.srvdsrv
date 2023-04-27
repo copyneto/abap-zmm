@@ -1,0 +1,4 @@
+@EndUserText.label: 'Relatório Quantitativo de Notas Fiscais'
+define service ZUI_MM_RELAT_QUANT_NF {
+  expose ZC_MM_RELAT_QUANT_NF as Relatorio;
+}

@@ -1,0 +1,137 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Fiscal - Relatório GRC',
+    typeNamePlural: 'Fiscal - Relatório GRC',
+    title: {
+      type: #STANDARD,
+      value: 'BR_NotaFiscal' }   },
+        presentationVariant: [{ sortOrder: [{ by: 'BR_NotaFiscal', direction:  #ASC },
+                                            { by: 'BR_NotaFiscalItem', direction:  #ASC },
+                                            { by: 'DateCreatetime', direction:  #ASC },
+                                            { by: 'HoraCreatetime', direction:  #ASC }] }]
+
+}
+annotate entity zc_mm_relatorio_fiscal_grc with
+{
+  @UI.selectionField: [{position: 30 }]
+  @UI: { lineItem:  [ { position: 10 } ] }
+  BR_NotaFiscal;
+  @UI: { lineItem:  [ { position: 20 } ] }
+  BR_NotaFiscalItem;
+  @UI.selectionField   : [{position: 190 }]
+  @UI: { lineItem:  [ { position: 30 } ] }
+  //  @Consumption.filter.selectionType: #SINGLE
+  @EndUserText.label: 'Tipo de documento'
+  @EndUserText.quickInfo: 'Tipo de documento'
+  BR_NFIsCreatedManually;
+  @UI.selectionField   : [{position: 10 }]
+  @UI: { lineItem:  [ { position: 40 } ] }
+  BR_NFPostingDate;
+  @UI.selectionField   : [{position: 20 }]
+  @UI: { lineItem:  [ { position: 50 } ] }
+  BR_NFIssueDate;
+  //  @UI.selectionField: [{position: 40 }]
+  //  @UI: { lineItem:  [ { position: 60 } ] }
+  //  BR_NFNumber;
+  @UI.selectionField: [{position: 50 }]
+  @UI: { lineItem:  [ { position: 70, label: 'Número NF' } ] }
+  BR_NFeNumber;
+  @UI.selectionField: [{position: 60 }]
+  @UI: { lineItem:  [ { position: 80 } ] }
+  Material;
+  @UI: { lineItem:  [ { position: 81 } ] }
+  MaterialName;
+  @UI: { lineItem:  [ { position: 82 } ] }
+  BR_NFPartnerRegionCode;
+  @UI.selectionField: [{position: 70 }]
+  @UI: { lineItem:  [ { position: 90 } ] }
+  BR_CFOPCode;
+  @UI.selectionField: [{position: 80 }]
+  @UI: { lineItem:  [ { position: 100 } ] }
+  CompanyCode;
+  @UI.selectionField: [{position: 90 }]
+  @UI: { lineItem:  [ { position: 110 } ] }
+  BusinessPlace;
+  @UI.selectionField: [{position: 100 }]
+  @UI: { lineItem:  [ { position: 120 } ] }
+  Plant;
+  @UI.selectionField: [{position: 110 }]
+  @UI: { lineItem:  [ { position: 130 } ] }
+  @EndUserText.label: 'Tipo Parceiro'
+  @EndUserText.quickInfo: 'Tipo Parceiro'
+  BR_NFPartnerType;
+  @UI.selectionField: [{position: 120 }]
+  @UI: { lineItem:  [ { position: 140 } ] }
+  BR_NFPartner;
+  @UI: { lineItem:  [ { position: 141 } ] }
+  BR_NFPartnerName1;
+
+  @UI.selectionField: [{position: 130 }]
+  @UI: { lineItem:  [ { position: 150 } ] }
+  BR_NFPartnerTaxJurisdiction;
+  @UI.selectionField: [{position: 140 }]
+  @UI: { lineItem:  [ { position: 160 } ] }
+  @EndUserText.label: 'Categoria de NF'
+  @EndUserText.quickInfo: 'Categoria de NF'
+  BR_NFType;
+  @UI.selectionField: [{position: 101 }]
+  PurchasingGroup;
+  @UI: { lineItem:  [ { position: 151 } ] }
+  BR_NFPartnerCNPJ;
+  @UI: { lineItem:  [ { position: 152 } ] }
+  @EndUserText.label: 'Ped. Compra'
+  @EndUserText.quickInfo: 'Ped. Compra'
+  OriginReferenceDocument;
+
+  @UI: { lineItem:  [ { position: 153 } ] }
+  @EndUserText.label: 'Criação Ped. Compra'
+  @EndUserText.quickInfo: 'Criação Ped. Compra'
+  CreatedByUser;
+  @UI: { lineItem:  [ { position: 170 } ] }
+  @EndUserText.label: 'Referência'
+  @EndUserText.quickInfo: 'Referência'
+  SupplierPostingLineItemText;
+  @UI: { lineItem:  [ { position: 180 } ] }
+  AccountingDocument;
+  @UI: { lineItem:  [ { position: 190 } ] }
+  @EndUserText.label: 'NCM (NF)'
+  @EndUserText.quickInfo: 'NCM (NF)'
+  ncm;
+  @UI: { lineItem:  [ { position: 200 } ] }
+  @EndUserText.label: 'Data Recebimento DANFE'
+  @EndUserText.quickInfo: 'Data Recebimento DANFE'
+  dsaient;
+  @UI: { lineItem:  [ { position: 210 } ] }
+  @EndUserText.label: 'Hora Recebimento DANFE'
+  @EndUserText.quickInfo: 'Hora Recebimento DANFE'
+  createtime;
+  @UI: { lineItem:  [ { position: 220 } ] }
+  @EndUserText.label: 'Atividade'
+  @EndUserText.quickInfo: 'Atividade'
+  proctyp;
+  //  @UI: { lineItem:  [ { position: 230 } ] }
+  //  @EndUserText.label: 'Data Exec.'
+  //  @EndUserText.quickInfo: 'Data Exec.'
+  //  histCreatetime;
+  @UI: { lineItem:  [ { position: 230 } ] }
+  @EndUserText.label: 'Data Exec.'
+  @EndUserText.quickInfo: 'Data Exec.'
+  DateCreatetime;
+  @UI: { lineItem:  [ { position: 240 } ] }
+  @EndUserText.label: 'Hora Exec.'
+  @EndUserText.quickInfo: 'Hora Exec.'
+  HoraCreatetime;
+  @UI: { lineItem:  [ { position: 250 } ] }
+  @EndUserText.label: 'Usuário'
+  @EndUserText.quickInfo: 'Usuário'
+  username;
+  @UI: { lineItem:  [ { position: 260 } ] }
+  @EndUserText.label: 'Qtd Dias'
+  @EndUserText.quickInfo: 'Qtd Dias'
+  quantidadeDias;
+  @UI: { lineItem:  [ { position: 270 } ] }
+  @EndUserText.label: 'Mat Fornecedor'
+  @EndUserText.quickInfo: 'Mat Fornecedor'
+  cprod;
+}

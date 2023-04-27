@@ -1,0 +1,14 @@
+projection;
+
+define behavior for ZC_MM_PENDENTE_ORDEM_FRETE_APP //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use action fragmentCheckBox;
+  use action fragmentUsedStock;
+
+  use action utilizarQtde;
+  use action criarNFE;
+  use action qtdeTransferida;
+}

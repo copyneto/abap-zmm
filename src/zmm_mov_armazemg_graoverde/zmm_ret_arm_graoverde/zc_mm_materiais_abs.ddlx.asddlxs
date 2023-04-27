@@ -1,0 +1,7 @@
+@Metadata.layer: #CORE
+annotate entity ZC_MM_MATERIAIS_ABS with
+{
+  @EndUserText.label: 'Material'
+  MaterialAtribuido;
+
+}

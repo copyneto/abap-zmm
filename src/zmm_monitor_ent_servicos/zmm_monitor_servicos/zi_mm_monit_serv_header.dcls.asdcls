@@ -1,0 +1,12 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_MONIT_SERV_HEADER {
+    grant 
+        select
+            on
+                ZI_MM_MONIT_SERV_HEADER
+                    where
+                        ( Empresa ) = aspect pfcg_auth( ZMMBUKRS, BUKRS, ACTVT = '03' ) and 
+                        ( Filial  ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                        
+}

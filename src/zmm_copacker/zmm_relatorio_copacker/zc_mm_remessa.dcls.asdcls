@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_REMESSA {
+    grant
+        select
+            on
+                ZC_MM_REMESSA
+                    where
+                        inheriting conditions from entity ZI_MM_REMESSA;
+                        
+}

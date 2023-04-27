@@ -1,0 +1,4 @@
+@EndUserText.label: 'Relatório Geral - Mestre Materiais'
+define service ZUI_MESTRE_MATERIAIS {
+  expose ZC_MM_MESTRE_MATERIAIS;
+}

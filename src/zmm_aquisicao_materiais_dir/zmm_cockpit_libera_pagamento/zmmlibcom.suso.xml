@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>ZMMLIBCOM</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <OCLSS>ZMM</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZMMLIBCOM</OBJECT>
+    <TTEXT>Objeto de Autorização para Liberação Comercial</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>ZMMLIBCOM</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>ZMMLIBCOM</BROBJ>
+     <ACTVT>16</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

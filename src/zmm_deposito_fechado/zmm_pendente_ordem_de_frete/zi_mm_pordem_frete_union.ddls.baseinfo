@@ -1,0 +1,17 @@
+{
+"BASEINFO":
+{
+"FROM":
+[
+"ZI_MM_ORDENS_FRETE_HIST",
+"ZI_MM_ORDENS_FRETE_PENDENTE"
+],
+"ASSOCIATED":
+[],
+"BASE":
+[],
+"ANNO_REF":
+[],
+"VERSION":0
+}
+}

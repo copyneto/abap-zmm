@@ -1,0 +1,7 @@
+@EndUserText.label: 'Serv Def for ZC_MM_MONIT_SERV_HEADER'
+define service ZUI_MM_MONIT_SERVICOS {
+  expose ZC_MM_MONIT_SERV_HEADER as App_principal;
+  expose ZC_MM_MONIT_SERV_ANEXO as Anexo;
+  expose ZC_MM_MONIT_SERV_ITEM as Item;
+  expose ZC_MM_MONIT_SERV_SIMULA as Simula;
+}

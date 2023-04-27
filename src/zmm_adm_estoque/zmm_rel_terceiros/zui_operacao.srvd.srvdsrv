@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Definition Operação'
+define service ZUI_OPERACAO {
+  expose ZC_MM_OPERACAO;
+}

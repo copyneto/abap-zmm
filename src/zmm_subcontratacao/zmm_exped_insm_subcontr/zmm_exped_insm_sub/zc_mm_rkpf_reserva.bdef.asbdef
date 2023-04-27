@@ -1,0 +1,17 @@
+projection;
+
+define behavior for zc_mm_rkpf_reserva //alias <alias_name>
+{
+use update;
+  use association _Item;
+}
+
+define behavior for zc_mm_resb_reserva_item //alias <alias_name>
+{
+  use update;
+  use delete;
+
+
+  use action Duplicar;
+  use action Expedicao;
+}

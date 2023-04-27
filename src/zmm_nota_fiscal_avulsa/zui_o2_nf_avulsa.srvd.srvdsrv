@@ -1,0 +1,4 @@
+@EndUserText.label: 'Nota Fiscal Avulsa - Fornecedor'
+define service ZUI_O2_NF_AVULSA {
+  expose ZC_MM_NF_AVULSA as NotaInbound;
+}

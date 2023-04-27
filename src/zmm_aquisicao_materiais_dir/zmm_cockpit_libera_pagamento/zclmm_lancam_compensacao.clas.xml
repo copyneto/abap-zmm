@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_LANCAM_COMPENSACAO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Classe para lançamento de documentos</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ID</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Identificação de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SUCESS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LS_HEADER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados de cabeçalho para lançamento de documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LT_DOCUMENTS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo Tabela para dados para lançamento de documentos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LT_ITEM</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo Tabela para dados de item para lançamento de documentos</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR_DOCUMENTS</CMPNAME>
+     <SCONAME>EV_BELNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento de um documento contábil</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR_DOCUMENTS</CMPNAME>
+     <SCONAME>EV_BUKRS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Empresa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR_DOCUMENTS</CMPNAME>
+     <SCONAME>EV_GJAHR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Exercício</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR_DOCUMENTS</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_AUGVL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Operação de compensação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_AMOUNT</CMPNAME>
+     <SCONAME>IV_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante em moeda do documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_AMOUNT</CMPNAME>
+     <SCONAME>RV_CONV_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Char 20</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_DATE</CMPNAME>
+     <SCONAME>IV_DATUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_DATE</CMPNAME>
+     <SCONAME>RV_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de caracteres do comprimento 10</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MSG_TEXT</CMPNAME>
+     <SCONAME>IS_MENSAGEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MSG_TEXT</CMPNAME>
+     <SCONAME>RV_MSG_TEXT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_DOCUMENTS</CMPNAME>
+     <SCONAME>IT_DOCUMENTS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo Tabela para dados para lançamento de documentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_HEADER_DATA</CMPNAME>
+     <SCONAME>IS_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dados de cabeçalho para lançamento de documentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_ITEM_DATA</CMPNAME>
+     <SCONAME>IT_ITEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo Tabela para dados de item para lançamento de documentos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_VALUE_FTPOST</CMPNAME>
+     <SCONAME>IV_FIELD</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome de campo BDC</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_VALUE_FTPOST</CMPNAME>
+     <SCONAME>IV_SCREEN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Numerador cabeç.doc./linha documento (interface contabiliz.)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_VALUE_FTPOST</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.de registro para interface de contabilização interna</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

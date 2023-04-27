@@ -1,0 +1,29 @@
+managed implementation in class zclmm_inventario_nfe_emissao unique;
+
+define behavior for ZI_MM_INVENTARIO_NFE_EMISSAO alias _Inventario
+persistent table ztmm_alivium
+lock master
+//authorization master ( instance )
+etag master local_last_changed_at
+{
+  //  create;
+  //  update;
+  //  delete;
+
+  action encerraInventario result [1] $self;
+  action gerarNota result [1] $self;
+  action gerarContabil result [1] $self;
+  action estornarContabil result [1] $self;
+
+  mapping for ztmm_alivium
+  {
+    iblnr = iblnr;
+    gjahr = gjahr;
+    Bukrs = bukrs;
+    Mblnr = mblnr;
+    DocnumEntrada = docnum_entrada;
+    DocnumSaida = docnum_saida;
+    Belnr = belnr;
+  }
+
+}

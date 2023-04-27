@@ -1,0 +1,10 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_ADMINISTRAR_EMISSAO_NF {
+    grant 
+        select
+            on
+                ZI_MM_ADMINISTRAR_EMISSAO_NF
+                    where
+                        (OriginPlant) = aspect pfcg_auth(ZMMWERKS, WERKS, ACTVT = '03');                                                
+}

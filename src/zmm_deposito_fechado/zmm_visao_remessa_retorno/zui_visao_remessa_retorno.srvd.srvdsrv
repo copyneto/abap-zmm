@@ -1,0 +1,7 @@
+@EndUserText.label: 'Definition teste'
+define service ZUI_VISAO_REMESSA_RETORNO {
+  expose ZC_VISAO_REMESSA_RETORNO as visao_remessa_retorno;
+  expose ZI_MM_VH_CENTRO_ORIGEM_DEP_FEC as VHCentroOrigem;
+  expose ZI_MM_VH_CENTRO_DEST_DEP_FEC as VHCentroDestino;
+  expose ZI_CA_VH_DEPOSITO as VHDepositoOrigem;
+}

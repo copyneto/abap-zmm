@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_3C_PEDIDO_COMPRAS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>3Collaboration - NF Fornecedores</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <MSG_ID>ZMM_3COLLABORATION</MSG_ID>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_LOG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para adicionar mensagens no Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CALL_PROXY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para chamar o Proxy</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método construtor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_LOG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para criar log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>END_OF_SELECTION</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para tratamentos do evento END-OF-SELECTION</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FREE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para Limpar</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_OBJECT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo para tabela Principal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_JOB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para buscar/gerar estrutura do JOB Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_JOB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura para JOB</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_SCREEN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura para Tela de Seleção</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela principal</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_LOG_HANDLE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela LogHandle</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_LOG_HANDLE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log Handle</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_LOG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para salvar Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SELECT_DATA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para seleção dos dados principais</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>START_OF_SELECTION</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método para tratamentos do evento START-OF-SELECTION</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TY_SCREEN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de estrutura da Tela de Seleção</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_LOG</CMPNAME>
+     <SCONAME>IS_MESSAGE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_PROXY</CMPNAME>
+     <SCONAME>IS_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura de entrada</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IS_SCREEN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura da tela de seleção</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_JOB</CMPNAME>
+     <SCONAME>RS_RESULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrutura com dados do job</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

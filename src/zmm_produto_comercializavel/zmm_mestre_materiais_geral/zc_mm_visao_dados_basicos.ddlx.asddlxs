@@ -1,0 +1,183 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_VISAO_DADOS_BASICOS
+  with 
+{
+  @Consumption.semanticObject: 'zMaterial'
+  @UI.lineItem: [{ position: 10, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ]
+  @UI.selectionField: [{position: 10}]
+  Product;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{position: 20}]
+  mtart;
+  @UI.lineItem: [{ position: 30 }]
+  maktxpt;
+  @UI.lineItem: [{ position: 40 }]
+  maktxen;
+  @UI.lineItem: [{ position: 50 }]
+  maktxes;
+  @UI.lineItem: [{ position: 60 }]
+  maktg;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{position: 30}]
+  ersda;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{position: 40}]
+  ernam;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{position: 50}]
+  matkl;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.selectionField: [{position: 60}]
+  spart;
+  @UI.lineItem: [{ position: 110 }]
+  @UI.selectionField: [{position: 70}]
+  meins;  
+  @UI.lineItem: [{ position: 120 }]
+  @UI.selectionField: [{position: 80}]
+  prdha;
+  @UI.lineItem: [{ position: 130 }]
+  @UI.selectionField: [{position: 90}]
+  extwg;
+  @UI.lineItem: [{ position: 140 }]
+  @UI.selectionField: [{position: 100}]
+  mstae;
+  @UI.lineItem: [{ position: 150 }]
+  @UI.selectionField: [{position: 110}]
+  mstav;
+  @UI.lineItem: [{ position: 160 }]
+  @UI.selectionField: [{position: 120}]
+  ean11;
+  @UI.lineItem: [{ position: 170 }]
+  @UI.selectionField: [{position: 130}]
+  idrfb;
+    @UI.lineItem: [{ exclude: true }]
+  saisj;
+  @UI.lineItem: [{ exclude: true }]
+  tragr;
+  @UI.lineItem: [{ exclude: true }]
+  magrv;
+  @UI.lineItem: [{ exclude: true }]
+  breit;
+  @UI.lineItem: [{ exclude: true }]
+  satnr;
+  @UI.lineItem: [{ exclude: true }]
+  kznfm;
+  @UI.lineItem: [{ exclude: true }]
+  aenam;
+  @UI.lineItem: [{ exclude: true }]
+  blanz;
+  @UI.lineItem: [{ exclude: true }]
+  bismt;
+  @UI.lineItem: [{ exclude: true }]
+  bwvor;
+  @UI.lineItem: [{ exclude: true }]
+  ergew;
+  @UI.lineItem: [{ exclude: true }]
+  ergei;
+  @UI.lineItem: [{ exclude: true }]
+  mhdhb;
+  @UI.lineItem: [{ exclude: true }]
+  vhart;
+  @UI.lineItem: [{ exclude: true }]
+  mhdrz;
+  @UI.lineItem: [{ exclude: true }]
+  volto;
+  @UI.lineItem: [{ exclude: true }]
+  gewto;
+  @UI.lineItem: [{ exclude: true }]
+  /cwm/valum;
+  @UI.lineItem: [{ exclude: true }]
+  inhme;
+  @UI.lineItem: [{ exclude: true }]
+  vabme;
+//  @UI.lineItem: [{ exclude: true }]
+//  meins;
+  @UI.lineItem: [{ exclude: true }]
+  liqdt;
+  @UI.lineItem: [{ exclude: true }]
+  datab;
+  @UI.lineItem: [{ exclude: true }]
+  meabm;
+  @UI.lineItem: [{ exclude: true }]
+  ervol;
+  @UI.lineItem: [{ exclude: true }]
+  ervoe;
+  @UI.lineItem: [{ exclude: true }]
+  volum;
+  @UI.lineItem: [{ exclude: true }]
+  mhdlp;
+  @UI.lineItem: [{ exclude: true }]
+  xchpf;
+  @UI.lineItem: [{ exclude: true }]
+  mlgut;
+  @UI.lineItem: [{ exclude: true }]
+  taklv;
+  @UI.lineItem: [{ exclude: true }]
+  cadkz;
+  @UI.lineItem: [{ exclude: true }]
+  vpsta;
+  @UI.lineItem: [{ exclude: true }]
+  laeng;
+  @UI.lineItem: [{ exclude: true }]
+  raube;
+  @UI.lineItem: [{ exclude: true }]
+  inhal;
+  @UI.lineItem: [{ exclude: true }]
+  kzkup;
+  @UI.lineItem: [{ exclude: true }]
+  numtp;
+  @UI.lineItem: [{ exclude: true }]
+  attyp;
+  @UI.lineItem: [{ exclude: true }]
+  normt;
+  @UI.lineItem: [{ exclude: true }]
+  fsh_sealv;
+  @UI.lineItem: [{ exclude: true }]
+  sgt_covsa;
+  @UI.lineItem: [{ exclude: true }]
+  stfak;
+  @UI.lineItem: [{ exclude: true }]
+  etifo;
+  @UI.lineItem: [{ exclude: true }]
+  mtpos_mara;
+  @UI.lineItem: [{ exclude: true }]
+  begru;
+  @UI.lineItem: [{ exclude: true }]
+  etiag;
+  @UI.lineItem: [{ exclude: true }]
+  lvorm;
+  @UI.lineItem: [{ exclude: true }]
+  pmata;
+  @UI.lineItem: [{ exclude: true }]
+  wrkst;
+  @UI.lineItem: [{ exclude: true }]
+  fuelg;
+  @UI.lineItem: [{ exclude: true }]
+  kzrev;
+  @UI.lineItem: [{ exclude: true }]
+  eannr;
+  @UI.lineItem: [{ exclude: true }]
+  rbnrm;
+  @UI.lineItem: [{ exclude: true }]
+  brgew;
+  @UI.lineItem: [{ exclude: true }]
+  ntgew;
+  @UI.lineItem: [{ exclude: true }]
+  qmpur;
+  @UI.lineItem: [{ exclude: true }]
+  wesch;
+  @UI.lineItem: [{ exclude: true }]
+  mbrsh;
+  @UI.lineItem: [{ exclude: true }]
+  groes;
+  @UI.lineItem: [{ exclude: true }]
+  etiar;
+  @UI.lineItem: [{ exclude: true }]
+  plgtp;
+  @UI.lineItem: [{ exclude: true }]
+  laeda;
+  @UI.lineItem: [{ exclude: true }]
+  gewei;
+  @UI.lineItem: [{ exclude: true }]
+  voleh;
+}

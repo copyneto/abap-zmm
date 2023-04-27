@@ -1,0 +1,29 @@
+managed;
+
+define behavior for ZI_MM_COLIGADA //alias <alias_name>
+//implementation in class zbp_i_mm_coligada unique
+persistent table ztmm_coligada
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+//  validation authorityCreate on save { create; }
+//  validation mandatoryfields on save { create; }
+  field ( readonly : update ) Bukrs, Bupla, Cgc;
+
+  mapping for ztmm_coligada
+  {
+    Bukrs = bukrs;
+    Bupla = bupla;
+    Cgc = cgc;
+    Kunnr = kunnr;
+    Lifnr = lifnr;
+    Filial = filial;
+    Vkorg = vkorg;
+    ColCi = col_ci;
+  }
+}

@@ -1,0 +1,94 @@
+@Metadata.layer:#CORE
+@UI: { headerInfo: { typeName: 'Item',
+                     typeNamePlural: 'Itens:',
+                     title: { type: #STANDARD, value: '_Ordem.Pedido' } } }
+annotate view ZC_MM_ADM_ORDEM_DESCARGA_ITEM with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'GERAIS',
+                 isSummary:       true,
+                 label:           'Informações Gerais',
+                 type:            #COLLECTION,
+                 position:        10 },
+
+                        { parentId:        'GERAIS',
+                          id:              'Gerais',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Gerais' },
+               { id:              'MODIF',
+                 isSummary:       true,
+                 label:           'Dados Modificações',
+                 type:            #COLLECTION,
+                 position:        10 },
+
+                        { parentId:        'MODIF',
+                          id:              'Modifica',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Modifica' }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:        [ { position: 10, label: 'Recebimento' } ],
+         fieldGroup:      [ { position: 10, label: 'Recebimento', qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Recebimento'
+  Recebimento;
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 30, type: #FOR_ACTION, dataAction: 'imprimir', label: 'Imprimir Ordem' } ],
+         fieldGroup:      [ { position: 30, label: 'Item Recebimento', qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Item do Recebimento'
+  ItemRecebimento;
+  @UI: { lineItem:        [ { position: 40, label: 'Item Pedido' } ],
+         fieldGroup:      [ { position: 40, label: 'Item Pedido', qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Item do Pedido'
+  ItemPedido;
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 50, label: 'Nota Fiscal' } ],
+         fieldGroup:      [ { position: 50, label: 'Nota Fiscal', qualifier: 'Gerais' } ]  }
+  NotaFiscal;
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 60, label: 'Nota Fiscal Pedido' } ],
+         fieldGroup:      [ { position: 60, label: 'Nota Fiscal Pedido', qualifier: 'Gerais' } ]  }
+  NotaFiscalPed;
+  @UI: { lineItem:        [ { position: 70, label: 'Qtde' } ],
+         fieldGroup:      [ { position: 70, label: 'Qtde', qualifier: 'Gerais' } ]  }
+  QtdeKgOrig;
+  @UI: { lineItem:        [ { position: 120, label: 'Material' } ],
+         fieldGroup:      [ { position: 120, label: 'Material', qualifier: 'Gerais' } ]  }
+  Material;
+  @UI: { lineItem:        [ { position: 100, label: 'Descrição Material' } ],
+         fieldGroup:      [ { position: 100, label: 'Descrição Material', qualifier: 'Gerais' } ]  }
+  DescMaterial;
+
+  @UI: { lineItem:        [ { position: 110, label: 'Lote' } ],
+         fieldGroup:      [ { position: 110, label: 'Lote', qualifier: 'Gerais' } ]  }
+  Lote;
+
+  @UI: { lineItem:        [ { position: 115, label: 'Depósito de Descarga' } ],
+         fieldGroup:      [ { position: 115, label: 'Depósito de Descarga', qualifier: 'Gerais' } ]  }
+  @Consumption.valueHelpDefinition: [{ entity : {name: 'ZI_CA_VH_LGORT', element: 'StorageLocation' }} ]
+  Lgort;
+
+  @UI: { lineItem:        [ { position: 80, label: 'Unidade' } ],
+         fieldGroup:      [ { position: 80, label: 'Unidade', qualifier: 'Gerais' } ]  }
+
+  Unidade;
+//  @UI: { lineItem:        [ { position: 130, label: 'Quantidade' } ],
+//         fieldGroup:      [ { position: 130, label: 'Quantidade', qualifier: 'Gerais'  } ]  }
+//  Quantidade;
+  @UI: { fieldGroup:      [ { position: 140, label: 'Data Criação', qualifier: 'Modifica' } ] }
+  CreatedAt;
+  @UI: { fieldGroup:      [ { position: 150, label: 'Criado por', qualifier: 'Modifica' } ] }
+  CreatedBy;
+  @UI: { fieldGroup:      [ { position: 160, label: 'Modificado por', qualifier: 'Modifica' } ] }
+  LastChangedBy;
+  @UI: { fieldGroup:      [ { position: 170, label: 'Modificado em', qualifier: 'Modifica' } ] }
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

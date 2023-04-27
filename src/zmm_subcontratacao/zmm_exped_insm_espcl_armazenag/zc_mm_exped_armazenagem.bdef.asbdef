@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_MM_EXPED_ARMAZENAGEM alias Armazenagem
+{
+
+  use action Expedicao;
+}

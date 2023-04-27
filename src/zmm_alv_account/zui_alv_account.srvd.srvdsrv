@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition ALV Account'
+define service ZUI_ALV_ACCOUNT {
+  expose ZC_MM_ALV_ACCOUNT;
+}

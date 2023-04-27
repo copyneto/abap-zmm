@@ -1,0 +1,12 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_ERP_NF_GRC {
+    grant
+        select
+            on
+                ZI_MM_ERP_NF_GRC
+                    where
+                        ( CompanyCode ) = aspect pfcg_auth( ZMMBUKRS, BUKRS, ACTVT = '03' );
+                        
+                        
+}

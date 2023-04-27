@@ -1,0 +1,27 @@
+unmanaged implementation in class zcl_mm_Planlog_vari unique;
+
+define behavior for ZI_MM_PLANLOG_VARI alias Vari
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create ) report, vari, field, low, opti;
+  field ( readonly : update ) report, vari;
+  field ( readonly ) cont;
+
+
+  // validation validateExists on save { field Usnam; create; update; }
+
+  mapping for ztplanlog_vari
+  {
+    report = report;
+    vari = vari;
+    field = field;
+    low = low;
+    opti = opti;
+    high = high;
+  }
+}

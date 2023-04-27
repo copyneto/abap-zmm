@@ -1,0 +1,4 @@
+@EndUserText.label: 'Relatório Fiscal de Entradas'
+define service ZUI_RELAT_FISCAL_ENTRADAS {
+  expose ZC_MM_FISCAL_ENTRADAS;
+}

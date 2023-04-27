@@ -1,0 +1,193 @@
+managed;// implementation in class zclmm_lib_pgto_graoverde unique;
+
+define behavior for ZI_MM_LIB_PGTO_APP alias _LibPgtoGVApp
+implementation in class zclmm_lib_pgto_graoverde unique
+persistent table ztmm_pag_gv_cab
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  association _fat;
+  association _adi;
+  association _dev;
+  association _des;
+  association _desComFin;
+
+  //update;
+  update ( features : instance );
+  action ( features : instance ) descontoFinanceiro parameter ZA_MM_DESC_LIB_PGTO;
+  action ( features : instance ) retornarComercial;
+  action ( features : instance ) contabilizarDesconto;
+  action ( features : instance ) liberadoFinanceiro parameter ZA_MM_LIB_PGTO_FIN_CLEAR;
+  action ( features : instance ) finalizado;
+
+  mapping for ztmm_pag_gv_cab
+  {
+    Empresa = bukrs;
+    NumDocumento = ebeln;
+    Ano = gjahr;
+    Status = status;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_LIB_PGTO_FAT alias _LibPgtoGVFat
+implementation in class zclmm_lib_pgto_graoverde_fat unique
+persistent table ztmm_pag_gv_fat
+etag master LocalLastChangedAt
+lock dependent by _App
+authorization dependent by _App
+{
+  association _App;
+
+  update ( features : instance );
+  action ( features : instance ) limparFat;
+  action ( features : instance ) marcarFat;
+  field ( readonly ) Empresa, Ano, NumDocumentoRef, NumDocumento, Item, Bloqueio, TipoDocumento, ReferenciaCab1, ReferenciaCab2, TextoCab, DocReferencia, Moeda, VlMontante, DtVencimentoLiquido, LocalNegocio, Fornecedor, Indicador,
+  Atribuicao, FormaPagamento, BancoEmpresa, Marcado, MarcadoCriticality, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_pag_gv_fat
+  {
+    Empresa = bukrs;
+    NumDocumentoRef = ebeln;
+    NumDocumento = belnr;
+    Item = buzei;
+    Ano = gjahr;
+    Marcado = marcado;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_LIB_PGTO_ADI alias _LibPgtoGVAdi
+implementation in class zclmm_lib_pgto_graoverde_adi unique
+persistent table ztmm_pag_gv_adi
+lock dependent by _App
+authorization dependent by _App
+{
+  association _App;
+
+  update ( features : instance );
+  action ( features : instance ) limparAdi;
+  action ( features : instance ) marcarAdi;
+  field ( readonly ) Empresa, Ano, NumDocumentoRef, NumDocumento, Item, Bloqueio, TipoDocumento, ReferenciaCab1, ReferenciaCab2, TextoCab, DocReferencia, Moeda, VlMontante, DtVencimentoLiquido, LocalNegocio, Fornecedor, Indicador,
+  Atribuicao, FormaPagamento, BancoEmpresa, Marcado, MarcadoCriticality, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_pag_gv_adi
+  {
+    Empresa = bukrs;
+    NumDocumentoRef = ebeln;
+    NumDocumento = belnr;
+    Item = buzei;
+    Ano = gjahr;
+    Marcado = marcado;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_LIB_PGTO_DEV alias _LibPgtoGVDev
+implementation in class zclmm_lib_pgto_graoverde_dev unique
+persistent table ztmm_pag_gv_dev
+lock dependent by _App
+authorization dependent by _App
+{
+  association _App;
+  update ( features : instance );
+  action ( features : instance ) limparDev;
+  action ( features : instance ) marcarDev;
+  field ( readonly ) Empresa, Ano, NumDocumentoRef, NumDocumento, Item, Bloqueio, TipoDocumento, ReferenciaCab1, ReferenciaCab2, TextoCab, DocReferencia, Moeda, VlMontante, DtVencimentoLiquido, LocalNegocio, Fornecedor, Indicador,
+  Atribuicao, FormaPagamento, BancoEmpresa, Marcado, MarcadoCriticality, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_pag_gv_dev
+  {
+    Empresa = bukrs;
+    NumDocumentoRef = ebeln;
+    NumDocumento = belnr;
+    Item = buzei;
+    Ano = gjahr;
+    Marcado = marcado;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_LIB_PGTO_DES alias _LibPgtoGVDes
+implementation in class zclmm_lib_pgto_graoverde_des unique
+persistent table ztmm_pag_gv_des
+lock dependent by _App
+authorization dependent by _App
+{
+  association _App;
+  update ( features : instance );
+  action ( features : instance ) limparDes;
+  action ( features : instance ) marcarDes;
+  field ( readonly ) Empresa, Ano, NumDocumentoRef, NumDocumento, Item, Bloqueio, TipoDocumento, ReferenciaCab1, ReferenciaCab2, TextoCab, DocReferencia, Moeda, VlMontante, DtVencimentoLiquido, LocalNegocio, Fornecedor, Indicador,
+  Atribuicao, FormaPagamento, BancoEmpresa, Marcado, MarcadoCriticality, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_pag_gv_des
+  {
+    Empresa = bukrs;
+    NumDocumentoRef = ebeln;
+    NumDocumento = belnr;
+    Item = buzei;
+    Ano = gjahr;
+    Marcado = marcado;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_LIB_PGTO_DES_FIN_COM alias _LibPgtoGVDesFinCom
+implementation in class zclmm_lib_pgto_graoverde_dfc unique
+persistent table ztmm_pag_gv_desc
+lock dependent by _App
+authorization dependent by _App
+{
+  association _App;
+  update ( features : instance );
+  action ( features : instance ) limparDesFinCom;
+  action ( features : instance ) marcarDesFinCom;
+  field ( readonly ) Guid, NumDocumento, Empresa, Ano, Status, Moeda, DocNumComercial, DocContabilComercial, VlrDescontoCom, ObservacaoCom, UsuarioCom, DataCom, GjahrComercial, DocNumFinanceiro, DocContabilFinanceiro,
+  UsuarioFin, DataFin, GjahrFinanceiro, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt, Marcado, CreatedByControle, CreatedAtControle, LastChangedByControle, LastChangedAtControle, LocalLastChangedAtControle;
+
+  determination setUser on modify { field VlrDescontoFin, ObservacaoFin; }
+  //determination setUser on save { create; update; }
+
+  mapping for ztmm_pag_gv_desc
+  {
+    Guid = guid;
+    Empresa = bukrs;
+    NumDocumento = ebeln;
+    Moeda = waers;
+    GjahrFinanceiro = gjahr_fin;
+    DocNumFinanceiro = docnum_fin;
+    VlrDescontoFin = vlr_desconto_fin;
+    ObservacaoFin = observacao_fin;
+    UsuarioFin = usuario_fin;
+    DataFin = data_fin;
+    CreatedByControle = created_by;
+    CreatedAtControle = created_at;
+    LastChangedByControle = last_changed_by;
+    LastChangedAtControle = last_changed_at;
+    LocalLastChangedAtControle = local_last_changed_at;
+    DocContabilFinanceiro = doccont_fin;
+    DocContabilComercial = doccont_com;
+  }
+}

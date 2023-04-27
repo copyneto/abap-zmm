@@ -1,0 +1,115 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Romaneio',
+                     typeNamePlural: 'Romaneio',
+                     title: { type: #STANDARD, value: 'Romaneio' } },
+       presentationVariant: [{ sortOrder: [{ by: 'Romaneio', direction: #DESC } ] }]  }
+annotate entity ZC_MM_DECIS_ARMAZENAG_CAFE with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'GERAIS',
+                 isSummary:       true,
+                 label:           'Informações Gerais',
+                 type:            #COLLECTION,
+                 position:        10 },
+
+                        { parentId:        'GERAIS',
+                          id:              'Gerais',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Gerais' },
+
+                { id:              'Lote',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Lote',
+                 position:        20,
+                 targetElement:   '_Lote'},
+
+               { id:              'MODIF',
+                 isSummary:       true,
+                 label:           'Dados Modificações',
+                 type:            #COLLECTION,
+                 position:        30 },
+
+                        { parentId:        'MODIF',
+                          id:              'Modifica',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        30,
+                          targetQualifier: 'Modifica' }  ]
+  @UI.hidden: true
+  DocUuidH;
+  @UI: { lineItem:        [ { position: 10 } ],
+         fieldGroup:      [ { position: 10, qualifier: 'Gerais' } ]  }
+  @UI: { selectionField: [ { position: 10  } ]}
+  @EndUserText.label: 'Romaneio'
+  @UI.identification: [
+    {
+      importance: #HIGH,
+      label: 'Armazenar',
+      dataAction: 'processar',
+      type: #FOR_ACTION,
+      position: 1
+    }
+  ]
+  Romaneio;
+  @UI: { lineItem:        [ { position: 20 } ],
+         fieldGroup:      [ { position: 20, qualifier: 'Gerais' } ]  }
+  @UI: { selectionField: [ { position: 20  } ]}
+  @EndUserText.label: 'Recebimento'
+  Vbeln;
+  @UI: { lineItem:        [ { position: 30 } ],
+         fieldGroup:      [ { position: 30, qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Item do Pedido'
+  Ebelp;
+  @UI: { lineItem:        [ { position: 40 } ],
+         fieldGroup:      [ { position: 40, qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Qtde KG'
+  QtdKG;
+  @UI: { lineItem:        [ { position: 50 } ],
+         fieldGroup:      [ { position: 50, qualifier: 'Gerais' } ]  }
+  @UI: { selectionField: [ { position: 30  } ]}
+  @EndUserText.label: 'Centro'
+  Werks;
+  @UI: { lineItem:        [ { position: 60 } ],
+         fieldGroup:      [ { position: 60, qualifier: 'Gerais' } ]  }
+  @UI: { selectionField: [ { position: 40  } ]}
+  @EndUserText.label: 'Material'
+  Material;
+  @UI: { lineItem:        [ { position: 70 } ],
+         fieldGroup:      [ { position: 70, qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Descrição Material'
+  DescMat;
+  @UI: { lineItem:        [ { position: 80 } ],
+         fieldGroup:      [ { position: 80, qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Lote'
+  Charg;
+  @UI: { lineItem:        [ { position: 90 } ],
+         fieldGroup:      [ { position: 90, qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Depósito de Descarga'
+  Lgort;
+  @UI: { lineItem:        [ { position: 100 } ],
+         fieldGroup:      [ { position: 100, qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Unidade'
+  Unidade;
+  @UI: { lineItem:        [ { position: 110 } ],
+         fieldGroup:      [ { position: 110, qualifier: 'Gerais' } ]  }
+  @EndUserText.label: 'Quantidade'
+  Quantidade;
+  @UI: { fieldGroup:      [ { position: 140, qualifier: 'Modifica' } ] }
+  @EndUserText.label: 'Data Criação'
+  CreatedAt;
+  @UI: { fieldGroup:      [ { position: 150, qualifier: 'Modifica' } ] }
+  @EndUserText.label: 'Criado por'
+  CreatedBy;
+  @UI: { fieldGroup:      [ { position: 160, qualifier: 'Modifica' } ] }
+  @EndUserText.label: 'Modificado por'
+  LastChangedBy;
+  @UI: { fieldGroup:      [ { position: 170, qualifier: 'Modifica' } ] }
+  @EndUserText.label: 'Modificado em'
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

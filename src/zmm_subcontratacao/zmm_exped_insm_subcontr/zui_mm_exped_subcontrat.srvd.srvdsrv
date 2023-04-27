@@ -1,0 +1,6 @@
+@EndUserText.label: 'Expedição Insumos - Subcontratação'
+define service ZUI_MM_EXPED_SUBCONTRAT {
+  expose ZC_MM_EXPED_SUBCONTRAT as AppSubcontr;
+  expose ZI_CA_VH_LIFNR as VH_LIFNR;
+  expose ZI_CA_VH_INCO1_VIEW as VH_Inco1;
+}

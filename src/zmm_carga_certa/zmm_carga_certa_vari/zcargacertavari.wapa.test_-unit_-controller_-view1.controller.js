@@ -1,0 +1,1 @@
+sap.ui.define(["cargacertavarif/cargacertavarif/controller/View1.controller"],function(t){"use strict";QUnit.module("View1 Controller");QUnit.test("I should test the View1 controller",function(e){var r=new t;r.onInit();e.ok(r)})});                        

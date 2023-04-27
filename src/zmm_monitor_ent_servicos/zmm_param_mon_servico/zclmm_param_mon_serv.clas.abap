@@ -1,0 +1,5 @@
+CLASS zclmm_param_mon_serv DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_param_mon_serv.
+ENDCLASS.
+
+CLASS zclmm_param_mon_serv IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZUI_PLANLOG_VARI'
+define service ZUI_PLANLOG_VARI {
+  expose ZC_MM_PLANLOG_VARI;
+}

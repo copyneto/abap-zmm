@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE DEFINICION - Entrada Serviço NBS'
+define service ZUI_MM_NBS {
+  expose ZC_MM_NBS;
+}

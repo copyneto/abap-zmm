@@ -1,0 +1,7 @@
+CLASS zcl_mm_planlog_vari DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_planlog_vari.
+ENDCLASS.
+
+
+
+CLASS zcl_mm_planlog_vari IMPLEMENTATION.
+ENDCLASS.

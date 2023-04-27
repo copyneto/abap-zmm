@@ -1,0 +1,166 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+      typeNamePlural: 'Lotes',
+      typeName:       'Lote',
+    title: {
+      type: #STANDARD,
+      label: 'Ordem de descarga',
+      value: 'sequence' } }
+
+annotate view ZC_MM_01_CAFE with
+{
+
+  @UI.facet: [ { id: 'Dados',
+                 purpose: #STANDARD,
+                 type: #IDENTIFICATION_REFERENCE,
+                 label: 'Informações Gerais',
+                 position: 10 } ]
+
+  @EndUserText.label: 'Ordem de descarga'
+  @UI: { lineItem:       [ { position: 10, type: #WITH_URL, url: 'URL_sequence' } ],
+        identification:  [ { position: 10 } ],
+        selectionField:  [ { position: 10 } ] }
+  sequence;
+
+  @EndUserText.label: 'Nº do documento de compras'
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         selectionField:  [ { position: 20 } ] }
+  ebeln;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ] }
+  @EndUserText.label: 'Nº do material'
+  Material;
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ],
+         selectionField:  [ { position: 60 } ] }
+  nfnum;
+
+  @EndUserText.label: 'Peso da Nota Fiscal (KG)'
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  menge;
+
+  @EndUserText.label: 'Peso Total dos Lotes'
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ] }
+  QTD_TOTAL_KG;
+
+  @EndUserText.label: 'Divergência de Estoque (KG)'
+  @UI: { lineItem:        [ { position: 70, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 70, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  PESO_DIF_NF;
+
+  @EndUserText.label: 'Quantidade Divergente'
+  @UI: { lineItem:        [ { position: 80, criticality: 'StatusCriticality2', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 80, criticality: 'StatusCriticality2', criticalityRepresentation: #WITHOUT_ICON } ] }
+  QTD_DIF_NF;
+
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ],
+         selectionField:  [ { position: 80 } ] }
+  CompanyCode;
+
+  @UI: { lineItem:        [ { position: 100 } ],
+         identification:  [ { position: 100 } ] }
+  ebelp;
+
+  @EndUserText.label: 'Fornecedor'
+  @UI: { lineItem:        [ { position: 110 } ],
+         identification:  [ { position: 110 } ] }
+  BR_NFIssuerNameFrmtdDesc;
+
+  @UI: { lineItem:        [ { position: 120 } ],
+         identification:  [ { position: 120 } ],
+         selectionField:  [ { position: 50 } ] }
+  Plant;
+
+  @EndUserText.label: 'Documento NF'
+  @UI: { lineItem:        [ { position: 130 } ],
+         identification:  [ { position: 130 } ] }
+  BR_NotaFiscal;
+
+  @EndUserText.label: 'Data Lançamento NF'
+  @UI: { lineItem:        [ { position: 140 } ],
+         identification:  [ { position: 140 } ] }
+  BR_NFPostingDate;
+
+  @EndUserText.label: 'Valor Total da NF'
+  @UI: { lineItem:        [ { position: 150 } ],
+         identification:  [ { position: 150 } ] }
+  BR_NFTotalAmount;
+
+  @EndUserText.label: 'Quantidade Total Nota Fiscal'
+  @UI: { lineItem:        [ { position: 160 } ],
+         identification:  [ { position: 160 } ] }
+  QuantityInBaseUnit;
+
+  @EndUserText.label: 'Unidade de Medida Nota Fiscal'
+//  @UI: { lineItem:        [ { position: 170 } ],
+//         identification:  [ { position: 170 } ] }
+  BaseUnit;
+
+  @EndUserText.label: 'Quantidade total dos Lotes'
+//  @UI: { lineItem:        [ { position: 180 } ],
+//         identification:  [ { position: 180 } ] }
+  QTD_TOTAL_SACAS;
+
+  @EndUserText.label: 'Lote Origem do recebimento'
+  @UI: { lineItem:        [ { position: 190 } ],
+         identification:  [ { position: 190 } ] }
+  Batch;
+
+  @EndUserText.label: 'Estoque do Lote Origem'
+  @UI: { lineItem:        [ { position: 200 } ],
+         identification:  [ { position: 200 } ] }
+  ceinm;
+
+  @EndUserText.label: 'Depósito de Origem'
+  @UI: { lineItem:        [ { position: 210 } ],
+         identification:  [ { position: 210 } ] }
+  lgort;
+
+  @UI: { lineItem:        [ { position: 220 } ],
+         identification:  [ { position: 220 } ] }
+  meins;
+
+  @UI: { selectionField:  [ { position: 70 } ] }
+  vbeln;
+
+  @UI: { selectionField:  [ { position: 40 } ] }
+  dt_entrada;
+
+  @UI.hidden: true
+  status_armazenado;
+  @UI.hidden: true
+  peso_dif_ori;
+  @UI.hidden: true
+  qtde_dif_ori;
+  @UI.hidden: true
+  calc_dif_pesoas;
+  @UI.hidden: true
+  calc_dif_qtdeas;
+  @UI.hidden: true
+  StatusCriticality;
+  @UI.hidden: true
+  StatusCriticality2;
+  @UI.hidden: true
+  BATCH_NUMBER;
+
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 230, type: #FOR_ACTION, dataAction: 'armazenar', label: 'Armazenar' } ] }
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

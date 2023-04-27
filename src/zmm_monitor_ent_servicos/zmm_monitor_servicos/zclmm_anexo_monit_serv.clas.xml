@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_ANEXO_MONIT_SERV</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Anexo Monitor Lançamento Serviço</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>EV_LINHA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Número da linha</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Arquivos PDFs Anexados</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ANEXAR</CMPNAME>
+     <SCONAME>IS_MEDIA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Media Resource information</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

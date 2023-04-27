@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_DIVISAO {
+  expose ZC_MM_DIVISAO;
+}

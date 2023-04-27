@@ -1,0 +1,4 @@
+@EndUserText.label: 'Parâmetro determinação IVA/CFOP/CTG'
+define service ZUI_MM_PARAM_MON_SERV {
+  expose ZC_MM_PARAM_MON_SERV as App_monit;
+}

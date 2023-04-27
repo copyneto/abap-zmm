@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_COCKPIT_TRANSF</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Cria pedido de transferência</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Tipo de operação</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Centro origem</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Centro destino</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>Centro receptor</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>Depósito origem</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>006</KEY>
+     <ENTRY>Depósito receptor</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>007</KEY>
+     <ENTRY>Org. compras</ENTRY>
+     <LENGTH>22</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>008</KEY>
+     <ENTRY>Grp. compradores</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T01</KEY>
+     <ENTRY>Cliente:</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T02</KEY>
+     <ENTRY>- As mercadorias serão entregues no Depósito Fechado, localizado à</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T03</KEY>
+     <ENTRY>- As mercadorias serão retiradas do Depósito Fechado, localizado à</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T04</KEY>
+     <ENTRY>ITEM:</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T05</KEY>
+     <ENTRY>Brasil</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T06</KEY>
+     <ENTRY>Número do Documento de Material:</ENTRY>
+     <LENGTH>64</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T07</KEY>
+     <ENTRY>CEST:</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Deposito Fechado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_CEST</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CEST do Deposito Fechado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_CEST_XML</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CEST do Deposito Fechado via XML NFe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_ENTREGA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Entrega do Deposito Fechado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_ENTREGA_XML</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Entrega do Deposito Fechado via XML NFe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_RETIRADA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retirada do Deposito Fechado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_RETIRADA_XML</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retirada do Deposito Fechado via XML NFe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_TEXT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Textos do Deposito Fechado</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_TEXT_XML</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Textos do Deposito Fechado via XML NFe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DEPOSITO_FECHADO_XML</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Deposito Fechado via XML</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>EXEC_PO_CREATE</CMPNAME>
+     <SCONAME>IS_CONTINUAR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXEC_PO_INTERCOMPANY</CMPNAME>
+     <SCONAME>EV_PURCHASEORDER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº do documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_CENTRO</CMPNAME>
+     <SCONAME>IV_CENTRO1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela centro para national contracts</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_CENTRO</CMPNAME>
+     <SCONAME>IV_CENTRO2</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela centro para national contracts</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_CENTRO</CMPNAME>
+     <SCONAME>RV_MESMA_EMPRESA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Elem.dados para domínio BOOLE: TRUE (=&apos;X&apos;) e FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

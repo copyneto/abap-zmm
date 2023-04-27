@@ -1,0 +1,73 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Nota faturada',
+                     typeNamePlural: 'Notas faturadas',
+                     title: { type: #STANDARD, value: 'BR_NFeNumber' } } }
+
+annotate view ZC_MM_3C_NF_FATURADA with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:              'HeaderNotaFiscal',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderNotaFiscal',
+                 position:        10 } ]
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.lineItem:       [ { position: 10 } ]
+  @UI.selectionField: [ { position: 10 } ]
+  BR_NFeNumber;
+
+  @UI.lineItem:       [ { position: 20, criticality: 'DoctypeCrit', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.selectionField: [ { position: 20 } ]
+  @Consumption.filter:  { mandatory: true, selectionType: #SINGLE, defaultValue: '1' }
+  Doctype;
+
+  @UI.hidden: true
+  DoctypeText;
+
+  @UI.hidden: true
+  DoctypeCrit;
+
+  @UI.lineItem:       [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  AccessKey;
+
+  @UI.lineItem:       [ { position: 40 } ]
+  @UI.selectionField: [ { position: 40 } ]
+  @Consumption.filter.selectionType: #INTERVAL
+  DtDocumento;
+
+  @UI.lineItem:       [ { position: 50 } ]
+  @UI.selectionField: [ { position: 50 } ]
+  CNPJEmissor;
+   
+  @UI.lineItem:       [ { position: 60 } ]  
+  NomeEmissor;
+
+  @UI.lineItem:       [ { position: 70 } ]
+  @UI.selectionField: [ { position: 70 } ]
+  CNPJDestinatario;
+
+  @UI.lineItem:       [ { position: 80 } ]  
+  NomeDestinatario;
+
+  @UI.lineItem:       [ { position: 90 } ]
+  @UI.selectionField: [ { position: 90 } ]
+  Cfop;
+
+  @UI.lineItem:       [ { position: 100 } ]
+  @UI.selectionField: [ { position: 100 } ]
+  TpEvento;
+
+  @UI.hidden: true
+  TpEventoText;
+
+}

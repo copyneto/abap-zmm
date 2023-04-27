@@ -1,0 +1,3 @@
+sap.ui.define(["sap/m/PDFViewer"],function(e){"use strict";return{onActionImprimir:function(t){var a=this.templateBaseExtension.getExtensionAPI().getSelectedContexts();var n="/sap/opu/odata/SAP/ZMM_IMPRIME_ROMANEIO_SRV/";var i=new sap.ui.model.odata.ODat+
+aModel(n,false);for(let t=0;t<a.length;t++){var o=a[t].getObject();var s=async function(){await delay(5e3)};var r=n+"imprimirSet(Romaneio='"+o.Romaneio+"')/$value";var l=new e;this.getView().addDependent(l);l.setSource(r);l.downloadPDF()}this.templateBas+
+eExtension.getExtensionAPI().rebindTable();this.templateBaseExtension.getExtensionAPI().refreshTable()}}});                                                                                                                                                    

@@ -1,0 +1,63 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_VISAO_QUALIDADE with
+{
+  @Consumption.semanticObject: 'zMaterial'
+  @UI.lineItem: [{ position: 10, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ]
+  @UI.selectionField: [{position: 10}]
+  Product;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{position: 20}]
+  mtart;
+  @UI.lineItem: [{ position: 30 }]
+  maktxpt;
+  @UI.lineItem: [{ position: 40 }]
+  maktxen;
+  @UI.lineItem: [{ position: 50 }]
+  maktxes;
+  @UI.lineItem: [{ position: 60 }]
+  maktg;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{position: 30}]
+  ersda;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{position: 40}]
+  ernam;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{position: 50}]
+  mhdhb;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.selectionField: [{position: 60}]
+  xchpf;
+  @UI.lineItem: [{ position: 110 }]
+  @UI.selectionField: [{position: 70}]
+  art;
+
+  @UI.lineItem: [{ exclude: true }]
+  werks;
+  @UI.lineItem: [{ exclude: true }]
+  bwtar;
+  @UI.lineItem: [{ exclude: true }]
+  bwkey;
+  @UI.lineItem: [{ exclude: true }]
+  qmatv;
+  @UI.lineItem: [{ exclude: true }]
+  nkmpr;
+  @UI.lineItem: [{ exclude: true }]
+  pstat;
+  @UI.lineItem: [{ exclude: true }]
+  scm_grprt;
+  @UI.lineItem: [{ exclude: true }]
+  meins;
+  @UI.lineItem: [{ exclude: true }]
+  datab;
+  @UI.lineItem: [{ exclude: true }]
+  ssqss;
+  @UI.lineItem: [{ exclude: true }]
+  qzgtp;
+  @UI.lineItem: [{ exclude: true }]
+  rbnrm;
+  @UI.lineItem: [{ exclude: true }]
+  qmpur;
+  @UI.lineItem: [{ exclude: true }]
+  ausme;
+}

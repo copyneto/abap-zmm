@@ -1,0 +1,29 @@
+managed; // implementation in class zbp_i_mm_alivium_account unique;
+
+define behavior for ZI_MM_ALIVIUM_ACCOUNT alias _AliviumAccount
+persistent table ztmm_alivium_acc
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) Processo, Bwart, Grupo, Newbs;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_alivium_acc
+  {
+    Processo = processo;
+    Bwart = bwart;
+    Grupo = grupo;
+    Newbs = newbs;
+    Newko = newko;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

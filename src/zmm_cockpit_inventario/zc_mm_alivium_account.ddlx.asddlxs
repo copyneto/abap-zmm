@@ -1,0 +1,92 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Dado Contábil',
+    typeNamePlural: 'Dados Contábeis',
+    title: {
+        type: #STANDARD,
+        label: 'Processo',
+        value: 'Processo'
+    }
+}
+@Search.searchable: true
+annotate view ZC_MM_ALIVIUM_ACCOUNT with
+{
+
+  @UI.facet: [
+//  {
+//      id: 'Account',
+//      purpose: #STANDARD,
+//      position: 10,
+//      label: 'Dados',
+//      type: #IDENTIFICATION_REFERENCE
+//  },
+        { id:              'Account',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Dados',
+                 position:        10 },
+  {   parentId:        'Account',
+      id:              'DADOS_PRINCIPAIS',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        10,
+      label: 'Dados principais',
+      targetQualifier: 'DADOS_PRINCIPAIS' },
+
+    { parentId:        'Account',
+      id:              'DADOS_CONTROLE',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        20,
+      label: 'Dados de controle',
+      targetQualifier: 'DADOS_CONTROLE' }]
+
+  @Search.ranking: #HIGH
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem: [{ position: 10 }],
+   fieldGroup:     [ { position: 10, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 10 }] }
+  Processo;
+
+  @Search.ranking: #MEDIUM
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem: [{ position: 20 }],
+   fieldGroup:     [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 20 }] }
+  Bwart;
+
+  @Search.ranking: #HIGH
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem: [{ position: 30 }],
+   fieldGroup:     [ { position: 30, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 30 }] }
+  Grupo;
+
+  @Search.ranking: #LOW
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem: [{ position: 40 }],
+   fieldGroup:     [ { position: 40, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 40 }] }
+  Newbs;
+
+  @UI: { lineItem: [{ position: 50 }],
+   fieldGroup:     [ { position: 50, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Newko;
+
+  @UI: { fieldGroup:     [ { position: 10, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedAt;
+
+  @UI: { fieldGroup:     [ { position: 50, qualifier: 'DADOS_CONTROLE' } ] }
+  LocalLastChangedAt;
+}

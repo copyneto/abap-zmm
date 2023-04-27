@@ -1,0 +1,4 @@
+@EndUserText.label: 'Reservas Pendentes'
+define service ZUI_MM_RESERVAS_PENDENTES {
+  expose ZC_mm_RESERVAS_PENDENTES_APP;
+}

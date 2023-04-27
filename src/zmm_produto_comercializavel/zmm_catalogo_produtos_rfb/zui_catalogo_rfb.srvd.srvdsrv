@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition para Catálogo RFB'
+define service ZUI_CATALOGO_RFB {
+  expose ZC_MM_CATALOGO_PRODUTOS_RFB;
+}

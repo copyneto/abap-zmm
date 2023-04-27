@@ -1,0 +1,6 @@
+@EndUserText.label: 'Controle de Classificação'
+define service ZUI_CONTROLE_CLASSIFICACAO {
+  expose ZC_MM_CTRL_CLASSIF;
+  expose ZC_MM_VLR_CARACTERISTICA;
+  expose ZI_MM_DADOS_BANCARIOS;
+}

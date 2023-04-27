@@ -1,0 +1,192 @@
+@Metadata.layer: #CORE
+@UI:
+    { headerInfo: { title:{ type: #STANDARD, label: 'Administrar Transf. Pendentes' }},
+      presentationVariant: [{ sortOrder: [{ by: 'OriginPlant', direction: #ASC }]}]}
+
+annotate view ZC_MM_ADMINISTRAR_TRANSF_PEND with
+{
+  @UI.facet: [{ id:       'AdministrarTransfPend',
+                purpose:  #STANDARD,
+                type:     #IDENTIFICATION_REFERENCE,
+                label:    'Administrar Transf. Pendentes',
+                position: 10 }]
+
+  @UI.lineItem:       [{ position: 10, criticality: 'StatusCriticality' }]
+  @UI.identification: [{ position: 10, criticality: 'StatusCriticality' }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.filter:{ selectionType: #SINGLE }
+  Status;
+
+  @UI.hidden: true
+  StatusText;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+//  @UI.identification: [{ position: 20 }]
+//  Material;
+//
+//  @UI.hidden: true
+//  MaterialName;
+
+  @UI.lineItem:       [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.filter:{ mandatory: true }
+  OriginPlant;
+
+  @UI.identification: [{ position: 40 }]
+  OriginStorageLocation;
+
+  @UI.hidden: true
+  OriginStorageLocationName;
+
+  @UI.hidden: true
+  OriginPlantName;
+
+  @UI.lineItem:       [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  @Consumption.filter:{ mandatory: true }
+  DestinyPlant;
+
+  @UI.hidden: true
+  DestinyPlantName;
+
+  @UI.identification: [{ position: 60 }]
+  DestinyStorageLocation;
+
+  @UI.hidden: true
+  DestinyStorageLocationName;
+
+  //  @Consumption.semanticObject:'FreightOrder'
+  //  @UI.identification: [ { position: 70, semanticObjectAction: 'displayRoad', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.hidden: true
+  FreightOrder;
+
+  //  @Consumption.semanticObject:'OutboundDelivery'
+  //  @UI.identification: [ { position: 80, semanticObjectAction: 'displayInWebGUI', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.hidden: true
+  OutboundDelivery;
+
+//  @UI.lineItem:       [{ position: 90 }]
+  @UI.identification: [{ position: 90 }]
+  ProcessStep;
+
+  @UI.hidden: true
+  ProcessStepName;
+
+//  @UI.hidden: true
+//  Guid;
+
+  @UI.lineItem:       [{ position: 100 }]
+  @UI.identification: [{ position: 100 }]
+  @UI.selectionField: [{ position: 90 }]
+  EntradaTransf;
+
+  @Consumption.semanticObject: 'ZMe23N'
+  @UI.lineItem:       [{ position: 110, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  //@UI.lineItem:       [{ position: 110 }]
+  @UI.identification: [{ position: 110 }]
+  @UI.selectionField: [{ position: 110 }]
+  //@Consumption.filter:{ mandatory: true }
+  PurchaseOrder;
+//  Pedido;
+
+  @UI.lineItem:       [{ position: 120 }]
+  @UI.identification: [{ position: 120 }]
+  @UI.selectionField: [{ position: 120 }]
+  CriadoPor;
+
+  @UI.hidden: true
+  CriadoPorNome;
+
+  @Consumption.semanticObject: 'NotaFiscal'
+  @UI.lineItem:       [{ position: 130, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 130, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.selectionField: [{ position: 130 }]
+  BR_NotaFiscal;
+  @Consumption.semanticObject: 'ZNotaFiscal'
+
+  @UI.lineItem:       [{ position: 140, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 140, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.selectionField: [{ position: 140 }]
+  OutBR_NotaFiscal;
+//  NFNum;
+
+  @Consumption.semanticObject: 'ZPurchaseOrder2'
+  @UI.lineItem:       [{ position: 150, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 150, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.selectionField: [{ position: 150 }]
+//  Pedido2;
+  PurchaseOrder2;
+
+//  @UI.lineItem:       [{ position: 160 }]
+//  @UI.identification: [{ position: 160 }]
+//  @UI.selectionField: [{ position: 160 }]
+  @UI.hidden: true
+  NumMovSaidaRemessa;
+
+  @Consumption.semanticObject: 'ZMaterial'
+  @UI.lineItem:       [{ position: 160, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]  
+  @UI.identification: [{ position: 160 }]
+  @UI.selectionField: [{ position: 160 }]
+  OutMaterialDocument;
+  @UI.lineItem:       [{ position: 161 }]
+  @UI.identification: [{ position: 161 }]
+//  @UI.selectionField: [{ position: 161 }]  
+  OutMaterialDocumentYear;
+
+  @UI.lineItem:       [{ position: 170, criticality: 'StatusDocRemessaDFCritic', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.identification: [{ position: 170, criticality: 'StatusDocRemessaDFCritic', criticalityRepresentation: #WITHOUT_ICON }]
+  //@UI.selectionField: [{ position: 170 }]
+  @UI.textArrangement: #TEXT_ONLY
+  StatusSefaz_DocRemessaDF;
+
+  @UI.hidden: true
+  StatusDocRemessaDFCritic;
+
+  @UI.hidden: true
+  NomeStatusDocRemessaDF;
+
+  @Consumption.semanticObject: 'ZNotaFiscal2'
+  @UI.lineItem:       [{ position: 170, type: #WITH_INTENT_BASED_NAVIGATION,  semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 170, type: #WITH_INTENT_BASED_NAVIGATION,  semanticObjectAction: 'zzdisplay' }]
+  @UI.selectionField: [{ position: 170 }]
+  NFNum2;
+
+//  @UI.lineItem:       [{ position: 180, criticality: 'StatusDocEntradaRemessaCritic', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.lineItem:       [{ criticality: 'StatusDocEntradaRemessaCritic', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.identification: [{ position: 180, criticality: 'StatusDocEntradaRemessaCritic', criticalityRepresentation: #WITHOUT_ICON }]
+  //@UI.selectionField: [{ position: 180 }]
+  @UI.textArrangement: #TEXT_ONLY
+  StatusSefaz_DocEntradaRemessa;
+
+  @UI.hidden: true
+  NomeStatusDocEntradaRemessa;
+
+  @UI.hidden: true
+  StatusDocEntradaRemessaCritic;
+
+//  @UI.lineItem:       [{ position: 190 }]
+//  @UI.identification: [{ position: 190 }]
+//  @UI.selectionField: [{ position: 190 }]
+  @UI.hidden: true
+  DocMaterialEntradaRemessa;
+
+  @Consumption.semanticObject: 'ZMaterial2'
+  @UI.lineItem:       [{ position: 190, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]  
+  @UI.identification: [{ position: 190 }]
+  @UI.selectionField: [{ position: 190 }]  
+  InMaterialDocument;
+  @UI.lineItem:       [{ position: 191 }]
+  @UI.identification: [{ position: 191 }]
+//  @UI.selectionField: [{ position: 191 }]
+  InMaterialDocumentYear;
+
+  @UI.lineItem:       [{ position: 200 }]
+  @UI.identification: [{ position: 200 }]
+  @Consumption.filter:{ selectionType: #SINGLE }
+  Processado;
+
+}

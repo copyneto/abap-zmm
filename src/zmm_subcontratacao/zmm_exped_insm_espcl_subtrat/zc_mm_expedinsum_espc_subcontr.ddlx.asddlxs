@@ -1,0 +1,107 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Pedido',
+    typeNamePlural: 'Pedidos',
+    title: {
+      type: #STANDARD,
+      label: 'Pedido',
+      value: 'Ebeln'
+    }
+  } }
+annotate entity ZC_MM_EXPEDINSUM_ESPC_SUBCONTR with
+{
+
+  @UI.facet: [ { id:         'Pedido',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Pedido',
+               position:      10 }]
+
+  @UI.hidden: true
+  Rsnum;
+  @UI.hidden: true
+  Rspos;
+  @UI.hidden: true
+  Bdart;
+  @UI: { lineItem:        [ { position: 30, label: 'Centro' } ],
+         identification:  [ { position: 30, label: 'Centro' } ] }
+  @UI : { selectionField: [ { position: 30 } ] }
+  @Consumption.filter.mandatory: true
+  Werks;
+  @UI: { lineItem:        [ { position: 50, label: 'Material' } ],
+         identification:  [ { position: 50, label: 'Material' } ] }
+  @UI : { selectionField: [ { position: 40 } ] }
+  Matnr;
+  @UI: { lineItem:        [ { position: 10, label: 'Pedido' } ],
+         identification:  [ { position: 10, label: 'Pedido' } ] }
+  @UI : { selectionField: [ { position: 10} ] }
+  Ebeln;
+  @UI: { lineItem:        [ { position: 20, label: 'Item' } ],
+         identification:  [ { position: 20, label: 'Item' } ] }
+  Ebelp;
+  @UI: { lineItem:        [ { position: 75, label: 'Data da Necessidade' } ],
+         identification:  [ { position: 75, label: 'Data da Necessidade' } ] }
+  @UI : { selectionField: [ { position: 50 } ] }
+  Bdter;
+  @UI: { lineItem:        [ { position: 40, label: 'Fornecedor' } ],
+         identification:  [ { position: 40, label: 'Fornecedor' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  @Consumption.filter.mandatory: true
+  Lifnr;
+  //  @UI: { lineItem:        [ { position: 60, label: 'Quantidade' } ],
+  //         identification:  [ { position: 60, label: 'Quantidade' } ] }
+  //  Menge;
+  @UI: { lineItem:        [ { position: 70, label: 'Unidade de Medida' } ],
+         identification:  [ { position: 70, label: 'Unidade de Medida' } ] }
+  Meins;
+  @UI.hidden: true
+  DescFornec;
+  @UI: { lineItem:        [ { position: 90, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 90, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  @UI : { selectionField: [ { position: 90 } ] }
+  Status;
+  @UI.hidden: true
+  StatusCriticality;
+  @UI: { lineItem:        [ { position: 80, label: 'Remessa', type: #WITH_URL, url: 'URL_Remessa' } ],
+         identification:  [ { position: 80, label: 'Remessa' } ] }
+  Vbeln;
+  @UI: { lineItem:        [ { position: 100, label: 'XML Entrada do Insumo' } ],
+         identification:  [ { position: 100, label: 'XML Entrada do Insumo' } ] }
+  @UI : { selectionField: [ { position: 80 } ] }
+  XmlEntrad;
+  @UI: { lineItem:        [ { position: 110, label: 'Doc. Material' } ],
+         identification:  [ { position: 110, label: 'Doc. Material' } ] }
+  Mblnr;
+  @UI: { lineItem:        [ { position: 120, label: 'Nº documento', type: #WITH_URL, url: 'URL_Docnum' } ],
+         identification:  [ { position: 120, label: 'Nº documento' } ] }
+  Docnum;
+  @UI: { lineItem:        [ { position: 125, label: 'Estorno', type: #WITH_URL, url: 'URL_est' } ],
+         identification:  [ { position: 125, label: 'Estorno' } ] }
+  Estornar;
+  @UI.hidden: true
+  URL_est;
+  @UI: { lineItem:        [ { position: 130, label: 'Data da Emissão' } ],
+         identification:  [ { position: 130, label: 'Data da Emissão' } ] }
+  @UI : { selectionField: [ { position: 70 } ] }
+  Pstdat;
+  @UI: { lineItem:        [ { position: 140, label: 'NF-e' } ],
+         identification:  [ { position: 140, label: 'NF-e' } ] }
+  @UI : { selectionField: [ { position: 60 } ] }
+  Nfenum;
+  @UI: { lineItem:        [ { position: 60, label: 'Quantidade' } ],
+         identification:  [ { position: 60, label: 'Quantidade' } ] }
+  Quantidade;
+  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição', invocationGrouping: #CHANGE_SET}]
+  @UI.hidden: true
+  DescMat;
+  @UI.hidden: true
+  DesCentro;
+  @UI.hidden: true
+  Transptdr;
+
+  //  /* Associations */
+  //  _Makt;
+  //  _T001wsh;
+
+}

@@ -1,0 +1,5 @@
+CLASS zclmm_user_lib_grc DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_user_lib_grc.
+ENDCLASS.
+
+CLASS zclmm_user_lib_grc IMPLEMENTATION.
+ENDCLASS.

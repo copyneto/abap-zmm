@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Pedido',
+    typeNamePlural: 'Pedidos',
+    title: {
+      type: #STANDARD,
+      label: 'Pedido',
+      value: 'Ebeln'
+    }
+  } }
+annotate entity ZC_MM_RELAT_SALDO_REMESSA with
+{
+
+  @UI.facet: [ { id:         'Pedido',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Pedido',
+               position:      10 }]
+
+  @UI.hidden: true
+  Rsnum;
+  @UI.hidden: true
+  Rspos;
+  @UI: { lineItem:        [ { position: 50, label: 'Material' } ],
+         identification:  [ { position: 50, label: 'Material' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  @Consumption.filter.mandatory: true
+  Matnr;
+  @UI: { lineItem:        [ { position: 10, label: 'Pedido' } ],
+         identification:  [ { position: 10, label: 'Pedido' } ] }
+  @UI : { selectionField: [ { position: 10 } ] }
+  @Consumption.filter.mandatory: true
+  Ebeln;
+  @UI: { lineItem:        [ { position: 20, label: 'Item' } ],
+         identification:  [ { position: 20, label: 'Item' } ] }
+  Ebelp;
+  @UI: { lineItem:        [ { position: 30, label: 'Centro' } ],
+         identification:  [ { position: 30, label: 'Centro' } ] }
+  Werks;
+  @UI: { lineItem:        [ { position: 40, label: 'Fornecedor' } ],
+         identification:  [ { position: 40, label: 'Fornecedor' } ] }
+  Lifnr;
+  @UI: { lineItem:        [ { position: 60, label: 'Remessa' } ],
+         identification:  [ { position: 60, label: 'Remessa' } ] }
+  Vbeln;
+  @UI: { lineItem:        [ { position: 70, label: 'Qtd.' } ],
+         identification:  [ { position: 70, label: 'Qtd.' } ] }
+  Lfimg;
+  @UI.hidden: true
+  Meins;
+  @UI: { lineItem:        [ { position: 90, label: 'Saldo' } ],
+         identification:  [ { position: 90, label: 'Saldo' } ] }
+  Saldo;
+  @UI: { lineItem:        [ { position: 100, label: 'Pedido Novo' } ],
+         identification:  [ { position: 100, label: 'Pedido Novo' } ] }
+  PedNv;
+  @UI: { lineItem:        [ { position: 110, label: 'Qtd. Nova' } ],
+         identification:  [ { position: 110, label: 'Qtd. Nova' } ] }
+  QtdNova;
+  @UI.hidden: true
+  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'AtrbPedido', label: 'Atribuir Pedido' }]
+  Name;
+  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'AjustarRemess', label: 'Ajustar Remessa' }]
+  @UI.hidden: true
+  DescMat;
+  @UI.hidden: true
+  DescWerks;
+
+}

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Devolução de vendas</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_DEVOLUCAO_VENDASTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_DEVOLUCAO_VENDAS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_DEVOLUCAO_VENDAS</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Devolução de vendas</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_HIS_DEP_FEC</PARAMETER>
+       <TYP>ZTMM_HIS_DEP_FEC</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_HIS_DEP_FEC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Histórico para processo de depósito fechado</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

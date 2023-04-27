@@ -1,0 +1,63 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_REL_TERC with
+{
+
+  @UI.facet: [ { id:              'Main',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Cabeçalho',
+                 position:        10 },
+
+               { id:              'Remessa',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Remessa',
+                 position:        20,
+                 targetElement:   '_Remessa'},
+
+               { id:              'Retorno',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Retorno',
+                 position:        30,
+                 targetElement:   '_Retorno'}
+                  ]
+
+  @UI: {  lineItem:       [ { position: 10 } ],
+          identification: [ { position: 10 } ],
+          selectionField: [ { position: 10 } ] }
+  Empresa;
+  @UI: {  lineItem:       [ { position: 20 } ],
+          identification: [ { position: 20 } ],
+          selectionField: [ { position: 20 } ]  }
+  LocalNegocio;
+  @UI: {  lineItem:       [ { position: 30 } ],
+          identification: [ { position: 30 } ],
+          selectionField: [ { position: 30 } ]  }
+  Centro;
+  @UI: {  lineItem:       [ { position: 40 } ],
+          identification: [ { position: 40 } ],
+          selectionField: [ { position: 40 } ]  }
+  @EndUserText.label: 'Saldo em Poder do Fornecedor'
+  Soma;
+  @UI: {  lineItem:       [ { position: 50 } ],
+          identification: [ { position: 50 } ],
+          selectionField: [ { position: 50 } ]  }
+  @EndUserText.label: 'Fornecedor'
+  CodFornecedor;
+  @UI: {  lineItem:       [ { position: 60 } ],
+          identification: [ { position: 60 } ],
+          selectionField: [ { position: 60 } ]  }
+  Material;
+
+  @UI.hidden: true
+  UnidMedida;
+  @UI.hidden: true
+  QtdeRemessa;
+  @UI.hidden: true
+  QtdeRetorno;
+
+
+
+
+}

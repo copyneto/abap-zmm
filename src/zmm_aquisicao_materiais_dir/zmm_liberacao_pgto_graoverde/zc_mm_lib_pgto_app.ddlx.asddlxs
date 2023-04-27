@@ -1,0 +1,162 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Liberação Pagamentos Grão Verde',
+        typeNamePlural: 'Liberação Pagamentos Grão Verde'
+    }
+}
+annotate view ZC_MM_LIB_PGTO_APP
+    with 
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'HeaderEmpresa',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderEmpresa',
+                 label:           'Empresa',
+                 position:        10 },
+
+                { id:             'HeaderPedido',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderPedido',
+                 label:           'Doc. Compras',
+                 position:        20 },
+                 
+                { id:             'HeaderFaturas',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderFaturas',
+                 label:           'Faturas',
+                 position:        30 },
+                 
+                { id:             'HeaderAdiantamentos',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderAdiantamentos',
+                 label:           'Adiantamentos',
+                 position:        40 },
+                 
+                { id:             'HeaderDevolucoes',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderDevolucoes',
+                 label:           'Devoluções',
+                 position:        50 },              
+                 
+                { id:             'HeaderDescontoFin',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderDescontoFin',
+                 label:           'Desconto Financeiro',
+                 position:        60 },                       
+                 
+                { id:             'HeaderDescontoCom',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderDescontoCom',
+                 label:           'Desconto Comercial',
+                 position:        70 },                      
+                 
+                { id:             'HeaderAPagar',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderAPagar',
+                 label:           'A Pagar',
+                 position:        80 },                               
+                 
+                { id:             'HeaderStatus',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderStatus',
+                 label:           'Status',
+                 position:        90 },                                                                   
+                 
+                { id:             'Faturas',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Faturas',
+                 position:        100,
+                 targetElement:   '_fat'},                 
+                 
+                { id:             'Adiantamentos',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Adiantamentos',
+                 position:        110,
+                 targetElement:   '_adi'},
+                 
+                { id:             'Devolucoes',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Devoluções',
+                 position:        120,
+                 targetElement:   '_dev'},
+                 
+                { id:             'Descontos',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Descontos Contabilizados',
+                 position:        130,
+                 targetElement:   '_des'},
+                  
+                { id:             'DescontosComercialFinanceiro',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Descontos',
+                 position:        140,
+                 targetElement:   '_desComFin'} ]
+                 
+                 
+  @UI.identification:   [ { position: 10, type: #FOR_ACTION, dataAction: 'retornarComercial', label: 'Retornar Comercial' },
+                          { position: 20, type: #FOR_ACTION, dataAction: 'descontoFinanceiro', label: 'Desconto Financeiro' },
+                          { position: 30, type: #FOR_ACTION, dataAction: 'contabilizarDesconto', label: 'Contabilizar Descontos' },
+                          { position: 40, type: #FOR_ACTION, dataAction: 'liberadoFinanceiro', label: 'Liberado Financeiro' },
+                          { position: 50, type: #FOR_ACTION, dataAction: 'finalizado', label: 'Finalizar' }  ]                 
+                 
+    @UI.selectionField: [{ position: 10 }]
+    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_BUKRS', element: 'Empresa' } }]
+    @UI: {  lineItem:       [ { position: 10, label: 'Empresa' } ],
+            dataPoint:        { qualifier: 'HeaderEmpresa', title: 'Empresa' } }            
+    Empresa;
+    @UI.selectionField: [{ position: 20 }]
+    @UI: {  lineItem:       [ { position: 20, label: 'Documento Compras', type: #WITH_URL, url: 'URL_NumDocumento' } ],
+            fieldGroup:     [ { position: 20, label: 'Documento Compras', qualifier: 'Dados' } ],
+            dataPoint:        { qualifier: 'HeaderPedido', title: 'Doc. Compras' } }        
+    NumDocumento;    
+    @UI.selectionField: [{ position: 30 }]
+    @UI: {  lineItem:       [ { position: 30, label: 'Data Pedido' } ],
+            fieldGroup:     [ { position: 30, label: 'Data Pedido', qualifier: 'Dados' } ] }    
+    PedidoCriadoEm;
+    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
+    @UI.selectionField: [{ position: 40 }]
+    @UI: {  lineItem:       [ { position: 40, label: 'Fornecedor' } ],
+            fieldGroup:     [ { position: 40, label: 'Fornecedor', qualifier: 'Dados' } ] }        
+    Fornecedor;    
+    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_VH_DOC_STATUS', element: 'Valor' } }]
+    @UI.selectionField: [{ position: 40 }]
+    @UI: {  lineItem:       [ { position: 50, label: 'Status' } ],
+            fieldGroup:     [ { position: 50, label: 'Status', qualifier: 'Dados' } ],
+            dataPoint:        { qualifier: 'HeaderStatus', title: 'Status' } }    
+    Status;    
+    @UI: {  lineItem:       [ { position: 60, label: 'Exercício' } ],
+            fieldGroup:     [ { position: 60, label: 'Exercício', qualifier: 'Dados' } ] }            
+    Ano;
+    @UI: {  lineItem:       [ { position: 70, label: 'Pedido Criado Por' } ],
+            fieldGroup:     [ { position: 70, label: 'Pedido Criado Por', qualifier: 'Dados' } ] }    
+    PedidoCriadoPor;
+    @UI: { dataPoint:      { qualifier: 'HeaderFaturas', title: 'Faturas' }}     
+    VlMontanteFatura;
+    @UI: { dataPoint:      { qualifier: 'HeaderAdiantamentos', title: 'Adiantamentos' }}     
+    VlMontanteAdiantamento;    
+    @UI: { dataPoint:      { qualifier: 'HeaderDevolucoes', title: 'Devoluções' }}     
+    VlMontanteDevolucao;   
+    @UI: { dataPoint:      { qualifier: 'HeaderDescontoFin', title: 'Desconto Financeiro' }}     
+    VlMontanteDescontoFinanceiro;      
+    @UI: { dataPoint:      { qualifier: 'HeaderDescontoCom', title: 'Desconto Comercial' }}     
+    VlMontanteDescontoComercial;          
+    @UI: { dataPoint:      { qualifier: 'HeaderAPagar', title: 'A Pagar' }}     
+    VlTotal;         
+}

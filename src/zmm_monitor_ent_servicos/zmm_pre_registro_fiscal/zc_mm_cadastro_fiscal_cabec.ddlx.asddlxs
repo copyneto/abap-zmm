@@ -1,0 +1,135 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Cadastro Fiscal',
+        typeNamePlural: 'NFs pré registradas',
+        title: {
+            type: #STANDARD,
+            label: 'Nota Fiscal',
+            value: 'NrNf'
+        }
+    }
+}
+
+annotate entity ZC_MM_CADASTRO_FISCAL_CABEC with
+{
+
+  @UI.facet: [  { id: 'Header',
+                  purpose: #STANDARD,
+                  position: 10,
+                  label: 'Dados Gerais',
+                  type: #IDENTIFICATION_REFERENCE },
+
+                { id: 'Item',
+                  purpose: #STANDARD,
+                  position: 20,
+                  label: 'Itens',
+                  type: #LINEITEM_REFERENCE,
+                  targetElement: '_Item' },
+
+                { id: 'Anexo',
+                  purpose: #STANDARD,
+                  position: 30,
+                  label: 'Anexos',
+                  type: #LINEITEM_REFERENCE,
+                  targetElement: '_Anexo' }
+    ]
+
+  @UI:{
+    lineItem: [ { position: 10, criticality: 'StFiscCritic', criticalityRepresentation: #WITH_ICON }, { type: #FOR_ACTION, dataAction: 'LiberarNF', label: 'Liberar NF' } ],
+    identification: [{ position: 10, type: #FOR_ACTION, dataAction: 'LiberarNF', label: 'Liberar NF' } ],
+    selectionField: [{ position: 70 }]
+  }
+  StatusFiscal;
+  @UI: { lineItem: [{ position: 10 }], identification: [{ position: 10}], selectionField: [{ position: 10 }] }
+  Empresa;
+  @UI: { lineItem: [{ position: 20 }], identification: [{ position: 20}], selectionField: [{ position: 20 }] }
+  Filial;
+  @UI: { lineItem: [{ position: 30 }], identification: [{ position: 30}], selectionField: [{ position: 30 }] }
+  Lifnr;
+  @UI: { lineItem: [{ position: 40 }], identification: [{ position: 40}], selectionField: [{ position: 40 }] }
+  NrNf;
+  @UI: { lineItem: [{ position: 50 }], identification: [{ position: 50}], selectionField: [{ position: 50 }] }
+  Pedido;
+  @UI: { lineItem: [{ position: 60 }], identification: [{ position: 60}] }
+  CnpjCpf;
+  @UI: { lineItem: [{ position: 70 }], identification: [{ position: 70}]}
+  DtEmis;
+  @UI: { lineItem: [{ position: 75 }], identification: [{ position: 75}] }
+  FlagRpa;
+  @UI: { lineItem: [{ position: 75 }], identification: [{ position: 80}] }
+  Imob;
+  @UI: { lineItem: [{ position: 80 }], identification: [{ position: 90}]}
+  DtLancto;
+  @UI: { lineItem: [{ position: 90 }], identification: [{ position: 100}]}
+  DtVenc;
+  @UI: { lineItem: [{ position: 100 }], identification: [{ position: 110}]}
+  DtReg;
+  @UI: { lineItem: [{ position: 110 }], identification: [{ position: 120}]}
+  HrReg;
+  @UI: { lineItem: [{ position: 115 }], identification: [{ position: 125}]}
+  DomicilioFiscal;
+  @UI: { lineItem: [{ position: 120 }], identification: [{ position: 130}] }
+  Lc;
+  //  @UI: { lineItem: [{ position: 130 }], identification: [{ position: 130}] }
+  //  VlDesc;
+  @UI: { lineItem: [{ position: 140 }], identification: [{ position: 140}] }
+  VlTotNf;
+  @UI: { lineItem: [{ position: 141 }], identification: [{ position: 141}] }
+  VlIss;
+  @UI: { lineItem: [{ position: 141 }], identification: [{ position: 141}] }
+  VlPis;
+  @UI: { lineItem: [{ position: 142 }], identification: [{ position: 142}] }
+  VlCofins;
+  @UI: { lineItem: [{ position: 143 }], identification: [{ position: 143}] }
+  VlCsll;
+  @UI: { lineItem: [{ position: 144 }], identification: [{ position: 144}] }
+  VlIr;
+  @UI: { lineItem: [{ position: 145 }], identification: [{ position: 145}] }
+  VlInss;
+  @UI: { lineItem: [{ position: 155 }], identification: [{ position: 155}] }
+  CondPag;
+  //  @UI: { lineItem: [{ position: 160 }], identification: [{ position: 160}] }
+  //  Incoterms;
+  //  @UI: { lineItem: [{ position: 170 }], identification: [{ position: 170}] }
+  //  Uname;
+  //  @UI: { lineItem: [{ position: 180 }], identification: [{ position: 180}] }
+  //  Atrib;
+  //  @UI: { lineItem: [{ position: 190 }], identification: [{ position: 190}] }
+  //  Cancel;
+  //  @UI: { lineItem: [{ position: 200 }], identification: [{ position: 200}] }
+  //  CancelUser;
+  //  @UI: { lineItem: [{ position: 210 }], identification: [{ position: 210}] }
+  //  DtVenc2;
+  //  @UI: { lineItem: [{ position: 220 }], identification: [{ position: 220}] }
+  //  DtVenc3;
+  //  @UI: { lineItem: [{ position: 230 }], identification: [{ position: 230}] }
+  //  DtVenc4;
+  //  @UI: { lineItem: [{ position: 240 }], identification: [{ position: 240}] }
+  //  DtVenc5;
+  @UI: { lineItem: [{ position: 250 }], identification: [{ position: 250}] }
+  DtBase;
+  @UI: { lineItem: [{ position: 260 }], identification: [{ position: 260}] }
+  //  DtRecusa;
+  //  @UI.hidden: true
+  //  Liberado;
+  @UI.hidden: true
+  StFiscCritic;
+  @UI: {
+    lineItem: [{ hidden: true }],
+    identification: [{ hidden: true }],
+    selectionField: [{ position: 60 }]
+  }
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  Currency;
+
+}

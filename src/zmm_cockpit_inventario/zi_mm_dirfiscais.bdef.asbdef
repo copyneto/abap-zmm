@@ -1,0 +1,37 @@
+managed; // implementation in class zbp_i_mm_dirfiscais unique;
+
+define behavior for ZI_MM_DIRFISCAIS alias _DirFiscais
+persistent table ztmm_dirfiscais
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) Shipfrom, Direcao, Cfop;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_dirfiscais
+  {
+    Shipfrom = shipfrom;
+    Direcao = direcao;
+    Cfop = cfop;
+    Ativo = ativo;
+    Taxlw1 = taxlw1;
+    Taxlw2 = taxlw2;
+    Taxlw4 = taxlw4;
+    Taxlw5 = taxlw5;
+    Taxsit = taxsit;
+    Cbenef = cbenef;
+    Motdesicms = motdesicms;
+    ZtipoCalc = ztipo_calc;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

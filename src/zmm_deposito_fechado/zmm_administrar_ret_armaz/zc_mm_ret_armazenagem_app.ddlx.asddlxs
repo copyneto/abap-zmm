@@ -1,0 +1,363 @@
+@Metadata.layer: #CORE
+@UI: {
+
+  headerInfo: { typeName: 'Retorno de Armazenagem',
+                typeNamePlural: 'Retornos de Armazenagens',
+                title: { type: #STANDARD, label: 'Retornos de Armazenagens', value: 'Material' } },
+
+       presentationVariant: [{ sortOrder: [{ by: 'Material', direction:  #ASC },
+                                           { by: 'CentroOrigem', direction:  #ASC },
+                                           { by: 'DepositoOrigem', direction:  #ASC } ] } ] }
+
+@UI.lineItem:       [ {criticality: 'StatusHistoricoCriticality' } ]
+annotate view ZC_MM_RET_ARMAZENAGEM_APP with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet:[
+
+             { id:      'Facet',
+               purpose: #STANDARD,
+               type:    #COLLECTION,
+               label:   'Principal',
+               position: 20 },
+
+                     { id:              'Principal',
+                       purpose:         #STANDARD,
+                       parentId:        'Facet',
+                       type:            #FIELDGROUP_REFERENCE,
+                       label:           'Dados Principais',
+                       targetQualifier: 'Principal',
+                       position:         10 },
+
+                     { id:              'Geral',
+                       purpose:         #STANDARD,
+                       parentId:        'Facet',
+                       type:            #FIELDGROUP_REFERENCE,
+                       label:           'Geral',
+                       targetQualifier: 'Geral',
+                       position:         20 },
+
+             {  id:             'ModificacaoFacet',
+                purpose:        #STANDARD,
+                label:          'Quantidades',
+                type:    #COLLECTION,
+                position:       30 },
+
+                     {  id:             'ModificacaoQuantidade',
+                        purpose:        #STANDARD,
+                        label:          'Quantidades',
+                        parentId:       'ModificacaoFacet',
+                        type:           #FIELDGROUP_REFERENCE,
+                        targetQualifier: 'ModificacaoQuantidade',
+                        position:       10 },
+
+                     {  id:             'ModificacaoValores',
+                        purpose:        #STANDARD,
+                        label:          'Transferência',
+                        parentId:       'ModificacaoFacet',
+                        type:           #FIELDGROUP_REFERENCE,
+                        targetQualifier: 'ModificacaoValores',
+                        position:       20 },
+
+             { id:              'Serie',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Série',
+                 position:        70,
+                 targetElement:   '_Serie' },
+
+              { id:              'Mensagem',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Mensagens',
+                 position:        120,
+                 targetElement:   '_Mensagem'},
+
+               { id:              'SISTEMA',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Dados de sistema',
+                 position:        130 },
+
+                        { parentId:        'SISTEMA',
+                          id:              'Sistema',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Sistema' }
+                 ]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  //  @UI.lineItem:
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  @UI.lineItem:         [ { position: 05, type: #FOR_ACTION, dataAction: 'Continuar', label: 'Continuar processo', invocationGrouping: #CHANGE_SET },
+                          { position: 10, type: #FOR_ACTION, dataAction: 'moverValores', label: 'Utilizar Quantidade', invocationGrouping: #CHANGE_SET },
+                          { position: 20, type: #FOR_ACTION, dataAction: 'qtdeTransferida', label: 'Qtd. Transferida' },
+                          { position: 30, type: #FOR_ACTION, dataAction: 'criarNFE', label: 'Criar NFE', invocationGrouping: #CHANGE_SET},
+                          { position: 50, type: #FOR_ACTION, dataAction: 'CriaRemeSimb', label: 'Gerar Remessa Simbólica', invocationGrouping: #CHANGE_SET },
+                          { position: 60, type: #FOR_ACTION, dataAction: 'CriaRemessa', label: 'Gerar Remessa com Transp.', invocationGrouping: #CHANGE_SET },
+                          { position: 70, type: #FOR_ACTION, dataAction: 'CriaOrderFrete', label: 'Gerar Ordem de Frete', invocationGrouping: #CHANGE_SET }
+                          ]
+
+  @Consumption.filter.hidden: true
+  Guid;
+
+
+  // ------------------------------------------------------
+  // Field information Principal
+  // ------------------------------------------------------
+  @UI.lineItem:       [ { position: 10, label: 'Status', criticality: 'StatusHistoricoCriticality' } ]
+  @UI.dataPoint:        { qualifier: 'Principal', title: 'Status', criticality: 'StatusHistoricoCriticality' }
+  StatusHistorico;
+
+  @UI.hidden: true
+  StatusHistoricoText;
+
+  @UI.hidden: true
+  StatusHistoricoCriticality;
+
+  @UI.lineItem:       [ { position: 20, label: 'Tipo Estoque' } ]
+  @UI.fieldGroup:     [ { position: 20, qualifier: 'Principal' } ]
+  @UI.selectionField: [ { position: 20 } ]
+  @UI.textArrangement: #TEXT_ONLY
+  @Consumption.filter:{ mandatory:true, defaultValue: '00', selectionType: #SINGLE }
+  EANType;
+
+  @Consumption.semanticObject:'FreightOrder'
+  @UI.lineItem:       [ {  semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.fieldGroup:     [ { semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION, qualifier: 'Principal' } ]
+  //  @UI.selectionField: [ { position: 30 } ]
+  FreightOrder;
+
+  @UI.hidden: true
+  NumeroOrdemDeFrete;
+
+  @Consumption.semanticObject:'OutboundDelivery'
+  @UI.lineItem:       [ { exclude: true, semanticObjectAction: 'displayInWebGUI', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.fieldGroup:     [ { semanticObjectAction: 'displayInWebGUI', type: #WITH_INTENT_BASED_NAVIGATION, qualifier: 'Principal' } ]
+  //  @UI.selectionField: [ { position: 40 } ]
+  OutboundDelivery;
+
+  @UI.hidden: true
+  NumeroDaRemessa;
+
+  @UI.lineItem:       [ { position: 50, label: 'Material' } ]
+  @UI.fieldGroup:     [ { position: 50, qualifier: 'Principal' } ]
+  @UI.dataPoint:        { title: 'Material', qualifier: 'Principal' }
+  @UI.selectionField: [ { position: 50 } ]
+  Material;
+
+  //@UI.lineItem:       [ { position: 60 } ]
+  //@UI.fieldGroup:     [ { position: 40, qualifier: 'Geral' } ]
+  //@UI.selectionField: [ { position: 60 } ]
+  @UI.fieldGroup:     [ { qualifier: 'Geral' } ]
+  UmbOrigin;
+
+  //@UI.lineItem:       [ { position: 70 } ]
+  //  @UI.fieldGroup:     [ { position: 50, qualifier: 'Geral' } ]
+  //  @UI.selectionField: [ { position: 70 } ]
+  @UI.fieldGroup:     [ { qualifier: 'Geral' } ]
+  UmbDestino;
+
+  @UI.lineItem:       [ { position: 80 } ]
+  @UI.fieldGroup:     [ { position: 60, qualifier: 'Principal' } ]
+  @UI.selectionField: [ { position: 80 } ]
+  @Consumption.filter:{ mandatory:true }
+  CentroOrigem;
+
+  @UI.hidden: true
+  CentroOrigemText;
+
+  @UI.lineItem:       [ { position: 90 } ]
+  @UI.fieldGroup:     [ { position: 70, qualifier: 'Principal' } ]
+  @UI.selectionField: [ { position: 90 } ]
+  @Consumption.filter:{ mandatory:true }
+  DepositoOrigem;
+
+  @UI.hidden: true
+  DepositoOrigemText;
+
+  @UI.lineItem:       [ { position: 100 } ]
+  @UI.fieldGroup:     [ { position: 80, qualifier: 'Principal' } ]
+  //  @UI.selectionField: [ { position: 100 } ]
+  Lote;
+
+  @UI.lineItem:       [ { position: 100 } ]
+  @UI.fieldGroup:     [ { position: 90, qualifier: 'Principal' } ]
+  @UI.selectionField: [ { position: 100 } ]
+  CentroDestino;
+
+  @UI.hidden: true
+  CentroDestinoText;
+
+  @UI.lineItem:       [ { position: 110 } ]
+  @UI.fieldGroup:     [ { position: 100, qualifier: 'Principal' } ]
+  @UI.selectionField: [ { position: 110 } ]
+  DepositoDestino;
+
+  @UI.hidden: true
+  DepositoDestinoText;
+
+  @UI.lineItem:       [ { position: 115 } ]
+  QtdOrdVenda;
+
+  //  @UI.lineItem:       [ { position: 120 } ]
+  @UI.fieldGroup:     [ { position: 80, qualifier: 'Geral' } ]
+  //  @UI.selectionField: [ { position: 120 } ]
+  @Consumption.filter:{ selectionType: #SINGLE }
+  DadosDoHistorico;
+  
+  @Consumption.semanticObject:'PurchaseOrder'
+  @UI.lineItem:       [ { position: 35, semanticObjectAction: 'manage', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.fieldGroup:     [ { position: 25, qualifier: 'Principal' } ]
+  @UI.selectionField: [ { position: 280 } ]
+  PurchaseOrder;
+
+  @UI.lineItem:       [ { position: 130 } ]
+  @UI.fieldGroup:     [ { position: 10, qualifier: 'Principal' } ]
+  Diferenca;
+
+  @UI.lineItem:       [ { position: 140, criticality: 'StatusNFCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.fieldGroup:     [ { position: 100, qualifier: 'Principal', criticality: 'StatusNFCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  //  @UI.selectionField: [ { position: 140 } ]
+  StatusNF;
+
+  @UI.hidden: true
+  StatusNFText;
+
+  @UI.hidden: true
+  StatusNFCriticality;
+
+  //  @UI.lineItem:       [ { position: 150 } ]
+  //  @UI.fieldGroup:     [ { position: 20, qualifier: 'ModificacaoQuantidade' } ]
+  //  estoqueremessaof;
+
+  @UI.lineItem:       [ { position: 160 } ]
+  @UI.fieldGroup:     [ { position: 30, qualifier: 'ModificacaoQuantidade' } ]
+  UtilizacaoLivre;
+
+  @UI.hidden: true
+  EstoqueLivreUtilizacao;
+
+  @UI.lineItem:       [ { position: 180, criticality: 'QtdTransportadaCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.fieldGroup:     [ { position: 50, qualifier: 'ModificacaoQuantidade', criticality: 'QtdTransportadaCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  UseAvailable;
+
+  @UI.hidden: true
+  UseAvailableCheckBox; 
+
+  @UI.lineItem:       [ { position: 180, criticality: 'QtdTransportadaCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  UseAvailableCheckBoxEnable;
+
+  //  @UI.hidden: true
+  //  EstoqueEmReserva;
+
+  @UI.lineItem:       [ { position: 190, criticality: 'QtdTransportadaCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.fieldGroup:     [ { position: 10, qualifier: 'ModificacaoValores', criticality: 'QtdTransportadaCriticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  QtdTransportada;
+  
+  @UI.hidden: true
+  NewUsedStock;
+
+  @UI.hidden: true
+  MaterialText;
+
+  @UI.hidden: true
+  CarrierText;
+
+  //  @UI.lineItem:       [ { position: 200 } ]
+  @UI.fieldGroup:     [ { position: 90, qualifier: 'Geral' } ]
+  @UI.selectionField: [ { position: 200 } ]
+  Driver;
+
+  @UI.hidden: true
+  DriverText;
+
+  //  @UI.lineItem:       [ { position: 210 } ]
+  @UI.fieldGroup:     [ { position: 100, qualifier: 'Geral' } ]
+  @UI.selectionField: [ { position: 210 } ]
+  Equipment;
+
+  @UI.hidden: true
+  EquipmentText;
+
+  //  @UI.lineItem:       [ { position: 220 } ]
+  @UI.fieldGroup:     [ { position: 110, qualifier: 'Geral' } ]
+  @UI.selectionField: [ { position: 220 } ]
+  Shipping_conditions;
+
+  @UI.hidden: true
+  ShippingConditionsText;
+
+  //  @UI.lineItem:       [ { position: 230 } ]
+  @UI.fieldGroup:     [ { position: 120, qualifier: 'Geral' } ]
+  @UI.selectionField: [ { position: 230 } ]
+  Shipping_type;
+
+  @UI.fieldGroup:     [ { position: 89, qualifier: 'Geral' } ]
+  @UI.selectionField: [ { position: 235 } ]
+  Transportador;
+  //  @UI.hidden: true
+  //  shippingtypetext;
+
+  //  @UI.lineItem:       [ { position: 240 } ]
+  //  @UI.fieldGroup:     [ { position: 130, qualifier: 'Geral' } ]
+  //  @UI.selectionField: [ { position: 240 } ]
+  //  Equipment_tow1;
+
+  //  @UI.hidden: true
+  //  EquipmentTow1Text;
+  //
+  //  @UI.lineItem:       [ { position: 250 } ]
+  //  @UI.fieldGroup:     [ { position: 140, qualifier: 'Geral' } ]
+  //  @UI.selectionField: [ { position: 250 } ]
+  //  Equipment_tow2;
+  //
+  //  @UI.hidden: true
+  //  EquipmentTow2Text;
+  //
+  ////  @UI.lineItem:       [ { position: 260 } ]
+  //  @UI.fieldGroup:     [ { position: 150, qualifier: 'Geral' } ]
+  ////  @UI.selectionField: [ { position: 260 } ]
+  //  Equipment_tow3;
+  //
+  //  @UI.hidden: true
+  //  EquipmentTow3Text;
+
+  //  @UI.lineItem:       [ { position: 270 } ]
+  @UI.fieldGroup:     [ { position: 160, qualifier: 'Geral' } ]
+  @UI.selectionField: [ { position: 270 } ]
+  Freight_mode;
+
+  @UI.hidden: true
+  FreightModeText;
+
+  @UI: { lineItem:       [ { hidden: true, position: 150, criticality: 'EstoqueLivreUEnableCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  EstoqueLivreUtilEnable;
+
+  @UI.hidden: true
+  EstoqueLivreUEnableCriticality;
+  //  @UI: { fieldGroup:     [ { position: 9, label: 'Nome usuário', qualifier: 'Sistema' } ] }
+  //  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Criado por', qualifier: 'Sistema' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Criado em', qualifier: 'Sistema' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, label: 'Modificado por', qualifier: 'Sistema' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, label: 'Modificado em', qualifier: 'Sistema' } ] }
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_O2_FISCAL_INBOUND {
+  expose ZC_MM_FISCAL_INB as FiscalInbound;
+}

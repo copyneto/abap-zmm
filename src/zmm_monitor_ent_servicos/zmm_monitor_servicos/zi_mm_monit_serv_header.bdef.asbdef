@@ -1,0 +1,161 @@
+managed implementation in class zclmm_monit_servicos unique;
+
+define behavior for ZI_MM_MONIT_SERV_HEADER alias _Header
+persistent table ztmm_monit_cabec
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  //  create;
+    update ( features : instance );
+  //  delete;
+
+  field ( readonly ) Lifnr, NrNf, Pedido, CnpjCpf, DtEmis, DtVenc, DtReg, HrReg, VlTotNf, Uname, DtBase;
+  field ( readonly ) Empresa, EmpresDest, Filial, RazSocial, MunicForn, MunicRemes;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  action ( features : instance ) simularfatura;
+  action ( features : instance ) registrarfatura;
+  action ( features : instance ) estornarfatura;
+  action ( features : instance ) excluirfatura;
+
+  association _Anexo; // { create; }
+  association _Item; // { create; }
+
+  mapping for ztmm_monit_cabec
+  {
+
+    Empresa = empresa;
+    filial = filial;
+    lifnr = lifnr;
+    NrNf = nr_nf;
+    Pedido = pedido;
+    CnpjCpf = cnpj_cpf;
+    DtEmis = dt_emis;
+    DtLancto = dt_lancto;
+    DtVenc = dt_venc;
+    DtReg = dt_reg;
+    HrReg = hr_reg;
+    VlTotNf = vl_tot_nf;
+    Uname = uname;
+    DtBase = dt_base;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}
+
+define behavior for ZI_MM_MONIT_SERV_ANEXO alias _Anexo
+persistent table ztmm_anexo_nf
+lock dependent by _Header
+authorization dependent by _Header
+etag master LocalLastChangedAt
+{
+
+  field ( readonly ) Empresa, FilialH, Lifnr, NrNf, CnpjCpf, Linha;
+  field ( readonly ) Filename, Mimetype, Conteudo;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  association _Header;
+
+  //  update;
+  delete;
+
+  mapping for ztmm_anexo_nf
+  {
+    NrNf = nr_nf;
+    CnpjCpf = cnpj_cpf;
+    Linha = linha;
+    Filename = filename;
+    Mimetype = mimetype;
+    Conteudo = conteudo;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}
+
+define behavior for ZI_MM_MONIT_SERV_ITEM alias _Item
+persistent table ztmm_monit_item
+lock dependent by _Header
+authorization dependent by _Header
+etag master LocalLastChangedAt
+{
+
+  field ( readonly ) Empresa, Filial, Lifnr, NrNf, NrPedido, ItmPedido;
+  field ( readonly ) Werks, CntContb, Lc, CstIcms, CstIpi, CstPis, CstCofins, Matnr, Qtdade, Qtdade_Lcto;
+  field ( readonly ) VlUnit, VlTotUn, CentroCust, Unid;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  association _Header;
+
+  update ( features : instance );
+
+  mapping for ZTMM_MONIT_ITEM
+  {
+    empresa = empresa;
+    filial = filial;
+    lifnr = lifnr;
+    NrNf = nr_nf;
+    NrPedido = nr_pedido;
+    ItmPedido = itm_pedido;
+    Cfop = cfop;
+    Iva = iva;
+    CtgNf = categ;
+    Unid = unid;
+    VlUnit = vl_unit;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}
+
+define behavior for ZI_MM_MONIT_SERV_SIMULA alias _Simula
+persistent table ztmm_monit_simul
+lock dependent by _Header
+authorization dependent by _Header
+etag master LocalLastChangedAt
+{
+
+  field ( readonly ) Empresa, Filial, Lifnr, NrNf, Linha, Bschl, Shkzg, Qsskz, Ktext, Hkont, Waers, Dmbtr, Ebeln, Ebelp, Mwskz;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  association _Header;
+
+  mapping for ZTMM_MONIT_SIMUL
+  {
+    empresa = empresa;
+    filial = filial;
+    lifnr = lifnr;
+    NrNf = nr_nf;
+    Linha = linha;
+    Bschl = bschl;
+    Shkzg = shkzg;
+    Qsskz = qsskz;
+    Ktext = ktext;
+    Hkont = hkont;
+    Waers = waers;
+    Dmbtr = dmbtr;
+    EBELN = EBELN;
+    EBELP = EBELP;
+    MWSKZ = MWSKZ;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}

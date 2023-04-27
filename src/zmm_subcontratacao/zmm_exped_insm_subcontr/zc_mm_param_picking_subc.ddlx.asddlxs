@@ -1,0 +1,7 @@
+@Metadata.layer: #CORE
+annotate entity ZC_MM_PARAM_PICKING_SUBC with
+{
+  @EndUserText.label: 'Picking'
+  Picking;
+
+}

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Criar documento Deposito fechado</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_DEP_FECHADO_CRIA_DOCTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_DEP_FECHADO_CRIA_DOC</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_CRIAR_DOCUMENTO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cria Documento</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_HIS_DEP_FEC</PARAMETER>
+       <TYP>ZCTGMM_HIS_DEP_FEC</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_HIS_DEP_FEC</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_CRIAR_DOCUMENTO_VENDA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cria Documento</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_HIS_DEP_FEC</PARAMETER>
+       <TYP>ZCTGMM_HIS_DEP_FEC</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_IMSEG</PARAMETER>
+       <TYP>TY_T_IMSEG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_HIS_DEP_FEC</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_IMSEG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Categoria de tabela c/estrutura IMSEG</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

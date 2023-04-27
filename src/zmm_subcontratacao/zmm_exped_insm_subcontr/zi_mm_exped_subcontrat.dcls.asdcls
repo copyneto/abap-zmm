@@ -1,0 +1,12 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_EXPED_SUBCONTRAT {
+    grant
+        select
+            on
+                ZI_MM_EXPED_SUBCONTRAT
+                    where
+                        ( Werks )  = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                         
+                        
+}

@@ -1,0 +1,9 @@
+projection;
+
+define behavior for ZC_MM_WFAPROV alias Aprovadores
+{
+  use create;
+  use update;
+  use delete;
+
+}

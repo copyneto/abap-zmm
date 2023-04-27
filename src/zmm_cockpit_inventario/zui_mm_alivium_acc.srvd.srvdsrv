@@ -1,0 +1,4 @@
+@EndUserText.label: 'Centro de Custos Projeto Novas Ordens'
+define service ZUI_MM_ALIVIUM_ACC {
+  expose ZC_MM_ALIVIUM_CC;
+}

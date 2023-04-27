@@ -1,0 +1,7 @@
+@Metadata.layer: #CORE
+annotate entity ZA_MM_LIB_PGTO_FIN_CLEAR with
+{
+  @EndUserText.label: 'Vencimento Residual'
+  VctoResidual;
+
+}

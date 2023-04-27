@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_ADMINISTRAR_EMISSAO_NF {
+    grant
+        select
+            on
+                ZC_MM_ADMINISTRAR_EMISSAO_NF
+                    where
+                        inheriting conditions from entity ZI_MM_ADMINISTRAR_EMISSAO_NF;
+                        
+}

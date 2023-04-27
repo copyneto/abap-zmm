@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def para Dados Mestre de Materiais'
+define service ZUI_MM_MESTRE_MATERIAL {
+  expose ZC_MM_MESTRE_MATERIAL;
+}

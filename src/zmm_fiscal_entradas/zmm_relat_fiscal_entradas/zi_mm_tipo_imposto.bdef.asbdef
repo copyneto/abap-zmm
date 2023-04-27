@@ -1,0 +1,27 @@
+managed; // implementation in class zbp_i_mm_tipo_imposto unique;
+
+define behavior for ZI_MM_TIPO_IMPOSTO //alias <alias_name>
+persistent table ztmmgrpimp
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create ) TaxType, TaxGroup;
+  field ( readonly : update ) TaxType;
+  field ( readonly ) TaxTypeText, TaxGroupText,CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmmgrpimp
+  {
+    TaxType = taxtyp;
+    TaxGroup = taxgrp;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

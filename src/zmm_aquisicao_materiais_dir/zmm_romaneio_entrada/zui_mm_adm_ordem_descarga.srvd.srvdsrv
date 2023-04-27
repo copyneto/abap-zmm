@@ -1,0 +1,9 @@
+@EndUserText.label: 'Service Def Adm Ordem de Descarga'
+define service ZUI_MM_ADM_ORDEM_DESCARGA {
+  expose ZC_MM_ADM_ORDEM_DESCARGA;
+  expose ZC_MM_ADM_ORDEM_DESCARGA_ITEM;
+  expose I_PurchaseOrder;
+  expose ZI_MM_VH_STATUS_ORDEM_ROMA;
+  expose ZI_MM_VH_STATUS_ARMAZENADO;
+  expose ZI_MM_VH_STATUS_COMPENSADO;
+}

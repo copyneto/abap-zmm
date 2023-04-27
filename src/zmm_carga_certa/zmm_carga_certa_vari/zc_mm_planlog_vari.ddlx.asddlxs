@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+annotate view ZC_MM_PLANLOG_VARI
+    with 
+{
+
+        @UI: {
+    lineItem: [{ position: 10, label: 'Transação' }],
+    identification: [{ position: 10, label: 'Transação' }] ,
+    selectionField: [{ position: 10 }] }
+    @EndUserText.label: 'Transação'
+      report;
+      
+       @UI: {
+    lineItem: [{ position: 20, label: 'Variante' }],
+    identification: [{ position: 20, label: 'Variante' }],
+    selectionField: [{ position: 20 }] }
+    @EndUserText.label: 'Variante'
+  vari;
+  
+      @UI: {
+    lineItem: [{ position: 30, label: 'Campo' }],
+    identification: [{ position: 20, label: 'Campo' }]
+     }
+    field;
+    
+          @UI: {
+    lineItem: [{ position: 40, label: 'Low' }],
+    identification: [{ position: 40, label: 'Low' }]
+     }
+    low;
+    
+              @UI: {
+    lineItem: [{ position: 50, label: 'Option' }],
+    identification: [{ position: 50, label: 'Option' }]
+     }
+    opti;
+      
+              @UI: {
+    lineItem: [{ position: 60, label: 'High' }],
+    identification: [{ position: 60, label: 'High' }]
+     }
+    high;
+}

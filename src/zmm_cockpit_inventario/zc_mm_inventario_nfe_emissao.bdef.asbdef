@@ -1,0 +1,10 @@
+projection;
+
+define behavior for ZC_MM_INVENTARIO_NFE_EMISSAO alias _Inventario
+{
+
+  use action encerraInventario;
+  use action gerarNota;
+  use action gerarContabil;
+  use action estornarContabil;
+}

@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de autorização'
+@MappingRole: true
+define role ZC_MM_INSUMOS_DIV {
+    grant
+        select
+            on
+                ZC_MM_INSUMOS_DIV
+                    where
+                        inheriting conditions from entity ZI_MM_INSUMOS_DIV;
+                        
+}

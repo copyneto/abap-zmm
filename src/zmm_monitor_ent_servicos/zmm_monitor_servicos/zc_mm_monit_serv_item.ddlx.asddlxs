@@ -1,0 +1,128 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Item',
+                     title: { value: 'ItmPedido' },
+                     typeNamePlural: 'Itens'
+                   }
+     }
+annotate entity ZC_MM_MONIT_SERV_ITEM with
+{
+
+  @UI.facet: [
+
+                { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+                 { id:            'geral',
+                 purpose:         #STANDARD,
+                 parentId:        'Facet',
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Item',
+                 targetQualifier: 'geral',
+                 position:        10 }
+
+  //             {  id:             'Modificar',
+  //                purpose:        #STANDARD,
+  //                label:          'Dados Modificação',
+  //                parentId:       'Facet',
+  //                type:           #FIELDGROUP_REFERENCE,
+  //                targetQualifier: 'Modificar',
+  //                position:       20 }
+                ]
+
+  @UI.hidden: true
+  Empresa;
+  @UI.hidden: true
+  Filial;
+  @UI.hidden: true
+  Lifnr;
+  @UI.hidden: true
+  NrNf;
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ] }
+  @UI.fieldGroup:         [ { position: 20, qualifier: 'geral' } ]
+  NrPedido;
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ] }
+  @UI.fieldGroup:         [ { position: 30, qualifier: 'geral' } ]
+  ItmPedido;
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ] }
+  @UI.fieldGroup:         [ { position: 10, qualifier: 'geral' } ]
+  Werks;
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ] }
+  @UI.fieldGroup:         [ { position: 40, qualifier: 'geral' } ]
+  CntContb;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  @UI.fieldGroup:         [ { position: 50, qualifier: 'geral' } ]
+  Iva;
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ] }
+  @UI.fieldGroup:         [ { position: 60, qualifier: 'geral' } ]
+  CtgNf;
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ] }
+  @UI.fieldGroup:         [ { position: 70, qualifier: 'geral' } ]
+  Cfop;
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ] }
+  @UI.fieldGroup:         [ { position: 80, qualifier: 'geral' } ]
+  CstIcms;
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ] }
+  @UI.fieldGroup:         [ { position: 90, qualifier: 'geral' } ]
+  CstIpi;
+  @UI: { lineItem:        [ { position: 100 } ],
+         identification:  [ { position: 100 } ] }
+  @UI.fieldGroup:         [ { position: 100, qualifier: 'geral' } ]
+  CstPis;
+  @UI: { lineItem:        [ { position: 110 } ],
+         identification:  [ { position: 110 } ] }
+  @UI.fieldGroup:         [ { position: 110, qualifier: 'geral' } ]
+  CstCofins;
+  @UI: { lineItem:        [ { position: 120 } ],
+         identification:  [ { position: 120 } ] }
+  @UI.fieldGroup:         [ { position: 120, qualifier: 'geral' } ]
+  Matnr;
+  @UI: { lineItem:        [ { position: 130 } ],
+         identification:  [ { position: 130 } ] }
+  @UI.fieldGroup:         [ { position: 130, qualifier: 'geral' } ]
+  Lc;
+//  @UI: { lineItem:        [ { position: 140 } ],
+//         identification:  [ { position: 140 } ] }
+//  @UI.fieldGroup:         [ { position: 140, qualifier: 'geral' } ]
+//  Qtdade;
+  @UI: { lineItem:        [ { position: 150 } ],
+         identification:  [ { position: 150 } ] }
+  @UI.fieldGroup:         [ { position: 150, qualifier: 'geral' } ]
+  Qtdade_Lcto;  
+  @UI: { lineItem:        [ { position: 160 } ],
+         identification:  [ { position: 160 } ] }
+  @UI.fieldGroup:         [ { position: 160, qualifier: 'geral' } ]
+  VlUnit;
+  @UI: { lineItem:        [ { position: 170 } ],
+         identification:  [ { position: 170 } ] }
+  @UI.fieldGroup:         [ { position: 170, qualifier: 'geral' } ]
+  VlTotUn;
+  @UI: { lineItem:        [ { position: 180 } ],
+         identification:  [ { position: 180 } ] }
+  @UI.fieldGroup:         [ { position: 180, qualifier: 'geral' } ]
+  CentroCust;
+  @UI.hidden: true
+  Unid;
+  @UI.hidden: true
+  MatnrText;
+  @UI.hidden: true
+  WerksText;
+  @UI.hidden: true
+  Currency;
+  //  /* Associations */
+  //  _Header;
+  //  _Matnr;
+  //  _Werks;
+
+}

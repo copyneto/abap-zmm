@@ -1,0 +1,27 @@
+managed; // implementation in class zbp_i_mm_alivium_cc unique;
+
+define behavior for ZI_MM_ALIVIUM_CC alias _AliviumCentroCusto
+persistent table ztmm_alivium_cc
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) Bukrs;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_alivium_cc
+  {
+    Bukrs = bukrs;
+    Kostl = kostl;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

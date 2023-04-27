@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Bens de consumo</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Movimento de material gerado: Documento &amp; para o ano &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro ao tentar gerar o movimento de material.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Preencher campos obrigatórios</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Simulação de impostos realizada com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Erro na simulação de impostos</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>NF criada com sucesso: &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Erro ao tentar criar NF.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Sucesso ao contabilizar: Documento &amp; para o ano &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Erro ao tentar contabilizar</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Estorno p/ mov. de material gerado: Documento &amp; para o ano &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Erro ao tentar estornar o movimento de material.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Dados inválidos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>NF de estorno de entrada criada com sucesso: &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Erro ao tentar criar NF de estorno de entrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Sucesso ao estornar contabiliz.: Documento &amp;1 para o ano &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Erro ao tentar estornar a contabilização</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Erro no app: Chave para o processo já cadastrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Prod acabado ou mat. revenda não cadastrado. Solicitar reg. eq. cadastro</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Material não ampliado, solicitar ampliação para equipe de cadastro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Quantidade não disponível no centro e depósito informados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Quantidade de imobilizados difere da quantidade total</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Para estornar NF saída, clique no link Estornar e execute o procedimento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Material inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Chave material, centro e depósito obrigatórios</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Centro inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Depósito inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Quantidade deve ser maior que 1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Elem. PEP inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>100</MSGNR>
+     <TEXT>Teste app</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

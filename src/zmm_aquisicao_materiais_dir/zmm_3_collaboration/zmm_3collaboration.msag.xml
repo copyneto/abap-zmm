@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_3COLLABORATION</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Classe de mensagens para 3Collaboration</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3COLLABORATION</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3COLLABORATION</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Execução de JOB finalizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3COLLABORATION</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Nenhum registro encontrado para os parâmetros informados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3COLLABORATION</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>JOB disparado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3COLLABORATION</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Proxy executado com sucesso.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

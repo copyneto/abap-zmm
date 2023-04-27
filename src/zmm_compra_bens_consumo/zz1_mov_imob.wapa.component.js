@@ -1,0 +1,1 @@
+sap.ui.define(["sap/suite/ui/generic/template/lib/AppComponent"],function(e){return e.extend("br.trescoracoes.com.movimob.Component",{metadata:{manifest:"json"}})});                                                                                          

@@ -1,0 +1,21 @@
+projection;
+
+define behavior for ZC_MM_HEADER_INTME alias Header
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _item { create; }
+
+}
+
+define behavior for ZC_MM_ITEM_INTME alias Item
+use etag
+{
+  use update;
+  use delete;
+
+  use association _header;
+}

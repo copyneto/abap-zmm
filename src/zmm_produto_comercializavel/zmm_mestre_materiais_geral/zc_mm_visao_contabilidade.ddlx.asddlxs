@@ -1,0 +1,181 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_VISAO_CONTABILIDADE with
+{
+  @Consumption.semanticObject: 'zMaterial'
+  @UI.lineItem: [{ position: 10, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ]
+  @UI.selectionField: [{position: 10}]
+  Product;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{position: 20}]
+  mtart;
+  @UI.lineItem: [{ position: 30 }]
+  maktxpt;
+  @UI.lineItem: [{ position: 40 }]
+  maktxen;
+  @UI.lineItem: [{ position: 50 }]
+  maktxes;
+  @UI.lineItem: [{ position: 60 }]
+  maktg;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{position: 30}]
+  ersda;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{position: 40}]
+  ernam;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{position: 50}]
+  matkl;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.selectionField: [{position: 60}]
+  extwg;
+  @UI.lineItem: [{ position: 110 }]
+  @UI.selectionField: [{position: 70}]
+  werks;
+  @UI.lineItem: [{ position: 120 }]
+  @UI.selectionField: [{position: 80}]
+  prctr;
+  @UI.lineItem: [{ position: 130 }]
+  @UI.selectionField: [{position: 90}]
+  bwtar;
+  @UI.lineItem: [{ position: 150 }]
+  @UI.selectionField: [{position: 100}]
+  mtuse;
+  @UI.lineItem: [{ position: 160 }]
+  @UI.selectionField: [{position: 110}]
+  mtorg;
+  @UI.lineItem: [{ position: 140 }]
+  @UI.selectionField: [{position: 120}]
+  vkorg;  
+  @UI.selectionField: [{position: 130}]
+  idrfb;
+  @UI.lineItem: [{ exclude: true }]
+  vtweg;
+  @UI.lineItem: [{ exclude: true }]
+  bwkey;
+  @UI.lineItem: [{ exclude: true }]
+  fbwst;
+  @UI.lineItem: [{ exclude: true }]
+  lbwst;
+  @UI.lineItem: [{ exclude: true }]
+  vbwst;
+  @UI.lineItem: [{ exclude: true }]
+  pdatl;
+  @UI.lineItem: [{ exclude: true }]
+  kosgr;
+  @UI.lineItem: [{ exclude: true }]
+  hrkft;
+  @UI.lineItem: [{ exclude: true }]
+  abwkz;
+  @UI.lineItem: [{ exclude: true }]
+  mbrue;
+  @UI.lineItem: [{ exclude: true }]
+  mlmaa;
+  @UI.lineItem: [{ exclude: true }]
+  bwspa;
+  @UI.lineItem: [{ exclude: true }]
+  kalnr;
+  @UI.lineItem: [{ exclude: true }]
+  pprdz;
+  @UI.lineItem: [{ exclude: true }]
+  pprdv;
+  @UI.lineItem: [{ exclude: true }]
+  stprv;
+  @UI.lineItem: [{ exclude: true }]
+  bwph1;
+  @UI.lineItem: [{ exclude: true }]
+  vplpx;
+  @UI.lineItem: [{ exclude: true }]
+  lplpx;
+  @UI.lineItem: [{ exclude: true }]
+  zplpr;
+  @UI.lineItem: [{ exclude: true }]
+  lplpr;
+  @UI.lineItem: [{ exclude: true }]
+  zplp1;
+  @UI.lineItem: [{ exclude: true }]
+  zplp2;
+  @UI.lineItem: [{ exclude: true }]
+  zplp3;
+  @UI.lineItem: [{ exclude: true }]
+  vjbwh;
+  @UI.lineItem: [{ exclude: true }]
+  vjbws;
+  @UI.lineItem: [{ exclude: true }]
+  ownpr;
+  @UI.lineItem: [{ exclude: true }]
+  timestamp;
+  @UI.lineItem: [{ exclude: true }]
+  xlifo;
+  @UI.lineItem: [{ exclude: true }]
+  pstat;
+  @UI.lineItem: [{ exclude: true }]
+  laepr;
+  @UI.lineItem: [{ exclude: true }]
+  meins;
+  @UI.lineItem: [{ exclude: true }]
+  peinh;
+  @UI.lineItem: [{ exclude: true }]
+  vjsal;
+  @UI.lineItem: [{ exclude: true }]
+  vmsav;
+  @UI.lineItem: [{ exclude: true }]
+  salkv;
+  @UI.lineItem: [{ exclude: true }]
+  vmsal;
+  @UI.lineItem: [{ exclude: true }]
+  vers1;
+  @UI.lineItem: [{ exclude: true }]
+  kalsc;
+  @UI.lineItem: [{ exclude: true }]
+  bklas;
+  @UI.lineItem: [{ exclude: true }]
+  eklas;
+  @UI.lineItem: [{ exclude: true }]
+  oklas;
+  @UI.lineItem: [{ exclude: true }]
+  kziwl;
+  @UI.lineItem: [{ exclude: true }]
+  abciw;
+  @UI.lineItem: [{ exclude: true }]
+  ekalr;
+  @UI.lineItem: [{ exclude: true }]
+  vprsv;
+  @UI.lineItem: [{ exclude: true }]
+  zpld1;
+  @UI.lineItem: [{ exclude: true }]
+  zpld2;
+  @UI.lineItem: [{ exclude: true }]
+  zpld3;
+  @UI.lineItem: [{ exclude: true }]
+  wlinl;
+  @UI.lineItem: [{ exclude: true }]
+  vmkum;
+  @UI.lineItem: [{ exclude: true }]
+  pdatz;
+  @UI.lineItem: [{ exclude: true }]
+  lvorm;
+  @UI.lineItem: [{ exclude: true }]
+  kaln1;
+  @UI.lineItem: [{ exclude: true }]
+  hkmat;
+  @UI.lineItem: [{ exclude: true }]
+  mypol;
+  @UI.lineItem: [{ exclude: true }]
+  zkprs;
+  @UI.lineItem: [{ exclude: true }]
+  verpr;
+  @UI.lineItem: [{ exclude: true }]
+  stprs;
+  @UI.lineItem: [{ exclude: true }]
+  bwprh;
+  @UI.lineItem: [{ exclude: true }]
+  bwprs;
+  @UI.lineItem: [{ exclude: true }]
+  bwps1;
+  @UI.lineItem: [{ exclude: true }]
+  salk3;
+  @UI.lineItem: [{ exclude: true }]
+  bwva1;
+  @UI.lineItem: [{ exclude: true }]
+  waers;
+}

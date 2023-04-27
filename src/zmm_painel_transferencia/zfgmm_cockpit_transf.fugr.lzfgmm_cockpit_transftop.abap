@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGMM_COCKPIT_TRANSF.         "MESSAGE-ID ..
+
+* INCLUDE LZFGMM_COCKPIT_TRANSFD...          " Local class definition

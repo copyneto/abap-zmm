@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Movimentar estoque livre para bloqueado</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZMM_LIVRE_BLOQ_BACKGRDTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZMM_LIVRE_BLOQ_BACKGRD</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZMM_LIVRE_BLOQ_BACKGRD</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Baixar Insumo para Ordem de Produção</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <TYP>TY_T_MSEG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela MSEG</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

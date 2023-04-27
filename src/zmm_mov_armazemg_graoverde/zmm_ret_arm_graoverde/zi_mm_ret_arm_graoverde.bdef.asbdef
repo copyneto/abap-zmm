@@ -1,0 +1,28 @@
+unmanaged implementation in class zclmm_ret_arm_graoverde unique;
+
+define behavior for ZI_MM_RET_ARM_GRAOVERDE //alias <alias_name>
+//persistent table <???>
+//lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  //  delete;
+//  action ( features : instance ) enviar result [1] $self;
+//  action ( features : instance ) enviar ;
+//  action enviar result [1] $self;
+
+//  function teste result [1] $self;
+
+action atribuirMaterial parameter ZC_MM_MATERIAIS_ABS ;
+action concluirEM;
+action limpar;
+//static function enviar parameter yc_poc_material result [1] $self;
+
+//  mapping for YI_POC_MATERIAL
+//  {
+//    TipoMaterial = TipoMaterial;
+//    GrupoMercadoria = GrupoMercadoria;
+//    MaterialEditavel = MaterialEditavel;
+//  }
+
+}

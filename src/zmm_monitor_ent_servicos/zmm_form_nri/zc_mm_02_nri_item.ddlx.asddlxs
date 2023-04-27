@@ -1,0 +1,152 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Detalhes NFI',
+    typeNamePlural: 'NFI',
+    title: {  type: #STANDARD,  label: 'Dados', value: 'PurchaseOrder' }
+  }}
+
+annotate entity zc_mm_02_nri_item with
+{
+
+  @UI.facet: [
+
+                { label: 'Cabeçalho',
+                  id: 'IdCab',
+                  type: #COLLECTION,
+                  position: 10 },
+
+                  { label: 'Cabeçalho',
+                   purpose: #STANDARD,
+                   position: 10,
+                   type: #FIELDGROUP_REFERENCE,
+                   parentId: 'IdCab',
+                   targetQualifier: 'CabGroup' },
+
+                  { label: 'Fornecedor',
+                    id: 'IdFor',
+                    type: #COLLECTION,
+                    position: 20 },
+
+                  { label: 'Fornecedor',
+                   purpose: #STANDARD,
+                   position: 20,
+                   type: #FIELDGROUP_REFERENCE,
+                   parentId: 'IdFor',
+                   targetQualifier: 'ForGroup' }
+               ]
+
+  @UI:{ lineItem:       [ { position: 10  } ],
+        identification: [ { position: 10  } ],
+        selectionField: [ { position: 10  } ] }
+  PurchaseOrder;
+  @UI:{ lineItem:       [ { position: 20  } ],
+        identification: [ { position: 20  } ] }
+  PurchaseOrderItem;
+  @UI:{ lineItem:       [ { position: 30  } ],
+        identification: [ { position: 30  } ] }
+  Material;
+  @UI:{ lineItem:       [ { position: 40  } ],
+        identification: [ { position: 40  } ] }
+  PurchaseOrderItemText;
+  @UI:{ lineItem:       [ { position: 50  } ],
+        identification: [ { position: 50  } ] }
+  PurchaseOrderQuantityUnit;
+//  @UI:{ lineItem:       [ { position: 60  } ],
+//        identification: [ { position: 60  } ] }
+//  contador;
+
+  @UI:{ identification: [ { position: 70  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 10 }] }
+  CreationDate;
+  @UI:{ identification: [ { position: 80  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 20 }] }
+  BusinessPartner;
+  @UI:{ identification: [ { position: 90  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 30 }] }
+  PersonFullName;
+  @UI:{ identification: [ { position: 100  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 40 }] }
+  StreetName;
+  @UI:{ identification: [ { position: 110  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 50 }] }
+  District;
+  @UI:{ identification: [ { position: 120  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 60 }] }
+  Region;
+  @UI:{ identification: [ { position: 130  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 70 }] }
+  Country;
+  @UI:{ identification: [ { position: 140  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 80 }] }
+  PostalCode;
+  @UI:{ identification: [ { position: 150  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 90 }] }
+  @EndUserText.label      : 'CNPJ'
+  CNPJ;
+  @UI:{ identification: [ { position: 160  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 100 }] }
+  @EndUserText.label      : 'CPF'
+  CPF;
+  @UI:{ identification: [ { position: 170  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 110 }] }
+  PhoneNumber;
+  @UI:{ identification: [ { position: 180  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 130 }] }
+  @EndUserText.label      : 'Insc. Estadual'
+  InsEstadual;
+  @UI:{ identification: [ { position: 190  } ],
+        fieldGroup:     [ { qualifier: 'CabGroup', position: 140 }] }
+  @EndUserText.label      : 'Insc. Municipal'
+  InsMunicipal;
+  @UI:{ identification: [ { position: 200  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 10 }] }
+  F_FullName;
+  @UI:{ identification: [ { position: 210  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 20 }] }
+  @EndUserText.label      : 'CNPJ'
+  F_CNPJ;
+  @UI:{ identification: [ { position: 220  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 30 }] }
+  F_StreetName;
+  @UI:{ identification: [ { position: 230  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 40 }] }
+  F_PostalCode;
+  @UI:{ identification: [ { position: 240  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 50 }] }
+  F_CityName;
+  @UI:{ identification: [ { position: 250  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 60 }] }
+  F_PhoneNumber;
+  @UI:{ identification: [ { position: 260  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 70 }] }
+  F_Region;
+  @UI:{ identification: [ { position: 270  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 80 }] }
+  F_Country;
+  @UI:{ identification: [ { position: 280  } ],
+        fieldGroup:     [ { qualifier: 'ForGroup', position: 90 }] }
+  @EndUserText.label      : 'Insc. Estadual'
+  F_InsEstadual;
+  //  @UI:{ identification: [ { position: 290  } ],
+  //        fieldGroup:     [ { qualifier: 'ForGroup', position: 100 }] }
+  //  PhoneNumber1;
+  //  @UI:{ identification: [ { position: 300 , label: 'Número da nota fiscal' } ],
+  //        fieldGroup:     [ { qualifier: 'ForGroup', position: 110 }],
+  //        selectionField: [ { position: 20 } ] }
+  //  @EndUserText.label: 'N° da NF'
+  //  xblnr;
+  //  @UI:{ identification: [ { position: 310  } ],
+  //        fieldGroup:     [ { qualifier: 'ForGroup', position: 120 }] }
+  //  menge;
+  //  @UI:{ identification: [ { position: 320  } ],
+  //        fieldGroup:     [ { qualifier: 'ForGroup', position: 130 }] }
+  //  charg;
+  //  @UI:{ identification: [ { position: 330  } ],
+  //        fieldGroup:     [ { qualifier: 'ForGroup', position: 140 }] }
+  //  lgort;
+  //  @UI:{ identification: [ { position: 340  } ],
+  //        fieldGroup:     [ { qualifier: 'ForGroup', position: 150 }] }
+  //  afnam;
+
+}

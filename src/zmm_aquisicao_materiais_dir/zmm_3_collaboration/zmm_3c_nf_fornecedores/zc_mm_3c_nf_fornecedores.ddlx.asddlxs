@@ -1,0 +1,88 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Entrada NF Fornecedores',
+                  typeName: 'Interface 3Collaboration',
+                  title: { type: #STANDARD, value: 'SubObjectText' } }
+annotate view ZC_MM_3C_NF_FORNECEDORES with
+{
+
+  @UI.facet: [
+  //    { purpose: #HEADER,
+  //      position: 10,
+  //      type: #DATAPOINT_REFERENCE,
+  //      targetQualifier: 'StatusData' },
+
+    { position: 10,
+      label: 'JOB',
+      id: 'JOB',
+      type: #COLLECTION },
+
+        { label: 'Variante',
+          position: 10,
+          purpose: #STANDARD,
+          type: #IDENTIFICATION_REFERENCE,
+          parentId: 'JOB' },
+
+        { label: 'Datas',
+          position: 20,
+          purpose: #STANDARD,
+          type: #FIELDGROUP_REFERENCE,
+          parentId: 'JOB',
+          targetQualifier: 'DatesGroup' },
+
+    { position: 20,
+      label: 'Parâmetros',
+      id: 'Parametros',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_Variant' },
+      
+    { position:      30,
+      id:            'Log',
+      label:         'Log',
+      purpose:       #STANDARD,
+      type:          #LINEITEM_REFERENCE,
+      targetElement: '_Log' }
+  ]
+  
+  @UI: { identification: [{type: #FOR_ACTION, dataAction: 'execute', label: 'Executar JOB' }], 
+         lineItem:       [{type: #FOR_ACTION, dataAction: 'execute', label: 'Executar JOB' }] }
+  JobUUId;
+  
+  @UI: { selectionField: [{position: 10}],
+         identification: [{position: 10}],
+         lineItem:       [{position: 10}] }
+  LogExternalId;
+  @UI: { selectionField: [{position: 20}],
+         fieldGroup:     [{position: 10, qualifier: 'DatesGroup'}],
+         lineItem:       [{position: 20}],
+         textArrangement: #TEXT_FIRST }
+  CreatedBy;
+  @UI: { selectionField: [{position: 30}]}
+  @Consumption.filter.selectionType: #INTERVAL
+  CreatedAt;
+  @UI: { fieldGroup:     [{position: 20, qualifier: 'DatesGroup'}],
+         lineItem:       [{position: 30}] }
+  @Consumption.filter.selectionType: #INTERVAL
+  CreatedAtTs;
+
+  @UI.hidden: true
+  Object;
+  @UI.hidden: true
+  ObjectText;
+  @UI.hidden: true
+  SubObject;
+  @UI.hidden: true
+  SubObjectText;
+  @UI.hidden: true
+  CreatedByName;
+  @UI.hidden: true
+  ChangedBy;
+  @UI.hidden: true
+  ChangedByName;
+  @UI.hidden: true
+  ChangedAt;
+  @UI.hidden: true
+  ChangedAtTs;
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

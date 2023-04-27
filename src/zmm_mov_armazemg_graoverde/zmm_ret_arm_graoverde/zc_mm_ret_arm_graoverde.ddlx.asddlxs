@@ -1,0 +1,148 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Material',
+    typeNamePlural: 'Materiais',
+    title: {
+      type: #STANDARD,
+      label: 'Material',
+      value: 'LifnrCode'
+    }
+  } }
+@UI.lineItem: [{criticality: 'StatusCriticality' }]
+annotate view ZC_MM_RET_ARM_GRAOVERDE with
+{
+  @UI.facet: [ { id:         'Pedido',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Pedido',
+               position:      10 }]
+
+  @UI: { lineItem:        [ { position: 10, label: 'Fornecedor' } ],
+         identification:  [ { position: 10, label: 'Fornecedor' } ] }
+  @UI : { selectionField: [ { position: 10} ] }
+  LifnrCode;
+  //  @UI: { lineItem:        [ { position: 20, label: 'Descr.Fornecedor' } ],
+  //  identification:  [ { position: 20, label: 'Descr.Fornecedor' } ] }
+  //  LifnrCodeName;
+  @UI: { lineItem:        [ { position: 30, label: 'Centro' } ],
+         identification:  [ { position: 30, label: 'Centro' } ] }
+  @UI : { selectionField: [ { position: 20} ] }
+  WerksCode;
+  @UI: { lineItem:        [ { position: 40, label: 'CFOP' } ],
+         identification:  [ { position: 40, label: 'CFOP' } ] }
+  @UI : { selectionField: [ { position: 30 } ] }
+  Cfop;
+  @UI: { lineItem:        [ { position: 50, label: 'NF-e' } ],
+         identification:  [ { position: 50, label: 'NF-e' } ] }
+  @UI : { selectionField: [ { position: 40  } ] }
+  Nnf;
+  @UI: { lineItem:        [ { position: 60, label: 'XML' } ],
+         identification:  [ { position: 60, label: 'XML' } ] }
+  @UI : { selectionField: [ { position: 50  } ] }
+  XML;
+  @UI: { lineItem:        [ { position: 70, label: 'Data Emissão' } ],
+         identification:  [ { position: 70, label: 'Data Emissão' } ] }
+  @UI : { selectionField: [ { position: 60  } ] }
+  DataEmissao;
+  @UI: { lineItem:        [ { position: 80, label: 'Item' } ],
+         identification:  [ { position: 80, label: 'Item' } ] }
+  Nitem;
+  //  @UI: { lineItem:        [ { position: 90, label: 'Descr.Material' } ],
+  //         identification:  [ { position: 90, label: 'Descr.Material' } ] }
+  //  Xprod;
+  @UI: { lineItem:        [ { position: 100, label: 'Qtd.' } ],
+         identification:  [ { position: 100, label: 'Qtd.' } ] }
+  Qcom;
+  @UI: { lineItem:        [ { position: 110, label: 'UM' } ],
+         identification:  [ { position: 110, label: 'UM' } ] }
+  Ucom;
+
+  //  @UI: { lineItem:        [ { position: 120, label: 'Material' } ],
+  //         identification:  [ { position: 120, label: 'Material' } ] }
+  //  @UI.textArrangement: #TEXT_ONLY
+  //  Material;
+  @UI: { lineItem:        [ { position: 130 } ],
+         identification:  [ { position: 130 } ] }
+  @EndUserText.label: 'Material Atribuído'
+  //@UI.hidden: true
+  MaterialAtribuido;
+  //  @UI.hidden: true
+  //  matnrname;
+  //  @UI.hidden: true
+  //  matnrname2;
+  @UI: { lineItem:        [ { position: 140 } ],
+         identification:  [ { position: 140 } ] }
+  @EndUserText.label: 'Processo'
+  Processo;
+
+  @UI.hidden: true
+  ProcDesc;
+
+  @UI: { lineItem:        [ { position: 150 } ],
+         identification:  [ { position: 150 } ] }
+  @EndUserText.label: 'Material Remessa'
+  MaterialRemess;
+
+  @UI: { lineItem:        [ { position: 160 } ],
+         identification:  [ { position: 160 } ] }
+  @EndUserText.label: 'Lote'
+  charg;
+
+  @UI: { lineItem:        [ { position: 170 } ],
+         identification:  [ { position: 170 } ] }
+  @EndUserText.label: 'Quantidade do Lote'
+  qtde;
+
+  @UI.hidden: true
+  ERFME;
+
+  @UI: { lineItem:        [ { position: 180, label: 'Data Entrada' } ],
+         identification:  [ { position: 180, label: 'Data Entrada' } ] }
+  Credat;
+  @UI: { lineItem:        [ { position: 190, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON} ],
+         identification:  [ { position: 190, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON} ] }
+  @UI : { selectionField: [ { position: 80  } ]}
+  Status;
+  @UI.hidden: true
+  StatusCriticality;
+  @UI.hidden: true
+  DocNum;
+  @UI: { lineItem:        [ { position: 200, label: 'DocNum'} ],
+         identification:  [ { position: 200, label: 'DocNum' } ] }
+  DocNum2;
+  @UI: { lineItem:        [ { position: 210, label: 'Doc.Material' } ],
+         identification:  [ { position: 210, label: 'Doc.Material' } ] }
+  DocMaterial;
+  //  @UI: { lineItem:        [ { position: 181, label: 'Mat.Remessa' } ],
+  //         identification:  [ { position: 181, label: 'Mat.Remessa' } ] }
+  //      MatRemessa;
+  //  @UI: { lineItem:        [ { position: 182, label: 'Mat.Retorno' } ],
+  //         identification:  [ { position: 182, label: 'Mat.Retorno' } ] }
+  //      MatRetorno;
+  //   @UI: { lineItem:        [ { position: 183, label: 'Lote' } ],
+  //         identification:  [ { position: 183, label: 'Lote' } ] }
+  //      Lote;
+  //  @UI: { lineItem:        [ { position: 184, label: 'Qtd.Retorno' } ],
+  //         identification:  [ { position: 184, label: 'Qtd.Retorno' } ] }
+  //      QtdRetorno;
+  //  @UI: { lineItem:        [ { position: 185, label: 'Und.Retorno' } ],
+  //         identification:  [ { position: 185, label: 'Und.Retorno' } ] }
+  //      undretorno;
+  @UI: { lineItem:        [ { type: #FOR_ACTION, dataAction: 'atribuirMaterial', label: 'Atribuir Material', invocationGrouping: #CHANGE_SET } ]}
+  @UI.hidden: true
+  Vprod;
+  @UI: { lineItem:        [ { type: #FOR_ACTION, dataAction: 'limpar', label: 'Limpar Atribuição', invocationGrouping: #CHANGE_SET } ]}
+  @UI.hidden: true
+  Cprod;
+  @UI: { lineItem:        [ { type: #FOR_ACTION, dataAction: 'concluirEm', label: 'Concluir', invocationGrouping: #CHANGE_SET } ]}
+  @UI.hidden: true
+  Serie;
+  @UI.hidden: true
+  TextLifnr;
+  @UI.hidden: true
+  TextWerks;
+  //  @UI.hidden: true
+  //  textmatnr;
+
+}

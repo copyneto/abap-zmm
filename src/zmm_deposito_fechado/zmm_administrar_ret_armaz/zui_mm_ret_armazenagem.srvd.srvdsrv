@@ -1,0 +1,12 @@
+@EndUserText.label: 'Retorno da Armazenagem'
+define service ZUI_MM_RET_ARMAZENAGEM {
+  expose ZC_MM_RET_ARMAZENAGEM_APP;
+  expose ZC_MM_RET_ARMAZENAGEM_SERIE;
+  expose zc_mm_ret_armazenagem_msg;
+  expose ZI_MM_VH_DF_TRANSPORTADOR;
+  expose ZI_MM_VH_DF_MOTORISTA;
+  expose ZI_MM_VH_DF_VEICULO;
+  expose ZI_CA_VH_VSBED;
+  expose ZI_CA_VH_VSART;
+  expose ZI_MM_VH_DF_MODALIDADE_FRETE;
+}

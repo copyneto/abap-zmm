@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition ALV CC'
+define service ZUI_ALV_CC {
+  expose ZC_MM_ALV_CC;
+}

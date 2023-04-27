@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Cockpit de Liberação</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Desconto Comercial executado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro na atualização do Desconto Comercial.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Desconto Financeiro executado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Erro na atualização do Desconto Financeiro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Retorno Comercial executado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro na atualização do Retorno Comercial.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Liberação Comercial executada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Erro na atualização da Liberação Comercial.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Liberação Financeira executada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Erro na atualização da Liberação Financeira.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Documento Finalizado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Erro na Finalização do Documento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Documento criado &amp;1 &amp;2 &amp;3 com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Erro ao criar Documento de Desconto.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Despesa Comercial</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Despesa Financeira</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_COCKPIT_LIB</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Despesa Comercial e Financeira</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

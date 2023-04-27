@@ -1,0 +1,62 @@
+projection;
+
+define behavior for ZC_MM_LIB_PGTO_APP alias LibPgtoGVApp
+{
+  use update;
+  use association _fat;
+  use association _adi;
+  use association _dev;
+  use association _des;
+  use association _desComFin;
+
+  use action descontoFinanceiro;
+  use action retornarComercial;
+  use action contabilizarDesconto;
+  use action liberadoFinanceiro;
+  use action finalizado;
+}
+
+define behavior for ZC_MM_LIB_PGTO_FAT alias LibPgtoGVFat
+{
+  use association _App;
+  use update;
+
+  use action limparFat;
+  use action marcarFat;
+}
+
+define behavior for ZC_MM_LIB_PGTO_ADI alias LibPgtoGVAdi
+{
+  use association _App;
+  use update;
+
+  use action limparAdi;
+  use action marcarAdi;
+}
+
+define behavior for ZC_MM_LIB_PGTO_DEV alias LibPgtoGVDev
+{
+  use association _App;
+  use update;
+
+  use action limparDev;
+  use action marcarDev;
+}
+
+define behavior for ZC_MM_LIB_PGTO_DES alias LibPgtoGVDes
+{
+  use association _App;
+  use update;
+
+  use action limparDes;
+  use action marcarDes;
+}
+
+define behavior for ZC_MM_LIB_PGTO_DES_FIN_COM alias LibPgtoGVDesFinCom
+{
+  use association _App;
+  use update;
+
+  use action limparDesFinCom;
+  use action marcarDesFinCom;
+}

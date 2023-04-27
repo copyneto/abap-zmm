@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service'
+define service ZUI_ARM_CAFE {
+  expose ZC_MM_01_CAFE;
+}

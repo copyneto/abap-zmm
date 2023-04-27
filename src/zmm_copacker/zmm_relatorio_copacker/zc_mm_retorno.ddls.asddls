@@ -1,0 +1,60 @@
+@EndUserText.label: 'CDS de Projeção - Retorno'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions: true
+define root view entity ZC_MM_RETORNO
+  as projection on ZI_MM_RETORNO
+{
+  key ReferenceSDDocument,
+  key ReferenceSDDocumentItem,
+  key ReferenceDocument,
+  key BR_NotaFiscalItem,
+      //      MaterialDocumentYear,
+      //      MaterialDocument,
+      //      MaterialDocumentItem,
+      //      DeliveryDocument,
+      //      DeliveryDocumentItem,
+      StorageLocation,
+      InventorySpecialStockType,
+      GoodsMovementType,
+      //      DeliveryDocumentItemCategory,
+      //      ReversedMaterialDocument,
+      @Consumption.hidden: true
+      BR_NotaFiscal,
+      Plant,
+      BR_CFOPCode,
+      Material,
+      MaterialName,
+      BR_TaxCode,
+      MaterialGroup,
+      NetPriceAmount,
+      SalesDocumentCurrency,
+      NetValueAmount,
+      BR_CFOPCategory,
+      BR_NFSourceDocumentNumber,
+      BaseUnit,
+      QuantityInBaseUnit,
+      Batch,
+      NCMCode,
+      //      BR_NFSourceDocumentItem,
+      BR_NFPostingDate,
+      BR_NFIssueDate,
+      CompanyCode,
+      BusinessPlace,
+      BR_NFPartner,
+      BR_NFeNumber,
+      BR_NFNumber,
+      BR_NFPartnerName1,
+      BR_NFType,
+      PurchasingGroup,
+      SerialNumber2,
+      BR_NFItemBaseAmount,
+      BR_NFItemTaxRate,
+      BR_NFItemTaxAmount,
+      DiasAberto,
+      Status,
+      Valor,
+      StatusCriticality,
+      /* Associations */
+
+      _Remessa: redirected to ZC_MM_REMESSA
+}

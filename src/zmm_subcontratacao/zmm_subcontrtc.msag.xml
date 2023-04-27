@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Pedido atribupido com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Pedido &amp;1 não encontrado para o material &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Dados entre os pedidos são incosistentes</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>O Centro &amp; deve ter o Canal dist 14 (Outros)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Saldo em remessa insuficiente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Atribuição realizada com sucesso - &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>É necessário atribuir um pedido antes de ajustar remessa</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Remessa &amp;1 já foi atribuída anteriormente para pedido &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Expandir cliente &amp;1 para estrutura de vendas &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Atribuir cliente &amp;1 no fornecedor &amp;2 para subcontratação</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Selecionar linhas e marcar o XML para expedição</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>XML de Entrada de Insumo ainda não recebido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>XML de Remessa não é processo de subcontratação triangular</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Para expedição selecionar somente itens pendentes</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Itens para expedição divergentes do XML de Entrada de Insumo</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Quantidade do XML de Entrada de Insumo deve ser completa</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Fornecedor para expedição divergente do XML de Entrada de Insumo</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>CFOP do XML de Entrada de Insumo inconsistente para esta operação</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>XML de Entrada de Insumo já vinculado em outra remessa</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Dados de transporte são obrigatórios</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Todas as linhas devem conter o mesmo Centro e Fornecedor</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Expedição realizada com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Para estorno de expedição selecionar somente item concluído</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Para estorno de expedição selecionar somente um item</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Para expedição quantidade de picking deve estar preenchida</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>A quantidade de picking não pode exceder a quantidade da reserva</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Para &quot;Grão Verde&quot; selecionar um código de material por processo</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Preencher depósito no pedido &amp;1 item &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Pedido não encontrado para atribuir Picking</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Não é possível atribuir picking a uma remessa já criada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Selecionar somente as linhas que não possuem uma expedição</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Picking realizado com sucesso para &amp;1 item &amp;2 &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Para essa ação selecionar apenas 1 linha</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Quantidade de picking a menor</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Não é possível adicionar item manualmente, somente com lista técnica</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Não é possível adicionar item manualmente, somente com lista técnica</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Componentes de lista técnica não podem ser modificados (doc. subsequente)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Para item existente em lista ténica, fazer nova explosão</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Componentes de lista técnica não podem ser modificados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Selecionar apenas linhas do mesmo XML</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Código de Imposto SD inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Produto industrializado não informado no item &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Versão da lista técnica não informada no item &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Insumo item &amp;1 não consta na versão da LT do produto &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Versão da lista informada no item &amp;1 não é válida</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Versão da lista informada no item &amp;1 está bloqueada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Informar Requisição no item &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Informar Item da Requisição no Item &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>Requisição de compras informada no item &amp;1 não é do tipo &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>Erro item &amp;1 - Requisicao &amp;1 - &amp;2 já informada no item &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>Qtd Picking não deve ser maior que qtd fornecida</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>Param. &apos;Tipo de movimento&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>Nº Documento para NF-e ref. &amp;1 não encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_SUBCONTRTC</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>Lote atualizado com sucesso.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

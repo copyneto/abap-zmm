@@ -1,0 +1,162 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Itens',
+    typeNamePlural: 'Itens',
+    title: {
+      type: #STANDARD }
+  }
+}
+
+annotate entity ZC_MM_INVENTARIO_ITEM with
+{
+  @UI.facet: [ { id:         'Item',
+                purpose:       #STANDARD,
+                type:          #IDENTIFICATION_REFERENCE,
+                position:      10 },
+
+               { id:           'Header',
+                purpose:       #STANDARD,
+                type:          #LINEITEM_REFERENCE,
+                position:      20,
+                targetElement: '_H'}]
+
+
+  @UI: { lineItem:        [ { position: 10, label: 'Material' },
+                            { type: #FOR_ACTION, dataAction: 'refresh',  label: 'Atualizar valores' }  ],
+        identification:  [ { position: 10, label: 'Material' } ,
+                            { type: #FOR_ACTION, dataAction: 'refresh',  label: 'Atualizar valores' }  ]  }
+  Material;
+
+  @UI.hidden: true
+  MaterialText;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Centro' },
+                            { type: #FOR_ACTION, dataAction: 'message',  label: 'Log de mensagens' } ],
+        identification:  [ { position: 20, label: 'Centro' },
+                            { type: #FOR_ACTION, dataAction: 'message',  label: 'Log de mensagens' } ]  }
+  Plant;
+
+  @UI.hidden: true
+  PlantText;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Depósito' } ],
+       identification:  [ { position: 30, label: 'Depósito' } ]  }
+  Storagelocation;
+
+  @UI.hidden: true
+  StorageLocationText;
+
+  @UI: { lineItem:        [ { position: 40, label: 'N° Lote' } ],
+       identification:  [ { position: 40, label: 'N° Lote' } ]  }
+  Batch;
+
+  @UI: { lineItem:        [ { position: 50, label: 'Quantidade em Estoque' } ],
+       identification:  [ { position: 50, label: 'Quantidade em Estoque' } ]  }
+  Quantitystock;
+
+  @UI: { lineItem:        [ { position: 60, label: 'Quantidade da contagem' } ],
+       identification:  [ { position: 60, label: 'Quantidade da contagem' } ]  }
+
+  Quantitycount;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Quantidade estoque atual' } ],
+       identification:  [ { position: 70, label: 'Quantidade estoque atual' } ]  }
+  Quantitycurrent;
+
+  @UI: { lineItem:        [ { position: 80, label: 'Diferença contagem' } ],
+       identification:  [ { position: 80, label: 'Diferença contagem' } ]  }
+  Balance;
+
+  @UI: { lineItem:        [ { position: 90, label: 'Diferença atual' } ],
+       identification:  [ { position: 90, label: 'Diferença atual' } ]  }
+  Balancecurrent;
+
+  //  Unit;
+
+  @UI: { lineItem:        [ { position: 100, label: 'Preço Qtd estoque' } ],
+       identification:  [ { position: 100, label: 'Preço Qtd estoque' } ]  }
+  Pricestock;
+
+  @UI: { lineItem:        [ { position: 110, label: 'Preço contagem' } ],
+       identification:  [ { position: 110, label: 'Preço contagem' } ]  }
+  Pricecount;
+
+  @UI: { lineItem:        [ { position: 120, label: 'Preço diferença' } ],
+       identification:  [ { position: 120, label: 'Preço diferença' } ]  }
+  Pricediff;
+  //  Currency;
+
+  @UI: { lineItem:        [ { position: 130, label: 'Peso Bruto' } ],
+       identification:  [ { position: 130, label: 'Peso Bruto' } ]  }
+  Weight;
+  //  Weightunit;
+
+  @UI: { lineItem:        [ { position: 140, label: 'Hierarquia de produtos' } ],
+       identification:  [ { position: 140, label: 'Hierarquia de produtos' } ]  }
+  ProductHierarchy;
+
+  @UI: { lineItem:        [ { position: 145, label: 'Centro de Lucro' } ],
+       identification:  [ { position: 145, label: 'Centro de Lucro' } ]  }
+  Prct;
+
+
+
+  @UI: { lineItem:        [ { position: 150, label: 'Doc Inventário',
+                              semanticObjectAction: 'displayList',
+                              type: #WITH_INTENT_BASED_NAVIGATION  } ],
+         identification:  [ { position: 150, label: 'Doc Inventário',
+                              semanticObjectAction: 'displayList',
+                              type: #WITH_INTENT_BASED_NAVIGATION } ] }
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Consumption.semanticObject:'PhysicalInventoryDocument'
+  PhysicalInventoryDocument;
+
+  @UI: { lineItem:        [ { position: 160, label: 'Exercício' } ],
+         identification:  [ { position: 160, label: 'Exercício' } ] }
+  FiscalYear;
+
+  @UI: { lineItem:        [ { position: 170, label: 'Status', criticality: 'StatusCriticality' } ],
+         identification:  [ { position: 170, label: 'Status', criticality: 'StatusCriticality' } ] }
+  Status;
+
+  @UI.hidden: true
+  StatusText;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI: { lineItem:        [ { position: 180, label: 'Acuracidade', type:#AS_DATAPOINT } ],
+         identification:  [ { position: 180, label: 'Acuracidade', type:#AS_DATAPOINT } ]  }
+  @UI.dataPoint: { targetValue: 100, visualization: #PROGRESS }
+  Accuracy;
+  @UI: { lineItem:        [ { position: 190, label: 'Doc. Material' } ],
+       identification:  [ { position: 190, label: 'Doc. Material' } ] }
+  DocMaterial;
+  @UI: { lineItem:        [ { position: 190, label: 'Data Lançamento' } ],
+     identification:  [ { position: 190, label: 'Data Lançamento' } ] }
+  DataLanc;
+  @UI: { lineItem:        [ { position: 190, label: 'Doc. Num' } ],
+   identification:        [ { position: 190, label: ' Doc. Num' } ] }
+  DocEntSai;
+  @UI: { lineItem:        [ { position: 190, label: 'Doc. Contabilização' } ],
+  identification:  [ { position: 190, label: 'Doc. Contabilização' } ] }
+  DocComp;
+  @UI: { lineItem:        [ { position: 190, label: 'Data Contabilização' } ],
+  identification:  [ { position: 190, label: 'Data Contabilização' } ] }
+  DataComp;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

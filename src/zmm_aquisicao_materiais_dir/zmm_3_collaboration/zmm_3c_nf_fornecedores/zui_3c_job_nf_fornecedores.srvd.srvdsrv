@@ -1,0 +1,6 @@
+@EndUserText.label: '3Collaboration - JOB Entrada NF Forn'
+define service ZUI_3C_JOB_NF_FORNECEDORES {
+  expose ZC_MM_3C_NF_FORNECEDORES as JOB;
+  expose ZC_MM_3C_NF_FORN_VARIANT as Variant;
+  expose ZC_MM_3C_NF_FORN_LOG as Log;
+}

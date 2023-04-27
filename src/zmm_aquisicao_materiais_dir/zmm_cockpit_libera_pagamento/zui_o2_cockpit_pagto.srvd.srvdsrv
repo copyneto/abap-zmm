@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_O2_COCKPIT_PAGTO {
+  expose ZC_MM_COCKPIT as Cockpit;
+  expose ZC_MM_CHARACTERISTICS as Caracteristicas;
+  expose ZC_MM_CHARACTERISTICS_RECEB_V2 as CaracteristicasRecebimento;
+  expose ZC_MM_CHARACTERISTICS_PED as CaracteristicasPedido;
+}

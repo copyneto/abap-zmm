@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition Decisão Armz. Café'
+define service ZUI_MM_DECIS_ARMAZENAG_CAFE {
+  expose ZC_MM_DECIS_ARMAZENAG_CAFE;
+  expose ZC_MM_DECIS_ARMAZENAG_LOTE;
+}

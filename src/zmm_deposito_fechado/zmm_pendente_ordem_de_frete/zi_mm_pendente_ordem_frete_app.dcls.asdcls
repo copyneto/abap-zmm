@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_PENDENTE_ORDEM_FRETE_APP {
+    grant 
+        select
+            on
+                ZI_MM_PENDENTE_ORDEM_FRETE_APP
+                    where
+                        ( CentroRemessa ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                        
+}

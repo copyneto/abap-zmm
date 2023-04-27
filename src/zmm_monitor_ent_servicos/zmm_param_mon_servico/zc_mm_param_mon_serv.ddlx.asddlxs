@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Serviço',
+    typeNamePlural: 'Serviços',
+    title: {
+      type: #STANDARD,
+      label: 'Serviço',
+      value: 'Branch'
+    }
+  }}
+annotate entity ZC_MM_PARAM_MON_SERV with
+{
+  @UI.facet: [ { id:         'Servico',
+               purpose:       #STANDARD,
+               type:          #FIELDGROUP_REFERENCE,
+               label:         'Serviço',
+               position:      10,
+               targetQualifier: 'geral' },
+
+               { id:              'valores',
+                 type:            #FIELDGROUP_REFERENCE,
+                 label:           'Valores',
+                 position:        20,
+                 targetQualifier: 'valores' }]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ] }
+  @UI.fieldGroup:         [ { position: 10, qualifier: 'geral'} ]
+  @UI : { selectionField: [ { position: 10 } ] }
+  Branch;
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ] }
+  @UI.fieldGroup:         [ { position: 20, qualifier: 'geral'} ]
+  @UI : { selectionField: [ { position: 20 } ] }
+  Werks;
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ] }
+  @UI.fieldGroup:         [ { position: 30, qualifier: 'geral'} ]
+  @UI : { selectionField: [ { position: 30 } ] }
+  Matnr;
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ] }
+  @UI.fieldGroup:         [ { position: 40, qualifier: 'geral'} ]
+  @UI : { selectionField: [ { position: 40 } ] }
+  Matkl;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  @UI.fieldGroup:         [ { position: 50, qualifier: 'geral'} ]
+  @UI : { selectionField: [ { position: 50 } ] }
+  Hkont;
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ] }
+  @UI.fieldGroup:         [ { position: 60, qualifier: 'geral'} ]
+  @UI : { selectionField: [ { position: 60 } ] }
+  Operacao;
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ] }
+  @UI.fieldGroup:         [ { position: 70, qualifier: 'valores'} ]
+  Mwskz;
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ] }
+  @UI.fieldGroup:         [ { position: 80, qualifier: 'valores'} ]
+  Cfop;
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ] }
+  @UI.fieldGroup:         [ { position: 90, qualifier: 'valores'} ]
+  J1bnftype;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  TextBranch;
+  @UI.hidden: true
+  TextWerks;
+  @UI.hidden: true
+  TextMatnr;
+  @UI.hidden: true
+  TextMatkl;
+  //  @UI.hidden: true
+  //  TextSkat;
+  @UI.hidden: true
+  TextOperacao;
+  @UI.hidden: true
+  TextNftype;
+
+}

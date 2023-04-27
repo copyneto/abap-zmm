@@ -1,0 +1,5 @@
+@EndUserText.label: 'Emissão de NF - Múltiplas linhas'
+define service ZUI_MM_ADM_EMISSAO_NF_ML {
+  expose ZC_MM_ADMIN_EMISSAO_NF_CAB;
+  expose ZC_MM_ADMIN_EMISSAO_NF_ITM;
+}

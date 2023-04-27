@@ -1,0 +1,10 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_ERP_NF_GRC {
+    grant
+        select
+            on
+                ZC_MM_ERP_NF_GRC
+                    where
+                        inheriting conditions from entity ZI_MM_ERP_NF_GRC;
+}

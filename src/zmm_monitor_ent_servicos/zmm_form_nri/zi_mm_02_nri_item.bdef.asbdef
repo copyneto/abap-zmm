@@ -1,0 +1,8 @@
+unmanaged;
+
+define behavior for zi_mm_02_nri_item alias nfItem
+implementation in class zclmm_02_nri_item unique
+etag master PurchaseOrder
+{
+
+}

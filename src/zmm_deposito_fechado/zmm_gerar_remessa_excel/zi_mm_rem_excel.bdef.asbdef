@@ -1,0 +1,16 @@
+unmanaged;
+
+define behavior for ZI_MM_REM_EXCEL alias GeracaoRemessa
+implementation in class zcl_i_mm_rem_excel unique
+//late numbering
+lock master
+//etag master <field_name>
+
+{
+  action ( features : instance ) toUploadSimbolica parameter ZI_MM_TYPE_SIMBOLICA;
+
+  action ( features : instance ) toUploadTransporte parameter ZI_MM_TYPE_TRANSPORTE;
+
+  action ( features : instance ) toGetUrl result[1] $self;
+
+}

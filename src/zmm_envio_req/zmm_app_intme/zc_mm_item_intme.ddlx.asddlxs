@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {  typeNamePlural: 'Grupo de Compras',
+                   typeName:       'Grupo de Compras',
+         title: {  type: #STANDARD
+//                   value: 'Bsart'
+                    } }
+
+annotate view ZC_MM_ITEM_INTME with
+{
+
+  @UI.facet: [ { id: 'Item',
+                 purpose: #STANDARD,
+                 type: #IDENTIFICATION_REFERENCE,
+                 label: 'Grupo de Compras',
+                 position: 10 }]
+
+  @UI.hidden: true
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ] }
+  Bsart;
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ] }
+  Ekgrp;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  /* Associations */
+  @UI.hidden: true
+  _header;
+
+}

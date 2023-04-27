@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_ID_ME</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>ID Fila M.E.</DDTEXT>
+    <REPTEXT>ID Fila M.E.</REPTEXT>
+    <SCRTEXT_S>ID M.E</SCRTEXT_S>
+    <SCRTEXT_M>ID Fila M.E.</SCRTEXT_M>
+    <SCRTEXT_L>ID Fila M.E.</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000010</LENG>
+    <OUTPUTLEN>000010</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

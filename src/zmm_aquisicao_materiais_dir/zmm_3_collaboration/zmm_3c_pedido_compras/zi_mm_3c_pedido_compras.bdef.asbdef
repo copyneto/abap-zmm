@@ -1,0 +1,81 @@
+managed implementation in class zclmm_beh_3c_pedido_compras unique;
+
+define behavior for ZI_MM_3C_PEDIDO_COMPRAS alias JOB
+persistent table ztmm_3c_job
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  //  delete;
+  action ( features : instance ) execute result [1] $self;
+
+  field ( numbering : managed ) JobUUId;
+  field ( mandatory : create, readonly : update ) LogExternalId;
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  CreatedAtTs,
+  ChangedBy,
+  ChangedAt,
+  ChangedAtTs,
+  LocalLastChangedAt;
+
+  determination objeto_subobjeto on modify { create; }
+
+  association _Variant { create; }
+
+  mapping for ztmm_3c_job
+  {
+    jobuuid = jobuuid;
+    LogExternalId = jobname;
+    object = object;
+    subobject = subobject;
+    CreatedBy = created_by;
+    CreatedAtts = created_at;
+    ChangedBy = last_changed_by;
+    ChangedAtts = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_3C_PED_COMP_VARIANT alias Variant
+persistent table ztmm_3c_variant
+lock dependent by _JOB
+//authorization dependent by <association>
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  field ( numbering : managed ) Scruuid;
+  field ( readonly ) JobUUId;
+  field ( mandatory : create ) dataelement, sign, opti;
+  field ( readonly : update ) dataelement;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  ChangedBy,
+  ChangedAt,
+  LocalLastChangedAt;
+
+  association _JOB;
+
+  mapping for ztmm_3c_variant
+  {
+    scruuid = scruuid;
+    jobuuid = jobuuid;
+    dataelement = dataelement;
+    sign = sign;
+    opti = opti;
+    low = low;
+    high = high;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    ChangedBy = last_changed_by;
+    ChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

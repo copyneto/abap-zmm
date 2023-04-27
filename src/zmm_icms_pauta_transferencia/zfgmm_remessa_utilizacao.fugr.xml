@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Remessa Utilização Calc base de ICMS</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_REMESSA_UTILIZACAOO01</SOBJ_NAME>
+    <SOBJ_NAME>LZFGMM_REMESSA_UTILIZACAOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_REMESSA_UTILIZACAO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_GET_REMESSA_UTILIZACAO_V</FUNCNAME>
+     <SHORT_TEXT>Get Valores Remessa Utilização</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TYPE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TRTYP</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_LIPS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>LIPS</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de transação</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_LIPS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Documento SD: fornecimento: dados de item</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_SET_REMESSA_UTILIZACAO_V</FUNCNAME>
+     <SHORT_TEXT>Setar Valores Remessa Utilização</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_LIPS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>LIPS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TYPE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TRTYP</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_LIPS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Documento SD: fornecimento: dados de item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de transação</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <DYNPROS>
+    <item>
+     <HEADER>
+      <PROGRAM>SAPLZFGMM_REMESSA_UTILIZACAO</PROGRAM>
+      <SCREEN>9001</SCREEN>
+      <LANGUAGE>P</LANGUAGE>
+      <DESCRIPT>Utilização para cálculo de ICMS</DESCRIPT>
+      <TYPE>I</TYPE>
+      <NEXTSCREEN>9001</NEXTSCREEN>
+      <LINES>027</LINES>
+      <COLUMNS>123</COLUMNS>
+     </HEADER>
+     <CONTAINERS>
+      <RPY_DYCATT>
+       <TYPE>SCREEN</TYPE>
+       <NAME>SCREEN</NAME>
+      </RPY_DYCATT>
+     </CONTAINERS>
+     <FIELDS>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>TVLVT-ABRVW</NAME>
+       <LINE>003</LINE>
+       <COLUMN>004</COLUMN>
+       <LENGTH>015</LENGTH>
+       <VISLENGTH>015</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <FROM_DICT>X</FROM_DICT>
+       <MODIFIC>2</MODIFIC>
+       <FOREIGNKEY>X</FOREIGNKEY>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+       <DICT_I_FKY>X</DICT_I_FKY>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>GV_ABRVW</NAME>
+       <TEXT>___</TEXT>
+       <DROPDOWN>K</DROPDOWN>
+       <LINE>003</LINE>
+       <COLUMN>021</COLUMN>
+       <LENGTH>003</LENGTH>
+       <VISLENGTH>018</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>OKCODE</TYPE>
+       <TEXT>____________________</TEXT>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <INPUT_FLD>X</INPUT_FLD>
+      </RPY_DYFATC>
+     </FIELDS>
+     <FLOW_LOGIC>
+      <RPY_DYFLOW>
+       <LINE>PROCESS BEFORE OUTPUT.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>MODULE MODE_EDIT.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>&quot;MODULE SET_VALUE.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW/>
+      <RPY_DYFLOW>
+       <LINE>PROCESS AFTER INPUT.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>&quot;MODULE GET_VALUE.</LINE>
+      </RPY_DYFLOW>
+     </FLOW_LOGIC>
+    </item>
+   </DYNPROS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

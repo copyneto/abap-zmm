@@ -1,0 +1,69 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: { typeName: 'UoM', typeNamePlural: 'UoM', title: { value: 'MaterialName' }, description: { value: 'SupplierFullName' } }
+
+annotate view ZC_MM_FISCAL_INB with
+{
+
+  @UI.facet: [{ position: 1, label: 'Detalhe De x Para', type: #IDENTIFICATION_REFERENCE }]
+
+  @UI: {       lineItem: [{ position: 10, type: #STANDARD, importance: #HIGH }],
+         identification: [{ position: 10, type: #STANDARD }],
+         selectionField: [{position: 10 }] }
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_Supplier_VH', element: 'Supplier' } }]
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Search.ranking: #HIGH
+  Lifnr;
+
+  @UI: {       lineItem: [{ position: 20, type: #STANDARD, importance: #HIGH }],
+         identification: [{ position: 20, type: #STANDARD }],
+         selectionField: [{ position: 20 }] }
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_MaterialVH', element: 'Material' } }]
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @Search.ranking: #HIGH
+  Matnr;
+
+  @UI: {       lineItem: [{ position: 30, type: #STANDARD, importance: #MEDIUM }],
+         identification: [{ position: 30, type: #STANDARD }],
+         selectionField: [{ position: 30 }] }
+  //@Consumption.valueHelpDefinition: [{ entity:{ name: 'I_UnitOfMeasureStdVH', element: 'UnitOfMeasure' } }]
+  @EndUserText.label: 'UM XML'
+  UmIn;
+
+  @UI: {       lineItem: [{ position: 40, type: #STANDARD, importance: #MEDIUM }],
+         identification: [{ position: 40, type: #STANDARD }],
+         selectionField: [{ position: 40 }] }
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_UnitOfMeasureStdVH', element: 'UnitOfMeasure' } }]
+  @EndUserText.label: 'UM SAP'
+  UmOut;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  SupplierFullName;
+
+  @UI.hidden: true
+  MaterialName;
+
+  @UI.hidden: true
+  UoMCommName;
+
+  @UI.hidden: true
+  UoMTechName;
+
+}

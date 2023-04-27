@@ -1,0 +1,5 @@
+@EndUserText.label: '3Collaboration - NF Faturadas'
+define service ZUI_3C_NF_FATURADA {
+  expose ZC_MM_3C_NF_FATURADA;
+  expose ZI_MM_3C_VH_PASTA_SERVIDOR;
+}

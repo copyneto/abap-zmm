@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Coligada',
+    typeNamePlural: 'Coligadas',
+    title: {
+        type: #STANDARD,
+        label: 'Coligadas',
+        value: 'Cgc'
+    }
+}
+@Search.searchable: true
+annotate view ZC_MM_CGC_COLIGADA with
+{
+
+  @UI.facet: [
+//  {
+//      id: 'Cgc',
+//      purpose: #STANDARD,
+//      position: 10,
+//      label: 'Entradas',
+//      type: #IDENTIFICATION_REFERENCE
+//  },
+      { id:              'Cgc',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Entradas',
+                 position:        10 },
+  {   parentId:        'Cgc',
+      id:              'DADOS_PRINCIPAIS',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        10,
+      label: 'Dados principais',
+      targetQualifier: 'DADOS_PRINCIPAIS' },
+
+    { parentId:        'Cgc',
+      id:              'DADOS_CONTROLE',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        20,
+      label: 'Dados de controle',
+      targetQualifier: 'DADOS_CONTROLE' }]
+
+  @UI: { lineItem: [{ position: 10 }],
+   fieldGroup:     [ { position: 10, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 10 }] }
+  Bukrs;
+
+  @UI: { lineItem: [{ position: 20 }],
+   fieldGroup:     [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 20 }] }
+  Bupla;
+
+  @Search.ranking: #HIGH
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.9
+  @UI: { lineItem: [{ position: 30 }],
+   fieldGroup:     [ { position: 30, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 30 }] }
+  Cgc;
+
+  @UI: { lineItem: [{ position: 40 }],
+   fieldGroup:     [ { position: 40, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Kunnr;
+
+  @UI: { lineItem: [{ position: 50 }],
+   fieldGroup:     [ { position: 50, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Lifnr;
+
+  @UI: { lineItem: [{ position: 60 }],
+   fieldGroup:     [ { position: 60, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Filial;
+
+  @UI: { lineItem: [{ position: 70 }],
+   fieldGroup:     [ { position: 70, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Vkorg;
+
+  @UI: { lineItem: [{ position: 80 }],
+   fieldGroup:     [ { position: 80, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  ColCi;
+
+  @UI: { fieldGroup:     [ { position: 10, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedAt;
+
+  @UI: { fieldGroup:     [ { position: 50, qualifier: 'DADOS_CONTROLE' } ] }
+  LocalLastChangedAt;
+}

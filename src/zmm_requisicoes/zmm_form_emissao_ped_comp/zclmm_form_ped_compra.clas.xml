@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_FORM_PED_COMPRA</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Classe Formulário para Emissão do Pedido de Compras</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_COMPOP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>SAP Smart Forms: opções Smart Composer (transferência)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_CTRLOP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Smart Forms: estrutura de controle</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_EMPRESA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Form. Pedido de Compras - Smartforms (ZSFMM_PEDIDO_COMPRA)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_HEADER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>SAPscript: cabeçalho de texto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_ITEM</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Item do documento de compras</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_NAST</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_TNAPR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Programas de processamento de mensagens</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_CNPJ_ENTREGA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº ID fiscal 1</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_ENT_RETCO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_FUNCTION</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome do módulo de função</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_USER_SETTINGS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IS_NAST</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IS_TNAPR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Programas de processamento de mensagens</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IV_RETCO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <SCONAME>RV_RETCO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_TEXT</CMPNAME>
+     <SCONAME>CS_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>SAPscript: cabeçalho de texto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_TEXT</CMPNAME>
+     <SCONAME>RT_OBS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Linhas texto_T</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

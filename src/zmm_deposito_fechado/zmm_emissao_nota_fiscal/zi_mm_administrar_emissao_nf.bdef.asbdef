@@ -1,0 +1,173 @@
+unmanaged;
+
+// ------------------------------------------------------
+// Behavior: Emissão
+// ------------------------------------------------------
+
+define behavior for ZI_MM_ADMINISTRAR_EMISSAO_NF alias Emissao
+implementation in class zclmm_administrar_emissao_nf unique
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+  association _Serie;
+  association _Mensagem;
+
+  // Ações chamadas no VSCODE via Fragment
+
+  action fragmentCheckBox parameter ZI_MM_DF_EMISSAO_NF_POPUP;
+  action fragmentUsedStock parameter ZI_MM_DF_QTD_TRANSF_POPUP;
+
+  // Ações
+
+  action ( features : instance ) utilizarQtde;
+  action ( features : instance ) qtdeTransferida parameter ZI_MM_DF_QTD_TRANSF_POPUP;
+  action ( features : instance ) adicionarSerie parameter ZI_MM_DF_SERIE_POPUP;
+//  action ( features : instance ) criarNfe parameter ZI_MM_DF_CRIAR_NFE_POPUP;
+  action ( features : instance ) CriaRemessa parameter ZI_MM_DF_CRIAR_NFE_POPUP;
+  action ( features : instance ) CriaRemeSimb;
+  action ( features : instance ) CriaOrderFrete;
+  action ( features : instance ) Continuar;
+
+
+  field ( readonly )
+  Material,
+  OriginPlant,
+  OriginStorageLocation,
+  Guid,
+  OriginUnit,
+  Unit,
+  ProcessStep,
+
+  PrmDepFecId,
+  Description,
+  OriginPlantType,
+  DestinyPlant,
+  DestinyPlantType,
+  DestinyStorageLocation,
+
+  //  UseAvailable,
+  UseAvailableCheckBox,
+  UseAvailableCheckBoxEnable,
+  AvailableStock,
+  //  UsedStock,
+
+  //Carrier,
+  //Driver,
+  //Equipment,
+  //ShippingConditions,
+  //ShippingType,
+  //EquipmentTow1,
+  //EquipmentTow2,
+  //EquipmentTow3,
+  //FreightMode,
+
+  EANType,
+  MainPlant,
+  MainPurchaseOrder,
+  MainPurchaseOrderItem,
+  MainMaterialDocument,
+  MainMaterialDocumentYear,
+  MainMaterialDocumentItem,
+  OrderQuantity,
+  OrderQuantityUnit,
+  //  Batch,
+  PurchaseOrder,
+  PurchaseOrderItem,
+  Incoterms1,
+  Incoterms2,
+
+  OutSalesOrder,
+  OutSalesOrderItem,
+  OutDeliveryDocument,
+  OutDeliveryDocumentItem,
+  OutMaterialDocument,
+  OutMaterialDocumentYear,
+  OutMaterialDocumentItem,
+  OutBR_NotaFiscal,
+  OutBR_NotaFiscalItem,
+  RepBR_NotaFiscal,
+  InDeliveryDocument,
+  InDeliveryDocumentItem,
+  InMaterialDocument,
+  InMaterialDocumentYear,
+  InMaterialDocumentItem,
+  InBR_NotaFiscal,
+  InBR_NotaFiscalItem,
+
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+}
+
+// ------------------------------------------------------
+// Behavior: Emissão x Série
+// ------------------------------------------------------
+
+define behavior for ZI_MM_ADMINISTRAR_SERIE alias Serie
+implementation in class zclmm_administrar_serie unique
+lock dependent by _Emissao
+authorization dependent by _Emissao
+etag master LocalLastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+  association _Emissao;
+
+  field ( readonly )
+  Material,
+  OriginPlant,
+  OriginStorageLocation,
+  Batch,
+  DestinyPlant,
+  DestinyStorageLocation,
+  Guid,
+  OriginUnit,
+  Unit,
+  ProcessStep,
+  PrmDepFecId,
+  EANType,
+
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+}
+
+define behavior for ZI_MM_ADMINISTRAR_MSG alias Mensagem
+implementation in class zclmm_administrar_msg unique
+lock dependent by _Emissao
+authorization dependent by _Emissao
+etag master LocalLastChangedAt
+{
+  association _Emissao;
+
+  field ( readonly )
+  Material,
+  OriginPlant,
+  OriginStorageLocation,
+  Batch,
+  Guid,
+  OriginUnit,
+  Unit,
+  ProcessStep,
+  PrmDepFecId,
+  EANType,
+  DestinyPlant,
+  DestinyStorageLocation,
+
+
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+}

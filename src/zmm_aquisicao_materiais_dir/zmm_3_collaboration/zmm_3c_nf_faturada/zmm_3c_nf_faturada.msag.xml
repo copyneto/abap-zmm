@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>3Collaboration - NF Faturada</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Nenhum XML encontrado para as chaves informadas.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Nenhum registro encontrado para as chaves informadas.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Erro ao buscar chave informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Arquivo &amp;1 salvo com sucesso no servidor.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Operação cancelada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro ao copiar arquivo para pasta de destino.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Nenhum registro encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_3C_NF_FATURADA</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Nenhum diretório de servidor cadastrado no parâmetro: &amp;1 / &amp;2 / &amp;3</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

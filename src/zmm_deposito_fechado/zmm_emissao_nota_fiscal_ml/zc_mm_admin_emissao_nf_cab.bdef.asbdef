@@ -1,0 +1,15 @@
+projection;
+
+define behavior for ZC_MM_ADMIN_EMISSAO_NF_CAB alias Header
+{
+  use update;
+
+  use association _Item { create; }
+}
+
+define behavior for ZC_MM_ADMIN_EMISSAO_NF_ITM alias Item
+{
+  use update;
+
+  use association _Header;
+}

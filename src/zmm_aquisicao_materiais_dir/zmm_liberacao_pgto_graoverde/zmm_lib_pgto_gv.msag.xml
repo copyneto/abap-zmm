@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens Liberação Pagamentos Grão Verde</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Sem autorização para acessar esta funcionalidade.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Retirada Bloqueio Grão Verde somente por App Liberação Pgtos!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Obrigatório marcar uma fatura para contabilizar descontos!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Desconto(s) Contabilizado(s) com Sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Documento &amp;1 Empresa &amp;2 Exercício &amp;3 contabilizado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro na contabilização!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Documento Liberado para Pagamento!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Documento &amp;1 Empresa &amp;2 Exercício &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Erro no desbloqueio!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Documentos compensados com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Erro na compensação!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Desconto Financeiro Contabilizado NF &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Desconto Comercial Contabilizado NF &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_LIB_PGTO_GV</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Não é possivel marcar, fatura não liberada no App Desconto Comercial</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,6 @@
+unmanaged;
+
+define behavior for ZI_MM_3C_NF_FATURADA alias NF
+//implementation in class zclmm_3c_nf_faturada unique
+{
+}

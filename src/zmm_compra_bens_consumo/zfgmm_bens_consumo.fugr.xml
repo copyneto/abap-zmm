@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>FG para bens de consumo</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_BENS_CONSUMOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_BENS_CONSUMO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_BAPIS_ESTORNO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>FM para estorno de mov. mat, doc. contab. e nf</SHORT_TEXT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <TYP>ZTMM_MOV_CNTRL</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_DOCNUM</PARAMETER>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_DOCNUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dados de bens de consumo do app</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_BAPI_CREATE_NF</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>FM para bapi criar NF</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_NFE_ENTRADA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BOOLEAN</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <TYP>ZTMM_MOV_CNTRL</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_DOCNUM</PARAMETER>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_NFE_ENTRADA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>variável booleana (X=verdade, -=falso, espaço=desconhecido)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_DOCNUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dados de bens de consumo do app</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_BAPI_GOODSMVT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>FM para bapi mov. materiais</SHORT_TEXT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <TYP>ZTMM_MOV_CNTRL</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dados de bens de consumo do app</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_BAPI_ORDER_SIMULATE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>FM para bapi simular impostos</SHORT_TEXT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <TYP>ZTMM_MOV_CNTRL</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ES_TAXES</PARAMETER>
+       <TYP>ZTMM_MOV_SIMUL</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_TAXES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Simulação de impostos</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dados de bens de consumo do app</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_BAPI_POSTING</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>FM para bapi doc. contab.</SHORT_TEXT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <TYP>ZTMM_MOV_CNTRL</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_OBJ_KEY</PARAMETER>
+       <TYP>BAPIACHE09-OBJ_KEY</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_OBJ_KEY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave referência</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CS_DOCUMENTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dados de bens de consumo do app</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_CANCEL_MAT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cancelar Documento de Material</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MBLNR</PARAMETER>
+       <TYP>MBLNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_MJAHR</PARAMETER>
+       <TYP>MJAHR</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_HEAD</PARAMETER>
+       <TYP>BAPI2017_GM_HEAD_RET</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MBLNR</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_MJAHR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Ano do documento do material</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_HEAD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>MMIM: Estrutura output para MF geral &apos;regist.movim.mercad.&apos;</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

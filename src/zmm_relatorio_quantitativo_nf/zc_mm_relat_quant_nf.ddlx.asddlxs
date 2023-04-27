@@ -1,0 +1,145 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'Nº Documento', value: 'BR_NotaFiscal' },
+                     typeName: 'Relatório Quantitativo de NF',
+                     typeNamePlural: 'Relatório Quantitativo de NFs' },
+
+       presentationVariant: [{ sortOrder: [{ by: 'BR_NotaFiscal', direction: #DESC }] }] }
+
+annotate view ZC_MM_RELAT_QUANT_NF with
+{
+  // ------------------------------------------------------
+  // Informações de campo
+  // ------------------------------------------------------
+
+  @UI: {  lineItem:       [ { position: 10 } ],
+          identification: [ { position: 10 } ],
+          selectionField: [ { position: 10 } ] }
+  BR_NFDocumentType;
+
+  @UI.hidden: true
+  BR_NFDocumentTypeName;
+
+  @UI: {  lineItem:       [ { position: 20, criticality: 'BR_NFDirectionCrit', criticalityRepresentation: #WITHOUT_ICON } ],
+          identification: [ { position: 20, criticality: 'BR_NFDirectionCrit', criticalityRepresentation: #WITHOUT_ICON } ],
+          selectionField: [ { position: 20 } ] }
+  BR_NFDirection;
+
+  @UI.hidden: true
+  BR_NFDirectionDesc;
+
+  @UI.hidden: true
+  BR_NFDirectionCrit;
+
+  @UI: {  lineItem:       [ { position: 30 } ],
+          identification: [ { position: 30 } ],
+          selectionField: [ { position: 40 } ]  }
+  BR_NFIssueDate;
+
+  @UI: {  lineItem:       [ { position: 40 } ],
+          identification: [ { position: 40 } ] }
+  BR_NFIssueMonth;
+
+
+  @UI: {  lineItem:       [ { position: 50 } ],
+          identification: [ { position: 50 } ] }
+  CompanyCode;
+
+  @UI.hidden: true
+  CompanyCodeName;
+
+  @UI: {  lineItem:       [ { position: 60 } ],
+          identification: [ { position: 60 } ],
+          selectionField: [ { position: 30 } ] }
+  BusinessPlace;
+
+  @UI.hidden: true
+  BusinessPlaceName;
+
+  @UI: {  lineItem:       [ { position: 70, criticality: 'BR_NFeDocumentStatusCrit', criticalityRepresentation: #WITHOUT_ICON } ],
+          identification: [ { position: 70, criticality: 'BR_NFeDocumentStatusCrit', criticalityRepresentation: #WITHOUT_ICON } ] }
+  BR_NFeDocumentStatus;
+
+  @UI.hidden: true
+  BR_NFeDocumentStatusDesc;
+  
+  @UI.hidden: true
+  BR_NFeDocumentStatusCrit;
+
+  @UI: {  lineItem:       [ { position: 80 } ],
+          identification: [ { position: 80 } ] }
+  BR_NFPostingDate;
+
+  @UI: {  lineItem:       [ { position: 90 } ],
+          identification: [ { position: 90 } ],
+          selectionField: [ { position: 70 } ]   }
+  CreationTime;
+
+  @UI: {  lineItem:       [ { position: 100 } ],
+          identification: [ { position: 100 } ],
+          selectionField: [ { position: 80 } ]   }
+  BR_NFType;
+
+  @UI.hidden: true
+  BR_NFTypeName;
+
+  @UI: {  lineItem:       [ { position: 110, criticality: 'CreatedByUserCrit', criticalityRepresentation: #WITHOUT_ICON } ], 
+          identification: [ { position: 110, criticality: 'CreatedByUserCrit', criticalityRepresentation: #WITHOUT_ICON } ],
+          selectionField: [ { position: 50 } ]   }
+  CreatedByUser;
+  
+  @UI.hidden: true
+  CreatedByUserCrit;
+
+  @UI.hidden: true
+  CreatedByUserName;
+
+  @UI: {  lineItem:       [ { position: 120 } ],
+          identification: [ { position: 120 } ],
+          selectionField: [ { position: 60 } ]   }
+  BR_NFPartner;
+
+  @UI.hidden: true
+  BR_NFPartnerName;
+
+  @UI: {  lineItem:       [ { position: 130 } ],
+          identification: [ { position: 130 } ] }
+  BR_NFPartnerType;
+
+  @UI.hidden: true
+  BR_NFPartnerTypeDesc;
+
+  @Consumption.semanticObject:'NotaFiscal'
+  @UI: {  lineItem:       [ { position: 140, semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION } ],
+          identification: [ { position: 140, semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION } ] }
+  BR_NotaFiscal;
+  
+  @UI: {  lineItem:       [ { position: 150 } ],
+          identification: [ { position: 150 } ] }
+  BR_NotaFiscalItem;
+
+  @UI: {  lineItem:       [ { position: 160 } ],
+          identification: [ { position: 160 } ] }
+  BR_NFeNumber;
+
+  @UI: {  lineItem:       [ { position: 170 } ],
+          identification: [ { position: 170 } ] }
+  BR_UtilsNFNumber;
+
+  @UI: {  lineItem:       [ { position: 180 } ],
+          identification: [ { position: 180 } ],
+          textArrangement: #TEXT_ONLY }
+  BR_CFOPCode;
+
+  @UI.hidden: true
+  BR_CFOPCodeMask;
+
+  @UI: {  lineItem:       [ { position: 190 } ],
+          identification: [ { position: 190 } ] }
+  BR_CFOPDesc;
+
+  @UI: {  identification: [ { label: 'Nota fiscal cancelada' } ],
+          selectionField: [ { position: 90 } ]   }
+  @Consumption          : { filter: { selectionType: #SINGLE } }
+  BR_NFIsCanceled;
+
+}

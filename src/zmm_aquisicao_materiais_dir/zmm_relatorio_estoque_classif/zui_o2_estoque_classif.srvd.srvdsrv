@@ -1,0 +1,4 @@
+@EndUserText.label: 'Estoque Classificado'
+define service ZUI_O2_ESTOQUE_CLASSIF {
+  expose ZC_MM_REP_ESTOQUE_CLASSIFICADO as EstoqueClassificado;
+}

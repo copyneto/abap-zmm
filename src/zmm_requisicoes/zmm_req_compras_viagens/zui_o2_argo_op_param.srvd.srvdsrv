@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_O2_ARGO_OP_PARAM {
+  expose ZC_MM_ARGO_OP_PARAM;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Executar ZMMSD_PLANLOG'
+define service ZUI_PLANLOG_EXECUTE {
+  expose ZC_MM_PLANLOG_EXECUTE_GET;
+  expose ZC_MM_PLANLOG_VARIANTS;
+}

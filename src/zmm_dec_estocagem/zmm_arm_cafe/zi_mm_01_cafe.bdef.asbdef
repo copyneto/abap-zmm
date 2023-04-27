@@ -1,0 +1,8 @@
+unmanaged implementation in class zclmm_i_mm_01_cafe unique;
+
+define behavior for ZI_MM_01_CAFE alias Cafe
+{
+
+  action armazenar result [1] $self;
+
+}

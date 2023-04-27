@@ -1,0 +1,90 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Detalhe',
+    typeNamePlural: 'Registros',
+    title: {
+      type: #STANDARD,
+      label: 'Material',
+      value: 'Product'
+    }
+  }}
+annotate entity ZC_MM_CONF_PARAM_CFOP with 
+{
+  @UI.facet: [ { id:         'Produto',
+              purpose:       #STANDARD,
+              type:          #IDENTIFICATION_REFERENCE,
+              label:         'Material',
+              position:      10 }]
+
+  @UI: { lineItem:        [ { position: 10, label: 'Grupo de mercadoria' } ],
+         identification:  [ { position: 10, label: 'Grupo de mercadoria' } ],
+         selectionField : [ { position: 40 }] } 
+  @EndUserText.label: 'Grupo de mercadoria' 
+  GrupoMercadoria;
+  @UI: { lineItem:        [ { position: 20, label: 'Tipo de avaliação' } ],
+         identification:  [ { position: 20, label: 'Tipo de avaliação' } ] }
+  TipoAvaliacao;
+  @UI: { lineItem:        [ { position: 30, label: 'Centro' } ],
+         identification:  [ { position: 30, label: 'Centro' } ],
+         selectionField : [ { position: 10 }] }
+  @EndUserText.label: 'Centro'
+  Centro;
+  @UI: { lineItem:        [ { position: 40, label: 'Tipo de Material' } ],
+         identification:  [ { position: 40, label: 'Tipo de Material' } ],
+         selectionField : [ { position: 20 }] }
+  @EndUserText.label: 'Tipo de Material'
+  TipoProduto;
+  @UI: { lineItem:        [ { position: 50, label: 'Material', 
+                              semanticObjectAction: 'manage',
+                              type: #WITH_INTENT_BASED_NAVIGATION } ],
+         identification:  [ { position: 50, label: 'Material',
+                              semanticObjectAction: 'manage',
+                              type: #WITH_INTENT_BASED_NAVIGATION } ],         
+         selectionField : [ { position: 30 }] }
+  @Consumption.semanticObject: 'Material'
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @EndUserText.label: 'Material'  
+  Product;
+  @UI: { lineItem:        [ { position: 60, label: 'Descrição do Material' } ],
+         identification:  [ { position: 60, label: 'Descrição do Material' } ] }
+  DescProduto;
+  @UI: { lineItem:        [ { position: 70, label: 'Categoria de CFOP' } ],
+         identification:  [ { position: 70, label: 'Categoria de CFOP' } ] }
+  CatCfop;
+  @UI: { lineItem:        [ { position: 80, label: 'Desc Cat CFOP' } ],
+         identification:  [ { position: 80, label: 'Desc Cat CFOP' } ] }    
+  DescCatCfop;
+  @UI: { lineItem:        [ { position: 90, label: 'Utilização do Material' } ],
+         identification:  [ { position: 90, label: 'Utilização do Material' } ] }  
+  UtiliMaterial;
+  @UI: { lineItem:        [ { position: 100, label: 'Desc Utilização Material' } ],
+         identification:  [ { position: 100, label: 'Desc Utilização Material' } ] }    
+  DescUtiliMaterial;
+  @UI: { lineItem:        [ { position: 110, label: 'Produção Interna' } ],
+         identification:  [ { position: 110, label: 'Produção Interna' } ] }    
+  ProducaoInterna;
+  @UI: { lineItem:        [ { position: 120, label: 'Origem' } ],
+         identification:  [ { position: 120, label: 'Origem' } ] }      
+  Origem;
+  @UI: { lineItem:        [ { position: 130, label: 'Descrição Origem' } ],
+         identification:  [ { position: 130, label: 'Descrição Origem' } ] }      
+  DescOrigem;
+  @UI: { lineItem:        [ { position: 140, label: 'Código de Controle' } ],
+         identification:  [ { position: 140, label: 'Código de Controle' } ] }      
+  CodControle;
+  @UI: { lineItem:        [ { position: 150, label: 'CEST' } ],
+         identification:  [ { position: 150, label: 'CEST' } ] }      
+  Cest_Out;
+  @UI: { lineItem:        [ { position: 160, label: 'Grupo Mercadorias Ext' } ],
+         identification:  [ { position: 160, label: 'Grupo Mercadorias Ext' } ],
+         selectionField : [ { position: 60 } ] }
+  @EndUserText.label: 'Grupo Mercadorias Ext'         
+  ExtProductGroup;
+  @UI: { lineItem:        [ { position: 170, label: 'Hierarquia de Produtos' } ],
+         identification:  [ { position: 170, label: 'Hierarquia de Produtos' } ],
+         selectionField : [ { position: 50 } ] } 
+  @EndUserText.label: 'Hierarquia de Produtos'         
+  HieraquiaProd;
+} 

@@ -1,0 +1,129 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+    headerInfo: {
+        typeName: 'Inventário',
+        typeNamePlural: 'Inventários',
+
+        title: {
+            type: #STANDARD,
+            label: 'Doc. Inventário',
+            value: 'iblnr'
+        }
+    },
+
+    presentationVariant: [{ visualizations: [{ type: #AS_LINEITEM }],
+                                 sortOrder: [{ by: 'iblnr', direction: #ASC },
+                                             { by: 'zeili', direction: #ASC }],
+                                   groupBy: [ 'bldat' ] }]
+}
+annotate view ZC_MM_INVENTARIO_NFE_EMISSAO with
+{
+
+  @UI.facet: [ { id: 'Invt', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Documentos', position: 10 } ]
+
+
+
+  @UI: { lineItem: [{ position: 10 },
+                    { type: #FOR_ACTION, dataAction: 'encerraInventario', label: 'Encerrar Inventário',    position: 1   },
+                    { type: #FOR_ACTION, dataAction: 'gerarNota',         label: 'Gerar Nota Fiscal',      position: 2 },
+                    { type: #FOR_ACTION, dataAction: 'gerarContabil',     label: 'Gerar Doc. Contábil',    position: 3 },
+                    { type: #FOR_ACTION, dataAction: 'estornarContabil',  label: 'Estornar Doc. Contábil', position: 4 }],
+   identification: [{ position: 30 }],
+   selectionField: [{ position: 30 }] }
+  iblnr;
+
+  @UI: { lineItem: [{ position: 30 }],
+   identification: [{ position: 10 }],
+   selectionField: [{ position: 10 }] }
+  gjahr;
+
+  @UI: { lineItem: [{ position: 40 }],
+   identification: [{ position: 20 }],
+   selectionField: [{ position: 20 }] }
+  werks;
+
+  @UI: { lineItem: [{ position: 50 }],
+   identification: [{ position: 20 }] }
+  lgort;
+
+  @UI: { lineItem: [{ position: 60 }],
+   identification: [{ position: 40 }],
+   selectionField: [{ position: 40 }] }
+  bldat;
+
+  @UI: { lineItem: [{ position: 70 }],
+   identification: [{ position: 50 }],
+   selectionField: [{ position: 50 }] }
+  budat;
+
+  @UI: { lineItem: [{ position: 80 }],
+   identification: [{ position: 20 }] }
+  usnam;
+
+  @UI: { lineItem: [{ position: 90 }],
+   identification: [{ position: 20 }] }
+  Mblnr;
+
+  @UI: { lineItem: [{ position: 100 }],
+   identification: [{ position: 20 }] }
+  DocnumEntrada;
+
+  @UI: { lineItem: [{ position: 110 }],
+   identification: [{ position: 20 }] }
+  DocnumSaida;
+
+  @UI: { lineItem: [{ position: 120 }],
+   identification: [{ position: 20 }] }
+  Belnr;
+
+  @UI: { lineItem: [{ position: 130, iconUrl: 'Status_belnr' }],
+   identification: [{ position: 20 }] }
+  Belnr_estorn;
+
+  @UI.hidden: true
+  Status_belnr;
+
+  @UI: { lineItem: [{ position: 140 }],
+   identification: [{ position: 20 }] }
+  Bukrs;
+
+  @UI.hidden: true
+  Nfenum_en;
+
+  @UI.hidden: true
+  status_nf_en;
+
+  @UI: { lineItem: [{ position: 150 }],
+   identification: [{ position: 20 }] }
+  nfenum;
+
+  @UI.hidden: true
+  Docstat_icon;
+
+  @UI.hidden: true
+  status_nf;
+
+  @UI.hidden: true
+  docstat_icon_en;
+
+  @UI: { lineItem: [{ position: 20 }],
+   identification: [{ position: 20 }] }
+  zeili;
+
+  @UI: { lineItem: [{ position: 180 }],
+   identification: [{ position: 20 }] }
+  matnr;
+
+  @UI: { lineItem: [{ position: 190 }],
+  identification: [{ position: 20 }] }
+  buchm;
+
+  @UI: { lineItem: [{ position: 200 }],
+   identification: [{ position: 20 }] }
+  menge;
+
+  @UI: { lineItem: [{ position: 210 }],
+  identification: [{ position: 20 }] }
+  Difmg;
+
+}

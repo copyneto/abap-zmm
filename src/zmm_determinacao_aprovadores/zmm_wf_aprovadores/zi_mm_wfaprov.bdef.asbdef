@@ -1,0 +1,35 @@
+managed; // implementation in class zbp_i_mm_wfaprov unique;
+
+define behavior for ZI_MM_WFAPROV alias Aprovadores
+implementation in class zclmm_wfaprovador unique
+persistent table ztmm_wfaprov
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( numbering : managed ) Guid;
+  field ( mandatory : create ) Werks, Lgort, Usnam;
+  field ( readonly : update ) Guid, Werks, Lgort;//, Usnam;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, LocalLastChangedAt;
+
+  validation validateInfo on save { create; update; }
+  validation validateExists on save { field Usnam; create; update; }
+
+  mapping for ztmm_wfaprov
+  {
+    Guid  = guid;
+    Werks = werks;
+    Lgort = lgort;
+    Usnam = usnam;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}

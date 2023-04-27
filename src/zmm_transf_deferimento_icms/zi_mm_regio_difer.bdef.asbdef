@@ -1,0 +1,30 @@
+managed; //
+
+define behavior for ZI_MM_REGIO_DIFER alias app
+implementation in class zclmm_regio_difer_app unique
+persistent table ztmm_regio_difer
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( mandatory : create ) Regio;
+  field ( readonly : update ) Regio;
+
+  mapping for ztmm_regio_difer
+  {
+
+    Regio = regio;
+    Msg = msg;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+
+}

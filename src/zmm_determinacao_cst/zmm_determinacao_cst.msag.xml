@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_DETERMINACAO_CST</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Transferência - determinação de CST</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DETERMINACAO_CST</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DETERMINACAO_CST</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Registro não existe. Favor cadastrar um registro válido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DETERMINACAO_CST</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Campos chave em branco.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DETERMINACAO_CST</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Já existe linha cadastrada com a mesma chave.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DETERMINACAO_CST</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Preencher campo obrigatório.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

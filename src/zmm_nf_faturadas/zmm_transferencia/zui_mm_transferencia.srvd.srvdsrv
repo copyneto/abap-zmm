@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def para Transferencia'
+define service ZUI_MM_TRANSFERENCIA {
+  expose ZC_MM_TRANSFERENCIA;
+}

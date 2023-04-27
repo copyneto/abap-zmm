@@ -1,0 +1,18 @@
+projection;
+
+define behavior for ZC_MM_CTRL_CLASSIF alias Classif
+{
+//  use create;
+  use update;
+//  use delete;
+
+  use association _Caract { create; }
+}
+
+define behavior for ZC_MM_VLR_CARACTERISTICA alias Caract
+{
+  use update;
+  use delete;
+
+  use association _Classif;
+}

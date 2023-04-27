@@ -1,0 +1,18 @@
+unmanaged;
+
+
+define behavior for ZI_MM_PLANLOG_EXECUTE_GET
+alias Variante
+implementation in class zcl_mm_planlog_execute_get unique
+//persistent table <???>
+//lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+
+  field ( readonly ) ztran;
+  field ( readonly ) zvari;
+  //action ( features : instance ) toReadVarid result[1] $self;
+}

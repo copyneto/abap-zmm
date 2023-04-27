@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition APP'
+define service ZUI_MM_WFAPROV {
+  expose ZC_MM_WFAPROV;
+}

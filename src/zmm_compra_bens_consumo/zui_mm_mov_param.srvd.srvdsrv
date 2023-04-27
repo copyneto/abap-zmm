@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD - Parâmetros direitos fiscais'
+define service ZUI_MM_MOV_PARAM {
+  expose ZC_MM_MOV_PARAM as MovParam;
+}

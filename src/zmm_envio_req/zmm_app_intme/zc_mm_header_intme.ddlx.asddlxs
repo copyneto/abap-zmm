@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {  typeNamePlural: 'Tipos de Requisições - Integrar ao ME', 
+                   typeName:       'Tipo de Requisição',
+         title: {  type: #STANDARD, 
+                   value: 'Bsart' } }
+                   
+annotate view ZC_MM_HEADER_INTME with
+{
+
+  @UI.facet: [ { id: 'Cab',
+                 purpose: #STANDARD,
+                 type: #IDENTIFICATION_REFERENCE,
+                 label: 'Tipo',
+                 position: 10 },
+                 
+               { id: 'Item',
+                 purpose: #STANDARD,
+                 type: #LINEITEM_REFERENCE,
+                 label: 'Grupos de Compras - Não Integrar ao ME',
+                 position: 20,
+                 targetElement: '_item' } ]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 10 } ] }
+  Bsart;
+  @UI: { lineItem:        [ { position: 20, criticality: 'StatusCriticality', criticalityRepresentation: #WITH_ICON } ],
+         identification:  [ { position: 20, criticality: 'StatusCriticality', criticalityRepresentation: #WITH_ICON } ],
+         selectionField:  [ { position: 20 } ]  }
+  Zz1Int;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  /* Associations */
+  @UI.hidden: true
+  _item;
+  @UI.hidden: true
+  StatusCriticality;
+
+}

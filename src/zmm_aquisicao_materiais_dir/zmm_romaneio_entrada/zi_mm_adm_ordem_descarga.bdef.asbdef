@@ -1,0 +1,159 @@
+managed implementation in class ZCLMM_ADM_ORDEM_DESCARGA unique;
+
+define behavior for ZI_MM_ADM_ORDEM_DESCARGA alias _Ordem
+persistent table ztmm_romaneio_in
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  //  update;
+  update ( features : instance );
+  delete ( features : instance );
+
+  association _OrdemItem { create (features : instance); }
+
+  field ( readonly, numbering : managed ) DocUuidH;
+
+  field ( mandatory : create )
+  NotaFiscal,
+  ItemPedido,
+  Pedido;
+
+  field ( readonly )
+  Romaneio,
+  Recebimento,
+  //  ItemRecebimento,
+  //  NotaFiscalPed,
+  DtEntrada,
+  //  QtdeKgOrig,
+  //  Material,
+  //  DescMaterial,
+  //  Lote,
+  //  Unidade,
+  //  Quantidade,
+  StatusOrdem,
+  StatusOrdemCriti,
+  StatusArmazenado,
+  StatusArmazenadoCriti,
+  StatusCompensado,
+  StatusCompensadoCriti,
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  validation authorityCreate on save { create; }
+
+  validation validaNfPedido on save { field Pedido, NotaFiscal; create; update; }
+
+    //  determination determinarInfoPedido on modify { field Pedido; }
+
+    determination determinarNrDescarga on save { create; }
+
+    mapping for ZTMM_ROMANEIO_IN
+    {
+      DocUuidH = doc_uuid_h;
+      Romaneio = SEQUENCE;
+      Pedido = EBELN;
+      Recebimento = VBELN;
+      //    ItemRecebimento = POSNR;
+      ItemPedido = EBELP;
+      NotaFiscal = NFNUM;
+      Placa = PLACA;
+      Motorista = MOTORISTA;
+      DtChegada = DT_CHEGADA;
+      DtEntrada = DT_ENTRADA;
+      //      Lote = CHARG;
+      //    Quantidade = QTDE;
+      StatusOrdemConv = STATUS_ORDEM;
+      StatusArmazenadoConv = STATUS_ARMAZENADO;
+      StatusCompensadoConv = STATUS_COMPENSADO;
+      //    DESTINATION
+      //    PESO_DIF_ORI
+      //    QTDE_DIF_ORI
+      //    CALC_DIF_PESO
+      //    CALC_DIF_QTDE
+
+      CreatedBy = created_by;
+      CreatedAt = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+
+  }
+
+  define behavior for ZI_MM_ADM_ORDEM_DESCARGA_ITEM alias _OrdemItem
+  persistent table ztmm_romaneio_it
+  lock dependent by _Ordem
+  authorization dependent by _ordem
+  etag master DocUuidH
+  {
+
+    update ( features : instance );
+    delete ( features : instance );
+
+    association _Ordem { }
+
+    field ( readonly : update ) DocUuidH;
+
+    field ( mandatory : create ) Lgort;
+
+    field ( readonly )
+    //  Romaneio,
+    Recebimento,
+    ItemPedido,
+    ItemRecebimento,
+    NotaFiscalPed,
+    //  DtEntrada,
+    QtdeKgOrig,
+    Material,
+    DescMaterial,
+    Lote,
+    Unidade,
+    Quantidade,
+    //  StatusOrdem,
+    //  StatusOrdemCriti,
+    //  StatusArmazenado,
+    //  StatusArmazenadoCriti,
+    //  StatusCompensado,
+    //  StatusCompensadoCriti,
+    LastChangedAt,
+    LastChangedBy,
+    CreatedAt,
+    CreatedBy,
+    LocalLastChangedAt;
+
+    determination determinarInfoRecebimento on save { create; }
+    validation checkdeposito on save { create; }
+
+    mapping for ZTMM_ROMANEIO_IT
+    {
+      DocUuidH = doc_uuid_h;
+      //  Romaneio = SEQUENCE;
+      //   Pedido = EBELN;
+      Recebimento = VBELN;
+      ItemRecebimento = POSNR;
+      ItemPedido = EBELP;
+      NotaFiscal = NFNUM;
+      QtdeKgOrig = qtd_kg_original;
+      //    Placa = PLACA;
+      //    Motorista = MOTORISTA;
+      //    DtChegada = DT_ENTRADA;
+      //    DtEntrada = DT_CHEGADA;
+      Lote = CHARG;
+      Quantidade = QTDE;
+      //    StatusOrdem = STATUS_ORDEM;
+      //    StatusArmazenado = STATUS_ARMAZENADO;
+      //    StatusCompensado = STATUS_COMPENSADO;
+      Lgort = lgort;
+      CreatedBy = created_by;
+      CreatedAt = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+
+  }

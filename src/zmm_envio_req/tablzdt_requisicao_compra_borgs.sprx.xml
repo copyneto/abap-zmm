@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_BORGS</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZDT_REQUISICAO_COMPRA</OBJ_NAME_M>
+     <HASH_ID>5A2F0A8B5B1FAFBEBE2CFC825B04EA4F326D6BE8</HASH_ID>
+     <ID>&lt;type&gt; BOrgs &lt;element&gt; BOrgs &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>BOrgs</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/suprimentos/requisicaocompra</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/suprimentos/requisicaocompra</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/suprimentos/requisicaocompra</X-ML_NSPCE>
+     <X-ML_NAME>BOrgs</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_BORGS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BORG_CENTRO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BORG_CENTRO</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_REQUISICAO_COMPRA_BOR_TAB1</OBJ_NAME_R>
+     <ID>&lt;element&gt; BOrgCentro &lt;type&gt; BOrgs &lt;element&gt; BOrgs &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BOrgCentro</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BORG_CENTRO</R3_NAME>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_BORGS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BORG_EMPRESA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BORG_EMPRESA</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_REQUISICAO_COMPRA_BOR_TAB2</OBJ_NAME_R>
+     <ID>&lt;element&gt; BOrgEmpresa &lt;type&gt; BOrgs &lt;element&gt; BOrgs &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BOrgEmpresa</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BORG_EMPRESA</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_BORGS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BORG_ORGANIZACAO_COMPRAS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BORG_ORGANIZACAO_COMPRAS</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_REQUISICAO_COMPRA_BOR_TAB3</OBJ_NAME_R>
+     <ID>&lt;element&gt; BOrgOrganizacaoCompras &lt;type&gt; BOrgs &lt;element&gt; BOrgs &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BOrgOrganizacaoCompras</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BORG_ORGANIZACAO_COMPRAS</R3_NAME>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_BORGS</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZDT_REQUISICAO_COMPRA_BORGS</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZDT_REQUISICAO_COMPRA_BORGS</OBJ_NAME2>
+     <ID>&lt;type&gt; BOrgs &lt;element&gt; BOrgs &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>BOrgs</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZDT_REQUISICAO_COMPRA_BORGS</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

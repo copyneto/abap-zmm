@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMMDT_STATUS_PROCESSAMENTO_A</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLMMDT_STATUS_PROCESSAMENTO</OBJ_NAME_M>
+     <HASH_ID>1CAD75FCFE03A05117A41F750D01B4708869047A</HASH_ID>
+     <ID>&lt;type&gt; aprovador &lt;element&gt; aprovador &lt;type&gt; dtStatusProcessamento http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>aprovador</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/viagem/requisicaocompra</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/viagem/requisicaocompra</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLMM</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/viagem/requisicaocompra</X-ML_NSPCE>
+     <X-ML_NAME>aprovador</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMMDT_STATUS_PROCESSAMENTO_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EMAIL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EMAIL</OBJ_NAME2>
+     <ID>&lt;element&gt; Email &lt;type&gt; aprovador &lt;element&gt; aprovador &lt;type&gt; dtStatusProcessamento http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>Email</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EMAIL</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMMDT_STATUS_PROCESSAMENTO_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>LOGIN</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>LOGIN</OBJ_NAME2>
+     <ID>&lt;element&gt; Login &lt;type&gt; aprovador &lt;element&gt; aprovador &lt;type&gt; dtStatusProcessamento http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>Login</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>LOGIN</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMMDT_STATUS_PROCESSAMENTO_A</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NOME_COMPLETO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NOME_COMPLETO</OBJ_NAME2>
+     <ID>&lt;element&gt; NomeCompleto &lt;type&gt; aprovador &lt;element&gt; aprovador &lt;type&gt; dtStatusProcessamento http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>NomeCompleto</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NOME_COMPLETO</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMMDT_STATUS_PROCESSAMENTO_A</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLMMDT_STATUS_PROCESSAMENTO_A</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLMMDT_STATUS_PROCESSAMENTO_A</OBJ_NAME2>
+     <ID>&lt;type&gt; aprovador &lt;element&gt; aprovador &lt;type&gt; dtStatusProcessamento http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>aprovador</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLMMDT_STATUS_PROCESSAMENTO_A</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_FRSID</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>FRSID</DDTEXT>
+    <REPTEXT>FRSID</REPTEXT>
+    <SCRTEXT_S>FRSID</SCRTEXT_S>
+    <SCRTEXT_M>FRSID</SCRTEXT_M>
+    <SCRTEXT_L>FRSID</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000010</LENG>
+    <OUTPUTLEN>000010</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

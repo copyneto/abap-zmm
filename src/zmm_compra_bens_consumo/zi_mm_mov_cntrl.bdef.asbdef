@@ -1,0 +1,110 @@
+managed
+implementation in class zclmm_mov_cntrl unique;
+
+define behavior for ZI_MM_MOV_CNTRL alias MovCntrl
+
+persistent table ztmm_mov_cntrl
+lock master
+etag master LocalLastChangedAt
+{
+
+  create;
+
+  update ( features : instance );
+  delete ( features : instance );
+
+  ////  action ( features : instance ) mov_merc;//
+  //  action ( features : instance ) simul_imp parameter ZI_MM_VIEW_BP;//
+  action ( features : instance ) simul_imp;//
+  action ( features : instance ) nfe_saida;//
+  action ( features : instance ) contab;//
+  action ( features : instance ) nfe_ent;//
+  action ( features : instance ) mov_merc_ent;
+//  action ( features : instance ) estorno;//
+  action ( features : instance ) registrar;//
+
+  determination fill_business_area on save { create; }
+  validation check_key on save { create; }
+  validation valida_mat on save { create; }
+
+  field ( numbering : managed ) Id;
+  field ( readonly )
+  MblnrSai, Mjahr, Mblpo, MblnrEst,
+  //  Invnr,
+  Matnr1,
+  Partner,
+  DocnumS,
+  Belnr, BukrsDc, GjahrDc,
+  DocnumEnt,
+  MblnrEnt, MjahrEnt, MjahrEstEnt,
+
+  LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( features : instance ) Matnr,
+  ////                                Matnr1,
+  Werks, Menge, Meins, Lgort,
+  Posid;
+  //                                Anln1, Anln2;
+
+  association _MatCntrl { create ( features : instance ); }
+
+  mapping for ztmm_mov_cntrl
+  {
+    Id = id;
+    Bukrs = bukrs;
+    Branch = branch;
+    Matnr1 = matnr1;
+    Matnr = matnr;
+    Menge = menge;
+    Meins = meins;
+    Werks = werks;
+    Lgort = lgort;
+    Posid = posid;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+
+}
+
+define behavior for ZI_MM_MAT_CNTRL alias _MatCntrl
+persistent table ztmm_mat_cntrl
+lock dependent by _MovCntrl
+
+{
+  //  update;
+  //  delete;
+  //create;
+
+  update ( features : instance );
+  delete ( features : instance );
+  association _MovCntrl;
+
+  field ( numbering : managed ) Id;
+  //  field ( readonly : update ) IdMov, Invnr, Lgort;
+  field ( readonly : update ) IdMov;
+
+
+  //novo
+  //  field ( features : instance ) Anln1, Anln2;
+  field ( features : instance ) Anln1, Anln2, Invnr, Lgort;
+
+  validation check_imob on save { create; }
+
+  mapping for ztmm_mat_cntrl
+  {
+    Id = id;
+    IdMov = id_mov;
+    Anln1 = anln1;
+    Anln2 = anln2;
+    Invnr = invnr;
+    Lgort = lgort;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

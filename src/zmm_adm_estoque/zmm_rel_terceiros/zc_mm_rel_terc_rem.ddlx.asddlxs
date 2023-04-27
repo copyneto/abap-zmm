@@ -1,0 +1,77 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_REL_TERC_REM with
+{
+  @UI.facet: [ { id:            'Remessa',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'Remessa',
+                 position:      10 }  ]
+
+  @UI: {  lineItem:       [ { position: 10 } ] }
+  @EndUserText.label: 'NF Remessa'
+  NFRemessa;
+  @Consumption.semanticObject: 'BusinessPartner'
+  @UI: { lineItem:       [ { position: 20,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'zzdisplay'  } ] }
+  @UI: { identification: [ { position: 20,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'zzdisplay'  } ] }
+  @EndUserText.label: 'Fornecedor'
+  BusinessPartner;
+  @UI: {  lineItem:       [ { position: 30 } ] }
+  @EndUserText.label: 'Valor Item'
+  ValorItem;
+  @UI: {  lineItem:       [ { position: 40 } ] }
+  CfopRemessa;
+  @Consumption.semanticObject: 'MaterialMovement'
+  @UI: { lineItem:       [ { position: 50,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'displayList'  } ] }
+  @UI: { identification: [ { position: 50,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'displayList'  } ] }
+  @EndUserText.label: 'Doc. Material'
+  MaterialMovement;
+  @UI: {  lineItem:       [ { position: 60 } ] }
+  Movimento;
+  @UI: {  lineItem:       [ { position: 70 } ] }
+  @EndUserText.label: 'Data Remessa'
+  DataRemessa;
+  @UI: {  lineItem:       [ { position: 80 } ] }
+  DocnumRemessa;
+  @Consumption.semanticObject: 'Material'
+  @UI: { lineItem:       [ { position: 90,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'display'  } ] }
+  @UI: { identification: [ { position: 90,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'display'  } ] }
+  Material;
+  @UI: {  lineItem:       [ { position: 100 } ] }  
+  DescMaterial;
+  @UI: {  lineItem:       [ { position: 110 } ] }
+  Qtde;
+  @UI: {  lineItem:       [ { position: 120 } ] }
+  @EndUserText.label: 'Valor Total'
+  ValorTotal;
+  @UI: {  lineItem:       [ { position: 123 } ] }
+  Deposito;
+  @UI: {  lineItem:       [ { position: 140 } ] }
+  Lote;
+  @UI: {  lineItem:       [ { position: 150 } ] }
+  @EndUserText.label: 'NCM'
+  Ncm;
+  @UI: {  lineItem:       [ { position: 160 } ] }
+  @EndUserText.label: 'Tipo Imposto'
+  TipoImposto;
+  @UI: {  lineItem:       [ { position: 170 } ] }
+  MontBasicRetorno;
+  @UI: {  lineItem:       [ { position: 180 } ] }
+  @EndUserText.label: 'Taxa Retorno'
+  TaxaRetorno;
+  @UI: {  lineItem:       [ { position: 190 } ] }
+  @EndUserText.label: 'ICMS Retorno'
+  IcmsRetorno;
+
+}

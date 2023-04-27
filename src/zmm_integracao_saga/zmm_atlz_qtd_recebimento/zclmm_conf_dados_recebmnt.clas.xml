@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_CONF_DADOS_RECEBMNT</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Confirmação de recebimento - SAGA WMS</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>DEQUEUE_STATUS</CMPNAME>
+     <SCONAME>IV_GUID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave primária como GUID em formato &apos;RAW&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MODIFICA_STATUS</CMPNAME>
+     <SCONAME>IS_STATUS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NF-e Incoming Header Status</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESSAR_STOCK</CMPNAME>
+     <SCONAME>IV_CNPJ</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CNPJ do emissor</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESSAR_STOCK</CMPNAME>
+     <SCONAME>IV_GUID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave primária como GUID em formato &apos;RAW&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESSAR_STOCK</CMPNAME>
+     <SCONAME>IV_NNF</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº de NF-e de 9 posições</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESSAR_STOCK</CMPNAME>
+     <SCONAME>IV_STEP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Processo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_STATUS</CMPNAME>
+     <SCONAME>ET_HDSTA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>xNF-e: Table Type for Structure /XNFE/INHDSTA</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_STATUS</CMPNAME>
+     <SCONAME>IV_GUID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave primária como GUID em formato &apos;RAW&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ENV_SAGA</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Validar envio SAGA</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ENV_SAGA</CMPNAME>
+     <SCONAME>RV_OK</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Administrar Transferências Pendentes'
+define service ZUI_ADMINISTRAR_TRANSF_PEND {
+  expose ZC_MM_ADMINISTRAR_TRANSF_PEND as AdministrarTransfPendentes;
+}

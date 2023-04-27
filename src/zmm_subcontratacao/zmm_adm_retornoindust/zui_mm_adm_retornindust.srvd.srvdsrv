@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def ADM Retorno da indust'
+define service ZUI_MM_ADM_RETORNINDUST {
+  expose ZC_MM_ADM_RETORNINDUST;
+}

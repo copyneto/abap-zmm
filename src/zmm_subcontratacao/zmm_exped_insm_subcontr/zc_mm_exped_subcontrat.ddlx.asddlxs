@@ -1,0 +1,101 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Pedido',
+    typeNamePlural: 'Pedidos',
+    title: {
+      type: #STANDARD,
+      label: 'Pedido',
+      value: 'Ebeln'
+    }
+  } }
+annotate entity ZC_MM_EXPED_SUBCONTRAT with
+{
+
+  @UI.facet: [ { id:         'Pedido',
+               purpose:       #STANDARD, 
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Pedido',
+               position:      10 }]
+  
+//  @UI.lineItem :  [ {position: 9 ,importance: #HIGH , type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'display' }]   
+  Rsnum;
+  @UI.hidden: true
+  Rspos;
+  @UI: { lineItem:        [ { position: 10, label: 'Pedido' } ],
+         identification:  [ { position: 10, label: 'Pedido' } ] }
+  @UI : { selectionField: [ { position: 10 } ] }
+  @UI.lineItem :  [ {importance: #HIGH , type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'display' }]
+  @Consumption.semanticObject: 'mmexpinsumos'
+  Ebeln;
+  @UI: { lineItem:        [ { position: 20, label: 'Item' } ],
+         identification:  [ { position: 20, label: 'Item' } ] }
+  Ebelp;
+  @UI: { lineItem:        [ { position: 90, label: 'Data da Necessidade' } ],
+         identification:  [ { position: 90, label: 'Data da Necessidade' } ] }
+  @UI : { selectionField: [ { position: 50 } ] }
+  BDTER;
+  @UI: { lineItem:        [ { position: 40, label: 'Centro' } ],
+         identification:  [ { position: 40, label: 'Centro' } ] }
+  @UI : { selectionField: [ { position: 30 } ] }
+  @Consumption.filter.mandatory: true
+  Werks;
+  @UI.hidden: true
+//  @UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'AtribPicking', label: 'Modificar Picking' }]
+  WerksName;
+  @UI: { lineItem:        [ { position: 30, label: 'Fornecedor' } ],
+         identification:  [ { position: 30, label: 'Fornecedor' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  @Consumption.filter.mandatory: true
+  Lifnr;
+  @UI.hidden: true
+  //@UI.lineItem  :  [{ type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição', invocationGrouping: #CHANGE_SET}]
+  DescForn;
+  @UI: { lineItem:        [ { position: 50, label: 'Material' } ],
+         identification:  [ { position: 50, label: 'Material' } ] }
+  @UI : { selectionField: [ { position: 40 } ] }
+  Matnr;
+  @UI.hidden: true
+  MatnrName;
+  @UI: { lineItem:        [ { position: 80, label: 'UM' } ],
+         identification:  [ { position: 80, label: 'UM' } ] }
+  Meins;
+  @UI: { lineItem:        [ { position: 70, label: 'Qtd. Picking' } ],
+         identification:  [ { position: 70, label: 'Qtd. Picking' } ] }
+  Picking;
+  @UI: { lineItem:        [ { position: 130, label: 'Remessa', type: #WITH_URL, url: 'URL_Remessa' } ],
+         identification:  [ { position: 130, label: 'Remessa' } ] }
+  Vbeln;
+  @UI: { lineItem:        [ { position: 100, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 100, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  @UI : { selectionField: [ { position: 80 } ] }
+  Status;
+  @UI.hidden: true
+  StatusCriticality;
+  @UI: { lineItem:        [ { position: 120, label: 'Doc. Material' } ],
+         identification:  [ { position: 120, label: 'Doc. Material' } ] }
+  Mblnr;
+  //  @Consumption.semanticObject: 'NotaFiscal'
+  @UI: { lineItem:        [ { position: 140, label: 'Docnum', type: #WITH_URL, url: 'URL_Docnum' } ],//, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'display'  } ],
+         identification:  [ { position: 140, label: 'Docnum' } ] }
+  //  Docnum;
+  BR_NotaFiscal;
+  @UI: { lineItem:        [ { position: 110, label: 'Data Emissão' } ],
+         identification:  [ { position: 110, label: 'Data Emissão' } ] }
+  @UI : { selectionField: [ { position: 70 } ] }
+  PSTDAT;
+
+  @UI: { lineItem:        [ { position: 150, label: 'NF-e' } ],
+         identification:  [ { position: 150, label: 'NF-e' } ] }
+  @UI : { selectionField: [ { position: 60 } ] }
+  NFENUM;
+  @UI: { lineItem:        [ { position: 60, label: 'Quantidade' } ],
+         identification:  [ { position: 60, label: 'Quantidade' } ] }
+  Quantidade;
+  @UI: { lineItem:        [ { position: 200, label: 'Estorno', type: #WITH_URL, url: 'URL_est' } ],
+         identification:  [ { position: 200, label: 'Estorno' } ] }
+  Estornar;
+  @UI.hidden: true
+  URL_est;
+
+}

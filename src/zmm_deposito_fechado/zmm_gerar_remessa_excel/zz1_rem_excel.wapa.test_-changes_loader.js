@@ -1,0 +1,3 @@
+const parsedUI5Version=sap.ui.version.split(".");const connectorPath=parseInt(parsedUI5Version[0],10)>=1&&parseInt(parsedUI5Version[1],10)>=80?"sap/ui/fl/write/api/connectors/FileListBaseConnector":"sap/ui/fl/initial/api/connectors/FileListBaseConnector"+
+;sap.ui.define(["sap/base/util/merge",connectorPath],function(e,n){return e({},n,{getFileList:function(){return new Promise(function(e,n){$.ajax({url:"/changes/",type:"GET",cache:false}).then(function(n){var i=/(\/changes\/[^"]*\.[a-zA-Z]*)/g;var s=i.exe+
+c(n);var a=[];while(s!==null){a.push(s[1]);s=i.exec(n)}e(a)}).fail(function(n){e()})})}})});                                                                                                                                                                   

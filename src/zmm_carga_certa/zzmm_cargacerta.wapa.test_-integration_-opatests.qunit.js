@@ -1,0 +1,1 @@
+sap.ui.require(["br/com/trescoracoes/pcargacerta/test/integration/AllJourneys"],function(){QUnit.config.autostart=false;QUnit.start()});                                                                                                                       

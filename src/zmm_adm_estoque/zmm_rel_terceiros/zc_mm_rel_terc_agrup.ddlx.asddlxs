@@ -1,0 +1,287 @@
+@Metadata.layer:  #CORE
+annotate view ZC_MM_REL_TERC_AGRUP with
+{
+  @UI: { selectionField: [ { position: 10 } ] }
+  @EndUserText.label: 'Data Lançamento Inicial'
+  DataLancamentoRM;
+  @UI: { selectionField: [ { position: 20 } ] }
+  @EndUserText.label: 'Data Lançamento Final'
+  DataLancamentoRT;
+  @UI: { selectionField: [ { position: 30 } ] }
+  @EndUserText.label: 'Data Documento Inicial'
+  DataDocumentoRM;
+  @EndUserText.label: 'Data Documento Final'
+  @UI: { selectionField: [ { position: 40 } ] }
+  DataDocumentoRT;
+  @UI: { selectionField: [ { position: 150 } ] }
+  @EndUserText.label: 'Pedido de Subcontratação'
+  PedidoSub;
+  @UI: { selectionField: [ { position: 200 } ] }
+  Iva;
+  @UI: { selectionField: [ { position: 210 } ] }
+  @EndUserText.label: 'Categoria NFE'
+  CategoriaNFE;
+  @UI: { selectionField: [ { position: 220 } ] }
+  @EndUserText.label: 'Grupo de Compradores'
+  GrupoCompra;
+  @UI: { selectionField: [ { position: 230 } ] }
+  @EndUserText.label: 'Grupo de mercadoria'
+  GrupoMercado;
+  @UI: { selectionField: [ { position: 240 } ] }
+  @Consumption.filter:{ defaultValue: 'X', selectionType: #SINGLE }
+  @EndUserText.label: 'Saldo em Poder de Terceiro'
+  SaldoTerceiro;
+  @UI: {  lineItem:     [ { position: 10, criticality: 'ColorStatus' } ],
+        identification: [ { position: 10, criticality: 'ColorStatus' } ],
+          selectionField: [ { position: 250 } ] }
+  @EndUserText.label: 'Status'
+  Status;
+  @Consumption.filter.hidden: true
+  @UI.hidden: true
+  ColorStatus;
+  @UI: {  lineItem:       [ { position: 20 } ],
+          identification: [ { position: 20 } ],
+          selectionField: [ { position: 50 } ] }
+  @EndUserText.label: 'Empresa'
+  @Consumption.filter.mandatory: true
+  Empresa;
+  @UI: {  lineItem:       [ { position: 30 } ],
+          identification: [ { position: 30 } ],
+          selectionField: [ { position: 60 } ]  }
+  @EndUserText.label: 'Local de Negócio'
+  LocalNegocio;
+  @UI: {  lineItem:       [ { position: 40 } ],
+          identification: [ { position: 40 } ],
+          selectionField: [ { position: 70 } ]  }
+  @EndUserText.label: 'Centro'
+  Centro;
+  @UI: {  lineItem:       [ { position: 50 } ],
+        identification: [ { position: 50 } ]}
+  //        selectionField: [ { position: 50 } ]  }
+  @EndUserText.label: 'Dias em Aberto'
+  DiasAberto;
+  @UI: {  lineItem:       [ { position: 60 } ],
+    identification: [ { position: 60 } ]}
+  //    selectionField: [ { position: 60 } ]  }
+  @EndUserText.label: 'Saldo em Poder do Fornecedor'
+  SaldoFornecedor;
+  @Consumption.semanticObject: 'BusinessPartner'
+  @UI: { lineItem:       [ { position: 70,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'zzdisplay'  } ] }
+  @UI: { identification: [ { position: 70,
+                             type: #WITH_INTENT_BASED_NAVIGATION,
+                             semanticObjectAction: 'zzdisplay'  } ],
+        selectionField: [ { position: 100 } ]  }
+  @EndUserText.label: 'Código Fornecedor'
+  CodFornecedor;
+  @UI: { lineItem:       [ { position: 80  } ] }
+  @UI: { identification: [ { position: 80  } ] }
+  @EndUserText.label: 'Desc Fornecedor'
+  DescFornecedor;
+  @UI: {  lineItem:       [ { position: 90 } ],
+        identification: [ { position: 90 } ],
+        selectionField: [ { position: 210 } ]  }
+  @EndUserText.label: 'Número de série'
+  NumSerie;
+  //  @UI: {  lineItem:       [ { position: 60 } ],
+  //          identification: [ { position: 60 } ],
+  //          selectionField: [ { position: 60 } ]  }
+  //  Material;
+  @UI: {  lineItem:       [ { position: 100 } ],
+              identification: [ { position: 100 } ],
+            selectionField: [ { position: 110 } ]  }
+  @EndUserText.label: 'N° NF Remessa'
+  NFRemessa;
+  @UI: {  lineItem:       [ { position: 110 } ],
+             identification: [ { position: 110 } ]}
+  @EndUserText.label: 'Fornecedor Remessa'
+  CodFornecedorRM;
+  @UI: {  lineItem:       [ { position: 120 } ],
+           identification: [ { position: 120 } ]}
+  @EndUserText.label: 'Desc Fornecedor Remessa'
+  DescFornecedorRM;
+  @UI: {  lineItem:       [ { position: 130 } ],
+         identification: [ { position: 130 } ]}
+  @EndUserText.label: 'Valor Item Remessa'
+  ValorItemRM;
+  @UI: {  lineItem:       [ { position: 140 } ],
+    identification: [ { position: 140 } ],
+    selectionField: [ { position: 140 } ]  }
+  @EndUserText.label: 'CFOP Remessa'
+  CfopRemessa;
+  @UI: {  lineItem:       [ { position: 150 } ],
+            identification: [ { position: 150 } ]}
+  //            selectionField: [ { position: 160 } ]  }
+  @EndUserText.label: 'Doc Material Remessa'
+  MaterialMovement;
+  @UI: {  lineItem:       [ { position: 160 } ],
+      identification: [ { position: 160 } ]}
+  //        selectionField: [ { position: 230 } ] }
+  @EndUserText.label: 'Movimento Remessa'
+  MovimentoRM;
+  @UI: {  lineItem:       [ { position: 170 } ],
+    identification: [ { position: 170 } ]}
+  @EndUserText.label: 'Data Remessa'
+  DataRemessa;
+  //  @UI: {  lineItem:       [ { position: 80 } ] }
+  //  @EndUserText.label: 'NF Item Remessa'
+  //  NfItemRM;
+  @UI: {  lineItem:       [ { position: 180 } ],
+  identification: [ { position: 180 } ],
+  selectionField: [ { position: 80 } ] }
+  @EndUserText.label: 'N° Documento Remessa'
+  DocnumRemessa;
+  @UI: {  lineItem:       [ { position: 190 } ],
+  identification: [ { position: 190 } ]}
+  @EndUserText.label: 'Material Remessa'
+  CodMaterialRM;
+  @UI: {  lineItem:       [ { position: 200 } ],
+  identification: [ { position: 200 } ],
+  selectionField: [ { position: 160 } ] }
+  @EndUserText.label: 'Desc Material Remessa'
+  DescMaterialRM;
+  @UI: {  lineItem:       [ { position: 210 } ],
+  identification: [ { position: 210 } ]}
+  @EndUserText.label: 'Quantidade Remessa'
+  QtdeRM;
+  @UI: {  lineItem:       [ { position: 220 } ],
+  identification: [ { position: 220 } ]}
+  @EndUserText.label: 'Unidade de Medida Remessa'
+  UnidMedidaRM;
+  @UI: {  lineItem:       [ { position: 230 } ],
+  identification: [ { position: 230 } ]}
+  @EndUserText.label: 'Valor Total Remessa'
+  ValorTotalRM;
+  @UI: {  lineItem:       [ { position: 240 } ],
+  identification: [ { position: 240 } ],
+  selectionField: [ { position: 180 } ]  }
+  @EndUserText.label: 'Depósito Remessa'
+  DepositoRM;
+  @UI: {  lineItem:       [ { position: 250 } ],
+  identification: [ { position: 250 } ]}
+  @EndUserText.label: 'Lote Remessa'
+  LoteRM;
+  @UI: {  lineItem:       [ { position: 260 } ],
+  identification: [ { position: 260 } ]}
+  @EndUserText.label: 'NCM Remessa'
+  NcmRM;
+  @UI: {  lineItem:       [ { position: 270 } ],
+  identification: [ { position: 270 } ]}
+  @EndUserText.label: 'Montante Remessa'
+  MontBasicRetornoRM;
+  @UI: {  lineItem:       [ { position: 280 } ],
+  identification: [ { position: 280 } ]}
+  @EndUserText.label: 'Taxa de Retorno Remessa'
+  TaxaRetornoRM;
+  @UI: {  lineItem:       [ { position: 290 } ],
+  identification: [ { position: 290 } ]}
+  @EndUserText.label: 'ICMS Remessa'
+  IcmsRetornoRM;
+  @UI: {  lineItem:       [ { position: 300 } ],
+  identification: [ { position: 300 } ]}
+  @EndUserText.label: 'Conta Contábil Remessa'
+  ContaContabilIcmsRM;
+  @UI.hidden: true
+  TipoImpostoRM;
+  @UI.hidden: true
+  MoedaRM;
+  @UI: {  lineItem:       [ { position: 310 } ],
+  identification: [ { position: 310 } ],
+  selectionField: [ { position: 120 } ] }
+  @EndUserText.label: 'N° NF Retorno'
+  NFRetorno;
+  @UI: {  lineItem:       [ { position: 320 } ],
+  identification: [ { position: 320 } ]}
+  @EndUserText.label: 'Fornecedor Retorno'
+  CodFornecedorRT;
+  @UI: {  lineItem:       [ { position: 330 } ],
+  identification: [ { position: 330 } ]}
+  @EndUserText.label: 'Desc Fornecedor Retorno'
+  DescFornecedorRT;
+  @UI: {  lineItem:       [ { position: 340 } ],
+  identification: [ { position: 340 } ]}
+  @EndUserText.label: 'Valor Item Retorno'
+  ValorItemRT;
+  @UI: {  lineItem:       [ { position: 350 } ],
+  identification: [ { position: 150 } ]}
+  @EndUserText.label: 'CFOP Retorno'
+  CfopRetorno;
+  @UI: {  lineItem:       [ { position: 360 } ],
+  identification: [ { position: 360 } ]}
+  @EndUserText.label: 'Doc Material Retorno'
+  DocMaterial;
+  @UI: {  lineItem:       [ { position: 370 } ],
+  identification: [ { position: 370 } ]}
+  @EndUserText.label: 'Movimento Retorno'
+  MovimentoRT;
+  @UI: {  lineItem:       [ { position: 380 } ],
+  identification: [ { position: 380 } ]}
+  @EndUserText.label: 'Data Retorno'
+  DataRetorno;
+  @UI: {  lineItem:       [ { position: 390 } ],
+  identification: [ { position: 390 } ],
+  selectionField: [ { position: 90 } ] }
+  @EndUserText.label: 'N° Documento Retorno'
+  DocnumRetorno;
+  @UI: {  lineItem:       [ { position: 400 } ],
+  identification: [ { position: 400 } ],
+  selectionField: [ { position: 170 } ] }
+  @EndUserText.label: 'Material Retorno'
+  CodMaterialRT;
+  @UI: {  lineItem:       [ { position: 410 } ],
+  identification: [ { position: 410 } ]}
+  @EndUserText.label: 'Descrição Material Retorno'
+  DescMaterialRT;
+  @UI: {  lineItem:       [ { position: 420 } ],
+  identification: [ { position: 420 } ]}
+  @EndUserText.label: 'Quantidade Retorno'
+  QtdeRT;
+  @UI: {  lineItem:       [ { position: 430 } ],
+  identification: [ { position: 430 } ]}
+  @EndUserText.label: 'Unidade de Medida Retorno'
+  UnidMedidaRT;
+  @UI.hidden: true
+  MoedaRT;
+  @UI: {  lineItem:       [ { position: 440 } ],
+  identification: [ { position: 440 } ]}
+  @EndUserText.label: 'Valor Total Retorno'
+  ValorTotalRT;
+  @UI: {  lineItem:       [ { position: 450 } ],
+  identification: [ { position: 450 } ],
+  selectionField: [ { position: 190 } ] }
+  @EndUserText.label: 'Depósito Retorno'
+  DepositoRT;
+  @UI: {  lineItem:       [ { position: 460 } ],
+  identification: [ { position: 460 } ]}
+  @EndUserText.label: 'Lote Retorno'
+  LoteRT;
+  @UI: {  lineItem:       [ { position: 470 } ],
+  identification: [ { position: 470 } ]}
+  @EndUserText.label: 'NCM Retorno'
+  NcmRT;
+  @UI: {  lineItem:       [ { position: 480 } ],
+  identification: [ { position: 480 } ]}
+  @EndUserText.label: 'Montante Retorno'
+  MontBasicRetornoRT;
+  @UI: {  lineItem:       [ { position: 490 } ],
+  identification: [ { position: 490 } ]}
+  @EndUserText.label: 'Taxa Retorno'
+  TaxaRetornoRT;
+  @UI: {  lineItem:       [ { position: 500 } ],
+  identification: [ { position: 500 } ]}
+  @EndUserText.label: 'ICMS Retorno'
+  IcmsRetornoRT;
+  @UI.hidden: true
+  NfItem;
+
+  @UI.hidden: true
+  TipoImposto;
+
+  @UI: {  lineItem:       [ { position: 510 } ],
+  identification: [ { position: 510 } ]}
+  @EndUserText.label: 'Conta Contábil Retorno'
+  ContaContabilIcmsRT;
+
+
+}

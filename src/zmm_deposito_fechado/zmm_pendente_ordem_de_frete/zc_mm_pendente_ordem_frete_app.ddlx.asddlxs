@@ -1,0 +1,216 @@
+@Metadata.layer: #CORE
+@UI: {
+
+  headerInfo: { typeName: 'Pendente Em Ordem De Frete',
+                typeNamePlural: 'Dados Pendentes Em Ordem de Frete',
+                title: { type: #STANDARD, label: 'Dados Pendentes Em Ordem de Frete', value: 'NumeroOrdemDeFrete' } },
+  presentationVariant: [{ sortOrder: [{ by: 'NumeroOrdemDeFrete', direction:  #DESC }] }] }
+
+@UI.lineItem:       [{criticality: 'StatusHistoricoCriticality'}]
+
+annotate view ZC_MM_PENDENTE_ORDEM_FRETE_APP with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet:[{ id:              'HeaderStatus',
+               purpose:         #HEADER,
+               type:            #DATAPOINT_REFERENCE,
+               targetQualifier: 'HeaderStatus',
+               position:        10 },
+
+             { id:      'Facet',
+               purpose: #STANDARD,
+               type:    #COLLECTION,
+               label:   'Principal',
+               position: 20 },
+
+                     { id:              'Principal',
+                       purpose:         #STANDARD,
+                       parentId:        'Facet',
+                       type:            #FIELDGROUP_REFERENCE,
+                       label:           'Dados Principais',
+                       targetQualifier: 'Principal',
+                       position:         10 },
+
+                     { id:              'Geral',
+                       purpose:         #STANDARD,
+                       parentId:        'Facet',
+                       type:            #FIELDGROUP_REFERENCE,
+                       label:           'Geral',
+                       targetQualifier: 'Geral',
+                       position:         20 },
+
+             {  id:             'ModificacaoFacet',
+                purpose:        #STANDARD,
+                label:          'Quantidades',
+                type:    #COLLECTION,
+                position:       30 },
+
+                     {  id:             'ModificacaoQuantidade',
+                        purpose:        #STANDARD,
+                        label:          'Quantidades',
+                        parentId:       'ModificacaoFacet',
+                        type:           #FIELDGROUP_REFERENCE,
+                        targetQualifier: 'ModificacaoQuantidade',
+                        position:       10 },
+
+                     {  id:             'ModificacaoValores',
+                        purpose:        #STANDARD,
+                        label:          'Transferência',
+                        parentId:       'ModificacaoFacet',
+                        type:           #FIELDGROUP_REFERENCE,
+                        targetQualifier: 'ModificacaoValores',
+                        position:       20 }]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  @UI.lineItem:         [{ position: 10, type: #FOR_ACTION, dataAction: 'utilizarQtde', label: 'Utilizar Quantidade', invocationGrouping: #CHANGE_SET },
+                         { position: 20, type: #FOR_ACTION, dataAction: 'qtdeTransferida', label: 'Qtd. Transferida' },
+                         { position: 30, type: #FOR_ACTION, dataAction: 'criarNFE', label: 'Criar NFE', invocationGrouping: #CHANGE_SET }]
+
+  @UI.hidden: true
+  StatusHistoricoText;
+
+  @UI.hidden: true
+  StatusHistoricoCriticality;
+
+  // ------------------------------------------------------
+  // Field information Principal
+  // ------------------------------------------------------
+  @UI.lineItem:       [{ position: 10 }]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.textArrangement: #TEXT_ONLY
+  @Consumption.filter: { mandatory:true, defaultValue: '00', selectionType: #SINGLE }
+  EANType;
+
+  @UI.lineItem:       [{ position: 20, criticality: 'StatusHistoricoCriticality' }]
+  @UI.dataPoint:       { qualifier: 'HeaderStatus', title: 'Status', criticality: 'StatusHistoricoCriticality' }
+  @UI.selectionField: [{ position: 50}]
+  StatusHistorico;
+
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 20}]
+  NumeroOrdemDeFrete;
+
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 30}]
+  NumeroDaRemessa;
+
+  @UI.lineItem:       [{ position: 30}]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'Principal' }]
+  Material;
+
+  @UI.lineItem:       [{ position: 40}]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'Geral' }]
+  UmbOrigin;
+
+  @UI.lineItem:       [{ position: 50}]
+  @UI.fieldGroup:     [{ position: 50, qualifier: 'Geral' }]
+  UmbDestino;
+
+  @UI.lineItem:       [{ position: 60}]
+  @UI.fieldGroup:     [{ position: 60, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 10}]
+  CentroRemessa;
+
+  @UI.lineItem:       [{ position: 70}]
+  @UI.fieldGroup:     [{ position: 70, qualifier: 'Principal' }]
+  Deposito;
+
+  @UI.lineItem:       [{ position: 80}]
+  @UI.fieldGroup:     [{ position: 70, qualifier: 'Principal' }]
+  Lote;
+
+  @UI.lineItem:       [{ position: 90}]
+  @UI.fieldGroup:     [{ position: 70, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 10}]
+  CentroDestino;
+
+  @UI.lineItem:       [{ position: 100}]
+  @UI.fieldGroup:     [{ position: 70, qualifier: 'Principal' }]
+  DepositoDestino;
+
+  @UI.lineItem:       [{ position: 110}]
+  @UI.fieldGroup:     [{ position: 80, qualifier: 'Geral' }]
+  @UI.selectionField: [{ position: 60}]
+  @Consumption.filter: { selectionType: #SINGLE }
+  DadosDoHistorico;
+
+  @UI.fieldGroup:     [{ position: 90, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 40}]
+  SoldToParty;
+
+  @UI.lineItem:       [{ position: 120}]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'ModificacaoQuantidade' }]
+  Diferenca;
+
+  @UI.fieldGroup:     [{ position: 100, qualifier: 'Principal' }]
+  Status;
+
+  @UI.lineItem:       [{ position: 130}]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'ModificacaoQuantidade' }]
+  EstoqueRemessaOF;
+
+  @UI.lineItem:       [{ position: 140}]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'ModificacaoQuantidade' }]
+  AvailableStock_Conve;
+
+  @UI.hidden: true
+  AvailableStock;
+
+  @UI.lineItem:       [{ position: 150 }]
+  @UI.fieldGroup:     [{ position: 50, qualifier: 'ModificacaoQuantidade' }]
+  UseAvailable;
+
+  @UI.hidden: true
+  UseAvailableCheckBox;
+
+  @UI.lineItem:       [{ hidden: true, position: 150 }]
+  UseAvailableCheckBoxEnable;
+
+  @UI.lineItem:       [{ position: 160 }]
+  @UI.fieldGroup:     [{ position: 60, qualifier: 'ModificacaoQuantidade' }]
+  UsedStock_conve;
+
+  @UI.hidden: true
+  UsedStock;
+
+  @UI.lineItem:       [{ hidden: true, position: 170 } ]
+  UsedStockEnable;
+
+  @UI.hidden: true
+  MaterialText;
+  @UI.hidden: true
+  CentroText;
+  @UI.hidden: true
+  DepositoText;
+  @UI.hidden: true
+  CentroDestinoText;
+  @UI.hidden: true
+  DepositoDestinoText;
+  @UI.hidden: true
+  SoldToPartyName;
+
+  @UI.hidden: true
+  Transportador;
+  @UI.hidden: true
+  Driver;
+  @UI.hidden: true
+  Equipment;
+  @UI.hidden: true
+  Shipping_conditions;
+  @UI.hidden: true
+  Shipping_type;
+  @UI.hidden: true
+  Equipment_tow1;
+  @UI.hidden: true
+  Equipment_tow2;
+  @UI.hidden: true
+  Equipment_tow3;
+  @UI.hidden: true
+  Freight_mode;
+
+}

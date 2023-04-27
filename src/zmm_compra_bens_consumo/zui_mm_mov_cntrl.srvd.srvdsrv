@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Definition para o mov imobilizado'
+define service ZUI_MM_MOV_CNTRL {
+  expose ZC_MM_MOV_CNTRL;
+  expose ZC_MM_MAT_CNTRL;
+}

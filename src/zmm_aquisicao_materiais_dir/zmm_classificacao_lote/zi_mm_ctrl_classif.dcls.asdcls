@@ -1,0 +1,13 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_CTRL_CLASSIF {
+    grant
+        select
+            on
+                ZI_MM_CTRL_CLASSIF
+                    where
+                        ( Empresa ) = aspect pfcg_auth( ZMMBUKRS, BUKRS, ACTVT = '03' ) and
+                        ( Centro ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                        
+                        
+}

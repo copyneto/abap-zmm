@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de autorização'
+@MappingRole: true
+define role ZC_MM_ADMINISTRAR_TRANSF_PEND {
+    grant
+        select
+            on 
+                ZC_MM_ADMINISTRAR_TRANSF_PEND
+                    where 
+                        inheriting conditions from entity ZI_MM_ADMINISTRAR_TRANSF_PEND;
+                        
+}

@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_EXPEDINSUM_ESPC_SUBCONTR {
+    grant
+        select
+            on
+                ZC_MM_EXPEDINSUM_ESPC_SUBCONTR
+                    where
+                        inheriting conditions from entity ZI_MM_EXPEDINSUM_ESPC_SUBCONTR;
+                        
+}

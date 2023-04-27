@@ -1,0 +1,118 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Retorno',
+                     title: { value: 'ReferenceSDDocument' },
+                     typeNamePlural: 'Retornos' }}
+annotate entity ZC_MM_RETORNO with
+{
+  @UI.facet: [ { id:                'Retorno',
+                 purpose:           #STANDARD,
+                 type:              #IDENTIFICATION_REFERENCE,
+                 label:             'Retorno',
+                 position:          10 }]
+  //  @UI.hidden: true
+  //  ReferenceSDDocument;
+  //  @UI.hidden: true
+  //  ReferenceSDDocumentItem;
+//  @UI: { selectionField:  [ { position: 40 } ] }
+//  ReferenceDocument;
+  //  @UI.hidden: true
+  //  BR_NotaFiscalItem;
+  //  MaterialDocumentYear;
+  //  MaterialDocument;
+  //  MaterialDocumentItem;
+  //  DeliveryDocument;
+  //  DeliveryDocumentItem;
+  //  @UI.hidden: true
+  //  StorageLocation;
+  //  @UI.hidden: true
+  //  InventorySpecialStockType;
+  //  @UI.hidden: true
+  //  GoodsMovementType;
+  //  DeliveryDocumentItemCategory;
+  //  ReversedMaterialDocument;
+  @UI: { lineItem:        [ { position: 30 }  ],
+         identification:  [ { position: 30 }  ] }
+  Plant;
+  //  @UI.hidden: true
+  //  BR_CFOPCode;
+  @UI: { lineItem:        [ { position: 110 }  ],
+         identification:  [ { position: 110 }  ]}
+  Material;
+  //  @UI.hidden: true
+  //  PurchaseOrder;
+  @UI: { lineItem:        [ { position: 120 }  ],
+         identification:  [ { position: 120 }  ] }
+  MaterialName;
+  //  @UI.hidden: true
+  //  BR_TaxCode;
+  //  @UI.hidden: true
+  //  MaterialGroup;
+  @UI: { lineItem:        [ { position: 80 }  ],
+         identification:  [ { position: 80 }  ] }
+  NetPriceAmount;
+  //  @UI.hidden: true
+  //  SalesDocumentCurrency;
+  @UI: { lineItem:        [ { position: 150 }  ],
+         identification:  [ { position: 150 }  ] }
+  NetValueAmount;
+  @UI: { lineItem:        [ { position: 90 }  ],
+         identification:  [ { position: 90 }  ] }
+  BR_CFOPCategory;
+  //  @UI.hidden: true
+  //  BR_NFSourceDocumentNumber;
+  @UI: { lineItem:        [ { position: 140 }  ],
+         identification:  [ { position: 140 }  ] }
+  BaseUnit;
+  @UI: { lineItem:        [ { position: 130 }  ],
+         identification:  [ { position: 130 }  ] }
+  QuantityInBaseUnit;
+  //  @UI.hidden: true
+  //  Batch;
+  //  @UI.hidden: true
+  //  NCMCode;
+  //  BR_NFSourceDocumentItem;
+//  @UI: { selectionField:  [ { position: 10 } ] }
+//  BR_NFPostingDate;
+  @UI: { lineItem:        [ { position: 100 }  ],
+         identification:  [ { position: 100 }  ] }
+  BR_NFIssueDate;
+  //  @UI.hidden: true
+  //  CompanyCode;
+  @UI: { lineItem:        [ { position: 20 }  ],
+         identification:  [ { position: 20 }  ] }
+  BusinessPlace;
+  @UI: { lineItem:        [ { position: 50 }  ],
+         identification:  [ { position: 50 }  ] }
+  BR_NFPartner;
+  //  @UI.hidden: true
+  //  BR_NFeNumber;
+  @UI: { lineItem:        [ { position: 70 }  ],
+         identification:  [ { position: 70 }  ] }
+  BR_NFNumber;
+  @UI: { lineItem:        [ { position: 60 }  ],
+         identification:  [ { position: 60 }  ] }
+  BR_NFPartnerName1;
+  //  @UI.hidden: true
+  //  BR_NFType;
+  //  @UI.hidden: true
+  //  PurchasingGroup;
+  //  @UI.hidden: true
+  //  SerialNumber2;
+  //  @UI.hidden: true
+  //  BR_NFItemBaseAmount;
+  //  @UI.hidden: true
+  //  BR_NFItemTaxRate;
+  //  @UI.hidden: true
+  //  BR_NFItemTaxAmount;
+  @UI: { lineItem:        [ { position: 40, label: 'Dias em Aberto' }  ],
+         identification:  [ { position: 40, label: 'Dias em Aberto' }  ] }
+  DiasAberto;
+  @UI: { lineItem:        [ { position: 10, criticality: 'StatusCriticality' }  ],
+         identification:  [ { position: 10, criticality: 'StatusCriticality' }  ] }
+  Status;
+  @UI.hidden: true
+  Valor;
+  @UI.hidden: true
+  StatusCriticality;
+
+}

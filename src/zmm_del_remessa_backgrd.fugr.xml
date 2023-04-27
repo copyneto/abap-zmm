@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Deletar Remessa Background Task</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZMM_DEL_REMESSA_BACKGRDTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZMM_DEL_REMESSA_BACKGRD</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZMM_DEL_REMESSA_BACKGRD</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Deletar Remessa Background Task</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_VBELN</PARAMETER>
+       <TYP>VBELN_VL</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_VBELN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Remessa</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

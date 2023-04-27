@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Direitos Fiscais'
+define service ZUI_DIREITOSFISCAIS {
+  expose ZC_MM_DIREITOSFISCAIS;
+}

@@ -1,0 +1,26 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Operacao ARGO',
+                     typeNamePlural: 'Operacoes ARGO' },
+       presentationVariant: [{ sortOrder: [{ by: 'CreatedAt', direction: #DESC } ] }] }
+annotate view ZC_MM_ARGO_OP_PARAM with
+{
+
+  @UI.facet: [{ id: 'Oper', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Parâmetros', position: 10 },
+              { id: 'StatusHeader', purpose: #HEADER, type: #DATAPOINT_REFERENCE, targetQualifier: 'StatusHeader', position: 20 }]
+
+  @UI:{ lineItem: [{ position: 10 }], identification: [{ position: 10 }], selectionField: [{ position: 10 }] }
+  Operacao;
+  @UI:{ lineItem: [{ position: 20 }], identification: [{ position: 20 }], selectionField: [{ position: 20 }] }
+  Matnr;
+  @UI:{ lineItem: [{ position: 30 }], identification: [{ position: 30 }], selectionField: [{ position: 30 }] }
+  Begda;
+
+  @UI:{ lineItem: [{ position: 40, criticality: 'StatusCriticality' },
+                   { type: #FOR_ACTION, dataAction: 'activateOper', label: 'Ativar' },
+                   { type: #FOR_ACTION, dataAction: 'deactivateOper', label: 'Desativar' }],
+      identification: [ { type: #FOR_ACTION, dataAction: 'activateOper', label: 'Ativar' },
+                        { type: #FOR_ACTION, dataAction: 'deactivateOper', label: 'Desativar' }],
+      dataPoint: { qualifier: 'StatusHeader', title: 'Ativo', criticality: 'StatusCriticality'  } }
+  Active;
+
+}

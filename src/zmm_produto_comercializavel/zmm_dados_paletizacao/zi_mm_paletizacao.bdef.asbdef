@@ -1,0 +1,35 @@
+unmanaged implementation in class zclmm_i_paletizacao unique;
+
+define behavior for ZI_MM_PALETIZACAO //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create, readonly : update )
+  Product,
+  Centro;
+
+  field ( readonly ) DescricaoMaterial, TipoMaterial, DescricaoTipoMaterial,
+  CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, LocalLastChangedAt;
+
+  mapping for ztmm_paletizacao
+  {
+    Product = material;
+    //    DescricaoMaterial = descr_mat;
+    //    TipoMaterial = tipo_mat;
+    Centro = centro;
+    Lastro = z_lastro;
+    Altura = z_altura;
+    Unit = z_unit;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

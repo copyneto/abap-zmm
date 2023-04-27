@@ -1,0 +1,80 @@
+managed implementation in class zclmm_cockpit_liberacao unique;
+
+define behavior for ZI_MM_COCKPIT alias _Cockpit
+persistent table ztmm_desc_pag_gv
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+
+  field ( mandatory : create, readonly : update )
+  PurchaseOrder,
+  PurchaseOrderItem,
+  BR_NotaFiscal;
+
+  action ( features : instance ) comercialRelease result [1] $self; //liberado comercial
+  action ( features : instance ) comercialDiscount parameter ZI_MM_A_DESC_COMERCIAL result [1] $self; //Desconto comercial
+
+
+
+  //metodos inutilizados
+  action ( features : instance ) financialRelease result [1] $self; //liberado financeiro
+  action ( features : instance ) financialDiscount parameter ZI_MM_A_DESC_FINANCEIRO result [1] $self; //desconto financeiro
+  action ( features : instance ) documentClose result [1] $self;
+  action ( features : instance ) comercialReturn result [1] $self; //retornado comercial
+  action ( features : instance ) fupDocument result [1] $self;
+
+  association _Char;
+
+  mapping for ztmm_desc_pag_gv
+  {
+    PurchaseOrder = EBELN;
+    PurchaseOrderItem = EBELP;
+    BR_NotaFiscal = DOCNUM;
+    status = STATUS;
+    descontocomercial = vlr_desconto_com;
+    observcomercial = observacao_com;
+    usuariocomercial = usuario_com;
+    datacomercial = data_com;
+    docok_com = docok_com;
+    descontofinanceiro = vlr_desconto_fin;
+    DevolucaoFutura = vlr_dev_fut_fin;
+    observfinanceiro = observacao_fin;
+    usuariofinanceiro = usuario_fin;
+    datafinanceiro = data_fin;
+    docok_fin = docok_fin;
+    waers = waers;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+}
+
+define behavior for ZI_MM_CHARACTERISTICS alias _Charac
+persistent table ztmm_desc_pag_gv
+lock dependent by _Cockpit
+//authorization dependent by <association>
+//etag master <field_name>
+{
+  association _Cockpit;
+}
+
+define behavior for ZI_MM_CHARACTERISTICS_RECEB_V2 alias _Charac2
+persistent table ztmm_desc_pag_gv
+lock dependent by _Cockpit
+//authorization dependent by <association>
+//etag master <field_name>
+{
+  association _Cockpit;
+}
+
+define behavior for ZI_MM_CHARACTERISTICS_PED alias _Charac3
+persistent table ztmm_desc_pag_gv
+lock dependent by _Cockpit
+//authorization dependent by <association>
+//etag master <field_name>
+{
+  association _Cockpit;
+}

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Update tabela LPP</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_UPDATE_LPPTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_UPDATE_LPP</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_RECALC_LPP</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Estorno LPP</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUMBER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUMBER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_RECALC_LPP_ENT</FUNCNAME>
+     <UPDATE_TASK>3</UPDATE_TASK>
+     <SHORT_TEXT>Estorno LPP</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUMBER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TCODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>TCODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_MKPF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>TY_T_MKPF</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUMBER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TCODE</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MKPF</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_UPDATE_LPP</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Update na tabela LPP</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_LPP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZCTGMM_J_1BLPP</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_LPP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Ctg. Tabela J_1BLPP</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

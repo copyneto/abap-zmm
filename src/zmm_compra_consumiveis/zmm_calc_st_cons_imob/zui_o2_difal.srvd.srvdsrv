@@ -1,0 +1,4 @@
+@EndUserText.label: 'Regra para cálculo DIFAL/ST - Base Dupla'
+define service ZUI_O2_DIFAL {
+  expose ZC_MM_ZMMT003 as DIFAL;
+}

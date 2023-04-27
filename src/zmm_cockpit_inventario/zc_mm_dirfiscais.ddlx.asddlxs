@@ -1,0 +1,112 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Direito',
+    typeNamePlural: 'Direitos',
+    title: {
+        type: #STANDARD,
+        label: 'CFOP',
+        value: 'Cfop'
+    }
+}
+@Search.searchable: true
+annotate view ZC_MM_DIRFISCAIS with
+{
+  @UI.facet: [
+//  {
+//      id: 'Dir',
+//      purpose: #STANDARD,
+//      position: 10,
+//      label: 'Entradas',
+//      type: #IDENTIFICATION_REFERENCE
+//  },
+    { id:              'Dir',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Entradas',
+                 position:        10 },
+    { parentId:        'Dir',
+      id:              'DADOS_PRINCIPAIS',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        10,
+      label: 'Dados principais',
+      targetQualifier: 'DADOS_PRINCIPAIS' },
+
+    { parentId:        'Dir',
+      id:              'DADOS_CONTROLE',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        20,
+      label: 'Dados de controle',
+      targetQualifier: 'DADOS_CONTROLE' }]
+
+  @Search.ranking: #MEDIUM
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem: [{ position: 10 }],
+   fieldGroup:     [ { position: 10, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 10 }] }
+  Shipfrom;
+
+  @UI: { lineItem: [{ position: 20 }],
+   fieldGroup:     [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 20 }] }
+  Direcao;
+
+  @Search.ranking: #HIGH
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.9
+  @UI: { lineItem: [{ position: 30 }],
+   fieldGroup:     [ { position: 30, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 30 }] }
+  Cfop;
+
+  @UI: { lineItem: [{ position: 40 }],
+   fieldGroup:     [ { position: 40, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Ativo;
+
+  @UI: { lineItem: [{ position: 50 }],
+   fieldGroup:     [ { position: 50, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Taxlw1;
+
+  @UI: { lineItem: [{ position: 60 }],
+   fieldGroup:     [ { position: 60, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Taxlw2;
+
+  @UI: { lineItem: [{ position: 70 }],
+   fieldGroup:     [ { position: 70, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Taxlw4;
+
+  @UI: { lineItem: [{ position: 80 }],
+   fieldGroup:     [ { position: 80, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Taxlw5;
+
+  @UI: { lineItem: [{ position: 90 }],
+   fieldGroup:     [ { position: 90, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Taxsit;
+
+  @UI: { lineItem: [{ position: 100 }],
+   fieldGroup:     [ { position: 100, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Cbenef;
+
+  @UI: { lineItem: [{ position: 110 }],
+   fieldGroup:     [ { position: 110, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  Motdesicms;
+
+  @UI: { lineItem: [{ position: 120 }],
+   fieldGroup:     [ { position: 120, qualifier: 'DADOS_PRINCIPAIS' } ] }
+  ZtipoCalc;
+
+  @UI: { fieldGroup:     [ { position: 10, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedAt;
+
+  @UI: { fieldGroup:     [ { position: 50, qualifier: 'DADOS_CONTROLE' } ] }
+  LocalLastChangedAt;
+}

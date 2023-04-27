@@ -1,0 +1,4 @@
+@EndUserText.label: 'Visão de MRP'
+define service ZUI_VISAO_MRP {
+  expose ZC_MM_VISAO_MRP;
+}

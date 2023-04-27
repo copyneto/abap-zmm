@@ -1,0 +1,45 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo:{
+        typeName: 'Material',
+        typeNamePlural: 'Materiais',
+        title:{  type: #STANDARD, label: 'Material', value: 'Product' }
+    }}
+annotate entity ZC_MM_PALETIZACAO with
+{
+  @UI.facet: [ { id:         'Paletizacao',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Dados de Paletização',
+               position:      10 }]
+
+  @Consumption.semanticObject: 'Material'
+  @UI             : { selectionField : [ { position: 10 }],
+                      lineItem       : [ { position: 10, importance: #HIGH, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'display' }],
+                      identification : [ { position: 10 } ]}
+  Product;
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ] }
+  DescricaoMaterial;
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 40 } ],
+         selectionField:  [ { position: 20}] }
+  TipoMaterial;
+  @UI: { lineItem:        [ { position: 35 } ],
+         identification:  [ { position: 45 } ]}
+  DescricaoTipoMaterial;
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 30 } ],
+         selectionField:  [ { position: 30}] }
+  Centro;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  Lastro;
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ] }
+  Altura;
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ] }
+  Unit;
+
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Período bloqueio fiscal - GRC'
+define service ZUI_MM_DATA_BLOQ_GRC {
+  expose ZC_MM_DATA_BLOQ_GRC;
+}

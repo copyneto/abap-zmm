@@ -1,0 +1,27 @@
+managed;
+
+define behavior for ZI_MM_REGRA_EMISSAO_NF alias Emissao
+implementation in class zclmm_regra_emissao_nf unique
+persistent table ztmm_emissa_nf
+authorization master ( instance )
+lock master
+etag master LocalLastChangedAt
+{
+  create;
+  delete;
+
+  field ( mandatory : create ) Shipfrom, Shipto;
+  validation authorityCreate on save { create; }
+
+  mapping for ztmm_emissa_nf
+  {
+    Shipfrom = shipfrom;
+    Shipto = shipto;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+
+  }
+}

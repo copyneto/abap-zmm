@@ -1,0 +1,167 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Ordem de Descarga',
+                     typeNamePlural: 'Ordem de Descarga' },
+  presentationVariant: [{ sortOrder: [{ by: 'Romaneio', direction:  #DESC },
+                                      { by: 'Pedido', direction:  #ASC }] }] }
+
+@UI.lineItem: [{criticality: 'StatusOrdemCriti' }]
+annotate view ZC_MM_ADM_ORDEM_DESCARGA with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'DADOS',
+                 isSummary:       true,
+                 label:           'Dados de Controle',
+                 type:            #COLLECTION,
+                 position:        10 },
+
+                        { parentId:        'DADOS',
+                          id:              'Controle',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Controle' },
+
+                { id:              'OrdemItem',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Itens',
+                 position:        20,
+                 targetElement:   '_OrdemItem'},
+
+               { id:              'MODIF',
+                 isSummary:       true,
+                 label:           'Dados Modificações',
+                 type:            #COLLECTION,
+                 position:        30 },
+
+                        { parentId:        'MODIF',
+                          id:              'Modifica',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        30,
+                          targetQualifier: 'Modifica' },
+
+               { id:              'HeaderOrdem',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderOrdem',
+                 position:        10 },
+
+               { id:              'HeaderStatusOrdem',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderStatusOrdem',
+                 position:        20 },
+
+               { id:              'HeaderStatusArmaz',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderStatusArmaz',
+                 position:        30 },
+
+               { id:              'HeaderDataCria',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderDataCria',
+                 position:        40 }
+
+
+                           ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:        [{ position: 10, label: 'Nr. Ordem' } ],
+         dataPoint:        { qualifier: 'HeaderOrdem', title: 'Nr. Ordem' },
+         selectionField:  [{ position: 10 }] }
+  @EndUserText.label: 'Romaneio'
+  Romaneio;
+  @UI: { lineItem:        [ { position: 20, label: 'Pedido' } ],
+         selectionField:  [ { position: 20 }],
+         fieldGroup:  [ { position: 20, label: 'Pedido', qualifier: 'Controle' } ]  }
+  @EndUserText.label: 'Pedido'
+  Pedido;
+
+  @UI: { fieldGroup:  [ { position: 21, label: 'Item do Pedido', qualifier: 'Controle' } ] }
+  @EndUserText.label: 'Item do Pedido'
+  ItemPedido;
+
+  @UI: { fieldGroup:  [ { position: 90, label: 'Recebimento', qualifier: 'Controle' } ] }
+  @EndUserText.label: 'Recebimento'
+  Recebimento;
+  /*   @UI.hidden: true
+    @UI: { lineItem:        [ { position: 20, label: 'Item Recebimento' } ],
+           fieldGroup:  [ { position: 40, label: 'Item Recebimento', qualifier: 'Gerais' } ]  }
+    @EndUserText.label: 'Item do Recebimento'
+    ItemRecebimento;*/
+
+  @UI: { lineItem:        [ { position: 50, label: 'Nota Fiscal' } ],
+         selectionField:  [ { position: 30 }],
+         fieldGroup:  [ { position: 70, label: 'Nota Fiscal', qualifier: 'Controle' } ]  }
+  NotaFiscal;
+  /*  @UI.hidden: true
+    @UI: { lineItem:        [ { position: 55, label: 'Nota Fiscal Pedido' } ],
+           fieldGroup:  [ { position: 75, label: 'Nota Fiscal Pedido', qualifier: 'Controle' } ]  }
+    NotaFiscalPed;*/
+  @UI: { fieldGroup:  [ { position: 75, label: 'Placa', qualifier: 'Controle' } ]  }
+  Placa;
+  @UI: { fieldGroup:  [ { position: 75, label: 'Motorista', qualifier: 'Controle' } ]  }
+  Motorista;
+  @UI: { fieldGroup:  [ { position: 75, label: 'Data Entrada', qualifier: 'Controle' } ]  }
+  DtEntrada;
+  @UI: { fieldGroup:  [ { position: 75, label: 'Data Chegada', qualifier: 'Controle' } ]  }
+  DtChegada;
+
+  //  @UI: { fieldGroup:  [ { position: 110, label: 'Lote Classificado', qualifier: 'Controle' } ] }
+  //    Lote;
+  /*  @UI: { fieldGroup:  [ { position: 75, label: 'Qtde KG', qualifier: 'Qtde' } ]  }
+    QtdeKgOrig;
+    @UI: { lineItem:        [ { position: 60, label: 'Material' } ],
+           selectionField:  [ { position: 40 }],
+           fieldGroup:  [ { position: 80, label: 'Material', qualifier: 'Controle' } ]  }
+    Material;
+    @UI: { lineItem:    [ { position: 70, label: 'Descrição Material' } ],
+           fieldGroup:  [ { position: 90, label: 'Descrição Material', qualifier: 'Controle' } ]  }
+    DescMaterial;
+
+    @UI: { fieldGroup:  [ { position: 110, label: 'Lote', qualifier: 'Gerais' } ]  }
+    Lote;
+
+    @UI: { fieldGroup:  [ { position: 115, label: 'Unidade', qualifier: 'Qtde' } ]  }
+
+    Unidade;
+
+    @UI: { fieldGroup:  [ { position: 120, label: 'Quantidade', qualifier: 'Qtde'  } ]  }
+    Quantidade;*/
+
+  @UI: { lineItem:       [ { position: 75, label: 'Status da Ordem', criticality: 'StatusOrdemCriti', criticalityRepresentation: #WITH_ICON } ],
+         dataPoint:        { qualifier: 'HeaderStatusOrdem', title: 'Status da Ordem', criticality: 'StatusOrdemCriti' }}
+  StatusOrdem;
+  @UI: { selectionField: [ { position: 60 }]  }
+  StatusOrdemConv;
+  @UI.hidden: true
+  StatusOrdemCriti;
+  @UI: { lineItem:       [ { position: 80, label: 'Armazenado', criticality: 'StatusArmazenadoCriti', criticalityRepresentation: #WITH_ICON } ],
+         dataPoint:        { qualifier: 'HeaderStatusArmaz', title: 'Armazenado', criticality: 'StatusArmazenadoCriti' }}
+  StatusArmazenado;
+  @UI: { selectionField: [ { position: 70 }] }
+  StatusArmazenadoConv;
+  @UI.hidden: true
+  StatusArmazenadoCriti;
+  @UI: { fieldGroup:     [ { position: 115, label: 'Compensado', qualifier: 'Controle   ' }] }
+  StatusCompensado;
+  @UI.hidden: true
+  StatusCompensadoCriti;
+  @UI: { dataPoint:        { qualifier: 'HeaderDataCria', title: 'Data Criação' },
+         fieldGroup:      [ { position: 160, label: 'Data Criação', qualifier: 'Modifica' } ] }
+  CreatedAt;
+  @UI: { fieldGroup:      [ { position: 170, label: 'Criado por', qualifier: 'Modifica' } ] }
+  CreatedBy;
+  @UI: { fieldGroup:      [ { position: 190, label: 'Modificado por', qualifier: 'Modifica' } ] }
+  LastChangedBy;
+  @UI: { fieldGroup:      [ { position: 180, label: 'Modificado em', qualifier: 'Modifica' } ] }
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

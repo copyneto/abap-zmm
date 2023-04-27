@@ -1,0 +1,71 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Divisão',
+    typeNamePlural: 'Divisões',
+    title: {
+        type: #STANDARD,
+        label: 'Divisão',
+        value: 'Gsber'
+    }
+}
+annotate view ZC_MM_DIVISAO
+    with 
+{
+    @UI.facet: [{ id: 'DIVISAO',
+                  purpose: #STANDARD,
+                  position: 10,
+                  label: 'Detalhes',
+                  type: #IDENTIFICATION_REFERENCE
+                  },
+                  { id: 'CREATED',
+                  purpose: #STANDARD,
+                  position: 20,
+                  label: 'Criação e Modificação',
+                  type: #FIELDGROUP_REFERENCE
+                  }]
+    @UI.lineItem: [{ position: 10 }]
+    @UI.identification: [{ position: 10 }]
+    @UI.selectionField: [{ position: 10 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_MM_VH_GSBER', element: 'Gsber' } }]
+    Gsber;
+    @UI.lineItem: [{ position: 20 }]
+    @UI.identification: [{ position: 20 }]
+    @UI.selectionField: [{ position: 20 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_BUPLA', element: 'Branch' } }]
+    Bupla;
+    @UI.lineItem: [{ position: 30 }]
+    @UI.identification: [{ position: 30 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_VKORG', element: 'OrgVendas' } }]
+    Vkorg;
+    @UI.lineItem: [{ position: 40 }]
+    @UI.identification: [{ position: 40 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_WERKS', element: 'WerksCode' } }]
+    Werks;
+    @UI.lineItem: [{ position: 50 }]
+    @UI.identification: [{ position: 50 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_BUKRS', element: 'Empresa' } }]
+    Bukrs;
+    @UI.lineItem: [{ position: 60 }]
+    @UI.identification: [{ position: 60 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_MM_VH_TPLST', element: 'Tplst' } }]
+    Tplst;
+    @UI.lineItem: [{ position: 70 }]
+    @UI.identification: [{ position: 70 }]
+    Ativo;
+    @UI.lineItem: [{ position: 80 }]
+    @UI.fieldGroup: [{ position: 10 }]
+    CreatedBy;
+    @UI.lineItem: [{ position: 90 }]
+    @UI.fieldGroup: [{ position: 20 }]
+    CreatedAt;
+    @UI.fieldGroup: [{ position: 30 }]
+    @UI.lineItem: [{ position: 100 }]
+    LastChangedBy;
+    @UI.fieldGroup: [{ position: 40 }]
+    @UI.lineItem: [{ position: 110 }]
+    LastChangedAt;
+    @UI.fieldGroup: [{ position: 50 }]
+    @UI.lineItem: [{ position: 120 }]
+    LocalLastChangedAt;
+    
+}

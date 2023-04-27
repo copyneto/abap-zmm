@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_COLIGADA {
+  expose ZC_MM_COLIGADA;
+}

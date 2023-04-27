@@ -1,0 +1,132 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Administração Corretagem' , typeName: 'Administração Corretagem',
+  title: { type: #STANDARD, label: 'Pedido Compras', value: 'PedidoCompra' },
+  description: { type: #STANDARD, value: 'DocNF' } }
+annotate view ZC_MM_ADM_CORRETAGEM with
+{
+  @UI.facet: [ { id:            'Corretagem',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Corretagem',
+                 position:      10 }]
+
+  @UI: { lineItem:        [ { position: 10, label: 'Período' } ] }
+  @EndUserText.label: 'Período'
+  Periodo;
+  @UI: { lineItem:        [ { position: 20, label: 'Centro' } ],
+         selectionField : [ { position: 10 }] }
+  @EndUserText.label: 'Centro'
+  Centro;
+  @UI: { lineItem:        [ { position: 30, label: 'Data Entrada Mercadoria' } ],
+         selectionField : [ { position: 20 }] }
+  @EndUserText.label: 'Data Entrada Mercadoria'
+  DataEntrada;
+  @UI: { lineItem:        [ { position: 40, label: 'Data de entrada da NF' } ],
+         selectionField : [ { position: 30 }] }
+  @EndUserText.label: 'Data de entrada da NF'
+  DtEntradaNF;
+  @UI: { lineItem:        [ { position: 50, label: 'Corretora' } ],
+         selectionField : [ { position: 60 }] }
+  @EndUserText.label: 'Corretora'
+  Corretora;
+  @UI: { lineItem:        [ { position: 60, label: 'Nome Corretora' } ] }
+  @EndUserText.label: 'Corretora'
+  NomeCorretora;
+  @UI: { lineItem:        [ { position: 70, label: 'Corretor' } ] }
+  @EndUserText.label: 'Corretor'
+  Corretor;
+  @UI: { lineItem:        [ { position: 75, label: 'Nome Corretor' } ] }
+  @EndUserText.label: 'Corretor'
+  NomeCorretor;
+  @UI: { lineItem:        [ { position: 80, label: 'Doc. NF' } ] }
+  @EndUserText.label: 'Doc. NF'
+  DocNF;
+  @UI: { lineItem:        [ { position: 90, label: 'Nro. Nota fiscal' } ],
+         identification:  [ { position: 90, label: 'Nro. Nota fiscal' } ] }
+  @EndUserText.label: 'Nro. Nota fiscal'
+  NrNF;
+  @UI: { lineItem:        [ { position: 100, label: 'Moeda' } ] }
+  @EndUserText.label: 'Moeda'
+  Moeda;
+  @UI: { lineItem:        [ { position: 110, label: 'Valor Total Líq. NF' } ],
+         identification:  [ { position: 110, label: 'Valor Total Líq. NF' } ] }
+  @EndUserText.label: 'Valor Total Líq. NF'
+  ValorTotLiq;
+  @UI: { lineItem:        [ { position: 120, label: 'Quantidade NF' } ],
+         identification:  [ { position: 120, label: 'Quantidade NF' } ] }
+  @EndUserText.label: 'Quantidade NF'
+  QuantityInBaseUnit;
+  @UI: { lineItem:        [ { position: 130, label: 'Unidade' } ] }
+  @EndUserText.label: 'Unidade'
+  Unidade;
+  @UI: { lineItem:        [ { position: 140, label: '% Corretagem' } ],
+         selectionField : [ { position:70 }] }
+  @EndUserText.label: '% Corretagem'
+  PercCorretagem;
+  @UI: { lineItem:        [ { position: 150, label: 'Valor de Corretagem' } ],
+         identification:  [ { position:  90, label: 'Valor de Corretagem' } ] }
+  @EndUserText.label: 'Valor de Corretagem'
+  ValorCorretagem;
+  @UI: { lineItem:        [ { position: 160, label: 'Embarcador' } ] }
+  @EndUserText.label: 'Embarcador'
+  Embarcador;
+  @UI: { lineItem:        [ { position: 170, label: 'Nome do Embarcador' } ] }
+  @EndUserText.label: 'Nome do Embarcador'
+  NomeEmbarcador;
+  @UI: { lineItem:        [ { position: 180, label: 'Preço Unid. Embarque' } ] }
+  @EndUserText.label: 'Preço Unid. Embarque'
+  PrecoUnitEmb;
+  @UI: { lineItem:        [ { position: 190, label: 'Valor Embarcador' } ],
+         identification:  [ { position: 190, label: 'Valor Embarcador' } ] }
+  @EndUserText.label: 'Valor Embarcador'
+  ValorEmbarcador;
+  @UI: { lineItem:        [ { position: 200, label: 'Valor Desconto' } ],
+         identification:  [ { position: 210, label: 'Valor Desconto' } ] }
+  @EndUserText.label: 'Valor Desconto'
+  ValorDesconto;
+  @UI: { lineItem:        [ { position: 210, label: 'Valor Devol. Corretagem' } ] }
+  @EndUserText.label: 'Valor Devol. Corretagem'
+  ValorDevCorretagem;
+  @UI: { lineItem:        [ { position: 220, label: 'Valor a Pagar' } ] }
+  @EndUserText.label: 'Valor à Pagar'
+  ValorAPagar;
+  @UI: { lineItem:        [ { position: 240, label: 'Contrato Grão Verde' } ],
+         selectionField : [ { position: 80 }] }
+  @EndUserText.label: 'Contrato Grão Verde'
+  NrContrato;
+  @UI: { lineItem:        [ { position: 250, label: 'Pedido Compra' } ],
+         identification:  [ { position: 200, label: 'Pedido Compra' } ],
+         selectionField : [ { position: 40 }] }
+  @EndUserText.label: 'Pedido Compra'
+  PedidoCompra;
+  @UI: { lineItem:        [ { position: 260, label: 'Fornecedor' } ],
+         selectionField : [ { position: 50 }] }
+  @EndUserText.label: 'Fornecedor'
+  Fornecedor;
+  @UI: { lineItem:        [ { position: 270, label: 'Obs. Comercial' } ],
+         identification:  [ { position: 270, label: 'Obs. Comercial' } ],
+         selectionField : [ { position: 90 }] }
+  @EndUserText.label: 'Obs. Comercial'
+  Observacao;
+  @EndUserText.label: 'Status Apuração'
+  @UI: { selectionField: [ { position: 100 }],
+         lineItem:       [ { position: 280, label: 'Status Apuração', criticality: 'StatusApurCrityc', criticalityRepresentation: #WITHOUT_ICON }],
+         identification: [ { position: 280, label: 'Status Apuração', criticality: 'StatusApurCrityc', criticalityRepresentation: #WITHOUT_ICON } ],
+         textArrangement: #TEXT_ONLY }
+  StatusApuracao;
+  @UI: { lineItem:        [ { position: 290, label: 'Documento Compensação' } ] }
+  @EndUserText.label: 'Documento Compensação'
+  DocCompensacao;
+  @UI: { lineItem:        [ { position: 300, label: 'Data Compensação' } ] }
+  @EndUserText.label: 'Data Compensação'
+  DataCompensacao;
+  @EndUserText.label: 'Status Compensação'
+  @UI: { selectionField: [ { position: 110 }],
+         lineItem:       [ { position: 310, label: 'Status Compensação', criticality: 'StatusCompCrityc', criticalityRepresentation: #WITHOUT_ICON }],
+         textArrangement: #TEXT_ONLY }
+  StatusCompensacao;
+  @UI.hidden: true
+  StatusCompCrityc;
+    @UI.hidden: true
+  StatusApurCrityc;
+}

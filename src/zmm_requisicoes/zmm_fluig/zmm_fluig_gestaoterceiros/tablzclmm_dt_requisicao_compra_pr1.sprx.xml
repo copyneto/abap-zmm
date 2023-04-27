@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLMM_DT_REQUISICAO_COMPRA1</OBJ_NAME_M>
+     <HASH_ID>BA18939F2D2400968BC5CBE9D10E6107B5988AEF</HASH_ID>
+     <ID>&lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>PRITEM</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLMM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</X-ML_NSPCE>
+     <X-ML_NAME>PRITEM</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ACCTASSCAT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ACCTASSCAT</OBJ_NAME2>
+     <ID>&lt;element&gt; ACCTASSCAT &lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ACCTASSCAT</IFR_NAME>
+     <IFR_TEXT>Class.Contábil</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>12</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ACCTASSCAT</R3_NAME>
+     <R3_TEXT>Class.Contábil</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000012</R3_LENGTH>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ENDDATE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ENDDATE</OBJ_NAME2>
+     <ID>&lt;element&gt; ENDDATE &lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ENDDATE</IFR_NAME>
+     <IFR_TEXT>Data Fim</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ENDDATE</R3_NAME>
+     <R3_TEXT>Data Fim</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>MATERIAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>MATERIAL</OBJ_NAME2>
+     <ID>&lt;element&gt; MATERIAL &lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>MATERIAL</IFR_NAME>
+     <IFR_TEXT>Material Number</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>18</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>MATERIAL</R3_NAME>
+     <R3_TEXT>Material Number</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000018</R3_LENGTH>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PLANT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PLANT</OBJ_NAME2>
+     <ID>&lt;element&gt; PLANT &lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>PLANT</IFR_NAME>
+     <IFR_TEXT>Plant</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>4</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PLANT</R3_NAME>
+     <R3_TEXT>Plant</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000004</R3_LENGTH>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PREQ_NAME</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PREQ_NAME</OBJ_NAME2>
+     <ID>&lt;element&gt; PREQ_NAME &lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>PREQ_NAME</IFR_NAME>
+     <IFR_TEXT>Requisitante</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>12</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PREQ_NAME</R3_NAME>
+     <R3_TEXT>Requisitante</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000012</R3_LENGTH>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PREQ_PRICE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PREQ_PRICE</OBJ_NAME2>
+     <ID>&lt;element&gt; PREQ_PRICE &lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>PREQ_PRICE</IFR_NAME>
+     <IFR_TEXT>Currency amount for BAPIS (with 9 decimal places)</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>28</IFR_PREC>
+     <IFR_SCALE>9</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PREQ_PRICE</R3_NAME>
+     <R3_TEXT>Currency amount for BAPIS (with 9 decimal places)</R3_TEXT>
+     <R3_DATATYP>DEC</R3_DATATYP>
+     <R3_LENGTH>000028</R3_LENGTH>
+     <R3_DECIMAL>000009</R3_DECIMAL>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>STARTDATE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>STARTDATE</OBJ_NAME2>
+     <ID>&lt;element&gt; STARTDATE &lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>STARTDATE</IFR_NAME>
+     <IFR_TEXT>Data Início</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>STARTDATE</R3_NAME>
+     <R3_TEXT>Data Início</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLMM_DT_REQUISICAO_COMPRA_PR1</OBJ_NAME2>
+     <ID>&lt;type&gt; PRITEM &lt;element&gt; PRITEM &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra http://trescoracoes.com.br/gestaodeterceiros/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>PRITEM</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLMM_DT_REQUISICAO_COMPRA_PR1</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

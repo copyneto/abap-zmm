@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>ZMM376F02</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <OCLSS>ZMM</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZMM376F02</OBJECT>
+    <TTEXT>Depósito Fechado - Emissão de Nota Fiscal</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>ZMM376F02</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>ZMM376F02</BROBJ>
+     <ACTVT>16</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

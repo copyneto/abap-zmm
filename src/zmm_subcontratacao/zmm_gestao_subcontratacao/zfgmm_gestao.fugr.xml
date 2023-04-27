@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Gestão de SubContratação</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_GESTAOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_GESTAO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_GMVT_SUBC</FUNCNAME>
+     <UPDATE_TASK>1</UPDATE_TASK>
+     <SHORT_TEXT>Gestão de Subcontratação</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_MSEG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MSEG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_CHARG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHARG_D</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_MSEG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Segmento de documento - material</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_CHARG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Número do lote</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,43 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Região fiscal',
+    typeNamePlural: 'Regiões fiscais',
+    title: {
+      type: #STANDARD,
+      label: 'Região fiscal',
+      value: 'ShipFrom'
+    }
+  }
+}
+annotate view ZC_MM_REGRA_EMISSAO_NF with
+{
+
+  @UI.facet: [ { id:         'RegFiscal',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Região Fiscal',
+               position:      10 }]
+
+  @UI: { lineItem:        [ { position: 10, label: 'Emissor' } ],
+         identification:  [ { position: 10, label: 'Emissor' } ] }
+  @UI : { selectionField: [ { position: 10 } ] }
+  ShipFrom;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Recebedor' } ],
+         identification:  [ { position: 20, label: 'Recebedor' } ] }
+  @UI : { selectionField: [ { position: 20 } ] }
+  ShipTo;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+
+}

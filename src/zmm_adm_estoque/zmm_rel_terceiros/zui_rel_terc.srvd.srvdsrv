@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv. Definition Rel. Terceiro'
+define service ZUI_REL_TERC {
+  expose ZC_MM_REL_TERC_AGRUP;
+}

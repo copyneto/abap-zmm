@@ -1,0 +1,23 @@
+managed; // implementation in class zbp_i_mm_alv_account unique;
+
+define behavior for ZI_MM_ALV_ACCOUNT //alias <alias_name>
+persistent table ztmm_alv_account
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) Processo, Bwart, Grupo, Newbs;
+
+    mapping for ztmm_alv_account{
+        Processo = processo;
+        Bwart = bwart;
+        Grupo = grupo;
+        Newbs = newbs;
+        Newko = newko;
+    }
+
+}

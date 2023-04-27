@@ -1,0 +1,28 @@
+managed; // implementation in class zbp_i_mm_nbs_app unique;
+
+define behavior for ZI_MM_NBS_APP alias _NBS
+persistent table ztmm_nbs
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create ) Matnr;
+
+  field ( readonly : update ) Matnr;
+  field ( readonly ) Maktx, Description, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  mapping for ztmm_nbs
+  {
+    Matnr              = matnr;
+    Nbs                = nbs;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LastChangedBy      = last_changed_by;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

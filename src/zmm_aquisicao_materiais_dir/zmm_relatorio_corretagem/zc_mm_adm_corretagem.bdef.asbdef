@@ -1,0 +1,6 @@
+projection;
+
+define behavior for ZC_MM_ADM_CORRETAGEM alias Corretagem
+{
+  use update;
+}

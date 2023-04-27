@@ -1,0 +1,83 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Desconto Comercial/Financeiro',
+        typeNamePlural: 'Descontos Comercial/Financeiro:'
+    }
+}
+annotate view ZC_MM_LIB_PGTO_DES_FIN_COM with 
+{
+  @UI.facet: [ { id:            'DescontosComercialFinanceiro',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Descontos',
+                 position:      10 }  ]    
+                 
+//  @UI: { lineItem:        [ { position: 10, label: 'Marcado' },
+//                            { position: 10, type: #FOR_ACTION, dataAction: 'marcarDesFinCom', label: 'Marcar' },
+//                            { position: 20, type: #FOR_ACTION, dataAction: 'limparDesFinCom', label: 'Limpar' } ],
+//         identification:  [ { position: 10, label: 'Marcado' } ]  }
+//  Marcado;   
+//  @UI: { lineItem:        [ { position: 10, label: 'Número Documento' } ],
+//         identification:  [ { position: 10, label: 'Número Documento' } ]  }    
+//    NumDocumento;
+  @UI: { lineItem:        [ { position: 10, label: 'Nota Fiscal Comercial' } ],
+         identification:  [ { position: 10, label: 'Nota Fiscal Comercial' } ]  }    
+    DocNumComercial;
+    
+  @UI: { lineItem:        [ { position: 15, label: 'Doc. Contábil Desc. Comercial' } ],
+         identification:  [ { position: 15, label: 'Doc. Contábil Desc. Comercial' } ]  }    
+    DocContabilComercial;    
+
+  @UI: { lineItem:        [ { position: 20, label: 'Vl Desconto Comercial' } ],
+         identification:  [ { position: 20, label: 'Vl Desconto Comercial' } ]  }            
+    VlrDescontoCom;    
+    
+  @UI: { lineItem:        [ { position: 30, label: 'Observação Comercial' } ],
+         identification:  [ { position: 30, label: 'Observação Comercial' } ]  }    
+    ObservacaoCom;
+    
+  @UI: { lineItem:        [ { position: 40, label: 'Usuário Comercial' } ],
+         identification:  [ { position: 40, label: 'Usuário Comercial' } ]  }    
+    UsuarioCom;        
+    
+  @UI: { lineItem:        [ { position: 50, label: 'Dt Comercial' } ],
+         identification:  [ { position: 50, label: 'Dt Comercial' } ]  }    
+    DataCom;    
+    
+//  @UI: { lineItem:        [ { position: 30, label: 'Doc. Contábil Comercial', type: #WITH_URL, url: 'URL_DocContabilComercial' } ],
+//         identification:  [ { position: 30, label: 'Doc. Contábil Comercial' } ]  }    
+//    DocContabilComercial;    
+
+//  @UI: { lineItem:        [ { position: 80, label: 'Exercício Comercial' } ],
+//         identification:  [ { position: 80, label: 'Exercício Comercial' } ]  }    
+//    GjahrComercial;    
+    
+  @UI: { lineItem:        [ { position: 60, label: 'Nota Fiscal Financeiro' } ],
+         identification:  [ { position: 60, label: 'Nota Fiscal Financeiro' } ]  }    
+    DocNumFinanceiro;
+  @UI: { lineItem:        [ { position: 65, label: 'Doc. Contábil Desc. Financeiro' } ],
+         identification:  [ { position: 65, label: 'Doc. Contábil Desc. Financeiro' } ]  }    
+    DocContabilFinanceiro;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Vl Desconto Financeiro' } ],
+         identification:  [ { position: 70, label: 'Vl Desconto Financeiro' } ]  }           
+    VlrDescontoFin;
+  @UI: { lineItem:        [ { position: 80, label: 'Observação Financeiro' } ],
+         identification:  [ { position: 80, label: 'Observação Financeiro' } ]  }        
+    ObservacaoFin;
+  @UI: { lineItem:        [ { position: 90, label: 'Usuário Financeiro' } ],
+         identification:  [ { position: 90, label: 'Usuário Financeiro' } ]  }       
+    UsuarioFin;
+  @UI: { lineItem:        [ { position: 100, label: 'Dt Financeiro' } ],
+         identification:  [ { position: 100, label: 'Dt Financeiro' } ]  }        
+    DataFin;    
+        
+//  @UI: { lineItem:        [ { position: 100, label: 'Doc. Contábil Financeiro', type: #WITH_URL, url: 'URL_DocNumFinanceiro' } ],
+//         identification:  [ { position: 100, label: 'Doc. Contábil Financeiro' } ]  }    
+//    DocContabilFinanceiro;     
+
+//  @UI: { lineItem:        [ { position: 150, label: 'Exercício Financeiro' } ],
+//         identification:  [ { position: 150, label: 'Exercício Financeiro' } ]  }    
+//    GjahrFinanceiro;               
+}

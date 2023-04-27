@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Decisão Estocagem</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>LO Livre utilização menor que o Peso Total dos Lotes.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro ao executar FM &apos;VB_CHANGE_BATCH_STATUS&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Dados não encontrados FM &apos;QC01_BATCH_VALUES_READ&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Quantidade dos lotes superior a quantidade disponível</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Os lotes não possuem quantidade</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEC_ESTOC</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Lotes não definidos</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

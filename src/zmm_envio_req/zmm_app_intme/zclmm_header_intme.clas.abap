@@ -1,0 +1,5 @@
+CLASS zclmm_header_intme DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_header_intme.
+ENDCLASS.
+
+CLASS zclmm_header_intme IMPLEMENTATION.
+ENDCLASS.

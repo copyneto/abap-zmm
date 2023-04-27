@@ -1,0 +1,7 @@
+projection;
+
+define behavior for zc_mm_02_nri_item alias nfItem
+use etag
+{
+
+}

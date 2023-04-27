@@ -1,0 +1,9 @@
+unmanaged;
+
+define behavior for ZI_MM_EXPED_ARMAZENAGEM alias Armazenagem
+implementation in class zclmm_exped_armazenagem unique
+{
+
+  action ( features : instance ) Expedicao parameter ZC_MM_PARAM_TRANSP_ARMAZ;
+
+}

@@ -1,0 +1,2 @@
+sap.ui.define([],function(){"use strict";return{onInitSmartFilterBarExtension:function(e){var a=e.getSource();var t=new Date((new Date).getFullYear(),0,1);var n=new Date;var r={S_data_doc:{ranges:[{exclude:false,operation:"DATERANGE",keyField:"S_data_doc+
+",value1:new Date,value2:new Date}]},E_data_doc:{ranges:[{exclude:false,operation:"BT",keyField:"E_data_doc",value1:n,value2:n}]}};a.setFilterData(r)}}});                                                                                                     

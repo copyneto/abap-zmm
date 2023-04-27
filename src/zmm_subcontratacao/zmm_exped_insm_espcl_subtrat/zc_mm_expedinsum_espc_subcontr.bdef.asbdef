@@ -1,0 +1,6 @@
+projection;
+
+define behavior for ZC_MM_EXPEDINSUM_ESPC_SUBCONTR alias Expedicao
+{
+  use action Expedicao;
+}

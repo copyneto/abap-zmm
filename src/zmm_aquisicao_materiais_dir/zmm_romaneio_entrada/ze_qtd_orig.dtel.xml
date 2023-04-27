@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_QTD_ORIG</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DOMNAME>MENGE</DOMNAME>
+    <HEADLEN>19</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>19</SCRLEN2>
+    <SCRLEN3>19</SCRLEN3>
+    <DDTEXT>Qtde Original em KG</DDTEXT>
+    <REPTEXT>Qtde Original em KG</REPTEXT>
+    <SCRTEXT_S>Qtde KG</SCRTEXT_S>
+    <SCRTEXT_M>Qtde Original em KG</SCRTEXT_M>
+    <SCRTEXT_L>Qtde Original em KG</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_ARGO_SOLICITACOES</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Solicitações ARGO</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CHAVE_VIAG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STATUS_DESPESA</CMPNAME>
+     <SCONAME>EV_STATUS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da Despesa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STATUS_DESPESA</CMPNAME>
+     <SCONAME>NOT_FOUND</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro não cadastrado</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STATUS_VIAGEM</CMPNAME>
+     <SCONAME>EV_STATUS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status da Viagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LISTAR_SOLICITACAO</CMPNAME>
+     <SCONAME>ERROR_CONNECTION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Erro de conexão com a interface siBuscarIdSolicitacaoOut</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LISTAR_SOLICITACAO</CMPNAME>
+     <SCONAME>PARAM_NOT_FOUND</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetros não cadastrados</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

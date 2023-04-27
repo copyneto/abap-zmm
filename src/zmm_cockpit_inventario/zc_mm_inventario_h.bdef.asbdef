@@ -1,0 +1,23 @@
+projection;
+
+define behavior for ZC_MM_INVENTARIO_H alias Header
+{
+  use update;
+  use delete;
+
+  use action cancelar;
+  use action liberar;
+
+  use association _Itens { }
+}
+
+define behavior for ZC_MM_INVENTARIO_ITEM alias _Item
+{
+  use update;
+  use delete;
+
+  use action refresh;
+  use action message;
+  use association _H;
+
+}

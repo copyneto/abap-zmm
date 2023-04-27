@@ -1,0 +1,96 @@
+managed;
+
+define behavior for ZI_MM_INVENTARIO_H alias _Header
+implementation in class zclmm_inventario_h unique
+persistent table ztmm_inventory_h
+lock master
+authorization master ( instance )
+etag master LastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+  association _Itens { create ( features : instance ); }
+
+  field ( numbering : managed ) Documentid;
+  field ( readonly ) Status, DocumentNo, Countid,
+  Datesel, Accuracy,
+  LastChangedAt,
+  LastChangedBy, CreatedAt, CreatedBy,
+  LocalLastChangedAt;
+
+  action ( features : instance ) cancelar result [1] $self;
+  action ( features : instance ) liberar result [1] $self;
+
+  mapping for ZTMM_INVENTORY_H
+  {
+    Documentid = documentid;
+    Documentno = documentno;
+    Countid = countid;
+    Datesel = datesel;
+    Status = status;
+    Description = description;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}
+
+define behavior for ZI_MM_INVENTARIO_ITEM alias _Item
+implementation in class zclmm_inventario_i unique
+persistent table ztmm_inventory_i
+lock dependent by _H
+authorization dependent by _H
+etag master LastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+  association _H;
+
+  action ( features : instance ) message result [1] $self;
+  action ( features : instance ) refresh result [1..*] ZI_MM_INVENTARIO_ITEM;
+
+  determination updatedata on save { field Storagelocation, Batch, Quantitycount;}
+
+  field ( readonly : update ) Documentid;
+  field ( numbering : managed ) Documentitemid;
+  field ( readonly ) Documentitemid, Material, Status,
+  Plant, Quantitystock, Quantitycurrent, Balance, Balancecurrent,
+  Unit, MaterialBaseUnit, Pricestock, Pricecount, Pricediff, Currency, Weight, Weightunit,
+  ProductHierarchy, Accuracy, PhysicalInventoryDocument, Fiscalyear,
+  LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( features : instance ) Storagelocation, Quantitycount, batch;
+
+  mapping for ztmm_inventory_i
+  {
+    documentid = documentid;
+    documentitemid = documentitemid;
+    Material = material;
+    Plant = plant;
+    Storagelocation = storagelocation;
+    Batch = batch;
+    Quantitystock = quantitystock;
+    Quantitycount = quantitycount;
+    Quantitycurrent = quantitycurrent;
+    Balance = balance;
+    Balancecurrent = balancecurrent;
+    Unit = unit;
+    Pricestock = pricestock;
+    Pricecount = pricecount;
+    Pricediff = pricediff;
+    Currency = currency;
+    Weight = weight;
+    Weightunit = weightunit;
+    Accuracy = accuracy;
+    PhysicalInventoryDocument = physinventory;
+    Fiscalyear = fiscalyear;
+    Status = status;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

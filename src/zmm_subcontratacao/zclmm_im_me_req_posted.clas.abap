@@ -1,0 +1,21 @@
+CLASS zclmm_im_me_req_posted DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_ex_me_req_posted .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS ZCLMM_IM_ME_REQ_POSTED IMPLEMENTATION.
+
+
+  METHOD if_ex_me_req_posted~posted.
+    RETURN.
+  ENDMETHOD.
+ENDCLASS.

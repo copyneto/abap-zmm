@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def ADM Recebimento de Insumo'
+define service ZUI_MM_ADM_RECEBINSUMO {
+  expose ZC_MM_ADM_RECEBINSUMO;
+}

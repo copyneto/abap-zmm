@@ -1,0 +1,231 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Monitor de Serviço',
+//                     title: { value: 'NrNf' },
+                     typeNamePlural: 'Serviços'
+                   }
+     }
+annotate entity ZC_MM_MONIT_SERV_HEADER with
+{
+
+  @UI.facet: [
+
+               { id:         'StatusHeader',
+                 purpose:    #HEADER,
+                 type:       #DATAPOINT_REFERENCE,
+                 targetQualifier: 'StatusHeader',
+                 position:      10 },
+
+               { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 20 },
+
+                { id:           'Emitente',
+                 purpose:       #STANDARD,
+                 label:         'Dados Emitente',
+                 parentId:      'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'Emitente',
+                 position:      30 },
+
+             {  id:             'Destinat',
+                purpose:        #STANDARD,
+                label:          'Dados destinatário',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Destinat',
+                position:       40 } ,
+
+             {  id:             'Pagamento',
+                purpose:        #STANDARD,
+                label:          'Dados Pagamento',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Pagamento',
+                position:       50 },
+
+             {  id:             'Item',
+                purpose:        #STANDARD,
+                label:          'Itens',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Item',
+                position:       60 },
+
+             {  id:             'Anexo',
+                purpose:        #STANDARD,
+                label:          'Anexos',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Anexo',
+                position:       70 },
+
+             {  id:             'Simula',
+                purpose:        #STANDARD,
+                label:          'Simulação',
+                type:           #LINEITEM_REFERENCE,
+                targetElement: '_Simula',
+                position:       80 }
+
+            ]
+
+  @UI: { lineItem:        [ { position: 40 },
+                            { type: #FOR_ACTION, dataAction: 'simularfatura', label: 'Simular Fatura' } ],
+         selectionField:  [ { position: 10 } ] }
+  //         fieldGroup:      [ { position: 10, qualifier: 'Emitente' } ]}
+  Empresa;
+  @UI: { lineItem:        [ { position: 50 },
+                            { type: #FOR_ACTION, dataAction: 'registrarfatura', label: 'Registrar Fatura' } ],
+  //         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 20 } ],
+         fieldGroup:      [ { position: 20, qualifier: 'Destinat' }]}
+  Filial;
+  @UI: { lineItem:        [ { position: 60 },
+                            { type: #FOR_ACTION, dataAction: 'estornarfatura', label: 'Estornar Fatura' } ],
+  //         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 30 } ],
+         fieldGroup:      [ { position: 10, qualifier: 'Emitente' } ]
+         }
+  Lifnr;
+  @UI: { lineItem:        [ { position: 70 },
+                            { type: #FOR_ACTION, dataAction: 'excluirfatura', invocationGrouping: #CHANGE_SET, label: 'Excluir Fatura' } ],
+  //         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 40 } ],
+         fieldGroup:      [ { position: 30, qualifier: 'Destinat' }],
+         dataPoint:         { qualifier: 'StatusHeader', criticality: 'StFiscCritic' } }
+  NrNf;
+  @UI: { lineItem:        [ { position: 80 } ],
+         fieldGroup:      [ { position: 20, qualifier: 'Emitente' }]}
+  CnpjCpf;
+  //  @UI: { lineItem:        [ { position: 90 } ],
+  //         fieldGroup:      [ { position: 30, qualifier: 'Emitente' }]}
+  //  razsocial;
+  @UI: { lineItem:        [ { position: 100 } ],
+  //         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 50 } ],
+         fieldGroup:      [ { position: 50, qualifier: 'Destinat' }]}
+  DtEmis;
+  @UI: { lineItem:        [ { position: 105 } ],
+         selectionField:  [ { position: 70 } ],
+         fieldGroup:      [ { position: 60, qualifier: 'Destinat' }]}
+  DtLancto;
+  @UI: { lineItem:        [ { position: 110 } ],
+  //         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 60 } ]
+       //  fieldGroup:      [ { position: 10, qualifier: 'Emitente' } ]
+         }
+  DtVenc;
+  @UI: { lineItem:        [ { position: 120 } ],
+         fieldGroup:      [ { position: 70, qualifier: 'Destinat' }]}
+  DtReg;
+  @UI: { lineItem:        [ { position: 130 } ],
+  //         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 80 } ],
+         fieldGroup:      [ { position: 80, qualifier: 'Destinat' }]}
+  HrReg;
+  @UI: { lineItem:        [ { position: 140 } ],
+         fieldGroup:      [ { position: 40, qualifier: 'Destinat' }]}
+  VlTotNf;
+  //  @UI: { lineItem:        [ { position: 150 } ]}
+  //  ISS;
+  //  @UI: { lineItem:        [ { position: 160 } ]}
+  //  IR;
+  //  @UI: { lineItem:        [ { position: 170 } ]}
+  //  PIS;
+  //  @UI: { lineItem:        [ { position: 180 } ]}
+  //  COFINS;
+  //  @UI: { lineItem:        [ { position: 190 } ]}
+  //  CSLL;
+  //  @UI: { lineItem:        [ { position: 200 } ]}
+  //  INSS;
+  //  @UI: { lineItem:        [ { position: 210 } ]}
+  //  VlrLiqNf;
+  //  @UI: { lineItem:        [ { position: 220 } ]}
+  //  CFOP;
+  //  @UI: { lineItem:        [ { position: 230 } ]}
+  //  IVA;
+  //  @UI: { lineItem:        [ { position: 240 } ]}
+  //  contcontab;
+  @UI: { lineItem:        [ { position: 250 } ]}
+  Pedido;
+  @Consumption.semanticObject: 'SupplierInvoiceMonitor'
+  @UI: { lineItem: [ {
+    position: 260,
+      semanticObjectAction: 'display',
+      type: #WITH_INTENT_BASED_NAVIGATION
+    }
+  ]}
+  Miro;
+  @UI: { lineItem: [ {
+    position: 265
+    }
+  ]}
+  Docnum;
+  @UI: { lineItem: [ {
+    position: 270
+    }
+  ]}
+  FiscalYear;
+  @UI: { lineItem: [ {
+    position: 275
+    }
+  ]}
+  NFType;  
+  //  @UI: { lineItem:        [ { position: 270 } ]}
+  //  SetorCadst;
+  @UI: { lineItem:        [ { position: 280 } ]}
+  Uname;
+  //  @UI: { lineItem:        [ { position: 290 } ]}
+  //  CategNf;
+  @UI: { lineItem:        [ { position: 300 } ]}
+  LC;
+  @UI: { lineItem:        [ { position: 310 } ]}
+  LCText;
+  @UI: { fieldGroup:      [ { position: 40, qualifier: 'Emitente' }]}
+  MunicForn;
+  @UI: { fieldGroup:      [ { position: 50, qualifier: 'Emitente' }]}
+  MunicRemes;
+  @UI: { fieldGroup:      [ { position: 10, qualifier: 'Destinat' }]}
+  EmpresDest;
+  @UI: { fieldGroup:      [ { position: 20, qualifier: 'Destinat' }]}
+  DtBase;
+  @UI: {
+    lineItem:        [ { position: 10, criticality: 'StFiscCritic', criticalityRepresentation: #WITH_ICON } ],
+    selectionField:  [ { position: 90 } ]
+  }
+  //         dataPoint:         { qualifier: 'StatusHeader', criticality: 'StFiscCritic', criticalityRepresentation: #WITH_ICON }}
+  StatusFiscal;
+  @UI.hidden: true
+  StFiscCritic;
+  @UI: { lineItem:        [ { position: 20, criticality: 'SlaFinancCritc', criticalityRepresentation: #WITH_ICON } ] }
+  SlaFinanc;
+  @UI.hidden: true
+  SlaFinancCritc;
+  @UI: { lineItem:        [ { position: 30, criticality: 'SlaFiscalCritc', criticalityRepresentation: #WITH_ICON } ] }
+  SlaFiscal;
+  @UI.hidden: true
+  SlaFiscalCritc;
+  @UI.hidden: true
+  BranchText;
+  @UI.hidden: true
+  EmpText;
+  @UI.hidden: true
+  EmpDestText;
+  @UI.hidden: true
+  LifnrText;
+  @UI.hidden: true
+  UserText;
+  @UI.hidden: true
+  MunicFornDomicilio;
+  @UI.hidden: true
+  MunicRemesDomicilio;
+
+  //  /* Associations */
+  //  _Anexo;
+  //  _Branch;
+  //  _Bukrs;
+  //  _BukrsDest;
+  //  _Item;
+  //  _Lifnr;
+  //    _User;
+
+}

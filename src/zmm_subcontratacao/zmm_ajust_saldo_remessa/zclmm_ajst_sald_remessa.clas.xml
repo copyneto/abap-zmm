@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_AJST_SALD_REMESSA</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Ajuste Saldo de Remessa</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ERROR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema: tipo de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSGID</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: classe de mensagens</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ATRIB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERRO_CEN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERRO_EXPAN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERRO_KUNNR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERRO_PED</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERRO_PED_ATRB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERRO_PED_NV</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ERRO_SLD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_PED_NF</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_SUCES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: nº da mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SUCESS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema: tipo de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>AJUSTAR_REMESSA</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AJUSTAR_REMESSA</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atibuição de Novo Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ATRIBUIR_PEDIDO</CMPNAME>
+     <SCONAME>ES_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ATRIBUIR_PEDIDO</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave de atribuição de Novo Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_BAPIS</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_BAPIS</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atibuição de Novo Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR_PEDNV</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave ztmm_remes_pednv</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REF_PEDIDO</CMPNAME>
+     <SCONAME>ES_ATRIB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atibuição de Novo Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REF_PEDIDO</CMPNAME>
+     <SCONAME>IS_KEY_RESB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atibuição de Novo Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SALDO</CMPNAME>
+     <SCONAME>ET_SOMA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Soma de Remessa por Material</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SALDO</CMPNAME>
+     <SCONAME>ET_SOMA_CHARG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Soma de Remessa por Material/Lote</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SALDO</CMPNAME>
+     <SCONAME>IT_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atibuição de Novo Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_AJUST_REMESSA</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_AJUST_REMESSA</CMPNAME>
+     <SCONAME>IS_KEY_RESB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atibuição de Novo Pedido</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

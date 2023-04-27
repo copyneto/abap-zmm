@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_TRANSF_LPP</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Processos do LPP</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CALCULATE_AVERAGE</CMPNAME>
+     <SCONAME>CV_SUBTAVR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Subtrib.média de transferências de estoque</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALCULATE_AVERAGE</CMPNAME>
+     <SCONAME>IV_SUBTVAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valor subtrib. do último preço de compra</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_COMPLEMENTARY_DOC</CMPNAME>
+     <SCONAME>IV_NF_DOCNUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_COMPLEMENTARY_DOC</CMPNAME>
+     <SCONAME>IV_NF_LPP_DOCNUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_LPP</CMPNAME>
+     <SCONAME>IV_DOCNUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECALC_LPP</CMPNAME>
+     <SCONAME>ET_LPP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg. Tabela J_1BLPP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECALC_LPP</CMPNAME>
+     <SCONAME>IV_DOCNUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECALC_LPP</CMPNAME>
+     <SCONAME>IV_UPDATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>variável booleana (X=verdade, -=falso, espaço=desconhecido)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECALC_LPP_ITENS</CMPNAME>
+     <SCONAME>ET_LPP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg. Tabela J_1BLPP</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECALC_LPP_ITENS</CMPNAME>
+     <SCONAME>IV_DOCNUM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>RECALC_LPP_ITENS</CMPNAME>
+     <SCONAME>IV_UPDATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>variável booleana (X=verdade, -=falso, espaço=desconhecido)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

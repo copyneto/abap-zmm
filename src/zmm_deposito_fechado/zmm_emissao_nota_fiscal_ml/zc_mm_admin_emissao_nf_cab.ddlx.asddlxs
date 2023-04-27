@@ -1,0 +1,30 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { title: { type: #STANDARD, value: 'Status' },
+                     typeName: 'Depósito Fechado',
+                     typeNamePlural: 'Depósitos Fechados' } }
+
+annotate view ZC_MM_ADMIN_EMISSAO_NF_CAB with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'Item',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Depósito Fechado',
+                 position:        10,
+                 targetElement:   '_Item'} ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:       [ { position: 20, label: 'Status', criticality: 'StatusCriticality' } ] }
+  Status;
+
+  @UI.hidden: true
+  StatusText;
+  
+  @UI.hidden: true
+  StatusCriticality;
+
+}

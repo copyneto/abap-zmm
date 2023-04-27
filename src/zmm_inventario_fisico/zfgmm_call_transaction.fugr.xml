@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Chama transações</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_CALL_TRANSACTIONTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_CALL_TRANSACTION</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMM_CALL_TRANSACTION</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Chama transações</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_OUT</PARAMETER>
+       <TYP>ZSMM_ALIVIUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_COLUNA</PARAMETER>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_OUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dados do Projeto Alivium</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_COLUNA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>30 caracteres</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

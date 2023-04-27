@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_MONIT_SERV_HEADER {
+    grant
+        select
+            on
+                ZC_MM_MONIT_SERV_HEADER
+                    where
+                        inheriting conditions from entity ZI_MM_MONIT_SERV_HEADER;
+                        
+}

@@ -1,0 +1,64 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Anexos',
+                     title: { value: 'Filename' },
+                     typeNamePlural: 'Anexos'
+                   }
+     }
+annotate entity ZC_MM_MONIT_SERV_ANEXO with
+{
+  @UI.facet: [
+
+              { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+              { id:           'geral',
+                 purpose:       #STANDARD,
+                 parentId:        'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 label:         'Dados Gerais',
+                 targetQualifier: 'geral',
+                 position:      10 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 }  ]
+
+  @UI: { lineItem:        [ { position: 10, label: 'Número' } ],
+         identification:  [ { position: 10, label: 'Número' } ] }
+  @UI.fieldGroup:         [ { position: 10, qualifier: 'geral' } ]
+  Linha;
+  @UI: { lineItem:        [ { position: 20, label: 'Nome do Arquivo'} ],
+         identification:  [ { position: 20, label: 'Nome do Arquivo' } ] }
+  @UI.fieldGroup:         [ { position: 20, qualifier: 'geral' } ]
+  Filename;
+  @UI: { identification:  [ { position: 10 } ]}
+  @UI.fieldGroup:         [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI: { identification:  [ { position: 20 } ]}
+  @UI.fieldGroup:         [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI: { identification:  [ { position: 30 } ]}
+  @UI.fieldGroup:         [ { position: 30, qualifier: 'Modificar' } ]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 40 } ]}
+  @UI.fieldGroup:         [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 50 } ]}
+  @UI.fieldGroup:         [ { position: 50, qualifier: 'Modificar' } ]
+  LocalLastChangedAt;
+  @UI.hidden: true
+  CreatName;
+  @UI.hidden: true
+  ChangName;
+
+  //  /* Associations */
+  //  _Header;
+
+}

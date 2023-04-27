@@ -1,0 +1,29 @@
+unmanaged implementation in class ZCLMM_PENDENTE_ORDEM_FRETE unique;
+
+define behavior for ZI_MM_PENDENTE_ORDEM_FRETE_APP alias OrdemFrete
+late numbering
+lock master
+authorization master ( instance )
+etag master NumeroOrdemDeFrete
+{
+  update ( features : instance );
+  delete ( features : instance );
+
+  // Ações chamadas no VSCODE via Fragment
+
+  action fragmentCheckBox parameter ZI_MM_DF_EMISSAO_NF_POPUP;
+  action fragmentUsedStock parameter ZI_MM_DF_QTD_TRANSF_POPUP;
+
+  // Ações
+
+  action ( features : instance ) utilizarQtde;
+  action ( features : instance ) qtdeTransferida parameter ZI_MM_DF_QTD_TRANSF_POPUP;
+  action ( features : instance ) criarNFE parameter ZI_MM_ABS_CRIAR_NFE;
+
+  field ( readonly : update ) CentroRemessa, DadosDoHistorico,
+  Deposito, DepositoText, NumeroDaRemessa,
+  NumeroOrdemDeFrete, Material, UmbDestino,
+  UmbOrigin, SoldToParty, Status, Diferenca, EstoqueRemessaOF,
+  UseAvailable;
+
+}

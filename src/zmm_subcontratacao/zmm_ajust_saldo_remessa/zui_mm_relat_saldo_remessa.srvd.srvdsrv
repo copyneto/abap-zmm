@@ -1,0 +1,4 @@
+@EndUserText.label: 'Ajuste de Saldo de Remessa'
+define service ZUI_MM_RELAT_SALDO_REMESSA {
+  expose ZC_MM_RELAT_SALDO_REMESSA as App_SldRem;
+}

@@ -1,0 +1,80 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo:{
+        typeName: 'Material',
+        typeNamePlural: 'Materiais',
+        title:{  type: #STANDARD, label: 'Material', value: 'NumeroDocumento' }
+    }}
+annotate entity ZC_MM_TRANSFERENCIA with
+{
+
+  @Consumption.semanticObject: 'NotaFiscal'
+  @UI: { lineItem:        [ { position: 30,
+                              type:     #WITH_INTENT_BASED_NAVIGATION,
+                              semanticObjectAction: 'zzdisplay' }]}
+  //         selectionField : [ { position: 10 }] }
+  BR_NotaFiscal;
+  @UI.hidden: true
+  NumeroDocumento;
+  @UI.hidden: true       
+  DataLancamento;
+  @UI: { lineItem:        [ { position: 10 } ],
+         selectionField : [ { position: 20 }] }
+  Empresa;
+  @UI: { lineItem:        [ { position: 130 } ],
+         selectionField : [ { position: 30 }] }
+  LocalNegocioOrigem;
+  // @UI: { lineItem:        [ { position: 150 } ],
+  //         selectionField : [ { position: 40 }] }
+  @UI: { lineItem:        [ { position: 150 } ],
+         selectionField : [ { position: 40 }] }  
+//  @UI: { lineItem:        [ { position: 150 } ] }
+  LocalNegocioDestino;
+  //  @UI: { lineItem:        [ { position: 160 } ],
+  //         selectionField : [ { position: 45 }] }
+  //  LocalNegocioRecebedor;
+  @UI: { lineItem:        [ { position: 60 } ],
+         selectionField : [ { position: 50 }] }
+  CFOP;
+  @UI.hidden: true
+  DataDocumento;
+  
+  @Consumption.semanticObject: 'Material'
+  @UI: { lineItem:        [ { position: 40,
+                              type:     #WITH_INTENT_BASED_NAVIGATION,
+                              semanticObjectAction: 'display' }],
+         selectionField : [ { position: 60 }] }
+  Material;
+  //  @UI: { lineItem:        [ { position: 20}]}
+  //  @Consumption.semanticObject: 'NotaFiscal'
+  @UI: { lineItem:        [ { position: 20 } ] }
+  //                              type:     #WITH_INTENT_BASED_NAVIGATION,
+  //                              semanticObjectAction: 'zzdisplay', targetElement: 'NumeroDocumento' }]}
+  NumeroNf;
+    @Consumption.filter.selectionType: #INTERVAL
+    @UI: { lineItem:        [ { position: 70 } ] }
+  DataDocumento1;
+  @UI: { lineItem:        [ { position: 50 } ] }
+  DescricaoMaterial;
+  @UI: { lineItem:        [ { position: 80 } ] }
+  Quantidade1;
+  @UI: { lineItem:        [ { position: 90 } ] }
+  BaseUnit;
+  @UI: { lineItem:        [ { position: 100 } ] }
+  Quantidade2;
+  @UI: { lineItem:        [ { position: 110 } ] }
+  UnidadePeso;
+  @UI: { lineItem:        [ { position: 120 } ] }
+  Dias;
+  @UI: { lineItem:        [ { position: 160 } ] }
+  DocRefEntreda1;
+  @UI: { lineItem:        [ { position: 170 } ] }
+  DocRefEntrada;
+  @UI: { selectionField : [ { position: 70 }] }
+  Status;
+  @UI: { lineItem:        [ { position: 140 } ],
+         selectionField : [ { position: 10 }] }  
+  DataRecebimento;
+
+
+}

@@ -1,0 +1,121 @@
+unmanaged;
+
+define behavior for ZI_MM_RET_ARMAZENAGEM_APP alias RetArmazenagem
+implementation in class ZCLMM_RET_ARMAZENAGEM unique
+late numbering
+authorization master ( instance )
+lock master
+etag master LocalLastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+
+  action ( features : instance ) criarNFE parameter ZI_MM_ABS_CRIAR_NFE;
+  action ( features : instance ) moverValores;
+  action ( features : instance ) qtdeTransferida parameter ZI_MM_DF_QTD_TRANSF_POPUP;
+  action ( features : instance ) Continuar;
+
+
+  action ( features : instance ) CriaRemessa parameter ZI_MM_ABS_CRIAR_NFE;
+  action ( features : instance ) CriaRemeSimb;
+  action ( features : instance ) CriaOrderFrete;
+
+  action ( features : instance ) adicionarSerie parameter ZI_MM_DF_SERIE_POPUP;
+
+
+
+  action fragmentCheckBox parameter ZI_MM_DF_EMISSAO_NF_POPUP;
+  action fragmentUsedStock parameter ZI_MM_DF_QTD_TRANSF_POPUP;
+
+  association _Serie;
+  association _Mensagem;
+
+    field ( readonly )
+  NumeroOrdemDeFrete,
+  NumeroDaRemessa,
+  Material,
+  CentroOrigem,
+  DepositoOrigem,
+  UmbOrigin,
+  UmbDestino,
+  StatusNF,
+  Guid;
+
+  field ( readonly : update )
+//  NumeroOrdemDeFrete,
+//  NumeroDaRemessa,
+//  Material,
+//  UmbOrigin,
+//  UmbDestino,
+//  CentroOrigem,
+//  DepositoOrigem,
+  CentroDestino,
+  DepositoDestino,
+  EANType,
+  DadosDoHistorico,
+  //Status,
+  Diferenca,
+  EstoqueRemessaOF,
+  UtilizacaoLivre,
+  EstoqueLivreUtilizacao,
+  UseAvailable;
+}
+
+define behavior for ZI_MM_RET_ARMAZENAGEM_SERIE alias RetSerie
+authorization dependent by _Emissao
+lock dependent by _Emissao
+etag master LocalLastChangedAt
+{
+
+  update ( features : instance );
+  delete ( features : instance );
+  association _Emissao;
+
+field ( readonly )
+  NumeroOrdemDeFrete,
+  NumeroDaRemessa,
+  Material,
+  UmbOrigin,
+  UmbDestino,
+  CentroOrigem,
+  DepositoOrigem,
+  Guid,
+  Lote,
+  CentroDestino,
+  DepositoDestino,
+  EANType,
+  DadosDoHistorico;
+}
+
+define behavior for zi_mm_ret_armazenagem_msg alias Mensagem
+authorization dependent by _Emissao
+lock dependent by _Emissao
+etag master LocalLastChangedAt
+{
+
+  association _Emissao;
+
+  field ( readonly )
+
+
+  NumeroOrdemDeFrete,
+  NumeroDaRemessa,
+  Material,
+  UmbOrigin,
+  UmbDestino,
+  CentroOrigem,
+  DepositoOrigem,
+  Lote,
+  CentroDestino,
+  DepositoDestino,
+  EANType,
+  DadosDoHistorico,
+  ProcessStep,
+  PrmDepFecId,
+  Guid,
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+}

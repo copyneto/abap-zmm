@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_GESTAOTERCEIROS_REC</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Criação de Requisição</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Requisição criada com sucesso.</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_QUANTITY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Quantidade da requisição de compra</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TEXT_FORM</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Coluna de formato</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TRACKINGNO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº acompanhamento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TYPE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de pedido</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TYPE_E</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.mens.: S sucesso, E erro, W aviso, I inform., A cancel.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TYPE_S</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.mens.: S sucesso, E erro, W aviso, I inform., A cancel.</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BAPI_CREATE</CMPNAME>
+     <SCONAME>IS_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrut.transf.p/requisição de compra Enjoy - cabeçalho</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BAPI_CREATE</CMPNAME>
+     <SCONAME>IS_HEADERX</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Barra modificação p/requisição de compra Enjoy - cabeçalho</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_RESPOSTA</CMPNAME>
+     <SCONAME>IV_REQUISICAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº requisição de compra</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_RESPOSTA</CMPNAME>
+     <SCONAME>IV_TEXT_MSG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto de mensagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_RESPOSTA</CMPNAME>
+     <SCONAME>IV_TIPO_MSG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ctg.mens.: S sucesso, E erro, W aviso, I inform., A cancel.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HEADER</CMPNAME>
+     <SCONAME>ES_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrut.transf.p/requisição de compra Enjoy - cabeçalho</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>HEADER</CMPNAME>
+     <SCONAME>ES_HEADERX</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Barra modificação p/requisição de compra Enjoy - cabeçalho</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ITEM</CMPNAME>
+     <SCONAME>ET_ITEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Estrut.transf.p/requisição de compra Enjoy - item (import.)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ITEM</CMPNAME>
+     <SCONAME>ET_ITEMX</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Barra modif.p/requisição de compra Enjoy - dados do item</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>IV_REQUISICAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº requisição de compra</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

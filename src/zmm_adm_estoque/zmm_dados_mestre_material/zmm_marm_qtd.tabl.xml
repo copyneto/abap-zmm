@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TABL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD02V>
+    <TABNAME>ZMM_MARM_QTD</TABNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <TABCLASS>INTTAB</TABCLASS>
+    <DDTEXT>Quantidade por UM</DDTEXT>
+    <MASTERLANG>P</MASTERLANG>
+    <EXCLASS>1</EXCLASS>
+   </DD02V>
+   <DD03P_TABLE>
+    <DD03P>
+     <FIELDNAME>NUMTP</FIELDNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <INTTYPE>C</INTTYPE>
+     <INTLEN>000004</INTLEN>
+     <DATATYPE>CHAR</DATATYPE>
+     <LENG>000002</LENG>
+     <MASK>  CHAR</MASK>
+    </DD03P>
+    <DD03P>
+     <FIELDNAME>MENGE</FIELDNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <INTTYPE>C</INTTYPE>
+     <INTLEN>000030</INTLEN>
+     <DATATYPE>CHAR</DATATYPE>
+     <LENG>000015</LENG>
+     <MASK>  CHAR</MASK>
+    </DD03P>
+   </DD03P_TABLE>
+   <SEGMENT_DEFINITION>
+    <item>
+     <SEGMENTHEADER>
+      <SEGTYP>ZMM_MARM_QTD</SEGTYP>
+      <DESCRP>Quantidade por UM</DESCRP>
+     </SEGMENTHEADER>
+     <SEGMENTDEFINITION>
+      <SEGTYP>ZMM_MARM_QTD</SEGTYP>
+      <SEGDEF>ZMM_MARM_QTD000</SEGDEF>
+      <RELEASED>755</RELEASED>
+      <CLOSED>X</CLOSED>
+      <FIELDNUM>0002</FIELDNUM>
+      <EXPLENG>0017</EXPLENG>
+     </SEGMENTDEFINITION>
+     <SEGMENTSTRUCTURES>
+      <EDISEGSTRU>
+       <SEGTYP>ZMM_MARM_QTD</SEGTYP>
+       <POS>0001</POS>
+       <FIELDNAME>NUMTP</FIELDNAME>
+       <ROLLNAME>NUMTP</ROLLNAME>
+       <EXPLENG>0002</EXPLENG>
+      </EDISEGSTRU>
+      <EDISEGSTRU>
+       <SEGTYP>ZMM_MARM_QTD</SEGTYP>
+       <POS>0002</POS>
+       <FIELDNAME>MENGE</FIELDNAME>
+       <ROLLNAME>BSTMG</ROLLNAME>
+       <EXPLENG>0015</EXPLENG>
+      </EDISEGSTRU>
+     </SEGMENTSTRUCTURES>
+    </item>
+   </SEGMENT_DEFINITION>
+  </asx:values>
+ </asx:abap>
+</abapGit>

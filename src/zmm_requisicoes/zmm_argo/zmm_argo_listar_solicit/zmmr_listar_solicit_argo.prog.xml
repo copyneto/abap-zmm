@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZMMR_LISTAR_SOLICIT_ARGO</NAME>
+    <SUBC>1</SUBC>
+    <RSTAT>S</RSTAT>
+    <RLOAD>P</RLOAD>
+    <FIXPT>X</FIXPT>
+    <UCCHECK>X</UCCHECK>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>T01</KEY>
+     <ENTRY>Erro ao listar solicitação</ENTRY>
+     <LENGTH>52</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T02</KEY>
+     <ENTRY>Solicitação enviada com sucesso!</ENTRY>
+     <LENGTH>64</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T03</KEY>
+     <ENTRY>Parâmetros de execução não cadastrados</ENTRY>
+     <LENGTH>76</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>T04</KEY>
+     <ENTRY>Erro ao se comunicar com a interface</ENTRY>
+     <LENGTH>72</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>Envio de Solicitações de Viagens Emitidas</ENTRY>
+     <LENGTH>41</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_AUT</KEY>
+     <ENTRY>Criar Requisição</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_PROC</KEY>
+     <ENTRY>Desbloquear/Cancelar</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+   </TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

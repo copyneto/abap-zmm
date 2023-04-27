@@ -1,0 +1,342 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Registro',
+        typeNamePlural: 'Registros',
+        title: { type: #STANDARD,
+          label: 'Registro de movimentações',
+          value: 'Id'} },
+
+ presentationVariant: [{ sortOrder: [{by: 'MblnrSai', direction: #DESC }] }]}
+@UI.lineItem: [{criticality: 'StatusGeralCrit' }]
+annotate view ZC_MM_MOV_CNTRL with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'Entrada',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Entrada',
+                 position:        10 },
+  //                 { id: 'DADOS',
+  //type: #COLLECTION,
+  //label: 'Classe de Risco x Dias Calendario',
+  //position: 20 },
+  //{ parentId: 'DADOS',
+  {
+  id: 'ElementoPEP',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  label: 'Elemento PEP',
+  position: 20,
+  targetQualifier: 'ElementoPEP',
+  hidden: #(HiddenPEP)
+  },
+
+  {
+  id: 'GoodsSaida',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  label: 'Saída',
+  position: 30,
+  targetQualifier: 'GoodsSaida',
+  hidden: #(HiddenGoodsSaida)
+  },
+
+  {
+  id: 'Simulacao',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  label: 'Simulação',
+  position: 40,
+  targetQualifier: 'Simulacao',
+  hidden: #(HiddenSimulacao)
+  },
+
+  {
+  id: 'NFSaida',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  label: 'NF Saída',
+  position: 60,
+  targetQualifier: 'NFSaida',
+  hidden: #(HiddenNFSaida)
+  },
+
+  //{
+  //id: 'Imobilizado',
+  //purpose: #STANDARD,
+  //type: #FIELDGROUP_REFERENCE,
+  ////type: #LINEITEM_REFERENCE,
+  //label: 'Imobilizado',
+  //position: 70,
+  //targetQualifier: 'Imobilizado',
+  //hidden: #(HiddenImobilizado)
+  //}
+  { id: 'Imobilizado',
+  label: 'Imobilizado',
+  purpose: #STANDARD,
+  position: 70,
+  type: #LINEITEM_REFERENCE,
+  targetElement: '_MatCntrl',
+  hidden: #(HiddenImobilizado) }
+
+
+  //
+  ,
+
+  {
+  id: 'Posting',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  label: 'Contabilização',
+  position: 80,
+  targetQualifier: 'Posting',
+  hidden: #(HiddenPosting)
+  }
+  ,
+
+  {
+  id: 'NFEntrada',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  label: 'NF Entrada',
+  position: 90,
+  targetQualifier: 'NFEntrada',
+  hidden: #(HiddenNFEntrada)
+  }
+
+  ,
+
+  {
+  id: 'GoodsEntrada',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  label: 'Mov. merc. entrada',
+  position: 100,
+  targetQualifier: 'GoodsEntrada',
+  hidden: #(HiddenGoodsEntrada)
+  }
+
+                 ]
+  //               { id:              'PEP',
+  //                 purpose:         #STANDARD,
+  //                 type:            #LINEITEM_REFERENCE,
+  //                 label:           'Elemento PEP',
+  //                 position:        20,
+  //                 targetElement:   '_MatCntrl'} ]
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  //  @UI.lineItem: [ { position: 10, type: #FOR_INTENT_BASED_NAVIGATION, dataAction: 'mov_merc', label: 'Mov. Mercadoria' },
+  @UI.lineItem: [ { position: 10, type: #FOR_INTENT_BASED_NAVIGATION },
+   { position: 20, type: #FOR_ACTION, dataAction: 'simul_imp', label: 'Simular Impostos' },
+   { position: 30, type: #FOR_ACTION, dataAction: 'nfe_saida', label: 'Gerar NFe Saída' } ,
+   { position: 40, type: #FOR_ACTION, dataAction: 'contab', label: 'Contabilizar' },
+   { position: 50, type: #FOR_ACTION, dataAction: 'nfe_ent', label: 'Gerar NFe Entrada' },
+   { position: 60, type: #FOR_ACTION, dataAction: 'mov_merc_ent', label: 'Mov. Mercadoria Entrada' } ]
+  //                  ,
+  //                  { position: 70, type: #FOR_ACTION, dataAction: 'estorno', label: 'Estorno' } ]
+
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.identification: [ { position: 10, type: #FOR_ACTION, dataAction: 'registrar', label: 'Registrar' } ]
+  @UI.hidden: true
+  Id;
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'ZI_MM_STATUS_GERAL', element: 'Status' } }]
+  @UI: { lineItem: [{ position: 10, criticality: 'StatusGeralCrit'}], selectionField: [{ position: 40 }] }
+  StatusGeral;
+  @UI: { lineItem: [{ position: 20 }], selectionField: [{ position: 10 }] }
+  //@Consumption.filter.mandatory: true
+  //  @UI: { fieldGroup:  [{ position: 20, qualifier: 'Posting' }] }
+  Bukrs;
+  @UI: { selectionField: [{ position: 20 }] }
+  Branch;
+  @UI: { lineItem: [{ position: 30 }] }
+  @UI: { fieldGroup:  [{ position: 20, qualifier: 'GoodsSaida' }] }
+  Mjahr;
+  @UI: { lineItem: [{ position: 40, type: #WITH_URL, url: 'URL_MblnrSai'  }] }
+  @UI: { fieldGroup:  [{ position: 10, qualifier: 'GoodsSaida', type: #WITH_URL, url: 'URL_MblnrSai' }] }
+  MblnrSai;
+  @UI: { lineItem: [{ position: 50 }] }
+  @UI: { fieldGroup:  [{ position: 30, qualifier: 'GoodsSaida' }] }
+  Mblpo;
+  @UI: { lineItem: [{ position: 60, criticality: 'Status1Crit' }] }
+  Status1;
+  @UI: { lineItem: [{ position: 70 }] }
+  MblnrEst;
+  @UI: { lineItem: [{ position: 80 }] }
+  MjahrEst;
+  @UI: { lineItem: [{ position: 90, criticality: 'Status2Crit' }] }
+  Status2;
+  @UI: { lineItem: [{ position: 99, type: #WITH_URL, url: 'URL_DocnumS' }] }
+  @UI: { fieldGroup:  [{ position: 10, qualifier: 'NFSaida', type: #WITH_URL, url: 'URL_DocnumS' }] }
+  DocnumS;
+  @UI: { lineItem: [{ position: 100 }] }
+  DocnumEstSai;
+  @UI: { lineItem: [{ position: 110, criticality: 'Status3Crit' }] }
+  Status3;
+  @UI: { lineItem: [{ position: 120, type: #WITH_URL, url: 'URL_Belnr'  }] }
+  @UI: { fieldGroup:  [{ position: 10, qualifier: 'Posting', type: #WITH_URL, url: 'URL_Belnr' }] }
+  Belnr;
+  //  @UI.hidden: true
+  @UI: { fieldGroup:  [{ position: 20, qualifier: 'Posting' }] }
+  BukrsDc;
+  @UI: { fieldGroup:  [{ position: 30, qualifier: 'Posting' }] }
+  GjahrDc;
+  @UI: { lineItem: [{ position: 130 }] }
+  BelnrEst;
+  @UI: { lineItem: [{ position: 140 }] }
+  GjahrEst;
+  @UI: { lineItem: [{ position: 150 }] }
+  BldatEst;
+  @UI: { lineItem: [{ position: 160, criticality: 'Status5Crit' }] }
+  Status5;
+  @UI: { lineItem: [{ position: 170, type: #WITH_URL, url: 'URL_MblnrEnt' }] }
+  @UI: { fieldGroup:  [{ position: 10, qualifier: 'GoodsEntrada', type: #WITH_URL, url: 'URL_MblnrEnt' }] }
+  MblnrEnt;
+  //@UI.hidden: true
+  @UI: { lineItem: [{ position: 180 }] }
+  @UI: { fieldGroup:  [{ position: 20, qualifier: 'GoodsEntrada' }] }
+  MjahrEnt;
+  @UI: { lineItem: [{ position: 190 }] }
+  @UI: { fieldGroup:  [{ position: 30, qualifier: 'GoodsEntrada' }] }
+  MblpoEnt;
+  @UI: { lineItem: [{ position: 200 }] }
+  MblnrEstEnt;
+  @UI: { lineItem: [{ position: 210 }] }
+  MjahrEstEnt;
+  @UI: { lineItem: [{ position: 220 }] }
+  Bldat;
+  @UI: { lineItem: [{ position: 230, criticality: 'Status4Crit' }] }
+  Status4;
+  @UI: { lineItem: [{ position: 240, type: #WITH_URL, url: 'URL_DocnumEnt' }] }
+  @UI: { fieldGroup:  [{ position: 10, qualifier: 'NFEntrada', type: #WITH_URL, url: 'URL_DocnumEnt' }] }
+  DocnumEnt;
+  @UI: { lineItem: [{ position: 250 }], selectionField: [{ position: 30 }] }
+  Docdat;
+  @UI: { lineItem: [{ position: 260 }] }
+  DocnumEstEnt;
+  @UI: { lineItem: [{ position: 270 }] }
+  Etapa;
+  @Consumption.valueHelpDefinition: [{
+  entity: { name: 'I_ProductStdVH', element: 'Product' } }]
+  @UI: { fieldGroup:  [{ position: 40, qualifier: 'GoodsSaida' }] }
+  Matnr1;
+  @UI: { identification: [{ position: 10 }] }
+  @Consumption.valueHelpDefinition: [{
+  entity: { name: 'I_ProductStdVH', element: 'Product' } }]
+  Matnr;
+  @UI: { identification: [{ position: 20 }] }
+  Menge;
+  //  I_UnitOfMeasure
+  @UI: { identification: [{ position: 30 }] }
+  @Consumption.valueHelpDefinition: [{
+  entity: { name: 'I_UnitOfMeasure', element: 'UnitOfMeasure' } }]
+  Meins;
+  @UI: { identification: [{ position: 30 }] }
+  @Consumption.valueHelpDefinition: [{
+  entity: { name: 'I_PlantStdVH', element: 'Plant' } }]
+  //@UI: { fieldGroup:  [{ position: 20, qualifier: 'GoodsSaida' }] }
+  @UI: { fieldGroup:  [{ position: 20 }] }
+  Werks;
+  @UI: { identification: [{ position: 50 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_StorageLocation', element: 'StorageLocation' } }]
+  ////  @UI: { fieldGroup:  [{ position: 30, qualifier: 'GoodsSaida' }] }
+  @UI: { fieldGroup:  [{ position: 60 }] }
+  Lgort;
+  @UI: { fieldGroup:  [{ position: 10, qualifier: 'ElementoPEP' }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_PS_VH_PEP_WBSELEMENT', element: 'WBSElement' } }]
+  Posid;
+  //  @UI: { fieldGroup:  [{ position: 10, qualifier: 'Imobilizado' }] }
+  //  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_IMOBILIZADO', element: 'Anln1' },
+  //  additionalBinding: [{ localElement: 'Anln2', element: 'Anln2' }, { localElement: 'Invnr', element: 'Invnr' }]}]
+  //  Anln1;
+  //  @UI: { fieldGroup:  [{ position: 20, qualifier: 'Imobilizado' }] }
+  //  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_IMOBILIZADO', element: 'Anln2' },
+  //  additionalBinding: [{ localElement: 'Anln1', element: 'Anln1' }] }]
+  //  Anln2;
+  //  @UI: { fieldGroup:  [{ position: 30, qualifier: 'Imobilizado' }] }
+  //  Invnr;
+  @UI: { fieldGroup:  [{ position: 190, qualifier: 'Simulacao' }] }
+  @Consumption.valueHelpDefinition: [{
+  entity: { name: 'I_BusinessPartner', element: 'BusinessPartner' } }]
+  Partner;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI: { fieldGroup:  [{ position: 10, qualifier: 'Simulacao' }] }
+  Netpr;
+  @UI: { fieldGroup:  [{ position: 20, qualifier: 'Simulacao' }] }
+  TaxtypIcm3;
+  @UI: { fieldGroup:  [{ position: 30, qualifier: 'Simulacao' }] }
+  BaseBx13;
+  @UI: { fieldGroup:  [{ position: 40, qualifier: 'Simulacao' }] }
+  RateBx13;
+  @UI: { fieldGroup:  [{ position: 50, qualifier: 'Simulacao' }] }
+  TaxvalBx13;
+  @UI: { fieldGroup:  [{ position: 60, qualifier: 'Simulacao' }] }
+  TaxtypIpi3;
+  @UI: { fieldGroup:  [{ position: 70, qualifier: 'Simulacao' }] }
+  BaseIpva;
+  @UI: { fieldGroup:  [{ position: 80, qualifier: 'Simulacao' }] }
+  RateIpva;
+  @UI: { fieldGroup:  [{ position: 90, qualifier: 'Simulacao' }] }
+  TaxvalBx23;
+  @UI: { fieldGroup:  [{ position: 100, qualifier: 'Simulacao' }] }
+  TaxtypIpis;
+  @UI: { fieldGroup:  [{ position: 110, qualifier: 'Simulacao' }] }
+  BaseBpi1;
+  @UI: { fieldGroup:  [{ position: 120, qualifier: 'Simulacao' }] }
+  RateBx82;
+  @UI: { fieldGroup:  [{ position: 130, qualifier: 'Simulacao' }] }
+  TaxvalBx82;
+  @UI: { fieldGroup:  [{ position: 140, qualifier: 'Simulacao' }] }
+  TaxtypIcof;
+  @UI: { fieldGroup:  [{ position: 150, qualifier: 'Simulacao' }] }
+  BaseBco1;
+  @UI: { fieldGroup:  [{ position: 160, qualifier: 'Simulacao' }] }
+  RateBx72;
+  @UI: { fieldGroup:  [{ position: 170, qualifier: 'Simulacao' }] }
+  TaxvalBx72;
+  @UI: { fieldGroup:  [{ position: 180, qualifier: 'Simulacao' }] }
+  NetprFinal;
+  @UI: { fieldGroup:  [{ position: 50, qualifier: 'GoodsSaida' }] }
+  Centro;
+  @UI: { fieldGroup:  [{ position: 60, qualifier: 'GoodsSaida' }] }
+  @EndUserText.label: 'Depósito'
+  Deposito;
+  @UI: { fieldGroup:  [{ position: 70, qualifier: 'GoodsSaida' }] }
+  DescricaoMaterial;
+  @UI: { fieldGroup:  [{ position: 80, qualifier: 'GoodsSaida' }] }
+  UtilizacaoLivre;
+  @UI: { fieldGroup:  [{ position: 90, qualifier: 'GoodsSaida' }] }
+  MeinsUtilizacaoLivre;
+  @UI: { fieldGroup:  [{ position: 20, qualifier: 'NFSaida' }] }
+  NFSaidaNumero;
+  @UI: { fieldGroup:  [{ position: 30, qualifier: 'NFSaida' }] }
+  NFSaidaCriacao;
+  @UI: { fieldGroup:  [{ position: 20, qualifier: 'NFEntrada' }] }
+  NFEntradaNumero;
+  @UI: { fieldGroup:  [{ position: 30, qualifier: 'NFEntrada' }] }
+  NFEntradaCriacao;
+  @UI: { lineItem:    [ { position: 280, label: 'Estorno', type: #WITH_URL, url: 'URL_est' } ]
+
+  //         , identification:  [ { position: 200, label: 'Estorno' } ]
+         }
+  Estornar;
+  @UI.hidden: true
+  URL_est;
+}

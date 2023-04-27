@@ -1,0 +1,52 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Cadastro Fiscal - Item',
+        typeNamePlural: 'Cadastro Fiscal - Itens',
+        title: {
+            type: #STANDARD,
+            label: 'Nota Fiscal',
+            value: 'NrNf'
+        }
+    }
+}
+annotate entity ZC_MM_CADASTRO_FISCAL_ITEM with
+{
+
+  @UI.facet: [  { id: 'InfoGerais',
+                  purpose: #STANDARD,
+                  position: 10,
+                  label: 'Dados Gerais',
+                  type: #IDENTIFICATION_REFERENCE }
+    ]
+
+  @UI: { lineItem: [{ position: 10 }], identification: [{ position: 10}]}
+  NrPedido;
+  @UI: { lineItem: [{ position: 20 }], identification: [{ position: 20}]}
+  ItmPedido;
+  @UI: { lineItem: [{ position: 30 }], identification: [{ position: 30}]}
+  Material;
+  @UI: { lineItem: [{ position: 40 }], identification: [{ position: 40}]}
+  Descricao;
+  @UI: { lineItem: [{ position: 50 }], identification: [{ position: 50}]}
+  Qtdade;
+  @UI: { lineItem: [{ position: 60 }], identification: [{ position: 50}]}
+  QtdadeUtilizada;
+  @UI: { lineItem: [{ position: 70 }], identification: [{ position: 60}]}
+  Qtdade_Lcto;
+  @UI.hidden: true
+  NFtype;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI.hidden: true
+  Currency;
+
+}

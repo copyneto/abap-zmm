@@ -1,0 +1,5 @@
+CLASS zclmm_i_paletizacao DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_paletizacao.
+ENDCLASS.
+
+CLASS zclmm_i_paletizacao IMPLEMENTATION.
+ENDCLASS.

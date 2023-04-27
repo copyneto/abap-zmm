@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+annotate view ZI_MM_DADOS_BANCARIOS
+  with 
+{
+  @UI.lineItem: [{position: 10, label: 'Fornecedor' }]
+  Supplier;
+  @UI.lineItem: [{position: 20, label: 'ID' }]
+  BPBankAccountInternalID;
+  @UI.lineItem: [{position: 30, label: 'País do Banco' }]
+  BankCountry;
+  @UI.lineItem: [{position: 40, label: 'Chave do Banco' }]
+  Bank;
+  @UI.lineItem: [{position: 50, label: 'Número da Conta' }]
+  BankAccount;
+  @UI.lineItem: [{position: 60, label: 'Válido desde' }]
+  ValidityStartDate;
+  @UI.lineItem: [{position: 70, label: 'Válido até' }]
+  ValidityEndDate;
+  @UI.lineItem: [{position: 80, hidden: true }]
+  BankAccountHolderName;
+  @UI.lineItem: [{position: 90, hidden: true }]
+  BankControlKey;
+  @UI.lineItem: [{position: 100, hidden: true }]
+  BankDetailReference;
+
+  /* Associations */
+//  _Bank;
+//  _BankAccount;
+//  _Country;
+//  _IBAN;
+//  _Supplier;
+}

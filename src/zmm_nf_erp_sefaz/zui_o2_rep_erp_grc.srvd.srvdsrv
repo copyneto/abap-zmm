@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_O2_REP_ERP_GRC {
+  expose ZC_MM_ERP_NF_GRC as ZMMR020;
+}

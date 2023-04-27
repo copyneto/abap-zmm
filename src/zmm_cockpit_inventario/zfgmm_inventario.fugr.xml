@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Funções para Cockpit de Inventário</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_INVENTARIOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_INVENTARIO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_GERAR_NF_INVENTARIO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Gerar Nota Fiscal - Inventário</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <DBSTRUCT>MSEG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MKPF</PARAMETER>
+       <DBSTRUCT>MKPF</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Segmento de documento - material</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MKPF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabeçalho do documento do material</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMM_INVENTARIO_LIBERAR</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cockpit de Inventário - Inicia processo de inventário</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DOCUMENTID</PARAMETER>
+       <TYP>ZTMM_INVENTORY_H-DOCUMENTID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DOCUMENTID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

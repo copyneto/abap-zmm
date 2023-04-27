@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def para Estoque Obsoleto'
+define service ZUI_ESTQ_OBSOLETO {
+  expose ZC_MM_MATERIAIS_OBSOLETO;
+  expose ZI_MM_ESTQ_OBSOLETO;
+}

@@ -1,0 +1,55 @@
+managed;
+
+// ------------------------------------------------------
+// Behavior: Redeterminação PIS COFINS
+// ------------------------------------------------------
+
+define behavior for ZI_MM_REDETERMINA_PISCOF alias PISCOFINS
+implementation in class zclmm_redetermina_piscof unique
+persistent table ztmm_red_piscof
+lock master
+authorization master ( instance )
+etag master locallastchangedat
+{
+  create;
+  update;
+  delete;
+
+  validation validateFields on save { create; update; }
+
+  field ( readonly, numbering : managed )
+  id;
+
+  field ( mandatory )
+  taxlaw_pis,
+  taxlaw_cofins;
+
+  field ( readonly )
+  taxsit_pis,
+  taxsit_cofins,
+
+  createdby,
+  createdat,
+  lastchangedby,
+  lastchangedat,
+  locallastchangedat;
+
+  mapping for ZTMM_RED_PISCOF
+  {
+    id = id;
+    ekorg = ekorg;
+    werks = werks;
+    lifnr = lifnr;
+    matnr = matnr;
+    knttp = knttp;
+    sakto = sakto;
+    cfop = cfop;
+    taxlaw_pis = taxlaw_pis;
+    taxlaw_cofins = taxlaw_cofins;
+    createdby = created_by;
+    createdat = created_at;
+    lastchangedby = last_changed_by;
+    lastchangedat = last_changed_at;
+    locallastchangedat = local_last_changed_at;
+  }
+}

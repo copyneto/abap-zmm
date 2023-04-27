@@ -1,0 +1,29 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Centro de Custo',
+    typeNamePlural: 'Centros de Custo',
+    title: {
+        type: #STANDARD,
+        label: 'Centro de Custo',
+        value: 'kostl'
+    }
+}
+annotate view ZC_MM_ALV_CC
+    with 
+{
+    @UI.facet: [{ id: 'ALV',
+                  purpose: #STANDARD,
+                  position: 10, 
+                  label: 'Detalhes',
+                  type: #IDENTIFICATION_REFERENCE
+                  }]
+    @UI: { lineItem: [{ position: 10 }],
+           identification: [{ position: 10 }],
+           selectionField: [{ position: 10 }]}
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_BUKRS', element: 'Empresa' }}]
+    Bukrs;
+    @UI: { lineItem: [{ position: 20 }],
+           identification: [{ position: 20 }]}
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_KOSTL', element: 'CentroCusto' }}]
+    Kostl;   
+}

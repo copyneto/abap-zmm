@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_ATUALIZA_CFOP</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Classe para atualizar CFOP por ITEM</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_INSTANCE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para atualizar CFOP por ITEM</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_MSEG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Segmento de documento - material</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_ACCESS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave de acesso de 44 caracteres</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_GUID_HEADER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave primária como GUID em formato &apos;RAW&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>RO_INSTANCE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para atualizar CFOP por ITEM</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_GUID16</CMPNAME>
+     <SCONAME>IV_ACCESS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave primária como GUID em formato &apos;RAW&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_GUID_HEADER</CMPNAME>
+     <SCONAME>IV_GUID_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave primária como GUID em formato &apos;RAW&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_CFOP</CMPNAME>
+     <SCONAME>RV_CFOP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código CFOP NF-e e ampliação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_CFOP_SC</CMPNAME>
+     <SCONAME>CT_ITEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NF-e Inbound: XML Items with Order Details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_CHARG</CMPNAME>
+     <SCONAME>CT_COMPONENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela com informações de retorno BAPI</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_CHARG</CMPNAME>
+     <SCONAME>IV_VGBEL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento do documento de referência</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

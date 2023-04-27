@@ -1,0 +1,5 @@
+CLASS zclmm_cockpit_liberacao DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_cockpit.
+ENDCLASS.
+
+CLASS zclmm_cockpit_liberacao IMPLEMENTATION.
+ENDCLASS.

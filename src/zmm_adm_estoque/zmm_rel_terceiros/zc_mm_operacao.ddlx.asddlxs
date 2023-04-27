@@ -1,0 +1,33 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Operação',
+                typeNamePlural: 'Operações',
+                title: { type: #STANDARD, label: 'Operacao', value: 'DescOp' } }}
+annotate view ZC_MM_OPERACAO with
+{
+  @UI.facet: [ { id:              'Operacao',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Operação',
+                 position:        10 }]
+
+
+  @UI: {  lineItem:       [ { position: 10 } ],
+          identification: [ { position: 10 } ],
+          selectionField: [ { position: 10 } ]}
+  @UI.textArrangement: #TEXT_LAST
+  Operacao;
+  @UI: {  lineItem:       [ { position: 20 } ],
+          identification: [ { position: 20 } ]}
+  @UI.textArrangement: #TEXT_LAST
+  TpMov;
+  @UI: {  lineItem:       [ { position: 30 } ],
+          identification: [ { position: 30 } ]}
+  Cfop;
+  @UI: {  lineItem:       [ { position: 40 } ],
+          identification: [ { position: 40 } ]}
+  @UI.textArrangement: #TEXT_LAST
+  Tipo;
+
+
+}

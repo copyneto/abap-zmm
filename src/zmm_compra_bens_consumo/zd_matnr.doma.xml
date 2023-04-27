@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_MATNR</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000018</LENG>
+    <OUTPUTLEN>000018</OUTPUTLEN>
+    <ENTITYTAB>MARA</ENTITYTAB>
+    <CONVEXIT>MATN1</CONVEXIT>
+    <DDTEXT>Nº material (campo C18)</DDTEXT>
+    <APPLCLASS>MG</APPLCLASS>
+   </DD01V>
+   <I18N_LANGS>
+    <LANGU>D</LANGU>
+    <LANGU>E</LANGU>
+    <LANGU>S</LANGU>
+   </I18N_LANGS>
+   <DD01_TEXTS>
+    <item>
+     <DDLANGUAGE>D</DDLANGUAGE>
+     <DDTEXT>material 18</DDTEXT>
+    </item>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Material Number (C40 Field)</DDTEXT>
+    </item>
+    <item>
+     <DDLANGUAGE>S</DDLANGUAGE>
+     <DDTEXT>Número de material (Campo C18)</DDTEXT>
+    </item>
+   </DD01_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

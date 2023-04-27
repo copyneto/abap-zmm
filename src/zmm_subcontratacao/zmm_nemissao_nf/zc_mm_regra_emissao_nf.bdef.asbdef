@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_MM_REGRA_EMISSAO_NF alias Emissao
+{
+  use create;
+  use delete;
+}

@@ -1,0 +1,141 @@
+unmanaged;
+
+// ------------------------------------------------------
+// Behavior: Header
+// ------------------------------------------------------
+
+define behavior for ZI_MM_ADMIN_EMISSAO_NF_CAB alias Header
+implementation in class zclmm_admin_emissao_nf_cab unique
+lock master
+authorization master ( instance )
+{
+  update;
+
+  association _Item { create; }
+
+  field ( readonly )
+  Status;
+}
+
+// ------------------------------------------------------
+// Behavior: Item
+// ------------------------------------------------------
+
+define behavior for ZI_MM_ADMIN_EMISSAO_NF_ITM alias Item
+implementation in class zclmm_admin_emissao_nf_itm unique
+authorization dependent by _Header
+lock dependent by _Header
+{
+  update;
+
+  association _Header;
+
+//  determination changeStatus on save { create; update; }
+
+  field ( readonly )
+  Status,
+  Material,
+  OriginPlant,
+  OriginStorageLocation,
+  Batch,
+  OriginUnit,
+  Unit,
+  Guid,
+  ProcessStep,
+  PrmDepFecId,
+  EANType,
+  StatusCriticality,
+  MaterialType,
+  Description,
+  OriginPlantType,
+  DestinyPlant,
+  DestinyPlantType,
+  DestinyStorageLocation,
+  UseAvailable,
+  UseAvailableCriticality,
+  UseAvailableCheckBox,
+  UseAvailableCheckBoxEnable,
+  //AvailableStock,
+  //UsedStock,
+  UsedStockCriticality,
+  Carrier,
+  Driver,
+  Equipment,
+  ShippingConditions,
+  ShippingType,
+  EquipmentTow1,
+  EquipmentTow2,
+  EquipmentTow3,
+  FreightMode,
+  MainPlant,
+  MainPurchaseOrder,
+  MainPurchaseOrderItem,
+  MainMaterialDocument,
+  MainMaterialDocumentYear,
+  MainMaterialDocumentItem,
+  OrderQuantity,
+  OrderQuantityUnit,
+  PurchaseOrder,
+  PurchaseOrderItem,
+  Incoterms1,
+  Incoterms2,
+//  SalesOrder,
+//  SalesOrderItem,
+//  DeliveryDocument,
+//  DeliveryDocumentItem,
+//  MaterialDocument,
+//  MaterialDocumentYear,
+//  MaterialDocumentItem,
+//  BrNotaFiscal,
+//  BrNotaFiscalItem,
+  OutSalesOrder,
+  OutSalesOrderItem,
+  OutDeliveryDocument,
+  OutDeliveryDocumentItem,
+  OutMaterialDocument,
+  OutMaterialDocumentYear,
+  OutMaterialDocumentItem,
+  OutBR_NotaFiscal,
+  OutBR_NotaFiscalItem,
+  RepBR_NotaFiscal,
+  InDeliveryDocument,
+  InDeliveryDocumentItem,
+  InMaterialDocument,
+  InMaterialDocumentYear,
+  InMaterialDocumentItem,
+  InBR_NotaFiscal,
+  InBR_NotaFiscalItem,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  Marmumren,
+  MarmUmrez,
+  AvailableStock_Conve,
+  //UsedStock_conve,
+  Pedido,
+  Pedido2,
+  NFNum,
+  NFNum2;
+
+//  mapping for ztmm_his_dep_fec
+//  {
+//    material = material;
+//    OriginPlant = plant;
+//    OriginStorageLocation = storage_location;
+//    Batch = batch;
+//    ProcessStep = process_step;
+//    Guid = guid;
+//
+//    AvailableStock_Conve = available_stock;
+//    UsedStock_conve = used_stock_conv;
+//
+//    CreatedBy = created_by;
+//    CreatedAt = created_at;
+//    LastChangedBy = last_changed_by;
+//    LastChangedAt = last_changed_at;
+//    LocalLastChangedAt = local_last_changed_at;
+//  }
+
+}

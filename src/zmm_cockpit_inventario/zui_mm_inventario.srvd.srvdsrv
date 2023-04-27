@@ -1,0 +1,5 @@
+@EndUserText.label: 'Cockpit de Inventário'
+define service ZUI_MM_INVENTARIO {
+  expose ZC_MM_INVENTARIO_H;
+  expose ZC_MM_INVENTARIO_ITEM;
+}

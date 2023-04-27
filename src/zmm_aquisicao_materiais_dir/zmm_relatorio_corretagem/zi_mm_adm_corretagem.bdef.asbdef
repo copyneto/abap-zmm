@@ -1,0 +1,41 @@
+managed;
+
+define behavior for ZI_MM_ADM_CORRETAGEM alias Corretagem
+implementation in class zclmm_adm_corretagem unique
+persistent table ztmm_corretagem
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  //  create;
+  update ( features : instance );
+  //  delete;
+  field ( mandatory : create ) DocumentoCompra, Docnum;
+  field ( readonly : update ) DocumentoCompra, Docnum;
+  field ( readonly ) Periodo, Centro, DataEntrada, DtEntradaNF, Corretora, ValorEmbarcador,
+  Corretor, DocNF, NrNF, SalesDocumentCurrency, ValorTotLiq, BaseUnit, QuantityInBaseUnit,
+  PercCorretagem, ValorCorretagem, ValorDevCorretagem, ValorAPagar, NrContrato, Fornecedor,
+  DocCompensacao, DataCompensacao, StatusCompensacao, CreatedBy, CreatedAt, LastChangedBy,
+  NomeModificador, LastChangedAt, LocalLastChangedAt;
+//  StatusApuracao;
+
+  determination modifyAdmCorretagem on save { update; create; }
+
+  mapping for ztmm_corretagem
+  {
+    DocumentoCompra = ebeln;
+    Docnum = docnum;
+    ValorDesconto = vlr_desconto;
+    ValorCorretagem = vlr_corretagem;
+    ValorEmbarcador = vlr_embarcador;
+    Observacao = obs_apuracao;
+    StatusApuracao = status_apuracao;
+    StatusCompensacao = status_compensacao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

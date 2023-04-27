@@ -1,0 +1,9 @@
+projection;
+
+define behavior for ZC_MM_MOV_PARAM alias MovParam
+use etag
+{
+  use create;
+  use update;
+  use delete;
+}

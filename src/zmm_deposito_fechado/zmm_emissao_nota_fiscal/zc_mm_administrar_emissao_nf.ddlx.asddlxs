@@ -1,0 +1,630 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { title: { type: #STANDARD, value: 'Material' },
+                     typeName: 'Depósito Fechado',
+                     typeNamePlural: 'Depósitos Fechados' },
+
+       presentationVariant: [{ sortOrder: [{ by: 'CreatedAt', direction:  #DESC },
+                                           { by: 'Material', direction:  #ASC },
+                                           { by: 'OriginPlant', direction:  #ASC },
+                                           { by: 'OriginStorageLocation', direction:  #ASC } ] } ] }
+
+@UI.lineItem: [ {criticality: 'StatusCriticality'} ]
+
+annotate view ZC_MM_ADMINISTRAR_EMISSAO_NF with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'HeaderMaterial',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderMaterial',
+                 position:        10 },
+
+               { id:              'HeaderStatus',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderStatus',
+                 position:        20 },
+
+               { id:              'HeaderMaterialType',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderMaterialType',
+                 position:        30 },
+
+               { id:              'CONFIGURACAO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Configuração',
+                 position:        40 },
+
+                        { parentId:        'CONFIGURACAO',
+                          id:              'ConfigDescricao',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'ConfigDescricao' },
+
+                        { parentId:        'CONFIGURACAO',
+                          id:              'ConfigTipo',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        20,
+                          targetQualifier: 'ConfigTipo' },
+
+                        { parentId:        'CONFIGURACAO',
+                          id:              'ConfigOrigem',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Origem',
+                          position:        30,
+                          targetQualifier: 'ConfigOrigem' },
+
+                        { parentId:        'CONFIGURACAO',
+                          id:              'ConfigDestino',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Destino',
+                          position:        40,
+                          targetQualifier: 'ConfigDestino' },
+
+               { id:              'ESTOQUE',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Estoque',
+                 position:        50 },
+
+                        { parentId:        'ESTOQUE',
+                          id:              'Estoque',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Estoque' },
+
+               { id:              'EMISSAO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Dados Emissão',
+                 position:        60 },
+
+                        { parentId:        'EMISSAO',
+                          id:              'EmissaoPessoa',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'EmissaoPessoa' },
+
+                        { parentId:        'EMISSAO',
+                          id:              'EmissaoExpedicao',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        20,
+                          targetQualifier: 'EmissaoExpedicao' },
+
+                        { parentId:        'EMISSAO',
+                          id:              'EmissaoFrete',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        20,
+                          targetQualifier: 'EmissaoFrete' },
+
+                        { parentId:        'EMISSAO',
+                          id:              'EmissaoVeiculo',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        20,
+                          targetQualifier: 'EmissaoVeiculo' },
+
+               { id:              'Serie',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Série',
+                 position:        70,
+                 targetElement:   '_Serie'},
+
+               { id:              'DOCPRINCIPAL',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Documento principal',
+                 position:        80 },
+
+                        { parentId:        'DOCPRINCIPAL',
+                          id:              'DocPrincipalDados',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Informações',
+                          position:        10,
+                          targetQualifier: 'DocPrincipalDados' },
+
+                        { parentId:        'DOCPRINCIPAL',
+                          id:              'DocPrincipalPedido',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Pedido',
+                          position:        20,
+                          targetQualifier: 'DocPrincipalPedido' },
+
+                        { parentId:        'DOCPRINCIPAL',
+                          id:              'DocPrincipalMaterial',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Doc. Material',
+                          position:        30,
+                          targetQualifier: 'DocPrincipalMaterial' },
+
+                        { parentId:        'DOCPRINCIPAL',
+                          id:              'DocPrincipalAdicional',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Dados Adicionais',
+                          position:        40,
+                          targetQualifier: 'DocPrincipalAdicional' },
+
+               { id:              'DOCSAIDA',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Documento saída',
+                 position:        90 },
+
+                        { parentId:        'DOCSAIDA',
+                          id:              'DocSaidaPedido',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Pedido',
+                          position:        10,
+                          targetQualifier: 'DocSaidaPedido' },
+
+                        { parentId:        'DOCSAIDA',
+                          id:              'DocSaidaOrdem',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Ordem de Venda',
+                          position:        20,
+                          targetQualifier: 'DocSaidaOrdem' },
+
+                        { parentId:        'DOCSAIDA',
+                          id:              'DocSaidaRemessa',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Remessa',
+                          position:        30,
+                          targetQualifier: 'DocSaidaRemessa' },
+
+                        { parentId:        'DOCSAIDA',
+                          id:              'DocSaidaMaterial',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Doc. Material',
+                          position:        40,
+                          targetQualifier: 'DocSaidaMaterial' },
+
+                        { parentId:        'DOCSAIDA',
+                          id:              'DocSaidaNF',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Nota Fiscal',
+                          position:        50,
+                          targetQualifier: 'DocSaidaNF' },
+
+               { id:              'DOCREPLICACAO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Documento replicação',
+                 position:        100 },
+
+                        { parentId:        'DOCREPLICACAO',
+                          id:              'DocReplicacaoNF',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Nota Fiscal',
+                          position:        10,
+                          targetQualifier: 'DocReplicacaoNF' },
+
+               { id:              'DOCENTRADA',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Documento entrada',
+                 position:        110 },
+
+                        { parentId:        'DOCENTRADA',
+                          id:              'DocEntradaRemessa',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Remessa',
+                          position:        10,
+                          targetQualifier: 'DocEntradaRemessa' },
+
+                        { parentId:        'DOCENTRADA',
+                          id:              'DocEntradaMaterial',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Doc. Material',
+                          position:        20,
+                          targetQualifier: 'DocEntradaMaterial' },
+
+                        { parentId:        'DOCENTRADA',
+                          id:              'DocEntradaNF',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Nota Fiscal',
+                          position:        30,
+                          targetQualifier: 'DocEntradaNF' },
+
+                        { parentId:        'DOCENTRADA',
+                          id:              'DocEntradaAdicional',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        40,
+                          targetQualifier: 'DocEntradaAdicional' },
+
+              { id:              'Mensagem',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Mensagens',
+                 position:        120,
+                 targetElement:   '_Mensagem'},
+
+               { id:              'SISTEMA',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Dados de sistema',
+                 position:        130 },
+
+                        { parentId:        'SISTEMA',
+                          id:              'Sistema',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Sistema' }
+  ]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  @UI.lineItem:         [ { position: 10, type: #FOR_ACTION, dataAction: 'utilizarQtde', label: 'Utilizar Quantidade', invocationGrouping: #CHANGE_SET },
+                          { position: 20, type: #FOR_ACTION, dataAction: 'qtdeTransferida', label: 'Qtd. Transferida' },
+  //                          { position: 30, type: #FOR_ACTION, dataAction: 'criarNfe', label: 'Criar NFe', invocationGrouping: #CHANGE_SET },
+                          { position: 40, type: #FOR_ACTION, dataAction: 'CriaRemeSimb', label: 'Gerar Remessa Simbólica', invocationGrouping: #CHANGE_SET },
+                          { position: 50, type: #FOR_ACTION, dataAction: 'CriaRemessa', label: 'Gerar Remessa com Transp.', invocationGrouping: #CHANGE_SET },
+                          { position: 50, type: #FOR_ACTION, dataAction: 'CriaOrderFrete', label: 'Gerar Ordem de Frete', invocationGrouping: #CHANGE_SET },
+                          { position: 50, type: #FOR_ACTION, dataAction: 'Continuar', label: 'Continuar Processo', invocationGrouping: #CHANGE_SET } ]
+
+  @UI.identification:   [ { position: 10, type: #FOR_ACTION, dataAction: 'disponibilidade', label: 'Utilizar Quantidade', invocationGrouping: #CHANGE_SET } ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Guid;
+
+  @UI: { lineItem:       [ { position: 10, label: 'Tipo Estoque' } ],
+         fieldGroup:     [ { position: 20, label: 'Tipo Estoque', qualifier: 'ConfigTipo' } ],
+         selectionField: [ { position: 10 } ],
+         textArrangement: #TEXT_ONLY }
+  @Consumption.filter:{ mandatory:true, defaultValue: '00', selectionType: #SINGLE }
+  EANType;
+
+
+  @UI: { lineItem:       [ { position: 20, label: 'Status', criticality: 'StatusCriticality' } ],
+         dataPoint:        { qualifier: 'HeaderStatus', title: 'Status', criticality: 'StatusCriticality' }}
+  Status;
+
+  @UI.hidden: true
+  StatusText;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI: { lineItem:       [ { position: 30, label: 'Material', valueQualifier: 'HeaderMaterial' } ],
+         dataPoint:        { title: 'Material', qualifier: 'HeaderMaterial' },
+         selectionField: [ { position: 20 } ] }
+  Material;
+
+  @UI.hidden: true
+  MaterialText;
+
+  @UI: { lineItem:       [ { position: 40, label: 'Tipo de Material' } ],
+         dataPoint:        { title: 'Tipo de Material', qualifier: 'HeaderMaterialType' },
+         selectionField: [ { position: 30 } ] }
+  MaterialType;
+
+  @UI.hidden: true
+  MaterialTypeText;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Descrição', qualifier: 'ConfigDescricao' } ] }
+  Description;
+
+  @UI: { lineItem:       [ { position: 50, label: 'Centro Origem' } ],
+         fieldGroup:     [ { position: 10, label: 'Centro Origem', qualifier: 'ConfigOrigem' } ],
+         selectionField: [ { position: 40 } ] }
+  @Consumption.filter:{ mandatory:true }
+  OriginPlant;
+
+  @UI.hidden: true
+  OriginPlantText;
+
+  @UI: { lineItem:       [ { position: 60, label: 'Tipo de Centro Origem' } ],
+         fieldGroup:     [ { position: 20, label: 'Tipo de Centro Origem', qualifier: 'ConfigOrigem' } ] }
+  OriginPlantType;
+
+  @UI.hidden: true
+  OriginPlantTypeText;
+
+  @UI: { lineItem:       [ { position: 70, label: 'Depósito Origem' } ],
+         fieldGroup:     [ { position: 30, label: 'Depósito Origem', qualifier: 'ConfigOrigem' } ],
+         selectionField: [ { position: 50 } ] }
+  @Consumption.filter:{ mandatory:true }
+  OriginStorageLocation;
+
+  @UI.hidden: true
+  OriginStorageLocationText;
+
+  @UI: { lineItem:       [ { position: 80, label: 'Lote' } ],
+         fieldGroup:     [ { position: 40, label: 'Lote', qualifier: 'Estoque' } ] }
+  @Consumption.filter:{ mandatory:false }
+  Batch;
+
+  @UI: { lineItem:       [ { position: 90, label: 'Centro Destino' } ],
+         fieldGroup:     [ { position: 40, label: 'Centro Destino', qualifier: 'ConfigDestino' } ],
+         selectionField: [ { position: 60 } ] }
+  DestinyPlant;
+
+  @UI.hidden: true
+  DestinyPlantText;
+
+  @UI: { lineItem:       [ { position: 100, label: 'Tipo de Centro Destino' } ],
+         fieldGroup:     [ { position: 50, label: 'Tipo de Centro Destino', qualifier: 'ConfigDestino' } ] }
+  DestinyPlantType;
+
+  @UI.hidden: true
+  DestinyPlantTypeText;
+
+  @UI: { lineItem:       [ { position: 110, label: 'Depósito Destino' } ],
+         fieldGroup:     [ { position: 60, label: 'Depósito Destino', qualifier: 'ConfigDestino' } ],
+         selectionField: [ { position: 70 } ] }
+  DestinyStorageLocation;
+
+  @UI.hidden: true
+  DestinyStorageLocationText;
+
+  @UI: { lineItem:       [ { position: 120, label: 'Utilizar Quantidade', criticality: 'UseAvailableCriticality' } ],
+         fieldGroup:     [ { position: 10, label: 'Utilizar Quantidade', qualifier: 'Estoque', criticality: 'UseAvailableCriticality' } ] }
+  UseAvailable;
+
+  @UI.hidden: true
+  UseAvailableCriticality;
+
+  @UI.hidden: true
+  UseAvailableCheckBox;
+
+  @UI: { lineItem:       [ { hidden: true, position: 120, criticality: 'UseAvailableCriticality' } ] }
+  UseAvailableCheckBoxEnable;
+
+  @UI: { lineItem:       [ { position: 130, label: 'Utilização livre' } ],
+         fieldGroup:     [ { position: 20, label: 'Utilização livre', qualifier: 'Estoque' } ] }
+  AvailableStock_Conve;
+
+  @UI: { lineItem:       [ { position: 140, label: 'Qtd.Transferida', criticality: 'UsedStockCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         fieldGroup:     [ { position: 30, label: 'Qtd.Transferida', qualifier: 'Estoque', criticality: 'UsedStockCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  UsedStock_conve;
+
+  @UI.hidden: true
+  UsedStockCriticality;
+
+  @UI: { lineItem:       [ { hidden: true, position: 150, criticality: 'UsedStockEnableCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  UsedStockEnable;
+
+  @UI.hidden: true
+  UsedStockEnableCriticality;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Transportador', qualifier: 'EmissaoPessoa' } ],
+         selectionField: [ { position: 80 } ] }
+  Carrier;
+
+  @UI.hidden: true
+  CarrierText;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Motorista', qualifier: 'EmissaoPessoa' } ],
+         selectionField: [ { position: 90 } ] }
+  Driver;
+
+  @UI.hidden: true
+  DriverText;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Placa do Veículo', qualifier: 'EmissaoVeiculo' } ],
+         selectionField: [ { position: 100 } ] }
+  Equipment;
+
+  @UI.hidden: true
+  EquipmentText;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Condição Expedição', qualifier: 'EmissaoExpedicao' } ],
+         selectionField: [ { position: 110 } ] }
+  ShippingConditions;
+
+  @UI.hidden: true
+  ShippingConditionsText;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Tipo de Expedição', qualifier: 'EmissaoExpedicao' } ],
+         selectionField: [ { position: 120 } ] }
+  ShippingType;
+
+  @UI.hidden: true
+  ShippingTypeText;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Placa do Semi-reboque 1', qualifier: 'EmissaoVeiculo' } ],
+         selectionField: [ { position: 130 } ] }
+  EquipmentTow1;
+
+  @UI.hidden: true
+  EquipmentTow1Text;
+
+  @UI: { fieldGroup:     [ { position: 30, label: 'Placa do Semi-reboque 2', qualifier: 'EmissaoVeiculo' } ],
+         selectionField: [ { position: 140 } ] }
+  EquipmentTow2;
+
+  @UI.hidden: true
+  EquipmentTow2Text;
+
+  @UI: { fieldGroup:     [ { position: 40, label: 'Placa do Semi-reboque 3', qualifier: 'EmissaoVeiculo' } ],
+         selectionField: [ { position: 150 } ] }
+  EquipmentTow3;
+
+  @UI.hidden: true
+  EquipmentTow3Text;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Modalidade frete', qualifier: 'EmissaoFrete' } ],
+         selectionField: [ { position: 160 } ] }
+  FreightMode;
+
+  @Consumption.semanticObject:'FreightOrder'
+  @UI:{ lineItem: [{ semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ],
+        fieldGroup: [{ position: 11, label: 'Ordem de Frete', qualifier: 'EmissaoFrete' }]}
+  FreightOrder;
+
+  @UI.hidden: true
+  FreightModeText;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Centro Principal', qualifier: 'DocPrincipalDados' } ] }
+  MainPlant;
+
+  @UI: { fieldGroup:     [ { position: 30, label: 'Quantidade', qualifier: 'DocPrincipalDados' } ] }
+  OrderQuantity;
+
+  @UI.hidden: true
+  OrderQuantityUnit;
+
+  @Consumption.semanticObject: 'ZPurchaseOrder'
+  @UI: { lineItem:       [ { position: 200, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ],
+         fieldGroup:     [ { position: 10, label: 'Pedido Compra Principal', qualifier: 'DocPrincipalPedido',
+                             type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ] }
+  MainPurchaseOrder;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item Pedido Compra Principal', qualifier: 'DocPrincipalPedido' } ] }
+  MainPurchaseOrderItem;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Doc. Material Principal', qualifier: 'DocPrincipalMaterial' } ] }
+  MainMaterialDocument;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Ano Doc. Material Principal', qualifier: 'DocPrincipalMaterial' } ] }
+  MainMaterialDocumentYear;
+
+  @UI: { fieldGroup:     [ { position: 30, label: 'Item Doc. Material Principal', qualifier: 'DocPrincipalMaterial' } ] }
+  MainMaterialDocumentItem;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Incoterms 1', qualifier: 'DocPrincipalAdicional' } ] }
+  Incoterms1;
+
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Incoterms 2', qualifier: 'DocPrincipalAdicional' } ] }
+  Incoterms2;
+
+  @Consumption.semanticObject: 'ZPurchaseOrder2'
+  @UI: { fieldGroup:     [ { position: 10, label: 'Pedido de compra2', qualifier: 'DocSaidaPedido',
+                             type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ],
+         lineItem: [ { position: 210, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ] }
+  PurchaseOrder2;
+  @UI.hidden: true
+  Pedido2;
+
+  @UI.hidden: true
+  PurchaseOrder;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item Pedido de compra', qualifier: 'DocSaidaPedido' } ] }
+  PurchaseOrderItem;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Ordem de Venda Saída', qualifier: 'DocSaidaOrdem' } ] }
+  OutSalesOrder;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item Ordem de Venda Saída', qualifier: 'DocSaidaOrdem' } ] }
+  OutSalesOrderItem;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Remessa Saída', qualifier: 'DocSaidaRemessa',
+                             type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'displayInWebGUI' } ] }
+  @Consumption.semanticObject: 'OutboundDelivery'
+  @UI.lineItem:          [ { position: 220, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'displayInWebGUI'  }]
+  OutboundDelivery;
+  @UI.hidden: true
+  OutDeliveryDocument;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item Remessa Saída', qualifier: 'DocSaidaRemessa' } ] }
+  OutDeliveryDocumentItem;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Doc. Material Saída', qualifier: 'DocSaidaMaterial',
+                             type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ] }
+  @Consumption.semanticObject: 'ZDocMat'
+  @UI.lineItem:          [ { position: 230, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]
+  OutMaterialDocument;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Ano Doc. Material Saída', qualifier: 'DocSaidaMaterial' } ] }
+  @UI.lineItem:          [ { position: 230 }]
+  OutMaterialDocumentYear;
+
+  @UI: { fieldGroup:     [ { position: 30, label: 'Item Doc. Material Saída', qualifier: 'DocSaidaMaterial' } ] }
+  OutMaterialDocumentItem;
+
+  @Consumption.semanticObject: 'ZNotaFiscal'
+  @UI: { fieldGroup:     [ { position: 10, label: 'Nota Fiscal Saída', qualifier: 'DocSaidaNF',
+                             type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ] }
+  @UI.lineItem:          [{ position: 240, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]
+  OutBR_NotaFiscal;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item Nota Fiscal Saída', qualifier: 'DocSaidaNF' } ] }
+  OutBR_NotaFiscalItem;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Nota Fiscal Replicação', qualifier: 'DocReplicacaoNF' } ] }
+  RepBR_NotaFiscal;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Remessa Entrada', qualifier: 'DocEntradaRemessa' } ] }
+  InDeliveryDocument;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item  Remessa Entrada', qualifier: 'DocEntradaRemessa' } ] }
+  InDeliveryDocumentItem;
+
+  @Consumption.semanticObject: 'ZDocMat2'
+  @UI.lineItem:       [{ position: 250, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]
+  @UI: { fieldGroup:     [ { position: 10, label: 'Doc. Material Entrada', qualifier: 'DocEntradaMaterial',
+                             type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ] }
+  InMaterialDocument;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Ano Doc. Material Entrada', qualifier: 'DocEntradaMaterial' } ] }
+  @UI.lineItem:       [{ position: 250 }]
+  InMaterialDocumentYear;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item Doc. Material Entrada', qualifier: 'DocEntradaMaterial' } ] }
+  InMaterialDocumentItem;
+
+  @Consumption.semanticObject: 'ZNotaFiscal2'
+  @UI: { fieldGroup:     [ { position: 10, label: 'Nota Fiscal Entrada', qualifier: 'DocEntradaNF',
+                           type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ] }
+  @UI.lineItem:       [{ position: 260, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]
+  NFNum2;
+  @UI.hidden: true
+  InBR_NotaFiscal;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Item Nota Fiscal Entrada', qualifier: 'DocEntradaNF' } ] }
+  InBR_NotaFiscalItem;
+
+  @UI: { fieldGroup:     [ { position: 10, label: 'Criado por', qualifier: 'Sistema' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, label: 'Criado em', qualifier: 'Sistema' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, label: 'Modificado por', qualifier: 'Sistema' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, label: 'Modificado em', qualifier: 'Sistema' } ] }
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.hidden: true
+  NewCarrier;
+
+  @UI.hidden: true
+  NewDriver;
+
+  @UI.hidden: true
+  NewEquipment;
+
+  @UI.hidden: true
+  NewShippingConditions;
+
+  @UI.hidden: true
+  NewShippingType;
+
+  @UI.hidden: true
+  NewEquipmentTow1;
+
+  @UI.hidden: true
+  NewEquipmentTow2;
+
+  @UI.hidden: true
+  NewEquipmentTow3;
+
+  @UI.hidden: true
+  NewFreightMode;
+
+  @UI.hidden: true
+  NewUsedStock;
+
+}

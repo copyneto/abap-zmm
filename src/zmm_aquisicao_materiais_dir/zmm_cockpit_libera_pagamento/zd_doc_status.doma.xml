@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_DOC_STATUS</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000001</LENG>
+    <OUTPUTLEN>000001</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Status do Documento</DDTEXT>
+    <DOMMASTER>P</DOMMASTER>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>X</DOMVALUE_L>
+     <DDTEXT>Pendente</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>A</DOMVALUE_L>
+     <DDTEXT>Em Revisão Comercial</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>B</DOMVALUE_L>
+     <DDTEXT>Liberado Comercial</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>C</DOMVALUE_L>
+     <DDTEXT>Em Revisão Financeiro</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>D</DOMVALUE_L>
+     <DDTEXT>Retornado Comercial</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E</DOMVALUE_L>
+     <DDTEXT>Liberado Financeiro</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>F</DOMVALUE_L>
+     <DDTEXT>Finalizado</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

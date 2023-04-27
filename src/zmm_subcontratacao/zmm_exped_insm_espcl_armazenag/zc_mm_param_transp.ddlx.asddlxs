@@ -1,0 +1,15 @@
+@Metadata.layer: #CORE
+annotate entity ZC_MM_PARAM_TRANSP with
+{
+  @EndUserText.label: 'Transportadora1'
+  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
+  Transptdr;
+  @EndUserText.label: 'Incoterms 1'
+  Incoterms1;
+  @EndUserText.label: 'Incoterms 2'
+  Incoterms2;
+  @EndUserText.label: 'Placa'
+  TRAID;
+  @EndUserText.label: 'Imposto SD Padrão'
+  TXSDC;
+}

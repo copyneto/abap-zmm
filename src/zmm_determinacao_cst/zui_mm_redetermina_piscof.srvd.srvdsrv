@@ -1,0 +1,4 @@
+@EndUserText.label: 'Redeterminação PIS COFINS'
+define service ZUI_MM_REDETERMINA_PISCOF {
+  expose ZC_MM_REDETERMINA_PISCOF as PISCOFINS;
+}

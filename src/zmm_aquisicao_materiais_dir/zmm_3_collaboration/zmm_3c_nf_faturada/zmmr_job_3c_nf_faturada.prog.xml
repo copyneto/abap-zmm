@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZMMR_JOB_3C_NF_FATURADA</NAME>
+    <SUBC>1</SUBC>
+    <RLOAD>P</RLOAD>
+    <FIXPT>X</FIXPT>
+    <UCCHECK>X</UCCHECK>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Campos Tipo do documento e Arquivo são obrigatórios.</ENTRY>
+     <LENGTH>104</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>BL1</KEY>
+     <ENTRY>Parâmetros de seleção</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>BL2</KEY>
+     <ENTRY>Parâmetros de arquivo</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>JOB 3C NF FATURADA</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_CHAVE</KEY>
+     <ENTRY>.</ENTRY>
+     <LENGTH>23</LENGTH>
+     <SPLIT>D</SPLIT>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_FILE</KEY>
+     <ENTRY>Arquivo</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_LOCL</KEY>
+     <ENTRY>Local</ENTRY>
+     <LENGTH>13</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_NFE</KEY>
+     <ENTRY>Nº NF-e</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_SERV</KEY>
+     <ENTRY>Servidor</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_TIPO</KEY>
+     <ENTRY>Tipo documento</ENTRY>
+     <LENGTH>22</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>S_CNPJ_D</KEY>
+     <ENTRY>Nº CNPJ do Destinatário</ENTRY>
+     <LENGTH>31</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>S_CNPJ_E</KEY>
+     <ENTRY>Nº CNPJ do Emissor</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>S_DATA</KEY>
+     <ENTRY>Data documento</ENTRY>
+     <LENGTH>22</LENGTH>
+    </item>
+   </TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

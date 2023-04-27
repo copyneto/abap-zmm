@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_INVENTARIO_H {
+    grant
+        select
+            on
+                ZI_MM_INVENTARIO_H
+                    where
+                        ( Plant ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                        
+}

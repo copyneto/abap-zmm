@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>BAPI Picking</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_PICKINGTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_PICKING</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_PICKING</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI Picking</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_VBKOK_WA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZSMM_EXPED_VBKOK</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_IF_ERROR</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_VBPOK_TAB</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>VBPOK_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ITMNUM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BITMNUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_APP_EXP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ESPECIAL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_PROT</PARAMETER>
+       <TYP>TAB_PROTT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_VBKOK_WA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Confirmação dados de picking cabeçalho remessa</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_IF_ERROR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VBPOK_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table Type of VBPOK</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ITMNUM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_APP_EXP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ESPECIAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PROT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>TABELA PROTT</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

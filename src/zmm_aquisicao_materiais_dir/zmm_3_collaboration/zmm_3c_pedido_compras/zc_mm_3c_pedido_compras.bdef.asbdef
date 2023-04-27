@@ -1,0 +1,19 @@
+projection;
+
+define behavior for ZC_MM_3C_PEDIDO_COMPRAS alias JOB
+{
+  use create;
+  use update;
+
+  use action execute;
+
+  use association _Variant { create; }
+}
+
+define behavior for ZC_MM_3C_PED_COMP_VARIANT alias Variant
+{
+  use update;
+  use delete;
+
+  use association _JOB;
+}

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_GRUPO_IMPOSTOS</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>NUMC</DATATYPE>
+    <LENG>000002</LENG>
+    <OUTPUTLEN>000002</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Grupo de impostos</DDTEXT>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>01</DOMVALUE_L>
+     <DDTEXT>IPI</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>02</DOMVALUE_L>
+     <DDTEXT>ICMS</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>03</DOMVALUE_L>
+     <DDTEXT>ICMS ST</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>04</DOMVALUE_L>
+     <DDTEXT>PIS</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>05</DOMVALUE_L>
+     <DDTEXT>COFINS</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>06</DOMVALUE_L>
+     <DDTEXT>DIFAL</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>07</DOMVALUE_L>
+     <DDTEXT>ISS</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

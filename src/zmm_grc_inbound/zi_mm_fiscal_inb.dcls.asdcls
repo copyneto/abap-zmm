@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_FISCAL_INB {
+    grant 
+        select
+            on
+                ZI_MM_FISCAL_INB
+                    where
+                        ( ) = aspect pfcg_auth( ZMMMTABLE, ACTVT = '03', TABLE = 'ZTMM_FISCAL_INB' );
+                        
+}

@@ -1,0 +1,102 @@
+managed implementation in class zclmm_ctrl_classif unique;
+
+define behavior for ZI_MM_CTRL_CLASSIF alias Classif
+persistent table ztmm_control_cla
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  update ( features : instance );
+  //delete;
+
+  field ( mandatory : create ) Pedido, ItemPedido;
+  field ( readonly : update ) Pedido, ItemPedido;
+  field ( readonly ) QuantidadeTotal, ValorTotal, Fornecedor, Material, Quantidade,
+  QuantidadeEstoque, Destinatario, PedidoAberto, DataClassif, Incoterms, Empresa,
+  LocalNegocios, Divisao, StatusClassific, Centro, UnidadeMedida, Moeda, Porcentagem,
+  CriticStatusClassific, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  validation validaClassif on save { field PercCorretagem, PrecoUnitEmbarcador; create; update; }
+
+  association _Caract { create; }
+
+  mapping for ztmm_control_cla
+  {
+    Pedido = ebeln;
+    ItemPedido = ebelp;
+    Corretor = corretor;
+    Corretora = corretora;
+    PercCorretagem = perc_corretagem;
+    TpSacaria = tp_sacaria;
+    TpEmbal = tp_embal;
+    Contrato = nro_contrato;
+    Embarcador = embarcador;
+    PrecoUnitEmbarcador = prc_unit_embarcador;
+    Observacao = observacao;
+    DataClassif = data_classif;
+    StatusClassific = status_classific;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_VLR_CARACTERISTICA alias Caract
+persistent table ztmm_valor_carac
+lock dependent by _Classif
+//authorization dependent by <association>
+etag master LocalLastChangedAt
+{
+
+  update ( features : instance );
+  delete ( features : instance );
+
+  field ( readonly : update ) Lote;
+  field ( readonly ) Pedido, ItemPedido, Porcentagem, CreatedBy,
+  CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+  validation validaCaract on save { create; update; }
+
+  determination setClassif on save { create; delete; }
+  determination categ_doc on save { create; }
+
+  association _Classif;
+
+  mapping for ztmm_valor_carac
+  {
+    Pedido = ebeln;
+    ItemPedido = ebelp;
+    Lote = charg;
+    CagetoriaDocumento = categoria_documento;
+    Peneira10 = peneira_10;
+    Peneira11 = peneira_11;
+    Peneira12 = peneira_12;
+    Peneira13 = peneira_13;
+    Peneira14 = peneira_14;
+    Peneira15 = peneira_15;
+    Peneira16 = peneira_16;
+    Peneira17 = peneira_17;
+    Peneira18 = peneira_18;
+    Peneira19 = peneira_19;
+    Mk10 = mk10;
+    Fundo = fundo;
+    Catacao = catacao;
+    Umidade = umidade;
+    Defeito = defeito;
+    Impureza = impureza;
+    Verde = verde;
+    PretoArdido = preto_ardido;
+    Brocado = brocado;
+    Densidade = densidade;
+    Paladar = paladar;
+    Safra = safra;
+    Observacao = observacao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

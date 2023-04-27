@@ -1,0 +1,11 @@
+unmanaged;
+
+define behavior for ZI_MM_RELAT_SALDO_REMESSA alias Remessa
+implementation in class zclmm_relat_saldo_remessa unique
+lock master
+{
+
+  action AtrbPedido parameter ZC_MM_PARAM_PEDI_NOV;
+  action AjustarRemess;
+
+}

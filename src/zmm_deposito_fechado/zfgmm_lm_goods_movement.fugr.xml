@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Grupo de função Goods Movement</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_LM_GOODS_MOVEMENTTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_LM_GOODS_MOVEMENT</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_LM_GOODS_MOVEMENT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Goods movement</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_BITYPE</PARAMETER>
+       <DEFAULT>&apos;E&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_WADAT_IST</PARAMETER>
+       <DBFIELD>LIKP-WADAT_IST</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FLAG_INBOUND</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUCCESS_COUNT</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_ERROR_COUNT</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>CT_WORKTAB</PARAMETER>
+       <DBSTRUCT>LIPOV</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SUCCESS</PARAMETER>
+       <DBSTRUCT>LIPOV</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_ERROR</PARAMETER>
+       <DBSTRUCT>LIPOV</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TVST</PARAMETER>
+       <DBSTRUCT>TVST</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_VBFS</PARAMETER>
+       <DBSTRUCT>VBFS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_PERMISSION</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_BITYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_WADAT_IST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data real do movimento de mercadorias</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FLAG_INBOUND</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCCESS_COUNT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_ERROR_COUNT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CT_WORKTAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Visão: informações remessa - cabeçalho e item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Visão: informações remessa - cabeçalho e item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_ERROR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Visão: informações remessa - cabeçalho e item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TVST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Unidade organizacional: locais de expedição</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_VBFS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Log de erros de processamento coletivo</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_PERMISSION</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>DE-EN-LANG-SWITCH-NO-TRANSLATION</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME_M>
+     <HASH_ID>F9E0270EBA9666AEEF9ADB39C213884B0980BDED</HASH_ID>
+     <ID>&lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtPedidoCompra</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLMM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</X-ML_NSPCE>
+     <X-ML_NAME>dtPedidoCompra</X-ML_NAME>
+     <VERSION_ID>6a62440eb9ce11ecb15200000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EBELN</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EBELN</OBJ_NAME2>
+     <ID>&lt;element&gt; EBELN &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EBELN</IFR_NAME>
+     <IFR_TEXT>Pedido de compras</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EBELN</R3_NAME>
+     <R3_TEXT>Pedido de compras</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>IDSOL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>IDSOL</OBJ_NAME2>
+     <ID>&lt;element&gt; IDSOL &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>IDSOL</IFR_NAME>
+     <IFR_TEXT>ID da solicitação Fluig</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>IDSOL</R3_NAME>
+     <R3_TEXT>ID da solicitação Fluig</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>MSGTX</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>MSGTX</OBJ_NAME2>
+     <ID>&lt;element&gt; MSGTX &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>MSGTX</IFR_NAME>
+     <IFR_TEXT>Mensagem de retorno</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>200</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>MSGTX</R3_NAME>
+     <R3_TEXT>Mensagem de retorno</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000200</R3_LENGTH>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>MSGTYP</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>MSGTYP</OBJ_NAME2>
+     <ID>&lt;element&gt; MSGTYP &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>MSGTYP</IFR_NAME>
+     <IFR_TEXT>Tipo de Mensagem</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>1</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>MSGTYP</R3_NAME>
+     <R3_TEXT>Tipo de Mensagem</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000001</R3_LENGTH>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NAME1</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NAME1</OBJ_NAME2>
+     <ID>&lt;element&gt; NAME1 &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>NAME1</IFR_NAME>
+     <IFR_TEXT>Nome 1</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>35</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NAME1</R3_NAME>
+     <R3_TEXT>Nome 1</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000035</R3_LENGTH>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>RLWRT</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>RLWRT</OBJ_NAME2>
+     <ID>&lt;element&gt; RLWRT &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>RLWRT</IFR_NAME>
+     <IFR_TEXT>Valor do comprimento 15</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>15</IFR_PREC>
+     <IFR_SCALE>2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>RLWRT</R3_NAME>
+     <R3_TEXT>Valor do comprimento 15</R3_TEXT>
+     <R3_DATATYP>DEC</R3_DATATYP>
+     <R3_LENGTH>000017</R3_LENGTH>
+     <R3_DECIMAL>000002</R3_DECIMAL>
+     <R3_SEQNUM>000008</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SMTP_ADDR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SMTP_ADDR</OBJ_NAME2>
+     <ID>&lt;element&gt; SMTP_ADDR &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SMTP_ADDR</IFR_NAME>
+     <IFR_TEXT>Endereço de e-mail</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>241</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SMTP_ADDR</R3_NAME>
+     <R3_TEXT>Endereço de e-mail</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000241</R3_LENGTH>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>STCD1</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>STCD1</OBJ_NAME2>
+     <ID>&lt;element&gt; STCD1 &lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>STCD1</IFR_NAME>
+     <IFR_TEXT>Nº ID fiscal 1</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>14</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>STCD1</R3_NAME>
+     <R3_TEXT>Nº ID fiscal 1</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000014</R3_LENGTH>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLMM_DT_PEDIDO_COMPRA1</OBJ_NAME2>
+     <ID>&lt;type&gt; dtPedidoCompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra http://trescoracoes.com.br/gestaodeterceiros/pedidocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtPedidoCompra</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLMM_DT_PEDIDO_COMPRA1</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

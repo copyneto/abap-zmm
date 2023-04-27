@@ -1,0 +1,78 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Mensagem',
+                     typeNamePlural: 'Mensagens',
+                     title: { type: #STANDARD, value: 'Type' } } }
+                     
+annotate view ZC_MM_ADMINISTRAR_MSG
+    with 
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Mensagem',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Mensagens',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Material;
+  
+  @UI.hidden: true
+  OriginPlant;
+  
+  @UI.hidden: true
+  OriginStorageLocation;
+  
+  @UI.hidden: true
+  Batch;
+  
+  @UI.hidden: true
+  OriginUnit;
+  
+  @UI.hidden: true
+  Unit;
+  
+  @UI.hidden: true
+  Guid;
+  
+  @UI.hidden: true
+  ProcessStep;
+
+  @UI.hidden: true
+  PrmDepFecId;
+
+  @UI.hidden: true
+  EANType;
+
+@UI.hidden: true
+Sequencial;
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Data' } ],
+          identification: [ { position: 10, label: 'Data' } ],
+         textArrangement: #TEXT_ONLY }
+CreatedAt;
+
+  @UI: {  lineItem:       [ { position: 20, label: 'Tipo' } ],
+          identification: [ { position: 20, label: 'Tipo' } ],
+         textArrangement: #TEXT_ONLY }
+Type;
+
+  @UI: {  lineItem:       [ { position: 30, label: 'Mensagem' } ],
+          identification: [ { position: 30, label: 'Mensagem' } ],
+         textArrangement: #TEXT_ONLY }
+Msg;
+@UI.hidden: true
+CreatedBy;
+
+@UI.hidden: true
+LastChangedBy;
+@UI.hidden: true
+LastChangedAt;
+@UI.hidden: true
+LocalLastChangedAt;
+    
+}

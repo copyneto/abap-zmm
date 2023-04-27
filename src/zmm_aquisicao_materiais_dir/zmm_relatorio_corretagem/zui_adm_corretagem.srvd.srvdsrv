@@ -1,0 +1,4 @@
+@EndUserText.label: 'Adminstração Corretagem'
+define service ZUI_ADM_CORRETAGEM {
+  expose ZC_MM_ADM_CORRETAGEM;
+}

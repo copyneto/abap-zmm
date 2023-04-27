@@ -1,0 +1,4 @@
+@EndUserText.label: 'Geração Remessa - Excel'
+define service ZUI_MM_REM_EXCEL {
+  expose ZC_MM_REM_EXCEL;
+}

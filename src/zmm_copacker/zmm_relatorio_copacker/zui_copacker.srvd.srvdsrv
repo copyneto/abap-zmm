@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Def para Relatório Copacker'
+define service ZUI_COPACKER {
+  expose ZC_MM_REMESSA;
+  expose ZC_MM_RETORNO;
+}

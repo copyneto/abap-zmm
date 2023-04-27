@@ -1,0 +1,305 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Detalhe',
+                     typeNamePlural: 'Detalhes'
+//                         title: {
+//      type: #STANDARD,
+//      label: 'Nº documento',
+//      value: 'DocNum'
+//    }
+                   }
+     }
+annotate view ZC_MM_ADM_RETORNINDUST 
+    with 
+{ 
+  @UI.facet: [
+//               {
+//              id:         'Header',
+//               purpose:    #HEADER,
+//               type:       #COLLECTION,
+//               targetQualifier: 'HeaderData',
+//               position:      10 },
+//               {
+//
+//               id:         'Header2',
+//               purpose:    #HEADER,
+//                parentId:      'Header',
+//               type:       #FIELDGROUP_REFERENCE,
+//               targetQualifier: 'DadosGerais',
+//               position:      20 },
+//
+//              { id:      'Facet',
+//               purpose: #STANDARD,
+//               type:    #COLLECTION,
+//               label:   'Síntese',
+//               position: 30 },
+
+              { id:           'geral',
+               purpose:       #STANDARD,
+               label:         'Dados Gerais',
+//               parentId:      'Facet',
+               type:          #FIELDGROUP_REFERENCE,
+               targetQualifier: 'DadosGerais',
+               position:      10 } ]
+
+  @UI: { lineItem:        [ { position: 10, label: 'Fornecedor' } ],
+     identification:  [ { position: 10, label: 'Fornecedor' } ] }
+  @UI : { selectionField: [ { position: 10} ],
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'Fornecedor' }] }
+  LifnrCode;
+  @UI: { lineItem:        [ { position: 20, label: 'Centro' } ],
+   identification:  [ { position: 20, label: 'Centro' } ] }
+  @UI : { selectionField: [ { position: 20  } ],
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'Centro' }] }
+  @Consumption.filter.mandatory: true
+  WerksCode;
+  @UI: { lineItem:        [ { position: 30, label: 'CFOP' } ],
+  identification:  [ { position: 30, label: 'CFOP' } ] }
+  @UI : { selectionField: [ { position: 30 } ] ,
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'CFOP' }] }
+  Cfop;
+  @UI: { lineItem:        [ { position: 40, label: 'Nº NF-e' } ],
+  identification:  [ { position: 40, label: 'Nº NF-e' } ] }
+  @UI : { selectionField: [ { position: 40  } ] ,
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'Nº NF-e' }] }
+  Nnf;
+  @UI: { lineItem:        [ { position: 50, label: 'XML' } ],
+  identification:  [ { position: 50, label: 'XML' } ] }
+  @UI : { selectionField: [ { position: 50  } ] ,
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'XML' }] }
+  XML;
+  @Consumption.semanticObject: 'NotaFiscal'
+  @UI: { lineItem:        [ { position: 60, label: 'DocNum', type: #WITH_INTENT_BASED_NAVIGATION,
+  semanticObjectAction: 'display'  } ],
+  identification:  [ { position: 60, label: 'DocNum' } ] }
+  @UI : { fieldGroup: [    { qualifier: 'DadosGerais', label: 'DocNum' }] }
+  BR_NotaFiscal;
+  @UI: { lineItem:        [ { position: 70, label: 'Data Emissão' } ],
+  identification:  [ { position: 70, label: 'Data Emissão' } ] }
+  @UI : { selectionField: [ { position: 70  } ] ,
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'Data Emissão' }] }
+  @Consumption.filter.mandatory: true
+  DataEmissao;
+  @UI: { lineItem:        [ { position: 80, label: 'Data Entrada' } ],
+  identification:  [ { position: 80, label: 'Data Entrada' } ] }
+  @UI : { selectionField: [ { position: 80  } ] ,
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'Data Entrada' }] }
+  Credat;
+  @UI: { lineItem:        [ { position: 90, label: 'Status',  criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+  identification:  [ { position: 90, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  @UI : { selectionField: [ { position: 90  } ] ,
+  fieldGroup: [    { qualifier: 'DadosGerais', label: 'Status' }] }
+  Status;
+  @UI.hidden: true
+  StatusCriticality;
+//  @UI: { identification:  [ { position: 10, label: 'Status doc.' } ],
+//  fieldGroup:      [ { position: 10, qualifier: 'geral' } ]}
+//  Docsta;
+//  @UI: { identification:  [ { position: 20, label: 'St.comun.sistema' } ],
+//  fieldGroup:      [ { position: 20, qualifier: 'geral' } ]}
+//  Scssta;
+//  @UI: { identification:  [ { position: 30, label: 'Lançado cont.' } ],
+//  fieldGroup:      [ { position: 30, qualifier: 'geral' } ]}
+//  Conting;
+//  @UI: { identification:  [ { position: 40, label: 'Estornado' } ],
+//  fieldGroup:      [ { position: 40, qualifier: 'geral' } ]}
+//  Cancel;
+//  @UI: { identification:  [ { position: 50, label: 'Código status' } ],
+//  fieldGroup:      [ { position: 50, qualifier: 'geral' } ]}
+//  Code;
+//  @UI: { identification:  [ { position: 60, label: 'Região' } ],
+//  fieldGroup:      [ { position: 60, qualifier: 'geral' } ]}
+//  Regio;
+//  @UI: { identification:  [ { position: 70, label: 'Ano do documento' } ],
+//  fieldGroup:      [ { position: 70, qualifier: 'geral' } ]}
+//  Nfyear;
+//  @UI: { identification:  [ { position: 80, label: 'Mês documento' } ],
+//  fieldGroup:      [ { position: 80, qualifier: 'geral' } ]}
+//  Nfmonth;
+//  @UI: { identification:  [ { position: 90, label: 'Nº CNPJ/CPF' } ],
+//  fieldGroup:      [ { position: 90, qualifier: 'geral' } ]}
+//  Stcd1;
+//  @UI: { identification:  [ { position: 100, label: 'Modelo NF' } ],
+//  fieldGroup:      [ { position: 100, qualifier: 'geral' } ]}
+//  Model;
+//  @UI: { identification:  [ { position: 110, label: 'Séries' } ],
+//  fieldGroup:      [ { position: 110, qualifier: 'geral' } ]}
+//  Serie;
+//  @UI: { identification:  [ { position: 120, label: 'Nº da NF-e' } ],
+//  fieldGroup:      [ { position: 120, qualifier: 'geral' } ]}
+//  Nfnum9;
+//  @UI: { identification:  [ { position: 130, label: 'Nº aleatório' } ],
+//  fieldGroup:      [ { position: 130, qualifier: 'geral' } ]}
+//  Docnum9;
+//  @UI: { identification:  [ { position: 140, label: 'Díg.verif.' } ],
+//  fieldGroup:      [ { position: 140, qualifier: 'geral' } ]}
+//  Cdv;
+//  @UI: { identification:  [ { position: 150, label: 'Nº do log' } ],
+//  fieldGroup:      [ { position: 150, qualifier: 'geral' } ]}
+//  Authcod;
+//  @UI: { identification:  [ { position: 160, label: 'Data de criação' } ],
+//  fieldGroup:      [ { position: 160, qualifier: 'geral' } ]}
+//  Credat2;
+//  @UI: { identification:  [ { position: 170, label: 'Dt.modificação' } ],
+//  fieldGroup:      [ { position: 170, qualifier: 'geral' } ]}
+//  ActionDate;
+//  @UI: { identification:  [ { position: 180, label: 'Hora modif.' } ],
+//  fieldGroup:      [ { position: 180, qualifier: 'geral' } ]}
+//  ActionTime;
+//  @UI: { identification:  [ { position: 190, label: 'Modificado por' } ],
+//  fieldGroup:      [ { position: 190, qualifier: 'geral' } ]}
+//  ActionUser;
+//  @UI: { identification:  [ { position: 200, label: 'Empresa' } ],
+//  fieldGroup:      [ { position: 200, qualifier: 'geral' } ]}
+//  Bukrs;
+//  @UI: { identification:  [ { position: 210, label: 'Loc.negócios' } ],
+//  fieldGroup:      [ { position: 210, qualifier: 'geral' } ]}
+//  Branch;
+//  @UI: { identification:  [ { position: 220, label: 'Local expedição' } ],
+//  fieldGroup:      [ { position: 220, qualifier: 'geral' } ]}
+//  Vstel;
+//  @UI: { identification:  [ { position: 230, label: 'ID parceiro' } ],
+//  fieldGroup:      [ { position: 230, qualifier: 'geral' } ]}
+//  Parid;
+//  @UI: { identification:  [ { position: 240, label: 'Tipo parceiro' } ],
+//  fieldGroup:      [ { position: 240, qualifier: 'geral' } ]}
+//  Partyp;
+//  @UI: { identification:  [ { position: 250, label: 'Direção movim.' } ],
+//  fieldGroup:      [ { position: 250, qualifier: 'geral' } ]}
+//  Direct;
+//  @UI: { identification:  [ { position: 260, label: 'Nº documento ref.' } ],
+//  fieldGroup:      [ { position: 260, qualifier: 'geral' } ]}
+//  Refnum;
+//  @UI: { identification:  [ { position: 270, label: 'Formulário documento' } ],
+//  fieldGroup:      [ { position: 270, qualifier: 'geral' } ]}
+//  Form;
+//  @UI: { identification:  [ { position: 280, label: 'Etapa processo' } ],
+//  fieldGroup:      [ { position: 280, qualifier: 'geral' } ]}
+//  ActionRequ;
+//  @UI: { identification:  [ { position: 290, label: 'Imprimida' } ],
+//  fieldGroup:      [ { position: 290, qualifier: 'geral' } ]}
+//  Printd;
+//  @UI: { identification:  [ { position: 300, label: 'Com.p/conting.' } ],
+//  fieldGroup:      [ { position: 300, qualifier: 'geral' } ]}
+//  ContingS;
+//  @UI: { identification:  [ { position: 310, label: 'Status sist.msgs.' } ],
+//  fieldGroup:      [ { position: 310, qualifier: 'geral' } ]}
+//  Msstat;
+//  @UI: { identification:  [ { position: 320, label: 'Motivo estorno' } ],
+//  fieldGroup:      [ { position: 320, qualifier: 'geral' } ]}
+//  Reason;
+//  @UI: { identification:  [ { position: 330, label: 'Motivo do estorno' } ],
+//  fieldGroup:      [ { position: 330, qualifier: 'geral' } ]}
+//  Reason1;
+//  @UI: { identification:  [ { position: 340, label: 'Motivo do estorno' } ],
+//  fieldGroup:      [ { position: 340, qualifier: 'geral' } ]}
+//  Reason2;
+//  @UI: { identification:  [ { position: 350, label: 'Motivo do estorno' } ],
+//  fieldGroup:      [ { position: 350, qualifier: 'geral' } ]}
+//  Reason3;
+//  @UI: { identification:  [ { position: 360, label: 'Motivo do estorno' } ],
+//  fieldGroup:      [ { position: 360, qualifier: 'geral' } ]}
+//  Reason4;
+//  @UI: { identification:  [ { position: 370, label: 'Criado por' } ],
+//  fieldGroup:      [ { position: 370, qualifier: 'geral' } ]}
+//  Crenam;
+//  @UI: { identification:  [ { position: 380, label: 'Execução RFC' } ],
+//  fieldGroup:      [ { position: 380, qualifier: 'geral' } ]}
+//  Callrfc;
+//  @UI: { identification:  [ { position: 390, label: 'Tipo de ambiente' } ],
+//  fieldGroup:      [ { position: 390, qualifier: 'geral' } ]}
+//  Tpamb;
+//  @UI: { identification:  [ { position: 400, label: 'SEFAZ ativo' } ],
+//  fieldGroup:      [ { position: 400, qualifier: 'geral' } ]}
+//  SefazActive;
+//  @UI: { identification:  [ { position: 410, label: 'SCAN ativo' } ],
+//  fieldGroup:      [ { position: 410, qualifier: 'geral' } ]}
+//  ScanActive;
+//  @UI: { identification:  [ { position: 420, label: 'Registro hora' } ],
+//  fieldGroup:      [ { position: 420, qualifier: 'geral' } ]}
+//  Checktmpl;
+//  @UI: { identification:  [ { position: 430, label: 'Data procmto.' } ],
+//  fieldGroup:      [ { position: 430, qualifier: 'geral' } ]}
+//  Authdate;
+//  @UI: { identification:  [ { position: 440, label: 'Hora procmto.' } ],
+//  fieldGroup:      [ { position: 440, qualifier: 'geral' } ]}
+//  Authtime;
+//  @UI: { identification:  [ { position: 450, label: 'Tipo de emissão' } ],
+//  fieldGroup:      [ { position: 450, qualifier: 'geral' } ]}
+//  Tpemis;
+//  @UI: { identification:  [ { position: 460, label: 'Motivo cont.' } ],
+//  fieldGroup:      [ { position: 460, qualifier: 'geral' } ]}
+//  ReasonConting;
+//  @UI: { identification:  [ { position: 470, label: 'Motivo cont.' } ],
+//  fieldGroup:      [ { position: 470, qualifier: 'geral' } ]}
+//  ReasonConting1;
+//  @UI: { identification:  [ { position: 480, label: 'Motivo cont.' } ],
+//  fieldGroup:      [ { position: 480, qualifier: 'geral' } ]}
+//  ReasonConting2;
+//  @UI: { identification:  [ { position: 490, label: 'Motivo cont.' } ],
+//  fieldGroup:      [ { position: 490, qualifier: 'geral' } ]}
+//  ReasonConting3;
+//  @UI: { identification:  [ { position: 500, label: 'Motivo cont.' } ],
+//  fieldGroup:      [ { position: 500, qualifier: 'geral' } ]}
+//  ReasonConting4;
+//  @UI: { identification:  [ { position: 510, label: 'Dt.contingência' } ],
+//  fieldGroup:      [ { position: 510, qualifier: 'geral' } ]}
+//  ContingDate;
+//  @UI: { identification:  [ { position: 520, label: 'Hora conting.' } ],
+//  fieldGroup:      [ { position: 520, qualifier: 'geral' } ]}
+//  ContingTime;
+//  @UI: { identification:  [ { position: 530, label: 'Fuso horário' } ],
+//  fieldGroup:      [ { position: 530, qualifier: 'geral' } ]}
+//  ContinTimeZone;
+//  @UI: { identification:  [ { position: 540, label: 'Estorno sinc.' } ],
+//  fieldGroup:      [ { position: 540, qualifier: 'geral' } ]}
+//  CancelAllowed;
+//  @UI: { identification:  [ { position: 550, label: 'Origem' } ],
+//  fieldGroup:      [ { position: 550, qualifier: 'geral' } ]}
+//  Source;
+//  @UI: { identification:  [ { position: 560, label: 'Estorno a.autor.' } ],
+//  fieldGroup:      [ { position: 560, qualifier: 'geral' } ]}
+//  CancelPa;
+//  @UI: { identification:  [ { position: 570, label: 'Campo de seleção' } ],
+//  fieldGroup:      [ { position: 570, qualifier: 'geral' } ]}
+//  EventFlag;
+//  @UI: { identification:  [ { position: 580, label: 'Serviço ativo' } ],
+//  fieldGroup:      [ { position: 580, qualifier: 'geral' } ]}
+//  ActiveService;
+//  @UI: { identification:  [ { position: 590, label: 'SVC SP ativo' } ],
+//  fieldGroup:      [ { position: 590, qualifier: 'geral' } ]}
+//  SvcSpActive;
+//  @UI: { identification:  [ { position: 600, label: 'SVC RS ativo' } ],
+//  fieldGroup:      [ { position: 600, qualifier: 'geral' } ]}
+//  SvcRsActive;
+//  @UI: { identification:  [ { position: 610, label: 'SVC RS ativo' } ],
+//  fieldGroup:      [ { position: 610, qualifier: 'geral' } ]}
+//  SvcActive;
+//  @UI: { identification:  [ { position: 620, label: 'SVC ativo' } ],
+//  fieldGroup:      [ { position: 620, qualifier: 'geral' } ]}
+//  Rps;
+//  @UI: { identification:  [ { position: 630, label: 'Recibo provisório' } ],
+//  fieldGroup:      [ { position: 630, qualifier: 'geral' } ]}
+//  NfseNumber;
+//  @UI: { identification:  [ { position: 640, label: 'Número NFS-e' } ],
+//  fieldGroup:      [ { position: 640, qualifier: 'geral' } ]}
+//  NfseCheckCode;
+//  @UI: { identification:  [ { position: 650, label: 'Código verificação' } ],
+//  fieldGroup:      [ { position: 650, qualifier: 'geral' } ]}
+//  CodeDescription;
+//  @UI: { identification:  [ { position: 660, label: 'Descr.código status' } ],
+//  fieldGroup:      [ { position: 660, qualifier: 'geral' } ]}
+//  Cmsg;
+//  @UI: { identification:  [ { position: 670, label: 'Variante msg.SEFAZ' } ],
+//  fieldGroup:      [ { position: 670, qualifier: 'geral' } ]}
+//  Xmsg;
+//  @UI: { identification:  [ { position: 680, label: 'Descr.mensagem SEFAZ' } ],
+//  fieldGroup:      [ { position: 680, qualifier: 'geral' } ]}
+//  CloudGuid;
+//  @UI: { identification:  [ { position: 690, label: 'Identific.exclusivo' } ],
+//  fieldGroup:      [ { position: 690, qualifier: 'geral' } ]}
+//  CloudExtensFlag;
+//  @UI: { identification:  [ { position: 700, label: 'Valores de ampliação' } ],
+//  fieldGroup:      [ { position: 700, qualifier: 'geral' } ]}
+//  ReplacementStatus;
+
+}

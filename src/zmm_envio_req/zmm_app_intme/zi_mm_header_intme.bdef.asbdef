@@ -1,0 +1,60 @@
+managed implementation in class zclmm_header_intme unique;
+
+define behavior for ZI_MM_HEADER_INTME alias Header
+persistent table ztmm_me_header
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+  association _item { create; }
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) Bsart;
+
+  validation validateBsar on save { create; }
+
+  mapping for ztmm_me_header
+  {
+    Bsart = bsart;
+    Zz1Int = zz1_int;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}
+
+define behavior for ZI_MM_ITEM_INTME alias Item
+persistent table ztmm_me_item
+lock dependent by _header
+authorization dependent by _header
+etag master LocalLastChangedAt
+{
+
+  association _header;
+
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( readonly : update ) Bsart;
+
+  determination validateEkgrp on save { field Ekgrp; create;}
+
+  mapping for ztmm_me_item
+  {
+    Bsart = bsart;
+    Ekgrp = ekgrp;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

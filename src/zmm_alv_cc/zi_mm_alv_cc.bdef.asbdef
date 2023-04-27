@@ -1,0 +1,20 @@
+managed; // implementation in class zbp_i_mm_alv_cc unique;
+
+define behavior for ZI_MM_ALV_CC //alias <alias_name>
+persistent table ztmm_alv_cc
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) Bukrs;
+
+  mapping for ztmm_alv_cc {
+    Bukrs = bukrs;
+    Kostl = kostl;
+  }
+
+}

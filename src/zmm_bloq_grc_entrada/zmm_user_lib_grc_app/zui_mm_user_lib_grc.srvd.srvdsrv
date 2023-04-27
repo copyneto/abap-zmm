@@ -1,0 +1,4 @@
+@EndUserText.label: 'Usuarios liberados fiscal - GRC'
+define service ZUI_MM_USER_LIB_GRC {
+  expose ZC_MM_USER_LIB_GRC;
+}

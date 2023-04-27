@@ -1,0 +1,147 @@
+@Metadata.layer: #CORE
+@UI:
+    { headerInfo: { //typeName: null,
+                    //typeNamePlural: 'null',
+                    title:{ type: #STANDARD, label: 'Visão Remessa e Retorno' }},
+      presentationVariant: [{ sortOrder: [{ by: 'OriginPlant', direction: #ASC }]} ]}
+annotate view ZC_VISAO_REMESSA_RETORNO with
+{
+  @UI.facet: [{ id:       'VisaoRemessaRetorno',
+                purpose:  #STANDARD,
+                type:     #IDENTIFICATION_REFERENCE,
+                label:    'Visão Remessa e Retorno',
+                position: 10 } ]
+
+  @UI.identification: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.filter:{ mandatory: true }
+  @Consumption.filter.selectionType: #INTERVAL
+  //@Consumption.filter.defaultValue: 'today'
+  DataPedido;
+
+  @UI.lineItem:       [{ position: 10 }]
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.filter:{ mandatory: true }
+  OriginPlant;
+
+  @UI.identification: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  S_deposito_origem;
+
+  @Consumption.semanticObject: 'ZNotaFiscal'
+  @UI.lineItem:       [{ position: 40, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  OutBR_NotaFiscal; //NFNum; //Docnum Saída Remessa
+
+  @Consumption.semanticObject: 'NotaFiscal'
+  @UI.lineItem:       [{ position: 50, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  NFNum3;
+
+  @UI.lineItem:       [{ position: 150 }]
+  @UI.identification: [{ position: 60 }]
+  @UI.selectionField: [{ position: 60 }]
+  EntCriadoPor;
+
+  @Consumption.semanticObject: 'OutboundDelivery'
+  @UI.lineItem:       [{ position: 70, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'displayInWebGUI'  }]
+  @UI.identification: [{ position: 70 }]
+  OutboundDelivery;
+
+//  @UI.identification: [{ position: 80 }]
+//  @UI.selectionField: [{ position: 80 }]
+//  S_doc_material;
+
+//  @UI.lineItem:       [{ position: 90 }]
+//  @UI.identification: [{ position: 90 }]
+//  @UI.selectionField: [{ position: 90 }]
+//  DocMovimentoSaida;
+
+
+  @Consumption.semanticObject: 'ZMaterial'
+  @UI.lineItem:       [{ position: 90, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]  
+  @UI.identification: [{ position: 90 }]
+  @UI.selectionField: [{ position: 90 }]
+  OutMaterialDocument;
+  @UI.lineItem:       [{ position: 91 }]
+  @UI.identification: [{ position: 91 }]
+//  @UI.selectionField: [{ position: 161 }]  
+  OutMaterialDocumentYear;
+
+  @UI.identification: [{ position: 100 }]
+  @UI.selectionField: [{ position: 100 }]
+//  @Consumption.filter:{ mandatory: true }
+  @Consumption.filter.selectionType: #INTERVAL
+  E_data_doc;
+
+//  @UI.lineItem:       [{ position: 110 }]
+//  @UI.identification: [{ position: 110 }]
+//  @Consumption.filter.selectionType: #INTERVAL
+//  DataDocumentoSaida;
+
+  @UI.lineItem:       [{ position: 120 }]
+  @UI.identification: [{ position: 120 }]
+  @UI.selectionField: [{ position: 120 }]
+  @Consumption.filter:{ mandatory: true }
+  DestinyPlant;
+
+  @Consumption.semanticObject: 'ZNotaFiscal2'
+  @UI.lineItem:       [{ position: 130 , type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 130 }]
+  NFNum2; 
+  
+  @UI.lineItem:       [{ position: 140 }]
+  @UI.identification: [{ position: 140 }]
+  @UI.selectionField: [{ position: 140 }]
+  NumNotaFiscalRemessa;
+
+  @UI.identification: [{ position: 150 }]
+  @UI.selectionField: [{ position: 150 }]
+  S_deposito_destino;
+
+  @UI.lineItem:       [{ position: 160 }]
+  @UI.identification: [{ position: 160 }]
+  CodigoStatus;
+
+  @UI.hidden: true
+  CodigoStatusTexto;
+
+  @UI.lineItem:       [{ position: 100, value: 'StatusSefaz', criticality: 'CriticalStatus' }]
+  @UI.identification: [{ position: 100, value: 'StatusSefaz', criticality: 'CriticalStatus' }]
+  StatusSefaz;
+
+  @UI.lineItem:       [{ position: 120 }]
+  @UI.identification: [{ position: 100 }]
+  @UI.selectionField: [{ position: 100 }]
+  SaidaCriadoPor;
+
+  @Consumption.semanticObject: 'ZPurchaseOrder'
+  @UI.lineItem:       [{ position: 40, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' }]
+  @UI.identification: [{ position: 110 }]
+  @UI.selectionField: [{ position: 110 }]
+
+  PurchaseOrder;
+
+  @UI.lineItem:       [{ position: 110 }]
+  @UI.identification: [{ position: 110 }]
+  TorId;
+
+//  @UI.lineItem:       [{ position: 130 }]
+//  @UI.identification: [{ position: 130 }]
+  @UI.hidden: true
+  MovMercaEntra;
+  @Consumption.semanticObject: 'ZMaterial2'
+  @UI.lineItem:       [{ position: 134, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay'  }]  
+  @UI.identification: [{ position: 134 }]
+//  @UI.selectionField: [{ position: 130 }]  
+  InMaterialDocument;
+  @UI.lineItem:       [{ position: 135 }]
+  @UI.identification: [{ position: 135 }]
+//  @UI.selectionField: [{ position: 191 }]
+  InMaterialDocumentYear;  
+
+
+}

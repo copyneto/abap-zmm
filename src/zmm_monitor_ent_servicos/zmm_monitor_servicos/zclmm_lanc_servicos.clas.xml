@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_LANC_SERVICOS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Monitor Lançamento Serviços</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ERROR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema: tipo de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MSG_ID</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema ABAP: classe de mensagens</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SUCESS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do sistema: tipo de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_GOODSMVT_HEADRET</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>MMIM: Estrutura output para MF geral &apos;regist.movim.mercad.&apos;</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_FISCALYEAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Exercício</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_INVOICEDOCNUMBER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº de um documento de faturamento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_MATDOCUMENTYEAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Ano do documento do material</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_MATERIALDOCUMENT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Número do documento do material</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ESTORNAR_FATURA</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ESTORNAR_FATURA</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Monitor de Lançamento de Serviços</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXCLUIR_FATURA</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXCLUIR_FATURA</CMPNAME>
+     <SCONAME>IT_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Monitor de Lançamento de Serviços</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGISTRAR_FATURA</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>REGISTRAR_FATURA</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Monitor de Lançamento de Serviços</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SIMULAR_FATURA</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SIMULAR_FATURA</CMPNAME>
+     <SCONAME>IS_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Monitor de Lançamento de Serviços</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

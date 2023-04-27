@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGMM_MONITOR_SERVICO.        "MESSAGE-ID ..
+
+* INCLUDE LZFGMM_MONITOR_SERVICOD...         " Local class definition

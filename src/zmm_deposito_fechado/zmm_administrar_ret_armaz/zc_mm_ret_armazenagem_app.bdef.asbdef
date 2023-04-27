@@ -1,0 +1,35 @@
+projection;
+
+define behavior for ZC_MM_RET_ARMAZENAGEM_APP alias RetArmazenagem
+{
+  use update;
+  use delete;
+
+  use association _Serie;
+  use association _Mensagem { }
+
+  //use action criarNFE;
+  use action moverValores;
+  use action qtdeTransferida;
+  use action fragmentCheckBox;
+  use action fragmentUsedStock;
+  use action Continuar;
+  use action CriaRemessa;
+  use action CriaRemeSimb;
+  use action CriaOrderFrete;
+  use action adicionarSerie;
+
+}
+
+define behavior for ZC_MM_RET_ARMAZENAGEM_SERIE alias RetSerie
+{
+
+  use update;
+  use delete;
+  use association _Emissao { }
+}
+define behavior for zc_mm_ret_armazenagem_msg alias Mensagem
+{
+  use association _Emissao { }
+
+}

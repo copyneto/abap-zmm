@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_CREATE_NF</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Criar NF para bens de consumo</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <MSG_ID>ZMM_BENS_CONSUMO</MSG_ID>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GS_NF_ACTIVE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Electronic Nota Fiscal: Actual Status</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS</CMPNAME>
+     <SCONAME>CS_DOCUMENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Registro de movimentações e histórico</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS</CMPNAME>
+     <SCONAME>ET_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

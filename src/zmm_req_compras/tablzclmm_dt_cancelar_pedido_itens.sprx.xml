@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_CANCELAR_PEDIDO_ITENS</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLMM_DT_CANCELAR_PEDIDO</OBJ_NAME_M>
+     <HASH_ID>F9519D8CC0976153340D38708ABA04213BA3D0B0</HASH_ID>
+     <ID>&lt;type&gt; ITENS &lt;element&gt; ITENS &lt;type&gt; dtCancelarPedido http://trescoracoes.com.br/suprimentos/pedidocompra http://trescoracoes.com.br/suprimentos/pedidocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>ITENS</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/suprimentos/pedidocompra</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/suprimentos/pedidocompra</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLMM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/suprimentos/pedidocompra</X-ML_NSPCE>
+     <X-ML_NAME>ITENS</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_CANCELAR_PEDIDO_ITENS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PO_ITEM</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PO_ITEM</OBJ_NAME2>
+     <ID>&lt;element&gt; PO_ITEM &lt;type&gt; ITENS &lt;element&gt; ITENS &lt;type&gt; dtCancelarPedido http://trescoracoes.com.br/suprimentos/pedidocompra http://trescoracoes.com.br/suprimentos/pedidocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>PO_ITEM</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>5</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PO_ITEM</R3_NAME>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000005</R3_LENGTH>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_CANCELAR_PEDIDO_ITENS</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLMM_DT_CANCELAR_PEDIDO_ITENS</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLMM_DT_CANCELAR_PEDIDO_ITENS</OBJ_NAME2>
+     <ID>&lt;type&gt; ITENS &lt;element&gt; ITENS &lt;type&gt; dtCancelarPedido http://trescoracoes.com.br/suprimentos/pedidocompra http://trescoracoes.com.br/suprimentos/pedidocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>ITENS</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLMM_DT_CANCELAR_PEDIDO_ITENS</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

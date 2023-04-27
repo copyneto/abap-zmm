@@ -1,0 +1,10 @@
+projection;
+
+define behavior for ZC_MM_ARGO_OP_PARAM alias Oper
+{
+  use create;
+  use update;
+
+  use action activateOper;
+  use action deactivateOper;
+}

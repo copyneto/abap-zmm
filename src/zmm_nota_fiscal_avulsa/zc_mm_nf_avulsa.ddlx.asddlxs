@@ -1,0 +1,60 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: {
+    typeName: 'Fornecedor',
+    typeNamePlural: 'Fornecedores',
+    title: {
+        type: #STANDARD,
+        value: 'SupplierName'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'Stcd1'
+    }
+}
+
+annotate view ZC_MM_NF_AVULSA with
+{
+
+  @UI.facet: [{ purpose: #STANDARD, label: 'Detalhes', type: #IDENTIFICATION_REFERENCE, position: 1 },
+              { purpose: #STANDARD, label: 'Log', type: #COLLECTION, id: 'Header', position: 2 },
+//              { purpose: #STANDARD, label: 'Fornecedor', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Lifnr', position: 2 },
+              { purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, targetQualifier: 'Adm', position: 3 }]
+
+  @UI.lineItem: [{ position: 10, importance: #HIGH }]
+  @UI.identification: [{ position: 10, importance: #HIGH }]
+//  @UI.fieldGroup: [{ position: 10, qualifier: 'Lifnr' }]
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_Supplier_VH', element: 'Supplier' } }]
+  Lifnr;
+
+  @UI.lineItem: [{ position: 20, importance: #HIGH }]
+  //  @UI.fieldGroup: [{ position: 20, qualifier: 'Lifnr' }]
+  @UI.identification: [{ position: 20, importance: #HIGH }]
+  //  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_VH_TAXNUMBER', element: 'BPTaxNumber' },
+  //                 additionalBinding: [{ localElement: 'Lifnr', element: 'BusinessPartner', usage:#FILTER }]
+  //                 }]
+  Stcd1;
+
+  @UI.lineItem: [{ position: 30, importance: #HIGH }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Adm' }]
+  CreatedBy;
+
+  @UI.lineItem: [{ position: 40, importance: #HIGH }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Adm' }]
+  CreatedAt;
+
+  @UI.lineItem: [{ position: 50, importance: #HIGH }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Adm' }]
+  LastChangedBy;
+
+  @UI.lineItem: [{ position: 60, importance: #HIGH }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Adm' }]
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @Consumption.filter.hidden: true
+  SupplierName;
+
+}

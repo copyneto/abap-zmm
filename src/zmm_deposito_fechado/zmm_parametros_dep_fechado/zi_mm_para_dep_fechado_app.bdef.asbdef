@@ -1,0 +1,38 @@
+managed;
+
+define behavior for ZI_MM_PARA_DEP_FECHADO_APP alias Param
+implementation in class zclmm_parametros_dep_fechado unique
+persistent table ztmm_prm_dep_fec
+authorization master ( instance )
+lock master
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) Guid;
+  field ( readonly  ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  field ( mandatory ) OriginPlant, DestinyPlant, DestinyPlantType, DestinyStorageLocation, OriginPlantType, OriginStorageLocation;
+
+ validation authorityCreate on save { create; }
+ validation validarCentros on save { field DestinyPlant, DestinyStorageLocation, OriginPlant, OriginStorageLocation; create; }
+
+  mapping for ztmm_prm_dep_fec
+  {
+    guid = guid;
+    description = description;
+    OriginPlant = origin_plant;
+    OriginPlantType = origin_plant_type;
+    OriginStorageLocation = origin_storage_location;
+    DestinyPlant = destiny_plant;
+    DestinyPlantType = destiny_plant_type;
+    DestinyStorageLocation = destiny_storage_location;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

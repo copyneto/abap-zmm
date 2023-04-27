@@ -1,0 +1,178 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Controle de Classificação' , typeName: 'Controle de Classificação',
+  title: { type: #STANDARD, value: 'Pedido' },
+  description: { type: #STANDARD, value: 'NomeFornecedor' } }
+annotate view ZC_MM_CTRL_CLASSIF with
+{
+  @UI.facet: [
+     // Header
+     { purpose: #HEADER,
+       position: 10,
+       type: #DATAPOINT_REFERENCE,
+       targetQualifier: 'QuantidadeTotal' },
+
+     { purpose: #HEADER,
+       position: 20,
+       type: #DATAPOINT_REFERENCE,
+       targetQualifier: 'ValorTotal' },
+
+    { purpose: #HEADER,
+      position: 30,
+      type: #DATAPOINT_REFERENCE,
+      targetQualifier: 'StatusClassificacao' },
+
+     // Informações Gerais
+     { position: 10,
+       label: 'Informações Gerais',
+       type: #COLLECTION,
+       id: 'CollectionGeneralInfo' },
+
+      { parentId: 'CollectionGeneralInfo',
+        position: 10,
+        type: #IDENTIFICATION_REFERENCE },
+
+
+      // Dados Bancários
+      { position: 20,
+        label: 'Dados Bancários',
+        type: #LINEITEM_REFERENCE,
+        targetElement: '_DadosBancarios' },
+
+
+      // Dados de Classificação
+      { position: 30,
+        label: 'Dados de Classificação',
+        type: #COLLECTION,
+        id: 'CollectionClassificacao' },
+
+      { parentId: 'CollectionClassificacao',
+        position: 10,
+        type: #FIELDGROUP_REFERENCE,
+        targetQualifier: 'Classificacao' },
+
+
+      // Características
+      { position: 40,
+        label: 'Características',
+        type: #LINEITEM_REFERENCE,
+        targetElement: '_Caract' }
+   ]
+
+  @UI: { dataPoint:{ qualifier: 'QuantidadeTotal', title: 'Quantidade' }}
+  QuantidadeTotal;
+
+  @UI: { dataPoint:{ qualifier: 'ValorTotal', title: 'Valor Líquido Pedido' },
+         lineItem:       [{ position: 80 }]}
+  ValorTotal;
+
+  @UI: { selectionField: [{ position: 40 }],
+         lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  Pedido;
+
+  @UI: { identification: [{ position: 20 }] }
+  ItemPedido;
+
+  @UI: { selectionField: [{ position: 30 }],
+         lineItem:       [{ position: 20 }],
+         identification: [{ position: 30 }],
+         textArrangement: #TEXT_FIRST }
+  Fornecedor;
+
+  @UI: { selectionField: [{ position: 60 }],
+         lineItem:       [{ position: 50 }],
+         identification: [{ position: 40 }],
+         textArrangement: #TEXT_FIRST }
+  Material;
+
+  @UI: { identification: [{ position: 50 }]}
+  Quantidade;
+
+  @UI: { identification: [{ position: 60 }]}
+  QuantidadeEstoque;
+
+  @UI: { identification: [{ position: 70 }]}
+  Destinatario;
+
+  @UI: { identification: [{ position: 80 }],
+         textArrangement: #TEXT_FIRST }
+  PedidoAberto;
+
+  @UI: { selectionField: [{ position: 10 }],
+         lineItem:       [{ position: 70 }],
+         identification: [{ position: 90 }] }
+  DataClassif;
+
+  @UI: { identification: [{ position: 100 }]}
+  Incoterms;
+
+  @UI: { selectionField: [{ position: 50 }],
+         lineItem:       [{ position: 30 }],
+         identification: [{ position: 110 }],
+         textArrangement: #TEXT_FIRST }
+  Empresa;
+
+  @UI: { selectionField: [{ position: 70 }],
+         identification: [{ position: 120 }],
+         textArrangement: #TEXT_FIRST }
+  Centro;
+
+  @UI: { identification: [{ position: 130 }],
+         textArrangement: #TEXT_FIRST }
+  LocalNegocios;
+
+  @UI: { identification: [{ position: 140 }],
+         textArrangement: #TEXT_FIRST }
+  Divisao;
+
+  @UI: { selectionField: [{ position: 90 }],
+         identification: [{ position: 150 }]}
+  Embarcador;
+
+  @UI: { identification: [{ position: 160 }]}
+  PrecoUnitEmbarcador;
+
+  @UI: { selectionField: [{ position: 20 }],
+         lineItem:       [{ position: 60, criticality: 'CriticStatusClassific'}],
+  //         identification: [{ position: 50, criticality: 'CriticStatusClassific', label: 'Status de Classificação'}],
+         dataPoint: { criticalityRepresentation: #WITH_ICON, qualifier: 'StatusClassificacao', title: 'Status da Classificação', criticality: 'CriticStatusClassific' },
+         textArrangement: #TEXT_ONLY }
+  StatusClassific;
+
+  @UI: { selectionField: [{ position: 80 }],
+         lineItem:       [{ position: 40 }],
+         fieldGroup:     [{ position: 10, qualifier: 'Classificacao' }],
+         textArrangement: #TEXT_FIRST }
+  Corretora;
+
+  @UI: { fieldGroup:     [{ position: 20, qualifier: 'Classificacao' }],
+         textArrangement: #TEXT_FIRST }
+  Corretor;
+
+  @UI: { fieldGroup:     [{ position: 30, qualifier: 'Classificacao' }],
+         textArrangement: #TEXT_FIRST }
+  TpSacaria;
+
+  @UI: { fieldGroup:     [{ position: 40, qualifier: 'Classificacao' }],
+         textArrangement: #TEXT_FIRST }
+  TpEmbal;
+
+  @UI: { fieldGroup:     [{ position: 50, qualifier: 'Classificacao' }]}
+  PercCorretagem;
+
+//  @UI: { selectionField: [{ position: 90 }],
+//         fieldGroup:     [{ position: 60, qualifier: 'Classificacao' }]}
+//  Embarcador;
+//
+//  @UI: { fieldGroup:     [{ position: 70, qualifier: 'Classificacao' }]}
+//  PrecoUnitEmbarcador;
+
+  @UI: { selectionField: [{ position: 100 }],
+         fieldGroup:     [{ position: 80, qualifier: 'Classificacao' }]}
+  Contrato;
+
+  @UI: { fieldGroup:     [{ position: 90, qualifier: 'Classificacao' }],
+         multiLineText: true }
+  Observacao;
+
+}

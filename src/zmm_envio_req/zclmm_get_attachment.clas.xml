@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_GET_ATTACHMENT</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Buscar anexo</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>TRIGGER_ME</CMPNAME>
+     <SCONAME>IS_DOC_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>SAPoffice: informação sobre uma entrada de pasta</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>TRIGGER_ME</CMPNAME>
+     <SCONAME>IV_EXTENSAO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Área def.imprecisam., evtlm.utiliz.p/níveis Support Package</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

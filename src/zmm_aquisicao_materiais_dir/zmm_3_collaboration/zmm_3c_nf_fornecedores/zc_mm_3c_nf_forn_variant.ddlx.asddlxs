@@ -1,0 +1,59 @@
+@Metadata.layer: #CORE
+//@UI.headerInfo: { typeNamePlural: 'Entrada NF Fornecedores',
+//                  typeName: 'Entrada NF Fornecedores',
+//                  title: { type: #STANDARD, value: '_ObjectText.objtxt' },
+//                  description: { type: #STANDARD, value: '_SubObjectText.subobjtxt' } }
+annotate view ZC_MM_3C_NF_FORN_VARIANT
+  with 
+{
+  @UI.facet: [ 
+    { position:      10,
+      id:            'Parametros',
+      label:         'Parâmetros',
+      purpose:       #STANDARD,
+      type:          #COLLECTION },
+
+        { position: 10,
+          label: 'Campos',
+          purpose: #STANDARD,
+          type: #IDENTIFICATION_REFERENCE,
+          parentId: 'Parametros' },
+
+        { position: 20,
+          label: 'Opções',
+          purpose: #STANDARD,
+          type: #FIELDGROUP_REFERENCE,
+          targetQualifier: 'Opcoes',
+          parentId: 'Parametros' },
+
+        { position: 30,
+          label: 'Valores',
+          purpose: #STANDARD,
+          type: #FIELDGROUP_REFERENCE,
+          targetQualifier: 'Valores',
+          parentId: 'Parametros' }
+  ]
+  
+  @UI.hidden: true
+  ScrUUId;
+  @UI.hidden: true
+  JobUUId;
+  @UI: { identification: [{position: 10}],
+         lineItem:       [{position: 10}],
+         textArrangement: #TEXT_FIRST }
+  DataElement;
+  @UI.hidden: true
+  Type;
+  @UI: { fieldGroup:     [{position: 10, qualifier: 'Opcoes'}],
+         lineItem:       [{position: 20}] }
+  Sign;
+  @UI: { fieldGroup:     [{position: 20, qualifier: 'Opcoes'}],
+         lineItem:       [{position: 30}] }
+  Opti;
+  @UI: { fieldGroup:     [{position: 10, qualifier: 'Valores'}],
+         lineItem:       [{position: 40}] }
+  Low;
+  @UI: { fieldGroup:     [{position: 20, qualifier: 'Valores'}],
+         lineItem:       [{position: 50}] }
+  High;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Administar Parâmetros Depósito Fechado'
+define service ZUI_MM_PARAMETROS_D_FECHADO {
+  expose ZC_MM_PARA_DEP_FECHADO_APP;
+}

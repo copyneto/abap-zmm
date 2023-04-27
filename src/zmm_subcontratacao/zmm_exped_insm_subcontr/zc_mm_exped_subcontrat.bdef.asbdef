@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_MM_EXPED_SUBCONTRAT alias Subcont
+{
+
+  //use action AtribPicking;
+  //use action Expedicao;
+}

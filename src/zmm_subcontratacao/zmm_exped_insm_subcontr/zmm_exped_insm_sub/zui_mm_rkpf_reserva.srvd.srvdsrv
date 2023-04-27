@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service definition Exped. Insumos'
+define service ZUI_MM_RKPF_RESERVA {
+  expose zc_mm_rkpf_reserva;
+  expose zc_mm_resb_reserva_item;
+  expose ZI_CA_VH_LIFNR as VH_LIFNR;
+  expose ZI_CA_VH_INCO1_VIEW as VH_Inco1;
+  expose ZI_MM_VH_ARMZ_TXSDC as VH_Txsdc;
+}

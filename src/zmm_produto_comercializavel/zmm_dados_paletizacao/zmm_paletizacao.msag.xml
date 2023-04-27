@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_PALETIZACAO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Dados Deletados com Sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Dados Modificados com Sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Dados Criados com Sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Material inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Centro inválido</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Unidade inválida</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Material não ampliado para o centro informado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_PALETIZACAO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Embalagem secundária não cadastrada no mestre de materiais</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

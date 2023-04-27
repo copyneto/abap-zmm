@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_SAGA_GRC_INBOUND</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Classe SAGA GRC INBOUND</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>DADOS_PROSS</CMPNAME>
+     <SCONAME>IS_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NF-e Inbound: Header Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DADOS_PROSS</CMPNAME>
+     <SCONAME>IT_ASSIGN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>xNFe: Table Type for Structure /XNFE/NFEASSIGN</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DADOS_TRANS</CMPNAME>
+     <SCONAME>IS_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NF-e Inbound: Header Data</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

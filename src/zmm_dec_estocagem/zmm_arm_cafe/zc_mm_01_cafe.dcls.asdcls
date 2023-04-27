@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_01_CAFE {
+    grant
+        select
+            on
+                ZC_MM_01_CAFE
+                    where
+                        inheriting conditions from entity ZI_MM_01_CAFE;
+                        
+}

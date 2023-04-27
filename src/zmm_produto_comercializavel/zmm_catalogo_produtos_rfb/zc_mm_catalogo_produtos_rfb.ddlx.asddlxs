@@ -1,0 +1,102 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { title:{ label: 'Catálogo de Produtos', value: 'IdRFB' },
+                  typeName: 'Catálogo de Produto',
+                  typeNamePlural: 'Catálogo de Produtos' }
+annotate view ZC_MM_CATALOGO_PRODUTOS_RFB with
+{
+
+  @UI.facet:   [
+    /* Header Facets */
+    { position       : 10,
+      purpose        : #HEADER,
+      type           : #DATAPOINT_REFERENCE,
+      targetQualifier: 'StatusData' },
+
+    /* Standard Facets */
+    { position: 10,
+      id:       'GeneralInfo',
+      label:    'Informações Gerais',
+      type:     #COLLECTION },
+
+    { position: 10,
+      id:       'Geral',
+      label:    'Geral',
+      purpose:  #STANDARD,
+      type:     #IDENTIFICATION_REFERENCE,
+      parentId: 'GeneralInfo' },
+
+    { position: 20,
+      id:       'Material',
+      label:    'Material',
+      purpose:  #STANDARD,
+      type:     #FIELDGROUP_REFERENCE,
+      parentId: 'GeneralInfo',
+      targetQualifier: 'MaterialGroup' },
+
+    { position: 30,
+      id:       'Fornecedor',
+      label:    'Fornecedor',
+      purpose:  #STANDARD,
+      type:     #FIELDGROUP_REFERENCE,
+      parentId: 'GeneralInfo',
+      targetQualifier: 'FornecedorGroup' },
+
+    { position: 40,
+      id:       'Vigencia',
+      label:    'Vigência',
+      purpose:  #STANDARD,
+      type:     #FIELDGROUP_REFERENCE,
+      parentId: 'GeneralInfo',
+      targetQualifier: 'VigenciaGroup' }
+  ]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }] }
+  IdRFB;
+
+  @UI: { lineItem:       [{ position: 20, label: 'Tipo de Material' }],
+         fieldGroup:     [{ position: 20, qualifier: 'MaterialGroup' }]}
+  Materialtype;
+
+  @Consumption.semanticObject: 'Material'
+  @UI: { selectionField: [{ position: 10 }],
+         lineItem:       [{ position: 30,
+                            type:     #WITH_INTENT_BASED_NAVIGATION,
+                            semanticObjectAction: 'display' }],
+         fieldGroup:     [{ position:  10, 
+                            qualifier: 'MaterialGroup', 
+                            type:      #STANDARD }]}
+  Material;
+
+  @UI.lineItem:          [{ position: 35 }]
+  MaterialName;
+
+  @Consumption.semanticObject: 'Supplier'
+  @UI: { selectionField: [{ position: 20 }],
+         lineItem:       [{ position: 40,
+                            type:     #WITH_INTENT_BASED_NAVIGATION,
+                            semanticObjectAction: 'manage' }],
+         fieldGroup:     [{ position:  10, 
+                            qualifier: 'FornecedorGroup', 
+                            type:      #STANDARD }]}
+  BusinessPartner;
+
+  @UI.lineItem:          [{ position: 45 }]
+  SupplierName;
+
+  @UI: { selectionField: [{ position: 30 }],
+         lineItem:       [{ position: 50, criticality: 'StatusCriticality' }],
+         identification: [{ position: 20, criticality: 'StatusCriticality' }],
+         dataPoint:      { qualifier: 'StatusData', title: 'Status', criticality: 'StatusCriticality' },
+         textArrangement: #TEXT_ONLY }
+  Status;
+
+  @UI: { lineItem:       [{ position: 60 }],
+         fieldGroup:     [{ position: 10, qualifier: 'VigenciaGroup' }]}
+  Datefrom;
+
+  @UI: { lineItem:       [{ position: 70 }],
+         fieldGroup:     [{ position: 20, qualifier: 'VigenciaGroup' }]}
+  Dateto;
+
+}

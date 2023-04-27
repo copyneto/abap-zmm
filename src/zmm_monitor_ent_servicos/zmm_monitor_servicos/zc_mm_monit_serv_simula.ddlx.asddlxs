@@ -1,0 +1,98 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Simulação',
+//                     title: { value: 'Filename' },
+                     typeNamePlural: 'Simulações'
+                   }
+     }
+annotate entity ZC_MM_MONIT_SERV_SIMULA with
+{
+  @UI.facet: [
+
+              { id:      'Facet',
+                 purpose: #STANDARD,
+                 type:    #COLLECTION,
+                 label:   'Principal',
+                 position: 10 },
+
+              { id:           'geral',
+                 purpose:       #STANDARD,
+                 parentId:        'Facet',
+                 type:          #FIELDGROUP_REFERENCE,
+                 label:         'Simulação',
+                 targetQualifier: 'geral',
+                 position:      10 },
+
+             {  id:             'Modificar',
+                purpose:        #STANDARD,
+                label:          'Dados Modificação',
+                parentId:       'Facet',
+                type:           #FIELDGROUP_REFERENCE,
+                targetQualifier: 'Modificar',
+                position:       20 }  ]
+
+  //  @UI.hidden: true
+  //  Empresa;
+  //  @UI.hidden: true
+  //  Filial;
+  //  @UI.hidden: true
+  //  Lifnr;
+  //  @UI.hidden: true
+  //  NrNf;
+  @UI: { lineItem:        [ { position: 10, label: 'Linha' } ],
+         identification:  [ { position: 10, label: 'Linha' } ] }
+  @UI.fieldGroup:         [ { position: 10, qualifier: 'geral' } ]
+  Linha;
+  //  @UI: { lineItem:        [ { position: 20, label: 'Item'} ],
+  //         identification:  [ { position: 20, label: 'Item' } ] }
+  //  @UI.fieldGroup:         [ { position: 20, qualifier: 'geral' } ]
+  //  Posnr;
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ] }
+  @UI.fieldGroup:         [ { position: 20, qualifier: 'geral' } ]
+  Bschl;  
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ] }
+  @UI.fieldGroup:         [ { position: 30, qualifier: 'geral' } ]
+  Shkzg;   
+  @UI: { lineItem:        [ { position: 40, label: 'Conta razão'} ],
+         identification:  [ { position: 40, label: 'Conta razão' } ] }
+  @UI.fieldGroup:         [ { position: 40, qualifier: 'geral' } ]
+  Hkont;
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  @UI.fieldGroup:         [ { position: 50, qualifier: 'geral' } ]
+  Ktext;  
+  @UI.hidden: true
+  Waers;
+  @UI: { lineItem:        [ { position: 60, label: 'Montante '} ],
+         identification:  [ { position: 60, label: 'Montante ' } ] }
+  @UI.fieldGroup:         [ { position: 60, qualifier: 'geral' } ]
+  Dmbtr;
+  @UI: { lineItem:        [ { position: 70, label: 'Iva'} ],
+         identification:  [ { position: 70, label: 'Iva' } ] }
+  @UI.fieldGroup:         [ { position: 70, qualifier: 'geral' } ]
+  Mwskz;
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ] }
+  @UI.fieldGroup:         [ { position: 80, qualifier: 'geral' } ]
+  Qsskz;  
+  @UI: { identification:  [ { position: 90 } ]}
+  @UI.fieldGroup:         [ { position: 10, qualifier: 'Modificar' } ]
+  CreatedBy;
+  @UI: { identification:  [ { position: 100 } ]}
+  @UI.fieldGroup:         [ { position: 20, qualifier: 'Modificar' } ]
+  CreatedAt;
+  @UI: { identification:  [ { position: 110 } ]}
+  @UI.fieldGroup:         [ { position: 30, qualifier: 'Modificar' } ]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 120 } ]}
+  @UI.fieldGroup:         [ { position: 40, qualifier: 'Modificar' } ]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 130 } ]}
+  @UI.fieldGroup:         [ { position: 50, qualifier: 'Modificar' } ]
+  LocalLastChangedAt;
+
+  //  /* Associations */
+  //  _Header;
+
+}

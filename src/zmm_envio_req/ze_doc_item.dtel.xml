@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_DOC_ITEM</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Item do documento</DDTEXT>
+    <REPTEXT>Item do documento</REPTEXT>
+    <SCRTEXT_S>Item Doc</SCRTEXT_S>
+    <SCRTEXT_M>Item do documento</SCRTEXT_M>
+    <SCRTEXT_L>Item do documento</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>NUMC</DATATYPE>
+    <LENG>000005</LENG>
+    <OUTPUTLEN>000005</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

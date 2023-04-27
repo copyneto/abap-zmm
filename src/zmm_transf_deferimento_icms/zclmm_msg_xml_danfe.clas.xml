@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_MSG_XML_DANFE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Mensagens XML e DANFE</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_TLINE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>SAPscript: linhas de textos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valida região para ICMS diferido - Diferimento</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>ES_SADR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Administração de endereços: dados da sociedade</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>ES_ZREGIO_DIFERI</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Região e mensagens para regra do diferimento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>EV_RATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Taxa de imposto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>IV_BRANCH</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Local de negócios</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>IV_BUKRS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Empresa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>IV_DATE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data a partir da qual o regulamento do imposto é válido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>IV_REGIO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Região (estado federal, estado federado, província, condado)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDAR_ICMSDIF</CMPNAME>
+     <SCONAME>RV_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Variável booleana (X=verdadeiro, espaço=falso)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

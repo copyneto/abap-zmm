@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Imobilizado',
+        typeNamePlural: 'Imobilizados',
+        title: { type: #STANDARD,
+          label: 'Controle de Imobilizados',
+          value: 'Id'} },
+
+ presentationVariant: [{ sortOrder: [{by: 'Id', direction: #DESC }] }]}
+annotate view ZC_MM_MAT_CNTRL with
+{
+  @UI.facet: [
+  { label: 'Imobilizados',
+  id: 'Imobilizados',
+  type: #COLLECTION,
+  position: 10 },
+
+  { label: ' ',
+  position: 10,
+  type: #IDENTIFICATION_REFERENCE,
+  parentId: 'Imobilizados' }
+  ]
+    // ------------------------------------------------------
+    // Header information
+    // ------------------------------------------------------
+  //  @UI.facet: [ { id:              'Imobilizado',
+  //                 purpose:         #STANDARD,
+  //                 type:            #IDENTIFICATION_REFERENCE,
+  //                 label:           'Id',
+  //                 position:        20 }]
+
+  //  @UI: { fieldGroup:  [{ position: 10, qualifier: 'Imobilizado' }] }
+  //  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_IMOBILIZADO', element: 'Anln1' },
+  //  additionalBinding: [{ localElement: 'Anln2', element: 'Anln2' }, { localElement: 'Invnr', element: 'Invnr' }]}]
+  //  Anln1;
+  //  @UI: { fieldGroup:  [{ position: 20, qualifier: 'Imobilizado' }] }
+  //  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_IMOBILIZADO', element: 'Anln2' },
+  //  additionalBinding: [{ localElement: 'Anln1', element: 'Anln1' }] }]
+  //  Anln2;
+  //  @UI: { fieldGroup:  [{ position: 30, qualifier: 'Imobilizado' }] }
+  //  Invnr;
+    // ------------------------------------------------------
+    // Field information
+    // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }],
+         textArrangement: #TEXT_ONLY}
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_VH_IMOBILIZ', element: 'Anln1' },
+                                       additionalBinding: [{ element: 'Anln2', localElement: 'Anln2' },
+                                                           { element: 'Invnr', localElement: 'Invnr' },
+                                                           { element: 'Lgort', localElement: 'Lgort' }] }]
+  Anln1;
+  @UI: { lineItem:       [{ position: 20 }],
+         identification: [{ position: 20 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_VH_IMOBILIZ_SUBN', element: 'Anln2' } }]
+  Anln2;
+  @UI: { lineItem:       [{ position: 30 }],
+         identification: [{ position: 30 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_MM_VH_INVNR', element: 'invnr' } }]
+  Invnr;
+  @UI: { lineItem:       [{ position: 40 }],
+         identification: [{ position: 40 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_LGORT', element: 'StorageLocation' } }]
+  Lgort;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

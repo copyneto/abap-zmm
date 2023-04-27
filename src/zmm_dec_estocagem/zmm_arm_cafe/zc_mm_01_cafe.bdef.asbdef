@@ -1,0 +1,7 @@
+projection;
+
+define behavior for ZC_MM_01_CAFE alias Cafe
+{
+
+  use action armazenar;
+}

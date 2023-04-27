@@ -1,0 +1,66 @@
+managed implementation in class zclmm_decis_armazenag_cafe unique;
+
+define behavior for ZI_MM_DECIS_ARMAZENAG_CAFE alias _Header
+persistent table ztmm_romaneio_it
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+
+  update ( features : instance );
+
+  association _Lote { create ( features : instance ); }
+
+  action ( features : instance ) processar;
+
+  field ( readonly, numbering : managed ) DocUuidH;
+  field ( readonly ) Charg, DescMat, Ebelp, Lgort, Material, QtdKG,
+  Quantidade, Romaneio, Unidade, Vbeln, Werks,
+  CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, LocalLastChangedAt;
+
+  mapping for ztmm_romaneio_it
+  {
+    DocUuidH = doc_uuid_h;
+    Vbeln = vbeln;
+    Ebelp = ebelp;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+define behavior for ZI_MM_DECIS_ARMAZENAG_LOTE alias _Lote
+persistent table ztmm_romaneio_lo
+lock dependent by _Header
+//authorization dependent by _Header
+etag master DocUuidH
+{
+
+  update ( features : instance );
+  delete ( features : instance );
+
+  association _Header;
+
+  field ( readonly, numbering : managed ) DocUuidLot;
+  field ( readonly : update ) DocUuidH;
+
+  field ( readonly ) Charg, CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, LocalLastChangedAt;
+
+  determination determlote on save { create; }
+
+  mapping for ztmm_romaneio_lo
+  {
+
+    DocUuidH = doc_uuid_h;
+    DocUuidLot = doc_uuid_lot;
+    charg = charg;
+    qtde = qtde;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

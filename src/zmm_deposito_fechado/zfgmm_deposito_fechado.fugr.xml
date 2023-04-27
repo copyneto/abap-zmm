@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_DEPOSITO_FECHADOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_DEPOSITO_FECHADO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_DEPOSITO_FECHADO_EMI_NF</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Process Depósito Fechado - Emissão de NF</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_HISTORICO_KEY</PARAMETER>
+       <TYP>ZCTGMM_HIS_DEP_FEC</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_HISTORICO_KEY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Histórico para processo de depósito fechado</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return table</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_DEPOSITO_FECHADO_SALVAR</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Salvar dados</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_HISTORICO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZCTGMM_HIS_DEP_FEC</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_SERIE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZCTGMM_HIS_DEP_SER</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_MSG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZCTGMM_HIS_DEP_MSG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_HISTORICO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Histórico para processo de depósito fechado</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SERIE</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MSG</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

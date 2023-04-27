@@ -1,0 +1,23 @@
+projection;
+
+define behavior for ZC_MM_DECIS_ARMAZENAG_CAFE alias _Header
+{
+
+  use update;
+
+  use association _Lote { create; }
+
+  use action processar;
+
+}
+
+define behavior for ZC_MM_DECIS_ARMAZENAG_LOTE alias _Lote
+{
+
+  use update;
+  use delete;
+
+  use association _Header;
+
+
+}

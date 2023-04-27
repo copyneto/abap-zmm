@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/test/Opa5","./arrangements/Startup","./NavigationJourney"],function(a,e){"use strict";a.extendConfig({arrangements:new e,viewNamespace:"cargacertavarif.cargacertavarif.view.",autoWait:true})});                                       

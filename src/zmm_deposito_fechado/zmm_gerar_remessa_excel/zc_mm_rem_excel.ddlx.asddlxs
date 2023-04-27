@@ -1,0 +1,45 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: { typeName: 'Geração Remessa',
+                typeNamePlural: 'Arquivos',
+                title: { type: #STANDARD, label: 'Arquivo', value: 'FileDirectory' } },
+  headerInfo.description.value: 'CreatedDate',
+  presentationVariant: [{ sortOrder: [{ by: 'CreatedDate', direction:  #DESC }, { by: 'CreatedTime', direction:  #DESC } ] }] }
+annotate view ZC_MM_REM_EXCEL
+    with 
+{
+    @UI:{ selectionField: [{ position: 10 }],
+          lineItem:       [{ position: 60, label: 'Usuário' }] }
+    @EndUserText.label: 'Usuário'
+    CreatedUser;
+    
+    @UI:{ selectionField: [{ position: 20 }],
+          lineItem:       [{ position: 40, label: 'Data' }] }
+    @EndUserText.label: 'Data'
+    CreatedDate;
+    
+    @UI:{ selectionField: [{ position: 30 }],
+          lineItem:       [{ position: 50, label: 'Hora' }] }
+    @EndUserText.label: 'Hora'
+    CreatedTime;
+    
+    @UI:{ lineItem:       [{ position: 10, label: 'Arquivo' }] }
+    FileDirectory;
+    
+    @UI:{ lineItem:       [{ position: 20, label: 'Tipo Remessa' }] }
+    TipoRemessa;
+    
+    @UI:{ lineItem:       [{ position: 30, label: 'Centro de Origem' }] }
+    CentroOrigem;
+    
+    @UI.hidden: true
+    DepositoOrigem;
+    
+    @UI.hidden: true
+    Pedido;
+    
+    @UI.hidden: true
+    TipoEstoque;
+    
+}

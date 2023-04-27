@@ -1,0 +1,31 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Região e mensagens para regra do diferimento',
+    typeNamePlural: 'Região e mensagens para regra do diferimento',
+    title: {
+      type: #STANDARD,
+      label: 'Regio',
+      value: 'Regio'
+    }
+  }}
+annotate view ZC_MM_REGIO_DIFER
+    with 
+{
+  @UI.facet: [ { id:         'Regiao',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+//                 label:         '',
+                 position:      10 }]
+
+  @UI: { lineItem: [{ position: 10 }],
+            identification: [{ position: 10 }]}
+ //           identification: [{ label: '' }] }
+  @UI.selectionField: [{ position: 10 }]
+  Regio;
+  
+  @UI: { lineItem: [{ position: 20 }],
+            identification: [{ position: 20 }]}
+  Msg;  
+    
+}

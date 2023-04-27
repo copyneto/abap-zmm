@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Integracao Klassmatt</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_INTEGRACAO_KLASSMATTTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_INTEGRACAO_KLASSMATT</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_INTEGRACAO_KLASSMATT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Função para atualizar a tabela ZTMM_PALETIZACAO</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_PALETIZACAO</PARAMETER>
+       <TYP>ZSMM_PALETIZACAO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_RETUN</PARAMETER>
+       <TYP>ZSMM_CLASSMATT_MSG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_PALETIZACAO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Estrutura Paletização - MM</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_RETUN</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

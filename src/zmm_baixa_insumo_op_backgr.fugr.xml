@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Baixar Insumo para Ordem de Produção</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZMM_BAIXA_INSUMO_OP_BACKGRTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZMM_BAIXA_INSUMO_OP_BACKGR</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZMM_BAIXA_INSUMO_OP_BACKGRD</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Baixar Insumo para Ordem de Produção</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <TYP>TY_T_MSEG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_MSEG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela MSEG</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

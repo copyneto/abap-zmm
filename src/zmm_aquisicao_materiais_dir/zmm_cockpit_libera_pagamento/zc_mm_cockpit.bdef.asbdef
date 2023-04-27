@@ -1,0 +1,36 @@
+projection;
+
+define behavior for ZC_MM_COCKPIT //alias <alias_name>
+{
+
+  use action comercialDiscount;
+  use action financialDiscount;
+  use action comercialReturn;
+  use action comercialRelease;
+  use action financialRelease;
+  use action documentClose;
+  use action fupDocument;
+
+  use association _Char;
+}
+
+define behavior for ZC_MM_CHARACTERISTICS //alias <alias_name>
+{
+
+  use association _Cockpit;
+
+}
+
+define behavior for ZC_MM_CHARACTERISTICS_RECEB_V2 //alias <alias_name>
+{
+
+  use association _Cockpit;
+
+}
+
+define behavior for ZC_MM_CHARACTERISTICS_PED //alias <alias_name>
+{
+
+  use association _Cockpit;
+
+}

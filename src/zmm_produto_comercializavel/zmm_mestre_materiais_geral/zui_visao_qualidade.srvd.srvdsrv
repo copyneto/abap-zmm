@@ -1,0 +1,4 @@
+@EndUserText.label: 'Visão de Qualidade'
+define service ZUI_VISAO_QUALIDADE {
+  expose ZC_MM_VISAO_QUALIDADE;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Download XML'
+define service ZUI_O2_XML_MASS {
+  expose ZC_MM_XML_MASS;
+}

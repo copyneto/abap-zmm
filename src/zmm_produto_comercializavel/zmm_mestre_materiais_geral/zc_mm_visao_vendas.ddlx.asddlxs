@@ -1,0 +1,101 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_VISAO_VENDAS with
+{
+  @Consumption.semanticObject: 'zMaterial'
+  @UI.lineItem: [{ position: 10, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ]
+  @UI.selectionField: [{position: 10}]
+  Product;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{position: 20}]
+  mtart;
+  @UI.lineItem: [{ position: 30 }]
+  maktxpt;
+  @UI.lineItem: [{ position: 40 }]
+  maktxen;
+  @UI.lineItem: [{ position: 50 }]
+  maktxes;
+  @UI.lineItem: [{ position: 60 }]
+  maktg;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{position: 30}]
+  ersda;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{position: 40}]
+  ernam;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{position: 50}]
+  matkl;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.selectionField: [{position: 60}]
+  spart;
+  @UI.lineItem: [{ position: 110 }]
+  @UI.selectionField: [{position: 70}]
+  prdha;
+  @UI.lineItem: [{ position: 120 }]
+  @UI.selectionField: [{position: 80}]
+  mstav;
+  @UI.lineItem: [{ position: 130 }]
+  @UI.selectionField: [{position: 90}]
+  werks;
+  @UI.lineItem: [{ position: 140 }]
+  @UI.selectionField: [{position: 100}]
+  mmsta;
+  @UI.lineItem: [{ position: 150 }]
+  @UI.selectionField: [{position: 110}]
+  vkorg;
+  @UI.lineItem: [{ position: 160 }]
+  @UI.selectionField: [{position: 120}]
+  vtweg;
+  @UI.lineItem: [{ position: 170 }]
+  @UI.selectionField: [{position: 130}]
+  vrkme;
+  @UI.lineItem: [{ position: 180 }]
+  @UI.selectionField: [{position: 140}]
+  prodh;
+  @UI.lineItem: [{ position: 190 }]
+  @UI.selectionField: [{position: 150}]
+  idrfb;
+
+  @UI.lineItem: [{ exclude: true }]
+  ktgrm;
+  @UI.lineItem: [{ exclude: true }]
+  versg;
+  @UI.lineItem: [{ exclude: true }]
+  lfmng;
+  @UI.lineItem: [{ exclude: true }]
+  aumng;
+  @UI.lineItem: [{ exclude: true }]
+  meins;
+  @UI.lineItem: [{ exclude: true }]
+  prat1;
+  @UI.lineItem: [{ exclude: true }]
+  dwerk;
+  @UI.lineItem: [{ exclude: true }]
+  /bev1/emdrckspl;
+  @UI.lineItem: [{ exclude: true }]
+  sktof;
+  @UI.lineItem: [{ exclude: true }]
+  bonus;
+  @UI.lineItem: [{ exclude: true }]
+  provg;
+  @UI.lineItem: [{ exclude: true }]
+  mtpos;
+  @UI.lineItem: [{ exclude: true }]
+  kondm;
+  @UI.lineItem: [{ exclude: true }]
+  pvmso;
+  @UI.lineItem: [{ exclude: true }]
+  lfmax;
+  @UI.lineItem: [{ position: 200 }]
+  mvgr1;
+  @UI.lineItem: [{ position: 210 }]
+  mvgr2;
+  @UI.lineItem: [{ position: 220 }]
+  mvgr3;
+  @UI.lineItem: [{ position: 230 }]
+  mvgr4;
+  @UI.lineItem: [{ position: 240 }]
+  mvgr5;
+  @UI.lineItem: [{ position: 250 }]
+  bismt;
+}

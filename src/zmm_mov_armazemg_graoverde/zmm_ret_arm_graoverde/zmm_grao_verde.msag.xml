@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Para este processo, selecionar somente uma linha</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Para este processo, selecionar itens de uma mesma NF-e</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>NF-e de referência não existe no sistema</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Item pendente de atribuição de material</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Não foi possível gerar guid</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>NF-e de referência não encontrada pelo informação do item</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>NF-e não pode contemplar dois processos para entrada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_GRAO_VERDE</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Saldo insuficiente em depósito especial do fornecedor</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

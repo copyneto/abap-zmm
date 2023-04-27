@@ -1,0 +1,536 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {  typeNamePlural: 'Pedido de compras',
+                   typeName: 'Relatório Pedido de compras',
+                   title: {  type: #STANDARD,
+                             value: 'PurchaseOrder' } }
+annotate view Zc_MM_PEDIDO_COMPRAS with
+{
+  @UI.facet: [ { id: 'Dados',
+                  purpose: #STANDARD,
+                  type: #IDENTIFICATION_REFERENCE,
+                  label: 'Informações Gerais',
+                  position: 10 } ]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 20 } ] }
+  @EndUserText.label: 'Doc. Compras'
+  PurchaseOrder;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         selectionField:  [ { position: 60 } ] }
+  @EndUserText.label: 'Empresa'
+  CompanyCode;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ] }
+  @EndUserText.label: 'Ctg. Doc.'
+  PurchaseOrderCategory;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ],
+         selectionField:  [ { position: 50 } ] }
+  @EndUserText.label: 'Tp. Doc.'
+  PurchaseOrderType;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  @EndUserText.label: 'Dt. Criação'
+  PurchaseOrderDate;
+
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ],
+         selectionField:  [ { position: 120 } ] }
+  @EndUserText.label: 'Criado Por'
+  CreatedByUser;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ],
+         selectionField:  [ { position: 150 } ] }
+  @EndUserText.label: 'Fornecedor'
+  Supplier;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ] }
+  @EndUserText.label: 'Org. Compras'
+  PurchasingOrganization;
+
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ] }
+  @EndUserText.label: 'Grp. Compra'
+  PurchasingGroup;
+
+  @UI: { lineItem:        [ { position: 100 } ],
+         identification:  [ { position: 100 } ],
+         selectionField:  [ { position: 130 } ] }
+  @EndUserText.label: 'Comprador'
+  SupplierRespSalesPersonName;
+
+  @UI: { lineItem:        [ { position: 110 } ],
+         identification:  [ { position: 110 } ],
+         selectionField:  [ { position: 190 } ] }
+  @EndUserText.label: 'Cód. Liberação'
+  ReleaseCode;
+
+  @UI: { lineItem:        [ { position: 120 } ],
+         identification:  [ { position: 120 } ] }
+  @EndUserText.label: 'Incompleto'
+  ReleaseIsNotCompleted;
+
+  @UI: { lineItem:        [ { position: 130 } ],
+         identification:  [ { position: 130 } ],
+         selectionField:  [ { position: 240 } ] }
+  @EndUserText.label: 'Documento Memorizado'
+  PurchasingCompletenessStatus;
+
+  @UI: { lineItem:        [ { position: 140 } ],
+         identification:  [ { position: 140 } ] }
+  @EndUserText.label: 'Valor Total Dur. Liberação'
+  PurgReleaseTimeTotalAmount;
+
+  @UI: { lineItem:        [ { position: 150 } ],
+         identification:  [ { position: 150 } ] }
+  @EndUserText.label: 'Cond. Pgto.'
+  PaymentTerms;
+
+  @UI: { lineItem:        [ { position: 160 } ],
+         identification:  [ { position: 160 } ] }
+  @EndUserText.label: 'Estrat. Lib.'
+  PurchasingReleaseStrategy;
+
+  @UI: { lineItem:        [ { position: 170 } ],
+         identification:  [ { position: 170 } ] }
+  @EndUserText.label: 'Grupo de liberação'
+  GrupLiberacao;
+
+  @UI: { lineItem:        [ { position: 180 } ],
+         identification:  [ { position: 180 } ] }
+  @EndUserText.label: 'Estado de Liberação'
+  PurgReleaseSequenceStatus;
+
+  @UI: { lineItem:        [ { position: 200 } ],
+         identification:  [ { position: 200 } ] }
+  @EndUserText.label: 'Relev. Para Lib.'
+  ReleaseIsNotCompletedPO;
+
+  @UI: { lineItem:        [ { position: 15 } ],
+         identification:  [ { position: 15 } ] }
+  @EndUserText.label: 'Item'
+  PurchaseOrderItem;
+
+  @UI: { lineItem:        [ { position: 220 } ],
+         identification:  [ { position: 220 } ] }
+  @EndUserText.label: 'Código IVA'
+  TaxCode;
+
+  @UI: { lineItem:        [ { position: 230 } ],
+         identification:  [ { position: 230 } ] }
+  @EndUserText.label: 'Val. Pedido Bruto'
+  GrossAmount; 
+  @UI.hidden: true
+  BrutoConditionRateValue;
+
+  @UI: { lineItem:        [ { position: 240 } ],
+         identification:  [ { position: 240 } ],
+         selectionField:  [ { position: 200 } ] }
+  @EndUserText.label: 'Cód. Eliminação'
+  PurchasingDocumentDeletionCode;
+
+  @UI: { lineItem:        [ { position: 250 } ],
+         identification:  [ { position: 250 } ] }
+  @EndUserText.label: 'Texto Breve'
+  PurchaseOrderItemText;
+
+  @UI: { lineItem:        [ { position: 260 } ],
+         identification:  [ { position: 260 } ],
+         selectionField:  [ { position: 160 } ] }
+  @EndUserText.label: 'Material'
+  Material;
+
+  @UI: { lineItem:        [ { position: 270 } ],
+         identification:  [ { position: 270 } ],
+         selectionField:  [ { position: 70 } ] }
+  @EndUserText.label: 'Centro'
+  Plant;
+
+  @UI: { lineItem:        [ { position: 280 } ],
+         identification:  [ { position: 280 } ],
+         selectionField:  [ { position: 170 } ] }
+  @EndUserText.label: 'Depósito'
+  StorageLocation;
+
+  @UI: { lineItem:        [ { position: 290 } ],
+         identification:  [ { position: 290 } ] }
+  @EndUserText.label: 'N° Acomp.'
+  RequirementTracking;
+
+  @UI: { lineItem:        [ { position: 300 } ],
+         identification:  [ { position: 300 } ] }
+  @EndUserText.label: 'Quantidade'
+  OrderQuantity;
+
+  @UI: { lineItem:        [ { position: 310 } ],
+         identification:  [ { position: 310 } ] }
+  @EndUserText.label: 'UM Pedido'
+  PurchaseOrderQuantityUnit;
+
+  @UI: { lineItem:        [ { position: 320 } ],
+         identification:  [ { position: 320 } ],
+         selectionField:  [ { position: 210 } ] }
+  @EndUserText.label: 'Remessa Final'
+  IsCompletelyDelivered;
+
+  @UI: { lineItem:        [ { position: 330 } ],
+         identification:  [ { position: 330 } ],
+         selectionField:  [ { position: 220 } ] }
+  @EndUserText.label: 'Fatura Final'
+  IsFinallyInvoiced;
+
+  @UI: { lineItem:        [ { position: 340 } ],
+         identification:  [ { position: 340 } ],
+         selectionField:  [ { position: 140 } ] }
+  @EndUserText.label: 'Requisitante'
+  RequisitionerName;
+
+  @UI: { lineItem:        [ { position: 350 } ],
+         identification:  [ { position: 350 } ] }
+  @EndUserText.label: 'Prz. Ent. Prev.'
+  PlannedDeliveryDurationInDays;
+
+  @UI: { lineItem:        [ { position: 360 } ],
+         identification:  [ { position: 360 } ] }
+  @EndUserText.label: 'Preço Líquido'
+  NetAmount; //PurchaseOrderNetAmount;
+  
+  @UI.hidden: true
+  PurchaseOrderNetAmount;
+  //@UI.hidden: true
+  @EndUserText.label: 'Valor líquido'
+  NetPriceAmount;
+
+  @UI: { lineItem:        [ { position: 370 } ],
+         identification:  [ { position: 370 } ] }
+  @EndUserText.label: 'Unidade de Preço'
+  OrderPriceUnit;
+
+  @UI: { lineItem:        [ { position: 380 } ],
+         identification:  [ { position: 380 } ],
+         selectionField:  [ { position: 110 } ] }
+  @EndUserText.label: 'Data de Remessa'
+  ScheduleLineDeliveryDate;
+
+  @UI: { lineItem:        [ { position: 390 } ],
+         identification:  [ { position: 390 } ] }
+  @EndUserText.label: 'Qtd. Fornecida'
+  QtdFornecida;
+
+  @UI: { lineItem:        [ { position: 400 } ],
+         identification:  [ { position: 400 } ] }
+  @EndUserText.label: 'A Ser Forn.'
+  ASerFornec;
+
+  @UI: { lineItem:        [ { position: 410 } ],
+         identification:  [ { position: 410 } ] }
+  @EndUserText.label: 'A Ser Fat.'
+  SerFaturado;
+
+  @UI: { lineItem:        [ { position: 420 } ],
+         identification:  [ { position: 420 } ] }
+  @EndUserText.label: 'A Ser Fat. Valor'
+  SerFatValor;
+
+  @UI: { lineItem:        [ { position: 430 } ],
+         identification:  [ { position: 430 } ] }
+  @EndUserText.label: 'N° Condição Doc.'
+  PricingDocument;
+
+  //  @UI: { lineItem:        [ { position: 390 } ],
+  //         identification:  [ { position: 390 } ] }
+  @UI.facet: [{hidden: true}]
+  BrutoTransactionCurrency;
+
+//  @UI: { lineItem:        [ { position: 440 } ],
+//         identification:  [ { position: 440 } ] }
+//  @EndUserText.label: 'Tipo Condição'
+  @UI.facet: [{hidden: true}]
+  BrutoConditionType;
+
+//  @UI: { lineItem:        [ { position: 460 } ],
+//         identification:  [ { position: 460 } ] }
+//  @EndUserText.label: 'Moeda (Valor Bruto)'
+  @UI.facet: [{hidden: true}]
+  BrutoConditionCurrency;
+
+//  @UI: { lineItem:        [ { position: 470 } ],
+//         identification:  [ { position: 470 } ] }
+//  @EndUserText.label: 'Valor Cond. (Vlr Bruto)'
+  //@UI.facet: [{hidden: true}]
+  @UI.hidden: true
+  BrutoConditionAmount;
+
+  @UI: { lineItem:        [ { position: 480 } ],
+         identification:  [ { position: 480 } ] }
+  @EndUserText.label: 'Tipo Condição (IPI)'
+  IpiConditionType;
+
+  @UI: { lineItem:        [ { position: 490 } ],
+         identification:  [ { position: 490 } ] }
+  @EndUserText.label: 'Montante (IPI)'
+  IpiConditionRateValue;
+
+  @UI: { lineItem:        [ { position: 500 } ],
+         identification:  [ { position: 500 } ] }
+  @EndUserText.label: 'Moeda (IPI)'
+  IpiConditionCurrency;
+
+  @UI: { lineItem:        [ { position: 510 } ],
+         identification:  [ { position: 510 } ] }
+  @EndUserText.label: 'Valor Condição (IPI)'
+  IpiConditionAmount;
+
+  @UI: { lineItem:        [ { position: 520 } ],
+         identification:  [ { position: 520 } ] }
+  @EndUserText.label: 'Tipo de Condição (ICMS)'
+  IcmsConditionType;
+
+  @UI: { lineItem:        [ { position: 530 } ],
+         identification:  [ { position: 530 } ] }
+  @EndUserText.label: 'Montante (ICMS)'
+  IcmsConditionRateValue;
+
+  @UI: { lineItem:        [ { position: 540 } ],
+         identification:  [ { position: 540 } ] }
+  @EndUserText.label: 'Moeda (ICMS)'
+  IcmsConditionCurrency;
+
+  @UI: { lineItem:        [ { position: 550 } ],
+         identification:  [ { position: 550 } ] }
+  @EndUserText.label: 'Valor Condição (ICMS)'
+  IcmsConditionAmount;
+
+  @UI: { lineItem:        [ { position: 560 } ],
+         identification:  [ { position: 560 } ] }
+  @EndUserText.label: 'Nome Fornecedor'
+  NomeFornec;
+
+  @UI: { lineItem:        [ { position: 570 } ],
+         identification:  [ { position: 570 } ] }
+  @EndUserText.label: 'CNPJ'
+  Cnpj;
+
+  @UI: { lineItem:        [ { position: 580 } ],
+         identification:  [ { position: 580 } ] }
+  @EndUserText.label: 'CPF'
+  Cpf;
+
+  @UI: { lineItem:        [ { position: 590 } ],
+         identification:  [ { position: 590 } ] }
+  @EndUserText.label: 'Região'
+  FornRegion;
+
+  @UI: { lineItem:        [ { position: 600 } ],
+         identification:  [ { position: 600 } ] }
+  @EndUserText.label: 'Data Fatura'
+  DocumentDate;
+
+  @UI: { lineItem:        [ { position: 610 } ],
+         identification:  [ { position: 610 } ] }
+  @EndUserText.label: 'Data Lançamento'
+  PostingDate;
+
+  @UI: { lineItem:        [ { position: 620 } ],
+         identification:  [ { position: 620 } ] }
+  @EndUserText.label: 'Devolução'
+  QtdDevolucao;
+
+  @UI: { lineItem:        [ { position: 630 } ],
+         identification:  [ { position: 630 } ] }
+  @EndUserText.label: 'Referência'
+  SupplierInvoiceIDByInvcgParty;
+
+  @UI: { lineItem:        [ { position: 640 } ],
+         identification:  [ { position: 640 } ] }
+  @EndUserText.label: 'Est. Liberação'
+  EstLiberac;
+
+  @UI: { lineItem:        [ { position: 660 } ],
+         identification:  [ { position: 660 } ] }
+  @EndUserText.label: 'Frete'
+  Frete;
+
+  @UI: { lineItem:        [ { position: 670 } ],
+         identification:  [ { position: 670 } ] }
+  @EndUserText.label: 'Pedido E-Compras'
+  ecompras;
+
+  @UI: { lineItem:        [ { position: 680 } ],
+         identification:  [ { position: 680 } ] }
+  @EndUserText.label: 'Pedido Mercado Eletrônico'
+  me;
+
+  @UI: { lineItem:        [ { position: 690 } ],
+         identification:  [ { position: 690 } ] }
+  @EndUserText.label: 'Prev. Pagamento'
+  PrevPagamento;
+
+  @UI: { lineItem:        [ { position: 700 } ],
+         identification:  [ { position: 700 } ] }
+  @EndUserText.label: 'QTD'
+  QuantityInPurchaseOrderUnitSup;
+
+  @UI: { lineItem:        [ { position: 710 } ],
+         identification:  [ { position: 710 } ] }
+  @EndUserText.label: 'Qtd. MIGO'
+  Migo;
+
+  @UI: { lineItem:        [ { position: 730 } ],
+         identification:  [ { position: 730 } ] }
+  @EndUserText.label: 'Qtd. Pendente'
+  QtdPendente;
+
+  @UI: { lineItem:        [ { position: 750 } ],
+         identification:  [ { position: 750 } ] }
+  @EndUserText.label: 'Saldo Pendente'
+  SaldoPend;
+
+  @UI: { lineItem:        [ { position: 770 } ],
+         identification:  [ { position: 770 } ] }
+  @EndUserText.label: 'Data Lib.'
+  DataLibera;
+
+  @UI: { lineItem:        [ { position: 780 } ],
+         identification:  [ { position: 780 } ] }
+  @EndUserText.label: 'Hora Lib.'
+  HoraLibera;
+
+  @UI: { lineItem:        [ { position: 810 } ],
+         identification:  [ { position: 810 } ] }
+  @EndUserText.label: 'Estrat. de Liberação'
+  EstratLibera;
+
+  @UI: { lineItem:        [ { position: 830 } ],
+         identification:  [ { position: 830 } ] }
+  @EndUserText.label: 'Liberação Incompleta'
+  LiberacIncompl;
+
+  @UI: { lineItem:        [ { position: 840 } ],
+         identification:  [ { position: 840 } ],
+         selectionField:  [ { position: 90 } ] }
+  @EndUserText.label: 'Grp. Mercadoria'
+  MaterialGroup;
+
+  @UI: { lineItem:        [ { position: 850 } ],
+         identification:  [ { position: 850 } ] }
+  @EndUserText.label: 'Denom. Grp. Mercad.'
+  MatGroupName;
+
+  @UI: { lineItem:        [ { position: 860 } ],
+         identification:  [ { position: 860 } ],
+         selectionField:  [ { position: 250 } ] }
+  @EndUserText.label: 'Incoterms'
+  IncotermsClassification;
+
+  @UI: { lineItem:        [ { position: 870 } ],
+         identification:  [ { position: 870 } ] }
+  @EndUserText.label: 'Incoterms 2'
+  IncotermsTransferLocation;
+
+  @UI: { lineItem:        [ { position: 880 } ],
+         identification:  [ { position: 880 } ] }
+  @EndUserText.label: 'Req. Compras'
+  PurchaseRequisition;
+
+  @UI: { lineItem:        [ { position: 890 } ],
+         identification:  [ { position: 890 } ] }
+  @EndUserText.label: 'Item Req. Compras'
+  PurchaseRequisitionItem;
+
+//  @UI: { lineItem:        [ { position: 900 } ],
+//         identification:  [ { position: 900 } ] }
+//  @EndUserText.label: 'Desc. Preço Bruto Val. Cond.'
+  //@UI.facet: [{hidden: true}]
+  @UI.hidden: true
+  DescBrtConditionAmount;
+
+//  @UI: { lineItem:        [ { position: 910 } ],
+//         identification:  [ { position: 910 } ] }
+//  @EndUserText.label: 'Desc. Preço Bruto Montante'
+  //@UI.facet: [{hidden: true}]
+  @UI.hidden: true
+  DescBrtConditionRateValue;
+
+//  @UI: { lineItem:        [ { position: 920 } ],
+//         identification:  [ { position: 920 } ] }
+//  @EndUserText.label: 'Desp. Acess. Val. Cond.'
+  //@UI.facet: [{hidden: true}]
+  @UI.hidden: true
+  DespAcessConditionAmount;
+
+//  @UI: { lineItem:        [ { position: 930 } ],
+//         identification:  [ { position: 930 } ] }
+//  @EndUserText.label: 'Desp. Acess. Montante'
+  //@UI.facet: [{hidden: true}]
+  @UI.hidden: true
+  DespAcessConditionRateValue;
+
+  @UI: { lineItem:        [ { position: 940 } ],
+         identification:  [ { position: 940 } ] }
+  @EndUserText.label: 'Desp. Acess. Montante Moeda'
+  DespAcessConditionCurrency;
+
+  @UI: { lineItem:        [ { position: 950 } ],
+         identification:  [ { position: 950 } ] }
+  @EndUserText.label: 'Registro Info'
+  PurchasingInfoRecord;
+
+  @UI: { lineItem:        [ { position: 960 } ],
+         identification:  [ { position: 960 } ],
+         selectionField:  [ { position: 260 } ] }
+  @EndUserText.label: 'Contrato Básico'
+  PurchaseContract;
+
+  @UI: { lineItem:        [ { position: 970 } ],
+         identification:  [ { position: 970 } ] }
+  @EndUserText.label: 'Item Contrato'
+  PurchaseContractItem;
+
+
+  //  @UI: { lineItem:        [ { position: 510 } ],
+  //         identification:  [ { position: 510 } ] }
+  @UI.facet: [{hidden: true}]
+  PurchaseOrderScheduleLine;
+
+  //  @UI: { lineItem:        [ { position: 520 } ],
+  //         identification:  [ { position: 520 } ] }
+  @UI.facet: [{hidden: true}]
+  @EndUserText.label: 'Última Fatura entrada'
+  SupplierInvoice;
+
+  //  @UI: { lineItem:        [ { position: 530 } ],
+  //         identification:  [ { position: 530 } ] }
+  @UI.facet: [{hidden: true}]
+  FiscalYear;
+
+  //  @UI: { lineItem:        [ { position: 540 } ],
+  //         identification:  [ { position: 540 } ] }
+  @UI.facet: [{hidden: true}]
+  @EndUserText.label: 'Item Última Fatura'
+  SupplierInvoiceItem;
+
+  //  @UI: { lineItem:        [ { position: 550 } ],
+  //         identification:  [ { position: 550 } ] }
+  @UI.facet: [{hidden: true}]
+  DocumentCurrency;
+
+  @UI: { selectionField:  [ { position: 100 } ] }
+  CreationDate;
+
+  @UI: { selectionField:  [ { position: 180 } ] }
+  AccountAssignmentCategory;
+
+  @UI: { selectionField:  [ { position: 10 } ] }
+  @EndUserText.label: 'Somente entradas pendentes'
+  pendente;
+
+}

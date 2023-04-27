@@ -1,0 +1,6 @@
+@EndUserText.label: 'Serv.Def. Cadastro Fiscal'
+define service ZUI_MM_CADASTRO_FISCAL {
+  expose ZC_MM_CADASTRO_FISCAL_CABEC;
+  expose ZC_MM_CADASTRO_FISCAL_ITEM;
+  expose ZC_MM_CADASTRO_FISCAL_ANEXO;
+}

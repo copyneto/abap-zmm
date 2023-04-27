@@ -1,0 +1,32 @@
+managed; // implementation in class zbp_i_mm_divisao unique;
+
+define behavior for ZI_MM_DIVISAO //alias <alias_name>
+persistent table ztmm_divisao
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  mapping for ZTMM_DIVISAO
+  {
+    Gsber = gsber;
+    Bupla = bupla;
+    Vkorg = vkorg;
+    Werks = werks;
+    Bukrs = bukrs;
+    Tplst = tplst;
+    Ativo = ativo;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, LocalLastChangedAt;
+  field ( readonly : update ) Gsber, Bupla;
+
+}

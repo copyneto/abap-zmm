@@ -1,0 +1,5 @@
+@EndUserText.label: 'ADM Ret Arm Grao Verde'
+define service ZUI_MM_RET_ARM_GRAOVERDE {
+  expose ZC_MM_RET_ARM_GRAOVERDE;
+  expose ZI_CA_VH_MATERIAL;
+}

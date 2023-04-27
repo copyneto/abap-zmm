@@ -1,0 +1,320 @@
+@Metadata.layer: #CORE
+@UI:{
+  lineItem: [{criticality: 'Critical'}],
+  headerInfo: {
+    typeName: 'Nota Fiscal',
+    typeNamePlural: 'Notas Fiscais',
+    title: {
+        type: #STANDARD,
+        label: 'Nota',
+        value: 'BR_NotaFiscal'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Comparativo de Dados',
+        value: 'BR_NFTypeName'
+    }
+ }
+}
+annotate view ZC_MM_ERP_NF_GRC with
+{
+
+//  @UI.facet: [
+//
+//  { id: 'Header', purpose: #HEADER, type: #COLLECTION, position: 10, label: 'Nota' },
+//  { id: 'Fldgpr1', purpose: #HEADER, type: #FIELDGROUP_REFERENCE, position: 10, targetQualifier: 'Nota', parentId: 'Header', isPartOfPreview: true, isSummary: true },
+//
+//  { id: 'Detail', purpose: #STANDARD, type: #COLLECTION, position: 10, label: 'ERP x GRC' },
+//  { id: 'Erp', purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'Dados ERP', position: 10, targetQualifier: 'ERP', parentId: 'Detail' },
+//  { id: 'Grc', purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'Dados GRC', position: 20, targetQualifier: 'GRC', parentId: 'Detail' }
+//
+//  ]
+//
+//  @UI:{ fieldGroup: [{qualifier: 'Nota', position: 10, importance: #HIGH, label: 'Chave' }] }
+//  ChaveAcesso;
+//
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NotaFiscal' },
+//                 additionalBinding: [{ element: 'BR_NFType', localElement: 'BR_NFType', usage: #FILTER }] }]
+//  @UI: {
+//               lineItem: [{ position: 10, importance: #MEDIUM, type: #STANDARD }],
+//         selectionField: [{ position: 40 }]
+//       }
+//  BR_NotaFiscal;
+//  // BR_NotaFiscalItem;
+//
+//  @Consumption.filter.selectionType: #INTERVAL
+//  @UI: { selectionField: [{ position: 10 }],
+//             fieldGroup: [{qualifier: 'Nota', position: 20, importance: #HIGH }] }
+//  BR_NFPostingDate;
+//
+//  @UI: {
+//           lineItem: [{ position: 20, importance: #HIGH, type: #STANDARD }],
+//         fieldGroup: [{qualifier: 'ERP', position: 10, importance: #HIGH }]
+//     }
+//  BR_NFeNumber;
+//
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NotaFiscal' },
+//                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER }] }]
+//  @UI: { selectionField: [{ position: 70 }] }
+//  BR_NFType;
+//
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NFPartner' },
+//                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER }] }]
+//  @UI: {
+//             lineItem: [{ position: 100, importance: #HIGH, type: #STANDARD }],
+//       selectionField: [{ position: 60 }],
+//           fieldGroup: [{qualifier: 'Nota', position: 30, importance: #HIGH }]
+//     }
+//  BR_NFPartner;
+//  //BR_NFPartnerName1;
+//
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BR_NFDocument', element: 'CompanyCode' },
+//                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER },
+//                                     { element: 'BR_NFType',     localElement: 'BR_NFType',     usage: #FILTER },
+//                                     { element: 'BR_NFPartner',  localElement: 'BR_NFPartner',  usage: #FILTER }] }]
+//  @UI: { selectionField: [{ position: 20 }] }
+//  CompanyCode;
+//  //CompanyCodeName;
+//
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BR_NFDocument', element: 'BusinessPlace' },
+//                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER },
+//                                     { element: 'BR_NFType',     localElement: 'BR_NFType',     usage: #FILTER },
+//                                     { element: 'CompanyCode',   localElement: 'CompanyCode',   usage: #FILTER },
+//                                     { element: 'BR_NFPartner',  localElement: 'BR_NFPartner',  usage: #FILTER }] }]
+//  @UI: { selectionField: [{ position: 30 }] }
+//  BusinessPlace;
+//  //BranchName;
+//
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_MATERIAL', element: 'Material' } }]
+//  @UI: {
+//             lineItem: [{ position: 40, importance: #MEDIUM, type: #STANDARD }],
+//       selectionField: [{ position: 50 }],
+//           fieldGroup: [{qualifier: 'ERP', position: 20, importance: #HIGH }]
+//     }
+//  Material;
+//  //MaterialName;
+//
+//  @UI: {
+//           lineItem: [{ position: 60, importance: #LOW, type: #STANDARD }],
+//         fieldGroup: [{qualifier: 'ERP', position: 30, importance: #HIGH }]
+//     }
+//  PurchaseOrder;
+//  // PurchaseOrderItem;
+//
+//  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_MaterialDocumentHeaderVH', element: 'MaterialDocument' } }]
+//  @UI: { selectionField: [{ position: 80 }] }
+//  MaterialDocument;
+//  // MaterialDocumentItem;
+//  // MaterialDocumentItemText;
+//
+//  @UI: {
+//          lineItem: [{ position: 90, importance: #LOW, type: #STANDARD }],
+//        fieldGroup: [{qualifier: 'ERP', position: 40, importance: #HIGH }]
+//     }
+//  NCMCode;
+//  //  guidheader;
+//
+//  //  nfeid;
+//
+//  @UI: {
+//        lineItem: [{ position: 30, importance: #HIGH, type: #STANDARD }],
+//        fieldGroup: [{qualifier: 'GRC', position: 10, importance: #HIGH }]
+//      }
+//  nnf;
+//  //  cnpjdest;
+//  //  cnpjemit;
+//
+//  @UI: {
+//           lineItem: [{ position: 50, importance: #LOW, type: #STANDARD }],
+//         fieldGroup: [{qualifier: 'GRC', position: 30, importance: #HIGH }]
+//     }
+//  ponumber;
+//  //poitem;
+//
+//  @UI: {
+//          lineItem: [{ position: 70, importance: #LOW, type: #STANDARD }],
+//        fieldGroup: [{qualifier: 'GRC', position: 20, importance: #HIGH }]
+//   }
+//  cprod;
+//  //  cfop;
+//  //  xprod;
+//
+//  @UI: {
+//           lineItem: [{ position: 80, importance: #LOW, type: #STANDARD }],
+//         fieldGroup: [{qualifier: 'GRC', position: 40, importance: #HIGH }]
+//     }
+//  ncm;
+//  
+//  @UI: {
+//           lineItem: [{ position: 90, importance: #LOW, type: #STANDARD }],
+//         fieldGroup: [{qualifier: 'Nota', position: 40, importance: #HIGH }]
+//     }  
+//  AccountingDocument;
+//
+//  @UI.hidden: true
+//  Critical;
+
+
+//===================================================================
+
+  @UI.facet: [
+
+  { id: 'Header', purpose: #HEADER, type: #COLLECTION, position: 10, label: 'Nota' },
+  { id: 'Fldgpr1', purpose: #HEADER, type: #FIELDGROUP_REFERENCE, position: 10, targetQualifier: 'Nota', parentId: 'Header', isPartOfPreview: true, isSummary: true },
+
+  { id: 'Detail', purpose: #STANDARD, type: #COLLECTION, position: 10, label: 'ERP x GRC' },
+  { id: 'Erp', purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'Dados ERP', position: 10, targetQualifier: 'ERP', parentId: 'Detail' },
+  { id: 'Grc', purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'Dados GRC', position: 20, targetQualifier: 'GRC', parentId: 'Detail' }
+
+  ]
+
+  @UI:{ fieldGroup: [{qualifier: 'Nota', position: 10, importance: #HIGH, label: 'Chave' }] }
+  @UI: {
+               lineItem: [{ position: 10, importance: #MEDIUM, type: #STANDARD }]
+       }  
+  ChaveAcesso;
+
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NotaFiscal' },
+                 additionalBinding: [{ element: 'BR_NFType', localElement: 'BR_NFType', usage: #FILTER }] }]
+  @UI: {
+               lineItem: [{ position: 20, importance: #MEDIUM, type: #STANDARD }],
+         selectionField: [{ position: 40 }]
+       }
+  BR_NotaFiscal;
+  
+
+  @UI: {
+        lineItem: [{ position: 30, importance: #HIGH, type: #STANDARD }],
+        fieldGroup: [{qualifier: 'ERP', position: 10, importance: #HIGH }]
+      }
+  BR_NFeNumber;    
+  
+  
+  @UI: {
+        lineItem: [{ position: 31, importance: #HIGH, type: #STANDARD }],
+        fieldGroup: [{qualifier: 'GRC', position: 10, importance: #HIGH }]
+      }
+  nnf;  
+  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_MATERIAL', element: 'Material' } }]
+  @UI: {
+             lineItem: [{ position: 40, importance: #MEDIUM, type: #STANDARD }],
+       selectionField: [{ position: 50 }],
+           fieldGroup: [{qualifier: 'ERP', position: 20, importance: #HIGH }]
+     }
+  Material;  
+
+  @UI: {
+             lineItem: [{ position: 41, importance: #MEDIUM, type: #STANDARD }]
+     }
+  MaterialName;
+  @UI: {
+           lineItem: [{ position: 42, importance: #LOW, type: #STANDARD }],
+         fieldGroup: [{qualifier: 'GRC', position: 30, importance: #HIGH }]
+     }
+  poitem;
+  
+  @UI.hidden: true
+  @UI: {
+         fieldGroup: [{qualifier: 'GRC', position: 30, importance: #HIGH }]
+     }
+  ponumber;  
+  
+  @UI: {
+          lineItem: [{ position: 60, importance: #LOW, type: #STANDARD }],
+        fieldGroup: [{qualifier: 'GRC', position: 20, importance: #HIGH }]
+   }
+  cprod;  
+  
+  @UI: {
+          lineItem: [{ position: 70, importance: #LOW, type: #STANDARD }],
+        fieldGroup: [{qualifier: 'GRC', position: 20, importance: #HIGH }]
+   }
+  xprod;  
+  
+  @UI: {
+          lineItem: [{ position: 80, importance: #LOW, type: #STANDARD }],
+        fieldGroup: [{qualifier: 'GRC', position: 40, importance: #HIGH }]
+     }
+  ncm;  
+  
+  @UI: {
+          lineItem: [{ position: 90, importance: #LOW, type: #STANDARD }],
+        fieldGroup: [{qualifier: 'ERP', position: 40, importance: #HIGH }]
+     }
+  NCMCode;    
+  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NFPartner' },
+                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER }] }]
+  @UI: {
+             lineItem: [{ position: 100, importance: #HIGH, type: #STANDARD }],
+       selectionField: [{ position: 60 }],
+           fieldGroup: [{qualifier: 'Nota', position: 30, importance: #HIGH }]
+     }
+  BR_NFPartner;  
+  
+  @UI: {
+             lineItem: [{ position: 110, importance: #HIGH, type: #STANDARD }]
+     }
+  BR_NFPartnerName1;
+
+
+
+  @Consumption.filter.selectionType: #INTERVAL
+  @UI: { selectionField: [{ position: 10 }],
+             fieldGroup: [{qualifier: 'Nota', position: 20, importance: #HIGH }] }
+  BR_NFPostingDate;
+  
+  //@UI.hidden: true
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NotaFiscal' },
+                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER }] }]
+  @UI: { selectionField: [{ position: 70 }] }
+  BR_NFType;  
+  
+  //@UI.hidden: true  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BR_NFDocument', element: 'CompanyCode' },
+                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER },
+                                     { element: 'BR_NFType',     localElement: 'BR_NFType',     usage: #FILTER },
+                                     { element: 'BR_NFPartner',  localElement: 'BR_NFPartner',  usage: #FILTER }] }]
+  @UI: { selectionField: [{ position: 20 }] }
+  CompanyCode;  
+  
+  //@UI.hidden: true  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BR_NFDocument', element: 'BusinessPlace' },
+                 additionalBinding: [{ element: 'BR_NotaFiscal', localElement: 'BR_NotaFiscal', usage: #FILTER },
+                                     { element: 'BR_NFType',     localElement: 'BR_NFType',     usage: #FILTER },
+                                     { element: 'CompanyCode',   localElement: 'CompanyCode',   usage: #FILTER },
+                                     { element: 'BR_NFPartner',  localElement: 'BR_NFPartner',  usage: #FILTER }] }]
+  @UI: { selectionField: [{ position: 30 }] }
+  BusinessPlace;  
+  
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_MaterialDocumentHeaderVH', element: 'MaterialDocument' } }]
+  @UI: { selectionField: [{ position: 80 }] }
+  MaterialDocument;
+    
+  @UI: {
+        lineItem: [{ position: 50, importance: #LOW, type: #STANDARD }],
+        fieldGroup: [{qualifier: 'ERP', position: 30, importance: #HIGH }]
+     }
+  PurchaseOrder;
+  @UI.hidden: true
+  Critical;    
+  @UI.hidden: true
+  BR_NotaFiscalItem;  
+  @UI.hidden: true
+  BR_NFTypeName;
+  @UI.hidden: true
+  CompanyCodeName;
+  @UI.hidden: true
+  BranchName;
+  @UI.hidden: true
+  PurchaseOrderItem;
+  @UI.hidden: true
+  MaterialDocumentItem;
+  @UI.hidden: true
+  MaterialDocumentItemText;
+  @UI.hidden: true  
+  guidheader;
+  @UI.hidden: true  
+  nfeid;
+}

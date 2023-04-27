@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Série',
+                     typeNamePlural: 'Séries',
+                     title: { type: #STANDARD, value: 'SerialNoText' } } }
+                     
+annotate view ZC_MM_ADMINISTRAR_SERIE
+    with 
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Serie',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Série',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Material;
+  
+  @UI.hidden: true
+  OriginPlant;
+  
+  @UI.hidden: true
+  OriginStorageLocation;
+  
+  @UI.hidden: true
+  Batch;
+  
+  @UI.hidden: true
+  OriginUnit;
+  
+  @UI.hidden: true
+  Unit;
+  
+  @UI.hidden: true
+  Guid;
+  
+  @UI.hidden: true
+  ProcessStep;
+
+  @UI.hidden: true
+  DestinyPlant;
+
+  @UI.hidden: true
+  DestinyStorageLocation;
+
+  @UI.hidden: true
+  PrmDepFecId;
+
+  @UI.hidden: true
+  EANType;
+
+  
+  @UI: {  lineItem:       [ { position: 10, label: 'Série' } ],
+          identification: [ { position: 10, label: 'Série' } ],
+         textArrangement: #TEXT_ONLY }
+  SerialNo;
+  
+  @UI.hidden: true
+  SerialNoText;
+    
+}

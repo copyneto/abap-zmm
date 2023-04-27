@@ -1,0 +1,666 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_VISAO_GLOBAL with
+{
+  @Consumption.semanticObject: 'zMaterial'
+  @UI.lineItem: [{ position: 10, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay', importance: #HIGH } ]
+  @UI.selectionField: [{position: 10}]
+  Product;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{position: 20}]
+  mtart;
+  @UI.lineItem: [{ position: 30 }]
+  maktxpt;
+  @UI.lineItem: [{ position: 40 }]
+  maktxen;
+  @UI.lineItem: [{ position: 50 }]
+  maktxes;
+  @UI.lineItem: [{ position: 60 }]
+  maktg;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{position: 30}]
+  ersda;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{position: 40}]
+  ernam;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{position: 50}]
+  matkl;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.selectionField: [{position: 60}]
+  spart;
+  @UI.lineItem: [{ position: 110 }]
+  @UI.selectionField: [{position: 70}]
+  prdha;
+  @UI.lineItem: [{ position: 120 }]
+  @UI.selectionField: [{position: 80}]
+  mstae;
+  @UI.lineItem: [{ position: 130 }]
+  @UI.selectionField: [{position: 90}]
+  mstav;
+  @UI.lineItem: [{ position: 140 }]
+  @UI.selectionField: [{position: 100}]
+  werks;
+  @UI.lineItem: [{ position: 150 }]
+  @UI.selectionField: [{position: 110}]
+  mmsta;
+  @UI.lineItem: [{ position: 160 }]
+  @UI.selectionField: [{position: 120}]
+  ekgrp;
+  @UI.lineItem: [{ position: 170 }]
+  @UI.selectionField: [{position: 130}]
+  prctr;
+  @UI.lineItem: [{ position: 180 }]
+  @UI.selectionField: [{position: 140}]
+  steuc;
+  @UI.lineItem: [{ position: 190 }]
+  @UI.selectionField: [{position: 150}]
+  bwtar;
+  @UI.lineItem: [{ position: 200 }]
+  @UI.selectionField: [{position: 160}]
+  vkorg;
+  @UI.lineItem: [{ position: 210 }]
+  @UI.selectionField: [{position: 170}]
+  vtweg;
+  @UI.lineItem: [{ position: 220 }]
+  @UI.selectionField: [{position: 180}]
+  idrfb;
+  
+  @UI.lineItem: [{ exclude: true }]
+  lgort;
+  @UI.lineItem: [{ exclude: true }]
+  bwkey;
+  @UI.lineItem: [{ exclude: true }]
+  meinh;
+  @UI.lineItem: [{ exclude: true }]
+  sperr;
+  @UI.lineItem: [{ exclude: true }]
+  herbl;
+  @UI.lineItem: [{ exclude: true }]
+  fbwst;
+  @UI.lineItem: [{ exclude: true }]
+  lbwst;
+  @UI.lineItem: [{ exclude: true }]
+  vbwst;
+  @UI.lineItem: [{ exclude: true }]
+  pdatl;
+  @UI.lineItem: [{ exclude: true }]
+  saisj;
+  @UI.lineItem: [{ exclude: true }]
+  abfac;
+  @UI.lineItem: [{ exclude: true }]
+  lgrad;
+  @UI.lineItem: [{ exclude: true }]
+  ktgrm;
+  @UI.lineItem: [{ exclude: true }]
+  kosgr;
+  @UI.lineItem: [{ exclude: true }]
+  extwg;
+  @UI.lineItem: [{ exclude: true }]
+  hrkft;
+  @UI.lineItem: [{ exclude: true }]
+  tragr;
+  @UI.lineItem: [{ exclude: true }]
+  magrv;
+  @UI.lineItem: [{ exclude: true }]
+  fxhor;
+  @UI.lineItem: [{ exclude: true }]
+  abwkz;
+  @UI.lineItem: [{ exclude: true }]
+  sbdkz;
+  @UI.lineItem: [{ exclude: true }]
+  vint2;
+  @UI.lineItem: [{ exclude: true }]
+  prfrq;
+  @UI.lineItem: [{ exclude: true }]
+  ltinc;
+  @UI.lineItem: [{ exclude: true }]
+  mbrue;
+  @UI.lineItem: [{ exclude: true }]
+  breit;
+  @UI.lineItem: [{ exclude: true }]
+  mlmaa;
+  @UI.lineItem: [{ exclude: true }]
+  bwspa;
+  @UI.lineItem: [{ exclude: true }]
+  satnr;
+  @UI.lineItem: [{ exclude: true }]
+  kznfm;
+  @UI.lineItem: [{ exclude: true }]
+  indus;
+  @UI.lineItem: [{ exclude: true }]
+  pmatn;
+  @UI.lineItem: [{ exclude: true }]
+  aenam;
+  @UI.lineItem: [{ exclude: true }]
+  vrmod;
+  @UI.lineItem: [{ exclude: true }]
+  ncost;
+  @UI.lineItem: [{ exclude: true }]
+  kzagl;
+  @UI.lineItem: [{ exclude: true }]
+  kalnr;
+  @UI.lineItem: [{ exclude: true }]
+  blanz;
+  @UI.lineItem: [{ exclude: true }]
+  bismt;
+  @UI.lineItem: [{ exclude: true }]
+  copam;
+  @UI.lineItem: [{ exclude: true }]
+  bwvor;
+  @UI.lineItem: [{ exclude: true }]
+  qmatv;
+  @UI.lineItem: [{ exclude: true }]
+  kzkri;
+  @UI.lineItem: [{ exclude: true }]
+  rwpro;
+  @UI.lineItem: [{ exclude: true }]
+  sfcpf;
+  @UI.lineItem: [{ exclude: true }]
+  dispr;
+  @UI.lineItem: [{ exclude: true }]
+  pprdz;
+  @UI.lineItem: [{ exclude: true }]
+  pprdv;
+  @UI.lineItem: [{ exclude: true }]
+  ergew;
+  @UI.lineItem: [{ exclude: true }]
+  ergei;
+  @UI.lineItem: [{ exclude: true }]
+  dispo;
+  @UI.lineItem: [{ exclude: true }]
+  minbe;
+  @UI.lineItem: [{ exclude: true }]
+  mhdhb;
+  @UI.lineItem: [{ exclude: true }]
+  stprv;
+  @UI.lineItem: [{ exclude: true }]
+  bwph1;
+  @UI.lineItem: [{ exclude: true }]
+  vplpx;
+  @UI.lineItem: [{ exclude: true }]
+  lplpx;
+  @UI.lineItem: [{ exclude: true }]
+  zplpr;
+  @UI.lineItem: [{ exclude: true }]
+  lplpr;
+  @UI.lineItem: [{ exclude: true }]
+  zplp1;
+  @UI.lineItem: [{ exclude: true }]
+  zplp2;
+  @UI.lineItem: [{ exclude: true }]
+  zplp3;
+  @UI.lineItem: [{ exclude: true }]
+  vjbwh;
+  @UI.lineItem: [{ exclude: true }]
+  vjbws;
+  @UI.lineItem: [{ exclude: true }]
+  ownpr;
+  @UI.lineItem: [{ exclude: true }]
+  sauft;
+  @UI.lineItem: [{ exclude: true }]
+  nkmpr;
+  @UI.lineItem: [{ exclude: true }]
+  versg;
+  @UI.lineItem: [{ exclude: true }]
+  lfmng;
+  @UI.lineItem: [{ exclude: true }]
+  aumng;
+  @UI.lineItem: [{ exclude: true }]
+  basmg;
+  @UI.lineItem: [{ exclude: true }]
+  timestamp;
+  @UI.lineItem: [{ exclude: true }]
+  xlifo;
+  @UI.lineItem: [{ exclude: true }]
+  pstat;
+  @UI.lineItem: [{ exclude: true }]
+  losgr;
+  @UI.lineItem: [{ exclude: true }]
+  bstma;
+  @UI.lineItem: [{ exclude: true }]
+  bstmi;
+  @UI.lineItem: [{ exclude: true }]
+  tranz;
+  @UI.lineItem: [{ exclude: true }]
+  vrvez;
+  @UI.lineItem: [{ exclude: true }]
+  webaz;
+  @UI.lineItem: [{ exclude: true }]
+  scm_grprt;
+  @UI.lineItem: [{ exclude: true }]
+  scm_giprt;
+  @UI.lineItem: [{ exclude: true }]
+  dzeit;
+  @UI.lineItem: [{ exclude: true }]
+  wzeit;
+  @UI.lineItem: [{ exclude: true }]
+  LVORMW;
+  @UI.lineItem: [{ exclude: true }]
+  dismm;
+  @UI.lineItem: [{ exclude: true }]
+  otype;
+  @UI.lineItem: [{ exclude: true }]
+  beskz;
+  @UI.lineItem: [{ exclude: true }]
+  vhart;
+  @UI.lineItem: [{ exclude: true }]
+  einme;
+  @UI.lineItem: [{ exclude: true }]
+  takzt;
+  @UI.lineItem: [{ exclude: true }]
+  mhdrz;
+  @UI.lineItem: [{ exclude: true }]
+  volto;
+  @UI.lineItem: [{ exclude: true }]
+  uneto;
+  @UI.lineItem: [{ exclude: true }]
+  ueeto;
+  @UI.lineItem: [{ exclude: true }]
+  gewto;
+  @UI.lineItem: [{ exclude: true }]
+  vkumc;
+  @UI.lineItem: [{ exclude: true }]
+  laepr;
+  @UI.lineItem: [{ exclude: true }]
+  /cwm/valum;
+  @UI.lineItem: [{ exclude: true }]
+  inhme;
+  @UI.lineItem: [{ exclude: true }]
+  vabme;
+  @UI.lineItem: [{ exclude: true }]
+  meins;
+  @UI.lineItem: [{ exclude: true }]
+  lzeih;
+  @UI.lineItem: [{ exclude: true }]
+  peinh;
+  @UI.lineItem: [{ exclude: true }]
+  mtuse;
+  @UI.lineItem: [{ exclude: true }]
+  vklab;
+  @UI.lineItem: [{ exclude: true }]
+  vkglg;
+  @UI.lineItem: [{ exclude: true }]
+  liqdt;
+  @UI.lineItem: [{ exclude: true }]
+  datab;
+  @UI.lineItem: [{ exclude: true }]
+  vjsal;
+  @UI.lineItem: [{ exclude: true }]
+  bstrf;
+  @UI.lineItem: [{ exclude: true }]
+  vmsav;
+  @UI.lineItem: [{ exclude: true }]
+  salkv;
+  @UI.lineItem: [{ exclude: true }]
+  vmsal;
+  @UI.lineItem: [{ exclude: true }]
+  plvar;
+  @UI.lineItem: [{ exclude: true }]
+  glgmg;
+  @UI.lineItem: [{ exclude: true }]
+  mtvfp;
+  @UI.lineItem: [{ exclude: true }]
+  vers1;
+  @UI.lineItem: [{ exclude: true }]
+  ervol;
+  @UI.lineItem: [{ exclude: true }]
+  ervoe;
+  @UI.lineItem: [{ exclude: true }]
+  volum;
+  @UI.lineItem: [{ exclude: true }]
+  mhdlp;
+  @UI.lineItem: [{ exclude: true }]
+  XCHPFC;
+  @UI.lineItem: [{ exclude: true }]
+  xchpf;
+  @UI.lineItem: [{ exclude: true }]
+  hoehe;
+  @UI.lineItem: [{ exclude: true }]
+  sproz;
+  @UI.lineItem: [{ exclude: true }]
+  prat1;
+  @UI.lineItem: [{ exclude: true }]
+  mlgut;
+  @UI.lineItem: [{ exclude: true }]
+  sobsk;
+  @UI.lineItem: [{ exclude: true }]
+  mrppp;
+  @UI.lineItem: [{ exclude: true }]
+  dwerk;
+  @UI.lineItem: [{ exclude: true }]
+  ssqss;
+  @UI.lineItem: [{ exclude: true }]
+  awsls;
+  @UI.lineItem: [{ exclude: true }]
+  kalsc;
+  @UI.lineItem: [{ exclude: true }]
+  bklas;
+  @UI.lineItem: [{ exclude: true }]
+  taklv;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/serno_prov_bup;
+  @UI.lineItem: [{ exclude: true }]
+  eklas;
+  @UI.lineItem: [{ exclude: true }]
+  oklas;
+  @UI.lineItem: [{ exclude: true }]
+  max_troc;
+  @UI.lineItem: [{ exclude: true }]
+  min_troc;
+  @UI.lineItem: [{ exclude: true }]
+  kziwl;
+  @UI.lineItem: [{ exclude: true }]
+  abciw;
+  @UI.lineItem: [{ exclude: true }]
+  abcin;
+  @UI.lineItem: [{ exclude: true }]
+  maabc;
+  @UI.lineItem: [{ exclude: true }]
+  cadkz;
+  @UI.lineItem: [{ exclude: true }]
+  auftl;
+  @UI.lineItem: [{ exclude: true }]
+  perkz;
+  @UI.lineItem: [{ exclude: true }]
+  ean11;
+  @UI.lineItem: [{ exclude: true }]
+  shflg;
+  @UI.lineItem: [{ exclude: true }]
+  kzppv;
+  @UI.lineItem: [{ exclude: true }]
+  /bev1/emdrckspl;
+  @UI.lineItem: [{ exclude: true }]
+  ekalr;
+  @UI.lineItem: [{ exclude: true }]
+  vpsta;
+  @UI.lineItem: [{ exclude: true }]
+  laeng;
+  @UI.lineItem: [{ exclude: true }]
+  wstgh;
+  @UI.lineItem: [{ exclude: true }]
+  raube;
+  @UI.lineItem: [{ exclude: true }]
+  cuobj;
+  @UI.lineItem: [{ exclude: true }]
+  kzkfg;
+  @UI.lineItem: [{ exclude: true }]
+  inhal;
+  @UI.lineItem: [{ exclude: true }]
+  vprsv;
+  @UI.lineItem: [{ exclude: true }]
+  kzkup;
+  @UI.lineItem: [{ exclude: true }]
+  losfx;
+  @UI.lineItem: [{ exclude: true }]
+  bwtty;
+  @UI.lineItem: [{ exclude: true }]
+  qzgtp;
+  @UI.lineItem: [{ exclude: true }]
+  numtp;
+  @UI.lineItem: [{ exclude: true }]
+  attyp;
+  @UI.lineItem: [{ exclude: true }]
+  vmein;
+  @UI.lineItem: [{ exclude: true }]
+  zpld1;
+  @UI.lineItem: [{ exclude: true }]
+  zpld2;
+  @UI.lineItem: [{ exclude: true }]
+  zpld3;
+  @UI.lineItem: [{ exclude: true }]
+  normt;
+  @UI.lineItem: [{ exclude: true }]
+  sktof;
+  @UI.lineItem: [{ exclude: true }]
+  kzdkz;
+  @UI.lineItem: [{ exclude: true }]
+  wlinl;
+  @UI.lineItem: [{ exclude: true }]
+  mpdau;
+  @UI.lineItem: [{ exclude: true }]
+  umlmc;
+  @UI.lineItem: [{ exclude: true }]
+  fsh_sealv;
+  @UI.lineItem: [{ exclude: true }]
+  eisbe;
+  @UI.lineItem: [{ exclude: true }]
+  trame;
+  @UI.lineItem: [{ exclude: true }]
+  mabst;
+  @UI.lineItem: [{ exclude: true }]
+  vmkum;
+  @UI.lineItem: [{ exclude: true }]
+  eislo;
+  @UI.lineItem: [{ exclude: true }]
+  target_stock;
+  @UI.lineItem: [{ exclude: true }]
+  scm_ges_bst_use;
+  @UI.lineItem: [{ exclude: true }]
+  bwesb;
+  @UI.lineItem: [{ exclude: true }]
+  vktrw;
+  @UI.lineItem: [{ exclude: true }]
+  sgt_covsa;
+  @UI.lineItem: [{ exclude: true }]
+  lfgja;
+  @UI.lineItem: [{ exclude: true }]
+  pdatz;
+  @UI.lineItem: [{ exclude: true }]
+  vzusl;
+  @UI.lineItem: [{ exclude: true }]
+  stfak;
+  @UI.lineItem: [{ exclude: true }]
+  etifo;
+  @UI.lineItem: [{ exclude: true }]
+  ueetk;
+  @UI.lineItem: [{ exclude: true }]
+  mtpos_mara;
+  @UI.lineItem: [{ exclude: true }]
+  ladgr;
+  @UI.lineItem: [{ exclude: true }]
+  begru;
+  @UI.lineItem: [{ exclude: true }]
+  bonus;
+  @UI.lineItem: [{ exclude: true }]
+  provg;
+  @UI.lineItem: [{ exclude: true }]
+  mtpos;
+  @UI.lineItem: [{ exclude: true }]
+  etiag;
+  @UI.lineItem: [{ exclude: true }]
+  kondm;
+  @UI.lineItem: [{ exclude: true }]
+  resvp;
+  @UI.lineItem: [{ exclude: true }]
+  dplho;
+  @UI.lineItem: [{ exclude: true }]
+  vint1;
+  @UI.lineItem: [{ exclude: true }]
+  mcrue;
+  @UI.lineItem: [{ exclude: true }]
+  lvorm;
+  @UI.lineItem: [{ exclude: true }]
+  shzet;
+  @UI.lineItem: [{ exclude: true }]
+  pmata;
+  @UI.lineItem: [{ exclude: true }]
+  wrkst;
+  @UI.lineItem: [{ exclude: true }]
+  vrbfk;
+  @UI.lineItem: [{ exclude: true }]
+  fuelg;
+  @UI.lineItem: [{ exclude: true }]
+  kzrev;
+  @UI.lineItem: [{ exclude: true }]
+  kaln1;
+  @UI.lineItem: [{ exclude: true }]
+  eannr;
+  @UI.lineItem: [{ exclude: true }]
+  pvmso;
+  @UI.lineItem: [{ exclude: true }]
+  hkmat;
+  @UI.lineItem: [{ exclude: true }]
+  mtorg;
+  @UI.lineItem: [{ exclude: true }]
+  atpkz;
+  @UI.lineItem: [{ exclude: true }]
+  mvgr1;
+  @UI.lineItem: [{ exclude: true }]
+  maxlz;
+  @UI.lineItem: [{ exclude: true }]
+  rbnrm;
+  @UI.lineItem: [{ exclude: true }]
+  sernp;
+  @UI.lineItem: [{ exclude: true }]
+  lfmon;
+  @UI.lineItem: [{ exclude: true }]
+  brgew;
+  @UI.lineItem: [{ exclude: true }]
+  ntgew;
+  @UI.lineItem: [{ exclude: true }]
+  kzdie;
+  @UI.lineItem: [{ exclude: true }]
+  gpmkz;
+  @UI.lineItem: [{ exclude: true }]
+  mypol;
+  @UI.lineItem: [{ exclude: true }]
+  zkprs;
+  @UI.lineItem: [{ exclude: true }]
+  verpr;
+  @UI.lineItem: [{ exclude: true }]
+  stprs;
+  @UI.lineItem: [{ exclude: true }]
+  bwprh;
+  @UI.lineItem: [{ exclude: true }]
+  bwprs;
+  @UI.lineItem: [{ exclude: true }]
+  bwps1;
+  @UI.lineItem: [{ exclude: true }]
+  plifz;
+  @UI.lineItem: [{ exclude: true }]
+  qmpur;
+  @UI.lineItem: [{ exclude: true }]
+  lfmax;
+  @UI.lineItem: [{ exclude: true }]
+  wesch;
+  @UI.lineItem: [{ exclude: true }]
+  kausf;
+  @UI.lineItem: [{ exclude: true }]
+  quazt;
+  @UI.lineItem: [{ exclude: true }]
+  ausss;
+  @UI.lineItem: [{ exclude: true }]
+  disls;
+  @UI.lineItem: [{ exclude: true }]
+  kzpro;
+  @UI.lineItem: [{ exclude: true }]
+  mbrsh;
+  @UI.lineItem: [{ exclude: true }]
+  sobsl;
+  @UI.lineItem: [{ exclude: true }]
+  bstfe;
+  @UI.lineItem: [{ exclude: true }]
+  groes;
+  @UI.lineItem: [{ exclude: true }]
+  etiar;
+  @UI.lineItem: [{ exclude: true }]
+  plnty;
+  @UI.lineItem: [{ exclude: true }]
+  plgtp;
+  @UI.lineItem: [{ exclude: true }]
+  laeda;
+  @UI.lineItem: [{ exclude: true }]
+  ausme;
+  @UI.lineItem: [{ exclude: true }]
+  gewei;
+  @UI.lineItem: [{ exclude: true }]
+  vrkme;
+  @UI.lineItem: [{ exclude: true }]
+  voleh;
+  @UI.lineItem: [{ exclude: true }]
+  usequ;
+  @UI.lineItem: [{ exclude: true }]
+  salk3;
+  @UI.lineItem: [{ exclude: true }]
+  bwva1;
+  @UI.lineItem: [{ exclude: true }]
+  umrez;
+  @UI.lineItem: [{ exclude: true }]
+  umren;
+  @UI.lineItem: [{ exclude: true }]
+  eannrm;
+  @UI.lineItem: [{ exclude: true }]
+  ean11m;
+  @UI.lineItem: [{ exclude: true }]
+  numtpm;
+  @UI.lineItem: [{ exclude: true }]
+  laengm;
+  @UI.lineItem: [{ exclude: true }]
+  breitm;
+  @UI.lineItem: [{ exclude: true }]
+  hoehem;
+  @UI.lineItem: [{ exclude: true }]
+  meabm;
+  @UI.lineItem: [{ exclude: true }]
+  volumm;
+  @UI.lineItem: [{ exclude: true }]
+  volehm;
+  @UI.lineItem: [{ exclude: true }]
+  brgewm;
+  @UI.lineItem: [{ exclude: true }]
+  geweim;
+  @UI.lineItem: [{ exclude: true }]
+  mesub;
+  @UI.lineItem: [{ exclude: true }]
+  atinn;
+  @UI.lineItem: [{ exclude: true }]
+  mesrt;
+  @UI.lineItem: [{ exclude: true }]
+  xfhdw;
+  @UI.lineItem: [{ exclude: true }]
+  xbeww;
+  @UI.lineItem: [{ exclude: true }]
+  kzwso;
+  @UI.lineItem: [{ exclude: true }]
+  msehi;
+  @UI.lineItem: [{ exclude: true }]
+  bflme_marm;
+  @UI.lineItem: [{ exclude: true }]
+  gtin_variant;
+  @UI.lineItem: [{ exclude: true }]
+  nest_ftr;
+  @UI.lineItem: [{ exclude: true }]
+  max_stack;
+  @UI.lineItem: [{ exclude: true }]
+  top_load_full;
+  @UI.lineItem: [{ exclude: true }]
+  top_load_full_uom;
+  @UI.lineItem: [{ exclude: true }]
+  capause;
+  @UI.lineItem: [{ exclude: true }]
+  ty2tq;
+  @UI.lineItem: [{ exclude: true }]
+  dummy_uom_incl_eew_ps;
+  @UI.lineItem: [{ exclude: true }]
+  /cwm/ty2tq;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/ncode;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/ncode_ty;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/rcode;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/seruse;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/syncchg;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/serno_managed;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/uom_sync;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/ser_gtin;
+  @UI.lineItem: [{ exclude: true }]
+  pcbut;
+  @UI.lineItem: [{ exclude: true }]
+  waers;
+}

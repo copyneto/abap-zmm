@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Não é possível adicionar item manualmente, somente com lista técnica.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Componentes de lista técnica não podem ser modificados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Lista técnica não pode ser modificada (analisar doc.subsequentes).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Ordem de produção pode ser necessária (nº acompanhamento).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Ordem de produção &amp; não encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Ordem de produção &amp; inválida (Data-base do início/Data-base do fim).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Componentes de lista técnica não podem ser modificados &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Para item existente em lista técnica, fazer nova explosão.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Campo fornecedor é Obrigatório quando material está preenchido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Campo UM XML é Obrigatório.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Campo UM SAP é Obrigatório.</TEXT>
+    </T100>
+   </T100>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZMM004</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0007</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00004</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZMM004</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00007</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Material semi-acabado pode ser insumo aplicado, para isto é necessária</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>a informação da ordem de produção no campo nº acompanhamento.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>No processo de recebimento do insumo, o sistema baixará automaticamente</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>seu estoque para a ordem de produção informada.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

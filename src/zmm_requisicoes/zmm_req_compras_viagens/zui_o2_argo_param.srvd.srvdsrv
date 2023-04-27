@@ -1,0 +1,4 @@
+@EndUserText.label: 'Definição de Serviços ARGO'
+define service ZUI_O2_ARGO_PARAM {
+  expose ZC_MM_ARGO_PARAM;
+}

@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_RET_ARM_GRAOVERDE {
+    grant
+        select
+            on
+                ZC_MM_RET_ARM_GRAOVERDE
+                    where
+                        inheriting conditions from entity ZI_MM_RET_ARM_GRAOVERDE;
+                        
+}

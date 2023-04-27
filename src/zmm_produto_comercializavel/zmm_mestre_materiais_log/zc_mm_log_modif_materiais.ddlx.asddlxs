@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+  typeName: 'LogMaterial',
+  typeNamePlural: 'Log Materiais'
+  },
+  presentationVariant: [ { sortOrder: [ { by: 'udate', direction: #DESC },
+                                        { by: 'utime', direction: #DESC} ] } ]
+}
+
+annotate entity ZC_MM_LOG_MODIF_MATERIAIS with
+{
+
+  @UI         : { selectionField: [ { position: 10 } ],
+                  lineItem      : [ { position: 30,
+                  importance  : #HIGH,
+                  type        : #WITH_INTENT_BASED_NAVIGATION,
+                  semanticObjectAction: 'display' } ] }
+  Product;
+  @UI         : { lineItem:       [ { position: 60 } ],
+                  selectionField: [ { position: 60 } ] }
+  werks;
+  @UI         : { lineItem:       [ { position: 70 } ],
+                  selectionField: [ { position: 70 } ] }
+  lgort;
+  //  bwkey;
+  @UI         : { lineItem:       [ { position: 110 } ],
+                  selectionField: [ { position: 110 } ] }
+  bwtar;
+  //  lgnum;
+
+  @UI         : { lineItem:       [ { position: 80 } ],
+                  selectionField: [ { position: 80 } ] }
+  vkorg;
+  @UI         : { lineItem:       [ { position: 90 } ],
+                  selectionField: [ { position: 90 } ] }
+  vtweg;
+  @UI         : { lineItem:       [ {position: 150 } ] }
+  chngind;
+  @UI         : { lineItem:       [ { position: 50 } ],
+                  selectionField: [ { position: 30 } ] }
+  mtart;
+  @UI         : { lineItem:       [ { position: 100 } ],
+                  selectionField: [ { position: 100 } ] }
+  spart;
+  @UI         : { lineItem:       [ { position: 10 } ],
+                  selectionField: [ { position: 40 } ] }
+  udate;
+  @UI         : { lineItem:       [ { position: 20 } ] }
+  utime;
+  @UI         : { lineItem:       [ { position: 120 } ],
+                  selectionField: [ { position: 50 } ] }
+  username;
+  @UI         : { lineItem:       [ { position: 130 } ] }
+  ddtext;
+  @UI         : { lineItem:       [ { position: 170 } ] }
+  value_new;
+  @UI         : { lineItem:       [ { position: 160 } ] }
+  value_old;
+  @UI         : { lineItem:       [ { position: 40 } ] }
+  maktx;
+  @UI.hidden: true
+  chngindtxt;
+
+}

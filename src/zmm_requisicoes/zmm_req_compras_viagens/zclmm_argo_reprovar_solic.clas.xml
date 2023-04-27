@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_ARGO_REPROVAR_SOLIC</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>ARGO - SOLICITAÇÃO REPROVADA</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Integração realizada com sucesso.</ENTRY>
+     <LENGTH>66</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_PROXY</CMPNAME>
+     <SCONAME>IV_MOTIVO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Motivo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_PROXY</CMPNAME>
+     <SCONAME>IV_NROSOLIC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº Solicitação</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <SCONAME>IV_MOTIVO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Motivo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <SCONAME>IV_NROSOLIC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº Solicitação</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

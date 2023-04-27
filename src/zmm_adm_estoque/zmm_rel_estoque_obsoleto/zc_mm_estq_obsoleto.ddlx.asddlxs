@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo:{
+        typeName: 'Estoque',
+        typeNamePlural: 'Estoque Obsoleto',
+        title:{  type: #STANDARD, label: 'Estoque Obsoleto', value: 'Material' }
+    }}
+annotate entity ZI_MM_ESTQ_OBSOLETO with
+{
+
+  @UI: { selectionField:        [ { position: 60 } ],
+         lineItem:              [ { position: 10 } ]}
+  Material;
+
+  @UI: { selectionField:        [ { position: 20 } ],
+         lineItem:              [ { position: 20 } ]}
+  Plant;
+
+  @UI: { lineItem:              [ { position: 30 } ]}
+  MaterialName;
+
+  @UI: { lineItem:              [ { position: 40 } ]}
+  MaterialTypeName;
+
+  @UI: { lineItem:              [ { position: 50 } ],
+         selectionField:        [ { element: 'Segmento' } ]  }
+  @EndUserText.label           : 'Segmento'
+  Segmento;
+
+  @UI: { lineItem:              [ { position: 60 } ]}
+  MatlWrhsStkQtyInMatlBaseUnit;
+
+  @UI: { lineItem:              [ { position: 70 } ]}
+  StockValueInCCCrcy;
+
+  @UI: { lineItem:              [ { position: 80 } ],
+         selectionField:        [ { position: 100 } ]}
+  AnaliseDias;
+
+  @UI: { lineItem:              [ { position: 90 } ],
+         textArrangement:       #TEXT_ONLY}
+  PeriodoCorrente;
+
+  @UI: { lineItem:              [ { position: 100 } ]}
+  Exercicio;
+
+  @UI: { lineItem:              [ { position: 110 } ]}
+  GLAccount;
+
+  @UI: { lineItem:              [ { position: 120 } ]}
+  GLAccountName;
+
+
+//  @UI: { lineItem:              [ { position: 130 } ]}
+//  @EndUserText.label           : 'Data de lançamento'
+//  PostingDate2;
+
+
+
+
+  @UI: { selectionField:        [ { position: 10 } ]}
+  OrgVendas;
+
+  @UI: { selectionField:        [ { position: 30 } ]}
+  StorageLocation;
+  @UI: { selectionField:        [ { position: 40 } ]}
+  DataAnalise;
+
+  @UI: { selectionField:        [ { position: 70 } ]}
+  GrupoMaterial;
+  
+  @UI: { selectionField:        [ { position: 80 } ]}
+  MaterialType;
+
+  @EndUserText.label           : 'Tipo de movimento'
+  MovementType;
+
+  
+}

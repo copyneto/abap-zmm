@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Processo de Subcontratação</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_SUBCONTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_SUBCON</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_GOODSMVT_CREATE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_GOODSMVT_CREATE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_GOODSMVT_HEADER</PARAMETER>
+       <DBFIELD>BAPI2017_GM_HEAD_01</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_GOODSMVT_CODE</PARAMETER>
+       <DBFIELD>BAPI2017_GM_CODE</DBFIELD>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_MATERIALDOCUMENT</PARAMETER>
+       <TYP>BAPI2017_GM_HEAD_RET-MAT_DOC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ES_MATDOCUMENTYEAR</PARAMETER>
+       <TYP>BAPI2017_GM_HEAD_RET-DOC_YEAR</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>GOODSMVT_ITEM</PARAMETER>
+       <DBSTRUCT>BAPI2017_GM_ITEM_CREATE</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_GOODSMVT_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Estrutura de comunicação BAPI: doc.material dados cabeçalho</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_GOODSMVT_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>MMIM: conversão de chave CM_CODE p/transação na admin.estq.</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_MATERIALDOCUMENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of Material Document</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_MATDOCUMENTYEAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Material Document Year</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>GOODSMVT_ITEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Estrutura de comunicação BAPI: criar item doc.material</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_NFEIN_ACCPTNFE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_GOODSMVT_CREATE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_DHRECBTO</PARAMETER>
+       <TYP>/XNFE/DHRECBTO_UTC</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_NFEID</PARAMETER>
+       <TYP>/XNFE/ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_NPROT</PARAMETER>
+       <TYP>/XNFE/NPROT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_XMLVERSION</PARAMETER>
+       <TYP>/XNFE/XML_VERSION_NFE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_GUID_HEADER</PARAMETER>
+       <TYP>/XNFE/GUID_16</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_DHRECBTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data/hora do processamento (autoridade) em UTC</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_NFEID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 caracteres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_NPROT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº do protocolo</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_XMLVERSION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Versão XML para NF-e</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_GUID_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave primária como GUID em formato &apos;RAW&apos;</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

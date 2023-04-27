@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME>
+     <OBJECT_M>INTF</OBJECT_M>
+     <OBJ_NAME_M>ZII_SI_PROCESSAR_MENSAGEM_REQU</OBJ_NAME_M>
+     <HASH_ID>515420AD8A0B301B379B92965EABABB3734BE614</HASH_ID>
+     <ID>&lt;type&gt; RateioOIItemRequisicao http://www.me.com.br/WebServices siProcessarMensagemRequisicaoIn(http://trescoracoes.com.br/mercadoeletronico/requisicao)</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>RateioOIItemRequisicao</IFR_NAME>
+     <IFR_NSPCE>http://www.me.com.br/WebServices</IFR_NSPCE>
+     <IFR_GNSPCE>siProcessarMensagemRequisicaoIn(http://trescoracoes.com.br/mercadoeletronico/requisicao)</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://www.me.com.br/WebServices</X-ML_NSPCE>
+     <X-ML_NAME>RateioOIItemRequisicao</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BASE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BASE</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZMEVOBASE</OBJ_NAME_R>
+     <ID>&lt;extension&gt; base &lt;type&gt; RateioOIItemRequisicao http://www.me.com.br/WebServices siProcessarMensagemRequisicaoIn(http://trescoracoes.com.br/mercadoeletronico/requisicao)</ID>
+     <IFR_TYPE>extension</IFR_TYPE>
+     <IFR_NAME>base</IFR_NAME>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BASE</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>OI</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>OI</OBJ_NAME2>
+     <ID>&lt;element&gt; {http://www.me.com.br/WebServices}OI &lt;type&gt; RateioOIItemRequisicao http://www.me.com.br/WebServices siProcessarMensagemRequisicaoIn(http://trescoracoes.com.br/mercadoeletronico/requisicao)</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>OI</IFR_NAME>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_QUALIF>X</IFR_QUALIF>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>OI</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>QTD_PERC</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>QTD_PERC</OBJ_NAME2>
+     <ID>&lt;element&gt; {http://www.me.com.br/WebServices}QTD_PERC &lt;type&gt; RateioOIItemRequisicao http://www.me.com.br/WebServices siProcessarMensagemRequisicaoIn(http://trescoracoes.com.br/mercadoeletronico/requisicao)</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>QTD_PERC</IFR_NAME>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_QUALIF>X</IFR_QUALIF>
+     <IFR_XSDTYP>double</IFR_XSDTYP>
+     <IFR_NILLABLE>X</IFR_NILLABLE>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>QTD_PERC</R3_NAME>
+     <R3_DATATYP>FLTP</R3_DATATYP>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>QUANTIDADE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>QUANTIDADE</OBJ_NAME2>
+     <ID>&lt;element&gt; {http://www.me.com.br/WebServices}QUANTIDADE &lt;type&gt; RateioOIItemRequisicao http://www.me.com.br/WebServices siProcessarMensagemRequisicaoIn(http://trescoracoes.com.br/mercadoeletronico/requisicao)</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>QUANTIDADE</IFR_NAME>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_QUALIF>X</IFR_QUALIF>
+     <IFR_XSDTYP>double</IFR_XSDTYP>
+     <IFR_NILLABLE>X</IFR_NILLABLE>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>QUANTIDADE</R3_NAME>
+     <R3_DATATYP>FLTP</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZRATEIO_OIITEM_REQUISICAO</OBJ_NAME2>
+     <ID>&lt;type&gt; RateioOIItemRequisicao http://www.me.com.br/WebServices siProcessarMensagemRequisicaoIn(http://trescoracoes.com.br/mercadoeletronico/requisicao)</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>RateioOIItemRequisicao</IFR_NAME>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZRATEIO_OIITEM_REQUISICAO</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

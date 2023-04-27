@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_MM_REDETERMINA_PISCOF alias PISCOFINS
+{
+  use create;
+  use update;
+  use delete;
+}

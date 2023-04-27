@@ -1,0 +1,139 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Depósito',
+    typeNamePlural: 'Conferência de produtos',
+    title: {  type: #STANDARD }
+  }}
+
+annotate entity ZC_MM_CONF_PROD with
+{
+
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ],
+         selectionField:  [ { position: 10 } ] }
+  werks;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ],
+         selectionField:  [ { position: 20 } ] }
+  mtart;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         selectionField:  [ { position: 30 } ] }
+  matnr;
+
+  @UI: { lineItem:        [ { position: 40 } ],
+         identification:  [ { position: 40 } ] }
+  maktx;
+
+  @UI: { lineItem:        [ { position: 50 } ],
+         identification:  [ { position: 50 } ] }
+  umren;
+
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ] }
+  meinh;
+
+  @UI: { lineItem:        [ { position: 70 } ],
+         identification:  [ { position: 70 } ] }
+  umrez;
+
+  @UI: { lineItem:        [ { position: 80 } ],
+         identification:  [ { position: 80 } ] }
+  ean11;
+
+  @UI: { lineItem:        [ { position: 90 } ],
+         identification:  [ { position: 90 } ] }
+  numtp;
+
+  @UI: { lineItem:        [ { position: 100 } ],
+         identification:  [ { position: 100 } ] }
+  @EndUserText.label: 'Comprimento'
+  laeng;
+
+  @UI: { lineItem:        [ { position: 110 } ],
+         identification:  [ { position: 110 } ] }
+  @EndUserText.label: 'Largura'
+  breit;
+
+  @UI: { lineItem:        [ { position: 120 } ],
+         identification:  [ { position: 120 } ] }
+  @EndUserText.label: 'Altura'
+  hoehe;
+
+  @UI: { lineItem:        [ { position: 130 } ],
+         identification:  [ { position: 130 } ]  }
+  @EndUserText.label: 'Unidade para comprimento/largura/altura'
+  meabm;
+
+  @UI: { lineItem:        [ { position: 140 } ],
+         identification:  [ { position: 140 } ] }
+  @EndUserText.label: 'Volume'
+  volum;
+
+  @UI: { lineItem:        [ { position: 150 } ],
+         identification:  [ { position: 150 } ] }
+  voleh;
+
+  @UI: { lineItem:        [ { position: 160 } ],
+         identification:  [ { position: 160 } ] }
+  @EndUserText.label: 'Peso líquido'
+  zntgew;
+
+  @UI: { lineItem:        [ { position: 170 } ],
+         identification:  [ { position: 170 } ] }
+  @EndUserText.label: 'Peso bruto'
+  zbrgew;
+
+  @UI: { lineItem:        [ { position: 180 } ],
+         identification:  [ { position: 180 } ] }
+  gewei;
+
+  @UI: { lineItem:        [ { position: 190 } ],
+         identification:  [ { position: 190 } ] }
+  maxlz;
+
+  @UI: { lineItem:        [ { position: 200 } ],
+         identification:  [ { position: 200 } ] }
+  mhdrz;
+
+  @UI: { lineItem:        [ { position: 210 } ],
+         identification:  [ { position: 210 } ] }
+  mhdhb;
+
+  @UI: { lineItem:        [ { position: 220 } ],
+         identification:  [ { position: 220 } ] }
+  prdha;
+
+  @UI: { lineItem:        [ { position: 230 } ],
+         identification:  [ { position: 230 } ] }
+  VTEXT1;
+
+  @UI: { lineItem:        [ { position: 240 } ],
+         identification:  [ { position: 240 } ] }
+  VTEXT2;
+
+  @UI: { lineItem:        [ { position: 250 } ],
+         identification:  [ { position: 250 } ] }
+  VTEXT3;
+
+  @UI: { lineItem:        [ { position: 260 } ],
+         identification:  [ { position: 260 } ] }
+  meins;
+
+  @UI: { lineItem:        [ { position: 280 } ],
+         identification:  [ { position: 280 } ] }
+  @EndUserText.label: 'Lastro'
+  z_lastro;
+
+  @UI: { lineItem:        [ { position: 290 } ],
+         identification:  [ { position: 290 } ] }
+  @EndUserText.label: 'Altura'
+  z_altura;
+
+    @UI: { lineItem:        [ { position: 300 } ],
+           identification:  [ { position: 300 } ] }
+    z_unit;
+}

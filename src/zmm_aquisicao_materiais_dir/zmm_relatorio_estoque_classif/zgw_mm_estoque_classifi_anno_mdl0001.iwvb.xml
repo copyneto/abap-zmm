@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_IWVB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <_-IWBEP_-I_MGW_VAH>
+    <_-IWBEP_-I_MGW_VAH>
+     <TECHNICAL_NAME>ZGW_MM_ESTOQUE_CLASSIFI_ANNO_MDL</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <CLASS_NAME>CL_SADL_GW_CDS_EXPOSURE_APC</CLASS_NAME>
+    </_-IWBEP_-I_MGW_VAH>
+   </_-IWBEP_-I_MGW_VAH>
+   <_-IWBEP_-I_MGW_VAT>
+    <_-IWBEP_-I_MGW_VAT>
+     <TECHNICAL_NAME>ZGW_MM_ESTOQUE_CLASSIFI_ANNO_MDL</TECHNICAL_NAME>
+     <VERSION>0001</VERSION>
+     <LANGUAGE>P</LANGUAGE>
+     <DESCRIPTION>Generic Annotation Provider</DESCRIPTION>
+    </_-IWBEP_-I_MGW_VAT>
+   </_-IWBEP_-I_MGW_VAT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

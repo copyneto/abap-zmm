@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Criar Ordem de Frete</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_CRIAR_ORDEM_FRETETOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_CRIAR_ORDEM_FRETE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_CRIAR_ORDEM_FRETE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Criar Ordem de Frete</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_ORDEM_FRETE</PARAMETER>
+       <TYP>/SCMTMS/TOR_ID</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAL_T_MSGR</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_VBELN</PARAMETER>
+       <DBSTRUCT>ZMMS_VBELN</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>EV_ORDEM_FRETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Application Log: Message Table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_VBELN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Documento</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

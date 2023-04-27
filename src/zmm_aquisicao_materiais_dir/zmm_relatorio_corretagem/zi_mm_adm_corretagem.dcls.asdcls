@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_MM_ADM_CORRETAGEM {
+    grant
+        select
+            on
+                ZI_MM_ADM_CORRETAGEM
+                    where                        
+                        ( Centro ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                        
+}

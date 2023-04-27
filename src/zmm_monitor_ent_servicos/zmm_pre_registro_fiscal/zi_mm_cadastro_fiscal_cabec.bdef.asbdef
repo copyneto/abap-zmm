@@ -1,0 +1,153 @@
+managed implementation in class zclmm_cadastro_fiscal unique;
+
+define behavior for ZI_MM_CADASTRO_FISCAL_CABEC alias Header
+persistent table ztmm_monit_cabec
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+
+  action ( features : instance ) LiberarNF;
+  action ( features : instance ) ReDeterminePOItens;
+
+  association _Item { create; }
+  association _Anexo { create; }
+
+  field ( readonly ) DtReg, HrReg, DtVenc, CondPag, CnpjCpf;
+  field ( readonly : update ) Empresa, Filial, Lifnr, NrNf;
+  field ( mandatory ) DtEmis, VlTotNf, DomicilioFiscal, Lc;
+
+  validation authorityCreate on save { create; }
+//  validation validate_dtlcto on save { create; update; }
+    //  validation validatePedido on save { field Pedido; create; update; }
+
+    determination determine_initial_data on save { create; }
+    determination determine_dados_pedido on save { field Pedido; }
+    determination determine_new_duo_date on modify { field DtBase; }
+
+    mapping for ztmm_monit_cabec
+    {
+
+      Empresa = empresa;
+      Filial = filial;
+      Lifnr = lifnr;
+      NrNf = nr_nf;
+      Pedido = pedido;
+      CnpjCpf = cnpj_cpf;
+      DtEmis = dt_emis;
+      DtLancto = dt_lancto;
+      DtVenc = dt_venc;
+      DtReg = dt_reg;
+      HrReg = hr_reg;
+      lblni = lblni;
+      DomicilioFiscal = txjcd;
+      Lc = nbm;
+      VlFrete = vl_frete;
+      VlDesc = vl_desc;
+      VlTotNf = vl_tot_nf;
+      VlIss = vl_iss;
+      VlPis = vl_pis;
+      VlCofins = vl_cofins;
+      VlCsll = vl_csll;
+      VlIr = vl_ir;
+      VlInss = vl_inss;
+      CondPag = cond_pag;
+      Incoterms = incoterms;
+      Uname = uname;
+      Atrib = atrib;
+      FlagRpa = rpa;
+      Cancel = cancel;
+      CancelUser = cancel_user;
+      DtVenc2 = dt_venc2;
+      DtVenc3 = dt_venc3;
+      DtVenc4 = dt_venc4;
+      DtVenc5 = dt_venc5;
+      DtBase = dt_base;
+      DtRecusa = dt_recusa;
+      Liberado = liberado;
+      CreatedBy = created_by;
+      CreatedAt = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+
+    }
+
+  }
+
+  define behavior for ZI_MM_CADASTRO_FISCAL_ITEM alias Item
+  persistent table ztmm_monit_item
+  lock dependent by _Header
+  authorization dependent by _Header
+  etag master LocalLastChangedAt
+  {
+    update;
+    delete;
+
+    field ( readonly : update ) Empresa, Filial, Lifnr, NrNf, NrPedido, ItmPedido;
+    field ( readonly ) Material, Descricao, Unid, Qtdade, QtdadeUtilizada, LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+    validation validate_qtdade_lcto on save { field Qtdade_Lcto; }
+
+    association _Header;
+
+    mapping for ztmm_monit_item
+    {
+
+      Empresa = empresa;
+      Filial = filial;
+      Lifnr = lifnr;
+      NrNf = nr_nf;
+      NrPedido = nr_pedido;
+      ItmPedido = itm_pedido;
+      Cfop = cfop;
+      Iva = iva;
+      NFType = categ;
+      Unid = unid;
+      Qtdade_Lcto = qtdade_lcto;
+      CreatedBy = created_by;
+      CreatedAt = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+
+    }
+  }
+
+  define behavior for ZI_MM_CADASTRO_FISCAL_ANEXO alias Anexo
+  persistent table ztmm_anexo_nf
+  lock dependent by _Header
+  authorization dependent by _Header
+  etag master LocalLastChangedAt
+  {
+    update;
+    delete;
+
+    field ( readonly : update ) Empresa, FilialHeader, Lifnr, NrNf;
+    field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+    association _Header;
+
+    mapping for ztmm_anexo_nf
+    {
+      NrNf = nr_nf;
+      Linha = linha;
+      CnpjCpf = cnpj_cpf;
+      //    Filial = filial;
+      Filename = filename;
+      Mimetype = mimetype;
+      Conteudo = conteudo;
+      //    DtEmis = dt_emis;
+      //    DtLancto = dt_lancto;
+      //    NovoNrNf = novo_nr_nf;
+      CreatedBy = created_by;
+      CreatedAt = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+
+    }
+  }

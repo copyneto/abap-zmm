@@ -1,0 +1,69 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Centro de Custo',
+    typeNamePlural: 'Centros de Custo',
+    title: {
+        type: #STANDARD,
+        label: 'Centro de Custo',
+        value: 'Kostl'
+    }
+}
+@Search.searchable: true
+annotate view ZC_MM_ALIVIUM_CC with
+{
+
+  @UI.facet: [
+//  {
+//      id: 'Centros',
+//      purpose: #STANDARD,
+//      position: 10,
+//      label: 'Centros',
+//      type: #IDENTIFICATION_REFERENCE
+//  },
+  { id:              'Centros',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Centros',
+                 position:        10 },
+  {   parentId:        'Centros',
+      id:              'DADOS_PRINCIPAIS',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        10,
+      label: 'Dados principais',
+      targetQualifier: 'DADOS_PRINCIPAIS' },
+
+    { parentId:        'Centros',
+      id:              'DADOS_CONTROLE',
+      type:            #FIELDGROUP_REFERENCE,
+      position:        20,
+      label: 'Dados de controle',
+      targetQualifier: 'DADOS_CONTROLE' }]
+
+  @Search.ranking: #MEDIUM
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem: [{ position: 10 }],
+   fieldGroup:     [ { position: 10, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 10 }] }
+  Bukrs;
+
+  @UI: { lineItem: [{ position: 20 }],
+   fieldGroup:     [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+   selectionField: [{ position: 20 }] }
+  Kostl;
+
+  @UI: { fieldGroup:     [ { position: 10, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedAt;
+
+  @UI: { fieldGroup:     [ { position: 50, qualifier: 'DADOS_CONTROLE' } ] }
+  LocalLastChangedAt;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def Região e mensagens para regra do diferimento'
+define service ZUI_MM_REGIO_DIFER {
+  expose ZC_MM_REGIO_DIFER;
+}

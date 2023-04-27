@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_PRICING_PO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Calculo de Pricing de PO</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EKKO_EKPO</CMPNAME>
+     <SCONAME>ES_EKKO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Cabeçalho do documento de compra</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EKKO_EKPO</CMPNAME>
+     <SCONAME>ES_EKPO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Item do documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EKKO_EKPO</CMPNAME>
+     <SCONAME>IV_EBELN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº do documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EKKO_EKPO</CMPNAME>
+     <SCONAME>IV_EBELP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento de compra</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REMES_PRICING</CMPNAME>
+     <SCONAME>ET_KOMP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table type for komp</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REMES_PRICING</CMPNAME>
+     <SCONAME>ET_KOMV</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type for Structure KOMV</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REMES_PRICING</CMPNAME>
+     <SCONAME>IV_EBELN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº do documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SIMULATE_PRICING</CMPNAME>
+     <SCONAME>ET_KOMV</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type for Structure KOMV</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SIMULATE_PRICING</CMPNAME>
+     <SCONAME>IV_EBELN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº do documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SIMULATE_PRICING</CMPNAME>
+     <SCONAME>IV_EBELP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento de compra</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SIMULATE_PRICING</CMPNAME>
+     <SCONAME>IV_QTD_SIMULADA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Quantidade simlada</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

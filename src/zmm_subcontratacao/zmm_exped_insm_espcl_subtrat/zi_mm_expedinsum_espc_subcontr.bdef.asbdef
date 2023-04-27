@@ -1,0 +1,9 @@
+unmanaged;
+
+define behavior for ZI_MM_EXPEDINSUM_ESPC_SUBCONTR alias Expedicao
+implementation in class zclmm_expedinsum_espc_subco unique
+
+{
+  action ( features : instance ) Expedicao parameter ZC_MM_PARAM_XML_TRANSP;
+
+}

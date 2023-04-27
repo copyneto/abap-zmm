@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Monitor de entradas d serviço</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Selecionar apenas uma nota fiscal!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Fatura excluída com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Faturas excluídas com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Doc. Material &amp;1 Ano &amp;2 gerado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Fatura &amp;1 Exercício &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Fatura &amp;1 Exercício &amp;2 estornado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Doc. Material &amp;1 Ano &amp;2 estornado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Simulação realizada com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Soma dos itens do pedido de compras não está igual ao valor total da NF</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Confira os itens do pedido de compras com sua NF e se houver divergência</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>procure a área de suprimentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Pedido de compras não liberado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Verifique qual aprovador falta e solicite a liberação.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Obrigatório o preenchimento da Folha de registro</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Cadastro não possui anexo, por favor inserir PDF da NFS</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>CNPJ do Fornecedor da NF diferente do CNPJ do Fornecedor do Pedido Compr.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Confira NF e PC e em caso de divergência procure a área de suprimentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>CNPJ da filial 3C da NF está divergente da sua filial.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Confira as informações da NF e em caso de divergência procure àrea suprim</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Município da prestação do serviço do pedido de compras divergente</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>do município informado na NF. Confira as informações da NF e em caso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>divergência procure a área suprimentos para informar Endereço de Remessa</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Liberação realizada com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Pedido &amp;1 sem saldo disponível para lançamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>-&gt; Verifique se o pedido está com o IVA correto</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>-&gt; Verifique se o pedido está efetuando o cálculo dos impostos informados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>-&gt; Verifique se o valor total informado é o valor total dos serviços</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>-&gt; Em caso de dúvidas, procure a área de suprimentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Total de impostos informados difere do calculado no lançamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>-&gt; &amp;1: PEDIDO = &amp;2 | DANFE = &amp;3</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Domicílio informado (&amp;1) difere do item &amp;2 do pedido (&amp;3).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>LC informada (&amp;1) difere do item &amp;2 do pedido (&amp;3).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Parâmetros Iva/Cfop/Catg.NF não encontrados para Pedido &amp;1 Item &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Pedido &amp;1 Item &amp;2 sem folha de serviço atribuída.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Pedido &amp;1 Item &amp;2 folha de serviço não aprovada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Item &amp;1: Quantidade lançada maior que saldo disponível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>Preencher todos os campos obrigatórios.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>Empresa informada (&amp;1) difere do pedido (&amp;2).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>Fornecedor informado (&amp;1) difere do pedido (&amp;2).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>Data de Lançamento não pode ser inferior à data de Emissão do documento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>054</MSGNR>
+     <TEXT>Ocorreu algo de errado na simulação da Miro. Verificar itens do pedido!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>055</MSGNR>
+     <TEXT>Fornecedor sem retenção ativa no BP, verificar central de cadastro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>056</MSGNR>
+     <TEXT>Quantidade Lançada Diverge da Quantidade da Nota</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>057</MSGNR>
+     <TEXT>Classificação Contábil Não Válida</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

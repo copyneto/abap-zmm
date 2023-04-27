@@ -1,0 +1,164 @@
+@Metadata.layer: #CUSTOMER
+annotate view ZC_MM_CHARACTERISTICS_PED with 
+{
+  @UI: { hidden: true }
+  PurchaseOrder;
+
+  @UI: { hidden: true }
+  PurchaseOrderItem;
+
+  @UI:{ lineItem: [{ position: 05 }] }
+  Charg;
+
+  //@UI: { hidden: true }
+  //ViewType;
+
+  @UI: { hidden: true }
+  SalesDocument;
+
+  @UI: { hidden: true }
+  SalesDocumentItem;
+
+  //  @UI:{ lineItem: [{ position: 10, criticality: 'DesvioQuantidadeKg' }] }
+  @UI:{ lineItem: [{ position: 10, criticality: 'QuantidadeKgCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  QuantidadeKg;
+
+  //  @UI:{ lineItem: [{ position: 20, criticality: 'DesvioQuantidadeSacas' }] }
+  @UI:{ lineItem: [{ position: 20, criticality: 'QuantidadeSacasCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  QuantidadeSacas;
+
+  //  @UI:{ lineItem: [{ position: 30, criticality: 'DesvioQuantidadeBag' }] }
+  @UI:{ lineItem: [{ position: 30, criticality: 'QuantidadeBagCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  QuantidadeBag;
+
+  //  @UI:{ lineItem: [{ position: 40, criticality: 'DesvioPeneira10' }] }
+  @UI:{ lineItem: [{ position: 40, criticality: 'Peneira10Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira10;
+
+  //  @UI:{ lineItem: [{ position: 50, criticality: 'DesvioPeneira11' }] }
+  @UI:{ lineItem: [{ position: 50, criticality: 'Peneira11Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira11;
+
+  //  @UI:{ lineItem: [{ position: 60, criticality: 'DesvioPeneira12' }] }
+  @UI:{ lineItem: [{ position: 60, criticality: 'Peneira12Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira12;
+
+  //  @UI:{ lineItem: [{ position: 70, criticality: 'DesvioPeneira13' }] }
+  @UI:{ lineItem: [{ position: 70, criticality: 'Peneira13Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira13;
+
+  //  @UI:{ lineItem: [{ position: 80, criticality: 'DesvioPeneira14' }] }
+  @UI:{ lineItem: [{ position: 80, criticality: 'Peneira14Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira14;
+
+  //  @UI:{ lineItem: [{ position: 90, criticality: 'DesvioPeneira15' }] }
+  @UI:{ lineItem: [{ position: 90, criticality: 'Peneira15Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira15;
+
+  //  @UI:{ lineItem: [{ position: 100, criticality: 'DesvioPeneira16' }] }
+  @UI:{ lineItem: [{ position: 100, criticality: 'Peneira16Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira16;
+
+  //  @UI:{ lineItem: [{ position: 110, criticality: 'DesvioPeneira17' }] }
+  @UI:{ lineItem: [{ position: 110, criticality: 'Peneira17Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira17;
+
+  //  @UI:{ lineItem: [{ position: 120, criticality: 'DesvioPeneira18' }] }
+  @UI:{ lineItem: [{ position: 120, criticality: 'Peneira18Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira18;
+
+  //  @UI:{ lineItem: [{ position: 130, criticality: 'DesvioPeneira19' }] }
+  @UI:{ lineItem: [{ position: 130, criticality: 'Peneira19Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Peneira19;
+
+  //  @UI:{ lineItem: [{ position: 140, criticality: 'DesvioMk10' }] }
+  @UI:{ lineItem: [{ position: 140, criticality: 'Mk10Criticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Mk10;
+
+  //  @UI:{ lineItem: [{ position: 150, criticality: 'DesvioFundo' }] }
+  @UI:{ lineItem: [{ position: 150, criticality: 'FundoCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Fundo;
+
+  //  @UI:{ lineItem: [{ position: 160, criticality: 'DesvioCatacao' }] }
+  @UI:{ lineItem: [{ position: 160, criticality: 'CatacaoCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Catacao;
+
+  //  @UI:{ lineItem: [{ position: 170, criticality: 'DesvioUmidade' }] }
+  @UI:{ lineItem: [{ position: 170, criticality: 'UmidadeCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Umidade;
+
+  //  @UI:{ lineItem: [{ position: 180, criticality: 'DesvioDefeito' }] }
+  @UI:{ lineItem: [{ position: 180, criticality: 'DefeitoCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Defeito;
+
+  //  @UI:{ lineItem: [{ position: 190, criticality: 'DesvioImpureza' }] }
+  @UI:{ lineItem: [{ position: 190, criticality: 'ImpurezaCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Impureza;
+
+  //  @UI:{ lineItem: [{ position: 200, criticality: 'DesvioVerde' }] }
+  @UI:{ lineItem: [{ position: 200, criticality: 'VerdeCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Verde;
+
+  //  @UI:{ lineItem: [{ position: 210, criticality: 'DesvioPretoArdido' }] }
+  @UI:{ lineItem: [{ position: 210, criticality: 'PretoArdidoCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  PretoArdido;
+
+  //  @UI:{ lineItem: [{ position: 220, criticality: 'DesvioBrocado' }] }
+  @UI:{ lineItem: [{ position: 220, criticality: 'BrocadoCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Brocado;
+
+  //  @UI:{ lineItem: [{ position: 230, criticality: 'DesvioDensidade' }] }
+  @UI:{ lineItem: [{ position: 230, criticality: 'DensidadeCriticality', criticalityRepresentation: #WITHOUT_ICON }] }
+  Densidade;
+
+  @UI: { hidden: true }
+  QuantidadeKgCriticality;
+  @UI: { hidden: true }
+  QuantidadeSacasCriticality;
+  @UI: { hidden: true }
+  QuantidadeBagCriticality;
+  @UI: { hidden: true }
+  Peneira10Criticality;
+  @UI: { hidden: true }
+  Peneira11Criticality;
+  @UI: { hidden: true }
+  Peneira12Criticality;
+  @UI: { hidden: true }
+  Peneira13Criticality;
+  @UI: { hidden: true }
+  Peneira14Criticality;
+  @UI: { hidden: true }
+  Peneira15Criticality;
+  @UI: { hidden: true }
+  Peneira16Criticality;
+  @UI: { hidden: true }
+  Peneira17Criticality;
+  @UI: { hidden: true }
+  Peneira18Criticality;
+  @UI: { hidden: true }
+  Peneira19Criticality;
+  @UI: { hidden: true }
+  Mk10Criticality;
+  @UI: { hidden: true }
+  FundoCriticality;
+  @UI: { hidden: true }
+  CatacaoCriticality;
+  @UI: { hidden: true }
+  UmidadeCriticality;
+  @UI: { hidden: true }
+  DefeitoCriticality;
+  @UI: { hidden: true }
+  ImpurezaCriticality;
+  @UI: { hidden: true }
+  VerdeCriticality;
+  @UI: { hidden: true }
+  PretoArdidoCriticality;
+  @UI: { hidden: true }
+  BrocadoCriticality;
+  @UI: { hidden: true }
+  DensidadeCriticality;
+
+  //  @UI:{ lineItem: [{ position: 240 }] }
+  //  Observacao;
+
+}

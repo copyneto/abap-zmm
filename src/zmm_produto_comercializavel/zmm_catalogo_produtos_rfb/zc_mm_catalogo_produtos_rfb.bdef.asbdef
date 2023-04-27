@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_MM_CATALOGO_PRODUTOS_RFB alias CatalogoRFB
+{
+  use create;
+  use update;
+  use delete;
+}

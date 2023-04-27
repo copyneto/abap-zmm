@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition pedido de compras'
+define service ZUI_PEDIDO_COMPRAS {
+  expose Zc_MM_PEDIDO_COMPRAS;
+}

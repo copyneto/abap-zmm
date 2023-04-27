@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SXCI" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SXCI>
+    <IMPLEMENTATION_DATA>
+     <IMP_NAME>ZMM_BLOQ_PGTO_FATURA</IMP_NAME>
+     <TEXT>Bloqueio de Pagamento na Fatura</TEXT>
+     <IMP_CLASS>ZCLMM_BLOQ_PGTO_FATURA</IMP_CLASS>
+     <EXIT_NAME>INVOICE_UPDATE</EXIT_NAME>
+     <INTER_NAME>IF_EX_INVOICE_UPDATE</INTER_NAME>
+     <ACTIVE>X</ACTIVE>
+    </IMPLEMENTATION_DATA>
+   </SXCI>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,2 @@
+sap.ui.define(["sap/m/PDFViewer"],function(e){"use strict";return{onActionImprimir:function(a){var t=a.getSource().getBindingContext().getObject();var i="/sap/opu/odata/SAP/ZMM_IMPRIME_ROMANEIO_SRV/";var n=new sap.ui.model.odata.ODataModel(i,false);var o+
+=i+"imprimirSet(Romaneio='"+t.Romaneio+"')/$value";var r=new e;this.getView().addDependent(r);r.setSource(o);r.downloadPDF()}}});                                                                                                                              

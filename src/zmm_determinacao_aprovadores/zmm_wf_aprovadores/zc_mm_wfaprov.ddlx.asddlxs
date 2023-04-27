@@ -1,0 +1,29 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Aprovadores Workflow',            
+                  typeNamePlural: 'Aprovadores Workflow' }
+                  
+                  
+                  
+annotate view ZC_MM_WFAPROV with 
+{
+    @UI.facet: [{ id:       'Geral',
+                  position: 10,
+                  label:    'Geral',
+                  purpose:  #STANDARD,
+                  type:     #IDENTIFICATION_REFERENCE
+               }]
+                 
+    @UI: { lineItem:       [{ position: 10 }],
+           identification: [{ position: 10 }],
+           selectionField: [{ position: 10 }] }    
+    Werks;
+    @UI: { lineItem:       [{ position: 20 }],
+           identification: [{ position: 20 }],
+           selectionField: [{ position: 20 }] }    
+    Lgort;
+    @UI: { lineItem:       [{ position: 30 }],
+           identification: [{ position: 30 }],
+           selectionField: [{ position: 30 }] }    
+    Usnam;        
+    
+}

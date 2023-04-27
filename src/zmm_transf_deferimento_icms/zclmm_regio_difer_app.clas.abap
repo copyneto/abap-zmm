@@ -1,0 +1,5 @@
+CLASS zclmm_regio_difer_app DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mm_regio_difer.
+ENDCLASS.
+
+CLASS zclmm_regio_difer_app IMPLEMENTATION.
+ENDCLASS.

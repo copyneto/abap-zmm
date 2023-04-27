@@ -1,0 +1,28 @@
+projection;
+
+define behavior for ZC_MM_MOV_CNTRL alias MovCntrl
+//use etag
+{
+  use create;
+  use update;
+  use delete;
+  //use action mov_merc;
+  use action simul_imp;
+  use action nfe_saida;
+  use action contab;
+  use action nfe_ent;
+  use action mov_merc_ent;
+//  use action estorno;
+  use action registrar;
+
+  use association _MatCntrl { create; }
+}
+
+define behavior for ZC_MM_MAT_CNTRL alias MatCntrl
+//use etag
+{
+  //use create;
+  use update;
+  use delete;
+  use association _MovCntrl;
+}

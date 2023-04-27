@@ -1,0 +1,4 @@
+@EndUserText.label: 'Def. Serviço'
+define service ZUI_CONF_PROD {
+  expose ZC_MM_CONF_PROD;
+}

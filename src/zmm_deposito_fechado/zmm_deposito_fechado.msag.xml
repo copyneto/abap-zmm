@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Processo Depósito Fechado</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Falha ao salvar os dados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Falha ao eliminar o registro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Registro não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Não é possível adicionar &amp;1. Séries ultrapassam qtd. transf. &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Série &amp;1 já adicionada na lista.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Série &amp;1 adicionada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Quantidade de série ultrapassam quantidade transferida.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Para Tipo Material &apos;&amp;1&apos;, qtd. série deve ser a mesma que qtd. transf.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Tipo Material &apos;&amp;1&apos; não habilitado para cadastro de série.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Falha ao gerar saída de mercadoria.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Nota Fiscal de saída não foi criado/encontrado. Não é possível continuar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Nota Fiscal de saída &amp;1 com direção de movimento incorreto.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Nota Fiscal de saída &amp;1 aguardando aprovação. Não é possível continuar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>NFe &amp;1 não aprovada/cancelada. Consultar motivo rejeição no Monitor NFe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>NFe &amp;1 não aprovada/cancelada. Consultar motivo rejeição no Monitor NFe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Contatar a área fiscal e administração de vendas.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Não foi possivel transferir os valores solicitados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>O Campo Estoque em Ressa OF não possui valores.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>O Campo Quantidade Transportada não pode ser em branco.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Param. &apos;Remessa física: CFOP Estadual&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Param. &apos;Remessa física: CFOP Interestadual&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Param. &apos;Entrada física: CFOP Estadual&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Param. &apos;Entrada física: CFOP Interestadual&apos; não cadastrado: [&amp;1/&amp;2/&amp;3/&amp;4]</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Iniciando criação do Pedido de Compra...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Pedido de compra &amp;1 criado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Iniciando criação do Remessa de Saída...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Remessa de saída &amp;1 criada  com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Iniciando criação da Saída de Mercadoria...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Saída de Mercadoria criada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Iniciando criação do Aviso de Recebimento...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Aviso de recebimento &amp;1 criado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Erro criação de Entrada de Mercadoria...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Entrada de mercadoria &amp;1 criada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Iniciando criação da Nota Fiscal de Entrada...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Nota Fiscal de Entrada &amp;1 criada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Sem autorização para acessar esta funcionalidade.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Programa executado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Nota fiscal &amp;1 ainda não aprovada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Nota fiscal &amp;1 aprovada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Nota Fiscal &amp;1 rejeitada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Só são permitidas seleção de até &amp;1 linhas</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Transportador não informado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Estornar nota fiscal pela J1BNFE e marcar o pedido para eliminação</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Existe outra execução ativa: programa &amp;1 job &amp;2 data &amp;3 hora &amp;4.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Documento de saida de material não localizado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Aguardando finalização do JOB ZMMR_MANTEM_DEPOSITO_FECHADO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Aguardando finalização do JOB ZMM_SAIDA_MERC_COM_TRANSP</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>Aguardando finalização do JOB &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>Aguardando finalização do JOB do E-Commerce</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_DEPOSITO_FECHADO</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>Wait de 60seg para continuar</TEXT>
+    </T100>
+   </T100>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZMM_DEPOSITO_FECHADO020</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZMM_DEPOSITO_FECHADO020</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Remessa física - CFOP Estadual não cadastrado</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Remessa física - CFOP Estadual não cadastrado na Tabela de Parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar Remessa física - CFOP Estadual no seguinte parâmetro:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE/>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZMM_DEPOSITO_FECHADO021</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00008</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZMM_DEPOSITO_FECHADO021</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Remessa física - CFOP Interestadual não cadastrado</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Remessa física - CFOP Interestadual não cadastrado na Tabela de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar Remessa física - CFOP Interestadual no seguinte parâmetro:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZMM_DEPOSITO_FECHADO022</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZMM_DEPOSITO_FECHADO022</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Entrada física - CFOP Estadual não cadastrado</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Entrada física - CFOP Estadual não cadastrado na Tabela de Parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar Entrada física - CFOP Estadual no seguinte parâmetro:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE/>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZMM_DEPOSITO_FECHADO023</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00008</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZMM_DEPOSITO_FECHADO023</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Entrada física - CFOP Interestadual não cadastrado</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Entrada física - CFOP Interestadual não cadastrado na Tabela de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar Entrada física - CFOP Interestadual no seguinte parâmetro:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

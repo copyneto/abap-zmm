@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SXCI" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SXCI>
+    <IMPLEMENTATION_DATA>
+     <IMP_NAME>ZME_CHECK_ALL_ITEMS</IMP_NAME>
+     <TEXT>Valida alterações</TEXT>
+     <IMP_CLASS>ZCLMM_IM_ME_CHECK_ALL_ITEMS</IMP_CLASS>
+     <EXIT_NAME>ME_CHECK_ALL_ITEMS</EXIT_NAME>
+     <INTER_NAME>IF_EX_ME_CHECK_ALL_ITEMS</INTER_NAME>
+     <ACTIVE>X</ACTIVE>
+    </IMPLEMENTATION_DATA>
+   </SXCI>
+  </asx:values>
+ </asx:abap>
+</abapGit>

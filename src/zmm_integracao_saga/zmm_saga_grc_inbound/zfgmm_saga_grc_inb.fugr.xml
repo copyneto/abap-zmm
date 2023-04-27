@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>GRC integração SAGA</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGMM_SAGA_GRC_INBTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGMM_SAGA_GRC_INB</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMMM_SAGA_GRC_INB</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>GRC integração SAGA</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_HEADER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/XNFE/INNFEHD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_ASSIGN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/XNFE/NFEASSIGN_T</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ACTION</PARAMETER>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>NF-e Inbound: Header Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ASSIGN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>xNFe: Table Type for Structure /XNFE/NFEASSIGN</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ACTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMSD_SAGA_REMESSA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Envio de remessa</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_MKPF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MKPF</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_HEADER</PARAMETER>
+       <TYP>J_1BNFDOC</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_MKPF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabeçalho do documento do material</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabeçalho da nota fiscal</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

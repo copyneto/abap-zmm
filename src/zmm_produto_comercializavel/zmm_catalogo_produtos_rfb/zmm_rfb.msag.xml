@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMM_RFB</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Classe de mensagens para Processo do RFB</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_RFB</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_RFB</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Material &amp;1 não cadastrado no Catálogo de Produtos da RFB.&amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_RFB</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Fornecedor &amp; cadastrado no Catálogo de Produtos RFB para o material &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_RFB</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Início da Vigência deve ser menor ou igual ao Fim da Vigência</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Gestão Contratos Direitos Fiscais x CFOP'
+define service ZUI_MM_DIRFISCAIS {
+  expose ZC_MM_DIRFISCAIS;
+}

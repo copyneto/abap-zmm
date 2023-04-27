@@ -1,0 +1,92 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Direito',
+    typeNamePlural: 'Direitos',
+    title: {
+        type: #STANDARD,
+        label: 'Direito',
+        value: 'Shipfrom'
+    }
+}
+annotate view ZC_MM_DIREITOSFISCAIS
+    with 
+{
+    @UI.facet: [{ id: 'DIR',
+                  purpose: #STANDARD,
+                  position: 10, 
+                  label: 'Detalhes',
+                  type: #IDENTIFICATION_REFERENCE
+                  },
+                  { id: 'Created',
+                  purpose: #STANDARD,
+                  position: 20, 
+                  label: 'Criação',
+                  type: #FIELDGROUP_REFERENCE
+                  }
+                  ]
+    @UI: { lineItem: [{ position: 10 }],
+           identification: [{ position: 10 }]}   
+    @UI.selectionField: [{ position: 10 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_MM_VH_SHIPFROM', element: 'Shipfrom' }}]
+    Shipfrom;
+    @UI: { lineItem: [{ position: 20 }],
+           identification: [{ position: 20 }]}   
+    @UI.selectionField: [{ position: 20 }]
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_MM_VH_DIRECAO', element: 'Direcao' }}]
+    Direcao;
+    @UI: { lineItem: [{ position: 30 }],
+           identification: [{ position: 30 }]}   
+    @UI.selectionField: [{ position: 30 }]  
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_CFOP', element: 'Cfop' }}]
+    Cfop;
+    @UI: { lineItem: [{ position: 40 }],
+           identification: [{ position: 40 }]}   
+    Ativo;
+    @UI: { lineItem: [{ position: 50 }],
+           identification: [{ position: 50 }]}   
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_ICMSTAXPAY', element: 'ICMSTaxpay' }}]
+    Taxlw1;
+    @UI: { lineItem: [{ position: 60 }],
+           identification: [{ position: 60 }]}   
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_DIREITO_FISCAL_IPI', element: 'Taxlaw' }}]
+    Taxlw2;
+    @UI: { lineItem: [{ position: 70 }],
+           identification: [{ position: 70 }]}   
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_TAXLAW_COFINS', element: 'Taxlaw' }}]
+    Taxlw4;
+    @UI: { lineItem: [{ position: 80 }],
+           identification: [{ position: 80 }]}   
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_TAXLAW_PIS', element: 'Taxlaw' }}]
+    Taxlw5;
+    @UI: { lineItem: [{ position: 90 }],
+           identification: [{ position: 90 }]}  
+    @Consumption.valueHelpDefinition: [{ entity:{name: 'ZI_MM_VH_TAXSIT' , element: 'Taxsit' },
+      distinctValues: true
+      }] 
+    Taxsit;
+    @UI: { lineItem: [{ position: 100 }],
+           identification: [{ position: 100 }]}   
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_MM_VH_CBENEF', element: 'Cbenef' }}]
+    Cbenef;
+    @UI: { lineItem: [{ position: 110 }],
+           identification: [{ position: 110 }]}   
+     @Consumption.valueHelpDefinition: [{ entity:{name: 'ZI_MM_VH_MOTDESICMS' , element: 'Low' },
+      distinctValues: true
+      }]
+    Motdesicms; 
+    @UI: { lineItem: [{ position: 120 }],
+           identification: [{ position: 120 }]}   
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_TDT', element: 'J_1BTDT' }}]
+    ZtipoCalc; 
+    @UI: { fieldGroup: [{ position: 10 }]}
+    CreatedBy;
+    @UI: { fieldGroup: [{ position: 20 }]}
+    CreatedAt;
+    @UI: { fieldGroup: [{ position: 30 }]}
+    LastChangedBy;
+    @UI: { fieldGroup: [{ position: 40 }]}
+    LastChangedAt;
+    @UI: { fieldGroup: [{ position: 50 }]}
+    LocalLastChangedAt;
+    
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv.Def - Integração ME'
+define service ZUI_INTME {
+  expose ZC_MM_HEADER_INTME;
+  expose ZC_MM_ITEM_INTME;
+}

@@ -1,0 +1,8 @@
+@EndUserText.label: 'Exped.Insumos-Especial - Armazenagem'
+define service ZUI_MM_EXPED_ARMAZENAGEM {
+  expose ZC_MM_EXPED_ARMAZENAGEM as App_ExpedEspArm;
+  expose ZI_CA_VH_LIFNR as VH_LIFNR;
+  expose ZI_CA_VH_INCO1_VIEW as VH_INCO1;
+  expose ZI_MM_VH_ARMZ_TXSDC as VH_TXSDC;
+  expose ZI_MM_VH_TXSDC as VH_TXSDC1;
+}

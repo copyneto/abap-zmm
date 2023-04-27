@@ -1,0 +1,4 @@
+@EndUserText.label: 'Cálculo de Prazo de Pagamento'
+define service Zui_calculo_prazo_pagamento {
+  expose zc_mm_calculo_prazo_pagamento;
+}

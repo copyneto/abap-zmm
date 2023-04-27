@@ -1,0 +1,46 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+    headerInfo: {
+        typeName: 'Entrada',
+        typeNamePlural: 'Entradas',
+        title: {
+            type: #STANDARD,
+            label: 'DIFAL/ST - Base Dupla'
+        }
+    }
+}
+annotate view ZC_MM_ZMMT003 with
+{
+
+  @UI.facet: [{ id: 'DIFAL', purpose: #STANDARD, position: 10, label: 'DIFAL', type: #IDENTIFICATION_REFERENCE }]
+
+  @UI: {  lineItem: [{ position: 10 }],
+      identification: [{ position: 10 }],
+      selectionField: [{ position: 10 }] }
+  Shipto;
+
+  @UI: {  lineItem: [{ position: 20 }],
+    identification: [{ position: 20 }],
+    selectionField: [{ position: 20 }] }
+  mwskz;
+  @UI: {  lineItem: [{ position: 30 }],
+    identification: [{ position: 30 }],
+    selectionField: [{ position: 30 }] }
+  J1bnbm;
+
+  @UI: {  lineItem: [{ position: 40 }],
+    identification: [{ position: 40 }] }
+  Flag;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

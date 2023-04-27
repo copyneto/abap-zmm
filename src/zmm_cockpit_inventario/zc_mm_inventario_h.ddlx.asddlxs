@@ -1,0 +1,240 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Cockpit de Inventário',
+                     title: { value: 'Documentno' },
+                     typeNamePlural: 'Cockpit de Inventário' },
+
+       presentationVariant: [{ sortOrder: [{ by: 'Documentno', direction:  #DESC } ] }] }
+annotate entity ZC_MM_INVENTARIO_H with
+{
+  @UI.facet: [ { id:                'DescricaoHeader',
+                 purpose:           #HEADER,
+                 type:              #DATAPOINT_REFERENCE,
+                 targetQualifier:   'DescricaoHeader',
+                 position:          10 },
+
+               { id:                'StatusHeader',
+                 purpose:           #HEADER,
+                 type:              #DATAPOINT_REFERENCE,
+                 targetQualifier:   'StatusHeader',
+                 position:          20 },
+
+               { id:                'Facet',
+                 purpose:           #STANDARD,
+                 type:              #COLLECTION,
+                 label:             'Dados Gerais',
+                 position:          30 },
+
+               { id: 'geral',
+                 purpose: #STANDARD,
+                 label: 'Dados Gerais',
+                 parentId: 'Facet',
+                 type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'geral',
+                 position: 40 },
+
+               { id: 'sum',
+                 purpose: #STANDARD,
+                 label: 'Somatório',
+                 parentId: 'Facet',
+                 type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'sum',
+                 position: 50 },
+
+               { id: 'Modificar',
+                 purpose: #STANDARD,
+                 label: 'Dados Modificação',
+                 parentId: 'Facet',
+                 type: #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'Modificar',
+                 position: 60 },
+
+               { id:                'Itens',
+                 purpose:           #STANDARD,
+                 type:              #LINEITEM_REFERENCE,
+                 label:             'Itens',
+                 position:          60,
+                 targetElement:     '_Itens'}   ]
+
+  @UI: { lineItem:        [ { position: 10, label: 'N° Doc' },
+                            { type: #FOR_ACTION, dataAction: 'liberar', label: 'Liberar' }],
+         identification:  [ { position: 10, label: 'N° Doc' },
+                            { type: #FOR_ACTION, dataAction: 'liberar', label: 'Liberar' }],
+         selectionField:  [ { position: 10 } ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  Documentno;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Id contagem' },
+                            { type: #FOR_ACTION, dataAction: 'cancelar', label: 'Encerrar' } ],
+         identification:  [ { position: 20, label: 'Id contagem' },
+                            { type: #FOR_ACTION, dataAction: 'cancelar', label: 'Encerrar' } ],
+         selectionField:  [ { position: 20 } ] ,
+         dataPoint:         { qualifier: 'DescricaoHeader', title: 'Id contagem' } }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'geral' }]
+  Countid;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Data da Contagem' }  ],
+         identification:  [ { position: 30, label: 'Data da Contagem' }  ],
+         selectionField:  [ { position: 30 } ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'geral' }]
+  Datesel;
+
+  @UI: { lineItem:        [ { position: 40, label: 'Status', criticality: 'StatusCriticality' } ],
+         identification:  [ { position: 40, label: 'Status', criticality: 'StatusCriticality' } ],
+         selectionField:  [ { position: 40 } ],
+         dataPoint: { qualifier: 'StatusHeader', title: 'Status', criticality: 'StatusCriticality' } }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'geral' }]
+  Status;
+
+  @UI: { lineItem:        [ { position: 41 } ],
+         identification:  [ { position: 41 } ] }
+  @UI.fieldGroup: [{ position: 41, qualifier: 'geral' }]
+  Direcao;
+
+  @UI: { lineItem:        [ { position: 45, label: 'Centro' }  ],
+         identification:  [ { position: 45, label: 'Centro' }  ],
+         selectionField:  [ { position: 45 } ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'geral' }]
+  Plant;
+
+  @UI.hidden: true
+  PlantText;
+
+  @UI.hidden: true
+  StatusText;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Descrição' } ],
+         identification:  [ { position: 70, label: 'Descrição' } ] }
+  @UI.multiLineText: true
+  @UI.fieldGroup: [{ position: 70, qualifier: 'geral' }]
+  Description;
+
+  @UI: { lineItem:        [ { position: 80, label: 'Acuracidade', type:#AS_DATAPOINT } ],
+         dataPoint:         { targetValue: 100, visualization: #PROGRESS } }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'sum',  label: 'Acuracidade' }]
+  Accuracy;
+
+  @UI.fieldGroup: [{ position: 20, qualifier: 'sum', label: 'Preço diferença'}]
+  PriceDiff;
+
+  @UI.fieldGroup: [{ position: 30, qualifier: 'sum', label: 'Preço Qtd estoque'}]
+  PriceStock;
+
+  @UI.fieldGroup: [{ position: 40, qualifier: 'sum', label: 'Preço Contagem'}]
+  PriceCount;
+
+  @UI.fieldGroup: [{ position: 50, qualifier: 'sum', label: 'Quantidade da contagem'}]
+  QuantityCount;
+
+  @UI.fieldGroup: [{ position: 60, qualifier: 'sum', label: 'Quantidade em estoque'}]
+  QuantityStock;
+
+  @UI.fieldGroup: [{ position: 70, qualifier: 'sum', label: 'Quantidade estoque atual'}]
+  QuantityCurrent;
+
+  @UI.fieldGroup: [{ position: 80, qualifier: 'sum', label: 'Diferença Contagem'}]
+  CountDiff;
+
+  @UI.fieldGroup: [{ position: 90, qualifier: 'sum', label: 'Peso Bruto'}]
+  Weight;
+
+  @UI: { lineItem:        [ { position: 100, label: 'Data de Lançamento' }  ],
+         identification:  [ { position: 100, label: 'Data de Lançamento' }  ],
+         selectionField:  [ { position: 100 } ] }
+  @UI.fieldGroup: [{ position: 80, qualifier: 'geral' }]
+  DataLanc;
+
+  @UI: { lineItem:      [ { position: 110, label: 'Doc. Material' }  ],
+       identification:  [ { position: 110, label: 'Doc. Material' }  ],
+       selectionField:  [ { position: 110 } ] }
+  @UI.fieldGroup: [{ position: 90, qualifier: 'geral' }]
+  DocMaterial;
+
+  @UI: { lineItem:      [ { position: 120, label: 'Doc.Entrada Saída' }  ],
+       identification:  [ { position: 120, label: 'Doc.Entrada Saída' }  ],
+       selectionField:  [ { position: 120 } ] }
+  @UI.fieldGroup: [{ position: 100, qualifier: 'geral' }]
+  DocEntSai;
+
+  @UI: { lineItem:      [ { position: 130, label: 'N° Doc Contabilização' }  ],
+       identification:  [ { position: 130, label: 'N° Doc Contabilização' }  ],
+       selectionField:  [ { position: 130 } ] }
+  @UI.fieldGroup: [{ position: 110, qualifier: 'geral' }]
+  DocComp;
+
+  @UI: { lineItem:    [ { position: 140, label: 'Doc. Inventário' }  ],
+     identification:  [ { position: 140, label: 'Doc. Inventário' }  ],
+     selectionField:  [ { position: 140 } ] }
+  @UI.fieldGroup:     [{ position: 120, qualifier: 'geral' }]
+  PhysicalInventoryDocument;
+
+  @UI: { lineItem:  [ { position: 150, label: 'Empresa' }  ],
+   identification:  [ { position: 150, label: 'Empresa' }  ],
+   selectionField:  [ { position: 150 } ] }
+  @UI.fieldGroup:   [{ position: 130, qualifier: 'geral' }]
+  Empresa;
+
+  @UI: { lineItem: [ { position: 160, label: 'N° NF' }  ],
+  identification:  [ { position: 160, label: 'N° NF' }  ],
+  selectionField:  [ { position: 160 } ] }
+  @UI.fieldGroup:  [{ position: 140, qualifier: 'geral' }]
+  NumNF;
+
+  @UI: { lineItem: [ { position: 170, label: 'Estorno NF' }  ],
+  identification:  [ { position: 170, label: 'Estorno NF' }  ],
+  selectionField:  [ { position: 170 } ] }
+  @UI.fieldGroup:  [{ position: 150, qualifier: 'geral' }]
+  EstornoNfe;
+
+  @UI: { lineItem: [ { position: 180, label: 'Status NFE' }  ],
+  identification:  [ { position: 180, label: 'Status NFE' }  ],
+  selectionField:  [ { position: 180 } ] }
+  @UI.fieldGroup:  [{ position: 150, qualifier: 'geral' }]
+  DocStat;
+
+  @UI: { lineItem: [ { position: 190, label: 'Data Doc Contabilização' }  ],
+  identification:  [ { position: 190, label: 'Data Doc Contabilização' }  ],
+  selectionField:  [ { position: 190 } ] }
+  @UI.fieldGroup:  [{ position: 160, qualifier: 'geral' }]
+  DatDocCont;
+
+  @UI: { lineItem: [ { position: 200, label: 'Doc Contabilização Est.' }  ],
+  identification:  [ { position: 200, label: 'Doc Contabilização Est.' }  ],
+  selectionField:  [ { position: 200 } ] }
+  @UI.fieldGroup:  [{ position: 170, qualifier: 'geral' }]
+  DocContEst;
+
+  @UI: { lineItem: [ { position: 210, label: 'Ano Fiscal' }  ],
+  identification:  [ { position: 210, label: 'Ano Fiscal' }  ],
+  selectionField:  [ { position: 210 } ] }
+  @UI.fieldGroup:  [{ position: 180, qualifier: 'geral' }]
+  FiscalYear;
+
+  @UI: { lineItem: [ { position: 220, label: 'Referência Externa' }  ],
+  identification:  [ { position: 220, label: 'Referência Externa' }  ],
+  selectionField:  [ { position: 220 } ] }
+  @UI.fieldGroup:  [{ position: 190, qualifier: 'geral' }]
+  ExternalRef;
+
+  @UI: { identification:  [ { position: 90 , qualifier: 'Modificar' }  ] }
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Modificar' }]
+  CreatedBy;
+  @UI: { identification:  [ { position: 100 , qualifier: 'Modificar'} ] }
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Modificar' }]
+  CreatedAt;
+  @UI: { identification:  [ { position: 110 , qualifier: 'Modificar' } ] }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Modificar' }]
+  LastChangedBy;
+  @UI: { identification:  [ { position: 120 , qualifier: 'Modificar' } ] }
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Modificar' }]
+  LastChangedAt;
+  @UI: { identification:  [ { position: 130  , qualifier: 'Modificar'} ] }
+  @UI.fieldGroup: [{ position: 50, qualifier: 'Modificar' }]
+  LocalLastChangedAt;
+  /* Associations */
+  //  _Itens;
+  //  _Log;
+
+}

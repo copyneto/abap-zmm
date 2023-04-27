@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_MM_FISCAL_INB alias _FiscalInb
+{
+  use create;
+//  use update;
+  use delete;
+}

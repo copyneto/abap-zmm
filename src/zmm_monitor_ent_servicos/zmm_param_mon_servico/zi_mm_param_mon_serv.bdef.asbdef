@@ -1,0 +1,40 @@
+managed;
+
+define behavior for ZI_MM_PARAM_MON_SERV alias Param_monit
+implementation in class zclmm_param_mon_serv unique
+persistent table ztmm_param_monse
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+//  field ( readonly :  ) Werks, Matnr, Operacao;
+  field ( readonly : update ) Branch, WERKS, Matnr, Matkl, Hkont, Operacao;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+
+//  determination SetCtgNota on save { create; }
+//  determination fill_data_base_pgto on save { field
+  validation authorityCreate on save { create; }
+
+  mapping for ztmm_param_monse
+  {
+    Branch = branch;
+    Werks = werks;
+    Matnr = matnr;
+    Matkl = matkl;
+    Hkont = hkont;
+    Operacao = z_op;
+    Mwskz = mwskz;
+    Cfop = cfop;
+    J1bnftype = j_1bnftype;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

@@ -1,0 +1,14 @@
+CLASS zclmm_inventario_mpc_ext DEFINITION
+  PUBLIC
+  INHERITING FROM zclmm_inventario_mpc
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zclmm_inventario_mpc_ext IMPLEMENTATION.
+ENDCLASS.

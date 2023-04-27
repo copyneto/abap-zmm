@@ -1,0 +1,58 @@
+@Metadata.layer:#CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Desconto Contabilizado',
+        typeNamePlural: 'Descontos Contabilizados:'
+    }
+}
+
+annotate view ZC_MM_LIB_PGTO_DES with 
+{
+  @UI.facet: [ { id:            'Descontos',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Descontos Contabilizados',
+                 position:      10 }  ]
+  
+  @UI: { lineItem:        [ { position: 10, label: 'Marcado', criticality: 'MarcadoCriticality', criticalityRepresentation: #WITH_ICON },
+                            { position: 10, type: #FOR_ACTION, dataAction: 'marcarDes', label: 'Marcar' },
+                            { position: 20, type: #FOR_ACTION, dataAction: 'limparDes', label: 'Limpar' } ],
+         identification:  [ { position: 10, label: 'Marcado' } ]  }
+  Marcado;      
+  @UI: { lineItem:        [ { position: 10, label: 'Número Documento', type: #WITH_URL, url: 'URL_NumDocumento' } ],
+         identification:  [ { position: 10, label: 'Número Documento' } ]  }
+  NumDocumento;    
+  
+//  @UI: { lineItem:        [ { position: 20, label: 'Ano' } ],
+//         identification:  [ { position: 20, label: 'Ano' } ]  }
+  @UI.hidden: true
+  Ano;      
+  @UI: { lineItem:        [ { position: 20, label: 'Item' } ],
+         identification:  [ { position: 20, label: 'Item' } ]  }
+  Item;        
+  @UI: { lineItem:        [ { position: 30, label: 'Bloqueio' } ],
+         identification:  [ { position: 30, label: 'Bloqueio' } ]  }
+  Bloqueio;          
+  @UI: { lineItem:        [ { position: 40, label: 'Tipo Documento' } ],
+         identification:  [ { position: 40, label: 'Tipo Documento' } ]  }
+  TipoDocumento;            
+  @UI: { lineItem:        [ { position: 50, label: 'Chave Ref.1 Cabeçalho' } ],
+         identification:  [ { position: 50, label: 'Chave Ref.1 Cabeçalho' } ]  }
+  ReferenciaCab1;              
+  @UI: { lineItem:        [ { position: 60, label: 'Chave Ref.2 Cabeçalho' } ],
+         identification:  [ { position: 60, label: 'Chave Ref.2 Cabeçalho' } ]  }
+  ReferenciaCab2;                
+  @UI: { lineItem:        [ { position: 70, label: 'Texto Cabeçalho' } ],
+         identification:  [ { position: 70, label: 'Texto Cabeçalho' } ]  }
+  TextoCab;     
+  @UI: { lineItem:        [ { position: 80, label: 'Referência' } ],
+         identification:  [ { position: 80, label: 'Referência' } ]  }
+  DocReferencia;       
+  @UI: { lineItem:        [ { position: 90, label: 'Vl.Montante' } ],
+         identification:  [ { position: 90, label: 'Vl.Montante' } ]  }
+  VlMontante;         
+  @UI: { lineItem:        [ { position: 100, label: 'Vencimento Líquido' } ],
+         identification:  [ { position: 100, label: 'Vencimento Líquido' } ]  }
+  DtVencimentoLiquido;
+    
+}

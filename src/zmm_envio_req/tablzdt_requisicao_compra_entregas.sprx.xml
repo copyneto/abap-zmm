@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_ENTREGAS</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZDT_REQUISICAO_COMPRA</OBJ_NAME_M>
+     <HASH_ID>5C7E8828FB49417E684FDAC2C6E2E44B5D8E7AF7</HASH_ID>
+     <ID>&lt;type&gt; EntregasItemReq &lt;element&gt; EntregasItemReq &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>EntregasItemReq</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/suprimentos/requisicaocompra</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/suprimentos/requisicaocompra</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/suprimentos/requisicaocompra</X-ML_NSPCE>
+     <X-ML_NAME>EntregasItemReq</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_ENTREGAS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DATA_EMBARQUE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DATA_EMBARQUE</OBJ_NAME2>
+     <ID>&lt;element&gt; DataEmbarque &lt;type&gt; EntregasItemReq &lt;element&gt; EntregasItemReq &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>DataEmbarque</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DATA_EMBARQUE</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_ENTREGAS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DATA_ENTREGA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DATA_ENTREGA</OBJ_NAME2>
+     <ID>&lt;element&gt; DataEntrega &lt;type&gt; EntregasItemReq &lt;element&gt; EntregasItemReq &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>DataEntrega</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DATA_ENTREGA</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_ENTREGAS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>QUANTIDADE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>QUANTIDADE</OBJ_NAME2>
+     <ID>&lt;element&gt; Quantidade &lt;type&gt; EntregasItemReq &lt;element&gt; EntregasItemReq &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>Quantidade</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>double</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>QUANTIDADE</R3_NAME>
+     <R3_DATATYP>FLTP</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_REQUISICAO_COMPRA_ENTREGAS</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZDT_REQUISICAO_COMPRA_ENTREGAS</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZDT_REQUISICAO_COMPRA_ENTREGAS</OBJ_NAME2>
+     <ID>&lt;type&gt; EntregasItemReq &lt;element&gt; EntregasItemReq &lt;type&gt; C_PurchaseReqnItem &lt;element&gt; C_PurchaseReqnItem &lt;type&gt; dtRequisicaoCompra http://trescoracoes.com.br/suprimentos/requisicaocompra http://trescoracoes.com.br/suprimentos/requisicaocompra</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>EntregasItemReq</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZDT_REQUISICAO_COMPRA_ENTREGAS</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

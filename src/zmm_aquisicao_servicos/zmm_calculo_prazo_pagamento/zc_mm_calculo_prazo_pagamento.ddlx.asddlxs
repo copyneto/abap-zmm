@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Cálculo de Prazo de Pagamento',
+    typeNamePlural: 'Cálculo de Prazo de Pagamento',
+    title: {
+      type: #STANDARD,
+      value: 'belnr' }
+  }
+}
+annotate entity zc_mm_calculo_prazo_pagamento with
+{
+  @UI.selectionField: [{position: 10 }]
+  @UI: { lineItem:  [ { position: 10 } ] }
+  belnr;
+  @UI.selectionField: [{position: 20 }]
+  @UI: { lineItem:  [ { position: 20 } ] }
+  gjahr;
+  @UI: { lineItem:  [ { position: 30 } ] }
+  buzei;
+  @UI: { lineItem:  [ { position: 40 } ] }
+  SupplierInvoiceIDByInvcgParty;
+  @UI: { lineItem:  [ { position: 50 } ] }
+  bukrs;
+  @UI: { lineItem:  [ { position: 60 } ] }
+  PurchaseOrder;
+  @UI: { lineItem:  [ { position: 70 } ] }
+  budat;
+  @UI: { lineItem:  [ { position: 80 } ] }
+  llief;
+  @UI: { lineItem:  [ { position: 90 } ] }
+  matnr;
+  @UI: { lineItem:  [ { position: 100 } ] }
+  DocumentCurrency;
+  @UI: { lineItem:  [ { position: 110 } ] }
+  NetPriceAmount;
+  @UI: { lineItem:  [ { position: 120 } ] }
+  NetPriceQuantity;
+  @UI: { lineItem:  [ { position: 130, label: 'Montante da fatura' } ] }
+  NetAmount;
+  //GLAccount
+  //GLAccountName
+  //CostCenter
+  @UI: { lineItem:  [ { position: 140 } ] }
+  TaxCode;
+  @UI: { lineItem:  [ { position: 150 } ] }
+  werks;
+  @UI: { lineItem:  [ { position: 160 } ] }
+  bldat;
+  @UI: { lineItem:  [ { position: 170 } ] }
+  CreatedByUser;
+  @UI: { lineItem:  [ { position: 180 } ] }
+  bupla;
+
+}

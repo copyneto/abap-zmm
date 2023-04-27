@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>CLAS</OBJECT>
+     <OBJ_NAME>ZCX_FMT_ID_SOLICITACAO</OBJ_NAME>
+     <OBJECT_M>CLAS</OBJECT_M>
+     <OBJ_NAME_M>ZCX_FMT_ID_SOLICITACAO</OBJ_NAME_M>
+     <HASH_ID>27ECE917CE8C7EEFA1C2AFFA7126A878DCE8BACB</HASH_ID>
+     <ID>&lt;message&gt; fmtIdSolicitacao http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>message</IFR_TYPE>
+     <IFR_NAME>fmtIdSolicitacao</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/viagem/requisicaocompra</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/viagem/requisicaocompra</IFR_GNSPCE>
+     <GEN_VERS>0006</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmfaultm</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/viagem/requisicaocompra</X-ML_NSPCE>
+     <X-ML_NAME>fmtIdSolicitacao</X-ML_NAME>
+     <VERSION_ID>586c6993fea611ebb33100000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>CLAS</OBJECT>
+     <OBJ_NAME>ZCX_FMT_ID_SOLICITACAO</OBJ_NAME>
+     <OBJECT1>ATTR</OBJECT1>
+     <OBJ_NAME1>STANDARD</OBJ_NAME1>
+     <OBJECT2>ATTR</OBJECT2>
+     <OBJ_NAME2>STANDARD</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZCLMMEXCHANGE_FAULT_DATA</OBJ_NAME_R>
+     <ID>&lt;element&gt; standard &lt;message&gt; fmtIdSolicitacao http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>standard</IFR_NAME>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>ATTR</R3_TYPE>
+     <R3_NAME>STANDARD</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>CLAS</OBJECT>
+     <OBJ_NAME>ZCX_FMT_ID_SOLICITACAO</OBJ_NAME>
+     <OBJECT1>CLAS</OBJECT1>
+     <OBJ_NAME1>ZCX_FMT_ID_SOLICITACAO</OBJ_NAME1>
+     <OBJECT2>CLAS</OBJECT2>
+     <OBJ_NAME2>ZCX_FMT_ID_SOLICITACAO</OBJ_NAME2>
+     <ID>&lt;message&gt; fmtIdSolicitacao http://trescoracoes.com.br/viagem/requisicaocompra http://trescoracoes.com.br/viagem/requisicaocompra</ID>
+     <IFR_TYPE>message</IFR_TYPE>
+     <IFR_NAME>fmtIdSolicitacao</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <IFR_FAULT>X</IFR_FAULT>
+     <R3_TYPE>CLAS</R3_TYPE>
+     <R3_NAME>ZCX_FMT_ID_SOLICITACAO</R3_NAME>
+     <R3_TEXT>Proxy Class (generated)</R3_TEXT>
+     <CATEGORY>ifmfaultm</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

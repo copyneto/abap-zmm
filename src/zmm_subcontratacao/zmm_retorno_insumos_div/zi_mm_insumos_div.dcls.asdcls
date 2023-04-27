@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de autorização'
+@MappingRole: true
+define role ZI_MM_INSUMOS_DIV {
+    grant 
+        select
+            on
+                ZI_MM_INSUMOS_DIV
+                    where
+                       ( werks ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+                        
+}

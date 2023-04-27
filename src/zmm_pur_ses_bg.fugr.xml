@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Background SES processing</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZMM_PUR_SES_BGTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZMM_PUR_SES_BG</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZMM_PUR_SES_CREATE_BG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Criação Folha de Serviços Enxuto</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_DATA_FIELDS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MMPUR_SES_UPL_ADDITIONAL_DATA</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SES</PARAMETER>
+       <TYP>MMPUR_SES_SERVICEENTRYSHEET</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_HEADER</PARAMETER>
+       <TYP>MMPUR_SES_UPL_HEADER_TTY</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ITEM</PARAMETER>
+       <TYP>MMPUR_SES_UPL_ITEM_TTY</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ACCOUNT_ASSIGNMENT</PARAMETER>
+       <TYP>MMPUR_SES_UPL_ACC_ASS_TTY</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_DATA_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SES iadditional data for Excel Upload</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Service Entry Sheet</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SES headers for Excel Upload</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ITEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SES items for Excel Upload</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ACCOUNT_ASSIGNMENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SES Account Assignments for Excel Upload</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

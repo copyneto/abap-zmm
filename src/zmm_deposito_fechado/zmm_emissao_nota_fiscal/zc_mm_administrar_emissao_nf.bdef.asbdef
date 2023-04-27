@@ -1,0 +1,36 @@
+projection;
+
+define behavior for ZC_MM_ADMINISTRAR_EMISSAO_NF alias Emissao
+{
+  use update;
+  use delete;
+  use association _Serie { }
+  use association _Mensagem { }
+
+  use action fragmentCheckBox;
+  use action fragmentUsedStock;
+
+  use action utilizarQtde;
+  use action qtdeTransferida;
+  use action adicionarSerie;
+//  use action criarNfe;
+  use action CriaRemessa;
+  use action CriaRemeSimb;
+  use action CriaOrderFrete;
+  use action Continuar;
+
+}
+
+define behavior for ZC_MM_ADMINISTRAR_SERIE alias Serie
+{
+  use update;
+  use delete;
+  use association _Emissao { }
+
+
+}
+define behavior for ZC_MM_ADMINISTRAR_MSG alias Mensagem
+{
+  use association _Emissao { }
+
+}

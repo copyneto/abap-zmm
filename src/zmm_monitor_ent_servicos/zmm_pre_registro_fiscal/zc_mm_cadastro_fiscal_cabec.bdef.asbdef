@@ -1,0 +1,28 @@
+projection;
+
+define behavior for ZC_MM_CADASTRO_FISCAL_CABEC alias Header
+{
+  use create;
+  use update;
+  use delete;
+
+  use action LiberarNF;
+
+  use association _Item { create; }
+}
+
+define behavior for ZC_MM_CADASTRO_FISCAL_ITEM alias Item
+{
+  use update;
+  use delete;
+
+  use association _Header;
+}
+
+
+define behavior for ZC_MM_CADASTRO_FISCAL_ANEXO alias Anexo
+{
+  use delete;
+
+  use association _Header;
+}

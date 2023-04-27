@@ -1,0 +1,37 @@
+@Metadata.layer: #CORE
+@UI.presentationVariant: [{
+    sortOrder: [
+       { by: 'DateFrom', direction: #DESC },
+       { by: 'altime', direction: #DESC } ],
+    visualizations: [{ type: #AS_LINEITEM }],
+    requestAtLeast: [ 'DateFrom', 'altime' ]
+}]
+annotate view ZC_MM_3C_NF_FORN_LOG with
+{
+  @UI: { lineItem: [{position: 10}]}
+  LogExternalId;
+  @UI: { lineItem: [{position: 20}]}
+  aluser;
+  @UI: { lineItem: [{position: 30}]}
+  DateFrom;
+  @UI: { lineItem: [{position: 40}]}
+  altime;
+  @Consumption.semanticObject: 'ApplicationLog'
+  @UI: { lineItem: [{position: 50, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'showList'}]}
+  ExibirLog;
+  @UI.hidden: true
+  jobuuid;
+  @UI.hidden: true
+  loghandle;
+  @UI.hidden: true
+  LogObjectId;
+  @UI.hidden: true
+  ObjectText;
+  @UI.hidden: true
+  LogObjectSubId;
+  @UI.hidden: true
+  SubObjectText;
+  @UI.hidden: true
+  FullName;
+
+}

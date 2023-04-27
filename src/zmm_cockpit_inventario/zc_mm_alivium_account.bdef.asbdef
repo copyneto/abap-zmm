@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_MM_ALIVIUM_ACCOUNT alias _AliviumAccount
+{
+  use create;
+  use update;
+  use delete;
+}

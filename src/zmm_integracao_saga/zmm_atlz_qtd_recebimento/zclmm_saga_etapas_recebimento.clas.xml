@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_SAGA_ETAPAS_RECEBIMENTO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Etapas de Recebimento - SAGA</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>LIBERA_ENTRAD_MERCADORIA</CMPNAME>
+     <SCONAME>ET_RECEB</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela ZTMM_WMS_RECEB</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIBERA_ENTRAD_MERCADORIA</CMPNAME>
+     <SCONAME>ET_XNFE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela ZSMM_SAGA_XNFE</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

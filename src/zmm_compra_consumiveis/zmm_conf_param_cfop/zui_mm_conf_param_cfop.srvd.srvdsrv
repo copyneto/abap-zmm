@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def Conferência Parâmetros CFOP'
+define service ZUI_MM_CONF_PARAM_CFOP {
+  expose ZC_MM_CONF_PARAM_CFOP;
+}

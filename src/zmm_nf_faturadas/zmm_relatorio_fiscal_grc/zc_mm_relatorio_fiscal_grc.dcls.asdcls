@@ -1,0 +1,12 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_MM_RELATORIO_FISCAL_GRC {
+    grant
+        select
+            on
+                ZC_MM_RELATORIO_FISCAL_GRC
+                    where
+                         inheriting conditions from entity ZI_MM_RELATORIO_FISCAL_GRC;
+                       
+                        
+}

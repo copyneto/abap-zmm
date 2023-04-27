@@ -1,0 +1,114 @@
+@Metadata.layer: #CORE
+annotate view ZC_MM_VISAO_UNID_MEDIDA with
+{
+  @Consumption.semanticObject: 'zMaterial'
+  @UI.lineItem: [{ position: 10, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'zzdisplay' } ]
+  @UI.selectionField: [{position: 10}]
+  Product;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{position: 20}]
+  mtart;
+  @UI.lineItem: [{ position: 30 }]
+  maktxpt;
+  @UI.lineItem: [{ position: 40 }]
+  maktxen;
+  @UI.lineItem: [{ position: 50 }]
+  maktxes;
+  @UI.lineItem: [{ position: 60 }]
+  maktg;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{position: 30}]
+  ersda;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{position: 40}]
+  ernam;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{position: 50}]
+  matkl;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.selectionField: [{position: 60}]
+  meins;
+
+  @UI.lineItem: [{ exclude: true }]
+  meabm;
+  @UI.lineItem: [{ exclude: true }]
+  meinh;
+  @UI.lineItem: [{ exclude: true }]
+  breit;
+  @UI.lineItem: [{ exclude: true }]
+  volum;
+  @UI.lineItem: [{ exclude: true }]
+  hoehe;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/serno_prov_bup;
+  @UI.lineItem: [{ exclude: true }]
+  ean11;
+  @UI.lineItem: [{ exclude: true }]
+  laeng;
+  @UI.lineItem: [{ exclude: true }]
+  numtp;
+  @UI.lineItem: [{ exclude: true }]
+  eannr;
+  @UI.lineItem: [{ exclude: true }]
+  brgew;
+  @UI.lineItem: [{ exclude: true }]
+  gewei;
+  @UI.lineItem: [{ exclude: true }]
+  voleh;
+  @UI.lineItem: [{ exclude: true }]
+  umrez;
+  @UI.lineItem: [{ exclude: true }]
+  umren;
+  @UI.lineItem: [{ exclude: true }]
+  mesub;
+  @UI.lineItem: [{ exclude: true }]
+  atinn;
+  @UI.lineItem: [{ exclude: true }]
+  mesrt;
+  @UI.lineItem: [{ exclude: true }]
+  xfhdw;
+  @UI.lineItem: [{ exclude: true }]
+  xbeww;
+  @UI.lineItem: [{ exclude: true }]
+  kzwso;
+  @UI.lineItem: [{ exclude: true }]
+  msehi;
+  @UI.lineItem: [{ exclude: true }]
+  bflme_marm;
+  @UI.lineItem: [{ exclude: true }]
+  gtin_variant;
+  @UI.lineItem: [{ exclude: true }]
+  nest_ftr;
+  @UI.lineItem: [{ exclude: true }]
+  max_stack;
+  @UI.lineItem: [{ exclude: true }]
+  top_load_full;
+  @UI.lineItem: [{ exclude: true }]
+  top_load_full_uom;
+  @UI.lineItem: [{ exclude: true }]
+  capause;
+  @UI.lineItem: [{ exclude: true }]
+  ty2tq;
+  @UI.lineItem: [{ exclude: true }]
+  dummy_uom_incl_eew_ps;
+  @UI.lineItem: [{ exclude: true }]
+  /cwm/ty2tq;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/ncode;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/ncode_ty;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/rcode;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/seruse;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/syncchg;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/serno_managed;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/uom_sync;
+  @UI.lineItem: [{ exclude: true }]
+  /sttpec/ser_gtin;
+  @UI.lineItem: [{ exclude: true }]
+  pcbut;
+}

@@ -1,0 +1,10 @@
+@EndUserText.label: 'CDS de autorização'
+@MappingRole: true
+define role ZI_MM_RET_ARMAZENAGEM_APP {
+    grant
+        select
+            on
+                ZI_MM_RET_ARMAZENAGEM_APP
+                    where
+                        ( CentroOrigem ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
+}

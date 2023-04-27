@@ -1,0 +1,174 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Redeterminação PIS/COFINS',
+                     typeNamePlural: 'Redeterminação PIS/COFINS' },
+  presentationVariant: [{ sortOrder: [{ by: 'ekorg', direction:  #ASC },
+                                      { by: 'werks', direction:  #ASC },
+                                      { by: 'lifnr', direction:  #ASC },
+                                      { by: 'matnr', direction:  #ASC },
+                                      { by: 'knttp', direction:  #ASC },
+                                      { by: 'sakto', direction:  #ASC },
+                                      { by: 'cfop',  direction:  #ASC }] }] }
+
+annotate view ZC_MM_REDETERMINA_PISCOF
+    with  
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'CHAVES',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Chaves',
+                 position:        10 },
+
+                        { parentId:        'CHAVES',
+                          id:              'Chaves',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Chaves' },
+                          
+               { id:              'PISCOFINS',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'PIS/COFINS',
+                 position:        20 },
+
+                        { parentId:        'PISCOFINS',
+                          id:              'Pis',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Pis',
+                          position:        10,
+                          targetQualifier: 'Pis' },
+
+                        { parentId:        'PISCOFINS',
+                          id:              'Cofins',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Cofins',
+                          position:        20,
+                          targetQualifier: 'Cofins' },
+                          
+               { id:              'SISTEMA',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Sistema',
+                 position:        30 },
+
+                        { parentId:        'SISTEMA',
+                          id:              'Sistema',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Sistema' } ]
+                          
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  id;
+  
+  @UI: {  lineItem:       [ { position: 10 } ], 
+          fieldGroup:     [ { position: 10, qualifier: 'Chaves' } ],
+          selectionField: [ { position: 10 } ] }
+  ekorg;
+  
+  @UI.hidden: true
+  ekorg_txt;
+  
+  @UI: {  lineItem:       [ { position: 20 } ], 
+          fieldGroup:     [ { position: 20, qualifier: 'Chaves' } ],
+          selectionField: [ { position: 20 } ] }
+  werks;
+  
+  @UI.hidden: true
+  werks_txt;
+  
+  @UI: {  lineItem:       [ { position: 30 } ], 
+          fieldGroup:     [ { position: 30, qualifier: 'Chaves' } ],
+          selectionField: [ { position: 30 } ] }
+  lifnr;
+  
+  @UI.hidden: true
+  lifnr_txt;
+  
+  @UI: {  lineItem:       [ { position: 40 } ], 
+          fieldGroup:     [ { position: 40, qualifier: 'Chaves' } ],
+          selectionField: [ { position: 40 } ] }
+  matnr;
+  
+  @UI.hidden: true
+  matnr_txt;
+  
+  @UI: {  lineItem:       [ { position: 50 } ], 
+          fieldGroup:     [ { position: 50, qualifier: 'Chaves' } ],
+          selectionField: [ { position: 50 } ] }
+  knttp;
+  
+  @UI.hidden: true
+  knttp_txt;
+  
+  @UI: {  lineItem:       [ { position: 60 } ], 
+          fieldGroup:     [ { position: 60, qualifier: 'Chaves' } ],
+          selectionField: [ { position: 60 } ] }
+  sakto;
+  
+  @UI.hidden: true
+  sakto_txt;
+  
+  @UI: {  lineItem:       [ { position: 70 } ], 
+          fieldGroup:     [ { position: 70, qualifier: 'Chaves' } ],
+          selectionField: [ { position: 70 } ] }
+  cfop;
+  
+  @UI.hidden: true
+  cfop_mask;
+  
+  @UI.hidden: true
+  cfop_txt;
+  
+  @UI: {  lineItem:       [ { position: 80 } ], 
+          fieldGroup:     [ { position: 10, qualifier: 'Pis' } ],
+          selectionField: [ { position: 80 } ] }
+  taxlaw_pis;
+  
+  @UI.hidden: true
+  taxlaw_pis_txt;
+  
+  @UI: {  lineItem:       [ { position: 90 } ], 
+          fieldGroup:     [ { position: 20, qualifier: 'Pis' } ],
+          selectionField: [ { position: 90 } ] }
+  taxsit_pis;
+  
+  @UI.hidden: true
+  taxsit_pis_txt;
+  
+  @UI: {  lineItem:       [ { position: 100 } ], 
+          fieldGroup:     [ { position: 10, qualifier: 'Cofins' } ],
+          selectionField: [ { position: 100 } ] }
+  taxlaw_cofins;
+  
+  @UI.hidden: true
+  taxlaw_cofins_txt;
+  
+  @UI: {  lineItem:       [ { position: 110 } ], 
+          fieldGroup:     [ { position: 20, qualifier: 'Cofins' } ],
+          selectionField: [ { position: 110 } ] }
+  taxsit_cofins;
+  
+  @UI.hidden: true
+  taxsit_cofins_txt;
+  
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'Sistema' } ] }
+  createdby;
+  
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'Sistema' } ] }
+  createdat;
+  
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'Sistema' } ] }
+  lastchangedby;
+  
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'Sistema' } ] }
+  lastchangedat;
+  
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'Sistema' } ] }
+  locallastchangedat;
+    
+}

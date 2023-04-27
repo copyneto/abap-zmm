@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_MATNR_PRD_IND</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DOMNAME>MATNR</DOMNAME>
+    <HEADLEN>40</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Produto industrializado</DDTEXT>
+    <REPTEXT>Produto industrializado</REPTEXT>
+    <SCRTEXT_S>Produto</SCRTEXT_S>
+    <SCRTEXT_M>Prod industrializado</SCRTEXT_M>
+    <SCRTEXT_L>Produto industrializado</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <SHLPNAME>S_MAT1</SHLPNAME>
+    <SHLPFIELD>MATNR</SHLPFIELD>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

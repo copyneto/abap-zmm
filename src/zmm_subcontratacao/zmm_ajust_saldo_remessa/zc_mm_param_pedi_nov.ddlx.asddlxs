@@ -1,0 +1,8 @@
+@Metadata.layer: #CORE
+annotate entity ZC_MM_PARAM_PEDI_NOV with
+{
+  @EndUserText.label: 'Pedido de Compra Novo'
+  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_PED_NOVO', element: 'PedNv' } }]
+  PedNv;
+
+}

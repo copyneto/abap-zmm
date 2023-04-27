@@ -1,0 +1,192 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: {
+    headerInfo: {
+        typeName: 'Pedido',
+        typeNamePlural: 'Pedidos'
+    }
+}
+
+annotate view ZC_MM_COCKPIT with
+{
+
+  @UI.facet: [
+              { id: 'PO',     purpose: #HEADER,   type: #DATAPOINT_REFERENCE,      position: 1,  label: 'Pedido',         targetQualifier: 'PO'   },
+              { id: 'POItem', purpose: #HEADER,   type: #DATAPOINT_REFERENCE,      position: 2,  label: 'Item do Pedido', targetQualifier: 'POItem'},
+              { id: 'Matnr',  purpose: #HEADER,   type: #DATAPOINT_REFERENCE,      position: 3,  label: 'Material',       targetQualifier: 'Matnr'},
+              { id: 'Nfnum',  purpose: #HEADER,   type: #DATAPOINT_REFERENCE,      position: 4,  label: 'Nota Fiscal',    targetQualifier: 'Nfnum'},
+              { id: 'Sts',    purpose: #HEADER,   type: #DATAPOINT_REFERENCE,      position: 4,  label: 'Status',         targetQualifier: 'Sts'  },
+              { id: 'VlrT',   purpose: #HEADER,   type: #DATAPOINT_REFERENCE,      position: 5,  label: 'Valor Total',    targetQualifier: 'VlrT' },
+              { id: 'OP',     purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, position: 10, label: 'Geral' },
+              { id: 'Carac1',  purpose: #STANDARD, type: #LINEITEM_REFERENCE,      position: 20, label: 'Pedidos', targetElement: '_Char3' },
+              { id: 'Carac2',  purpose: #STANDARD, type: #LINEITEM_REFERENCE,      position: 20, label: 'Recebimentos', targetElement: '_Char2' }]
+
+  @Consumption.semanticObject: 'PurchaseOrder'
+  @UI: { selectionField: [{ position: 10 }],
+               lineItem: [{ position: 10, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'monitorDownPayments' }],
+         identification: [{ type: #FOR_ACTION, dataAction: 'comercialDiscount', label: 'Desc. Com.'     },
+                          { type: #FOR_ACTION, dataAction: 'comercialRelease',  label: 'Libera Com.'    }],                                                    
+                          
+                          //botões inutilizados
+                          //{ type: #FOR_ACTION, dataAction: 'financialRelease',  label: 'Libera Fin.'    },
+                          //{ type: #FOR_ACTION, dataAction: 'comercialReturn',   label: 'Retorno Com.'   },
+                          //{ type: #FOR_ACTION, dataAction: 'financialDiscount', label: 'Desc. Fin.'     },
+                          //{ type: #FOR_ACTION, dataAction: 'documentClose',     label: 'Finalizar'      },
+                          //{ type: #FOR_ACTION, dataAction: 'fupDocument',       label: 'Lançar Doc.' }]
+                          //,
+
+  dataPoint:  { qualifier: 'PO', title: 'Pedido'  } }
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'P_PurchaseOrder_VH', element: 'PurchasingDocument'} }]
+  PurchaseOrder;
+
+  @UI:{  lineItem: [{ position: 20 }],
+        dataPoint:  { qualifier: 'POItem', title: 'Item' } }
+  PurchaseOrderItem;
+  
+  @UI:{  lineItem: [{ position: 25, label: 'Data Pedido' }],
+         dataPoint:  { qualifier: 'POItem', title: 'Item' } }
+  DtPedido;  
+
+//  @Consumption.semanticObject: 'PurchaseOrder'
+//  @UI.lineItem: [{ position: 55, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'displayProcessFlowAP' }]
+//  AccountingDocument;
+
+//  @UI.lineItem: [{ hidden: true }]
+//  FiscalYear;
+
+//  @UI.lineItem: [{ hidden: true }]
+//  CompanyCode;
+
+  @UI.hidden: true
+  ReferencedDocument;
+
+  @UI: { selectionField: [{ position: 60 }],
+               lineItem: [{ position: 30 }],
+              dataPoint: { qualifier: 'Matnr', title: 'Material' } }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'C_Materialvh', element: 'Material' } }]
+  Material;
+
+  @UI:{       lineItem: [{ position: 40 }],
+        identification: [{ position: 50 }] }
+  OrderQuantity;
+
+  @UI.hidden: true
+  PurchaseOrderQuantityUnit;
+
+  @UI: { selectionField: [{ position: 50 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'C_PlantVH', element: 'Plant' } }]
+  Plant;
+
+  @UI:{  lineItem: [{ position: 100, criticality: 'DescontoCriticality' }],
+        dataPoint:  { criticality: 'DescontoCriticality', qualifier: 'Sts', title: 'Status' } }
+  status;
+
+  @UI.hidden: true
+  DescontoCriticality;
+
+  @UI:{ lineItem: [{ position: 120 }], identification: [{ position: 160 }] }
+  DescontoComercial;
+
+//  @UI.hidden: true
+  @UI:{ lineItem: [{ position: 130, label: 'Obs. Comercial' }], identification: [{ position: 170, label: 'Obs. Comercial' }] }
+  ObservComercial;
+
+//  @UI:{ lineItem: [{ position: 130 }] }
+//  DescontoFinanceiro;
+//
+//  @UI.hidden: true
+//  ObservFinanceiro;
+
+  @UI:{ lineItem: [{ position: 140 }] }
+  DevolucaoFutura;
+
+  @UI: { selectionField: [{ position: 40  }],
+               lineItem: [{ position: 160 }],
+         identification: [{ position: 40 }] }
+  Contrato;
+
+  @UI:{       lineItem: [{ position: 170 }],
+        identification: [{ position: 20 }] }
+  Sacaria;
+
+  @UI:{       lineItem: [{ position: 180 }],
+        identification: [{ position: 30 }] }
+  Embalagem;
+
+  //@UI.hidden: true
+  //@Consumption.valueHelpDefinition: [{ entity: { name: 'I_Currency', element: 'Currency' } }]       
+  //waers;
+
+  @UI.hidden: true
+  lifnr;
+
+  @UI.hidden: true
+  menge;
+  @UI.hidden: true
+  meins;
+
+  @UI: { identification: [{ position: 10 }] }
+  lagmg;
+
+  @UI: { identification: [{ position: 80 }] }
+  observacao;
+
+  @Consumption.semanticObject: 'NotaFiscal'
+  @UI:{ selectionField: [{ position: 20 }],
+              lineItem: [{ position: 60, type: #WITH_INTENT_BASED_NAVIGATION, semanticObjectAction: 'display' }]}
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NotaFiscal' } }]
+  BR_NotaFiscal;
+
+  @UI.hidden: true
+  BR_ReferenceNFNumber;
+
+  @UI:{  lineItem: [{ position: 70 }],
+        dataPoint:  { qualifier: 'Nfnum', title: 'Nota Fiscal' } }
+  Nfnum;
+
+  @UI: { selectionField: [{ position: 30 }],
+             lineItem: [{ position: 50 }],
+       identification: [{ position: 10 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_Supplier_VH', element: 'Supplier' } }]
+  Supplier;
+  @UI.hidden: true
+  NFTotalAmount;
+
+  @UI:{ lineItem: [{ position: 80 }] }
+  NFTotalQuantity;
+
+  @UI:{ lineItem: [{ position: 110 }] }
+  NFTotalReversalValue;
+
+  @UI.hidden: true
+  NFBaseUnit;
+  @UI.hidden: true
+  NFCurrency;
+
+  @UI:{  lineItem: [{ position: 150 }],
+        dataPoint:  { qualifier: 'VlrT', title: 'Valor Apurado Final' }  }
+  ValorApurado;
+  
+//   @UI:{  lineItem: [{ position: 160 }],
+//        identification: [{ position: 160 }] }
+//  MontanteAdiantamento;
+
+//  @UI:{ lineItem: [{ position: 90, criticality: 'CompensadoCriticality' }] }
+//  StatusCompensado;
+//
+//  @UI.hidden: true
+//  CompensadoCriticality;
+
+  @Consumption.semanticObject: 'ApplicationLog'
+  @UI.identification: [{type: #WITH_INTENT_BASED_NAVIGATION, position: 999, semanticObjectAction: 'showList', label: 'Log' }]
+  Log;
+
+  @UI.identification: [{ hidden: true }]
+  LogObjectId;
+  @UI.identification: [{ hidden: true }]
+  LogObjectSubId;
+  @UI.identification: [{ hidden: true }]
+  LogExternalId;
+  @UI.identification: [{ hidden: true }]
+  DateFrom;
+}

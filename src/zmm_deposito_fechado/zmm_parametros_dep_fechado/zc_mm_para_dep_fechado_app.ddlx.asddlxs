@@ -1,0 +1,145 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Parâmetros Depósito Fechado',
+                typeNamePlural: 'Parâmetros',
+                title: { type: #STANDARD, label: 'Parâmetros', value: 'OriginPlant' } },
+  presentationVariant: [{ sortOrder: [{ by: 'LastChangedAt', direction:  #DESC }] }] }
+
+annotate view ZC_MM_PARA_DEP_FECHADO_APP with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet:[{ id:              'Facet',
+               purpose:         #STANDARD,
+               type:            #COLLECTION,
+               label:           'Principal',
+               position:        10 },
+
+             { id:              'geral',
+               purpose:         #STANDARD,
+               parentId:        'Facet',
+               type:            #FIELDGROUP_REFERENCE,
+               label:           'Descritivo',
+               targetQualifier: 'geral',
+               position:         20 } ,
+
+             { id:              'Principal',
+               purpose:         #STANDARD,
+               label:           'Parâmetros',
+               parentId:        'Facet',
+               type:            #FIELDGROUP_REFERENCE,
+               targetQualifier: 'Principal',
+               position:        30 } ,
+
+             { id:              'Datas',
+               purpose:         #STANDARD,
+               label:           'Alterações',
+               type:            #FIELDGROUP_REFERENCE,
+               targetQualifier: 'Datas',
+               position:        40 }]
+
+  // ------------------------------------------------------
+  // Field information Principal
+  // ------------------------------------------------------
+  @UI.lineItem:       [{ position: 20, criticality: 'OriginPlantCrit', criticalityRepresentation: #WITHOUT_ICON }]
+//  fieldGroup:     [ { position: 10, label: 'Centro Origem', qualifier: 'ConfigOrigem' } ],
+//  @UI.fieldGroup:     [{ position: 10, criticality: 'OriginPlantCrit' ,criticalityRepresentation: #WITHOUT_ICON, qualifier: 'Principal' }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.textArrangement: #TEXT_FIRST
+  OriginPlant;
+  
+  @UI.hidden: true
+//  @UI.fieldGroup:     [{ position: 10, qualifier: 'Principal' }]
+  OriginPlantName;
+  
+  @UI.hidden: true
+  OriginPlantCrit;
+
+  @UI.lineItem:       [{ position: 30, criticality: 'OriginPlantTypeCrit', criticalityRepresentation: #WITHOUT_ICON }]
+//  @UI.fieldGroup:     [{ position: 30, criticality: 'OriginPlantTypeCrit', criticalityRepresentation: #WITHOUT_ICON, qualifier: 'Principal' }]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 30 }]
+  OriginPlantType;
+  
+  @UI.hidden: true
+  OriginPlantTypeName;
+  
+  @UI.hidden: true
+  OriginPlantTypeCrit;
+
+  @UI.lineItem:       [{ position: 40, criticality: 'OriginStorageLocationCrit', criticalityRepresentation: #WITHOUT_ICON }]
+//  @UI.fieldGroup:     [{ position: 40, criticality: 'OriginStorageLocationCrit', criticalityRepresentation: #WITHOUT_ICON, qualifier: 'Principal' }]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 40 }]
+  OriginStorageLocation;
+  
+  @UI.hidden: true
+  OriginStorageLocationName;
+  
+  @UI.hidden: true
+  OriginStorageLocationCrit;
+
+  @UI.lineItem:       [{ position: 50, criticality: 'DestinyPlantCrit', criticalityRepresentation: #WITHOUT_ICON }]
+//  @UI.fieldGroup:     [{ position: 50, criticality: 'DestinyPlantCrit', criticalityRepresentation: #WITHOUT_ICON, qualifier: 'Principal' }]
+  @UI.fieldGroup:     [{ position: 50, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 50 }]
+  DestinyPlant;
+  
+  @UI.hidden: true
+  DestinyPlantName;
+  
+  @UI.hidden: true
+  DestinyPlantCrit;
+
+  @UI.lineItem:       [{ position: 60, criticality: 'DestinyPlantTypeCrit', criticalityRepresentation: #WITHOUT_ICON }]
+//  @UI.fieldGroup:     [{ position: 60, criticality: 'DestinyPlantTypeCrit', criticalityRepresentation: #WITHOUT_ICON, qualifier: 'Principal' }]
+  @UI.fieldGroup:     [{ position: 60,  qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 60 }]
+  DestinyPlantType;
+  
+  @UI.hidden: true
+  DestinyPlantTypeName;
+  
+  @UI.hidden: true
+  DestinyPlantTypeCrit;
+
+  @UI.lineItem:       [{ position: 70, criticality: 'DestinyStorageLocationCrit', criticalityRepresentation: #WITHOUT_ICON }]
+//  @UI.fieldGroup:     [{ position: 70, criticality: 'DestinyStorageLocationCrit', criticalityRepresentation: #WITHOUT_ICON, qualifier: 'Principal' }]
+  @UI.fieldGroup:     [{ position: 70, qualifier: 'Principal' }]
+  @UI.selectionField: [{ position: 70 }]
+  DestinyStorageLocation;
+  
+  @UI.hidden: true
+  DestinyStorageLocationName;
+  
+  @UI.hidden: true
+  DestinyStorageLocationCrit;
+  
+  // ------------------------------------------------------
+  // Field information Geral
+  // ----------------------------------------------------
+
+  @UI.lineItem:       [{ position: 10 }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'geral' }]
+  @UI.multiLineText: true
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.7
+  Description;
+
+  // ------------------------------------------------------
+  // Datas
+  // ----------------------------------------------------
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'Datas' }]
+  CreatedBy;
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'Datas' }]
+  CreatedAt;
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'Datas' }]
+  LastChangedBy;
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'Datas' }]
+  LastChangedAt;
+  @UI.fieldGroup:     [{ position: 50, qualifier: 'Datas' }]
+  LocalLastChangedAt;
+
+}
