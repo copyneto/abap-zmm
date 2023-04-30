@@ -2821,13 +2821,20 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
         cs_xmlh-infcomp = |{ cs_xmlh-infcomp } - { lv_text }|.
       ENDIF.
 
-      IF <fs_item>-nbm+10 IS NOT INITIAL.
-        IF <fs_item>-cest IS NOT INITIAL.
-          cs_xmlh-infcomp = |{ cs_xmlh-infcomp } - EXTIPI: { <fs_item>-nbm+11 }|.
-        ELSE.
-          cs_xmlh-infcomp = |{ cs_xmlh-infcomp } - { TEXT-t04 } { <fs_item>-matnr ALPHA = OUT } EXTIPI: { <fs_item>-nbm+11 }|.
+* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 28.04.2023 Início
+      FIND <fs_item>-cest IN cs_xmlh-infcomp.
+      IF sy-subrc NE 0.
+* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 28.04.2023 Fim
+        IF <fs_item>-nbm+10 IS NOT INITIAL.
+          IF <fs_item>-cest IS NOT INITIAL.
+            cs_xmlh-infcomp = |{ cs_xmlh-infcomp } - EXTIPI: { <fs_item>-nbm+11 }|.
+          ELSE.
+            cs_xmlh-infcomp = |{ cs_xmlh-infcomp } - { TEXT-t04 } { <fs_item>-matnr ALPHA = OUT } EXTIPI: { <fs_item>-nbm+11 }|.
+          ENDIF.
         ENDIF.
+* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 28.04.2023 Início
       ENDIF.
+* LSCHEPP - 8000006757, EXTIPI E HORÁRIO DE SAÍDA - 28.04.2023 Fim
 
     ENDLOOP.
 

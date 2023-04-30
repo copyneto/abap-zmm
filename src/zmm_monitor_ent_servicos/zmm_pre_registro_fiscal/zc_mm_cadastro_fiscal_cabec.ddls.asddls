@@ -12,7 +12,8 @@ define root view entity ZC_MM_CADASTRO_FISCAL_CABEC
       @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_LIFNR', element : 'LifnrCode' }}]
       @ObjectModel.text.element: ['LifnrText']
   key Lifnr,
-      @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_NFENUM', element : 'nfenum' }}]
+      //      @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_NFENUM', element : 'nfenum' }}]
+      @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_MM_CADASTRO_FISCAL_VH_NFE', element : 'NrNf' }}]
   key NrNf,
       @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_CA_VH_EBELN', element : 'Ebeln' }}]
       Pedido,

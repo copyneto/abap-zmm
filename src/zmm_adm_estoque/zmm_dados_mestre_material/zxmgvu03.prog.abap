@@ -53,7 +53,7 @@ TRY.
 
     IF segment_name = lc_mbew.
 
-      lv_memory_id = |{ f_marm-matnr }{ sy-uname(4) }|.
+      lv_memory_id = |{ f_mbew-matnr }{ sy-uname(4) }|.
       IMPORT lv_werks TO lv_werks FROM DATABASE indx(zp) ID lv_memory_id.
       " Export no método ZCLMM_ATUAL_MAT_PALETIZACAO~ATUALIZA_MAT
 

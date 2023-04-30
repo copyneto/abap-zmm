@@ -57,13 +57,12 @@ FUNCTION zfmmm_trigger_matmas.
     ENDDO.
   ELSE.
     lv_found = abap_true.
-    WAIT UP TO 3 SECONDS.
+    WAIT UP TO 5 SECONDS.
   ENDIF.
 
   IF lv_found IS NOT INITIAL.
 
     FREE MEMORY ID 'TCODE_PALETIZACAO'.
-
     EXPORT iv_tcode TO MEMORY ID 'TCODE_PALETIZACAO'. " ZMMI_PALETIZACAO
 
     DATA(lo_process) = NEW zclmm_saga_atualiz_hierarquia( ).
@@ -76,7 +75,7 @@ FUNCTION zfmmm_trigger_matmas.
       WITH nomsg  EQ abap_true
 *            USER sy-uname
 *        VIA JOB lc_values-name NUMBER lv_number
-      AND RETURN.
+       AND RETURN.
   ENDIF.
 
 *  ENDIF.
