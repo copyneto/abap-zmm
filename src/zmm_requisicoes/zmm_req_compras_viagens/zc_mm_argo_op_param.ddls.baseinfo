@@ -3,6 +3,7 @@
 {
 "FROM":
 [
+"ZI_CA_VH_USER",
 "ZI_MM_ARGO_OP_PARAM"
 ],
 "ASSOCIATED":

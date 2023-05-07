@@ -1,32 +1,32 @@
-CLASS lcl_Oper DEFINITION INHERITING FROM cl_abap_behavior_handler.
+CLASS lcl_oper DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
 
-    METHODS checkDate FOR VALIDATE ON SAVE
-      IMPORTING keys FOR Oper~checkDate.
+    METHODS checkdate FOR VALIDATE ON SAVE
+      IMPORTING keys FOR oper~checkdate.
 
-    METHODS activateOper FOR MODIFY
-      IMPORTING keys FOR ACTION Oper~activateOper RESULT result.
+    METHODS activateoper FOR MODIFY
+      IMPORTING keys FOR ACTION oper~activateoper RESULT result.
 
-    METHODS deactivateOper FOR MODIFY
-      IMPORTING keys FOR ACTION Oper~deactivateOper RESULT result.
+    METHODS deactivateoper FOR MODIFY
+      IMPORTING keys FOR ACTION oper~deactivateoper RESULT result.
 
-    METHODS authorityCreate FOR VALIDATE ON SAVE
-      IMPORTING keys FOR Oper~authorityCreate.
+    METHODS authoritycreate FOR VALIDATE ON SAVE
+      IMPORTING keys FOR oper~authoritycreate.
 
     METHODS get_features FOR FEATURES
-      IMPORTING keys REQUEST requested_features FOR Oper RESULT result.
+      IMPORTING keys REQUEST requested_features FOR oper RESULT result.
 
     METHODS get_authorizations FOR AUTHORIZATION
-      IMPORTING keys REQUEST requested_authorizations FOR Oper RESULT result.
+      IMPORTING keys REQUEST requested_authorizations FOR oper RESULT result.
 
 ENDCLASS.
 
-CLASS lcl_Oper IMPLEMENTATION.
+CLASS lcl_oper IMPLEMENTATION.
 
-  METHOD checkDate.
+  METHOD checkdate.
 
     READ ENTITIES OF zi_mm_argo_op_param IN LOCAL MODE
-        ENTITY Oper
+        ENTITY oper
           FIELDS ( begda ) WITH CORRESPONDING #( keys )
             RESULT DATA(lt_argo).
 
@@ -34,16 +34,16 @@ CLASS lcl_Oper IMPLEMENTATION.
 
       CHECK ls_argo-begda < sy-datum.
 
-      APPEND VALUE #( %tky = ls_argo-%tky ) TO failed-Oper.
+      APPEND VALUE #( %tky = ls_argo-%tky ) TO failed-oper.
 
       APPEND VALUE #( %tky = ls_argo-%tky
-                      %msg = new_message( id = gc_msg_dateinvalid-id number = gc_msg_dateinvalid-number severity = if_abap_behv_message=>severity-error ) ) TO reported-Oper.
+                      %msg = new_message( id = gc_msg_dateinvalid-id number = gc_msg_dateinvalid-number severity = if_abap_behv_message=>severity-error ) ) TO reported-oper.
 
     ENDLOOP.
 
   ENDMETHOD.
 
-  METHOD activateOper.
+  METHOD activateoper.
 
     READ ENTITIES OF zi_mm_argo_op_param IN LOCAL MODE
     ENTITY oper
@@ -68,7 +68,7 @@ CLASS lcl_Oper IMPLEMENTATION.
 
   ENDMETHOD.
 
-  METHOD deactivateOper.
+  METHOD deactivateoper.
 
     READ ENTITIES OF zi_mm_argo_op_param IN LOCAL MODE
       ENTITY oper
@@ -96,55 +96,62 @@ CLASS lcl_Oper IMPLEMENTATION.
   METHOD get_features.
 
     READ ENTITIES OF zi_mm_argo_op_param IN LOCAL MODE
-        ENTITY Oper
+        ENTITY oper
           FIELDS ( active ) WITH CORRESPONDING #( keys )
             RESULT DATA(lt_argo).
 
     result = VALUE #( FOR ls_argo IN lt_argo
                          ( %tky = ls_argo-%tky
-                           %action-deactivateOper =  COND #( WHEN ls_argo-active = abap_true THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled )
-                           %action-activateOper =  COND #( WHEN ls_argo-active = abap_false THEN if_abap_behv=>fc-o-enabled ELSE if_abap_behv=>fc-o-disabled ) )
+                           %action-deactivateoper =  COND #( WHEN ls_argo-active = abap_true
+                                                               THEN if_abap_behv=>fc-o-enabled
+                                                             ELSE if_abap_behv=>fc-o-disabled )
+                           %action-activateoper =  COND #( WHEN ls_argo-active = abap_false
+                                                            AND ls_argo-begda >= sy-datum
+                                                             THEN if_abap_behv=>fc-o-enabled
+                                                           ELSE if_abap_behv=>fc-o-disabled ) )
                       ).
 
   ENDMETHOD.
 
   METHOD get_authorizations.
 
-    READ ENTITIES OF zi_mm_argo_op_param IN LOCAL MODE
-        ENTITY Oper
-        ALL FIELDS WITH CORRESPONDING #( keys )
-        RESULT DATA(lt_data)
-        FAILED failed.
+    RETURN.
 
-    CHECK lt_data IS NOT INITIAL.
-
-    DATA: lv_update TYPE if_abap_behv=>t_xflag,
-          lv_delete TYPE if_abap_behv=>t_xflag.
-
-    LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<fs_data>).
-
-      IF requested_authorizations-%update EQ if_abap_behv=>mk-on.
-
-        IF zclmm_auth_zmmmtable=>update( gc_table ).
-          lv_update = if_abap_behv=>auth-allowed.
-        ELSE.
-          lv_update = if_abap_behv=>auth-unauthorized.
-        ENDIF.
-
-      ENDIF.
-
-      APPEND VALUE #( %tky = <fs_data>-%tky %update = lv_update ) TO result.
-
-    ENDLOOP.
+*    READ ENTITIES OF zi_mm_argo_op_param IN LOCAL MODE
+*        ENTITY Oper
+*        ALL FIELDS WITH CORRESPONDING #( keys )
+*        RESULT DATA(lt_data)
+*        FAILED failed.
+*
+*    CHECK lt_data IS NOT INITIAL.
+*
+*    DATA: lv_update TYPE if_abap_behv=>t_xflag,
+*          lv_delete TYPE if_abap_behv=>t_xflag.
+*
+*    LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<fs_data>).
+*
+*      IF requested_authorizations-%update EQ if_abap_behv=>mk-on.
+*
+*        IF zclmm_auth_zmmmtable=>update( gc_table ).
+*          lv_update = if_abap_behv=>auth-allowed.
+*        ELSE.
+*          lv_update = if_abap_behv=>auth-unauthorized.
+*        ENDIF.
+*
+*      ENDIF.
+*
+*      APPEND VALUE #( %tky = <fs_data>-%tky %update = lv_update ) TO result.
+*
+*    ENDLOOP.
 
   ENDMETHOD.
 
-  METHOD authorityCreate.
+  METHOD authoritycreate.
 
     CONSTANTS lc_area TYPE string VALUE 'VALIDATE_CREATE'.
 
     READ ENTITIES OF zi_mm_argo_op_param IN LOCAL MODE
-        ENTITY Oper
+        ENTITY oper
         ALL FIELDS WITH CORRESPONDING #( keys )
         RESULT DATA(lt_data).
 

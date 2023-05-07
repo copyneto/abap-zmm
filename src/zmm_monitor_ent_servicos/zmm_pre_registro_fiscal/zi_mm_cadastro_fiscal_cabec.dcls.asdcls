@@ -6,6 +6,7 @@ define role ZI_MM_CADASTRO_FISCAL_CABEC {
             on
                 ZI_MM_CADASTRO_FISCAL_CABEC
                     where
-                        ( Empresa ) = aspect pfcg_auth(ZMMBUKRS, BUKRS, ACTVT = '03');
+                        ( Empresa ) = aspect pfcg_auth(ZMMBUKRS, BUKRS, ACTVT = '03') or
+                        ( Empresa = '' );
                         
 }

@@ -17,7 +17,10 @@ define root view entity ZI_MM_CONF_PROD
     left outer join ztmm_paletizacao as e on  a.matnr = e.material
                                           and a.werks = e.centro
     left outer join t179             as f on b.prdha = f.prodh
-    left outer join t179t            as g on f.prodh = g.prodh
+    left outer join ZI_MM_CONF_PROD_HIERA as g on g.prodh = f.prodh 
+    left outer join t179t            as h on h.prodh = g.prodh
+    left outer join t179t            as i on i.prodh = g.herar1
+    left outer join t179t            as j on j.prodh = g.herar2
 
 {
   key a.werks,
@@ -38,9 +41,9 @@ define root view entity ZI_MM_CONF_PROD
       //      @Semantics.quantity.unitOfMeasure: 'z_unit'
       cast( e.z_altura as abap.dec( 13, 3 ) ) as z_altura,
       e.z_unit,
-      g.vtext                                 as VTEXT1,
-      g.vtext                                 as VTEXT2,
-      g.vtext                                 as VTEXT3,
+      i.vtext                                 as VTEXT1,
+      j.vtext                                 as VTEXT2,
+      h.vtext                                 as VTEXT3,
 
       case
       when d.umren > 1

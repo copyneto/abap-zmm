@@ -2961,6 +2961,13 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 
       ls_historico->guid = lv_guid.
       ADD 1 TO lv_count.
+
+      ls_historico->created_by      = sy-uname.
+      ls_historico->last_changed_by = sy-uname.
+      GET TIME STAMP FIELD ls_historico->created_at.
+      GET TIME STAMP FIELD ls_historico->last_changed_at.
+      GET TIME STAMP FIELD ls_historico->local_last_changed_at.
+
     ENDLOOP.
 
 * ---------------------------------------------------------------------------
@@ -3379,6 +3386,10 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
         ls_historico->in_br_nota_fiscal        = ls_lin_in-docnum.
         ls_historico->in_br_nota_fiscal_item   = ls_lin_in-itmnum.
       ENDIF.
+
+      ls_historico->last_changed_by = sy-uname.
+      GET TIME STAMP FIELD ls_historico->last_changed_at.
+      GET TIME STAMP FIELD ls_historico->local_last_changed_at.
 
     ENDLOOP.
 
@@ -3954,6 +3965,10 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
         ls_historico->order_quantity            = ls_item-quantity.
         ls_historico->order_quantity_unit       = ls_item-po_unit.
 
+        ls_historico->last_changed_by = sy-uname.
+        GET TIME STAMP FIELD ls_historico->last_changed_at.
+        GET TIME STAMP FIELD ls_historico->local_last_changed_at.
+
       ENDLOOP.
 
     ENDLOOP.
@@ -4269,6 +4284,11 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
                                      ct_msg    = ct_msg ).
 
         ENDIF.
+
+        ls_historico->last_changed_by = sy-uname.
+        GET TIME STAMP FIELD ls_historico->last_changed_at.
+        GET TIME STAMP FIELD ls_historico->local_last_changed_at.
+
       ENDLOOP.
 
     ENDLOOP.
@@ -4325,6 +4345,11 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
                                                              ELSE ls_lips-posnr ).
           ls_historico->out_sales_order      = ls_lips-vgbel.
           ls_historico->out_sales_order_item = ls_lips-vgpos.
+
+          ls_historico->last_changed_by = sy-uname.
+          GET TIME STAMP FIELD ls_historico->last_changed_at.
+          GET TIME STAMP FIELD ls_historico->local_last_changed_at.
+
         ENDIF.
       ENDLOOP.
     ENDLOOP.
@@ -4921,10 +4946,12 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 
         ENDIF.
 
+        ls_historico->last_changed_by = sy-uname.
+        GET TIME STAMP FIELD ls_historico->last_changed_at.
+        GET TIME STAMP FIELD ls_historico->local_last_changed_at.
+
       ENDLOOP.
-
     ENDLOOP.
-
   ENDMETHOD.
 
 
@@ -7052,22 +7079,26 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 
     INSERT LINES OF lt_return[] INTO TABLE et_return[].
 
-
 * ---------------------------------------------------------------------------
 * Salva dados job_saida_mercadoria
 * ---------------------------------------------------------------------------
     LOOP AT lt_historico_com_transp ASSIGNING FIELD-SYMBOL(<fs_historico_com_transp>).
-      IF <fs_historico_com_transp>-status = gc_status-ordem_frete_job AND
-         <fs_historico_com_transp>-out_delivery_document IS NOT INITIAL.
+
+      IF <fs_historico_com_transp>-status = gc_status-ordem_frete_job
+     AND <fs_historico_com_transp>-out_delivery_document IS NOT INITIAL.
+
         SELECT COUNT(*) FROM vbuk
           WHERE vbeln = @<fs_historico_com_transp>-out_delivery_document
             AND kostk = 'C'.
+
         IF sy-subrc = 0.
-          <fs_historico_com_transp>-status = gc_status-em_transito.
+          <fs_historico_com_transp>-status          = gc_status-em_transito.
+          <fs_historico_com_transp>-last_changed_by = sy-uname.
+          GET TIME STAMP FIELD <fs_historico_com_transp>-last_changed_at.
+          GET TIME STAMP FIELD <fs_historico_com_transp>-local_last_changed_at.
         ENDIF.
       ENDIF.
     ENDLOOP.
-
 
     CLEAR lt_historico.
     APPEND LINES OF lt_historico_sem_transp TO lt_historico.
@@ -7079,7 +7110,6 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
                               IMPORTING et_return    = lt_return ).
 
     INSERT LINES OF lt_return[] INTO TABLE et_return[].
-
 
   ENDMETHOD.
 
@@ -7188,6 +7218,12 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 
       ls_historico->guid = lv_guid.
       ADD 1 TO lv_count.
+
+      ls_historico->created_by      = sy-uname.
+      ls_historico->last_changed_by = sy-uname.
+      GET TIME STAMP FIELD ls_historico->created_at.
+      GET TIME STAMP FIELD ls_historico->last_changed_at.
+      GET TIME STAMP FIELD ls_historico->local_last_changed_at.
 
       CLEAR: ls_historico->purchase_order,
              ls_historico->purchase_order_item,

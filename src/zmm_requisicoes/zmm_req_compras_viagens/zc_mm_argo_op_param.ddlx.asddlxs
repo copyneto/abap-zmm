@@ -2,11 +2,36 @@
 @UI: { headerInfo: { typeName: 'Operacao ARGO',
                      typeNamePlural: 'Operacoes ARGO' },
        presentationVariant: [{ sortOrder: [{ by: 'CreatedAt', direction: #DESC } ] }] }
+
+@UI.lineItem: [{criticality: 'StatusCriticality' }]
 annotate view ZC_MM_ARGO_OP_PARAM with
 {
 
-  @UI.facet: [{ id: 'Oper', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Parâmetros', position: 10 },
-              { id: 'StatusHeader', purpose: #HEADER, type: #DATAPOINT_REFERENCE, targetQualifier: 'StatusHeader', position: 20 }]
+  @UI.facet: [{ id:      'Oper',
+                purpose: #STANDARD,
+                type:    #IDENTIFICATION_REFERENCE,
+                label:   'Parâmetros',
+                position: 10 },
+
+              { id:              'StatusHeader',
+                purpose:         #HEADER,
+                type:            #DATAPOINT_REFERENCE,
+                targetQualifier: 'StatusHeader',
+                position:        20 },
+
+              { id:                'Facet',
+                purpose:           #STANDARD,
+                type:              #COLLECTION,
+                label:             'Modificações',
+                position:          30 },
+
+              { id:              'Modificar',
+                purpose:         #STANDARD,
+                type:            #FIELDGROUP_REFERENCE,
+  //                label:           'Dados Modificação',
+                parentId:        'Facet',
+                targetQualifier: 'Modificar',
+                position:        30 }]
 
   @UI:{ lineItem: [{ position: 10 }], identification: [{ position: 10 }], selectionField: [{ position: 10 }] }
   Operacao;
@@ -22,5 +47,16 @@ annotate view ZC_MM_ARGO_OP_PARAM with
                         { type: #FOR_ACTION, dataAction: 'deactivateOper', label: 'Desativar' }],
       dataPoint: { qualifier: 'StatusHeader', title: 'Ativo', criticality: 'StatusCriticality'  } }
   Active;
+
+  @UI.fieldGroup: [{ position: 10, qualifier: 'Modificar' }]
+  CreatedBy;
+  @UI.fieldGroup: [{ position: 20, qualifier: 'Modificar' }]
+  CreatedAt;
+  @UI.fieldGroup: [{ position: 30, qualifier: 'Modificar' }]
+  LastChangedBy;
+  @UI.fieldGroup: [{ position: 40, qualifier: 'Modificar' }]
+  LastChangedAt;
+  @UI.fieldGroup: [{ position: 50, qualifier: 'Modificar' }]
+  LocalLastChangedAt;
 
 }

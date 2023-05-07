@@ -3,6 +3,7 @@
 {
 "FROM":
 [
+"ZI_MM_CONF_PROD_HIERA",
 "MAKT",
 "MARA",
 "MARC",

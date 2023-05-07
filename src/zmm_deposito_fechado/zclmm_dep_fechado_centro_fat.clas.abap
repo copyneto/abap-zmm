@@ -105,26 +105,26 @@ CLASS ZCLMM_DEP_FECHADO_CENTRO_FAT IMPLEMENTATION.
            dep~avaliblestock AS available_stock,
            dep~avaliblestock AS used_stock,
            dep~avaliblestock AS used_stock_conv,
-           his_dep_fec~purchase_order AS purchase_order,
-           his_dep_fec~purchase_order_item AS purchase_order_item,
-           his_dep_fec~guid AS guid,
-           his_dep_fec~out_sales_order,
-           his_dep_fec~out_sales_order_item ,
-           his_dep_fec~out_delivery_document,
-           his_dep_fec~out_delivery_document_item ,
-           his_dep_fec~out_material_document  ,
-           his_dep_fec~out_material_document_year ,
-           his_dep_fec~out_material_document_item ,
-           his_dep_fec~out_br_nota_fiscal  ,
-           his_dep_fec~out_br_nota_fiscal_item  ,
-           his_dep_fec~rep_br_nota_fiscal ,
-           his_dep_fec~in_delivery_document  ,
-           his_dep_fec~in_delivery_document_item ,
-           his_dep_fec~in_material_document  ,
-           his_dep_fec~in_material_document_year  ,
-           his_dep_fec~in_material_document_item  ,
-           his_dep_fec~in_br_nota_fiscal  ,
-           his_dep_fec~in_br_nota_fiscal_item
+           CAST( ' ' AS CHAR( 10 ) ) AS purchase_order,
+           CAST( '00000' AS NUMC( 5 ) ) AS purchase_order_item,
+           CAST( conf~guid AS RAW( 16 ) ) AS guid,
+           CAST( ' ' AS CHAR( 10 ) ) AS out_sales_order,
+           CAST( '000000' AS NUMC( 6 ) ) AS out_sales_order_item,
+           CAST( ' ' AS CHAR( 10 ) ) AS out_delivery_document,
+           CAST( '000000' AS NUMC( 6 ) ) AS out_delivery_document_item,
+           CAST( ' ' AS CHAR( 10 ) ) AS out_material_document,
+           CAST( '0000' AS NUMC( 4 ) ) AS out_material_document_year,
+           CAST( '0000' AS NUMC( 4 ) ) AS out_material_document_item,
+           CAST( '0000000000' AS NUMC( 10 ) ) AS out_br_nota_fiscal,
+           CAST( '000000' AS NUMC( 6 ) ) AS out_br_nota_fiscal_item,
+           CAST( '0000000000' AS NUMC( 10 ) ) AS rep_br_nota_fiscal,
+           CAST( ' ' AS CHAR( 10 ) ) AS in_delivery_document,
+           CAST( '000000' AS NUMC( 6 ) ) AS in_delivery_document_item,
+           CAST( ' ' AS CHAR( 10 ) ) AS in_material_document,
+           CAST( '0000' AS NUMC( 4 ) ) AS in_material_document_year,
+           CAST( '0000' AS NUMC( 4 ) ) AS in_material_document_item,
+           CAST( '0000000000' AS NUMC( 10 ) ) AS in_br_nota_fiscal,
+           CAST( '000000' AS NUMC( 6 ) ) AS in_br_nota_fiscal_item
       FROM ztmm_prm_dep_fec AS conf
       LEFT JOIN zi_mm_mard_armazenagem_agr AS dep
              ON dep~werks = conf~origin_plant
@@ -132,17 +132,17 @@ CLASS ZCLMM_DEP_FECHADO_CENTRO_FAT IMPLEMENTATION.
       LEFT JOIN zi_mm_df_material_unidade AS mat_unid
              ON mat_unid~material = dep~matnr
             AND mat_unid~plant    = dep~werks
-      LEFT JOIN ztmm_his_dep_fec AS his_dep_fec
-             ON his_dep_fec~material              = dep~matnr
-            AND his_dep_fec~plant                 = conf~origin_plant
-            AND his_dep_fec~storage_location      = conf~origin_storage_location
-            AND his_dep_fec~batch                 = dep~charg
-            AND his_dep_fec~plant_dest            = conf~destiny_plant
-            AND his_dep_fec~storage_location_dest = conf~destiny_storage_location
-            AND his_dep_fec~origin_unit           = mat_unid~originunit
-            AND his_dep_fec~unit                  = mat_unid~unit
-            AND his_dep_fec~used_stock            = dep~avaliblestock
-            AND his_dep_fec~process_step          = @is_dados_filtro-process_step
+*      LEFT JOIN ztmm_his_dep_fec AS his_dep_fec
+*             ON his_dep_fec~material              = dep~matnr
+*            AND his_dep_fec~plant                 = conf~origin_plant
+*            AND his_dep_fec~storage_location      = conf~origin_storage_location
+*            AND his_dep_fec~batch                 = dep~charg
+*            AND his_dep_fec~plant_dest            = conf~destiny_plant
+*            AND his_dep_fec~storage_location_dest = conf~destiny_storage_location
+*            AND his_dep_fec~origin_unit           = mat_unid~originunit
+*            AND his_dep_fec~unit                  = mat_unid~unit
+*            AND his_dep_fec~used_stock            = dep~avaliblestock
+*            AND his_dep_fec~process_step          = @is_dados_filtro-process_step
      WHERE conf~origin_plant_type      = @lv_tipo_centro_origem
        AND dep~avaliblestock             > 0
        AND mat_unid~eantype              = '00'
@@ -163,11 +163,33 @@ CLASS ZCLMM_DEP_FECHADO_CENTRO_FAT IMPLEMENTATION.
 
     IF rt_retorno IS NOT INITIAL.
       LOOP AT rt_retorno ASSIGNING FIELD-SYMBOL(<fs_retorno>).
+
+        " Limpando os espaços
+        CLEAR: <fs_retorno>-purchase_order,
+               <fs_retorno>-purchase_order_item,
+               <fs_retorno>-guid,
+               <fs_retorno>-out_sales_order,
+               <fs_retorno>-out_sales_order_item,
+               <fs_retorno>-out_delivery_document,
+               <fs_retorno>-out_delivery_document_item,
+               <fs_retorno>-out_material_document,
+               <fs_retorno>-out_material_document_year,
+               <fs_retorno>-out_material_document_item,
+               <fs_retorno>-out_br_nota_fiscal,
+               <fs_retorno>-out_br_nota_fiscal_item,
+               <fs_retorno>-rep_br_nota_fiscal,
+               <fs_retorno>-in_delivery_document,
+               <fs_retorno>-in_delivery_document_item,
+               <fs_retorno>-in_material_document,
+               <fs_retorno>-in_material_document_year,
+               <fs_retorno>-in_material_document_item,
+               <fs_retorno>-in_br_nota_fiscal,
+               <fs_retorno>-in_br_nota_fiscal_item.
+
         <fs_retorno>-process_step = is_dados_filtro-process_step.
       ENDLOOP.
-
-      MODIFY ztmm_his_dep_fec FROM  TABLE rt_retorno.
-      WAIT UP TO 4 SECONDS.
+*      MODIFY ztmm_his_dep_fec FROM  TABLE rt_retorno.
+*      WAIT UP TO 4 SECONDS.
     ENDIF.
   ENDMETHOD.
 ENDCLASS.

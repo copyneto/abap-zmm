@@ -6,6 +6,6 @@ define role ZI_MM_PARAM_MON_SERV {
             on
                 ZI_MM_PARAM_MON_SERV
                     where
-                        ( Werks ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
-                        
+                        ( Werks ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' ) or
+                        ( Werks = '' );
 }

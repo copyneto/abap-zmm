@@ -7,14 +7,14 @@ authorization master ( instance )
 etag master LocalLastChangedAt
 {
   create;
-  update;
+  //  update;
 
   field ( readonly ) Active, CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
-  field ( readonly : update ) Operacao, Matnr;
+  //  field ( readonly : update ) Operacao, Matnr, Begda;
   field ( mandatory : create ) Operacao, Matnr, Begda;
 
   validation authorityCreate on save { create; }
-  validation checkDate on save { create; update; }
+  validation checkDate on save { create; }
 
   action ( features : instance ) activateOper result [1] $self;
   action ( features : instance ) deactivateOper result [1] $self;

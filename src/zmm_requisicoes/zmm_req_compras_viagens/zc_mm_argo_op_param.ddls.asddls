@@ -14,11 +14,15 @@ define root view entity ZC_MM_ARGO_OP_PARAM
       StatusCriticality,
       MatnrText,
       OperText,
+      @ObjectModel.text.element: ['CreatName']
       CreatedBy,
       CreatedAt,
+      @ObjectModel.text.element: ['ModName']
       LastChangedBy,
       LastChangedAt,
       LocalLastChangedAt,
+      _UsrCret.Text as CreatName,
+      _UsrMod.Text  as ModName,
       /* Associations */
       _Mara,
       _Oper
