@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMMM_GERAR_NF_INVENTARIO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Gerar Nota Fiscal - Inventário</SHORT_TEXT>
      <TABLES>
       <RSTBL>
        <PARAMETER>IT_MSEG</PARAMETER>
@@ -28,19 +27,16 @@
       <RSFDO>
        <PARAMETER>IT_MSEG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Segmento de documento - material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_MKPF</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Cabeçalho do documento do material</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMM_INVENTARIO_LIBERAR</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Cockpit de Inventário - Inicia processo de inventário</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCUMENTID</PARAMETER>
@@ -57,12 +53,10 @@
       <RSFDO>
        <PARAMETER>IV_DOCUMENTID</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

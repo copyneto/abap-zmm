@@ -3,7 +3,6 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFMM_PEDIDO_COMPRA</FORMNAME>
-   <CAPTION>Pedido de compra</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -359,7 +358,6 @@
            <NAME>
             <INAME>PRINCIPAL</INAME>
            </NAME>
-           <CAPTION>Principal</CAPTION>
            <NEXTPAGE>
             <INAME>PRINCIPAL</INAME>
            </NEXTPAGE>
@@ -380,7 +378,6 @@
              <NAME>
               <INAME>%GRAPHIC1</INAME>
              </NAME>
-             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
               <BTYPE>BCOL</BTYPE>
@@ -421,7 +418,6 @@
               <NAME>
                <INAME>HEADER</INAME>
               </NAME>
-              <CAPTION>Cabeçalho principal</CAPTION>
               <WTYPE>T</WTYPE>
               <WCOPYMODE>1</WCOPYMODE>
               <T_CAPTION>
@@ -445,7 +441,6 @@
                      <NAME>
                       <INAME>HEADER</INAME>
                      </NAME>
-                     <CAPTION>Cabeçalho do Pedido</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -689,7 +684,6 @@
                         <NAME>
                          <INAME>CONDITION_LOGO</INAME>
                         </NAME>
-                        <CAPTION>Condição para LOGO Empresa</CAPTION>
                         <COND>
                          <item>
                           <COP>NE</COP>
@@ -725,7 +719,6 @@
                            <NAME>
                             <INAME>%EVENT1</INAME>
                            </NAME>
-                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -747,7 +740,6 @@
                               <NAME>
                                <INAME>LOGO_3C</INAME>
                               </NAME>
-                              <CAPTION>3Corações</CAPTION>
                               <RESOLUTION>0100</RESOLUTION>
                               <GTYPE>B</GTYPE>
                               <GKEYBDS>
@@ -793,7 +785,6 @@
                            <NAME>
                             <INAME>%EVENT2</INAME>
                            </NAME>
-                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -815,7 +806,6 @@
                               <NAME>
                                <INAME>CONDITION_LOGO2</INAME>
                               </NAME>
-                              <CAPTION>Condição para LOGO Empresa</CAPTION>
                               <COND>
                                <item>
                                 <COP>EQ</COP>
@@ -844,7 +834,6 @@
                                  <NAME>
                                   <INAME>%EVENT18</INAME>
                                  </NAME>
-                                 <CAPTION>TRUE</CAPTION>
                                  <EVTYPE>+</EVTYPE>
                                  <T_CAPTION>
                                   <item>
@@ -866,7 +855,6 @@
                                     <NAME>
                                      <INAME>LOGO_3CAF</INAME>
                                     </NAME>
-                                    <CAPTION>3CAF</CAPTION>
                                     <RESOLUTION>0100</RESOLUTION>
                                     <GTYPE>B</GTYPE>
                                     <GKEYBDS>
@@ -912,7 +900,6 @@
                                  <NAME>
                                   <INAME>%EVENT19</INAME>
                                  </NAME>
-                                 <CAPTION>FALSE</CAPTION>
                                  <EVTYPE>-</EVTYPE>
                                  <T_CAPTION>
                                   <item>
@@ -934,7 +921,6 @@
                                     <NAME>
                                      <INAME>LOGO_POSB</INAME>
                                     </NAME>
-                                    <CAPTION>POSB</CAPTION>
                                     <RESOLUTION>0100</RESOLUTION>
                                     <GTYPE>B</GTYPE>
                                     <GKEYBDS>
@@ -989,7 +975,6 @@
                         <NAME>
                          <INAME>EMPRESA</INAME>
                         </NAME>
-                        <CAPTION>Dados da empresa</CAPTION>
                         <APPMODE>P</APPMODE>
                         <TEXT>
                          <item>
@@ -1015,7 +1000,7 @@
                           <TDLINE>&lt;CR&gt;&amp;IS_EMPRESA-CABECALHO-CITY1&amp; - &amp;IS_EMPRESA-CABECALHO-REGION&amp; -</TDLINE>
                          </item>
                          <item>
-                          <TDLINE>&amp;IS_EMPRESA-CABECALHO-COUNTRY&amp; | &lt;/&gt;&lt;CN&gt;CEP:&lt;/&gt; &lt;CR&gt;</TDLINE>
+                          <TDLINE>&amp;IS_EMPRESA-CABECALHO-COUNTRY&amp; &lt;/&gt;&lt;/&gt;&lt;CR&gt;| &lt;/&gt;&lt;CN&gt;Postal Code:&lt;/&gt; &lt;CR&gt;</TDLINE>
                          </item>
                          <item>
                           <TDFORMAT>=</TDFORMAT>
@@ -1023,17 +1008,18 @@
                          </item>
                          <item>
                           <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;CN&gt;CNPJ: &lt;/&gt;&lt;CR&gt;&amp;IS_EMPRESA-KNA1-STCD1&amp; | &lt;/&gt;&lt;CN&gt;CGF: &lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;CN&gt;CNPJ: &lt;/&gt;&lt;CR&gt;&amp;IS_EMPRESA-KNA1-STCD1&amp;&lt;/&gt;&lt;CR&gt; | &lt;/&gt;&lt;CN&gt;CGF: &lt;/&gt;&lt;CR&gt;</TDLINE>
                          </item>
                          <item>
                           <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&lt;CR&gt;&amp;IS_EMPRESA-KNA1-STCD3&amp;&lt;/&gt;</TDLINE>
+                          <TDLINE>&amp;IS_EMPRESA-KNA1-STCD3&amp;&lt;/&gt;</TDLINE>
                          </item>
                          <item>
                           <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;CN&gt;FONE:&lt;/&gt;&lt;CR&gt; &amp;IS_EMPRESA-CABECALHO-TEL_NUMBER&amp; | &lt;/&gt;&lt;CN&gt;FAX:&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;CN&gt;PHONE:&lt;/&gt;&lt;CR&gt; &amp;IS_EMPRESA-CABECALHO-TEL_NUMBER&amp; | &lt;/&gt;&lt;CN&gt;FAX:&lt;/&gt;</TDLINE>
                          </item>
                          <item>
+                          <TDFORMAT>=</TDFORMAT>
                           <TDLINE>&lt;CR&gt;&amp;IS_EMPRESA-CABECALHO-FAX_NUMBER&amp;&lt;/&gt;</TDLINE>
                          </item>
                         </TEXT>
@@ -1350,7 +1336,6 @@
                         <NAME>
                          <INAME>EMPRESA_02</INAME>
                         </NAME>
-                        <CAPTION>Infor. Fiscais</CAPTION>
                         <APPMODE>P</APPMODE>
                         <TEXT>
                          <item>
@@ -1361,11 +1346,11 @@
                          </item>
                          <item>
                           <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;CN&gt;INSC. ESTADUAL:&lt;/&gt; &lt;CR&gt;,,&amp;IS_EMPRESA-KNA1-STCD3&amp;&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;CN&gt;STATE REGISTRATION:&lt;/&gt; &lt;CR&gt;,,&amp;IS_EMPRESA-KNA1-STCD3&amp;&lt;/&gt;</TDLINE>
                          </item>
                          <item>
                           <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;CN&gt;INSC. MUNICIPAL:&lt;/&gt;,,&lt;CR&gt;&amp;IS_EMPRESA-KNA1-STCD4&amp;&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;CN&gt;MUNICIPAL REGISTRATION:&lt;/&gt;,,&lt;CR&gt;&amp;IS_EMPRESA-KNA1-STCD4&amp;&lt;/&gt;</TDLINE>
                          </item>
                         </TEXT>
                         <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -1540,7 +1525,6 @@
                         <NAME>
                          <INAME>PEDIDO</INAME>
                         </NAME>
-                        <CAPTION>Pedido de compra</CAPTION>
                         <APPMODE>P</APPMODE>
                         <TEXT>
                          <item>
@@ -1548,21 +1532,21 @@
                          </item>
                          <item>
                           <TDFORMAT>PC</TDFORMAT>
-                          <TDLINE>&lt;GD&gt;Pedido&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;CT&gt;&lt;CS&gt;&lt;GD&gt;PURCHASE ORDER&lt;/&gt;&lt;/&gt;&lt;/&gt;</TDLINE>
                          </item>
                          <item>
                           <TDFORMAT>PC</TDFORMAT>
                          </item>
                          <item>
                           <TDFORMAT>PC</TDFORMAT>
-                          <TDLINE>&lt;GD&gt;&amp;IS_PEDIDO-XEKKO-EBELN&amp;&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;CT&gt;&lt;CS&gt;&lt;GD&gt;&amp;IS_PEDIDO-XEKKO-EBELN&amp;&lt;/&gt;&lt;/&gt;&lt;/&gt;</TDLINE>
                          </item>
                          <item>
                           <TDFORMAT>*</TDFORMAT>
                          </item>
                          <item>
                           <TDFORMAT>PC</TDFORMAT>
-                          <TDLINE>&lt;CM&gt;Emissão: &amp;IS_PEDIDO-XEKKO-AEDAT&amp;&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;CT&gt;&lt;CS&gt;&lt;GD&gt;&lt;CN&gt;&lt;CM&gt;Date: &amp;IS_PEDIDO-XEKKO-AEDAT&amp;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;</TDLINE>
                          </item>
                         </TEXT>
                         <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -1858,7 +1842,6 @@
               <NAME>
                <INAME>ENDERECO</INAME>
               </NAME>
-              <CAPTION>Dados do fornecedor/faturament</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -1881,12 +1864,11 @@
                      <NAME>
                       <INAME>FORNECEDOR</INAME>
                      </NAME>
-                     <CAPTION>FORNECEDOR</CAPTION>
                      <APPMODE>P</APPMODE>
                      <TEXT>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;GD&gt;&lt;CM&gt;FORNECEDOR&lt;/&gt;&lt;/&gt;</TDLINE>
+                       <TDLINE>&lt;GD&gt;&lt;CM&gt;EXPORTER&lt;/&gt;&lt;/&gt;</TDLINE>
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
@@ -1956,7 +1938,6 @@
                      <NAME>
                       <INAME>FORNECEDOR</INAME>
                      </NAME>
-                     <CAPTION>FORNECEDOR</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <TABHTYPE>I</TABHTYPE>
                      <OTABTYPE>D</OTABTYPE>
@@ -2506,7 +2487,6 @@
                         <NAME>
                          <INAME>%EVENT3</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -2530,7 +2510,6 @@
                         <NAME>
                          <INAME>%EVENT4</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -2552,7 +2531,6 @@
                            <NAME>
                             <INAME>FORNECEDOR_LINHA1</INAME>
                            </NAME>
-                           <CAPTION>Linha 1</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -2658,7 +2636,6 @@
                               <NAME>
                                <INAME>F_NOMERAZAOSOCIAL</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -2763,12 +2740,11 @@
                                  <NAME>
                                   <INAME>F_NOMERAZAOSOCIAL</INAME>
                                  </NAME>
-                                 <CAPTION>Nome / Razão Social</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Nome / Razão Social&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CN&gt;&lt;CC&gt;Name&lt;/&gt;&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -2844,7 +2820,6 @@
                               <NAME>
                                <INAME>F_CNPJ</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -2949,12 +2924,11 @@
                                  <NAME>
                                   <INAME>F_CNPJ</INAME>
                                  </NAME>
-                                 <CAPTION>CNPJ</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;CNPJ&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Tax Identification Number&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -3033,7 +3007,6 @@
                            <NAME>
                             <INAME>FORNECEDOR_LINHA2</INAME>
                            </NAME>
-                           <CAPTION>Linha 2</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -3139,7 +3112,6 @@
                               <NAME>
                                <INAME>F_ENDERECO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -3244,12 +3216,11 @@
                                  <NAME>
                                   <INAME>F_ENDERECO</INAME>
                                  </NAME>
-                                 <CAPTION>Endereço</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Endereço&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Adress&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -3347,7 +3318,6 @@
                               <NAME>
                                <INAME>F_BAIRRO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -3452,12 +3422,11 @@
                                  <NAME>
                                   <INAME>F_BAIRRO</INAME>
                                  </NAME>
-                                 <CAPTION>Bairro</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Bairro&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;District&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -3533,7 +3502,6 @@
                               <NAME>
                                <INAME>F_CEP</INAME>
                               </NAME>
-                              <CAPTION>Coluna 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -3638,12 +3606,11 @@
                                  <NAME>
                                   <INAME>F_CEP</INAME>
                                  </NAME>
-                                 <CAPTION>CEP</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;CEP&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Postal Code&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -3722,7 +3689,6 @@
                            <NAME>
                             <INAME>FORNECEDOR_LINHA3</INAME>
                            </NAME>
-                           <CAPTION>Linha 3</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -3828,7 +3794,6 @@
                               <NAME>
                                <INAME>F_MUNICIPIO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -3933,12 +3898,11 @@
                                  <NAME>
                                   <INAME>F_MUNICIPIO</INAME>
                                  </NAME>
-                                 <CAPTION>Município</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Município&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;City&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -4014,7 +3978,6 @@
                               <NAME>
                                <INAME>F_TELEFONE</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -4119,12 +4082,11 @@
                                  <NAME>
                                   <INAME>F_TELEFONE</INAME>
                                  </NAME>
-                                 <CAPTION>Fone / FAX</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Fone / FAX&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Phone / FAX&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -4200,7 +4162,6 @@
                               <NAME>
                                <INAME>F_UF</INAME>
                               </NAME>
-                              <CAPTION>Coluna 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -4305,12 +4266,11 @@
                                  <NAME>
                                   <INAME>F_UF</INAME>
                                  </NAME>
-                                 <CAPTION>UF</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;UF&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;C1&gt;&lt;CC&gt;State&lt;/&gt;&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -4386,7 +4346,6 @@
                               <NAME>
                                <INAME>F_PAIS</INAME>
                               </NAME>
-                              <CAPTION>Coluna 4</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -4491,12 +4450,11 @@
                                  <NAME>
                                   <INAME>F_PAIS</INAME>
                                  </NAME>
-                                 <CAPTION>País</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;País&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Country&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -4572,7 +4530,6 @@
                               <NAME>
                                <INAME>F_IE</INAME>
                               </NAME>
-                              <CAPTION>Coluna 5</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -4677,7 +4634,6 @@
                                  <NAME>
                                   <INAME>F_IE</INAME>
                                  </NAME>
-                                 <CAPTION>Inscrição Estadual</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -4764,7 +4720,6 @@
                         <NAME>
                          <INAME>%EVENT5</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -4791,7 +4746,6 @@
                      <NAME>
                       <INAME>DADOS_DE_FATURAMENTO</INAME>
                      </NAME>
-                     <CAPTION>DADOS DE FATURAMENTO</CAPTION>
                      <APPMODE>P</APPMODE>
                      <TEXT>
                       <item>
@@ -4799,7 +4753,7 @@
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CM&gt;DADOS DE FATURAMENTO&lt;/&gt;</TDLINE>
+                       <TDLINE>&lt;CM&gt;INVOICE TO&lt;/&gt;</TDLINE>
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
@@ -4885,7 +4839,6 @@
                      <NAME>
                       <INAME>DADOS_DE_FATURAMENTO</INAME>
                      </NAME>
-                     <CAPTION>DADOS DE FATURAMENTO</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <TABHTYPE>I</TABHTYPE>
                      <OTABTYPE>D</OTABTYPE>
@@ -5385,7 +5338,6 @@
                         <NAME>
                          <INAME>%EVENT9</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -5409,7 +5361,6 @@
                         <NAME>
                          <INAME>%EVENT10</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -5431,7 +5382,6 @@
                            <NAME>
                             <INAME>DADOS_DE_FATURAMENTO_LINHA1</INAME>
                            </NAME>
-                           <CAPTION>Linha 1</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -5537,7 +5487,6 @@
                               <NAME>
                                <INAME>DC_NOMERAZAOSOCIAL</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -5642,12 +5591,11 @@
                                  <NAME>
                                   <INAME>DC_NOMERAZAOSOCIAL</INAME>
                                  </NAME>
-                                 <CAPTION>Nome / Razão Social</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Nome / Razão Social&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Name&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -5723,7 +5671,6 @@
                               <NAME>
                                <INAME>DC_CNPJ</INAME>
                               </NAME>
-                              <CAPTION>CNPJ</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -5828,12 +5775,11 @@
                                  <NAME>
                                   <INAME>DC_CNPJ</INAME>
                                  </NAME>
-                                 <CAPTION>CNPJ</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;CNPJ&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;CNPJ (Tax Id. Number)&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -5912,7 +5858,6 @@
                            <NAME>
                             <INAME>DADOS_DE_FATURAMENTO_LINHA2</INAME>
                            </NAME>
-                           <CAPTION>Linha 2</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -6018,7 +5963,6 @@
                               <NAME>
                                <INAME>DC_ENDERECO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -6123,12 +6067,11 @@
                                  <NAME>
                                   <INAME>DC_ENDERECO</INAME>
                                  </NAME>
-                                 <CAPTION>Endereço</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Endereço&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Adress&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -6204,7 +6147,6 @@
                               <NAME>
                                <INAME>DC_BAIRRO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -6309,16 +6251,15 @@
                                  <NAME>
                                   <INAME>DC_BAIRRO</INAME>
                                  </NAME>
-                                 <CAPTION>Bairro</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Bairro&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;District&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C1&gt;&amp;IS_EMPRESA-CABECALHO-CITY2(25)&amp;&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;C1&gt;&amp;IS_EMPRESA-CABECALHO-CITY2&amp;&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -6393,7 +6334,6 @@
                            <NAME>
                             <INAME>DADOS_DE_FATURAMENTO_LINHA3</INAME>
                            </NAME>
-                           <CAPTION>Linha 3</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -6499,7 +6439,6 @@
                               <NAME>
                                <INAME>DC_MUNICIPIO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -6604,12 +6543,11 @@
                                  <NAME>
                                   <INAME>DC_MUNICIPIO</INAME>
                                  </NAME>
-                                 <CAPTION>Município</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Município&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;City&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -6685,7 +6623,6 @@
                               <NAME>
                                <INAME>DC_CEP</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -6790,12 +6727,11 @@
                                  <NAME>
                                   <INAME>DC_CEP</INAME>
                                  </NAME>
-                                 <CAPTION>CEP</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;CEP&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Postal Code&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -6871,7 +6807,6 @@
                               <NAME>
                                <INAME>DC_TELEFONE</INAME>
                               </NAME>
-                              <CAPTION>Coluna 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -6976,12 +6911,11 @@
                                  <NAME>
                                   <INAME>DC_TELEFONE</INAME>
                                  </NAME>
-                                 <CAPTION>Fone / FAX</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Fone / FAX&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Phone / FAX&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -7057,7 +6991,6 @@
                               <NAME>
                                <INAME>DC_UF</INAME>
                               </NAME>
-                              <CAPTION>Coluna 4</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7162,12 +7095,11 @@
                                  <NAME>
                                   <INAME>DC_UF</INAME>
                                  </NAME>
-                                 <CAPTION>UF</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;UF&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;State&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -7243,7 +7175,6 @@
                               <NAME>
                                <INAME>DC_PAIS</INAME>
                               </NAME>
-                              <CAPTION>Coluna 5</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7348,12 +7279,11 @@
                                  <NAME>
                                   <INAME>DC_PAIS</INAME>
                                  </NAME>
-                                 <CAPTION>País</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;País&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Country&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -7435,7 +7365,6 @@
                         <NAME>
                          <INAME>%EVENT11</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -7462,7 +7391,6 @@
                      <NAME>
                       <INAME>DADOS_DO_PEDIDO</INAME>
                      </NAME>
-                     <CAPTION>DADOS DO PEDIDO</CAPTION>
                      <APPMODE>P</APPMODE>
                      <TEXT>
                       <item>
@@ -7470,7 +7398,7 @@
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CM&gt;DADOS DO PEDIDO&lt;/&gt;</TDLINE>
+                       <TDLINE>&lt;CM&gt;ORDER DATA&lt;/&gt;</TDLINE>
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
@@ -7556,7 +7484,6 @@
                      <NAME>
                       <INAME>DADOS_DO_PEDIDO</INAME>
                      </NAME>
-                     <CAPTION>DADOS DO PEDIDO</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <TABHTYPE>I</TABHTYPE>
                      <OTABTYPE>D</OTABTYPE>
@@ -7748,7 +7675,6 @@
                         <NAME>
                          <INAME>%EVENT12</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -7772,7 +7698,6 @@
                         <NAME>
                          <INAME>%EVENT13</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -7794,7 +7719,6 @@
                            <NAME>
                             <INAME>DADOS_DO_PEDIDO_LINHA1</INAME>
                            </NAME>
-                           <CAPTION>Linha 1</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -7900,7 +7824,6 @@
                               <NAME>
                                <INAME>DP_COND_PAGTO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -8005,7 +7928,6 @@
                                  <NAME>
                                   <INAME>%CODE11</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 11</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>IS_PEDIDO-XEKKO-ZTERM</OPD>
@@ -8072,16 +7994,15 @@
                                  <NAME>
                                   <INAME>DP_COND_PAGTO</INAME>
                                  </NAME>
-                                 <CAPTION>Condição de Pagamento</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Condição de Pagamento&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Payment Terms&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C1&gt;&amp;IS_PEDIDO-XEKKO-ZTERM&amp; - &amp;gv_text1&amp;&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;C1&gt;&amp;IS_PEDIDO-XEKKO-ZTERM&amp;&lt;/&gt;&lt;C1&gt; - &amp;gv_text1&amp;&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -8153,7 +8074,6 @@
                               <NAME>
                                <INAME>DP_INCOTERM</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -8258,7 +8178,6 @@
                                  <NAME>
                                   <INAME>%CODE12</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 12</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OUTIN>I</OUTIN>
@@ -8317,7 +8236,6 @@
                                  <NAME>
                                   <INAME>DP_INCOTERM</INAME>
                                  </NAME>
-                                 <CAPTION>Incoterm</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -8326,7 +8244,7 @@
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C1&gt;&amp;IS_PEDIDO-XEKKO-INCO1&amp; - &amp;IS_PEDIDO-XEKKO-INCO2&amp;&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;C1&gt;&amp;IS_PEDIDO-XEKKO-INCO1&amp;&lt;/&gt;&lt;C1&gt; - &amp;IS_PEDIDO-XEKKO-INCO2&amp;&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -8401,7 +8319,6 @@
                            <NAME>
                             <INAME>DADOS_DO_PEDIDO_LINHA2</INAME>
                            </NAME>
-                           <CAPTION>Linha 2</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -8507,7 +8424,6 @@
                               <NAME>
                                <INAME>DP_OBSERVACOES</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -8612,12 +8528,11 @@
                                  <NAME>
                                   <INAME>DP_OBSERVACOES</INAME>
                                  </NAME>
-                                 <CAPTION>Observações</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Observações&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Remarks&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -8687,7 +8602,6 @@
                                  <NAME>
                                   <INAME>OBSERVACOES</INAME>
                                  </NAME>
-                                 <CAPTION>Observações do pedido</CAPTION>
                                  <SECTTYPE>L</SECTTYPE>
                                  <DATATYPE>L</DATATYPE>
                                  <TABNAME>IS_EMPRESA-OBS</TABNAME>
@@ -8724,7 +8638,6 @@
                                     <NAME>
                                      <INAME>TEXT_OBSERVACOES</INAME>
                                     </NAME>
-                                    <CAPTION>Observações do pedido</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>A</APPMODE>
                                     <TEXT>
@@ -8773,7 +8686,6 @@
                         <NAME>
                          <INAME>%EVENT14</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -8884,7 +8796,6 @@
               <NAME>
                <INAME>ENTREGA</INAME>
               </NAME>
-              <CAPTION>Dados Entrega</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -8907,7 +8818,6 @@
                      <NAME>
                       <INAME>DADOS_DE_ENTREGA</INAME>
                      </NAME>
-                     <CAPTION>DADOS DE ENTREGA</CAPTION>
                      <APPMODE>P</APPMODE>
                      <TEXT>
                       <item>
@@ -8915,7 +8825,7 @@
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CM&gt;DADOS DE ENTREGA&lt;/&gt;</TDLINE>
+                       <TDLINE>&lt;CM&gt;DELIVER TO&lt;/&gt;</TDLINE>
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
@@ -9001,7 +8911,6 @@
                      <NAME>
                       <INAME>DADOS_DE_ENTREGA</INAME>
                      </NAME>
-                     <CAPTION>DADOS DE ENTREGA</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <TABHTYPE>I</TABHTYPE>
                      <OTABTYPE>D</OTABTYPE>
@@ -9504,7 +9413,6 @@
                         <NAME>
                          <INAME>%EVENT6</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -9528,7 +9436,6 @@
                         <NAME>
                          <INAME>%EVENT7</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -9550,7 +9457,6 @@
                            <NAME>
                             <INAME>DADOS_DE_ENTREGA_LINHA1</INAME>
                            </NAME>
-                           <CAPTION>Linha 1</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -9656,7 +9562,6 @@
                               <NAME>
                                <INAME>DE_NOMERAZAOSOCIAL</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -9761,12 +9666,11 @@
                                  <NAME>
                                   <INAME>DE_NOMERAZAOSOCIAL</INAME>
                                  </NAME>
-                                 <CAPTION>Nome / Razão Social</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Nome / Razão Social&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Name&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -9842,7 +9746,6 @@
                               <NAME>
                                <INAME>DE_CNPJ</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -9947,12 +9850,11 @@
                                  <NAME>
                                   <INAME>DE_CNPJ</INAME>
                                  </NAME>
-                                 <CAPTION>CNPJ</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;CNPJ&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;CNPJ (Tax Id. Number)&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -10031,7 +9933,6 @@
                            <NAME>
                             <INAME>DADOS_DE_ENTREGA_LINHA2</INAME>
                            </NAME>
-                           <CAPTION>Linha 2</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -10137,7 +10038,6 @@
                               <NAME>
                                <INAME>DE_ENDERECO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10242,12 +10142,11 @@
                                  <NAME>
                                   <INAME>DE_ENDERECO</INAME>
                                  </NAME>
-                                 <CAPTION>Endereço</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Endereço&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Adress&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -10323,7 +10222,6 @@
                               <NAME>
                                <INAME>DE_BAIRRO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10428,16 +10326,15 @@
                                  <NAME>
                                   <INAME>DE_BAIRRO</INAME>
                                  </NAME>
-                                 <CAPTION>Bairro</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Bairro&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;District&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C1&gt;&amp;IS_EMPRESA-ENTREGA-CITY2(20)&amp;&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;C1&gt;&amp;IS_EMPRESA-ENTREGA-CITY2&amp;&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -10512,7 +10409,6 @@
                            <NAME>
                             <INAME>DADOS_DE_ENTREGA_LINHA3</INAME>
                            </NAME>
-                           <CAPTION>Linha 3</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -10618,7 +10514,6 @@
                               <NAME>
                                <INAME>DE_MUNICIPIO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10723,12 +10618,11 @@
                                  <NAME>
                                   <INAME>DE_MUNICIPIO</INAME>
                                  </NAME>
-                                 <CAPTION>Município</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Município&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;City&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -10804,7 +10698,6 @@
                               <NAME>
                                <INAME>DE_CEP</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10909,12 +10802,11 @@
                                  <NAME>
                                   <INAME>DE_CEP</INAME>
                                  </NAME>
-                                 <CAPTION>CEP</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;CEP&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Postal Code&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -10990,7 +10882,6 @@
                               <NAME>
                                <INAME>DE_TELEFONE</INAME>
                               </NAME>
-                              <CAPTION>Coluna 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -11095,12 +10986,11 @@
                                  <NAME>
                                   <INAME>DE_TELEFONE</INAME>
                                  </NAME>
-                                 <CAPTION>Fone / FAX</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;Fone / FAX&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Phone / FAX&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -11176,7 +11066,6 @@
                               <NAME>
                                <INAME>DE_UF</INAME>
                               </NAME>
-                              <CAPTION>Coluna 4</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -11281,12 +11170,11 @@
                                  <NAME>
                                   <INAME>DE_UF</INAME>
                                  </NAME>
-                                 <CAPTION>UF</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;UF&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;State&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -11362,7 +11250,6 @@
                               <NAME>
                                <INAME>DE_PAIS</INAME>
                               </NAME>
-                              <CAPTION>Coluna 5</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -11467,12 +11354,11 @@
                                  <NAME>
                                   <INAME>DE_PAIS</INAME>
                                  </NAME>
-                                 <CAPTION>País</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;CC&gt;País&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;CC&gt;Country&lt;/&gt;</TDLINE>
                                   </item>
                                   <item>
                                    <TDFORMAT>*</TDFORMAT>
@@ -11554,7 +11440,6 @@
                         <NAME>
                          <INAME>%EVENT8</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -11665,7 +11550,6 @@
               <NAME>
                <INAME>PEDIDO_DETALHES</INAME>
               </NAME>
-              <CAPTION>Esqueleto dados do pedido</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -11688,7 +11572,6 @@
                      <NAME>
                       <INAME>TB_DADOS_DO_PEDIDO</INAME>
                      </NAME>
-                     <CAPTION>DADOS DO PEDIDO</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -11979,7 +11862,6 @@
               <NAME>
                <INAME>ITENS_BASE</INAME>
               </NAME>
-              <CAPTION>Esqueleto dos itens</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -12002,7 +11884,6 @@
                      <NAME>
                       <INAME>ITENS_DO_PEDIDO</INAME>
                      </NAME>
-                     <CAPTION>ITENS DO PEDIDO</CAPTION>
                      <APPMODE>L</APPMODE>
                      <TEXT>
                       <item>
@@ -12010,7 +11891,7 @@
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CM&gt;ITENS DO PEDIDO&lt;/&gt;</TDLINE>
+                       <TDLINE>&lt;CM&gt;ORDER ITEMS&lt;/&gt;</TDLINE>
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
@@ -12096,7 +11977,6 @@
                      <NAME>
                       <INAME>TB_ITENS</INAME>
                      </NAME>
-                     <CAPTION>Itens do pedido</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -13924,7 +13804,6 @@
               <NAME>
                <INAME>INFO</INAME>
               </NAME>
-              <CAPTION>Informações Gerais</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -13947,7 +13826,6 @@
                      <NAME>
                       <INAME>INFORMACOES_GERAIS</INAME>
                      </NAME>
-                     <CAPTION>INFORMAÇÕES GERAIS</CAPTION>
                      <APPMODE>P</APPMODE>
                      <TEXT>
                       <item>
@@ -13955,7 +13833,7 @@
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
-                       <TDLINE>&lt;CM&gt;INFORMAÇÕES GERAIS&lt;/&gt;</TDLINE>
+                       <TDLINE>&lt;CM&gt;GENERAL INFORMATION&lt;/&gt;</TDLINE>
                       </item>
                       <item>
                        <TDFORMAT>*</TDFORMAT>
@@ -14041,7 +13919,6 @@
                      <NAME>
                       <INAME>INFORMACOES_GERAIS</INAME>
                      </NAME>
-                     <CAPTION>INFORMAÇÕES GERAIS</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -14190,7 +14067,6 @@
                         <NAME>
                          <INAME>LOOP_INF_GERAIS</INAME>
                         </NAME>
-                        <CAPTION>INFORMAÇÕES GERAIS</CAPTION>
                         <SECTTYPE>L</SECTTYPE>
                         <DATATYPE>L</DATATYPE>
                         <TABNAME>IS_EMPRESA-INF_GERAIS</TABNAME>
@@ -14229,7 +14105,6 @@
                            <NAME>
                             <INAME>TEXTO_INF_GERAIS</INAME>
                            </NAME>
-                           <CAPTION>INFORMAÇÕES GERAIS</CAPTION>
                            <NOLANGUAGE>X</NOLANGUAGE>
                            <APPMODE>P</APPMODE>
                            <TEXT>
@@ -14343,7 +14218,6 @@
                         <NAME>
                          <INAME>%LOOP1</INAME>
                         </NAME>
-                        <CAPTION>INFORMAÇÕES GERAIS</CAPTION>
                         <SECTTYPE>L</SECTTYPE>
                         <DATATYPE>L</DATATYPE>
                         <TABNAME>IS_EMPRESA-INF_GERAIS</TABNAME>
@@ -14382,7 +14256,6 @@
                            <NAME>
                             <INAME>%TEXT1</INAME>
                            </NAME>
-                           <CAPTION>INFORMAÇÕES GERAIS</CAPTION>
                            <NOLANGUAGE>X</NOLANGUAGE>
                            <APPMODE>P</APPMODE>
                            <TEXT>
@@ -14583,7 +14456,6 @@
               <NAME>
                <INAME>ASSINATURA</INAME>
               </NAME>
-              <CAPTION>Autorizado Por</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -14606,7 +14478,6 @@
                      <NAME>
                       <INAME>AUTORIZADO_PAGINA</INAME>
                      </NAME>
-                     <CAPTION>AUTORIZAÇÃO</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -14747,12 +14618,11 @@
                         <NAME>
                          <INAME>AUTORIZADO_POR</INAME>
                         </NAME>
-                        <CAPTION>Autorizado Por:</CAPTION>
                         <APPMODE>P</APPMODE>
                         <TEXT>
                          <item>
                           <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C1&gt;Autorizado Por:_____________________________________________________</TDLINE>
+                          <TDLINE>&lt;C1&gt;Authorized by: ____________________________________________________</TDLINE>
                          </item>
                          <item>
                           <TDFORMAT>=</TDFORMAT>
@@ -14899,12 +14769,11 @@
                         <NAME>
                          <INAME>PAGINA</INAME>
                         </NAME>
-                        <CAPTION>Página</CAPTION>
                         <APPMODE>P</APPMODE>
                         <TEXT>
                          <item>
                           <TDFORMAT>PD</TDFORMAT>
-                          <TDLINE>&lt;C1&gt;Página &amp;SFSY-PAGE&amp; / &amp;sfsy-formpages&amp;&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;C1&gt;Page &amp;SFSY-PAGE&amp; / &amp;sfsy-formpages&amp;&lt;/&gt;</TDLINE>
                          </item>
                         </TEXT>
                         <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -15116,7 +14985,6 @@
               <NAME>
                <INAME>TABELAS_ITENS</INAME>
               </NAME>
-              <CAPTION>Janela principal</CAPTION>
               <WTYPE>M</WTYPE>
               <T_CAPTION>
                <item>
@@ -15139,7 +15007,6 @@
                      <NAME>
                       <INAME>ITENS</INAME>
                      </NAME>
-                     <CAPTION>Itens do pedido</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>IS_PEDIDO-XEKPO</TABNAME>
@@ -15988,7 +15855,6 @@
                         <NAME>
                          <INAME>%EVENT15</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -16010,7 +15876,6 @@
                            <NAME>
                             <INAME>ITENS_DO_PEDIDO_CABECALHO</INAME>
                            </NAME>
-                           <CAPTION>Cabeçalho dos itens</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -16116,7 +15981,6 @@
                               <NAME>
                                <INAME>IP_AC_ITEM</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -16221,7 +16085,6 @@
                                  <NAME>
                                   <INAME>IP_AC_ITEM</INAME>
                                  </NAME>
-                                 <CAPTION>Item</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -16280,7 +16143,6 @@
                               <NAME>
                                <INAME>IP_AC_MATERIAL</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -16385,12 +16247,11 @@
                                  <NAME>
                                   <INAME>IP_AC_MATERIAL</INAME>
                                  </NAME>
-                                 <CAPTION>Código</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;MATERIAL&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Product&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -16444,7 +16305,6 @@
                               <NAME>
                                <INAME>IP_AC_DESCRICAO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -16549,12 +16409,11 @@
                                  <NAME>
                                   <INAME>IP_AC_DESCRICAO</INAME>
                                  </NAME>
-                                 <CAPTION>Descrição</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;DESCRIÇÃO DO PRODUTO/SERVIÇO&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Description&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -16608,7 +16467,6 @@
                               <NAME>
                                <INAME>IP_AC_QTD</INAME>
                               </NAME>
-                              <CAPTION>Coluna 4</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -16713,12 +16571,11 @@
                                  <NAME>
                                   <INAME>IP_AC_QTD</INAME>
                                  </NAME>
-                                 <CAPTION>QTD</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;QTD&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Qty.&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -16772,7 +16629,6 @@
                               <NAME>
                                <INAME>IP_AC_UND</INAME>
                               </NAME>
-                              <CAPTION>Coluna 5</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -16877,12 +16733,11 @@
                                  <NAME>
                                   <INAME>IP_AC_UND</INAME>
                                  </NAME>
-                                 <CAPTION>Und</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;UND&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Unit&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -16936,7 +16791,6 @@
                               <NAME>
                                <INAME>IP_AC_PR_LIQ</INAME>
                               </NAME>
-                              <CAPTION>Coluna 6</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -17041,7 +16895,6 @@
                                  <NAME>
                                   <INAME>IP_AC_PR_LIQ</INAME>
                                  </NAME>
-                                 <CAPTION>Pr. Liq.</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -17091,7 +16944,6 @@
                                  <NAME>
                                   <INAME>%CONDITION26</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 30</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -17125,7 +16977,6 @@
                               <NAME>
                                <INAME>IP_AC_VALOR_LIQ</INAME>
                               </NAME>
-                              <CAPTION>Coluna 7</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -17230,12 +17081,11 @@
                                  <NAME>
                                   <INAME>IP_AC_VALOR_LIQ</INAME>
                                  </NAME>
-                                 <CAPTION>Valor Liq.</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;VL LIQ&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Unit Price&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -17280,7 +17130,6 @@
                                  <NAME>
                                   <INAME>%CONDITION6</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 29</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -17314,7 +17163,6 @@
                               <NAME>
                                <INAME>IP_AC_IPI</INAME>
                               </NAME>
-                              <CAPTION>Coluna 8</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -17419,7 +17267,6 @@
                                  <NAME>
                                   <INAME>IP_AC_IPI</INAME>
                                  </NAME>
-                                 <CAPTION>IPI</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -17469,7 +17316,6 @@
                                  <NAME>
                                   <INAME>%CONDITION11</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 17</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -17503,7 +17349,6 @@
                               <NAME>
                                <INAME>IP_AC_ALIPI</INAME>
                               </NAME>
-                              <CAPTION>Coluna 9</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -17608,7 +17453,6 @@
                                  <NAME>
                                   <INAME>IP_AC_ALIPI</INAME>
                                  </NAME>
-                                 <CAPTION>AL IPI</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -17658,7 +17502,6 @@
                                  <NAME>
                                   <INAME>%CONDITION20</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 19</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -17692,7 +17535,6 @@
                               <NAME>
                                <INAME>IP_AC_ICMS</INAME>
                               </NAME>
-                              <CAPTION>Coluna 10</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -17797,7 +17639,6 @@
                                  <NAME>
                                   <INAME>IP_AC_ICMS</INAME>
                                  </NAME>
-                                 <CAPTION>ICMS</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -17847,7 +17688,6 @@
                                  <NAME>
                                   <INAME>%CONDITION29</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 27</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -17881,7 +17721,6 @@
                               <NAME>
                                <INAME>IP_AC_ALICMS</INAME>
                               </NAME>
-                              <CAPTION>Coluna 11</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -17986,7 +17825,6 @@
                                  <NAME>
                                   <INAME>IP_AC_ALICMS</INAME>
                                  </NAME>
-                                 <CAPTION>AL ICMS</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -18036,7 +17874,6 @@
                                  <NAME>
                                   <INAME>%CONDITION17</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 28</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -18070,7 +17907,6 @@
                               <NAME>
                                <INAME>IP_AC_VALOR_BRUTO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 12</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -18175,12 +18011,11 @@
                                  <NAME>
                                   <INAME>IP_AC_VALOR_BRUTO</INAME>
                                  </NAME>
-                                 <CAPTION>Valor Bruto</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;VL BRUTO&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Total Price&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -18234,7 +18069,6 @@
                               <NAME>
                                <INAME>IP_AC_PR_UNIT</INAME>
                               </NAME>
-                              <CAPTION>Coluna 13</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -18339,12 +18173,11 @@
                                  <NAME>
                                   <INAME>IP_AC_PR_UNIT</INAME>
                                  </NAME>
-                                 <CAPTION>Vl Unit</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;VL UNIT&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Unit Price&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -18398,7 +18231,6 @@
                               <NAME>
                                <INAME>IP_AC_MOEDA</INAME>
                               </NAME>
-                              <CAPTION>Coluna 14</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -18503,12 +18335,11 @@
                                  <NAME>
                                   <INAME>IP_AC_MOEDA</INAME>
                                  </NAME>
-                                 <CAPTION>Moeda</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;MOEDA&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Curr.&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -18562,7 +18393,6 @@
                               <NAME>
                                <INAME>IP_AC_FRETE</INAME>
                               </NAME>
-                              <CAPTION>Coluna 15</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -18667,7 +18497,6 @@
                                  <NAME>
                                   <INAME>IP_AC_FRETE</INAME>
                                  </NAME>
-                                 <CAPTION>Frete</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -18717,7 +18546,6 @@
                                  <NAME>
                                   <INAME>%CONDITION19</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 31</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -18751,7 +18579,6 @@
                               <NAME>
                                <INAME>IP_AC_DESCONTO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 16</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -18856,7 +18683,6 @@
                                  <NAME>
                                   <INAME>IP_AC_DESCONTO</INAME>
                                  </NAME>
-                                 <CAPTION>Desconto</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
@@ -18906,7 +18732,6 @@
                                  <NAME>
                                   <INAME>%CONDITION27</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 32</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>EQ</COP>
@@ -18940,7 +18765,6 @@
                               <NAME>
                                <INAME>IP_AC_ENTREGA</INAME>
                               </NAME>
-                              <CAPTION>Coluna 17</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -19045,12 +18869,11 @@
                                  <NAME>
                                   <INAME>IP_AC_ENTREGA</INAME>
                                  </NAME>
-                                 <CAPTION>Entrega</CAPTION>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
                                   <item>
                                    <TDFORMAT>PI</TDFORMAT>
-                                   <TDLINE>&lt;TT&gt;ENTREGA&lt;/&gt;</TDLINE>
+                                   <TDLINE>&lt;TT&gt;Delivery&lt;/&gt;</TDLINE>
                                   </item>
                                  </TEXT>
                                  <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
@@ -19110,7 +18933,6 @@
                         <NAME>
                          <INAME>%EVENT16</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -19132,7 +18954,6 @@
                            <NAME>
                             <INAME>ITENS_DO_PEDIDO</INAME>
                            </NAME>
-                           <CAPTION>Itens</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -19238,7 +19059,6 @@
                               <NAME>
                                <INAME>IP_AP_ITEM</INAME>
                               </NAME>
-                              <CAPTION>Coluna 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -19343,7 +19163,6 @@
                                  <NAME>
                                   <INAME>%CODE10</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 10</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -19430,7 +19249,6 @@
                                  <NAME>
                                   <INAME>IP_AP_ITEM</INAME>
                                  </NAME>
-                                 <CAPTION>Item</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -19461,7 +19279,6 @@
                                  <NAME>
                                   <INAME>%CONDITION28</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 2</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -19495,7 +19312,6 @@
                               <NAME>
                                <INAME>IP_AP_MATERIAL</INAME>
                               </NAME>
-                              <CAPTION>Coluna 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -19600,7 +19416,6 @@
                                  <NAME>
                                   <INAME>IP_AP_MATERIAL</INAME>
                                  </NAME>
-                                 <CAPTION>Material</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -19631,7 +19446,6 @@
                                  <NAME>
                                   <INAME>%CONDITION30</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 3</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -19665,7 +19479,6 @@
                               <NAME>
                                <INAME>IP_AP_DESCRICAO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -19770,7 +19583,6 @@
                                  <NAME>
                                   <INAME>IP_AP_DESCRICAO</INAME>
                                  </NAME>
-                                 <CAPTION>Descrição</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -19810,7 +19622,6 @@
                               <NAME>
                                <INAME>IP_AP_QTD</INAME>
                               </NAME>
-                              <CAPTION>Coluna 4</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -19915,7 +19726,6 @@
                                  <NAME>
                                   <INAME>%CODE4</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 4</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -19981,7 +19791,6 @@
                                  <NAME>
                                   <INAME>IP_AP_QTD</INAME>
                                  </NAME>
-                                 <CAPTION>QTD</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -20012,7 +19821,6 @@
                                  <NAME>
                                   <INAME>%CONDITION31</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 4</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -20046,7 +19854,6 @@
                               <NAME>
                                <INAME>IP_AP_UND</INAME>
                               </NAME>
-                              <CAPTION>Coluna 5</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -20151,7 +19958,6 @@
                                  <NAME>
                                   <INAME>IP_AP_UND</INAME>
                                  </NAME>
-                                 <CAPTION>Und</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -20182,7 +19988,6 @@
                                  <NAME>
                                   <INAME>%CONDITION2</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 7</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -20216,7 +20021,6 @@
                               <NAME>
                                <INAME>IP_AP_PR_LIQ</INAME>
                               </NAME>
-                              <CAPTION>Coluna 6</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -20321,7 +20125,6 @@
                                  <NAME>
                                   <INAME>%CODE1</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 1</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -20388,7 +20191,6 @@
                                  <NAME>
                                   <INAME>IP_AP_PR_LIQ</INAME>
                                  </NAME>
-                                 <CAPTION>Pr. Liq.</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -20419,7 +20221,6 @@
                                  <NAME>
                                   <INAME>%CONDITION3</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 8</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -20453,7 +20254,6 @@
                               <NAME>
                                <INAME>IP_AP_VALOR_LIQ</INAME>
                               </NAME>
-                              <CAPTION>Coluna 7</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -20558,7 +20358,6 @@
                                  <NAME>
                                   <INAME>%CODE2</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 2</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -20623,7 +20422,6 @@
                                  <NAME>
                                   <INAME>IP_AP_VALOR_LIQ</INAME>
                                  </NAME>
-                                 <CAPTION>Valor Liq.</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -20654,7 +20452,6 @@
                                  <NAME>
                                   <INAME>%CONDITION4</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 9</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -20688,7 +20485,6 @@
                               <NAME>
                                <INAME>IP_AP_IPI</INAME>
                               </NAME>
-                              <CAPTION>Coluna 8</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -20793,7 +20589,6 @@
                                  <NAME>
                                   <INAME>%CODE6</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 6</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -20866,7 +20661,6 @@
                                  <NAME>
                                   <INAME>IP_AP_IPI</INAME>
                                  </NAME>
-                                 <CAPTION>IPI</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -20897,7 +20691,6 @@
                                  <NAME>
                                   <INAME>%CONDITION7</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 10</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -20931,7 +20724,6 @@
                               <NAME>
                                <INAME>IP_AP_ALIPI</INAME>
                               </NAME>
-                              <CAPTION>Coluna 9</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -21036,7 +20828,6 @@
                                  <NAME>
                                   <INAME>%CODE14</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 14</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>IS_PEDIDO-XTKOMV</OPD>
@@ -21096,7 +20887,6 @@
                                  <NAME>
                                   <INAME>IP_AP_ALIPI</INAME>
                                  </NAME>
-                                 <CAPTION>AL IPI</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -21127,7 +20917,6 @@
                                  <NAME>
                                   <INAME>%CONDITION8</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 10</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -21161,7 +20950,6 @@
                               <NAME>
                                <INAME>IP_AP_ICMS</INAME>
                               </NAME>
-                              <CAPTION>Coluna 10</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -21266,7 +21054,6 @@
                                  <NAME>
                                   <INAME>%CODE5</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 5</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -21333,7 +21120,6 @@
                                  <NAME>
                                   <INAME>IP_AP_ICMS</INAME>
                                  </NAME>
-                                 <CAPTION>ICMS</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -21364,7 +21150,6 @@
                                  <NAME>
                                   <INAME>%CONDITION9</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 12</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -21398,7 +21183,6 @@
                               <NAME>
                                <INAME>IP_AP_ALICMS</INAME>
                               </NAME>
-                              <CAPTION>Coluna 11</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -21503,7 +21287,6 @@
                                  <NAME>
                                   <INAME>%CODE15</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 14</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>IS_PEDIDO-XTKOMV</OPD>
@@ -21586,7 +21369,6 @@
                                  <NAME>
                                   <INAME>IP_AP_ALICMS</INAME>
                                  </NAME>
-                                 <CAPTION>AL ICMS</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -21617,7 +21399,6 @@
                                  <NAME>
                                   <INAME>%CONDITION10</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 10</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -21651,7 +21432,6 @@
                               <NAME>
                                <INAME>IP_AP_VALOR_BRUTO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 12</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -21756,7 +21536,6 @@
                                  <NAME>
                                   <INAME>%CODE3</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 3</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -21859,7 +21638,6 @@
                                  <NAME>
                                   <INAME>IP_AP_VALOR_BRUTO</INAME>
                                  </NAME>
-                                 <CAPTION>Valor Bruto</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -21890,7 +21668,6 @@
                                  <NAME>
                                   <INAME>%CONDITION23</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 13</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -21924,7 +21701,6 @@
                               <NAME>
                                <INAME>IP_AP_PR_UNIT</INAME>
                               </NAME>
-                              <CAPTION>Coluna 13</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -22029,7 +21805,6 @@
                                  <NAME>
                                   <INAME>%CODE7</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 7</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>GS_EKPO</OPD>
@@ -22110,7 +21885,6 @@
                                  <NAME>
                                   <INAME>IP_AP_PR_UNIT</INAME>
                                  </NAME>
-                                 <CAPTION>Pr. Unitário</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -22141,7 +21915,6 @@
                                  <NAME>
                                   <INAME>%CONDITION12</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 14</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -22175,7 +21948,6 @@
                               <NAME>
                                <INAME>IP_AP_MOEDA</INAME>
                               </NAME>
-                              <CAPTION>Coluna 14</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -22280,7 +22052,6 @@
                                  <NAME>
                                   <INAME>%CODE8</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 8</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>IS_PEDIDO-XEKKO-WAERS</OPD>
@@ -22335,7 +22106,6 @@
                                  <NAME>
                                   <INAME>IP_AP_MOEDA</INAME>
                                  </NAME>
-                                 <CAPTION>Moeda</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -22366,7 +22136,6 @@
                                  <NAME>
                                   <INAME>%CONDITION24</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 15</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -22400,7 +22169,6 @@
                               <NAME>
                                <INAME>IP_AP_FRETE</INAME>
                               </NAME>
-                              <CAPTION>Coluna 15</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -22505,7 +22273,6 @@
                                  <NAME>
                                   <INAME>%CODE16</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 16</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>IS_PEDIDO-XTKOMV</OPD>
@@ -22623,7 +22390,6 @@
                                  <NAME>
                                   <INAME>IP_AP_FRETE</INAME>
                                  </NAME>
-                                 <CAPTION>Frete</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -22654,7 +22420,6 @@
                                  <NAME>
                                   <INAME>%CONDITION13</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 10</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -22688,7 +22453,6 @@
                               <NAME>
                                <INAME>IP_AP_DESCONTO</INAME>
                               </NAME>
-                              <CAPTION>Coluna 16</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -22793,7 +22557,6 @@
                                  <NAME>
                                   <INAME>%CODE17</INAME>
                                  </NAME>
-                                 <CAPTION>Novas linhasPrograma 17</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>IS_PEDIDO-XTKOMV</OPD>
@@ -22884,7 +22647,6 @@
                                  <NAME>
                                   <INAME>IP_AP_DESCONTO</INAME>
                                  </NAME>
-                                 <CAPTION>Desconto</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -22915,7 +22677,6 @@
                                  <NAME>
                                   <INAME>%CONDITION14</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 10</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -22949,7 +22710,6 @@
                               <NAME>
                                <INAME>IP_AP_ENTREGA</INAME>
                               </NAME>
-                              <CAPTION>Coluna 17</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -23054,7 +22814,6 @@
                                  <NAME>
                                   <INAME>%CODE9</INAME>
                                  </NAME>
-                                 <CAPTION>Data de entrega</CAPTION>
                                  <PLIST>
                                   <item>
                                    <OPD>IS_PEDIDO-XEKET</OPD>
@@ -23119,7 +22878,6 @@
                                  <NAME>
                                   <INAME>IP_AP_ENTREGA</INAME>
                                  </NAME>
-                                 <CAPTION>Entrega</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -23150,7 +22908,6 @@
                                  <NAME>
                                   <INAME>%CONDITION15</INAME>
                                  </NAME>
-                                 <CAPTION>Nova alternativa 16</CAPTION>
                                  <COND>
                                   <item>
                                    <COP>NE</COP>
@@ -23187,7 +22944,6 @@
                            <NAME>
                             <INAME>%ROW1</INAME>
                            </NAME>
-                           <CAPTION>Nova linha 1</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -23289,7 +23045,6 @@
                            <NAME>
                             <INAME>%CONDITION39</INAME>
                            </NAME>
-                           <CAPTION>Nova alternativa 39</CAPTION>
                            <COND>
                             <item>
                              <COP>NE</COP>
@@ -23318,7 +23073,6 @@
                               <NAME>
                                <INAME>%CELL1</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -23425,7 +23179,6 @@
                               <NAME>
                                <INAME>%CELL2</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -23532,7 +23285,6 @@
                               <NAME>
                                <INAME>%CELL3</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -23637,7 +23389,6 @@
                                  <NAME>
                                   <INAME>%TEXT2</INAME>
                                  </NAME>
-                                 <CAPTION>Texto novo 2</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -23677,7 +23428,6 @@
                               <NAME>
                                <INAME>%CELL4</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 4</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -23784,7 +23534,6 @@
                               <NAME>
                                <INAME>%CELL5</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 5</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -23891,7 +23640,6 @@
                               <NAME>
                                <INAME>%CELL6</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 6</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -23998,7 +23746,6 @@
                               <NAME>
                                <INAME>%CELL7</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 7</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24105,7 +23852,6 @@
                               <NAME>
                                <INAME>%CELL8</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 8</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24212,7 +23958,6 @@
                               <NAME>
                                <INAME>%CELL9</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 9</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24319,7 +24064,6 @@
                               <NAME>
                                <INAME>%CELL10</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 10</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24426,7 +24170,6 @@
                               <NAME>
                                <INAME>%CELL11</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 11</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24533,7 +24276,6 @@
                               <NAME>
                                <INAME>%CELL12</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 12</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24640,7 +24382,6 @@
                               <NAME>
                                <INAME>%CELL13</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 13</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24747,7 +24488,6 @@
                               <NAME>
                                <INAME>%CELL14</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 14</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24854,7 +24594,6 @@
                               <NAME>
                                <INAME>%CELL15</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 15</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -24961,7 +24700,6 @@
                               <NAME>
                                <INAME>%CELL16</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 16</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -25068,7 +24806,6 @@
                               <NAME>
                                <INAME>%CELL17</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 17</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -25178,7 +24915,6 @@
                            <NAME>
                             <INAME>%COMMAND2</INAME>
                            </NAME>
-                           <CAPTION>Comando novo 2</CAPTION>
                            <T_CAPTION>
                             <item>
                              <LANGU>P</LANGU>
@@ -25204,7 +24940,6 @@
                         <NAME>
                          <INAME>%EVENT17</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -25226,7 +24961,6 @@
                            <NAME>
                             <INAME>%COMMAND1</INAME>
                            </NAME>
-                           <CAPTION>Comando novo 1</CAPTION>
                            <NEWPAGE>X</NEWPAGE>
                            <PAGENAME>
                             <INAME>ANOTACOES</INAME>
@@ -25247,7 +24981,6 @@
                            <NAME>
                             <INAME>%CONDITION16</INAME>
                            </NAME>
-                           <CAPTION>Nova alternativa 16</CAPTION>
                            <COND>
                             <item>
                              <COP>EQ</COP>
@@ -25286,7 +25019,6 @@
               <NAME>
                <INAME>%OUTATTRIB1</INAME>
               </NAME>
-              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>
@@ -25370,7 +25102,6 @@
               <NAME>
                <INAME>TOTAL</INAME>
               </NAME>
-              <CAPTION>Valor Total</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -25393,7 +25124,6 @@
                      <NAME>
                       <INAME>VALOR_TOTAL11</INAME>
                      </NAME>
-                     <CAPTION>Valor Total</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -26270,7 +26000,6 @@
                         <NAME>
                          <INAME>%CODE13</INAME>
                         </NAME>
-                        <CAPTION>Novas linhasPrograma 13</CAPTION>
                         <PLIST>
                          <item>
                           <OPD>GV_VLTOTAL</OPD>
@@ -26391,12 +26120,11 @@
                         <NAME>
                          <INAME>VALOR_TOTAL</INAME>
                         </NAME>
-                        <CAPTION>Valores Totais:</CAPTION>
                         <APPMODE>P</APPMODE>
                         <TEXT>
                          <item>
                           <TDFORMAT>PD</TDFORMAT>
-                          <TDLINE>&lt;RC&gt;VALOR TOTAL:&lt;/&gt;</TDLINE>
+                          <TDLINE>&lt;RC&gt;TOTAL AMOUNT:&lt;/&gt;</TDLINE>
                          </item>
                         </TEXT>
                         <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
@@ -26521,7 +26249,6 @@
                         <NAME>
                          <INAME>MOEDA</INAME>
                         </NAME>
-                        <CAPTION>Moeda</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -26632,7 +26359,6 @@
                         <NAME>
                          <INAME>TOT_PED</INAME>
                         </NAME>
-                        <CAPTION>Valor Total Pedido</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -26743,7 +26469,6 @@
                         <NAME>
                          <INAME>ICMS</INAME>
                         </NAME>
-                        <CAPTION>ICMS</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -26848,7 +26573,6 @@
                         <NAME>
                          <INAME>%CONDITION1</INAME>
                         </NAME>
-                        <CAPTION>Nova alternativa 22</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -26879,7 +26603,6 @@
                         <NAME>
                          <INAME>IPI</INAME>
                         </NAME>
-                        <CAPTION>IPI</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -26984,7 +26707,6 @@
                         <NAME>
                          <INAME>%CONDITION22</INAME>
                         </NAME>
-                        <CAPTION>Nova alternativa 18</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -27015,7 +26737,6 @@
                         <NAME>
                          <INAME>DESC</INAME>
                         </NAME>
-                        <CAPTION>Desconto</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -27120,7 +26841,6 @@
                         <NAME>
                          <INAME>%CONDITION18</INAME>
                         </NAME>
-                        <CAPTION>Nova alternativa 5</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -27151,7 +26871,6 @@
                         <NAME>
                          <INAME>OUT_DESP</INAME>
                         </NAME>
-                        <CAPTION>Outras Despesas</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -27256,7 +26975,6 @@
                         <NAME>
                          <INAME>%CONDITION5</INAME>
                         </NAME>
-                        <CAPTION>Nova alternativa 21</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -27377,7 +27095,6 @@
            <NAME>
             <INAME>ANOTACOES</INAME>
            </NAME>
-           <CAPTION>Anotação</CAPTION>
            <NEXTPAGE>
             <INAME>ANOTACOES</INAME>
            </NEXTPAGE>
@@ -27398,7 +27115,6 @@
              <NAME>
               <INAME>%GRAPHIC2</INAME>
              </NAME>
-             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <APPMODE>B</APPMODE>
              <U_SB>CM</U_SB>
@@ -27434,7 +27150,6 @@
               <NAME>
                <INAME>ANOTACAO</INAME>
               </NAME>
-              <CAPTION>Anotação</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -27457,7 +27172,6 @@
                      <NAME>
                       <INAME>%TEMPLATE1</INAME>
                      </NAME>
-                     <CAPTION>Novo padrão 1</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -27747,7 +27461,6 @@
               <NAME>
                <INAME>%OUTATTRIB103</INAME>
               </NAME>
-              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>

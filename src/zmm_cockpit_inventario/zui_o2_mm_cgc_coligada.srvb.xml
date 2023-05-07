@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_MM_CGC_COLIGADA</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>CGC das Coligadas por Empresa</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_CGC_COLIGADA</HREF>

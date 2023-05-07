@@ -34,7 +34,6 @@
     <item>
      <SEGMENTHEADER>
       <SEGTYP>ZMM_MARM_QTD</SEGTYP>
-      <DESCRP>Quantidade por UM</DESCRP>
      </SEGMENTHEADER>
      <SEGMENTDEFINITION>
       <SEGTYP>ZMM_MARM_QTD</SEGTYP>

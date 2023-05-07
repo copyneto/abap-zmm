@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMMM_GOODSMVT_CREATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>BAPI_GOODSMVT_CREATE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_GOODSMVT_HEADER</PARAMETER>
@@ -46,39 +45,32 @@
       <RSFDO>
        <PARAMETER>IS_GOODSMVT_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Estrutura de comunicação BAPI: doc.material dados cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_GOODSMVT_CODE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>MMIM: conversão de chave CM_CODE p/transação na admin.estq.</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_MATERIALDOCUMENT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Number of Material Document</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_MATDOCUMENTYEAR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Material Document Year</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>GOODSMVT_ITEM</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Estrutura de comunicação BAPI: criar item doc.material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_NFEIN_ACCPTNFE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>BAPI_GOODSMVT_CREATE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_DHRECBTO</PARAMETER>
@@ -105,27 +97,22 @@
       <RSFDO>
        <PARAMETER>IS_DHRECBTO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Data/hora do processamento (autoridade) em UTC</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_NFEID</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave de acesso de 44 caracteres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_NPROT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Nº do protocolo</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_XMLVERSION</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Versão XML para NF-e</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_GUID_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave primária como GUID em formato &apos;RAW&apos;</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

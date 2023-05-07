@@ -4,8 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_MM_CONF_PROD</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Dados do produto</DDTEXT>
+    <DDLANGUAGE>E</DDLANGUAGE>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

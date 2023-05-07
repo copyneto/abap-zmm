@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_PLANLOG_EXECUTE</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Executar ZMMSD_PLANLOG</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_PLANLOG_EXECUTE</HREF>

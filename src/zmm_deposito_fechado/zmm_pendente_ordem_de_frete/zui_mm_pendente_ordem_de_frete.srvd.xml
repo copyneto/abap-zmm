@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_MM_PENDENTE_ORDEM_DE_FRETE</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Service Def. Pendente em Ordem de Frete</DESCRIPTION>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_mm_pendente_ordem_de_frete/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

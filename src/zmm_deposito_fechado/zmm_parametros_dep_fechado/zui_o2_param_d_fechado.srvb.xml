@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_PARAM_D_FECHADO</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Administrar Parâmetros Depósito Fechado</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_PARAM_D_FECHADO</HREF>

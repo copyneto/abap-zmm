@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_VISAO_REMESSA_RETORNO</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Service Definition - Relatório Visão Remessa e Retorno</DESCRIPTION>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_visao_remessa_retorno/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

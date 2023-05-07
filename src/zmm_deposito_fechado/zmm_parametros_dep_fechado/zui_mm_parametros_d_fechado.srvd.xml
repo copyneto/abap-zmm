@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_MM_PARAMETROS_D_FECHADO</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Administar Parâmetros Depósito Fechado</DESCRIPTION>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_mm_parametros_d_fechado/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

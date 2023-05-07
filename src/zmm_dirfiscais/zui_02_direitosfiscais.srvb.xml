@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_02_DIREITOSFISCAIS</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service Binding Direitos Fiscais</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_02_DIREITOSFISCAIS</HREF>

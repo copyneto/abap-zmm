@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMMM_PICKING</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>BAPI Picking</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_VBKOK_WA</PARAMETER>
@@ -60,17 +59,14 @@
       <RSFDO>
        <PARAMETER>IS_VBKOK_WA</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Confirmação dados de picking cabeçalho remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_IF_ERROR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_VBPOK_TAB</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Table Type of VBPOK</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -83,17 +79,14 @@
       <RSFDO>
        <PARAMETER>IV_APP_EXP</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ESPECIAL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_PROT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>TABELA PROTT</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

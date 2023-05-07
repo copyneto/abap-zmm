@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMMM_CRIAR_ORDEM_FRETE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Criar Ordem de Frete</SHORT_TEXT>
      <EXPORT>
       <RSEXP>
        <PARAMETER>EV_ORDEM_FRETE</PARAMETER>
@@ -32,17 +31,14 @@
       <RSFDO>
        <PARAMETER>EV_ORDEM_FRETE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Application Log: Message Table</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_VBELN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

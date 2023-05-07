@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMMM_DEVOLUCAO_VENDAS</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Devolução de vendas</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_HIS_DEP_FEC</PARAMETER>
@@ -22,7 +21,6 @@
       <RSFDO>
        <PARAMETER>IS_HIS_DEP_FEC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Histórico para processo de depósito fechado</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_MM_FISCAL_ENTRADAS</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
-    <DDTEXT>Relatório Fiscal de Entradas</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

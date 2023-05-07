@@ -10,7 +10,6 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMMM_REVERS_CONTABILIZ</FUNCNAME>
-     <SHORT_TEXT>Schnittstellenbeschreibung zum Event 00001030</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_BKDF</PARAMETER>
@@ -76,67 +75,54 @@
       <RSFDO>
        <PARAMETER>I_BKDF</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Dauerbuchungsdaten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_UF05A</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Hilfsfelder für temporäre Belege</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_XVBUP</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Kennzeichen: Verbuchung in update task</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_AUSZ1</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Auszugleichende Positionen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_AUSZ2</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Ausgleichsaktionen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_AUSZ3</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Ausgleichsaktionen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BKP1</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Zusatzinformationen pro Belegkopf</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BKPF</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Belegköpfe</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSEC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>CPD-Daten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSED</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Wechseldaten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSEG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Belegzeilen</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSET</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Steuerdaten</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_BSEU</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Verbuchungsinformation pro Belegzeile</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_MM_ALIVIUM_ACCOUNT</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Alivium: Dados Contab NF-e</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_ALIVIUM_ACCOUNT</HREF>

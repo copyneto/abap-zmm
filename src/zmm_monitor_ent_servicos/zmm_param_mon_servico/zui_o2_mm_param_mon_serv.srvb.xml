@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_MM_PARAM_MON_SERV</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Parâmetro determinação IVA/CFOP/CTG</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_PARAM_MON_SERV</HREF>

@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMMM_LM_GOODS_MOVEMENT</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Goods movement</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_BITYPE</PARAMETER>
@@ -78,17 +77,14 @@
       <RSFDO>
        <PARAMETER>IV_BITYPE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_WADAT_IST</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Data real do movimento de mercadorias</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_FLAG_INBOUND</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUCCESS_COUNT</PARAMETER>
@@ -101,37 +97,30 @@
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CT_WORKTAB</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Visão: informações remessa - cabeçalho e item</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_SUCCESS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Visão: informações remessa - cabeçalho e item</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_ERROR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Visão: informações remessa - cabeçalho e item</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_TVST</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Unidade organizacional: locais de expedição</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_VBFS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Log de erros de processamento coletivo</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NO_PERMISSION</PARAMETER>
        <KIND>X</KIND>
-       <STEXT>DE-EN-LANG-SWITCH-NO-TRANSLATION</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

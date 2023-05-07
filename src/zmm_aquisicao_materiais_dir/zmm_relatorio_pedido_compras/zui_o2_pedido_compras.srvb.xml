@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_PEDIDO_COMPRAS</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Relatório de Pedido de Compras</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_PEDIDO_COMPRAS</HREF>

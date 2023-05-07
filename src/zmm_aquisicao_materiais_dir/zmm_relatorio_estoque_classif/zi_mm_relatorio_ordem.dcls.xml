@@ -4,7 +4,8 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_MM_RELATORIO_ORDEM</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
+    <DDTEXT>CDS de Autorização</DDTEXT>
    </DCLS>
   </asx:values>
  </asx:abap>

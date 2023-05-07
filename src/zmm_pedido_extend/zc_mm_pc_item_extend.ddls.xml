@@ -4,9 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_MM_PC_ITEM_EXTEND</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
     <PARENTNAME>C_PURORDITEMENH</PARENTNAME>
-    <DDTEXT>Extend Item Pedido de Compra</DDTEXT>
     <SOURCE_TYPE>E</SOURCE_TYPE>
    </DDLS>
   </asx:values>

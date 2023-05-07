@@ -32,24 +32,20 @@
       <RSFDO>
        <PARAMETER>IS_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>NF-e Inbound: Header Data</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ASSIGN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>xNFe: Table Type for Structure /XNFE/NFEASSIGN</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ACTION</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMSD_SAGA_REMESSA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Envio de remessa</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_MKPF</PARAMETER>
@@ -65,12 +61,10 @@
       <RSFDO>
        <PARAMETER>IS_MKPF</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Cabeçalho do documento do material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Cabeçalho da nota fiscal</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

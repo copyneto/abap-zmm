@@ -4,8 +4,7 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_MM_ADMINISTRAR_TRANSF_PEND</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
-    <DDTEXT>CDS de autorização</DDTEXT>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
    </DCLS>
   </asx:values>
  </asx:abap>

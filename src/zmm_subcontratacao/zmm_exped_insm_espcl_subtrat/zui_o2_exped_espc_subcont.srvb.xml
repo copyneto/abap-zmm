@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_EXPED_ESPC_SUBCONT</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Exped.Insumos-Especial - Subcontratação</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_EXPED_ESPC_SUBCONT</HREF>

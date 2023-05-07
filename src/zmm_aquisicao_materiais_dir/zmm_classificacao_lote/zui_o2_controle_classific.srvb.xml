@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_CONTROLE_CLASSIFIC</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Controle de Classificação</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_CONTROLE_CLASSIFIC</HREF>

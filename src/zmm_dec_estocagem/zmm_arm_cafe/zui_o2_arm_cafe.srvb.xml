@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_ARM_CAFE</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service OdataV2</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_ARM_CAFE</HREF>

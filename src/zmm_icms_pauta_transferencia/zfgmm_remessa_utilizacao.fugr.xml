@@ -11,7 +11,6 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMMM_GET_REMESSA_UTILIZACAO_V</FUNCNAME>
-     <SHORT_TEXT>Get Valores Remessa Utilização</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_TYPE</PARAMETER>
@@ -30,18 +29,15 @@
       <RSFDO>
        <PARAMETER>IV_TYPE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de transação</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_LIPS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento SD: fornecimento: dados de item</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_SET_REMESSA_UTILIZACAO_V</FUNCNAME>
-     <SHORT_TEXT>Setar Valores Remessa Utilização</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_LIPS</PARAMETER>
@@ -58,12 +54,10 @@
       <RSFDO>
        <PARAMETER>IS_LIPS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento SD: fornecimento: dados de item</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TYPE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de transação</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

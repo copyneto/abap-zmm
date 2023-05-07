@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_PLANLOG_VARI</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>ZUI_O2_PLANLOG_VARI</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_PLANLOG_VARI</HREF>

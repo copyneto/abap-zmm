@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_3C_NF_FORNECEDORES</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>3Collaboration - JOB Entrada NF Forn</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_3C_NF_FORNECEDORES</HREF>

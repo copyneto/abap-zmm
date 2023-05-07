@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_XML_MASS</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service Binding Download XML</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_XML_MASS</HREF>

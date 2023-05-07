@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMMM_CRIAR_DOCUMENTO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Cria Documento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_HIS_DEP_FEC</PARAMETER>
@@ -28,7 +27,6 @@
     <item>
      <FUNCNAME>ZFMMM_CRIAR_DOCUMENTO_VENDA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Cria Documento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_HIS_DEP_FEC</PARAMETER>
@@ -47,7 +45,6 @@
       <RSFDO>
        <PARAMETER>IT_IMSEG</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Categoria de tabela c/estrutura IMSEG</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

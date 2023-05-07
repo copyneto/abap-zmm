@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMFI_POSTING_INTERFACE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Lançamento POSTING_INTERFACE_CLEARING</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_FUNCTION</PARAMETER>
@@ -82,72 +81,58 @@
       <RSFDO>
        <PARAMETER>IV_FUNCTION</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Função de interface de contabilização interna</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_AUGLV</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Operação de compensação</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TCODE</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo do sistema ABAP: código de transação atual</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_SGFUNCT</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Função alternativa para interface de contabilização FI</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_AUTH</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_XSIMU</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_BLNTAB</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de nºs de documentos para a contabilidade financeira</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_FTCLEAR</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Dados de compensação p/interface interno de contabilização</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_FTPOST</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Cabeç.e itens de documento p/interface interno de contabil.</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_FTTAX</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Impostos para interface de contabilização interno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_XREF1</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave referência _1 interna para cabeçalho documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_XREF2</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave referência _2 interna para cabeçalho documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Campo do sistema ABAP: código de retorno de instruções ABAP</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

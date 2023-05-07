@@ -5,8 +5,7 @@
    <SRVD>
     <NAME>ZUI_MM_MESTRE_MATERIAL_LOG</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Serv Def para Log Dados Mestre de Materiais</DESCRIPTION>
-    <LANGUAGE>PT</LANGUAGE>
+    <LANGUAGE>EN</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_mm_mestre_material_log/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

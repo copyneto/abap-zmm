@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_MM_CADASTRO_FISCAL</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Serv.bind. Cadastro Fiscal</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_CADASTRO_FISCAL</HREF>

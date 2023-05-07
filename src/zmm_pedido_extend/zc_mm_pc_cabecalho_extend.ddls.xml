@@ -4,9 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_MM_PC_CABECALHO_EXTEND</DDLNAME>
-    <DDLANGUAGE>P</DDLANGUAGE>
     <PARENTNAME>C_PURCHASEORDERFS</PARENTNAME>
-    <DDTEXT>Extend Cabeçalho Pedido de Compra</DDTEXT>
     <SOURCE_TYPE>E</SOURCE_TYPE>
    </DDLS>
   </asx:values>
