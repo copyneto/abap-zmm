@@ -4,8 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_MM_01_CAFE</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>Projeção ZI</DDTEXT>
+    <DDLANGUAGE>P</DDLANGUAGE>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

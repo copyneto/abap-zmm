@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_ARM_CAFE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Armazenamento de Café</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_MM_01_CAFE</PARAMETER>
@@ -32,12 +33,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_DECIS_ARM_CAFE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Armazenamento de Café</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_ROMANEIO</PARAMETER>
@@ -54,10 +57,12 @@
       <RSFDO>
        <PARAMETER>IV_ROMANEIO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Romaneio</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

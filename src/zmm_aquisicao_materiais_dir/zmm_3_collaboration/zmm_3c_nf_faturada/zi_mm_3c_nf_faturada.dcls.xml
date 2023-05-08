@@ -4,7 +4,8 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_MM_3C_NF_FATURADA</DCLNAME>
-    <DCLLANGUAGE>E</DCLLANGUAGE>
+    <DCLLANGUAGE>P</DCLLANGUAGE>
+    <DDTEXT>Autorização</DDTEXT>
    </DCLS>
   </asx:values>
  </asx:abap>

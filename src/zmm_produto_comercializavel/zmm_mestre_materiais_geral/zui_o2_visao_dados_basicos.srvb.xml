@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_VISAO_DADOS_BASICOS</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Visão de Dados Básicos</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_VISAO_DADOS_BASICOS</HREF>

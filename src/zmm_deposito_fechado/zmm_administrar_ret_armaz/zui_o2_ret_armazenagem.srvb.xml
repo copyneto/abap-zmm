@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_RET_ARMAZENAGEM</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service Binding ZUI_O2_RET_ARMAZENAGEM</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_RET_ARMAZENAGEM</HREF>

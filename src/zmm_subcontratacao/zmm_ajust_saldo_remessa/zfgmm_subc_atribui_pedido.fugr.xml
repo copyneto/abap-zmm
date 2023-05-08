@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_SUBC_ATRIBUI_PEDIDO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Ajuste de Remessa - Subcontratação</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_KEY</PARAMETER>
@@ -27,16 +28,19 @@
       <RSFDO>
        <PARAMETER>IS_KEY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Atibuição de Novo Pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_SUBC_CLEAR_ATRIB</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Limpar atribuição de pedido</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_KEY</PARAMETER>
@@ -48,6 +52,7 @@
       <RSFDO>
        <PARAMETER>IS_KEY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave ztmm_remes_pednv</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

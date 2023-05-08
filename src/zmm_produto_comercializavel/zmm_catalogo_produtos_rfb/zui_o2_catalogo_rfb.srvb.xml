@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_CATALOGO_RFB</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service Binding O2 Catálogo RFB</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_CATALOGO_RFB</HREF>

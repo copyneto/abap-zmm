@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_ROMAN_STATUS_ANDMT</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Alteração status Romaneio Andamento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_ROMANEIO</PARAMETER>
@@ -21,6 +22,7 @@
       <RSFDO>
        <PARAMETER>IV_ROMANEIO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Romaneio</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

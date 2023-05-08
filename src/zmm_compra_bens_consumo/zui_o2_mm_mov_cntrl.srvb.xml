@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_MM_MOV_CNTRL</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service binding para o mov imobilizado</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_MOV_CNTRL</HREF>

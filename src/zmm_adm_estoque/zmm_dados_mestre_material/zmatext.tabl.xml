@@ -25,6 +25,7 @@
     <item>
      <SEGMENTHEADER>
       <SEGTYP>ZMATEXT</SEGTYP>
+      <DESCRP>Extensão de dados mestres</DESCRP>
      </SEGMENTHEADER>
      <SEGMENTDEFINITION>
       <SEGTYP>ZMATEXT</SEGTYP>

@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_GMVT_SUBC</FUNCNAME>
      <UPDATE_TASK>1</UPDATE_TASK>
+     <SHORT_TEXT>Gestão de Subcontratação</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_MSEG</PARAMETER>
@@ -27,10 +28,12 @@
       <RSFDO>
        <PARAMETER>IS_MSEG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Segmento de documento - material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_CHARG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Número do lote</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

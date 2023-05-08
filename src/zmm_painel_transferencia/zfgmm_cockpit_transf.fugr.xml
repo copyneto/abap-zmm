@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_DELIVERY_UPDATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cria remessa de transferência</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_VBKOK_WA</PARAMETER>
@@ -198,134 +199,167 @@
       <RSFDO>
        <PARAMETER>IS_VBKOK_WA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Confirmação dados de picking cabeçalho remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_SYNCHRON</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_MESSAGES_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_COMMIT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DELIVERY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_UPDATE_PICKING</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NICHT_SPERREN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo &quot;não bloquear&quot;</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_CONFIRM_CENTRAL</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_WMPP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GET_DELIVERY_BUFFERED</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_GENERIC_SYSTEM_SERVICE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DATABASE_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Gravação de uma remessa comutável: ver valores fixos</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_INIT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_READ</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ERROR_MESSAGES_SEND_0</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_BUFFER_REFRESH</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Não reinicializar buffer de fornecimento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_PARTNER_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Solicitação de modificações de parceiro de um fornecimento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_SERNR_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Modificação dos nºs de série no fornecimento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_REMOTE_CHG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_MES_UPD_PACK</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Não gerar mensagens unidade comercial</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_LATE_DELIVERY_UPD</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_SIMULATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_SHPMT_AUFRUFER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Ctg.de atividade na transação</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_ANY_0</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_IN_ITEM_DELETION_0</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_IN_POD_UPDATE_0</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_IN_INTERFACE_0</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_IN_GOODS_ISSUE_0</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_IN_FINAL_CHECK_0</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_PARTNER_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_ERROR_SERNR_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_VBPOK_TAB</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Confirmação dados de picking item de remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_PROT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Protocolo confirmação picking</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
@@ -336,6 +370,7 @@
     <item>
      <FUNCNAME>ZFMMM_ENTR_MERC_TRANSF</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Entrada de Mercadoria por Transferência</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_NFEID</PARAMETER>
@@ -357,6 +392,7 @@
       <RSFDO>
        <PARAMETER>IV_NFEID</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 caracteres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -365,12 +401,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_LANC_ENTR_MERC</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Lançamento de Entrada de Mercadoria</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_GOODSMVT_HEADER</PARAMETER>
@@ -409,22 +447,27 @@
       <RSFDO>
        <PARAMETER>IS_GOODSMVT_HEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura de comunicação BAPI: doc.material dados cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GOODSMVT_CODE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>MMIM: conversão de chave CM_CODE p/transação na admin.estq.</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_GOODSMVT_HEADRET</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>MMIM: Estrutura output para MF geral &apos;regist.movim.mercad.&apos;</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_MATERIALDOCUMENT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Número do documento do material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_MATDOCUMENTYEAR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Ano do documento do material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_GOODSMVT_ITEM</PARAMETER>
@@ -433,12 +476,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_LANC_ENTR_MERC_GRC</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Lançamento de Entrada de Mercadoria</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_NFEID</PARAMETER>
@@ -460,6 +505,7 @@
       <RSFDO>
        <PARAMETER>IV_NFEID</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 caracteres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -468,12 +514,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_LANC_FAT_RECEB</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Lançamento de Fatura Recebida</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_HEADERDATA</PARAMETER>
@@ -504,14 +552,17 @@
       <RSFDO>
        <PARAMETER>IS_HEADERDATA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estr.transf.dds.cabeçalho fatura recebida (criar)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_INVOICEDOCNUMBER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_FISCALYEAR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ITEMDATA</PARAMETER>
@@ -520,12 +571,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_LANC_FAT_RECEB_GRC</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Lançamento de Fatura Recebida</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_NFEID</PARAMETER>
@@ -547,6 +600,7 @@
       <RSFDO>
        <PARAMETER>IV_NFEID</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 caracteres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -555,12 +609,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_OUTB_DELIV_CREATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cria Remessa de Transferência</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_SHIP_POINT</PARAMETER>
@@ -648,18 +704,22 @@
       <RSFDO>
        <PARAMETER>IV_SHIP_POINT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Local de expedição/ponto de recebimento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DUE_DATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Data de criação da remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DEBUG_FLG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código debugging</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_DEQUEUE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_GUID</PARAMETER>
@@ -672,34 +732,42 @@
       <RSFDO>
        <PARAMETER>EV_DELIVERY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_NUM_DELIVERIES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de documentos criados</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_STOCK_TRANS_ITEMS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Delivery Item with Reference to a Stock Transport Order</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_SERIAL_NUMBERS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Serial Number</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_EXTENSION_IN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrut.referênc.p/parâmetros BAPI ExtensionIn / ExtensionOut</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_DELIVERIES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_CREATED_ITEMS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Generated Delivery Item</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_EXTENSION_OUT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrut.referênc.p/parâmetros BAPI ExtensionIn / ExtensionOut</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_HEADER_PARTNER</PARAMETER>
@@ -708,12 +776,14 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_PO_CREATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cria pedido de transferência</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_POHEADER</PARAMETER>
@@ -1006,236 +1076,294 @@
       <RSFDO>
        <PARAMETER>IS_POHEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Pedido dds.cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_POHEADERX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Dados do cabeçalho do pedido (barra de modificação)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_POADDRVENDOR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Cabeç.pedido: estrut.endereço BAPIADDR1 p/fornecedor.</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TESTRUN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_MEMORY_UNCOMPLETE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_MEMORY_COMPLETE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_POEXPIMPHEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Comércio exterior: exportação/importação dados do cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_POEXPIMPHEADERX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Comér.ext.: export./import.dds.cabeç.(barra modif.)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_VERSIONS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Administração de versões</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_MESSAGING</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_MESSAGE_REQ</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_AUTHORITY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_PRICE_FROM_PO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_PARK_COMPLETE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_PARK_UNCOMPLETE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TIPO_OPERACAO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tipo de nº do pedido do cliente</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_EXPPURCHASEORDER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº do documento de compras</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_EXPHEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Pedido dds.cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_EXPPOEXPIMPHEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Comércio exterior: exportação/importação dados do cabeçalho</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POITEM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Item do pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POITEMX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Dados do item do pedido (barra de modificação)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POADDRDELIVERY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Item do pedido: estrutura endereços BAPIADDR1 p/recebimento.</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSCHEDULE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos para divisões de remessa do pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSCHEDULEX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos p/divisões de remessa do pedido (barra modificação)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POACCOUNT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de classificação contábil do pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POACCOUNTPROFITSEGMENT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Reserva objeto de resultado: BAPI_PROFITABILITY_SEGMENT</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POACCOUNTX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de classif.contábil do pedido (barra modificação)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POCONDHEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Condições (cabeçalho)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POCONDHEADERX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Condições (cabeçalho, barra de modificação)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POCOND</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Condições no pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POCONDX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Barra de modificação: condições no pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POLIMITS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura de comunicação limites</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POCONTRACTLIMITS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura de comunicação limites de contrato</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSERVICES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura de comunicação criar linha de serviço</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSRVACCESSVALUES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrut.comunicação criar distrib.class.cont.linha serviço</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSERVICESTEXT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>BAPI serviços texto descritivo</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_EXTENSIONIN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrut.referênc.p/parâmetros BAPI ExtensionIn / ExtensionOut</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_EXTENSIONOUT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrut.referênc.p/parâmetros BAPI ExtensionIn / ExtensionOut</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POEXPIMPITEM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Comércio externo: exportação/importação: dados do item</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POEXPIMPITEMX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Comér.ext.: export./import.: dds.item (barra modificação)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POTEXTHEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Txts.cab.</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POTEXTITEM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Textos: (cabeçalho ou item)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ALLVERSIONS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Administração de versões - todos os dados das versões</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POPARTNER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura transferência p/funções parceiro em BAPI_PO_CREATE</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POCOMPONENTS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>BAPI estrutura para componentes</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POCOMPONENTSX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informação de atualização para componentes no BUS2012 API</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSHIPPING</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>BAPI dados de expedição p/períodos de transferência estoque</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSHIPPINGX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>BAPI dados de expedição para barra de modificação</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POSHIPPINGEXP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura de exportação para os dados de expedição</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_SERIALNUMBER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Serial Numbers in Purchase Order BAPIs</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_SERIALNUMBERX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Change Parameter: Serial Number in Purchase Order BAPIs</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_INVPLANHEADER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Purchasing: Invoice Plan Header Data</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_INVPLANHEADERX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Purchasing: Invoice Plan Header Datax(Change Parameter)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_INVPLANITEM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Purchasing: Invoice Plan Item</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_INVPLANITEMX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Purchasing: Invoice Plan Itemx (Change Parameter)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_NFMETALLITMS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>/NFM/: estrutura comunicação BAPI dados item documento nF</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_SALESORDER_CHANGE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Altera Ordem de Venda</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_SALESDOCUMENT</PARAMETER>
@@ -1389,118 +1517,147 @@
       <RSFDO>
        <PARAMETER>IV_SALESDOCUMENT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Documento de vendas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_ORDER_HEADER_IN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação: SD cabeçalho de ordem</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_ORDER_HEADER_INX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Barra de seleção: SD cabeçalho de ordem</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_SIMULATION</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_BEHAVE_WHEN_ERROR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_INT_NUMBER_ASSIGNMENT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_LOGIC_SWITCH</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>SD barra flag para logic switch</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_STATUS_BUF_INIT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_ITEM_IN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação: item doc.SD</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_ITEM_INX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação: item doc.SD</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_PARTNERS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação: parceiro doc.SD: WWW</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_PARTNERCHANGES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Modificações de parceiro</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_PARTNERADDRESSES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura de referência BAPI para endereços (org./firma)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_CFGS_REF</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>CU: dados de configuração</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_CFGS_INST</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Instâncias de várias configurações</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_CFGS_PART_OF</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Dados Part_Of de várias configurações</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_CFGS_VALUE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Aval.características várias configurações</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_CFGS_BLOB</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>BLOB dados de configuração internos (SCE)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_CFGS_VK</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave de condição de variante das configurações</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_CFGS_REFINST</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>CU: referência do item ordem/instância na configuração</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_SCHEDULE_LINES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação para atualizar uma divisão de doc.SD</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_SCHEDULE_LINESX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Barra de seleção p/a atualização de uma divisão rem.doc.SD</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_TEXT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação: textos SD</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_ORDER_KEYS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave no documento de vendas</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_CONDITIONS_IN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação para atualizar as condições na ordem</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_CONDITIONS_INX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campos de comunicação para atualizar as condições na ordem</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_EXTENSIONIN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrut.referênc.p/parâmetros BAPI ExtensionIn / ExtensionOut</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_EXTENSIONEX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrut.referênc.p/parâmetros BAPI ExtensionIn / ExtensionOut</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

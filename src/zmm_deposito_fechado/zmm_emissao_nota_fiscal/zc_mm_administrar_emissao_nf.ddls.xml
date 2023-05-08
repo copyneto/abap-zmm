@@ -4,7 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_MM_ADMINISTRAR_EMISSAO_NF</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Processo Depósito Fechado - Emissão de NF</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

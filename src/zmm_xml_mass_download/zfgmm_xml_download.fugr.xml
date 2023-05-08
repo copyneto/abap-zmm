@@ -10,6 +10,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFM_DOWNLOAD_XML_CTE</FUNCNAME>
+     <SHORT_TEXT>Download XML CTe</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -53,6 +54,7 @@
     </item>
     <item>
      <FUNCNAME>ZFM_DOWNLOAD_XML_IN</FUNCNAME>
+     <SHORT_TEXT>Download XML DANFE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -119,6 +121,7 @@
       <RSFDO>
        <PARAMETER>T_NFEID</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Intervalos</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_NFXML</PARAMETER>
@@ -133,6 +136,7 @@
     <item>
      <FUNCNAME>ZFM_READ_XML_CTE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Lê XML CTe</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -168,6 +172,7 @@
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_LOCAL</PARAMETER>
@@ -180,6 +185,7 @@
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de Retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_RETURN</PARAMETER>
@@ -190,6 +196,7 @@
     <item>
      <FUNCNAME>ZFM_READ_XML_NFE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Lê XML NFe</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -225,6 +232,7 @@
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_LOCAL</PARAMETER>
@@ -237,6 +245,7 @@
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de Retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>T_RETURN</PARAMETER>

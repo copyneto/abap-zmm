@@ -1,0 +1,2542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.9.20201112.2.940716_SAP" APIVersion="3.6.20316.0"?><xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2023-02-18T19:08:37Z" uuid="2619421c-076e-45d6-9037-0e36730a658c">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/2.8/">
+   <?formServer defaultPDFRenderFormat acrobat9.0static?>
+   <subform layout="tb" locale="pt_BR" name="data">
+      <pageSet>
+         <pageArea id="PageArea1" name="PageArea1">
+            <contentArea h="842pt" name="ContentArea1" w="595pt" x="0pt" y="0pt"/>
+            <medium long="842pt" short="595pt" stock="custom"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <desc>
+         <text name="creator">GUSTAVO.META</text>
+      </desc>
+      <subform layout="tb" w="209.903mm">
+         <bind match="none"/>
+         <subform h="842pt" name="Page1" w="595pt">
+            <breakBefore target="PageArea1" targetType="pageArea"/>
+            <bind match="none"/>
+            <draw h="54.7pt" name="G0" w="54.7pt" x="9.315mm" y="5.885mm">
+               <value>
+                  <image aspect="none" contentType="image/bmp">Qk3GFgAAAAAAADYEAAAoAAAATAAAAEwAAAABAAgAAAAAAAAAAAA8DwAAPA8AAAABAAAAAAAAAAAA
+AAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwADA3MAA8MqmAAAgQAAAIGAAACCAAAAgoAAAIMAA
+ACDgAABAAAAAQCAAAEBAAABAYAAAQIAAAECgAABAwAAAQOAAAGAAAABgIAAAYEAAAGBgAABggAAA
+YKAAAGDAAABg4AAAgAAAAIAgAACAQAAAgGAAAICAAACAoAAAgMAAAIDgAACgAAAAoCAAAKBAAACg
+YAAAoIAAAKCgAACgwAAAoOAAAMAAAADAIAAAwEAAAMBgAADAgAAAwKAAAMDAAADA4AAA4AAAAOAg
+AADgQAAA4GAAAOCAAADgoAAA4MAAAODgAEAAAABAACAAQABAAEAAYABAAIAAQACgAEAAwABAAOAA
+QCAAAEAgIABAIEAAQCBgAEAggABAIKAAQCDAAEAg4ABAQAAAQEAgAEBAQABAQGAAQECAAEBAoABA
+QMAAQEDgAEBgAABAYCAAQGBAAEBgYABAYIAAQGCgAEBgwABAYOAAQIAAAECAIABAgEAAQIBgAECA
+gABAgKAAQIDAAECA4ABAoAAAQKAgAECgQABAoGAAQKCAAECgoABAoMAAQKDgAEDAAABAwCAAQMBA
+AEDAYABAwIAAQMCgAEDAwABAwOAAQOAAAEDgIABA4EAAQOBgAEDggABA4KAAQODAAEDg4ACAAAAA
+gAAgAIAAQACAAGAAgACAAIAAoACAAMAAgADgAIAgAACAICAAgCBAAIAgYACAIIAAgCCgAIAgwACA
+IOAAgEAAAIBAIACAQEAAgEBgAIBAgACAQKAAgEDAAIBA4ACAYAAAgGAgAIBgQACAYGAAgGCAAIBg
+oACAYMAAgGDgAICAAACAgCAAgIBAAICAYACAgIAAgICgAICAwACAgOAAgKAAAICgIACAoEAAgKBg
+AICggACAoKAAgKDAAICg4ACAwAAAgMAgAIDAQACAwGAAgMCAAIDAoACAwMAAgMDgAIDgAACA4CAA
+gOBAAIDgYACA4IAAgOCgAIDgwACA4OAAwAAAAMAAIADAAEAAwABgAMAAgADAAKAAwADAAMAA4ADA
+IAAAwCAgAMAgQADAIGAAwCCAAMAgoADAIMAAwCDgAMBAAADAQCAAwEBAAMBAYADAQIAAwECgAMBA
+wADAQOAAwGAAAMBgIADAYEAAwGBgAMBggADAYKAAwGDAAMBg4ADAgAAAwIAgAMCAQADAgGAAwICA
+AMCAoADAgMAAwIDgAMCgAADAoCAAwKBAAMCgYADAoIAAwKCgAMCgwADAoOAAwMAAAMDAIADAwEAA
+wMBgAMDAgADAwKAA8Pv/AKSgoACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AP//////
+//////////////////////////////////////////////////////f3////////////////////
+////////////////////96SbpPf2////////////////////////////////////////////////
+//8ISQf/////////////////////////////////////B0mbpFtJSaT///////ekW6QI//b3m5uk
+9v////ek/////weknAf/B/f////2pElSpPb/B6RbnPf//////wekU1uk9v8HpFtb9/b/////////
+B0lJpP//9ltJUvelpPZSSaX3Ukn3//9SSfb//wdJSVJS90lJB/8HSUmb96QH90lS96RJUvb///dJ
+SaT3nPf/UlukUklS9v////////+kSUn///dJSQj///+kSaT///ZSSQf/W0kH//+bSaT//6RJSff/
+Ukmb/////1JJCP//B0lS9v9SSaT///////////9SSff/////////90lJ9v9bSZv/////W0kH////
+CElS9qRJ9///W0kH///2SUmkCElJB/////ZJSf////+kSaT2SUkH////////////W0mk////////
+9lNJUv//Ukmk/////1tJ9/////9TSQf3SaT//6RJ9////5tJmwdJSQj////2SUn/////9klJ9klJ
+W6T3B//////2m0lJB////wdSUklSmwj//5tJW/////+kSaT/////90mkB0lb//8HSZv////3SVL2
+SUkH/////0lJB/////9SSQdJSfcIpElb9v8HSUlSB///////B/dbUvf////3SUn2////B0lJ9v//
+/wdJW/ZJSfb/9lJJ9v//9klJ9lJJpP////+bSaT/////pEn3m0mb//8ISVL/Ukmb9v//////////
+/6RJW////1JJpP////9bSaT///8HSVv/Uklb9v/3SaT///9SSQcHSUn2////CElJCP///6RJBwhJ
+SQj//6RJB1JJB//////////////2SUn3//8ISUn3//8ICFJJ9///pEn3/1tJUkmc9qRJ9///m0n3
+/6RJUgj/9vb3SVII//ZSSfb/90lS9v/3SfekSVv2/wj2////////9klJpP///wibSUlKSQj2m0lS
+Ukmk//+lSfekSVL/90lJUklSB///91JJUkmb/wdSSVJJSQf///8HUklSSVL2/5xJSVJJCP//B1v3
+91tJSQf///////YHB/b////2Bwf2//////b//wj2///2BwcI////////CAcH/////wgHB/b/////
+//8IBwf/////9gcH9v////akUklJWwf/////////////////////////////////////////////
+/////////////6T3pFJJ9///////////////////////////////////////////////////////
+//////////////////////////////////////8IUpsHCKT/////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////YHB/b/////////////////////////
+////////////////////////////////////////////////////////////////////9qRJSUlJ
+m/b/////////////////////////////////////////////////////////////////////////
+/////////////////1tJSUlJSUlSCP//////////////////////////////////////////////
+/////////////////////////////////////////6RJSUlJSUlJSUkI////////////////////
+//////////////////////////////////////////////////////////////////dJSUlJUptJ
+SUlJUvb/////////////////////////////////////////////////////////////////////
+//////////////ZJSUlJpP//9qRJSUml////////////////////////////////////////////
+//////////////////////////////////////+kSUlJpf//////90lJSfb/////////////////
+//////////////////////////////////////////////////////////////8ISUlJm///////
+///3SUn3////////////////////////////////////////////////////////////////////
+////////////pElJUvb//////////6RJUv//////////////////////////////////////////
+////////////////////////////////////9klJSQf/////////////W0kH////////////////
+/////////////////////////////////////////////////////////////6RJSZv/////////
+/////whJW/////////////////////////////////////////////////////////8IB/f39wf2
+//////////9SSUkI////////////////90mbBwcICPb/////////////////////////////////
+//////////////dJSUlJSUlJSVKb9/b///8HSUmb//////////////////+kSUlJSUlJSVKkB///
+/////////////////////////////////////5tJSUlJSUlJSUlJSUlJUvf2/webCP//////////
+//////////YHpFtJSUlJSUlS9////////////////////////////////////wdJSUlJSUlJSUlJ
+SUlJSUlJSZsH////////////////////////////9vdbSUlJSUlb9v//////////////////////
+//////////+kSUlJSfcI9vb2CAf3pFtJSUlJSVMH/////////////////////////////whbSUlJ
+SaT/////////////////////////////////m0lJSQf//////////////wj3W0lJSVIH////////
+/////////////////////6RJSUlJ9v///////////////////////////////5tJSVL/////////
+////////9v/291JJSVIH////////////////////////////UklJSQf/////////////////////
+//////////+kSUmb/////////////////0lS9v//B1tJSVsI/////////////////////////1tJ
+SUkH////////////////////////////////90lJW////////////////whJSf//////B1tJSaT2
+//////////////////////9SSUlJ9v////////////////////////////////ZJSVL/////////
+///////3SVv/////////B1JJUgf///////////////////8HSUlJpP//////////////////////
+////////////W0lJ////////////////pEn3///////////2pElJpP/////////////////2UklJ
+SQj//////////////////////////////////wdJSQj//////////////5tJB/////////////8H
+UklT9v//////////////pElJSaT/////////////////////////////////////Ukn3////////
+//////9SSfb///////////////abSUkH////////////B0lJSVL2////////////////////////
+/////////////wdJW///////////////SVL///////////////////dJSaT/////////9lJJSUkI
+////////////////////////////////////////U0n2////////////9klb////////////////
+////B0lJm/b//////1tJSUkH/////////////////////////////////////////wdJB///////
+/////whJpP////////////////////8IUklS9v///6RJSUn3////////////////////////////
+///////////////2Sff///////////8HSff///////////////////////ZSSVL2//dJSUn3////
+////////////////////////////////////////90kH////////////90n3////////////////
+////////9lKk//dJSUkH////////////////////////////////////////////9kpS////////
+//////dJB//////////////////////////2/6RJSVII////////////////////////////////
+/////////////1NJ9/////////////+kSQf/////////////////////////9ptJSVv2////////
+/////////////////////////////////////6RJUv//////////////pEkH////////////////
+////////9lJJSff/B/b//////////////////////////////////////////wdJSff/////////
+/////6RJCP//////////////////////90lJUgf/90lS////////////////////////////////
+//////////9SSUn2//////////////+kSQj////////////////////2m0lJpPb/9lJJSaT/////
+//////////////////////////////////8HSUlb////////////////pEkH////////////////
+//b3SUlSB/////8ISUlJ7v//////////////////////////////////////W0lJpP//////////
+/////6RJB/////////////////dSSUn3//////////dJSUn2////////////////////////////
+////////9klJSff///////////////+kSff////////////291JJSaT2////////////UklJm///
+/////////////////////////////////wdJSUn3////////////////90n3//////////akSklJ
+pPb//////////////wdJSUkH//////////////////////////////////8HSUlJpP//////////
+//////dJpP/////291tJSUmk9v//////////////////UklJUv//////////////////////////
+////////CElJSUn3//////////////8HSVv/B6RTSUlJUvf2//////////////////////dJSUkH
+//////////////////////////////////9SSUlJSVKc9wcICPYIBwcIB0lJ/5tJSUmkB///////
+///////////////////2SUlJW///////////////////////////////////90lJSUlJSUlJSUlJ
+SUlJ9/ZJSQj3W/f2/////////////////////////////1tJSUn2////////////////////////
+///////////3SUlJSUlJSUlJSUlJSaT/SUn3//////////////////////////////////+kSUlJ
+B/////////////////////////////////////b3m1JSSUlKUlJbpPcI/1JJm///////////////
+////////////////////m0lJSff/////////////////////////////////////////////////
+//////+bSUn/////////////////////////////////90lJSUkH////////////////////////
+////////////////////////////////pElJB/////////////////////////////8Hm0lJSUlS
+/////////////////////////////////////////////////////////wdJSZz/////////////
+//////8IBwf3pJtKSUlJSUlJCP//////////////////////////////////////////////////
+///////2SUlJ9v////////////////dJSUlJSUlJSUlJSUlTCP//////////////////////////
+/////////////////////////////////1JJSff///////////////dJW/f3pZtTUlJSW6QH////
+//////////////////////////////////////////////////////////+kSUlS////////////
+//dJW///////////////////////////////////////////////////////////////////////
+////////CElJSff///////////dJSQj/////////////////////////////////////////////
+//////////////////////////////////9SSUlS9v////////dJSaT/////////////////////
+////////////////////////////////////////////////////////////90lJSZv/////9ptJ
+SVL/////////////////////////////////////////////////////////////////////////
+//////////9SSUlJmwcI90pJSUkI////////////////////////////////////////////////
+////////////////////////////////////B0lJSUlJSUlJSUkH////////////////////////
+//////////////////////////////////////////////////////////////+kSUlJSUlJSUn3
+////////////////////////////////////////////////////////////////////////////
+/////////////5tJSUlJSVIH////////////////////////////////////////////////////
+////////////////////////////////////////91tSW/f2////////////////////////////
+//////////////////8=</image>
+               </value>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField026500" name="PERSONFULLNAME" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="80"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.PERSONFULLNAME"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="A77B3BD0-7587-4D37-94D2-765887372390">Nome completo</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nome completo</text>
+               </desc>
+            </field>
+            <draw minH="0.157in" name="T1" presence="invisible" w="2.477in" x="35.001mm" y="5.089mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField026500" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="Tabela1[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField019169" name="STREETNAME" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="60"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.STREETNAME"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="602484D6-37F6-4D8B-B2C0-60A36F5684F6">Rua</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Rua</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T2" presence="invisible" w="1.376in" x="35.001mm" y="8.734mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField019169" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T3[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField015724" name="DISTRICT" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="40"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.DISTRICT"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="29279CB7-1F25-496B-B11C-94A07D3A7576">Bairro</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Bairro</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T3" presence="invisible" w="1.368in" x="35.001mm" y="11.274mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField015724" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T4[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField011478" name="CITYNAME" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="40"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.CITYNAME"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="EDD8A3A3-75DD-48A2-8596-89EF1A1B796B">Cidade</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Cidade</text>
+               </desc>
+            </field>
+            <field access="readOnly" h="9mm" id="floatingField029358" name="REGION" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="3"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.REGION"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="74728D1D-D4B0-423E-B25B-AEE09A4F6F44">Rg</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Região (estado federal, estado federado, província, condado)</text>
+               </desc>
+            </field>
+            <draw h="4.43mm" name="T4" presence="invisible" w="105.649mm" x="35.162mm" y="13.297mm">
+               <value>
+                  <exData contentType="text/html" xliff:rid="70EFE31F-2DCE-436C-B139-66DA3C5A0CC5">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in"><span xfa:embed="#floatingField011478" xfa:embedMode="raw" xfa:embedType="uri"/> /<span style="xfa-spacerun:yes"> </span><span xfa:embed="#floatingField029358" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T5[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField026962" name="POSTALCODE" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="10"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.POSTALCODE"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="37C94E42-5B85-4762-BB9B-067894EFE736">CEP</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Código postal da localidade</text>
+               </desc>
+            </field>
+            <draw h="3.343mm" name="T5" w="40.856mm" x="35.001mm" y="16.984mm">
+               <value>
+                  <exData contentType="text/html" xliff:rid="49BF8C51-E82C-4640-882A-37186ACAC7FA">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">CEP:<span style="xfa-spacerun:yes"> </span><span xfa:embed="#floatingField026962" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T6[0]"/>
+               </traversal>
+            </draw>
+            <draw name="T6" w="41.57mm" x="35.001mm" y="19.734mm">
+               <value>
+                  <text xliff:rid="3EDEC87A-ACE2-4811-BBA0-615123B404AB">Tel:  / Fax: </text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T7[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField028145" name="CNPJ" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="60"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.CNPJ"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="3D4F6271-4377-4305-A9F9-ED2B4B8A03B9">Nº identificação fiscal</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nº de identificação fiscal do parceiro de negócios</text>
+               </desc>
+            </field>
+            <field access="readOnly" h="9mm" id="floatingField023281" name="INSESTADUAL" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="60"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.INSESTADUAL"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="275872F5-0D5A-4509-88DD-BD4784550533">Nº identificação fiscal</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nº de identificação fiscal do parceiro de negócios</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T7" w="105.507mm" x="35.001mm" y="22.694mm">
+               <value>
+                  <exData contentType="text/html" xliff:rid="8E10B769-E54C-48C8-ADEE-0605E9CE6E60">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">CNPJ:<span style="xfa-spacerun:yes"> </span><span xfa:embed="#floatingField028145" xfa:embedMode="raw" xfa:embedType="uri"/><span style="xfa-spacerun:yes">   </span>Insc. Estadual:<span style="xfa-spacerun:yes"> </span><span xfa:embed="#floatingField023281" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T8[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.22in" name="T8" w="0.405in" x="165.481mm" y="5.097mm">
+               <value>
+                  <text xliff:rid="02F705B0-E394-4359-BACD-C835475B3BBA">NRI</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="14pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T9[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.126in" name="T9" w="1.689in" x="149.098mm" y="9.706mm">
+               <value>
+                  <text xliff:rid="42D6E2CC-C510-411A-B218-93E2F1C6B8D7">NOTA DE RECEBIMENTO DE</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T10[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.126in" name="T10" w="0.623in" x="162.687mm" y="13.296mm">
+               <value>
+                  <text xliff:rid="92093FD7-5F15-4466-9BE8-14843A00F3DA">INSPEÇÃO</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T11[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField018467" name="CREATIONDATE" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <dateTimeEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </dateTimeEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <date/>
+               </value>
+               <caption>
+                  <value>
+                     <text xliff:rid="62C2692E-8DE3-4EFE-BC21-941A64420F96">Criado em</text>
+                  </value>
+               </caption>
+               <bind match="dataRef" ref="$.GS_HEADER.CREATIONDATE">
+                  <picture>date{YYYY-MM-DD}</picture>
+               </bind>
+               <desc>
+                  <text name="Anotação do schema">Data de criação do registro</text>
+               </desc>
+               <validate nullTest="error"/>
+            </field>
+            <draw h="4.325mm" name="T11" w="32.492mm" x="154.723mm" y="17.609mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField018467" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T24[0]"/>
+               </traversal>
+            </draw>
+            <draw h="59.55pt" name="L12" w="0pt" x="11.35pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="59.55pt" name="L13" w="0pt" x="96.4pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L14" w="85.8pt" x="11pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L15" w="85.8pt" x="11pt" y="73.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="59.55pt" name="L16" w="0pt" x="96.4pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="59.55pt" name="L17" w="0pt" x="408.2pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L18" w="312.55pt" x="96.05pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L19" w="312.55pt" x="96.05pt" y="73.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="59.55pt" name="L20" w="0pt" x="408.2pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="59.55pt" name="L21" w="0pt" x="555.6pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L22" w="148.15pt" x="407.85pt" y="14.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L23" w="148.15pt" x="407.85pt" y="73.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField019718" name="XBLNR" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="16"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.XBLNR"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="152FC8FC-3BA8-4FB2-A935-A04CAD724F27">Referência</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nº documento de referência</text>
+               </desc>
+            </field>
+            <draw minH="0.157in" name="T24" w="31.581mm" x="156.874mm" y="22.187mm">
+               <value>
+                  <exData contentType="text/html" xliff:rid="7AFBF871-95A1-4E08-8635-475B16E2699E">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">NF-e:<span style="xfa-spacerun:yes">  </span><span xfa:embed="#floatingField019718" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T25[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.126in" name="T25" w="0.838in" x="0.197in" y="1.348in">
+               <value>
+                  <text xliff:rid="C147BE87-6A76-4551-9518-10D6F5F7D349">FORNECEDOR</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T26[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T26" w="0.998in" x="0.197in" y="1.555in">
+               <value>
+                  <text xliff:rid="A0B17795-BD88-4598-A57D-90E2A83264D4">NOME/RAZÃO SOCIAL</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T27[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField009961" name="F_FULLNAME" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="80"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_FULLNAME"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="8BBE2691-4418-4FE5-8FFA-CCB48281129E">Nm.compl.</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nome completo parte (PN, unid.organizacional, endereço doc.)</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T27" w="119.108mm" x="5.004mm" y="41.746mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in"><span xfa:embed="#floatingField009961" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T28[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T28" w="0.261in" x="5in" y="1.555in">
+               <value>
+                  <text xliff:rid="6C9E0128-4957-4127-9414-482B4CD831BB">CNPJ</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T29[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField002995" name="F_CNPJ" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="60"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_CNPJ"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="A2B76CB1-1557-496B-B1FC-39955B25605E">Nº identificação fiscal</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nº de identificação fiscal do parceiro de negócios</text>
+               </desc>
+            </field>
+            <draw h="4.33mm" name="T29" w="37.603mm" x="127mm" y="41.326mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField002995" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T30[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T30" w="0.872in" x="6.575in" y="1.555in">
+               <value>
+                  <text xliff:rid="A89CAFDE-AC04-423C-97C4-9C284E8F67E5">DATA DA EMISSÃO</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T31[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField000041" name="DATE" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <dateTimeEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </dateTimeEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <date/>
+               </value>
+               <caption>
+                  <value>
+                     <text xliff:rid="DBF302CF-8E9A-48BD-89C6-09C32D04829E">Data</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Data do sistema</text>
+               </desc>
+               <validate nullTest="error"/>
+               <bind match="dataRef" ref="$.SFPSY.DATE">
+                  <picture>date{YYYY-MM-DD}</picture>
+               </bind>
+            </field>
+            <draw minH="0.126in" name="T31" w="17.102mm" x="172.977mm" y="41.834mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField000041" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T32[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T32" w="0.52in" x="0.197in" y="1.812in">
+               <value>
+                  <text xliff:rid="A18B6B88-7278-416A-8627-DA79CBD80571">ENDEREÇO</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T33[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField011942" name="F_STREETNAME" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="60"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_STREETNAME"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="0158C367-5618-46BF-BB63-B0BEC668DCB7">Rua</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Rua</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T33" w="89.513mm" x="5.004mm" y="48.274mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField011942" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T34[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T34" w="0.817in" x="3.819in" y="1.812in">
+               <value>
+                  <text xliff:rid="86303F0B-03F7-466A-9010-EA3CB8480F52">BAIRRO/DISTRITO</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T35[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField004827" name="F_CITYNAME" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="40"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_CITYNAME"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="83407027-E8F9-4AA0-9767-A7D489F83E26">Cidade</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Cidade</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T35" w="37.722mm" x="97.003mm" y="48.274mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField004827" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T36[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T36" w="0.215in" x="5.394in" y="1.812in">
+               <value>
+                  <text xliff:rid="09655FCD-17C0-45E1-95E8-5F308E06E6A9">CEP</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T37[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField005436" name="F_POSTALCODE" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="10"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_POSTALCODE"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="ADC1DE1D-CD45-42F0-9E1C-9321086A76C1">CEP</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Código postal da localidade</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T37" w="17.102mm" x="5.394in" y="1.884in">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField005436" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T38[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T38" w="1.031in" x="6.575in" y="1.812in">
+               <value>
+                  <text xliff:rid="FC70D220-3589-48FD-829F-72F96E9CD9F9">CÓDIGO FORNECEDOR</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T39[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField006334" name="SUPPLIER" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="10"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.SUPPLIER"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="27BC8238-0B6A-416F-87B3-DF93BF014ACB">Fornecedor</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nº conta do fornecedor</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T39" w="17.102mm" x="172.923mm" y="48.546mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField006334" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T40[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T40" w="0.521in" x="0.197in" y="2.068in">
+               <value>
+                  <text xliff:rid="3D30922E-2837-4FF5-9D56-716C753562B3">MUNICÍPIO</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T42[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T42" w="0.702in" x="3.425in" y="2.068in">
+               <value>
+                  <text xliff:rid="72EED11A-C010-4E5A-ADD8-DF8C623B1DCF">TELEFONE/FAX</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T43[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField014604" name="F_PHONENUMBER" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="30"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_PHONENUMBER"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="90E30557-0035-4B89-AA71-368C68F7BF8E">Telefone</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Primeiro nº de telefone: código + nº</text>
+               </desc>
+            </field>
+            <draw h="2.822mm" name="T43" w="27.903mm" x="86.995mm" y="54.986mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField014604" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T44[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T44" w="0.16in" x="4.606in" y="2.068in">
+               <value>
+                  <text xliff:rid="25C5354B-36CC-46AC-BF3E-094CCB65901C">UF</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T45[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField003902" name="F_REGION" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="3"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_REGION"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="CBD71B56-AF61-4C61-A35D-5D58CAFDA29E">Rg</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Região (estado federal, estado federado, província, condado)</text>
+               </desc>
+            </field>
+            <draw minH="0.126in" name="T45" w="17.102mm" x="116.992mm" y="54.566mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField003902" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T46[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T46" w="1.02in" x="5.394in" y="2.068in">
+               <value>
+                  <text xliff:rid="3B4E2726-81C8-4110-BA63-A19DC600264A">INSCRIÇÃO ESTADUAL</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T47[0]"/>
+               </traversal>
+            </draw>
+            <field access="readOnly" h="9mm" id="floatingField000153" name="F_INSESTADUAL" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="60"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_INSESTADUAL"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="FDF72AE8-79C2-43B0-8861-E0DCE74118F1">Nº identificação fiscal</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Nº de identificação fiscal do parceiro de negócios</text>
+               </desc>
+            </field>
+            <draw h="2.822mm" name="T47" w="27.035mm" x="137.008mm" y="54.776mm">
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField000153" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Arial"/>
+               <traversal>
+                  <traverse ref="T91[0]"/>
+               </traversal>
+            </draw>
+            <draw h="18.45pt" name="L48" w="0pt" x="11.35pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L49" w="0pt" x="357.2pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L50" w="346.6pt" x="11pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L51" w="346.6pt" x="11pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L52" w="0pt" x="357.2pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L53" w="0pt" x="470.6pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L54" w="114.15pt" x="356.85pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L55" w="114.15pt" x="356.85pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L56" w="0pt" x="470.6pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L57" w="0pt" x="555.65pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L58" w="85.8pt" x="470.25pt" y="110.8pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L59" w="85.8pt" x="470.25pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L60" w="0pt" x="11.35pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L61" w="0pt" x="272.15pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L62" w="261.55pt" x="11pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L63" w="261.55pt" x="11pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L64" w="0pt" x="272.15pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L65" w="0pt" x="385.55pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L66" w="114.15pt" x="271.8pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L67" w="114.15pt" x="271.8pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L68" w="0pt" x="385.55pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L69" w="0pt" x="470.6pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L70" w="85.8pt" x="385.2pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L71" w="85.8pt" x="385.2pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L72" w="0pt" x="470.6pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L73" w="0pt" x="555.65pt" y="129.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L74" w="85.8pt" x="470.25pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L75" w="0pt" x="11.35pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L76" w="0pt" x="243.8pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L77" w="233.2pt" x="11pt" y="166.15pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L78" w="0pt" x="243.8pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L79" w="0pt" x="328.85pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L80" w="85.8pt" x="243.45pt" y="166.15pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L81" w="0pt" x="328.85pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L82" w="0pt" x="385.55pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L83" w="57.45pt" x="328.5pt" y="166.15pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L84" w="0pt" x="385.55pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L85" w="0pt" x="470.6pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L86" w="85.8pt" x="385.2pt" y="166.15pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L87" w="0pt" x="470.6pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="18.45pt" name="L88" w="0pt" x="555.65pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L89" w="85.8pt" x="470.25pt" y="147.7pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L90" w="85.8pt" x="470.25pt" y="166.15pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw minH="0.126in" name="T91" w="1.393in" x="0.197in" y="2.411in">
+               <value>
+                  <text xliff:rid="308733EB-F552-4263-9488-94FF9A45FBB7">DADOS DOS PRODUTOS</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T440[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.126in" name="T440" w="0.831in" x="0.197in" y="6.643in">
+               <value>
+                  <text xliff:rid="0342D3BD-3B6A-48F4-A8BA-ED3759E4A5F9">ASSINATURAS</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="8pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T441[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T441" w="1.265in" x="0.197in" y="6.851in">
+               <value>
+                  <text xliff:rid="63121AF7-BE53-4F43-A11D-5DECA5A2A5AF">RECEBEDOR / CONFERENTE</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T442[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T442" w="3.734in" x="0.197in" y="7.151in">
+               <value>
+                  <text xliff:rid="3177AF19-3DB4-47BB-8A98-76C4890B8690">R.E _____________________ ASS.:_________________________________________________________</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T443[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T443" w="0.862in" x="3.977in" y="6.851in">
+               <value>
+                  <text xliff:rid="6A986AE9-AFB5-4B9E-9723-A2EA3235EA2F">RECEPÇÃO FISCAL</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+               <traversal>
+                  <traverse ref="T444[0]"/>
+               </traversal>
+            </draw>
+            <draw minH="0.094in" name="T444" w="3.734in" x="3.977in" y="7.151in">
+               <value>
+                  <text xliff:rid="1C8259F7-94CE-460A-9EBF-D06EF5C62151">R.E _____________________ ASS.:_________________________________________________________</text>
+               </value>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <para vAlign="middle"/>
+               <font size="6pt" typeface="Times New Roman" weight="bold"/>
+            </draw>
+            <draw h="31.2pt" name="L445" w="0pt" x="11.35pt" y="492.05pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="31.2pt" name="L446" w="0pt" x="283.5pt" y="492.05pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L447" w="272.9pt" x="11pt" y="492.05pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L448" w="272.9pt" x="11pt" y="523.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="31.2pt" name="L449" w="0pt" x="283.5pt" y="492.05pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="31.2pt" name="L450" w="0pt" x="555.65pt" y="492.05pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L451" w="272.9pt" x="283.15pt" y="492.05pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <draw h="0pt" name="L452" w="272.9pt" x="283.15pt" y="523.25pt">
+               <value>
+                  <line>
+                     <edge cap="butt" thickness="0.75pt"/>
+                  </line>
+               </value>
+            </draw>
+            <traversal>
+               <traverse operation="first" ref="G0[0]"/>
+            </traversal>
+            <draw h="101.838mm" name="Retângulo1" w="192.106mm" x="3.942mm" y="65.697mm">
+               <value>
+                  <rectangle>
+                     <edge/>
+                     <corner radius="0.071mm"/>
+                  </rectangle>
+               </value>
+            </draw>
+            <subform columnWidths="17.149mm 9.954mm 17.987mm 58.88mm 20.265mm 8.033mm 9.835mm 25.063mm 24.944mm" layout="table" name="Tabela1" x="3.942mm" y="65.697mm">
+               <border>
+                  <edge/>
+               </border>
+               <subform id="LinhaCabeçalho_ID" layout="row" name="LinhaCabeçalho">
+                  <assist role="TH"/>
+                  <draw h="8.019mm" name="Célula1">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="8D8D2289-EE1D-411B-942A-31188FA969D0">PEDIDO</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula2">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="4A9E74C9-2682-48A9-A283-29B5C785945C">ITEM</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula3">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="4B894D75-57E5-4AD3-803A-4769356B3A11">MATERIAL</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula4" w="2.318111in">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="3855BAF4-2AE7-4302-8EDC-7A2086C5168E">DESCRIÇÃO</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula5">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="9EC8C931-0092-4223-B516-714F48B7A926">QNT.</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula6">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="BC62451B-DF90-41DB-8A96-FD58167005C2">UM</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula7">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="4CCFB275-0F2C-423B-8F65-A6C986049254">DEP</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula8">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="AB45C79A-419B-4225-804D-A9DA670BF912">LOTE</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <draw h="8.019mm" name="Célula9">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text xliff:rid="23D7CDA4-A03A-407B-8BAA-6584EBC1D1F6">REQUIS.</text>
+                     </value>
+                     <font baselineShift="0pt" size="8pt" typeface="Arial" weight="bold"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <occur max="-1"/>
+                  <bind match="none"/>
+                  <traversal>
+                     <traverse operation="first" ref="Célula1[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Linha1">
+                  <assist role="TR"/>
+                  <field access="readOnly" h="9mm" id="floatingField000292" name="PURCHASEORDER" presence="hidden" w="68.056mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="10"/>
+                     </value>
+                     <bind match="dataRef" ref="$.PURCHASEORDER"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="2E9508AE-0E14-466A-8E86-DF0E227A2562">Doc.compra</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Nº do documento de compras</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.656mm" name="Texto1" w="29.2864mm" x="3.839mm" y="4.088mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField000292" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField012382" name="PURCHASEORDERITEM" presence="hidden" w="68.056mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="5"/>
+                     </value>
+                     <bind match="dataRef" ref="$.PURCHASEORDERITEM"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="3D3B48C2-2140-4E5D-9ACF-118BBAAE74A2">Número do item do pedido</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Número do item do pedido</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.656mm" name="Texto2" w="29.2864mm" x="3.377mm" y="5.137mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField012382" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField017421" name="MATERIAL" presence="hidden" w="68.056mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="40"/>
+                     </value>
+                     <bind match="dataRef" ref="$.MATERIAL"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="D701CE01-F4BF-49CB-88FE-F81464DCDBD3">Material</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Nº do material</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.656mm" name="Texto3" w="29.2864mm" x="8.135mm" y="5.534mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField017421" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField018716" name="PURCHASEORDERITEMTEXT" presence="hidden" w="68.056mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="40"/>
+                     </value>
+                     <bind match="dataRef" ref="$.PURCHASEORDERITEMTEXT"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="805EC912-D3D8-4B0A-8D71-89E4FFA6EE89">TxtBreve</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Texto breve</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.656mm" name="Texto4" w="29.2864mm" x="17.09mm" y="1.984mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField018716" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField005705" name="MENGE" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <decimal fracDigits="3" leadDigits="10"/>
+                     </value>
+                     <caption>
+                        <value>
+                           <text xliff:rid="3CC60120-F0C1-4F3B-894D-863FDA764B38">Quantidade</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Quantidade</text>
+                     </desc>
+                     <bind match="dataRef" ref="$.MENGE">
+                        <picture>num{z,zzz,zzz,zz9}</picture>
+                     </bind>
+                     <calculate>
+                        <script contentType="application/x-javascript">if (this.rawValue == 0){
+	this.rawValue = "";
+}
+
+</script>
+                     </calculate>
+                  </field>
+                  <draw minH="5.2331mm" name="Texto12" w="29.2864mm" x="6.009mm" y="3.186mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField005705" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField019895" name="PURCHASEORDERQUANTITYUNIT" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="3"/>
+                     </value>
+                     <bind match="dataRef" ref="$.PURCHASEORDERQUANTITYUNIT"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="A8DB5CB5-DAA0-4FDD-BC91-498A166B7135">UMP</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Unidade de medida do pedido</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.2331mm" name="Texto10" w="29.2864mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField019895" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField016827" name="LGORT" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="4"/>
+                     </value>
+                     <bind match="dataRef" ref="$.LGORT"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="45299154-9053-4E20-864A-7D35D423EF5D">Dep.</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Depósito</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.2331mm" name="Texto13" w="29.2864mm" x="2.441mm" y="2.47mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField016827" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField000491" name="CHARG" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="10"/>
+                     </value>
+                     <bind match="dataRef" ref="$.CHARG"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="1DFE50CE-F4AF-46E9-A273-1362A3876698">Lote</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Número do lote</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.2331mm" name="Texto14" w="29.2864mm" x="9.184mm" y="3.47mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField000491" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <field access="readOnly" h="9mm" id="floatingField032391" name="AFNAM" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <border>
+                              <edge stroke="lowered"/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="12"/>
+                     </value>
+                     <bind match="dataRef" ref="$.AFNAM"/>
+                     <caption>
+                        <value>
+                           <text xliff:rid="A627FEF1-BBF7-4378-96ED-7641C09FE159">Requisitante</text>
+                        </value>
+                     </caption>
+                     <desc>
+                        <text name="Anotação do schema">Nome do requisitante</text>
+                     </desc>
+                  </field>
+                  <draw minH="5.2331mm" name="Texto15" w="29.2864mm" x="4.703mm" y="2.896mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span xfa:embed="#floatingField032391" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                        </exData>
+                     </value>
+                     <font size="8pt" typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                        <corner presence="hidden"/>
+                        <corner/>
+                        <corner/>
+                     </border>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="dataRef" ref="$.DATA[*]"/>
+                  <occur max="-1" min="0"/>
+                  <?templateDesigner expand 1?></subform>
+               <bind match="dataRef" ref="$.ZNRI"/>
+               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+               <overflow leader="LinhaCabeçalho"/>
+               <?templateDesigner expand 1?></subform>
+            <field access="readOnly" h="9mm" id="floatingField024464" name="F_DISTRICT" presence="hidden" w="68.056mm" x="0mm" y="0mm">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Arial"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <text maxChars="40"/>
+               </value>
+               <bind match="dataRef" ref="$.GS_HEADER.F_DISTRICT"/>
+               <caption>
+                  <value>
+                     <text xliff:rid="CE371F37-20E9-4B26-88AD-F27859D8C0C8">Bairro</text>
+                  </value>
+               </caption>
+               <desc>
+                  <text name="Anotação do schema">Bairro</text>
+               </desc>
+            </field>
+            <draw h="3.856mm" name="Texto11" w="79.458mm" x="4.447mm" y="54.672mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in"><span xfa:embed="#floatingField024464" xfa:embedMode="raw" xfa:embedType="uri"/></p></body>
+                  </exData>
+               </value>
+               <font baselineShift="0pt" size="8pt" typeface="Arial"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+            </draw>
+            <?templateDesigner expand 1?></subform>
+         <traversal>
+            <traverse operation="first" ref="Page1[0]"/>
+         </traversal>
+         <?templateDesigner expand 1?></subform>
+      <proto/>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Arial" 0 0 ISO-8859-1 4 212 58 000300110012001D002400250026002700280029002A002B002C002D002F003000310032003300340035003600370038003B003C004200440046004700480049004A004C004F0050005100520053005400550056005700580059005B005E0060006D006F0072007E009E ./:ABCDEFGHIJLMNOPQRSTUXY_acdefgilmnopqrstuvx{}ãçêúº?>
+      <?renderCache.subset "Arial" 1 0 ISO-8859-1 4 72 20 00110024002600270028002C002F003000310032003300340035003600370038006400AD.ACDEILMNOPQRSTUÇÃ?>
+      <?renderCache.subset "Times New Roman" 1 0 ISO-8859-1 4 132 37 0003001000110012001D002400250026002700280029002A002C002D002F00300031003200330035003600370038003B003D00420048005E0060006400AD00CB00CF -./:ABCDEFGIJLMNOPRSTUXZ_e{}ÇÃÍÓ?></subform>
+   <?templateDesigner Grid show:1, snap:0, units:0, color:ff8080, origin:(0,0), interval:(125000,125000), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 28?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 187?></template>
+<config xmlns="http://www.xfa.org/schema/xci/2.8/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+      <common>
+         <template>
+            <base>https://FIORI-DEV.3CORACOES.COM.BR:443/sap/bc/fp/form/layout/</base>
+         </template>
+      </common>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <pdf>
+         <!--  [0..n]  -->
+         <version>1.7</version>
+         <adobeExtensionLevel>3</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="data">
+      <data>
+         <V_CPF_CNPJ_3C/>
+         <V_CPF_CNPJ_FORN/>
+         <GS_HEADER>
+            <PURCHASEORDER/>
+            <PURCHASEORDERITEM/>
+            <BUSINESSPARTNER/>
+            <SUPPLIER/>
+            <BPTAXTYPE/>
+            <ADDRESSNUMBER/>
+            <MATERIAL/>
+            <PURCHASEORDERITEMTEXT/>
+            <PURCHASEORDERQUANTITYUNIT/>
+            <CREATIONDATE/>
+            <PERSONFULLNAME/>
+            <STREETNAME/>
+            <DISTRICT/>
+            <REGION/>
+            <COUNTRY/>
+            <POSTALCODE/>
+            <CNPJ/>
+            <CPF/>
+            <INSESTADUAL/>
+            <INSMUNICIPAL/>
+            <F_FULLNAME/>
+            <F_CNPJ/>
+            <F_STREETNAME/>
+            <F_POSTALCODE/>
+            <F_CITYNAME/>
+            <F_PHONENUMBER/>
+            <F_REGION/>
+            <F_COUNTRY/>
+            <F_INSESTADUAL/>
+            <CITYNAME/>
+            <FAXNUMBER/>
+            <F_DISTRICT/>
+            <FILEPDF/>
+            <PHONENUMBER/>
+            <XBLNR/>
+            <MENGE/>
+            <CHARG/>
+            <LGORT/>
+            <AFNAM/>
+         </GS_HEADER>
+         <SFPSY>
+            <DATE/>
+            <TIME/>
+            <USERNAME/>
+            <SUBRC/>
+         </SFPSY>
+         <ZNRI dd:minOccur="0">
+            <DATA dd:maxOccur="-1">
+               <PURCHASEORDER/>
+               <PURCHASEORDERITEM/>
+               <BUSINESSPARTNER/>
+               <SUPPLIER/>
+               <BPTAXTYPE/>
+               <ADDRESSNUMBER/>
+               <MATERIAL/>
+               <PURCHASEORDERITEMTEXT/>
+               <PURCHASEORDERQUANTITYUNIT/>
+               <CREATIONDATE/>
+               <PERSONFULLNAME/>
+               <STREETNAME/>
+               <DISTRICT/>
+               <REGION/>
+               <COUNTRY/>
+               <POSTALCODE/>
+               <CNPJ/>
+               <CPF/>
+               <INSESTADUAL/>
+               <INSMUNICIPAL/>
+               <F_FULLNAME/>
+               <F_CNPJ/>
+               <F_STREETNAME/>
+               <F_POSTALCODE/>
+               <F_CITYNAME/>
+               <F_PHONENUMBER/>
+               <F_REGION/>
+               <F_COUNTRY/>
+               <F_INSESTADUAL/>
+               <CITYNAME/>
+               <FAXNUMBER/>
+               <F_DISTRICT/>
+               <FILEPDF/>
+               <PHONENUMBER/>
+               <XBLNR/>
+               <MENGE/>
+               <CHARG/>
+               <LGORT/>
+               <AFNAM/>
+            </DATA>
+         </ZNRI>
+      </data>
+   </dd:dataDescription>
+</xfa:datasets>
+<sourceSet xmlns="http://www.xfa.org/schema/xfa-source-set/2.8/"/>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection dataDescription="data" name="ZAFMM_NRI">
+      <uri/>
+      <rootElement>data</rootElement>
+   </xsdConnection>
+</connectionSet>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale desc="Português (Brasil)" name="pt_BR">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>janeiro</month>
+            <month>fevereiro</month>
+            <month>março</month>
+            <month>abril</month>
+            <month>maio</month>
+            <month>junho</month>
+            <month>julho</month>
+            <month>agosto</month>
+            <month>setembro</month>
+            <month>outubro</month>
+            <month>novembro</month>
+            <month>dezembro</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>jan</month>
+            <month>fev</month>
+            <month>mar</month>
+            <month>abr</month>
+            <month>mai</month>
+            <month>jun</month>
+            <month>jul</month>
+            <month>ago</month>
+            <month>set</month>
+            <month>out</month>
+            <month>nov</month>
+            <month>dez</month>
+         </monthNames>
+         <dayNames>
+            <day>domingo</day>
+            <day>segunda-feira</day>
+            <day>terça-feira</day>
+            <day>quarta-feira</day>
+            <day>quinta-feira</day>
+            <day>sexta-feira</day>
+            <day>sábado</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>dom</day>
+            <day>seg</day>
+            <day>ter</day>
+            <day>qua</day>
+            <day>qui</day>
+            <day>sex</day>
+            <day>sáb</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D' de 'MMMM' de 'YYYY</datePattern>
+         <datePattern name="long">D' de 'MMMM' de 'YYYY</datePattern>
+         <datePattern name="med">DD/MM/YYYY</datePattern>
+         <datePattern name="short">DD/MM/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">HH'h'MM'min'SS's' Z</timePattern>
+         <timePattern name="long">H'h'M'min'S's' Z</timePattern>
+         <timePattern name="med">HH:MM:SS</timePattern>
+         <timePattern name="short">HH:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$ z,zz9.zz</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping">.</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">R$</currencySymbol>
+         <currencySymbol name="isoname">BRL</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c015 81.161580, 2017/12/01-01:38:21        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+         <xmp:MetadataDate>2023-02-18T19:08:37Z</xmp:MetadataDate>
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+         <xmpMM:DocumentID>uuid:2619421c-076e-45d6-9037-0e36730a658c</xmpMM:DocumentID>
+         <dc:creator>
+            <rdf:Seq>
+               <rdf:li>GUSTAVO.META</rdf:li>
+            </rdf:Seq>
+         </dc:creator>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<PDFSecurity xmlns="http://ns.adobe.com/xtd/" accessibleContent="1" change="1" contentCopy="1" documentAssembly="1" formFieldFilling="1" metadata="1" modifyAnnots="1" print="1" printHighQuality="1"/></xdp:xdp>

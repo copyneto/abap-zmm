@@ -34,6 +34,7 @@
     <item>
      <SEGMENTHEADER>
       <SEGTYP>ZMM_T006A</SEGTYP>
+      <DESCRP>Texto Unidade de Medida</DESCRP>
      </SEGMENTHEADER>
      <SEGMENTDEFINITION>
       <SEGTYP>ZMM_T006A</SEGTYP>

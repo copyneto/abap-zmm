@@ -4,7 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_MM_PEDIDO_CAFE</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Relatório Pedido de Café</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

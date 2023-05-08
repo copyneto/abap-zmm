@@ -10,6 +10,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMMM_GET_ROMANEIO_PDF</FUNCNAME>
+     <SHORT_TEXT>Gerar PDF MDFE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_KEY_ROM</PARAMETER>
@@ -53,6 +54,7 @@
       <RSFDO>
        <PARAMETER>IT_KEY_ROM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave para ImpressÃo Romaneio</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_FILE</PARAMETER>
@@ -61,18 +63,22 @@
       <RSFDO>
        <PARAMETER>EV_FILESIZE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº inteiro com sinal 4 bytes</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_LINES</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Linhas texto_T</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_OTF</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Smart Form: tabela OTF</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ERRO_GET_FORM</PARAMETER>
        <KIND>X</KIND>
+       <STEXT>Erro ao buscar Smartform</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CONVERSION_EXCEPTION</PARAMETER>

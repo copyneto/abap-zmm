@@ -52,6 +52,7 @@
     <item>
      <SEGMENTHEADER>
       <SEGTYP>ZMM_MARM_PALET</SEGTYP>
+      <DESCRP>Dados de Paletização</DESCRP>
      </SEGMENTHEADER>
      <SEGMENTDEFINITION>
       <SEGTYP>ZMM_MARM_PALET</SEGTYP>

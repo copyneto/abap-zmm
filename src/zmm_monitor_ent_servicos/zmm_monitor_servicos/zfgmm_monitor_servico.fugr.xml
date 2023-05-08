@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_CALCULATE_DUO_DATE_MIRO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Calcular data de vencimento Miro</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_BLINE_DATE</PARAMETER>
@@ -45,6 +46,7 @@
     <item>
      <FUNCNAME>ZFMMM_MONITSERV_INVOICE_CANCEL</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cancelar Fatura no Monitor de Serviços</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_INVOICEDOCNUMBER</PARAMETER>
@@ -112,6 +114,7 @@
     <item>
      <FUNCNAME>ZFMMM_MONITSERV_INVOICE_CREATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Gerar Fatura no Monitor de Serviços</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_HEADERDATA</PARAMETER>
@@ -278,6 +281,7 @@
     <item>
      <FUNCNAME>ZFMMM_MONITSERV_INVOICE_SIMULA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Simular Contabilização da Fatura no Monitor de Serviços</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_HEADERDATA</PARAMETER>

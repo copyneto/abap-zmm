@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_MM_DECIS_ARMAZ_CAFE</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Decisão de Armazenagem de Café</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_DECIS_ARMAZ_CAFE</HREF>

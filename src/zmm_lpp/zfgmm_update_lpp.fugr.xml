@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_RECALC_LPP</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Estorno LPP</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -27,16 +28,19 @@
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOCNUMBER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMMM_RECALC_LPP_ENT</FUNCNAME>
      <UPDATE_TASK>3</UPDATE_TASK>
+     <SHORT_TEXT>Estorno LPP</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -63,10 +67,12 @@
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOCNUMBER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TCODE</PARAMETER>
@@ -81,6 +87,7 @@
     <item>
      <FUNCNAME>ZFMMM_UPDATE_LPP</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Update na tabela LPP</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_LPP</PARAMETER>
@@ -92,6 +99,7 @@
       <RSFDO>
        <PARAMETER>IT_LPP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Ctg. Tabela J_1BLPP</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

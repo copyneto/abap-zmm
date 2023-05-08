@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_TRIGGER_MATMAS</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Disparar IDOC MATMAS</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_MATNR</PARAMETER>
@@ -30,10 +31,12 @@
       <RSFDO>
        <PARAMETER>IV_MATNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº do material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_MTART</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tipo de material</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TCODE</PARAMETER>
@@ -44,6 +47,7 @@
     <item>
      <FUNCNAME>ZFMM_ATUAL_MAT_PALETIZACAO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Paletização</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_PALET</PARAMETER>
@@ -61,10 +65,12 @@
       <RSFDO>
        <PARAMETER>IS_PALET</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela Dados de Paletização para Materiais</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

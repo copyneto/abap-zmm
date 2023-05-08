@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_MODIFICAR_REMESSA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Modificar remessa</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DELIVERY</PARAMETER>
@@ -35,18 +36,22 @@
       <RSFDO>
        <PARAMETER>IV_DELIVERY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_VBKOK_WA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Confirmação dados de picking cabeçalho remessa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_PARTNER_UPDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Solicitação de modificações de parceiro de um fornecimento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_MENSAGENS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

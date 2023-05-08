@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_GN_DELIVERY_CREATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI GN_DELIVERY_CREATE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_VBSK_I</PARAMETER>
@@ -76,34 +77,42 @@
       <RSFDO>
        <PARAMETER>IS_VBSK_I</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Processamento coletivo para cabeçalho de documento VD</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NO_COMMIT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_VBLS_POS_RUECK</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_IF_NO_DEQUE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_IF_NO_PARTNER_DIALOG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_XKOMDLGN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura transferência  GN_Delivery_Create</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_XVBLS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Notas de remessa relativas ao processamento coletivo</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_GN_PARTNER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de parceiro para GN_DELIVERY_CREATE</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TXSDC</PARAMETER>
@@ -112,10 +121,12 @@
       <RSFDO>
        <PARAMETER>ET_XVBFS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Log de erros de processamento coletivo</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_LIPS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Sorted Table Type of LIPS</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

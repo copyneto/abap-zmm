@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_TRANSFERENCIA</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>OData V2 UI Service for SAP Fiori Sistemas App</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_TRANSFERENCIA</HREF>

@@ -4,6 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZTB_MM_BATCH_CHARACTERISTC</DDLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>AMDP - Get Batch Characteristic</DDTEXT>
     <SOURCE_TYPE>F</SOURCE_TYPE>
    </DDLS>
   </asx:values>

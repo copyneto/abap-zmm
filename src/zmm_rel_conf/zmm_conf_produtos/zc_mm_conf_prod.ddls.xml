@@ -4,7 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZC_MM_CONF_PROD</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Conferência de produtos</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

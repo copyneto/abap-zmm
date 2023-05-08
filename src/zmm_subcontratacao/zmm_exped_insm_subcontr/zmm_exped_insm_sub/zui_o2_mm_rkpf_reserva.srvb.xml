@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_MM_RKPF_RESERVA</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service Binding Exped. Insumos</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_RKPF_RESERVA</HREF>

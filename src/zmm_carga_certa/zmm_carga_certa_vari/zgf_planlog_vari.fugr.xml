@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZF_CARGACERTA_PARAM_QUERY</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Carga Certa Query</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_REPORT</PARAMETER>
@@ -33,20 +34,24 @@
       <RSFDO>
        <PARAMETER>I_REPORT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Report</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_PARAM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parametro</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_PLANLOG_PARAM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de Variantes Carga Certa</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZF_CARGACERTA_VARI_CREATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Variantes Carga Certa</SHORT_TEXT>
      <CHANGING>
       <RSCHA>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
@@ -69,20 +74,24 @@
       <RSFDO>
        <PARAMETER>RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_BATCH</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Batch</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZF_CARGACERTA_VARI_DELETE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Variantes Carga Certa</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
@@ -107,20 +116,24 @@
       <RSFDO>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_BATCH</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Batch</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZF_CARGACERTA_VARI_QUERY</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Carga Certa Query</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>I_REPORT</PARAMETER>
@@ -148,24 +161,29 @@
       <RSFDO>
        <PARAMETER>I_REPORT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Report</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Variante</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_APP</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>App</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de Variantes Carga Certa</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZF_CARGACERTA_VARI_READ</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Carga Certa Variantes READ</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
@@ -187,20 +205,24 @@
       <RSFDO>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZF_CARGACERTA_VARI_UPDATE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Variantes Carga Certa</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
@@ -223,14 +245,17 @@
       <RSFDO>
        <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_BATCH</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Batch</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

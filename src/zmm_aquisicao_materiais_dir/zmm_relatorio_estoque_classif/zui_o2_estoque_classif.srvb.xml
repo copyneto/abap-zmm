@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_ESTOQUE_CLASSIF</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Estoque Classificado</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_ESTOQUE_CLASSIF</HREF>

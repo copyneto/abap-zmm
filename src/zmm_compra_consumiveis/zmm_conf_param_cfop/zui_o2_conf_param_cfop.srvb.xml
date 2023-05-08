@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_CONF_PARAM_CFOP</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service Bind Conferência Parâmetros CFOP</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_CONF_PARAM_CFOP</HREF>

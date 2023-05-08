@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_DIFAL</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Regrapara cálculo DIFAL/ST</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_DIFAL</HREF>

@@ -34,6 +34,7 @@
     <item>
      <SEGMENTHEADER>
       <SEGTYP>ZSMM_E1MARA1</SEGTYP>
+      <DESCRP>Campos adicionais</DESCRP>
      </SEGMENTHEADER>
      <SEGMENTDEFINITION>
       <SEGTYP>ZSMM_E1MARA1</SEGTYP>

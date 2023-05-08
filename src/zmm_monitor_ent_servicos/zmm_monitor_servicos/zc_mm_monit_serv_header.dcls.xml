@@ -4,7 +4,8 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZC_MM_MONIT_SERV_HEADER</DCLNAME>
-    <DCLLANGUAGE>E</DCLLANGUAGE>
+    <DCLLANGUAGE>P</DCLLANGUAGE>
+    <DDTEXT>CDS de Autorização</DDTEXT>
    </DCLS>
   </asx:values>
  </asx:abap>

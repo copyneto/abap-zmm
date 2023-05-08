@@ -3,6 +3,7 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFMM_ROMANEIO_2</FORMNAME>
+   <CAPTION>Romaneio</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -295,6 +296,7 @@
            <NAME>
             <INAME>ROMANEIO</INAME>
            </NAME>
+           <CAPTION>ROMANEIO</CAPTION>
            <NEXTPAGE>
             <INAME>ROMANEIO</INAME>
            </NEXTPAGE>
@@ -315,6 +317,7 @@
              <NAME>
               <INAME>%GRAPHIC1</INAME>
              </NAME>
+             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
               <BTYPE>BMON</BTYPE>
@@ -353,6 +356,7 @@
               <NAME>
                <INAME>CABECALHO</INAME>
               </NAME>
+              <CAPTION>Cabeçalho</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -375,6 +379,7 @@
                      <NAME>
                       <INAME>CABECALHO</INAME>
                      </NAME>
+                     <CAPTION>Cabeçalho</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -2329,7 +2334,14 @@
                         <NAME>
                          <INAME>TITULO</INAME>
                         </NAME>
+                        <CAPTION>Titulo</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>C2</TDFORMAT>
+                          <TDLINE>RELATÓRIO DE ORDENS DE DESCARGA</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2443,7 +2455,14 @@
                         <NAME>
                          <INAME>ORDEM</INAME>
                         </NAME>
+                        <CAPTION>Ordem</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>ORDEM DE DESCARGA:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2557,6 +2576,7 @@
                         <NAME>
                          <INAME>ORDEM_VAL</INAME>
                         </NAME>
+                        <CAPTION>Ordem Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -2667,7 +2687,14 @@
                         <NAME>
                          <INAME>EMPRESA</INAME>
                         </NAME>
+                        <CAPTION>Empresa</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Empresa:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2781,6 +2808,7 @@
                         <NAME>
                          <INAME>EMPRESA_VAL</INAME>
                         </NAME>
+                        <CAPTION>Empresa Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -2891,7 +2919,14 @@
                         <NAME>
                          <INAME>DT_ENTRADA</INAME>
                         </NAME>
+                        <CAPTION>Data de Entrada</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Data Entrada:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3005,6 +3040,7 @@
                         <NAME>
                          <INAME>DT_ENTRADA_VAL</INAME>
                         </NAME>
+                        <CAPTION>Data de Entrada Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -3115,7 +3151,14 @@
                         <NAME>
                          <INAME>NF_FISCAL</INAME>
                         </NAME>
+                        <CAPTION>Nota Fiscal</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Nota Fiscal:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3229,6 +3272,7 @@
                         <NAME>
                          <INAME>NF_FISCAL_VAL</INAME>
                         </NAME>
+                        <CAPTION>Nota Fiscal Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -3339,7 +3383,14 @@
                         <NAME>
                          <INAME>CORRETOR</INAME>
                         </NAME>
+                        <CAPTION>Corretor</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Corretor:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3453,6 +3504,7 @@
                         <NAME>
                          <INAME>CORRETOR_VAL</INAME>
                         </NAME>
+                        <CAPTION>Corretor Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -3563,7 +3615,14 @@
                         <NAME>
                          <INAME>NR_PEDIDO</INAME>
                         </NAME>
+                        <CAPTION>Nr. Pedido</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Nr. do Pedido:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3677,6 +3736,7 @@
                         <NAME>
                          <INAME>NR_PEDIDO_VAL</INAME>
                         </NAME>
+                        <CAPTION>Nr. Pedido Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -3787,7 +3847,14 @@
                         <NAME>
                          <INAME>DT_ENTREGA</INAME>
                         </NAME>
+                        <CAPTION>Data Entrega</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Data Entrega:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3901,6 +3968,7 @@
                         <NAME>
                          <INAME>DT_ENTREGA_VAL</INAME>
                         </NAME>
+                        <CAPTION>Data de Entrega Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -4011,7 +4079,14 @@
                         <NAME>
                          <INAME>QTDE_SACAS</INAME>
                         </NAME>
+                        <CAPTION>Qtde em Sacas</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Qtde em Sacas:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4125,6 +4200,7 @@
                         <NAME>
                          <INAME>QTDE_SACAS_VAL</INAME>
                         </NAME>
+                        <CAPTION>Nr. Pedido Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -4234,7 +4310,14 @@
                         <NAME>
                          <INAME>NR_CONTRATO</INAME>
                         </NAME>
+                        <CAPTION>Nr. Contrato</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Nr. Contrato:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4348,6 +4431,7 @@
                         <NAME>
                          <INAME>NR_CONTRATO_VAL</INAME>
                         </NAME>
+                        <CAPTION>Nr. Contrato Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -4458,7 +4542,14 @@
                         <NAME>
                          <INAME>QTDE_KG</INAME>
                         </NAME>
+                        <CAPTION>Qtde em KG</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Qtde em KG:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4572,6 +4663,7 @@
                         <NAME>
                          <INAME>QTDE_KG_VAL</INAME>
                         </NAME>
+                        <CAPTION>Qtde em Kg Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -4681,7 +4773,14 @@
                         <NAME>
                          <INAME>OBSERV</INAME>
                         </NAME>
+                        <CAPTION>Observação</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Obs.:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4795,6 +4894,7 @@
                         <NAME>
                          <INAME>OBSERV_VAL</INAME>
                         </NAME>
+                        <CAPTION>Observação Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -4905,7 +5005,14 @@
                         <NAME>
                          <INAME>PLACA</INAME>
                         </NAME>
+                        <CAPTION>Placa</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Placa:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5019,6 +5126,7 @@
                         <NAME>
                          <INAME>PLACA_VAL</INAME>
                         </NAME>
+                        <CAPTION>Placa Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -5129,7 +5237,14 @@
                         <NAME>
                          <INAME>MOTORISTA</INAME>
                         </NAME>
+                        <CAPTION>Motorista</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Motorista:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5243,6 +5358,7 @@
                         <NAME>
                          <INAME>MOTORISTA_VAL</INAME>
                         </NAME>
+                        <CAPTION>Motorista Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -5353,7 +5469,14 @@
                         <NAME>
                          <INAME>LOC_NEG</INAME>
                         </NAME>
+                        <CAPTION>Local de Negócios</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Local de Negócios:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5467,6 +5590,7 @@
                         <NAME>
                          <INAME>LOC_NEG_VAL</INAME>
                         </NAME>
+                        <CAPTION>Local de Negócio Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -5577,7 +5701,14 @@
                         <NAME>
                          <INAME>FORNECEDOR</INAME>
                         </NAME>
+                        <CAPTION>Fornecedor</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L</TDFORMAT>
+                          <TDLINE>Fornecedor:</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5691,6 +5822,7 @@
                         <NAME>
                          <INAME>FORNECEDOR_VAL</INAME>
                         </NAME>
+                        <CAPTION>Fornecedor Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -5888,6 +6020,7 @@
               <NAME>
                <INAME>CAB_TAB</INAME>
               </NAME>
+              <CAPTION>Cabeçalho Tabela</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -5910,6 +6043,7 @@
                      <NAME>
                       <INAME>CAB_TAB</INAME>
                      </NAME>
+                     <CAPTION>Cabeçalho Tabela</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -6080,7 +6214,14 @@
                         <NAME>
                          <INAME>CAB_TAB</INAME>
                         </NAME>
+                        <CAPTION>Titulo</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>C2</TDFORMAT>
+                          <TDLINE>Atributos de Classificação / Conferência</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6281,6 +6422,7 @@
               <NAME>
                <INAME>ITENS</INAME>
               </NAME>
+              <CAPTION>Informações Itens</CAPTION>
               <WTYPE>M</WTYPE>
               <T_CAPTION>
                <item>
@@ -6303,6 +6445,7 @@
                      <NAME>
                       <INAME>ITENS</INAME>
                      </NAME>
+                     <CAPTION>Tabela de Itens</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>IT_ITE</TABNAME>
@@ -6697,6 +6840,7 @@
                         <NAME>
                          <INAME>%EVENT1</INAME>
                         </NAME>
+                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -6720,6 +6864,7 @@
                         <NAME>
                          <INAME>%EVENT2</INAME>
                         </NAME>
+                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -6741,6 +6886,7 @@
                            <NAME>
                             <INAME>MATERIAL</INAME>
                            </NAME>
+                           <CAPTION>Material</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -6846,6 +6992,7 @@
                               <NAME>
                                <INAME>MATERIAL_COL</INAME>
                               </NAME>
+                              <CAPTION>Material</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -6950,7 +7097,14 @@
                                  <NAME>
                                   <INAME>MATERIAL_LB</INAME>
                                  </NAME>
+                                 <CAPTION>Material</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>L3</TDFORMAT>
+                                   <TDLINE>Material:</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -6993,6 +7147,7 @@
                               <NAME>
                                <INAME>MATERIAL_VAL</INAME>
                               </NAME>
+                              <CAPTION>Material Valor</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7097,6 +7252,7 @@
                                  <NAME>
                                   <INAME>MATERIAL_VAL</INAME>
                                  </NAME>
+                                 <CAPTION>Material Valor</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -7136,6 +7292,7 @@
                               <NAME>
                                <INAME>ITEM_PED</INAME>
                               </NAME>
+                              <CAPTION>Item do Pedido</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7240,7 +7397,14 @@
                                  <NAME>
                                   <INAME>ITEM</INAME>
                                  </NAME>
+                                 <CAPTION>Item</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>L3</TDFORMAT>
+                                   <TDLINE>Item do Pedido:</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -7283,6 +7447,7 @@
                               <NAME>
                                <INAME>ITEM_PED_VAL</INAME>
                               </NAME>
+                              <CAPTION>Valor do item do pedido</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7387,6 +7552,7 @@
                                  <NAME>
                                   <INAME>ITEM_VAL</INAME>
                                  </NAME>
+                                 <CAPTION>Item do Pedido</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -7429,6 +7595,7 @@
                            <NAME>
                             <INAME>LOTE</INAME>
                            </NAME>
+                           <CAPTION>Lote</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -7534,6 +7701,7 @@
                               <NAME>
                                <INAME>LOTE_LB</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7638,7 +7806,14 @@
                                  <NAME>
                                   <INAME>LOTE_LB</INAME>
                                  </NAME>
+                                 <CAPTION>Lote</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>L3</TDFORMAT>
+                                   <TDLINE>Lote:</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -7681,6 +7856,7 @@
                               <NAME>
                                <INAME>LOTE_VAL</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7785,6 +7961,7 @@
                                  <NAME>
                                   <INAME>LOTE_VAL</INAME>
                                  </NAME>
+                                 <CAPTION>Item do Pedido</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -7824,6 +8001,7 @@
                               <NAME>
                                <INAME>LOCALIZACAO_LB</INAME>
                               </NAME>
+                              <CAPTION>Localização</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -7928,7 +8106,14 @@
                                  <NAME>
                                   <INAME>LOCALIZACAO_LB</INAME>
                                  </NAME>
+                                 <CAPTION>Localização</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>L3</TDFORMAT>
+                                   <TDLINE>Localização</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -7977,6 +8162,7 @@
                         <NAME>
                          <INAME>%EVENT3</INAME>
                         </NAME>
+                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -8005,6 +8191,7 @@
               <NAME>
                <INAME>%OUTATTRIB1</INAME>
               </NAME>
+              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>
@@ -8088,6 +8275,7 @@
               <NAME>
                <INAME>ASSINATURAS</INAME>
               </NAME>
+              <CAPTION>Assinaturas</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -8110,6 +8298,7 @@
                      <NAME>
                       <INAME>ASSINATURAS</INAME>
                      </NAME>
+                     <CAPTION>Assinaturas</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -8248,6 +8437,7 @@
                      <NAME>
                       <INAME>%CONDITION53</INAME>
                      </NAME>
+                     <CAPTION>Nova alternativa 53</CAPTION>
                      <OCOND>
                       <LPAGE>X</LPAGE>
                      </OCOND>
@@ -8271,7 +8461,27 @@
                         <NAME>
                          <INAME>EXPEDICAO</INAME>
                         </NAME>
+                        <CAPTION>Expedição</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L2</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                          <TDLINE>__________________________________</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                          <TDLINE>EXPEDIÇÃO</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8418,7 +8628,27 @@
                         <NAME>
                          <INAME>LABORATORIO</INAME>
                         </NAME>
+                        <CAPTION>Laboratório</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>L2</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                          <TDLINE>__________________________________</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                          <TDLINE>LABORATÓRIO</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>C</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSSMM_ROMANEIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8646,6 +8876,7 @@
               <NAME>
                <INAME>%CONDITION1</INAME>
               </NAME>
+              <CAPTION>Nova alternativa 1</CAPTION>
               <OCOND>
                <LPAGE>X</LPAGE>
               </OCOND>

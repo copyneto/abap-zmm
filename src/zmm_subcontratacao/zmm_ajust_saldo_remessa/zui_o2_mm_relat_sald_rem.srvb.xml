@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_MM_RELAT_SALD_REM</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Ajuste de Saldo de Remessa</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_RELAT_SALD_REM</HREF>

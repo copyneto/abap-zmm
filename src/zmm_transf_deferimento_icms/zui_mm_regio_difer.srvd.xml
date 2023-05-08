@@ -5,7 +5,8 @@
    <SRVD>
     <NAME>ZUI_MM_REGIO_DIFER</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <LANGUAGE>EN</LANGUAGE>
+    <DESCRIPTION>Service Def Região e mensagens para regra do diferimento</DESCRIPTION>
+    <LANGUAGE>PT</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_mm_regio_difer/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

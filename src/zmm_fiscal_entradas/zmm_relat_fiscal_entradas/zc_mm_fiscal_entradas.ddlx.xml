@@ -5,6 +5,7 @@
    <DDLX>
     <METADATA>
      <NAME>ZC_MM_FISCAL_ENTRADAS</NAME>
+     <DESCRIPTION>Relatório Fiscal de Entradas</DESCRIPTION>
      <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     </METADATA>
    </DDLX>

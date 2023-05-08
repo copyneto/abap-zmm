@@ -5,7 +5,8 @@
    <SRVD>
     <NAME>ZUI_MM_ADM_ORDEM_DESCARGA</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <LANGUAGE>EN</LANGUAGE>
+    <DESCRIPTION>Service Def Administrar Ordem de Descarga</DESCRIPTION>
+    <LANGUAGE>PT</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_mm_adm_ordem_descarga/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

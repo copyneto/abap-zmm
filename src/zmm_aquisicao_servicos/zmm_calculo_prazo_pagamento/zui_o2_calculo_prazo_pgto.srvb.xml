@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_CALCULO_PRAZO_PGTO</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service binding O2 Calculo Prazo de Pagamento</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_CALCULO_PRAZO_PGTO</HREF>

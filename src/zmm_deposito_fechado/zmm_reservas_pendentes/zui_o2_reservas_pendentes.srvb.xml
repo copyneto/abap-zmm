@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_RESERVAS_PENDENTES</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Reservas Pendentes</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_RESERVAS_PENDENTES</HREF>

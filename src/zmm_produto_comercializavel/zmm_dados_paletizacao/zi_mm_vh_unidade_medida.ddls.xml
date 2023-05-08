@@ -4,8 +4,7 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_MM_VH_UNIDADE_MEDIDA</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>Unit of Measure Text</DDTEXT>
+    <DDLANGUAGE>P</DDLANGUAGE>
     <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>

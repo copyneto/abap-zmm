@@ -5,6 +5,7 @@
    <DDLX>
     <METADATA>
      <NAME>ZC_MM_ADM_ORDEM_DESCARGA</NAME>
+     <DESCRIPTION>Administrar Ordem de Descarga</DESCRIPTION>
      <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     </METADATA>
    </DDLX>

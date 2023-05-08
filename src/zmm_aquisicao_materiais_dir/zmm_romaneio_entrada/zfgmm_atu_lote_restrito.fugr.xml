@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_ATU_LOTE_RESTRITO</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Baixar Insumo para Ordem de Produção</SHORT_TEXT>
      <TABLES>
       <RSTBL>
        <PARAMETER>IT_MSEG</PARAMETER>
@@ -21,6 +22,7 @@
       <RSFDO>
        <PARAMETER>IT_MSEG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Segmento de documento - material</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

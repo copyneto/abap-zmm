@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZMM_BAIXA_INSUMO_OP_BACKGRD</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Baixar Insumo para Ordem de Produção</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IT_MSEG</PARAMETER>
@@ -21,6 +22,7 @@
       <RSFDO>
        <PARAMETER>IT_MSEG</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela MSEG</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

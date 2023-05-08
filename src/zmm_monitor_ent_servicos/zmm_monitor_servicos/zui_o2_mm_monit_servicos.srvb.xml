@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_MM_MONIT_SERVICOS</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Monitor Lançamento de Serviço</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_MONIT_SERVICOS</HREF>

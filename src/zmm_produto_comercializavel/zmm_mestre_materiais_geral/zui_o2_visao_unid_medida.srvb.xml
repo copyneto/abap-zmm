@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_VISAO_UNID_MEDIDA</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Visão de Unidade de Medida</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_VISAO_UNID_MEDIDA</HREF>

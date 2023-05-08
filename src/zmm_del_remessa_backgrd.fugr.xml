@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZMM_DEL_REMESSA_BACKGRD</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Deletar Remessa Background Task</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_VBELN</PARAMETER>
@@ -21,6 +22,7 @@
       <RSFDO>
        <PARAMETER>IV_VBELN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Remessa</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

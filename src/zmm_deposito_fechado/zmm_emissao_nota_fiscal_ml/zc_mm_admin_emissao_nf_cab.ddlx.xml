@@ -5,6 +5,7 @@
    <DDLX>
     <METADATA>
      <NAME>ZC_MM_ADMIN_EMISSAO_NF_CAB</NAME>
+     <DESCRIPTION>Processo Depósito Fechado - Emissão de NF (Cabeçalho)</DESCRIPTION>
      <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     </METADATA>
    </DDLX>

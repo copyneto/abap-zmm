@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMMM_INTEGRACAO_KLASSMATT</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Função para atualizar a tabela ZTMM_PALETIZACAO</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_PALETIZACAO</PARAMETER>
@@ -27,6 +28,7 @@
       <RSFDO>
        <PARAMETER>IS_PALETIZACAO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estrutura Paletização - MM</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_RETUN</PARAMETER>

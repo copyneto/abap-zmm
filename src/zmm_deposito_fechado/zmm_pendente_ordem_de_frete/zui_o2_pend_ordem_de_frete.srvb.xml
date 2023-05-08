@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_PEND_ORDEM_DE_FRETE</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Service Bind. Pendente Ordem de Frete</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_PEND_ORDEM_DE_FRETE</HREF>
