@@ -23,6 +23,79 @@ protected section.
 
   data mo_injection type ref to /IWBEP/IF_SB_GEN_DPC_INJECTION .
 
+  methods EXECUTE_CREATE_ENTITY
+    importing
+      !IV_ENTITY_NAME type STRING
+      !IV_ENTITY_SET_NAME type STRING
+      !IV_SOURCE_NAME type STRING
+      !IT_KEY_TAB type /IWBEP/T_MGW_NAME_VALUE_PAIR
+      !IO_TECH_REQUEST_CONTEXT type ref to /IWBEP/IF_MGW_REQ_ENTITY_C optional
+      !IT_NAVIGATION_PATH type /IWBEP/T_MGW_NAVIGATION_PATH
+      !IO_DATA_PROVIDER type ref to /IWBEP/IF_MGW_ENTRY_PROVIDER optional
+    exporting
+      !ER_ENTITY type ZCL_ZMM_CARGACERTA_VAR_MPC=>TS_EXECUTE
+    raising
+      /IWBEP/CX_MGW_BUSI_EXCEPTION
+      /IWBEP/CX_MGW_TECH_EXCEPTION .
+  methods EXECUTE_DELETE_ENTITY
+    importing
+      !IV_ENTITY_NAME type STRING
+      !IV_ENTITY_SET_NAME type STRING
+      !IV_SOURCE_NAME type STRING
+      !IT_KEY_TAB type /IWBEP/T_MGW_NAME_VALUE_PAIR
+      !IO_TECH_REQUEST_CONTEXT type ref to /IWBEP/IF_MGW_REQ_ENTITY_D optional
+      !IT_NAVIGATION_PATH type /IWBEP/T_MGW_NAVIGATION_PATH
+    raising
+      /IWBEP/CX_MGW_BUSI_EXCEPTION
+      /IWBEP/CX_MGW_TECH_EXCEPTION .
+  methods EXECUTE_GET_ENTITY
+    importing
+      !IV_ENTITY_NAME type STRING
+      !IV_ENTITY_SET_NAME type STRING
+      !IV_SOURCE_NAME type STRING
+      !IT_KEY_TAB type /IWBEP/T_MGW_NAME_VALUE_PAIR
+      !IO_REQUEST_OBJECT type ref to /IWBEP/IF_MGW_REQ_ENTITY optional
+      !IO_TECH_REQUEST_CONTEXT type ref to /IWBEP/IF_MGW_REQ_ENTITY optional
+      !IT_NAVIGATION_PATH type /IWBEP/T_MGW_NAVIGATION_PATH
+    exporting
+      !ER_ENTITY type ZCL_ZMM_CARGACERTA_VAR_MPC=>TS_EXECUTE
+      !ES_RESPONSE_CONTEXT type /IWBEP/IF_MGW_APPL_SRV_RUNTIME=>TY_S_MGW_RESPONSE_ENTITY_CNTXT
+    raising
+      /IWBEP/CX_MGW_BUSI_EXCEPTION
+      /IWBEP/CX_MGW_TECH_EXCEPTION .
+  methods EXECUTE_GET_ENTITYSET
+    importing
+      !IV_ENTITY_NAME type STRING
+      !IV_ENTITY_SET_NAME type STRING
+      !IV_SOURCE_NAME type STRING
+      !IT_FILTER_SELECT_OPTIONS type /IWBEP/T_MGW_SELECT_OPTION
+      !IS_PAGING type /IWBEP/S_MGW_PAGING
+      !IT_KEY_TAB type /IWBEP/T_MGW_NAME_VALUE_PAIR
+      !IT_NAVIGATION_PATH type /IWBEP/T_MGW_NAVIGATION_PATH
+      !IT_ORDER type /IWBEP/T_MGW_SORTING_ORDER
+      !IV_FILTER_STRING type STRING
+      !IV_SEARCH_STRING type STRING
+      !IO_TECH_REQUEST_CONTEXT type ref to /IWBEP/IF_MGW_REQ_ENTITYSET optional
+    exporting
+      !ET_ENTITYSET type ZCL_ZMM_CARGACERTA_VAR_MPC=>TT_EXECUTE
+      !ES_RESPONSE_CONTEXT type /IWBEP/IF_MGW_APPL_SRV_RUNTIME=>TY_S_MGW_RESPONSE_CONTEXT
+    raising
+      /IWBEP/CX_MGW_BUSI_EXCEPTION
+      /IWBEP/CX_MGW_TECH_EXCEPTION .
+  methods EXECUTE_UPDATE_ENTITY
+    importing
+      !IV_ENTITY_NAME type STRING
+      !IV_ENTITY_SET_NAME type STRING
+      !IV_SOURCE_NAME type STRING
+      !IT_KEY_TAB type /IWBEP/T_MGW_NAME_VALUE_PAIR
+      !IO_TECH_REQUEST_CONTEXT type ref to /IWBEP/IF_MGW_REQ_ENTITY_U optional
+      !IT_NAVIGATION_PATH type /IWBEP/T_MGW_NAVIGATION_PATH
+      !IO_DATA_PROVIDER type ref to /IWBEP/IF_MGW_ENTRY_PROVIDER optional
+    exporting
+      !ER_ENTITY type ZCL_ZMM_CARGACERTA_VAR_MPC=>TS_EXECUTE
+    raising
+      /IWBEP/CX_MGW_BUSI_EXCEPTION
+      /IWBEP/CX_MGW_TECH_EXCEPTION .
   methods PARAMETRO_CREATE_ENTITY
     importing
       !IV_ENTITY_NAME type STRING
@@ -183,13 +256,14 @@ CLASS ZCL_ZMM_CARGACERTA_VAR_DPC IMPLEMENTATION.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~CREATE_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_CRT_ENTITY_BASE
-*&* This class has been generated on 18.04.2023 08:30:17 in client 100
+*&* This class has been generated on 08.05.2023 14:11:49 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
 *&*   generated methods inside the DPC provider subclass - ZCL_ZMM_CARGACERTA_VAR_DPC_EXT
 *&-----------------------------------------------------------------------------------------------*
 
+ DATA execute_create_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_execute.
  DATA variante_create_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_variante.
  DATA parametro_create_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_parametro.
  DATA lv_entityset_name TYPE string.
@@ -197,6 +271,29 @@ CLASS ZCL_ZMM_CARGACERTA_VAR_DPC IMPLEMENTATION.
 lv_entityset_name = io_tech_request_context->get_entity_set_name( ).
 
 CASE lv_entityset_name.
+*-------------------------------------------------------------------------*
+*             EntitySet -  Execute
+*-------------------------------------------------------------------------*
+     WHEN 'Execute'.
+*     Call the entity set generated method
+    execute_create_entity(
+         EXPORTING iv_entity_name     = iv_entity_name
+                   iv_entity_set_name = iv_entity_set_name
+                   iv_source_name     = iv_source_name
+                   io_data_provider   = io_data_provider
+                   it_key_tab         = it_key_tab
+                   it_navigation_path = it_navigation_path
+                   io_tech_request_context = io_tech_request_context
+       	 IMPORTING er_entity          = execute_create_entity
+    ).
+*     Send specific entity data to the caller interfaces
+    copy_data_to_ref(
+      EXPORTING
+        is_data = execute_create_entity
+      CHANGING
+        cr_data = er_entity
+   ).
+
 *-------------------------------------------------------------------------*
 *             EntitySet -  Variante
 *-------------------------------------------------------------------------*
@@ -262,7 +359,7 @@ ENDCASE.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~DELETE_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_DEL_ENTITY_BASE
-*&* This class has been generated on 18.04.2023 08:30:17 in client 100
+*&* This class has been generated on 08.05.2023 14:11:49 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
@@ -274,6 +371,20 @@ ENDCASE.
 lv_entityset_name = io_tech_request_context->get_entity_set_name( ).
 
 CASE lv_entityset_name.
+*-------------------------------------------------------------------------*
+*             EntitySet -  Execute
+*-------------------------------------------------------------------------*
+      when 'Execute'.
+*     Call the entity set generated method
+     execute_delete_entity(
+          EXPORTING iv_entity_name     = iv_entity_name
+                    iv_entity_set_name = iv_entity_set_name
+                    iv_source_name     = iv_source_name
+                    it_key_tab         = it_key_tab
+                    it_navigation_path = it_navigation_path
+                    io_tech_request_context = io_tech_request_context
+     ).
+
 *-------------------------------------------------------------------------*
 *             EntitySet -  Variante
 *-------------------------------------------------------------------------*
@@ -318,13 +429,14 @@ CASE lv_entityset_name.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~GET_ENTITY.
 *&-----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_GETENTITY_BASE
-*&* This class has been generated  on 18.04.2023 08:30:17 in client 100
+*&* This class has been generated  on 08.05.2023 14:11:49 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
 *&*   generated methods inside the DPC provider subclass - ZCL_ZMM_CARGACERTA_VAR_DPC_EXT
 *&-----------------------------------------------------------------------------------------------*
 
+ DATA execute_get_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_execute.
  DATA variante_get_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_variante.
  DATA parametro_get_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_parametro.
  DATA lv_entityset_name TYPE string.
@@ -333,6 +445,34 @@ CASE lv_entityset_name.
 lv_entityset_name = io_tech_request_context->get_entity_set_name( ).
 
 CASE lv_entityset_name.
+*-------------------------------------------------------------------------*
+*             EntitySet -  Execute
+*-------------------------------------------------------------------------*
+      WHEN 'Execute'.
+*     Call the entity set generated method
+          execute_get_entity(
+               EXPORTING iv_entity_name     = iv_entity_name
+                         iv_entity_set_name = iv_entity_set_name
+                         iv_source_name     = iv_source_name
+                         it_key_tab         = it_key_tab
+                         it_navigation_path = it_navigation_path
+                         io_tech_request_context = io_tech_request_context
+             	 IMPORTING er_entity          = execute_get_entity
+                         es_response_context = es_response_context
+          ).
+
+        IF execute_get_entity IS NOT INITIAL.
+*     Send specific entity data to the caller interface
+          copy_data_to_ref(
+            EXPORTING
+              is_data = execute_get_entity
+            CHANGING
+              cr_data = er_entity
+          ).
+        ELSE.
+*         In case of initial values - unbind the entity reference
+          er_entity = lr_entity.
+        ENDIF.
 *-------------------------------------------------------------------------*
 *             EntitySet -  Variante
 *-------------------------------------------------------------------------*
@@ -408,12 +548,13 @@ CASE lv_entityset_name.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~GET_ENTITYSET.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TMP_ENTITYSET_BASE
-*&* This class has been generated on 18.04.2023 08:30:17 in client 100
+*&* This class has been generated on 08.05.2023 14:11:49 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
 *&*   generated methods inside the DPC provider subclass - ZCL_ZMM_CARGACERTA_VAR_DPC_EXT
 *&-----------------------------------------------------------------------------------------------*
+ DATA execute_get_entityset TYPE zcl_zmm_cargacerta_var_mpc=>tt_execute.
  DATA variante_get_entityset TYPE zcl_zmm_cargacerta_var_mpc=>tt_variante.
  DATA parametro_get_entityset TYPE zcl_zmm_cargacerta_var_mpc=>tt_parametro.
  DATA lv_entityset_name TYPE string.
@@ -421,6 +562,36 @@ CASE lv_entityset_name.
 lv_entityset_name = io_tech_request_context->get_entity_set_name( ).
 
 CASE lv_entityset_name.
+*-------------------------------------------------------------------------*
+*             EntitySet -  Execute
+*-------------------------------------------------------------------------*
+   WHEN 'Execute'.
+*     Call the entity set generated method
+      execute_get_entityset(
+        EXPORTING
+         iv_entity_name = iv_entity_name
+         iv_entity_set_name = iv_entity_set_name
+         iv_source_name = iv_source_name
+         it_filter_select_options = it_filter_select_options
+         it_order = it_order
+         is_paging = is_paging
+         it_navigation_path = it_navigation_path
+         it_key_tab = it_key_tab
+         iv_filter_string = iv_filter_string
+         iv_search_string = iv_search_string
+         io_tech_request_context = io_tech_request_context
+       IMPORTING
+         et_entityset = execute_get_entityset
+         es_response_context = es_response_context
+       ).
+*     Send specific entity data to the caller interface
+      copy_data_to_ref(
+        EXPORTING
+          is_data = execute_get_entityset
+        CHANGING
+          cr_data = er_entityset
+      ).
+
 *-------------------------------------------------------------------------*
 *             EntitySet -  Variante
 *-------------------------------------------------------------------------*
@@ -504,13 +675,14 @@ CASE lv_entityset_name.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~UPDATE_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_UPD_ENTITY_BASE
-*&* This class has been generated on 18.04.2023 08:30:17 in client 100
+*&* This class has been generated on 08.05.2023 14:11:49 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
 *&*   generated methods inside the DPC provider subclass - ZCL_ZMM_CARGACERTA_VAR_DPC_EXT
 *&-----------------------------------------------------------------------------------------------*
 
+ DATA execute_update_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_execute.
  DATA variante_update_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_variante.
  DATA parametro_update_entity TYPE zcl_zmm_cargacerta_var_mpc=>ts_parametro.
  DATA lv_entityset_name TYPE string.
@@ -519,6 +691,33 @@ CASE lv_entityset_name.
 lv_entityset_name = io_tech_request_context->get_entity_set_name( ).
 
 CASE lv_entityset_name.
+*-------------------------------------------------------------------------*
+*             EntitySet -  Execute
+*-------------------------------------------------------------------------*
+      WHEN 'Execute'.
+*     Call the entity set generated method
+          execute_update_entity(
+               EXPORTING iv_entity_name     = iv_entity_name
+                         iv_entity_set_name = iv_entity_set_name
+                         iv_source_name     = iv_source_name
+                         io_data_provider   = io_data_provider
+                         it_key_tab         = it_key_tab
+                         it_navigation_path = it_navigation_path
+                         io_tech_request_context = io_tech_request_context
+             	 IMPORTING er_entity          = execute_update_entity
+          ).
+       IF execute_update_entity IS NOT INITIAL.
+*     Send specific entity data to the caller interface
+          copy_data_to_ref(
+            EXPORTING
+              is_data = execute_update_entity
+            CHANGING
+              cr_data = er_entity
+          ).
+        ELSE.
+*         In case of initial values - unbind the entity reference
+          er_entity = lr_entity.
+        ENDIF.
 *-------------------------------------------------------------------------*
 *             EntitySet -  Variante
 *-------------------------------------------------------------------------*
@@ -742,13 +941,13 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
 * Map request input fields to function module parameters
  i_batch = ls_request_input_data-batch.
- is_planlog_vari-report = ls_request_input_data-report.
- is_planlog_vari-vari = ls_request_input_data-vari.
- is_planlog_vari-field = ls_request_input_data-field.
- is_planlog_vari-cont = ls_request_input_data-cont.
- is_planlog_vari-low = ls_request_input_data-low.
- is_planlog_vari-opti = ls_request_input_data-opti.
  is_planlog_vari-high = ls_request_input_data-high.
+ is_planlog_vari-opti = ls_request_input_data-opti.
+ is_planlog_vari-low = ls_request_input_data-low.
+ is_planlog_vari-cont = ls_request_input_data-cont.
+ is_planlog_vari-field = ls_request_input_data-field.
+ is_planlog_vari-vari = ls_request_input_data-vari.
+ is_planlog_vari-report = ls_request_input_data-report.
  is_planlog_vari-opti_desc = ls_request_input_data-opti_desc.
 
 * Get RFC destination
@@ -767,8 +966,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
          IMPORTING
            return          = return
          CHANGING
-           is_planlog_vari = is_planlog_vari
            i_batch         = i_batch
+           is_planlog_vari = is_planlog_vari
          EXCEPTIONS
            system_failure  = 1000 message lv_exc_msg
            OTHERS          = 1002.
@@ -786,8 +985,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
      IMPORTING
        return                = return
      CHANGING
-       is_planlog_vari       = is_planlog_vari
        i_batch               = i_batch
+       is_planlog_vari       = is_planlog_vari
      EXCEPTIONS
        system_failure        = 1000 MESSAGE lv_exc_msg
        communication_failure = 1001 MESSAGE lv_exc_msg
@@ -832,8 +1031,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
 * Create key table for the read operation
 
- ls_key-name = 'REPORT'.
- ls_key-value = is_planlog_vari-report.
+ ls_key-name = 'CONT'.
+ ls_key-value = is_planlog_vari-cont.
  IF ls_key IS NOT INITIAL.
    APPEND ls_key TO lt_keys.
  ENDIF.
@@ -844,8 +1043,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    APPEND ls_key TO lt_keys.
  ENDIF.
 
- ls_key-name = 'CONT'.
- ls_key-value = is_planlog_vari-cont.
+ ls_key-name = 'REPORT'.
+ ls_key-value = is_planlog_vari-report.
  IF ls_key IS NOT INITIAL.
    APPEND ls_key TO lt_keys.
  ENDIF.
@@ -1011,9 +1210,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
  ENDIF.
 
- is_planlog_vari-report = ls_converted_keys-report.
- is_planlog_vari-vari = ls_converted_keys-vari.
  is_planlog_vari-cont = ls_converted_keys-cont.
+ is_planlog_vari-vari = ls_converted_keys-vari.
+ is_planlog_vari-report = ls_converted_keys-report.
 * Get RFC destination
  lo_dp_facade = /iwbep/if_mgw_conv_srv_runtime~get_dp_facade( ).
  lv_destination = /iwbep/cl_sb_gen_dpc_rt_util=>get_rfc_destination( io_dp_facade = lo_dp_facade ).
@@ -1088,13 +1287,13 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *-------------------------------------------------------------------------*
 * Map properties from the backend to the Gateway output response structure
 
- er_entity-low = es_planlog_vari-low.
- er_entity-opti = es_planlog_vari-opti.
- er_entity-high = es_planlog_vari-high.
- er_entity-report = es_planlog_vari-report.
- er_entity-vari = es_planlog_vari-vari.
- er_entity-field = es_planlog_vari-field.
  er_entity-cont = es_planlog_vari-cont.
+ er_entity-field = es_planlog_vari-field.
+ er_entity-vari = es_planlog_vari-vari.
+ er_entity-report = es_planlog_vari-report.
+ er_entity-high = es_planlog_vari-high.
+ er_entity-opti = es_planlog_vari-opti.
+ er_entity-low = es_planlog_vari-low.
  er_entity-opti_desc = es_planlog_vari-opti_desc.
   endmethod.
 
@@ -1120,12 +1319,12 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
  DATA ls_converted_keys LIKE LINE OF et_entityset.
  DATA ls_filter TYPE /iwbep/s_mgw_select_option.
  DATA ls_filter_range TYPE /iwbep/s_cod_select_option.
- DATA lr_app LIKE RANGE OF ls_converted_keys-app.
- DATA ls_app LIKE LINE OF lr_app.
- DATA lr_report LIKE RANGE OF ls_converted_keys-report.
- DATA ls_report LIKE LINE OF lr_report.
- DATA lr_vari LIKE RANGE OF ls_converted_keys-vari.
- DATA ls_vari LIKE LINE OF lr_vari.
+ DATA lr_VARI LIKE RANGE OF ls_converted_keys-vari.
+ DATA ls_VARI LIKE LINE OF lr_VARI.
+ DATA lr_REPORT LIKE RANGE OF ls_converted_keys-report.
+ DATA ls_REPORT LIKE LINE OF lr_REPORT.
+ DATA lr_APP LIKE RANGE OF ls_converted_keys-app.
+ DATA ls_APP LIKE LINE OF lr_APP.
  DATA lo_dp_facade TYPE REF TO /iwbep/if_mgw_dp_facade.
  DATA ls_gw_et_planlog_vari LIKE LINE OF et_entityset.
  DATA lv_skip     TYPE int4.
@@ -1172,38 +1371,38 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    LOOP AT ls_filter-select_options INTO ls_filter_range.
      CASE ls_filter-property.
-       WHEN 'APP'.
+       WHEN 'VARI'.
          lo_filter->convert_select_option(
            EXPORTING
              is_select_option = ls_filter
            IMPORTING
-             et_select_option = lr_app ).
+             et_select_option = lr_VARI ).
 
-         READ TABLE lr_app INTO ls_app INDEX 1.
+         READ TABLE lr_VARI INTO ls_VARI INDEX 1.
          IF sy-subrc = 0.
-           i_app = ls_app-low.
+           i_vari = ls_VARI-low.
          ENDIF.
        WHEN 'REPORT'.
          lo_filter->convert_select_option(
            EXPORTING
              is_select_option = ls_filter
            IMPORTING
-             et_select_option = lr_report ).
+             et_select_option = lr_REPORT ).
 
-         READ TABLE lr_report INTO ls_report INDEX 1.
+         READ TABLE lr_REPORT INTO ls_REPORT INDEX 1.
          IF sy-subrc = 0.
-           i_report = ls_report-low.
+           i_report = ls_REPORT-low.
          ENDIF.
-       WHEN 'VARI'.
+       WHEN 'APP'.
          lo_filter->convert_select_option(
            EXPORTING
              is_select_option = ls_filter
            IMPORTING
-             et_select_option = lr_vari ).
+             et_select_option = lr_APP ).
 
-         READ TABLE lr_vari INTO ls_vari INDEX 1.
+         READ TABLE lr_APP INTO ls_APP INDEX 1.
          IF sy-subrc = 0.
-           i_vari = ls_vari-low.
+           i_app = ls_APP-low.
          ENDIF.
        WHEN OTHERS.
          " Log message in the application log
@@ -1236,9 +1435,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          EXPORTING
-           i_app           = i_app
-           i_report        = i_report
            i_vari          = i_vari
+           i_report        = i_report
+           i_app           = i_app
          IMPORTING
            et_planlog_vari = et_planlog_vari
          EXCEPTIONS
@@ -1256,9 +1455,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      EXPORTING
-       i_app                 = i_app
-       i_report              = i_report
        i_vari                = i_vari
+       i_report              = i_report
+       i_app                 = i_app
      IMPORTING
        et_planlog_vari       = et_planlog_vari
      EXCEPTIONS
@@ -1312,13 +1511,13 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *  Provide the response entries according to the Top and Skip parameters that were provided at runtime
       FROM lv_skip TO lv_top.
 *  Only fields that were mapped will be delivered to the response table
-   ls_gw_et_planlog_vari-vari = ls_et_planlog_vari-vari.
-   ls_gw_et_planlog_vari-field = ls_et_planlog_vari-field.
-   ls_gw_et_planlog_vari-cont = ls_et_planlog_vari-cont.
-   ls_gw_et_planlog_vari-low = ls_et_planlog_vari-low.
-   ls_gw_et_planlog_vari-opti = ls_et_planlog_vari-opti.
-   ls_gw_et_planlog_vari-high = ls_et_planlog_vari-high.
    ls_gw_et_planlog_vari-report = ls_et_planlog_vari-report.
+   ls_gw_et_planlog_vari-high = ls_et_planlog_vari-high.
+   ls_gw_et_planlog_vari-opti = ls_et_planlog_vari-opti.
+   ls_gw_et_planlog_vari-low = ls_et_planlog_vari-low.
+   ls_gw_et_planlog_vari-cont = ls_et_planlog_vari-cont.
+   ls_gw_et_planlog_vari-field = ls_et_planlog_vari-field.
+   ls_gw_et_planlog_vari-vari = ls_et_planlog_vari-vari.
    ls_gw_et_planlog_vari-opti_desc = ls_et_planlog_vari-opti_desc.
    APPEND ls_gw_et_planlog_vari TO et_entityset.
    CLEAR ls_gw_et_planlog_vari.
@@ -1359,15 +1558,15 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
 * Maps key fields to function module parameters
 
- is_planlog_vari-report = ls_converted_keys-report.
- is_planlog_vari-vari = ls_converted_keys-vari.
  is_planlog_vari-cont = ls_converted_keys-cont.
+ is_planlog_vari-vari = ls_converted_keys-vari.
+ is_planlog_vari-report = ls_converted_keys-report.
 * Map request input fields to function module parameters
  i_batch = ls_request_input_data-batch.
- is_planlog_vari-field = ls_request_input_data-field.
- is_planlog_vari-low = ls_request_input_data-low.
- is_planlog_vari-opti = ls_request_input_data-opti.
  is_planlog_vari-high = ls_request_input_data-high.
+ is_planlog_vari-opti = ls_request_input_data-opti.
+ is_planlog_vari-low = ls_request_input_data-low.
+ is_planlog_vari-field = ls_request_input_data-field.
  is_planlog_vari-opti_desc = ls_request_input_data-opti_desc.
 
 * Get RFC destination
@@ -1384,8 +1583,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          EXPORTING
-           is_planlog_vari = is_planlog_vari
            i_batch         = i_batch
+           is_planlog_vari = is_planlog_vari
          IMPORTING
            return          = return
          EXCEPTIONS
@@ -1403,8 +1602,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      EXPORTING
-       is_planlog_vari       = is_planlog_vari
        i_batch               = i_batch
+       is_planlog_vari       = is_planlog_vari
      IMPORTING
        return                = return
      EXCEPTIONS
@@ -1491,10 +1690,10 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
  DATA ls_converted_keys LIKE LINE OF et_entityset.
  DATA ls_filter TYPE /iwbep/s_mgw_select_option.
  DATA ls_filter_range TYPE /iwbep/s_cod_select_option.
- DATA lr_param LIKE RANGE OF ls_converted_keys-param.
- DATA ls_param LIKE LINE OF lr_param.
- DATA lr_report LIKE RANGE OF ls_converted_keys-report.
- DATA ls_report LIKE LINE OF lr_report.
+ DATA lr_PARAM LIKE RANGE OF ls_converted_keys-param.
+ DATA ls_PARAM LIKE LINE OF lr_PARAM.
+ DATA lr_REPORT LIKE RANGE OF ls_converted_keys-report.
+ DATA ls_REPORT LIKE LINE OF lr_REPORT.
  DATA lo_dp_facade TYPE REF TO /iwbep/if_mgw_dp_facade.
  DATA ls_gw_et_planlog_param LIKE LINE OF et_entityset.
  DATA lv_skip     TYPE int4.
@@ -1546,22 +1745,22 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
            EXPORTING
              is_select_option = ls_filter
            IMPORTING
-             et_select_option = lr_param ).
+             et_select_option = lr_PARAM ).
 
-         READ TABLE lr_param INTO ls_param INDEX 1.
+         READ TABLE lr_PARAM INTO ls_PARAM INDEX 1.
          IF sy-subrc = 0.
-           i_param = ls_param-low.
+           i_param = ls_PARAM-low.
          ENDIF.
        WHEN 'REPORT'.
          lo_filter->convert_select_option(
            EXPORTING
              is_select_option = ls_filter
            IMPORTING
-             et_select_option = lr_report ).
+             et_select_option = lr_REPORT ).
 
-         READ TABLE lr_report INTO ls_report INDEX 1.
+         READ TABLE lr_REPORT INTO ls_REPORT INDEX 1.
          IF sy-subrc = 0.
-           i_report = ls_report-low.
+           i_report = ls_REPORT-low.
          ENDIF.
        WHEN OTHERS.
          " Log message in the application log
@@ -1683,5 +1882,358 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
     EXPORTING
       textid = /iwbep/cx_mgw_not_impl_exc=>method_not_implemented
       method = 'PARAMETRO_UPDATE_ENTITY'.
+  endmethod.
+
+
+  method EXECUTE_UPDATE_ENTITY.
+  RAISE EXCEPTION TYPE /iwbep/cx_mgw_not_impl_exc
+    EXPORTING
+      textid = /iwbep/cx_mgw_not_impl_exc=>method_not_implemented
+      method = 'EXECUTE_UPDATE_ENTITY'.
+  endmethod.
+
+
+  method EXECUTE_GET_ENTITYSET.
+*-------------------------------------------------------------
+*  Data declaration
+*-------------------------------------------------------------
+ DATA i_report TYPE zif_zf_cargacerta_execute_quer=>char30.
+ DATA i_vari TYPE zif_zf_cargacerta_execute_quer=>char30.
+ DATA et_planlog_vari  TYPE zif_zf_cargacerta_execute_quer=>zttplanlog_vari.
+ DATA ls_et_planlog_vari  TYPE LINE OF zif_zf_cargacerta_execute_quer=>zttplanlog_vari.
+ DATA lv_rfc_name TYPE tfdir-funcname.
+ DATA lv_destination TYPE rfcdest.
+ DATA lv_subrc TYPE syst-subrc.
+ DATA lv_exc_msg TYPE /iwbep/mgw_bop_rfc_excep_text.
+ DATA lx_root TYPE REF TO cx_root.
+ DATA lo_filter TYPE  REF TO /iwbep/if_mgw_req_filter.
+ DATA lt_filter_select_options TYPE /iwbep/t_mgw_select_option.
+ DATA lv_filter_str TYPE string.
+ DATA ls_paging TYPE /iwbep/s_mgw_paging.
+ DATA ls_converted_keys LIKE LINE OF et_entityset.
+ DATA ls_filter TYPE /iwbep/s_mgw_select_option.
+ DATA ls_filter_range TYPE /iwbep/s_cod_select_option.
+ DATA lr_VARI LIKE RANGE OF ls_converted_keys-vari.
+ DATA ls_VARI LIKE LINE OF lr_VARI.
+ DATA lr_REPORT LIKE RANGE OF ls_converted_keys-report.
+ DATA ls_REPORT LIKE LINE OF lr_REPORT.
+ DATA lo_dp_facade TYPE REF TO /iwbep/if_mgw_dp_facade.
+ DATA ls_gw_et_planlog_vari LIKE LINE OF et_entityset.
+ DATA lv_skip     TYPE int4.
+ DATA lv_top      TYPE int4.
+
+*-------------------------------------------------------------
+*  Map the runtime request to the RFC - Only mapped attributes
+*-------------------------------------------------------------
+* Get all input information from the technical request context object
+* Since DPC works with internal property names and runtime API interface holds external property names
+* the process needs to get the all needed input information from the technical request context object
+* Get filter or select option information
+ lo_filter = io_tech_request_context->get_filter( ).
+ lt_filter_select_options = lo_filter->get_filter_select_options( ).
+ lv_filter_str = lo_filter->get_filter_string( ).
+
+* Check if the supplied filter is supported by standard gateway runtime process
+ IF  lv_filter_str            IS NOT INITIAL
+ AND lt_filter_select_options IS INITIAL.
+   " If the string of the Filter System Query Option is not automatically converted into
+   " filter option table (lt_filter_select_options), then the filtering combination is not supported
+   " Log message in the application log
+   me->/iwbep/if_sb_dpc_comm_services~log_message(
+     EXPORTING
+       iv_msg_type   = 'E'
+       iv_msg_id     = '/IWBEP/MC_SB_DPC_ADM'
+       iv_msg_number = 025 ).
+   " Raise Exception
+   RAISE EXCEPTION TYPE /iwbep/cx_mgw_tech_exception
+     EXPORTING
+       textid = /iwbep/cx_mgw_tech_exception=>internal_error.
+ ENDIF.
+
+* Get key table information
+ io_tech_request_context->get_converted_source_keys(
+   IMPORTING
+     es_key_values  = ls_converted_keys ).
+
+ ls_paging-top = io_tech_request_context->get_top( ).
+ ls_paging-skip = io_tech_request_context->get_skip( ).
+
+* Maps filter table lines to function module parameters
+ LOOP AT lt_filter_select_options INTO ls_filter.
+
+   LOOP AT ls_filter-select_options INTO ls_filter_range.
+     CASE ls_filter-property.
+       WHEN 'VARI'.
+         lo_filter->convert_select_option(
+           EXPORTING
+             is_select_option = ls_filter
+           IMPORTING
+             et_select_option = lr_VARI ).
+
+         READ TABLE lr_VARI INTO ls_VARI INDEX 1.
+         IF sy-subrc = 0.
+           i_vari = ls_VARI-low.
+         ENDIF.
+       WHEN 'REPORT'.
+         lo_filter->convert_select_option(
+           EXPORTING
+             is_select_option = ls_filter
+           IMPORTING
+             et_select_option = lr_REPORT ).
+
+         READ TABLE lr_REPORT INTO ls_REPORT INDEX 1.
+         IF sy-subrc = 0.
+           i_report = ls_REPORT-low.
+         ENDIF.
+       WHEN OTHERS.
+         " Log message in the application log
+         me->/iwbep/if_sb_dpc_comm_services~log_message(
+           EXPORTING
+             iv_msg_type   = 'E'
+             iv_msg_id     = '/IWBEP/MC_SB_DPC_ADM'
+             iv_msg_number = 020
+             iv_msg_v1     = ls_filter-property ).
+         " Raise Exception
+         RAISE EXCEPTION TYPE /iwbep/cx_mgw_tech_exception
+           EXPORTING
+             textid = /iwbep/cx_mgw_tech_exception=>internal_error.
+     ENDCASE.
+   ENDLOOP.
+
+ ENDLOOP.
+
+* Get RFC destination
+ lo_dp_facade = /iwbep/if_mgw_conv_srv_runtime~get_dp_facade( ).
+ lv_destination = /iwbep/cl_sb_gen_dpc_rt_util=>get_rfc_destination( io_dp_facade = lo_dp_facade ).
+
+*-------------------------------------------------------------
+*  Call RFC function module
+*-------------------------------------------------------------
+ lv_rfc_name = 'ZF_CARGACERTA_EXECUTE_QUERY'.
+
+ IF lv_destination IS INITIAL OR lv_destination EQ 'NONE'.
+
+   TRY.
+       CALL FUNCTION lv_rfc_name
+         EXPORTING
+           i_vari          = i_vari
+           i_report        = i_report
+         IMPORTING
+           et_planlog_vari = et_planlog_vari
+         EXCEPTIONS
+           system_failure  = 1000 message lv_exc_msg
+           OTHERS          = 1002.
+
+       lv_subrc = sy-subrc.
+*in case of co-deployment the exception is raised and needs to be caught
+     CATCH cx_root INTO lx_root.
+       lv_subrc = 1001.
+       lv_exc_msg = lx_root->if_message~get_text( ).
+   ENDTRY.
+
+ ELSE.
+
+   CALL FUNCTION lv_rfc_name DESTINATION lv_destination
+     EXPORTING
+       i_vari                = i_vari
+       i_report              = i_report
+     IMPORTING
+       et_planlog_vari       = et_planlog_vari
+     EXCEPTIONS
+       system_failure        = 1000 MESSAGE lv_exc_msg
+       communication_failure = 1001 MESSAGE lv_exc_msg
+       OTHERS                = 1002.
+
+   lv_subrc = sy-subrc.
+
+ ENDIF.
+
+*-------------------------------------------------------------
+*  Map the RFC response to the caller interface - Only mapped attributes
+*-------------------------------------------------------------
+*-------------------------------------------------------------
+* Error and exception handling
+*-------------------------------------------------------------
+ IF lv_subrc <> 0.
+* Execute the RFC exception handling process
+   me->/iwbep/if_sb_dpc_comm_services~rfc_exception_handling(
+     EXPORTING
+       iv_subrc            = lv_subrc
+       iv_exp_message_text = lv_exc_msg ).
+ ENDIF.
+
+*-------------------------------------------------------------------------*
+*             - Post Backend Call -
+*-------------------------------------------------------------------------*
+ IF ls_paging-skip IS NOT INITIAL.
+*  If the Skip value was requested at runtime
+*  the response table will provide backend entries from skip + 1, meaning start from skip +1
+*  for example: skip=5 means to start get results from the 6th row
+   lv_skip = ls_paging-skip + 1.
+ ENDIF.
+*  The Top value was requested at runtime but was not handled as part of the function interface
+ IF  ls_paging-top <> 0
+ AND lv_skip IS NOT INITIAL.
+*  if lv_skip > 0 retrieve the entries from lv_skip + Top - 1
+*  for example: skip=5 and top=2 means to start get results from the 6th row and end in row number 7
+   lv_top = ls_paging-top + lv_skip - 1.
+ ELSEIF ls_paging-top <> 0
+ AND    lv_skip IS INITIAL.
+   lv_top = ls_paging-top.
+ ELSE.
+   lv_top = lines( et_planlog_vari ).
+ ENDIF.
+
+*  - Map properties from the backend to the Gateway output response table -
+
+ LOOP AT et_planlog_vari INTO ls_et_planlog_vari
+*  Provide the response entries according to the Top and Skip parameters that were provided at runtime
+      FROM lv_skip TO lv_top.
+*  Only fields that were mapped will be delivered to the response table
+   ls_gw_et_planlog_vari-vari = ls_et_planlog_vari-vari.
+   ls_gw_et_planlog_vari-report = ls_et_planlog_vari-report.
+   APPEND ls_gw_et_planlog_vari TO et_entityset.
+   CLEAR ls_gw_et_planlog_vari.
+ ENDLOOP.
+
+  endmethod.
+
+
+  method EXECUTE_GET_ENTITY.
+*-------------------------------------------------------------
+*  Data declaration
+*-------------------------------------------------------------
+ DATA es_planlog_vari TYPE zif_zf_cargacerta_execute=>zsplanlog_vari.
+ DATA i_report TYPE zif_zf_cargacerta_execute=>char30.
+ DATA i_vari TYPE zif_zf_cargacerta_execute=>char30.
+ DATA return TYPE zif_zf_cargacerta_execute=>bapiret2.
+ DATA lv_rfc_name TYPE tfdir-funcname.
+ DATA lv_destination TYPE rfcdest.
+ DATA lv_subrc TYPE syst-subrc.
+ DATA lv_exc_msg TYPE /iwbep/mgw_bop_rfc_excep_text.
+ DATA lx_root TYPE REF TO cx_root.
+ DATA ls_converted_keys LIKE er_entity.
+ DATA lv_source_entity_set_name TYPE string.
+ DATA lo_dp_facade TYPE REF TO /iwbep/if_mgw_dp_facade.
+
+*-------------------------------------------------------------
+*  Map the runtime request to the RFC - Only mapped attributes
+*-------------------------------------------------------------
+* Get all input information from the technical request context object
+* Since DPC works with internal property names and runtime API interface holds external property names
+* the process needs to get the all needed input information from the technical request context object
+* Get key table information - for direct call
+ io_tech_request_context->get_converted_keys(
+   IMPORTING
+     es_key_values = ls_converted_keys ).
+
+* Maps key fields to function module parameters
+
+ lv_source_entity_set_name = io_tech_request_context->get_source_entity_set_name( ).
+
+ IF lv_source_entity_set_name = 'Execute' AND
+    lv_source_entity_set_name NE io_tech_request_context->get_entity_set_name( ).
+
+   io_tech_request_context->get_converted_source_keys(
+   IMPORTING es_key_values = ls_converted_keys ).
+
+ ENDIF.
+
+ i_vari = ls_converted_keys-vari.
+ i_report = ls_converted_keys-report.
+* Get RFC destination
+ lo_dp_facade = /iwbep/if_mgw_conv_srv_runtime~get_dp_facade( ).
+ lv_destination = /iwbep/cl_sb_gen_dpc_rt_util=>get_rfc_destination( io_dp_facade = lo_dp_facade ).
+
+*-------------------------------------------------------------
+*  Call RFC function module
+*-------------------------------------------------------------
+ lv_rfc_name = 'ZF_CARGACERTA_EXECUTE'.
+
+ IF lv_destination IS INITIAL OR lv_destination EQ 'NONE'.
+
+   TRY.
+       CALL FUNCTION lv_rfc_name
+         EXPORTING
+           i_vari          = i_vari
+           i_report        = i_report
+         IMPORTING
+           return          = return
+           es_planlog_vari = es_planlog_vari
+         EXCEPTIONS
+           system_failure  = 1000 message lv_exc_msg
+           OTHERS          = 1002.
+
+       lv_subrc = sy-subrc.
+*in case of co-deployment the exception is raised and needs to be caught
+     CATCH cx_root INTO lx_root.
+       lv_subrc = 1001.
+       lv_exc_msg = lx_root->if_message~get_text( ).
+   ENDTRY.
+
+ ELSE.
+
+   CALL FUNCTION lv_rfc_name DESTINATION lv_destination
+     EXPORTING
+       i_vari                = i_vari
+       i_report              = i_report
+     IMPORTING
+       return                = return
+       es_planlog_vari       = es_planlog_vari
+     EXCEPTIONS
+       system_failure        = 1000 MESSAGE lv_exc_msg
+       communication_failure = 1001 MESSAGE lv_exc_msg
+       OTHERS                = 1002.
+
+   lv_subrc = sy-subrc.
+
+ ENDIF.
+
+*-------------------------------------------------------------
+*  Map the RFC response to the caller interface - Only mapped attributes
+*-------------------------------------------------------------
+*-------------------------------------------------------------
+* Error and exception handling
+*-------------------------------------------------------------
+ IF lv_subrc <> 0.
+* Execute the RFC exception handling process
+   me->/iwbep/if_sb_dpc_comm_services~rfc_exception_handling(
+     EXPORTING
+       iv_subrc            = lv_subrc
+       iv_exp_message_text = lv_exc_msg ).
+ ENDIF.
+
+ IF return IS NOT INITIAL.
+* Call RFC call exception handling
+   me->/iwbep/if_sb_dpc_comm_services~rfc_save_log(
+     EXPORTING
+       is_return      = return
+       iv_entity_type = iv_entity_name
+       it_key_tab     = it_key_tab ).
+ ENDIF.
+
+*-------------------------------------------------------------------------*
+*             - Post Backend Call -
+*-------------------------------------------------------------------------*
+* Map properties from the backend to the Gateway output response structure
+
+ er_entity-vari = es_planlog_vari-vari.
+ er_entity-report = es_planlog_vari-report.
+  endmethod.
+
+
+  method EXECUTE_DELETE_ENTITY.
+  RAISE EXCEPTION TYPE /iwbep/cx_mgw_not_impl_exc
+    EXPORTING
+      textid = /iwbep/cx_mgw_not_impl_exc=>method_not_implemented
+      method = 'EXECUTE_DELETE_ENTITY'.
+  endmethod.
+
+
+  method EXECUTE_CREATE_ENTITY.
+  RAISE EXCEPTION TYPE /iwbep/cx_mgw_not_impl_exc
+    EXPORTING
+      textid = /iwbep/cx_mgw_not_impl_exc=>method_not_implemented
+      method = 'EXECUTE_CREATE_ENTITY'.
   endmethod.
 ENDCLASS.

@@ -363,6 +363,9 @@ CLASS ZCLMM_EXPED_SUBCT_PARAM IMPLEMENTATION.
             AND mvke~matnr  = @lt_relat_fae-matnr
           INTO TABLE @DATA(lt_tvkwz)
           BYPASSING BUFFER.
+
+          delete lt_tvkwz where vkorg = '1410'.
+
         IF sy-subrc IS INITIAL.
           SORT lt_tvkwz BY werks.
         ENDIF.

@@ -9,6 +9,95 @@
    </INCLUDES>
    <FUNCTIONS>
     <item>
+     <FUNCNAME>ZF_CARGACERTA_EXECUTE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Carga Certa Variantes READ</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REPORT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VARI</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_PLANLOG_VARI</PARAMETER>
+       <TYP>ZSPLANLOG_VARI</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <TYP>BAPIRET2</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REPORT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Report</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VARI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Variante</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_PLANLOG_VARI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Variantes Carga Certa</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZF_CARGACERTA_EXECUTE_QUERY</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Carga Certa Query</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REPORT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VARI</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_PLANLOG_VARI</PARAMETER>
+       <TYP>ZTTPLANLOG_VARI</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REPORT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Report</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VARI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Variante</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PLANLOG_VARI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de Variantes Carga Certa</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>ZF_CARGACERTA_PARAM_QUERY</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Carga Certa Query</SHORT_TEXT>

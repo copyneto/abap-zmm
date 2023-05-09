@@ -413,12 +413,16 @@ CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
                 ENDIF.
 
                 SELECT werks,
+                       vkorg,
                        vtweg
                   FROM tvkwz
                    FOR ALL ENTRIES IN @lt_relat
                  WHERE werks = @lt_relat-werks
-                   AND vtweg = '14'
+                   AND vtweg = '10'
                   INTO TABLE @DATA(lt_tvkwz).
+
+
+                  delete lt_tvkwz where vkorg = '1410'.
 
                 IF sy-subrc IS INITIAL.
                   SORT lt_tvkwz BY werks.
@@ -659,7 +663,7 @@ CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
           lv_bapi_lfimg TYPE lfimg,
           lv_bwart      TYPE bwart.
 
-    CONSTANTS: lc_outros    TYPE tvkwz-vtweg             VALUE '14',
+    CONSTANTS: lc_outros    TYPE tvkwz-vtweg             VALUE '10',
                lc_sammg     TYPE sammg                   VALUE 'SUBCONTRAT',
                lc_smart     TYPE smart                   VALUE 'L',
                lc_vgtyp     TYPE vbtypl                  VALUE 'V',

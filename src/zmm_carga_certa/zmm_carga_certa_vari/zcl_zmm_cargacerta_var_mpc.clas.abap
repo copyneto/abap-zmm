@@ -6,6 +6,23 @@ class ZCL_ZMM_CARGACERTA_VAR_MPC definition
 public section.
 
   types:
+  begin of TS_EXECUTE,
+     REPORT type string,
+     VARI type string,
+  end of TS_EXECUTE .
+  types:
+TT_EXECUTE type standard table of TS_EXECUTE .
+  types:
+   begin of ts_text_element,
+      artifact_name  type c length 40,       " technical name
+      artifact_type  type c length 4,
+      parent_artifact_name type c length 40, " technical name
+      parent_artifact_type type c length 4,
+      text_symbol    type textpoolky,
+   end of ts_text_element .
+  types:
+         tt_text_elements type standard table of ts_text_element with key text_symbol .
+  types:
   begin of TS_VARIANTE,
      OPTI_DESC type string,
      APP type string,
@@ -21,16 +38,6 @@ public section.
   types:
 TT_VARIANTE type standard table of TS_VARIANTE .
   types:
-   begin of ts_text_element,
-      artifact_name  type c length 40,       " technical name
-      artifact_type  type c length 4,
-      parent_artifact_name type c length 40, " technical name
-      parent_artifact_type type c length 4,
-      text_symbol    type textpoolky,
-   end of ts_text_element .
-  types:
-         tt_text_elements type standard table of ts_text_element with key text_symbol .
-  types:
   begin of TS_PARAMETRO,
      REPORT type string,
      PARAM type string,
@@ -39,6 +46,7 @@ TT_VARIANTE type standard table of TS_VARIANTE .
   types:
 TT_PARAMETRO type standard table of TS_PARAMETRO .
 
+  constants GC_EXECUTE type /IWBEP/IF_MGW_MED_ODATA_TYPES=>TY_E_MED_ENTITY_NAME value 'Execute' ##NO_TEXT.
   constants GC_PARAMETRO type /IWBEP/IF_MGW_MED_ODATA_TYPES=>TY_E_MED_ENTITY_NAME value 'Parametro' ##NO_TEXT.
   constants GC_VARIANTE type /IWBEP/IF_MGW_MED_ODATA_TYPES=>TY_E_MED_ENTITY_NAME value 'Variante' ##NO_TEXT.
 
@@ -56,6 +64,9 @@ TT_PARAMETRO type standard table of TS_PARAMETRO .
 protected section.
 private section.
 
+  methods DEFINE_EXECUTE
+    raising
+      /IWBEP/CX_MGW_MED_EXCEPTION .
   methods DEFINE_VARIANTE
     raising
       /IWBEP/CX_MGW_MED_EXCEPTION .
@@ -80,6 +91,7 @@ CLASS ZCL_ZMM_CARGACERTA_VAR_MPC IMPLEMENTATION.
 
 model->set_schema_namespace( 'ZMM_CARGACERTA_VARI_SRV' ).
 
+define_execute( ).
 define_variante( ).
 define_parametro( ).
   endmethod.
@@ -339,7 +351,7 @@ lo_entity_set->set_filter_required( abap_false ).
 *&---------------------------------------------------------------------*
 
 
-  CONSTANTS: lc_gen_date_time TYPE timestamp VALUE '20230418113015'.                  "#EC NOTEXT
+  CONSTANTS: lc_gen_date_time TYPE timestamp VALUE '20230508171148'.                  "#EC NOTEXT
   rv_last_modified = super->get_last_modified( ).
   IF rv_last_modified LT lc_gen_date_time.
     rv_last_modified = lc_gen_date_time.
@@ -359,5 +371,77 @@ lo_entity_set->set_filter_required( abap_false ).
 
 DATA:
      ls_text_element TYPE ts_text_element.                                 "#EC NEEDED
+  endmethod.
+
+
+  method DEFINE_EXECUTE.
+*&---------------------------------------------------------------------*
+*&           Generated code for the MODEL PROVIDER BASE CLASS         &*
+*&                                                                     &*
+*&  !!!NEVER MODIFY THIS CLASS. IN CASE YOU WANT TO CHANGE THE MODEL  &*
+*&        DO THIS IN THE MODEL PROVIDER SUBCLASS!!!                   &*
+*&                                                                     &*
+*&---------------------------------------------------------------------*
+
+
+  data:
+        lo_annotation     type ref to /iwbep/if_mgw_odata_annotation,                "#EC NEEDED
+        lo_entity_type    type ref to /iwbep/if_mgw_odata_entity_typ,                "#EC NEEDED
+        lo_complex_type   type ref to /iwbep/if_mgw_odata_cmplx_type,                "#EC NEEDED
+        lo_property       type ref to /iwbep/if_mgw_odata_property,                  "#EC NEEDED
+        lo_entity_set     type ref to /iwbep/if_mgw_odata_entity_set.                "#EC NEEDED
+
+***********************************************************************************************************************************
+*   ENTITY - Execute
+***********************************************************************************************************************************
+
+lo_entity_type = model->create_entity_type( iv_entity_type_name = 'Execute' iv_def_entity_set = abap_false ). "#EC NOTEXT
+
+***********************************************************************************************************************************
+*Properties
+***********************************************************************************************************************************
+
+lo_property = lo_entity_type->create_property( iv_property_name = 'Report' iv_abap_fieldname = 'REPORT' ). "#EC NOTEXT
+lo_property->set_is_key( ).
+lo_property->set_type_edm_string( ).
+lo_property->set_creatable( abap_false ).
+lo_property->set_updatable( abap_false ).
+lo_property->set_sortable( abap_false ).
+lo_property->set_nullable( abap_false ).
+lo_property->set_filterable( abap_false ).
+lo_property->/iwbep/if_mgw_odata_annotatabl~create_annotation( 'sap' )->add(
+      EXPORTING
+        iv_key      = 'unicode'
+        iv_value    = 'false' ).
+lo_property = lo_entity_type->create_property( iv_property_name = 'Vari' iv_abap_fieldname = 'VARI' ). "#EC NOTEXT
+lo_property->set_is_key( ).
+lo_property->set_type_edm_string( ).
+lo_property->set_creatable( abap_false ).
+lo_property->set_updatable( abap_false ).
+lo_property->set_sortable( abap_false ).
+lo_property->set_nullable( abap_false ).
+lo_property->set_filterable( abap_false ).
+lo_property->/iwbep/if_mgw_odata_annotatabl~create_annotation( 'sap' )->add(
+      EXPORTING
+        iv_key      = 'unicode'
+        iv_value    = 'false' ).
+
+lo_entity_type->bind_structure( iv_structure_name  = 'ZCL_ZMM_CARGACERTA_VAR_MPC=>TS_EXECUTE' ). "#EC NOTEXT
+
+
+***********************************************************************************************************************************
+*   ENTITY SETS
+***********************************************************************************************************************************
+lo_entity_set = lo_entity_type->create_entity_set( 'Execute' ). "#EC NOTEXT
+
+lo_entity_set->set_creatable( abap_true ).
+lo_entity_set->set_updatable( abap_true ).
+lo_entity_set->set_deletable( abap_true ).
+
+lo_entity_set->set_pageable( abap_false ).
+lo_entity_set->set_addressable( abap_true ).
+lo_entity_set->set_has_ftxt_search( abap_false ).
+lo_entity_set->set_subscribable( abap_false ).
+lo_entity_set->set_filter_required( abap_false ).
   endmethod.
 ENDCLASS.
