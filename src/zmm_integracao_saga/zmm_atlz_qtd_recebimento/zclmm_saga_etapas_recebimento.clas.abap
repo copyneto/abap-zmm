@@ -372,7 +372,7 @@ CLASS ZCLMM_SAGA_ETAPAS_RECEBIMENTO IMPLEMENTATION.
                               OTHERS          = 2.
 
                           IF sy-subrc IS INITIAL.
-                            <fs_doc>-zconcl = 'D'."abap_true.
+                            <fs_doc>-zconcl = abap_true.
                           ENDIF.
 
                         ENDIF.

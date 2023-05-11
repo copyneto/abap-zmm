@@ -1,7 +1,4 @@
 "Name: \FU:J_1B_NF_OBJECT_READ\SE:END\EI
 ENHANCEMENT 0 ZEIMM_SERV_NBS.
-* LSCHEPP - 8000006800 - Quebra de lote - XML - 03.05.2023 Início
-  INCLUDE zsdi_agrupa_materiais IF FOUND.
-* LSCHEPP - 8000006800 - Quebra de lote - XML - 03.05.2023 Fim
   INCLUDE zmmi_serv_nbs IF FOUND.
 ENDENHANCEMENT.

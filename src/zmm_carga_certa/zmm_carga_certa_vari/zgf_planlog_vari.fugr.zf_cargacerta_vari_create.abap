@@ -18,6 +18,9 @@ FUNCTION zf_cargacerta_vari_create.
         lv_split1      TYPE string,
         lv_split2      TYPE string.
 
+  TRANSLATE is_planlog_vari-field TO UPPER CASE.
+  TRANSLATE is_planlog_vari-vari TO UPPER CASE.
+
   MOVE-CORRESPONDING is_planlog_vari TO ls_planlogvari.
 
   IF i_batch IS INITIAL.

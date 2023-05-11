@@ -23,6 +23,9 @@ FUNCTION zf_cargacerta_vari_update.
         lv_split1      TYPE string,
         lv_split2      TYPE string.
 
+  TRANSLATE is_planlog_vari-field TO UPPER CASE.
+  TRANSLATE is_planlog_vari-vari TO UPPER CASE.
+
 
   MOVE-CORRESPONDING is_planlog_vari TO ls_planlogvari.
 
@@ -68,7 +71,7 @@ FUNCTION zf_cargacerta_vari_update.
           ls_planlogvari-high = lv_high.
           APPEND ls_planlogvari TO lt_planlogvari.
         ENDIF.
-         i_batch = lv_split2.
+        i_batch = lv_split2.
       ELSE.
         EXIT.
       ENDIF.

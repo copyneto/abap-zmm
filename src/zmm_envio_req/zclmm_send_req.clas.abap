@@ -169,7 +169,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
+CLASS zclmm_send_req IMPLEMENTATION.
 
 
   METHOD execute.
@@ -221,6 +221,10 @@ CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
 
   METHOD save_table.
 
+    DATA lv_long_time_stamp TYPE timestampl.
+
+    GET TIME STAMP FIELD lv_long_time_stamp.
+
     SELECT COUNT(*) FROM ztmm_envio_req
     WHERE tp_proc  EQ gc_tp_proc
       AND doc_sap  EQ is_header-banfn
@@ -235,7 +239,8 @@ CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
           cod_elmnc = COND #( WHEN is_items-loekz EQ abap_false THEN gc_n ELSE gc_s )
           data_c    = sy-datum
           lib_int   = gc_s
-
+          created_by = sy-uname
+          created_at = lv_long_time_stamp
        ) ).
 
     ENDIF.
@@ -565,6 +570,8 @@ CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
 
     DATA: lt_req_envio TYPE tt_req_att.
 
+    DATA lv_long_time_stamp TYPE timestampl.
+
     CLEAR: gt_req[].
 
     TRY.
@@ -579,7 +586,7 @@ CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
         IF es_return-mt_requisicao_compra_resp-result CO gc_num
        AND it_req IS NOT INITIAL.
 
-          SELECT tp_proc, doc_sap, doc_item, cod_elmnc, id_me, data_c, data_i, lib_int  FROM ztmm_envio_req
+          SELECT tp_proc, doc_sap, doc_item, cod_elmnc, id_me, data_c, data_i, lib_int, created_by, created_at  FROM ztmm_envio_req
             FOR ALL ENTRIES IN @it_req
             WHERE doc_sap  = @it_req-banfn
               AND doc_item = @it_req-bnfpo
@@ -589,14 +596,18 @@ CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
 
             lt_req_envio  = CORRESPONDING #( lt_envio_req ).
 
+            GET TIME STAMP FIELD lv_long_time_stamp.
+
             gt_req = VALUE tt_req_att(
                    FOR <fs_init> IN lt_req_envio
                    WHERE ( doc_sap = gt_header-purchase_requisition )
                  ( VALUE #(
                  BASE  <fs_init>
-                    doc_sap = <fs_init>-doc_sap
-                    data_i  = sy-datum
-                    id_me   = es_return-mt_requisicao_compra_resp-result
+                    doc_sap         = <fs_init>-doc_sap
+                    data_i          = sy-datum
+                    id_me           = es_return-mt_requisicao_compra_resp-result
+                    last_changed_by = sy-uname
+                    last_changed_at = lv_long_time_stamp
                     ) ) ) .
 
           ENDIF.
@@ -664,7 +675,7 @@ CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
 
     IF it_req IS NOT INITIAL.
 
-      SELECT a~*, b~mtart FROM eban AS a
+      SELECT a~* FROM eban AS a
       INNER JOIN mara AS b
       ON a~matnr = b~matnr
       FOR ALL ENTRIES IN @it_req
@@ -673,18 +684,20 @@ CLASS ZCLMM_SEND_REQ IMPLEMENTATION.
         AND zz1_statu <> 'C'
         AND loekz = ''
         INTO TABLE @DATA(lt_eban).
+
       IF sy-subrc EQ 0.
 
-        UPDATE eban FROM TABLE @( VALUE #(
-           FOR ls_eban IN lt_eban
-             ( VALUE #(
-                 BASE ls_eban-a
-                 zz1_statu   = gc_m
-*                 producttype = COND #( WHEN ls_eban-a-producttype IS INITIAL THEN COND #( WHEN  ls_eban-mtart EQ 'DIEN'
-*                                                                                            OR  ls_eban-mtart EQ 'SERV'  THEN '02'
-*                                                                                                                         ELSE '01' )
-*                                                                             ELSE ls_eban-a-producttype )
-                                                                             ) ) ) ).
+*        UPDATE eban FROM TABLE @( VALUE #(
+*           FOR ls_eban IN lt_eban
+*             ( VALUE #(
+*                 BASE ls_eban-a
+*                 zz1_statu   = gc_m ) ) ) ).
+
+        LOOP AT lt_eban ASSIGNING FIELD-SYMBOL(<fs_eban>).
+          <fs_eban>-zz1_statu = gc_m.
+        ENDLOOP.
+
+        UPDATE eban FROM TABLE lt_eban.
 
         IF sy-subrc EQ 0.
           COMMIT WORK.
