@@ -19,13 +19,6 @@
      <LENGTH>17</LENGTH>
     </item>
    </TPOOL>
-   <DESCRIPTIONS>
-    <SEOCOMPOTX>
-     <CMPNAME>GO_NUM_ITEM</CMPNAME>
-     <LANGU>P</LANGU>
-     <DESCRIPT>Mercado Eletrônico - Classe de Apoio para conversão N. Item</DESCRIPT>
-    </SEOCOMPOTX>
-   </DESCRIPTIONS>
   </asx:values>
  </asx:abap>
 </abapGit>

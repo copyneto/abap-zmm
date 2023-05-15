@@ -17,8 +17,12 @@ FUNCTION zfmmm_picking.
   ls_vbkok-vbeln_vl = is_vbkok_wa-vbeln_vl.
   ls_vbkok-wabuc    = is_vbkok_wa-wabuc.
 
+* LSCHEPP - MM - 8000007315 - Erro dados fiscais nf-e de remessa dep. - 12.05.2023 Início
+  gv_vbeln_vl = ls_vbkok-vbeln_vl.
+* LSCHEPP - MM - 8000007315 - Erro dados fiscais nf-e de remessa dep. - 12.05.2023 Fim
+
   gs_armaz_key-docnum = iv_docnum.
-  gs_armaz_key-itmnum = IV_ITMNUM.
+  gs_armaz_key-itmnum = iv_itmnum.
   gs_armaz_key-especial = iv_especial.
 
   gv_app_exp = iv_app_exp.

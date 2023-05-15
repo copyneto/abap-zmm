@@ -95,8 +95,6 @@ CLASS zclmm_pre_pedido DEFINITION
     DATA: gt_return TYPE tt_ret,
           gt_ret    TYPE STANDARD TABLE OF bapireturn.
 
-    DATA: go_num_item TYPE REF TO zclmm_me_conv_num_item.
-
     "! Validate registers M.E
     METHODS validate_reg
       RAISING
@@ -437,7 +435,6 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
     REFRESH gt_return.
 
     TRY.
-        me->go_num_item = NEW zclmm_me_conv_num_item( ).
 
         me->header( IMPORTING es_header = DATA(ls_header) es_headerx = DATA(ls_headerx) ).
 
@@ -647,7 +644,7 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
 
     et_poschedule = VALUE tt_poschedule(
                 FOR ls_itens IN gs_pre_pedido-itens INDEX INTO lv_index (
-                po_item        = COND #( WHEN ls_itens-ebelp IS NOT INITIAL THEN go_num_item->get_n_item( EXPORTING iv_num = ls_itens-ebelp ) ELSE ( lv_index * 10 ) )
+                po_item        = COND #( WHEN ls_itens-ebelp IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = ls_itens-ebelp ) ELSE ( lv_index * 10 ) )
                 sched_line     = sy-tabix
                 delivery_date  = replace( ls_itens-eindt )
                 stat_date      = conv_date( ls_itens-eindt )
@@ -687,7 +684,7 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
         CHECK ls_item IS NOT INITIAL.
 
         et_account = VALUE #( BASE et_account (
-                        po_item      = COND #( WHEN ls_grp-ebelp IS NOT INITIAL THEN go_num_item->get_n_item( EXPORTING iv_num = ls_grp-ebelp ) ELSE ( sy-tabix * 10 ) )
+                        po_item      = COND #( WHEN ls_grp-ebelp IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = ls_grp-ebelp ) ELSE ( sy-tabix * 10 ) )
                         serial_no   = sy-tabix
                         quantity    = ls_grp-quantity
                         gl_account  = ls_grp-sakto
@@ -726,16 +723,16 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
     LOOP AT gs_pre_pedido-itens ASSIGNING FIELD-SYMBOL(<fs_item>).
 
       et_titem = VALUE #( BASE et_titem (
-                            po_item   = COND #( WHEN gs_pre_pedido-ebeln IS NOT INITIAL THEN go_num_item->get_n_item( EXPORTING iv_num = <fs_item>-ebelp ) ELSE ( sy-tabix * 10 ) )
+                            po_item   = COND #( WHEN gs_pre_pedido-ebeln IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = <fs_item>-ebelp ) ELSE ( sy-tabix * 10 ) )
                             text_id   = gc_values-f01
                             text_line = VALUE #( <fs_item>-atributos[ nome_atributo = gc_values-txtitem ]-valor_atributo OPTIONAL ) )
-                          ( po_item   = COND #( WHEN gs_pre_pedido-ebeln IS NOT INITIAL THEN go_num_item->get_n_item( EXPORTING iv_num = <fs_item>-ebelp ) ELSE ( sy-tabix * 10 ) )
+                          ( po_item   = COND #( WHEN gs_pre_pedido-ebeln IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = <fs_item>-ebelp ) ELSE ( sy-tabix * 10 ) )
                             text_id   = gc_values-f04
                             text_line = <fs_item>-textoitemremessa )
                             ) .
 
       et_theader = VALUE #( BASE et_theader (
-                              po_item   = COND #( WHEN gs_pre_pedido-ebeln IS NOT INITIAL THEN go_num_item->get_n_item( EXPORTING iv_num = <fs_item>-ebelp ) ELSE ( sy-tabix * 10 ) )
+                              po_item   = COND #( WHEN gs_pre_pedido-ebeln IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = <fs_item>-ebelp ) ELSE ( sy-tabix * 10 ) )
                               text_id   = gc_values-f01
                               text_form = gc_values-format
                               text_line = gc_values-textheader ) ).
@@ -766,7 +763,7 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
                 FOR ls_itens IN gs_pre_pedido-itens INDEX INTO lv_index (
                     material     = pack( CONV #( ls_itens-matnr ) )
                     ematerial    = pack( CONV #( ls_itens-matnr ) )
-                    po_item      = COND #( WHEN ls_itens-ebelp IS NOT INITIAL THEN go_num_item->get_n_item( EXPORTING iv_num = ls_itens-ebelp ) ELSE ( lv_index * 10 ) )
+                    po_item      = COND #( WHEN ls_itens-ebelp IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = ls_itens-ebelp ) ELSE ( lv_index * 10 ) )
                     plant        = ls_itens-werks
                     net_price    = ls_itens-netpr
                     po_unit      = conv_me( ls_itens-meins )

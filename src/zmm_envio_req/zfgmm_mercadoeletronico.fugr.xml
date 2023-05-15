@@ -106,6 +106,24 @@
       </RSFDO>
      </DOCUMENTATION>
     </item>
+    <item>
+     <FUNCNAME>ZFMMM_UPDATE_STATUS_ME</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Atualizar campo de integração ME</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_REQ</PARAMETER>
+       <DBSTRUCT>ZSMM_REQ</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_REQ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Estrutur requisição</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
    </FUNCTIONS>
   </asx:values>
  </asx:abap>

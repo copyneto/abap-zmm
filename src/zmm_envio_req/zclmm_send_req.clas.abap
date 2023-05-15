@@ -673,39 +673,10 @@ CLASS zclmm_send_req IMPLEMENTATION.
 
   METHOD change_requisicao.
 
-    IF it_req IS NOT INITIAL.
-
-      SELECT a~* FROM eban AS a
-      INNER JOIN mara AS b
-      ON a~matnr = b~matnr
-      FOR ALL ENTRIES IN @it_req
-      WHERE banfn = @it_req-banfn
-        AND bnfpo = @it_req-bnfpo
-        AND zz1_statu <> 'C'
-        AND loekz = ''
-        INTO TABLE @DATA(lt_eban).
-
-      IF sy-subrc EQ 0.
-
-*        UPDATE eban FROM TABLE @( VALUE #(
-*           FOR ls_eban IN lt_eban
-*             ( VALUE #(
-*                 BASE ls_eban-a
-*                 zz1_statu   = gc_m ) ) ) ).
-
-        LOOP AT lt_eban ASSIGNING FIELD-SYMBOL(<fs_eban>).
-          <fs_eban>-zz1_statu = gc_m.
-        ENDLOOP.
-
-        UPDATE eban FROM TABLE lt_eban.
-
-        IF sy-subrc EQ 0.
-          COMMIT WORK.
-        ENDIF.
-
-      ENDIF.
-
-    ENDIF.
+    CALL FUNCTION 'ZFMMM_UPDATE_STATUS_ME'
+      STARTING NEW TASK 'ZUPATESTATUS'
+      TABLES
+        it_req = it_req[].
 
   ENDMETHOD.
 

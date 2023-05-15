@@ -20,7 +20,7 @@
      <CATEGORY>ifmtypedef</CATEGORY>
      <X-ML_NSPCE>http://trescoracoes.com.br/nf/pedidodecompra</X-ML_NSPCE>
      <X-ML_NAME>dtPedidoDeCompra</X-ML_NAME>
-     <VERSION_ID>706d9bf2a31e11ed8b7b00000085a0ca</VERSION_ID>
+     <VERSION_ID>99fdcdecf0cc11edad1b00000085a0cc</VERSION_ID>
     </item>
    </PROXY_HEADER>
    <PROXY_DATA>
@@ -457,7 +457,7 @@
      <IFR_MAXOCC>1</IFR_MAXOCC>
      <IFR_OPTNL>X</IFR_OPTNL>
      <IFR_XSDTYP>decimal</IFR_XSDTYP>
-     <IFR_PREC>10</IFR_PREC>
+     <IFR_PREC>13</IFR_PREC>
      <IFR_SCALE>3</IFR_SCALE>
      <R3_TYPE>FIEL</R3_TYPE>
      <R3_NAME>PRECOLIQ</R3_NAME>

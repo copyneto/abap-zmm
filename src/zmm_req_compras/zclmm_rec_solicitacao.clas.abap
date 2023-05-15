@@ -26,261 +26,261 @@ CLASS zclmm_rec_solicitacao DEFINITION
           cx_ai_system_fault .
 
   PROTECTED SECTION.
-PRIVATE SECTION.
+  PRIVATE SECTION.
 
-  TYPES:
-    tt_item             TYPE TABLE OF bapimereqitemimp .
-  TYPES:
-    tt_itemx            TYPE TABLE OF bapimereqitemx .
-  TYPES:
-    tt_account          TYPE TABLE OF bapimereqaccount .
-  TYPES:
-    tt_accountx         TYPE TABLE OF bapimereqaccountx .
-  TYPES:
-    tt_headertext       TYPE TABLE OF bapimereqheadtext .
-  TYPES:
-    tt_itemtext         TYPE TABLE OF bapimereqitemtext .
-  TYPES:
-    tt_purchasereqnitem TYPE TABLE OF c_purchasereqnitem .
+    TYPES:
+      tt_item             TYPE TABLE OF bapimereqitemimp .
+    TYPES:
+      tt_itemx            TYPE TABLE OF bapimereqitemx .
+    TYPES:
+      tt_account          TYPE TABLE OF bapimereqaccount .
+    TYPES:
+      tt_accountx         TYPE TABLE OF bapimereqaccountx .
+    TYPES:
+      tt_headertext       TYPE TABLE OF bapimereqheadtext .
+    TYPES:
+      tt_itemtext         TYPE TABLE OF bapimereqitemtext .
+    TYPES:
+      tt_purchasereqnitem TYPE TABLE OF c_purchasereqnitem .
 
-  CONSTANTS:
-    BEGIN OF gc_solicita,
-      reprovado       TYPE string VALUE 'Tipo de Operação em branco'                                       ##NO_TEXT,
-      reprovado2      TYPE string VALUE 'Não foi encontrado o registro da Ordem da solicitação'            ##NO_TEXT,
-      reprovado3      TYPE string VALUE 'Não foi encontrado o registro de Ativo da solicitação'            ##NO_TEXT,
-      reprovado4      TYPE string VALUE 'Não foi encontrado o registro de Centro de Custo da solicitação'  ##NO_TEXT,
-      reprovado5      TYPE string VALUE 'Não foi encontrado o registro de PEP da solicitação'              ##NO_TEXT,
-      reprovado6      TYPE string VALUE 'Solicitação de Viagem já existe no S/4HANA'                       ##NO_TEXT,
-      reprovado7      TYPE string VALUE 'Solicitação de Viagem não encontrada no S/4HANA.'                 ##NO_TEXT,
-      classe          TYPE string VALUE 'ZMM_REQ_COMPRAS'                                                  ##NO_TEXT,
-      argo            TYPE string VALUE 'Aguardando Liberação ARGO'                                        ##NO_TEXT,
-      b01             TYPE string VALUE 'B01'                                                              ##NO_TEXT,
-      pep             TYPE ps_posid_edit    VALUE 'PEP'                   ##NO_TEXT,
-      modulo          TYPE ze_param_modulo  VALUE 'MM'                    ##NO_TEXT,
-      chave1          TYPE ze_param_chave   VALUE 'ARGO'                  ##NO_TEXT,
-      chave2          TYPE ze_param_chave   VALUE 'APROVADOR'             ##NO_TEXT,
-      chave3          TYPE ze_param_chave_3 VALUE 'S/4HANA'               ##NO_TEXT,
-      chave1_a        TYPE ze_param_chave   VALUE 'ARGO'                  ##NO_TEXT,
-      chave2_a        TYPE ze_param_chave   VALUE 'BAPI_PR_CREATE'        ##NO_TEXT,
-      chave3_a        TYPE ze_param_chave_3 VALUE 'PR_TYPE'               ##NO_TEXT,
-      chave1_o        TYPE ze_param_chave   VALUE 'ARGO'                  ##NO_TEXT,
-      chave2_o        TYPE ze_param_chave   VALUE 'ORG_COMPRAS'           ##NO_TEXT,
-      chave3_o        TYPE ze_param_chave_3 VALUE 'PREQ'                  ##NO_TEXT,
-      chave1_m        TYPE ze_param_chave   VALUE 'ME'                    ##NO_TEXT,
-      chave2_m        TYPE ze_param_chave   VALUE 'CANCELITEM'            ##NO_TEXT,
-      chave3_m        TYPE ze_param_chave_3 VALUE 'MENSAGEM'              ##NO_TEXT,
-      string1         TYPE string VALUE 'Sol. Passagem | Solicitação: '   ##NO_TEXT,
-      string2         TYPE string VALUE '| Passageiro: '                  ##NO_TEXT,
-      string3         TYPE string VALUE 'Trecho - Origem: '               ##NO_TEXT,
-      string4         TYPE string VALUE 'Destino: '                       ##NO_TEXT,
-      string5         TYPE string VALUE 'Data da Viagem: '                ##NO_TEXT,
-      string6         TYPE string VALUE 'Solicitante: '                   ##NO_TEXT,
-      string7         TYPE string VALUE 'Sol. Hospedagem | Solicitação:'  ##NO_TEXT,
-      string8         TYPE string VALUE '| Hospede: '                     ##NO_TEXT,
-      string9         TYPE string VALUE 'Hotel: '                         ##NO_TEXT,
-      string10        TYPE string VALUE 'Localidade: '                    ##NO_TEXT,
-      string11        TYPE string VALUE 'Check-In: '                      ##NO_TEXT,
-      string12        TYPE string VALUE 'Check-Out: '                     ##NO_TEXT,
-      string13        TYPE string VALUE 'Último Aprovador: '              ##NO_TEXT,
-      email_return    TYPE string VALUE 'email@temp.com.br',
-      login_return    TYPE string VALUE 'integracao',
-      nomecomp_return TYPE string VALUE 'ROBO ROBO',
-      status_canc     TYPE string VALUE 'CAN',
-      clcont_a        TYPE knttp  VALUE 'A',
-      clcont_f        TYPE knttp  VALUE 'F',
-      clcont_k        TYPE knttp  VALUE 'K',
-      clcont_p        TYPE knttp  VALUE 'P',
-    END OF gc_solicita .
-  DATA gs_lista TYPE zclmm_dt_requisicao_compra .
-  DATA:
-    gt_order  TYPE TABLE OF aufk .
-  DATA:
-    gt_asset  TYPE TABLE OF c_assetassignmenttp .
-  DATA:
-    gt_accost TYPE TABLE OF c_costcenter .
-  DATA:
-    gt_wbse   TYPE TABLE OF c_wbselementbasicinfo .
+    CONSTANTS:
+      BEGIN OF gc_solicita,
+        reprovado       TYPE string VALUE 'Tipo de Operação em branco'                                       ##NO_TEXT,
+        reprovado2      TYPE string VALUE 'Não foi encontrado o registro da Ordem da solicitação'            ##NO_TEXT,
+        reprovado3      TYPE string VALUE 'Não foi encontrado o registro de Ativo da solicitação'            ##NO_TEXT,
+        reprovado4      TYPE string VALUE 'Não foi encontrado o registro de Centro de Custo da solicitação'  ##NO_TEXT,
+        reprovado5      TYPE string VALUE 'Não foi encontrado o registro de PEP da solicitação'              ##NO_TEXT,
+        reprovado6      TYPE string VALUE 'Solicitação de Viagem já existe no S/4HANA'                       ##NO_TEXT,
+        reprovado7      TYPE string VALUE 'Solicitação de Viagem não encontrada no S/4HANA.'                 ##NO_TEXT,
+        classe          TYPE string VALUE 'ZMM_REQ_COMPRAS'                                                  ##NO_TEXT,
+        argo            TYPE string VALUE 'Aguardando Liberação ARGO'                                        ##NO_TEXT,
+        b01             TYPE string VALUE 'B01'                                                              ##NO_TEXT,
+        pep             TYPE ps_posid_edit    VALUE 'PEP'                   ##NO_TEXT,
+        modulo          TYPE ze_param_modulo  VALUE 'MM'                    ##NO_TEXT,
+        chave1          TYPE ze_param_chave   VALUE 'ARGO'                  ##NO_TEXT,
+        chave2          TYPE ze_param_chave   VALUE 'APROVADOR'             ##NO_TEXT,
+        chave3          TYPE ze_param_chave_3 VALUE 'S/4HANA'               ##NO_TEXT,
+        chave1_a        TYPE ze_param_chave   VALUE 'ARGO'                  ##NO_TEXT,
+        chave2_a        TYPE ze_param_chave   VALUE 'BAPI_PR_CREATE'        ##NO_TEXT,
+        chave3_a        TYPE ze_param_chave_3 VALUE 'PR_TYPE'               ##NO_TEXT,
+        chave1_o        TYPE ze_param_chave   VALUE 'ARGO'                  ##NO_TEXT,
+        chave2_o        TYPE ze_param_chave   VALUE 'ORG_COMPRAS'           ##NO_TEXT,
+        chave3_o        TYPE ze_param_chave_3 VALUE 'PREQ'                  ##NO_TEXT,
+        chave1_m        TYPE ze_param_chave   VALUE 'ME'                    ##NO_TEXT,
+        chave2_m        TYPE ze_param_chave   VALUE 'CANCELITEM'            ##NO_TEXT,
+        chave3_m        TYPE ze_param_chave_3 VALUE 'MENSAGEM'              ##NO_TEXT,
+        string1         TYPE string VALUE 'Sol. Passagem | Solicitação: '   ##NO_TEXT,
+        string2         TYPE string VALUE '| Passageiro: '                  ##NO_TEXT,
+        string3         TYPE string VALUE 'Trecho - Origem: '               ##NO_TEXT,
+        string4         TYPE string VALUE 'Destino: '                       ##NO_TEXT,
+        string5         TYPE string VALUE 'Data da Viagem: '                ##NO_TEXT,
+        string6         TYPE string VALUE 'Solicitante: '                   ##NO_TEXT,
+        string7         TYPE string VALUE 'Sol. Hospedagem | Solicitação:'  ##NO_TEXT,
+        string8         TYPE string VALUE '| Hospede: '                     ##NO_TEXT,
+        string9         TYPE string VALUE 'Hotel: '                         ##NO_TEXT,
+        string10        TYPE string VALUE 'Localidade: '                    ##NO_TEXT,
+        string11        TYPE string VALUE 'Check-In: '                      ##NO_TEXT,
+        string12        TYPE string VALUE 'Check-Out: '                     ##NO_TEXT,
+        string13        TYPE string VALUE 'Último Aprovador: '              ##NO_TEXT,
+        email_return    TYPE string VALUE 'email@temp.com.br',
+        login_return    TYPE string VALUE 'integracao',
+        nomecomp_return TYPE string VALUE 'ROBO ROBO',
+        status_canc     TYPE string VALUE 'CAN',
+        clcont_a        TYPE knttp  VALUE 'A',
+        clcont_f        TYPE knttp  VALUE 'F',
+        clcont_k        TYPE knttp  VALUE 'K',
+        clcont_p        TYPE knttp  VALUE 'P',
+      END OF gc_solicita .
+    DATA gs_lista TYPE zclmm_dt_requisicao_compra .
+    DATA:
+      gt_order  TYPE TABLE OF aufk .
+    DATA:
+      gt_asset  TYPE TABLE OF c_assetassignmenttp .
+    DATA:
+      gt_accost TYPE TABLE OF c_costcenter .
+    DATA:
+      gt_wbse   TYPE TABLE OF c_wbselementbasicinfo .
 
-  "! Inicio do processo
-  METHODS processar
-    IMPORTING
-      !is_lista TYPE zclmm_dt_requisicao_compra
-    RAISING
-      cx_ai_system_fault
-      zcxca_tabela_parametros
-      zcxmm_erro_interface_mes .
-  "! Validar classificação contábil
-  METHODS validar_class_contabil
-    EXPORTING
-      !ev_erro TYPE boolean
-    RAISING
-      cx_ai_system_fault .
-  METHODS validar_1
-    IMPORTING
-      !is_account TYPE zclmm_dt_requisicao_compra_pra
-    EXPORTING
-      !ev_erro    TYPE boolean
-    RAISING
-      cx_ai_system_fault .
-  METHODS validar_2
-    IMPORTING
-      !is_account TYPE zclmm_dt_requisicao_compra_pra
-    EXPORTING
-      !ev_erro    TYPE boolean
-    RAISING
-      cx_ai_system_fault .
-  METHODS validar_3
-    IMPORTING
-      !is_account TYPE zclmm_dt_requisicao_compra_pra
-    EXPORTING
-      !ev_erro    TYPE boolean
-    RAISING
-      cx_ai_system_fault .
-  METHODS validar_4
-    IMPORTING
-      !is_account TYPE zclmm_dt_requisicao_compra_pra
-    EXPORTING
-      !ev_erro    TYPE boolean
-    RAISING
-      cx_ai_system_fault .
-  METHODS verifica_fat_can
-    RAISING
-      cx_ai_system_fault
-      zcxca_tabela_parametros
-      zcxmm_erro_interface_mes .
-  "! Interface de recusa
-  METHODS erro
-    IMPORTING
-      !iv_motivo TYPE string
-    RAISING
-      cx_ai_system_fault .
-  "! Selecionar dados classificação contábil
-  METHODS selecionar_dados_clcon .
-  "! Validar Status viajem
-  METHODS validar_status_vj
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault
-      zcxmm_erro_interface_mes .
-  METHODS verifica_aut
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault .
-  "! Preencher estruturas da bapi de criação
-  METHODS preenche_create
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault .
-  "! Preencher estruturas da bapi de modificação
-  METHODS preenche_change
-    IMPORTING
-      !it_item TYPE tt_purchasereqnitem
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault
-      zcxmm_erro_interface_mes .
-  "! Preencher cabeçalho
-  METHODS header
-    EXPORTING
-      !es_header  TYPE bapimereqheader
-      !es_headerx TYPE bapimereqheaderx
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault .
-  "! Preencher item
-  METHODS item
-    EXPORTING
-      !et_item  TYPE tt_item
-      !et_itemx TYPE tt_itemx
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault .
-  "! Preencher account
-  METHODS account
-    EXPORTING
-      !et_account  TYPE tt_account
-      !et_accountx TYPE tt_accountx .
-  "! Preencher texto do cabeçalho
-  METHODS headertext
-    EXPORTING
-      !et_text TYPE tt_headertext .
-  "! Executar a bapi de criação de requisição
-  METHODS bapi_create
-    IMPORTING
-      !is_header   TYPE bapimereqheader
-      !is_headerx  TYPE bapimereqheaderx
-      !it_item     TYPE tt_item
-      !it_itemx    TYPE tt_itemx
-      !it_account  TYPE tt_account
-      !it_accountx TYPE tt_accountx
-      !it_text     TYPE tt_headertext
-    RAISING
-      cx_ai_system_fault .
-  "! Disparar interfaces de aprovado/recusado
-  METHODS enviar_resposta
-    IMPORTING
-      !iv_status TYPE c
-      !iv_motivo TYPE string OPTIONAL
-    RAISING
-      cx_ai_system_fault .
-  METHODS item_change_can
-    IMPORTING
-      !it_item  TYPE tt_purchasereqnitem
-    EXPORTING
-      !et_item  TYPE tt_item
-      !et_itemx TYPE tt_itemx
-      !et_text  TYPE tt_itemtext
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault .
-  METHODS item_change_fat
-    IMPORTING
-      !it_item  TYPE tt_purchasereqnitem
-    EXPORTING
-      !et_item  TYPE tt_item
-      !et_itemx TYPE tt_itemx
-      !et_text  TYPE tt_headertext .
-  "! Executar a bapi de modificação
-  METHODS bapi_change
-    IMPORTING
-      !iv_number     TYPE vdm_purchaserequisition
-      !it_item       TYPE tt_item
-      !it_itemx      TYPE tt_itemx
-      !it_itemtext   TYPE tt_itemtext OPTIONAL
-      !it_headertext TYPE tt_headertext OPTIONAL
-    RAISING
-      cx_ai_system_fault .
-  "! Executar seleção da tabela de parâmetros
-  METHODS tabela_param
-    IMPORTING
-      !iv_modulo TYPE ze_param_modulo
-      !iv_chave1 TYPE ze_param_chave
-      !iv_chave2 TYPE ze_param_chave OPTIONAL
-      !iv_chave3 TYPE ze_param_chave_3 OPTIONAL
-    EXPORTING
-      !ev_param  TYPE ze_param_low
-    RAISING
-      zcxca_tabela_parametros
-      cx_ai_system_fault .
-  METHODS text_line
-    IMPORTING
-      !it_item        TYPE tt_purchasereqnitem
-      !iv_number      TYPE vdm_purchaserequisition
-    EXPORTING
-      !et_text_header TYPE tt_headertext
-    RAISING
-      zcxmm_erro_interface_mes .
-  "! Error raise
-  METHODS erro_raise
-    IMPORTING
-      !is_ret TYPE scx_t100key
-    RAISING
-      zcxmm_erro_interface_mes .
+    "! Inicio do processo
+    METHODS processar
+      IMPORTING
+        !is_lista TYPE zclmm_dt_requisicao_compra
+      RAISING
+        cx_ai_system_fault
+        zcxca_tabela_parametros
+        zcxmm_erro_interface_mes .
+    "! Validar classificação contábil
+    METHODS validar_class_contabil
+      EXPORTING
+        !ev_erro TYPE boolean
+      RAISING
+        cx_ai_system_fault .
+    METHODS validar_1
+      IMPORTING
+        !is_account TYPE zclmm_dt_requisicao_compra_pra
+      EXPORTING
+        !ev_erro    TYPE boolean
+      RAISING
+        cx_ai_system_fault .
+    METHODS validar_2
+      IMPORTING
+        !is_account TYPE zclmm_dt_requisicao_compra_pra
+      EXPORTING
+        !ev_erro    TYPE boolean
+      RAISING
+        cx_ai_system_fault .
+    METHODS validar_3
+      IMPORTING
+        !is_account TYPE zclmm_dt_requisicao_compra_pra
+      EXPORTING
+        !ev_erro    TYPE boolean
+      RAISING
+        cx_ai_system_fault .
+    METHODS validar_4
+      IMPORTING
+        !is_account TYPE zclmm_dt_requisicao_compra_pra
+      EXPORTING
+        !ev_erro    TYPE boolean
+      RAISING
+        cx_ai_system_fault .
+    METHODS verifica_fat_can
+      RAISING
+        cx_ai_system_fault
+        zcxca_tabela_parametros
+        zcxmm_erro_interface_mes .
+    "! Interface de recusa
+    METHODS erro
+      IMPORTING
+        !iv_motivo TYPE string
+      RAISING
+        cx_ai_system_fault .
+    "! Selecionar dados classificação contábil
+    METHODS selecionar_dados_clcon .
+    "! Validar Status viajem
+    METHODS validar_status_vj
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault
+        zcxmm_erro_interface_mes .
+    METHODS verifica_aut
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault .
+    "! Preencher estruturas da bapi de criação
+    METHODS preenche_create
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault .
+    "! Preencher estruturas da bapi de modificação
+    METHODS preenche_change
+      IMPORTING
+        !it_item TYPE tt_purchasereqnitem
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault
+        zcxmm_erro_interface_mes .
+    "! Preencher cabeçalho
+    METHODS header
+      EXPORTING
+        !es_header  TYPE bapimereqheader
+        !es_headerx TYPE bapimereqheaderx
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault .
+    "! Preencher item
+    METHODS item
+      EXPORTING
+        !et_item  TYPE tt_item
+        !et_itemx TYPE tt_itemx
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault .
+    "! Preencher account
+    METHODS account
+      EXPORTING
+        !et_account  TYPE tt_account
+        !et_accountx TYPE tt_accountx .
+    "! Preencher texto do cabeçalho
+    METHODS headertext
+      EXPORTING
+        !et_text TYPE tt_headertext .
+    "! Executar a bapi de criação de requisição
+    METHODS bapi_create
+      IMPORTING
+        !is_header   TYPE bapimereqheader
+        !is_headerx  TYPE bapimereqheaderx
+        !it_item     TYPE tt_item
+        !it_itemx    TYPE tt_itemx
+        !it_account  TYPE tt_account
+        !it_accountx TYPE tt_accountx
+        !it_text     TYPE tt_headertext
+      RAISING
+        cx_ai_system_fault .
+    "! Disparar interfaces de aprovado/recusado
+    METHODS enviar_resposta
+      IMPORTING
+        !iv_status TYPE c
+        !iv_motivo TYPE string OPTIONAL
+      RAISING
+        cx_ai_system_fault .
+    METHODS item_change_can
+      IMPORTING
+        !it_item  TYPE tt_purchasereqnitem
+      EXPORTING
+        !et_item  TYPE tt_item
+        !et_itemx TYPE tt_itemx
+        !et_text  TYPE tt_itemtext
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault .
+    METHODS item_change_fat
+      IMPORTING
+        !it_item  TYPE tt_purchasereqnitem
+      EXPORTING
+        !et_item  TYPE tt_item
+        !et_itemx TYPE tt_itemx
+        !et_text  TYPE tt_headertext .
+    "! Executar a bapi de modificação
+    METHODS bapi_change
+      IMPORTING
+        !iv_number     TYPE vdm_purchaserequisition
+        !it_item       TYPE tt_item
+        !it_itemx      TYPE tt_itemx
+        !it_itemtext   TYPE tt_itemtext OPTIONAL
+        !it_headertext TYPE tt_headertext OPTIONAL
+      RAISING
+        cx_ai_system_fault .
+    "! Executar seleção da tabela de parâmetros
+    METHODS tabela_param
+      IMPORTING
+        !iv_modulo TYPE ze_param_modulo
+        !iv_chave1 TYPE ze_param_chave
+        !iv_chave2 TYPE ze_param_chave OPTIONAL
+        !iv_chave3 TYPE ze_param_chave_3 OPTIONAL
+      EXPORTING
+        !ev_param  TYPE ze_param_low
+      RAISING
+        zcxca_tabela_parametros
+        cx_ai_system_fault .
+    METHODS text_line
+      IMPORTING
+        !it_item        TYPE tt_purchasereqnitem
+        !iv_number      TYPE vdm_purchaserequisition
+      EXPORTING
+        !et_text_header TYPE tt_headertext
+      RAISING
+        zcxmm_erro_interface_mes .
+    "! Error raise
+    METHODS erro_raise
+      IMPORTING
+        !is_ret TYPE scx_t100key
+      RAISING
+        zcxmm_erro_interface_mes .
 ENDCLASS.
 
 
 
-CLASS ZCLMM_REC_SOLICITACAO IMPLEMENTATION.
+CLASS zclmm_rec_solicitacao IMPLEMENTATION.
 
 
   METHOD execute.
@@ -412,7 +412,7 @@ CLASS ZCLMM_REC_SOLICITACAO IMPLEMENTATION.
         DATA(ls_recusa) = VALUE zclmmmt_status_processamento(
             mt_status_processamento-aprovador  = VALUE zclmmdt_status_processamento_a( email = gs_lista-email login = gs_lista-login nome_completo = gs_lista-nome_completo )
             mt_status_processamento-motivo     = iv_motivo
-            mt_status_processamento-nro_solic  = gs_lista-solicitacao_id
+            mt_status_processamento-nro_solic  = gs_lista-nro_solic "solicitacao_id
             mt_status_processamento-status     = gs_lista-status_viagem
           ).
 
