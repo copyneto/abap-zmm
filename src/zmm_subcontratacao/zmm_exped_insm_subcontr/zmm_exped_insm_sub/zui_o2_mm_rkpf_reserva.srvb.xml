@@ -6,7 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_MM_RKPF_RESERVA</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service Binding Exped. Insumos</DESCRIPTION>
+     <DESCRIPTION>Service Binding</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_MM_RKPF_RESERVA</HREF>
@@ -21,7 +21,7 @@
        <TITLE>TESTCLASS</TITLE>
       </item>
      </LINKS>
-     <RESPONSIBLE>CGARCIA</RESPONSIBLE>
+     <RESPONSIBLE>WFERREIRA</RESPONSIBLE>
      <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     </METADATA>
     <CONTENT>

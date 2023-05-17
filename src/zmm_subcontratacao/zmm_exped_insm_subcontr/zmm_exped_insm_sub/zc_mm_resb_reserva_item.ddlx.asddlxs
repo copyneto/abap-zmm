@@ -19,7 +19,7 @@ annotate entity zc_mm_resb_reserva_item with
                 purpose:       #STANDARD,
                 type:          #LINEITEM_REFERENCE,
                 position:      20,
-                targetElement: '_Header'}]
+                targetElement: '_Header'}] 
 
 //  @UI: { lineItem:        [ { position: 10, label: 'Pedido' }, 
 //  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar' },
@@ -38,6 +38,7 @@ annotate entity zc_mm_resb_reserva_item with
 //       identification:  [ { position: 10 } ]  }
 //
   @UI.lineItem  :  [
+  { position: 10, label: 'Pedido' },
   { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição', invocationGrouping: #CHANGE_SET},
   { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar'}
   ]
