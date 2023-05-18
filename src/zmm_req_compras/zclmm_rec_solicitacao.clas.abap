@@ -280,7 +280,7 @@ ENDCLASS.
 
 
 
-CLASS zclmm_rec_solicitacao IMPLEMENTATION.
+CLASS ZCLMM_REC_SOLICITACAO IMPLEMENTATION.
 
 
   METHOD execute.
@@ -405,6 +405,8 @@ CLASS zclmm_rec_solicitacao IMPLEMENTATION.
 
   METHOD erro.
 
+    CONSTANTS lc_reprovado TYPE c VALUE 'R'.
+
     DATA(lo_recusa) = NEW zclmm_co_si_enviar_status_out( ).
 
     TRY.
@@ -413,8 +415,9 @@ CLASS zclmm_rec_solicitacao IMPLEMENTATION.
             mt_status_processamento-aprovador  = VALUE zclmmdt_status_processamento_a( email = gs_lista-email login = gs_lista-login nome_completo = gs_lista-nome_completo )
             mt_status_processamento-motivo     = iv_motivo
             mt_status_processamento-nro_solic  = gs_lista-nro_solic "solicitacao_id
-            mt_status_processamento-status     = gs_lista-status_viagem
-          ).
+*            mt_status_processamento-status     = gs_lista-status_viagem
+            mt_status_processamento-status     = lc_reprovado
+        ).
 
         lo_recusa->si_enviar_status_out( ls_recusa ).
 

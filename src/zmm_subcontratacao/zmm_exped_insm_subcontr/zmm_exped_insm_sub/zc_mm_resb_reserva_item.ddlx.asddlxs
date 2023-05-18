@@ -1,5 +1,4 @@
 @Metadata.layer: #CORE
-
 @UI: {
   headerInfo: {
     typeName: 'Itens',
@@ -10,90 +9,90 @@
 }
 annotate entity zc_mm_resb_reserva_item with
 {
-  @UI.facet: [ { id:         'Item',
-                purpose:       #STANDARD,
-                type:          #IDENTIFICATION_REFERENCE,
-                position:      10 },
-
-               { id:           'Header',
-                purpose:       #STANDARD,
-                type:          #LINEITEM_REFERENCE,
-                position:      20,
-                targetElement: '_Header'}] 
-
-//  @UI: { lineItem:        [ { position: 10, label: 'Pedido' }, 
-//  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar' },
-//  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição' }  ],
-//       identification:  [ { position: 10 } ]  }
-  @UI: { lineItem:        [ { position: 20, label: 'Documento' } ],
-       identification:  [ { position: 20, label: 'Documento' } ]  }       
-  Ebeln;
-  @UI: { lineItem:        [ { position: 30, label: 'Item documento' } ],
-       identification:  [ { position: 30, label: 'Item documento' } ]  }
-  Ebelp;
-  
-//  @UI: { lineItem:        [ { position: 10 }, 
-//  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar' },
-//  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição' }  ],
-//       identification:  [ { position: 10 } ]  }
+//  @UI.facet: [ { id:           'Item',
+//                 purpose:       #STANDARD,
+//                 type:          #IDENTIFICATION_REFERENCE,
+//                 position:      10 },
 //
-  @UI.lineItem  :  [
-  { position: 10, label: 'Pedido' },
-  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição', invocationGrouping: #CHANGE_SET},
-  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar'}
-  ]
-//  @UI: { lineItem:        [ { position: 10, label: 'Pedido' }, 
-//  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar' },
-//  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição' }  ],
-//       identification:  [ { position: 10 } ]  }
+//               { id:           'Header',
+//                 purpose:       #STANDARD,
+//                 type:          #LINEITEM_REFERENCE,
+//                 position:      20,
+//                 targetElement: '_Header'}]
+
+  @UI.facet: [ { id:         'Item',
+               purpose:       #STANDARD,
+               type:          #IDENTIFICATION_REFERENCE,
+               label:         'Item',
+               position:      10 } ]
+
+  //  @UI: { lineItem:        [ { position: 10, label: 'Pedido' },
+  //  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar' },
+  //  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição' }  ],
+  //       identification:  [ { position: 10 } ]  }
+  @UI: { lineItem:        [ { position: 30, label: 'Pedido' } ],
+         identification:  [ { position: 30, label: 'Pedido' } ]  }
+  Ebeln;
+  @UI: { lineItem:        [ { position: 40, label: 'Item do Pedido' } ],
+         identification:  [ { position: 40, label: 'Item do Pedido' } ]  }
+  Ebelp;
+
+  //  @UI: { lineItem:        [ { position: 10 },
+  //  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar' },
+  //  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição' }  ],
+  //       identification:  [ { position: 10 } ]  }
+  //
+  //  @UI.lineItem: [{ position: 10, label: 'Pedido' }
+  //  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição', invocationGrouping: #CHANGE_SET},
+  //  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar'}
+  //  ]
+  //  @UI: { lineItem:        [ { position: 10, label: 'Pedido' },
+  //  { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar' },
+  //  { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição' }  ],
+  //       identification:  [ { position: 10 } ]  }
+  @UI: { lineItem:        [ { position: 10, label: 'Reserva' } ],
+         identification:  [ { position: 10, label: 'Reserva' } ]  }
   Rsnum;
-//  @UI: { lineItem:        [ { position: 20 } ],
-//       identification:  [ { position: 20 } ]  }
-//  Rspos;
+  @UI: { lineItem:        [ { position: 20, label: 'Item da Reserva' } ],
+         identification:  [ { position: 20, label: 'Item da Reserva' } ]  }
+  Rspos;
 
   @UI: { lineItem:        [ { position: 60 } ],
-       identification:  [ { position: 60 } ]  }
-  @Consumption.valueHelpDefinition:
-  [{
-   entity: {name: 'I_BatchVH', element: 'Batch' },
-    additionalBinding: [{ localElement: 'Werks', element: 'Plant' } ,
-    { localElement: 'Matnr', element: 'Material' } ]
-  }]
+         identification:  [ { position: 60 } ]  }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_BatchVH', element: 'Batch' },
+                                       additionalBinding: [{ localElement: 'Werks', element: 'Plant' } ,
+                                                           { localElement: 'Matnr', element: 'Material' } ] }]
   Charg;
-  @UI: { lineItem:        [ { position: 10, label: 'Componente' } ],
-       identification:  [ { position: 10, label: 'Componente' } ]  }
+  @UI: { lineItem:        [ { position: 10, label: 'Material' } ],
+         identification:  [ { position: 10, label: 'Material' } ]  }
   Matnr;
   @UI: { lineItem:        [ { position: 40 } ],
-       identification:  [ { position: 40 } ]  }
+         identification:  [ { position: 40 } ]  }
   Werks;
   @UI: { lineItem:        [ { position: 50 } ],
-       identification:  [ { position: 50 } ]  }
-  @Consumption.valueHelpDefinition:
-  [ {
-    entity: {name: 'I_MatlDocStorageLocationVH', element: 'StorageLocation' },
-    additionalBinding: [{ localElement: 'Werks', element: 'Plant' } ]
-  } ]
+         identification:  [ { position: 50 } ]  }
+  @Consumption.valueHelpDefinition:[ { entity: {name: 'I_MatlDocStorageLocationVH', element: 'StorageLocation' },
+                                       additionalBinding: [{ localElement: 'Werks', element: 'Plant' } ] } ]
   Lgort;
   @UI: { lineItem:        [ { position: 70, label: 'Qtd. Fornecida' } ],
-       identification:  [ { position: 70, label: 'Qtd. Fornecida' } ]  }
+         identification:  [ { position: 70, label: 'Qtd. Fornecida' } ]  }
   Quantidade;
   @UI: { lineItem:        [ { position: 80, label: 'Qtd. Picking' } ],
-       identification:  [ { position: 80, label: 'Qtd. Picking' } ]  }
+         identification:  [ { position: 80, label: 'Qtd. Picking' } ]  }
   QtdePicking;
   @UI: { lineItem:        [ { position: 90 } ],
-       identification:  [ { position: 90 } ]  }
-  @Consumption.valueHelpDefinition:
-  [ {
-    entity: {name: 'I_UnitOfMeasureStdVH', element: 'UnitOfMeasure' }
-  } ]
+         identification:  [ { position: 90 } ]  }
+  @Consumption.valueHelpDefinition:[ { entity: {name: 'I_UnitOfMeasureStdVH', element: 'UnitOfMeasure' } } ]
   Meins;
   @UI: { lineItem:        [ { position: 100, label: 'Tipo de avaliação' } ],
-       identification:  [ { position: 100, label: 'Tipo de avaliação' } ]  }
+         identification:  [ { position: 100, label: 'Tipo de avaliação' } ]  }
   Bwtar;
   @UI: { lineItem:        [ { position: 9, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
          identification:  [ { position: 9, label: 'Status', criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
   Status;
-  @UI.hidden: true
+  //  @UI.hidden: true
+  @UI.lineItem  :  [ { type: #FOR_ACTION, dataAction: 'Expedicao', label: 'Expedição', invocationGrouping: #CHANGE_SET},
+                     { type: #FOR_ACTION, dataAction: 'Duplicar', label: 'Duplicar'} ]
   StatusCriticality;
 
 }

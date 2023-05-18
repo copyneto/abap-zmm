@@ -2,5 +2,5 @@
 *& Include          ZXMG0U02
 *&---------------------------------------------------------------------*
 
-" Disparar IDOC MATMAS
-INCLUDE zmmi_trigger_idoc_matmas IF FOUND.
+*" Disparar IDOC MATMAS
+*INCLUDE zmmi_trigger_idoc_matmas IF FOUND.

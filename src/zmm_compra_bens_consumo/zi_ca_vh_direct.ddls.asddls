@@ -18,15 +18,17 @@ define view entity ZI_CA_VH_DIRECT
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['DirectText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as wbstk ) as Direct,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                             as DirectText
+      _Text.ddtext                       as DirectText,
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      Domain.domvalue_l                  as direct_search
 
 }
 where

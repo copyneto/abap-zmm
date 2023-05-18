@@ -3,14 +3,10 @@
 {
 "FROM":
 [
-"ZI_MM_RESB_RESERVA_ITEM_UNION",
-"J_1BSDICA",
 "RESB"
 ],
 "ASSOCIATED":
-[
-"ZI_MM_RKPF_RESERVA"
-],
+[],
 "BASE":
 [],
 "ANNO_REF":

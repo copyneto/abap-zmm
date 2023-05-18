@@ -14,14 +14,7 @@ define root view entity ZI_MM_TRANSFERENCIA
                                                                       and _EkbeDocRef.Gjahr = _MatDocItem.MaterialDocumentYear
                                                                       and _EkbeDocRef.Belnr = _MatDocItem.MaterialDocument
                                                                       and _EkbeDocRef.Buzei = _MatDocItem.MaterialDocumentItem
-                                                                      and _EkbeDocRef.Bwart = '862'
-                                                                      
-    left outer join ZI_MM_TRANSF_EKBE          as _EkbeDocRefEstorno  on  _EkbeDocRefEstorno.Ebeln = _MatDocItem.PurchaseOrder
-                                                                      and _EkbeDocRefEstorno.Ebelp = _MatDocItem.PurchaseOrderItem
-                                                                      and _EkbeDocRefEstorno.Gjahr = _MatDocItem.MaterialDocumentYear
-                                                                      and _EkbeDocRefEstorno.Belnr = _MatDocItem.MaterialDocument
-                                                                      and _EkbeDocRefEstorno.Buzei = _MatDocItem.MaterialDocumentItem
-                                                                      and _EkbeDocRefEstorno.Bwart = '864' or _EkbeDocRefEstorno.Bwart = '122'                                                                     
+                                                                      and _EkbeDocRef.Bwart = '862'                                                                                                                                           
 
     left outer join ZI_MM_TRANSFERENCIA_MATDOC as _MatDocItemRef      on  _MatDocItemRef.PurchaseOrder       = _MatDocItem.PurchaseOrder
                                                                       and _MatDocItemRef.PurchaseOrderItem   = _MatDocItem.PurchaseOrderItem
@@ -295,8 +288,7 @@ where
   and          NFBrief.BR_NFeDocumentStatus       =  '1'
   and          NFBrief.BR_NFIsCanceled            <> 'X'
   and          NFBrief.BR_NFType                  <> 'ZF'
-  and          _VerifyNF1.BR_NFReceiverType       <> 'V'
-  and          _EkbeDocRefEstorno.Ebeln is initial 
+  and          _VerifyNF1.BR_NFReceiverType       <> 'V'   
   and(
     (
                _NFItem.PurchaseOrder              is not initial

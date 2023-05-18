@@ -1,74 +1,85 @@
 @Metadata.layer: #CORE
-@UI: {
-  headerInfo: {
-    typeName: 'Pedido',
-    typeNamePlural: 'Pedidos',
-    title: {
-      type: #STANDARD,
-      label: 'Pedido',
-      value: 'Ebeln'
-    }
-  } }
-annotate entity zc_mm_rkpf_reserva
-  with 
+@UI: { headerInfo: { typeName:       'Pedido',
+                     typeNamePlural: 'Pedidos',
+
+            title: { type:  #STANDARD,
+                     label: 'Reserva',
+                     value: 'Rsnum' } } }
+
+annotate entity zc_mm_rkpf_reserva with
 {
 
- @UI.facet: [ 
-//                {  id:                'DescricaoHeader',
-//                 purpose:           #HEADER,
-//                 type:              #DATAPOINT_REFERENCE,
-//                 targetQualifier:   'DescricaoHeader',
-//                 position:          10 },
+  // @UI.facet: [
+  ////                {  id:                'DescricaoHeader',
+  ////                 purpose:           #HEADER,
+  ////                 type:              #DATAPOINT_REFERENCE,
+  ////                 targetQualifier:   'DescricaoHeader',
+  ////                 position:          10 },
+  //
+  ////               { id:                'StatusHeader',
+  ////                 purpose:           #HEADER,
+  ////                 type:              #DATAPOINT_REFERENCE,
+  ////                 targetQualifier:   'StatusHeader',
+  ////                 position:          20 },
+  ////
+  ////               { id:                'Facet',
+  ////                 purpose:           #STANDARD,
+  ////                 type:              #COLLECTION,
+  ////                 label:             'Dados Gerais',
+  ////                 position:          30 },
+  //
+  ////               { id: 'geral',
+  ////                 purpose: #STANDARD,
+  ////                 label: 'Dados Gerais',
+  ////                 parentId: 'Facet',
+  ////                 type: #FIELDGROUP_REFERENCE,
+  ////                 targetQualifier: 'geral',
+  ////                 position: 40 },
+  //
+  ////               { id: 'sum',
+  ////                 purpose: #STANDARD,
+  ////                 label: 'Somatório',
+  ////                 parentId: 'Facet',
+  ////                 type: #FIELDGROUP_REFERENCE,
+  ////                 targetQualifier: 'sum',
+  ////                 position: 50 },
+  //
+  ////               { id: 'Modificar',
+  ////                 purpose: #STANDARD,
+  ////                 label: 'Dados Modificação',
+  ////                 parentId: 'Facet',
+  ////                 type: #FIELDGROUP_REFERENCE,
+  ////                 targetQualifier: 'Modificar',
+  ////                 position: 60 },
+  //
+  //               { id:                'Itens',
+  //                 purpose:           #STANDARD,
+  //                 type:              #LINEITEM_REFERENCE,
+  //                 label:             'Itens',
+  //                 position:          60,
+  //                 targetElement:     '_Item'}   ]
 
-//               { id:                'StatusHeader',
-//                 purpose:           #HEADER,
-//                 type:              #DATAPOINT_REFERENCE,
-//                 targetQualifier:   'StatusHeader',
-//                 position:          20 },
-//
-//               { id:                'Facet',
-//                 purpose:           #STANDARD,
-//                 type:              #COLLECTION,
-//                 label:             'Dados Gerais',
-//                 position:          30 },
+  @UI.facet: [ { id:           'Header',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 position:      10 },
 
-//               { id: 'geral',
-//                 purpose: #STANDARD,
-//                 label: 'Dados Gerais',
-//                 parentId: 'Facet',
-//                 type: #FIELDGROUP_REFERENCE,
-//                 targetQualifier: 'geral',
-//                 position: 40 },
-
-//               { id: 'sum',
-//                 purpose: #STANDARD,
-//                 label: 'Somatório',
-//                 parentId: 'Facet',
-//                 type: #FIELDGROUP_REFERENCE,
-//                 targetQualifier: 'sum',
-//                 position: 50 },
-
-//               { id: 'Modificar',
-//                 purpose: #STANDARD,
-//                 label: 'Dados Modificação',
-//                 parentId: 'Facet',
-//                 type: #FIELDGROUP_REFERENCE,
-//                 targetQualifier: 'Modificar',
-//                 position: 60 },
-
-               { id:                'Itens',
-                 purpose:           #STANDARD,
-                 type:              #LINEITEM_REFERENCE,
-                 label:             'Itens',
-                 position:          60,
-                 targetElement:     '_Item'}   ]
+               { id:           'Item',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 position:      20,
+                 targetElement: '_Item'}]
 
   @UI: { lineItem:        [ { position: 10, label: 'Reserva' } ],
          identification:  [ { position: 10, label: 'Reserva' } ] }
   @UI : { selectionField: [ { position: 10 } ] }
-//  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  //  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
   Rsnum;
-
+  //  @UI: { lineItem:        [ { position: 10, label: 'Reserva' } ],
+  //         identification:  [ { position: 10, label: 'Reserva' } ] }
+  //  @UI : { selectionField: [ { position: 10 } ] }
+  ////  @UI.fieldGroup: [{ position: 10, qualifier: 'geral' }]
+  //  Rspos;
   @UI: { lineItem:        [ { position: 20, label: 'Pedido' } ],
          identification:  [ { position: 20, label: 'Pedido' } ] }
   @UI : { selectionField: [ { position: 20 } ] }
