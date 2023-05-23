@@ -10,6 +10,8 @@
 
  DATA lr_nftype_cte TYPE RANGE OF j_1bnfdoc-nftype.
  DATA lr_cond_icms  TYPE RANGE OF j_1bnfstx-taxtyp.
+ DATA lv_ebeln      TYPE eslh-ebeln.
+ DATA lv_ebelp      TYPE eslh-ebelp.
 
  DATA(lo_nftype_cte) = NEW zclca_tabela_parametros( ).
 
@@ -35,11 +37,61 @@
    CATCH zcxca_tabela_parametros.
  ENDTRY.
 
- SELECT COUNT( * )
+ lv_ebeln = nf_item-xped(10).
+ lv_ebelp = nf_item-nitemped(5).
+
+ SELECT packno, ebeln, ebelp
+   FROM eslh
+   INTO TABLE @DATA(lt_eslh)
+*   WHERE ebeln EQ @nf_item-xped
+   WHERE ebeln EQ @lv_ebeln
+*   AND ebelp   EQ @nf_item-nitemped
+   AND ebelp   EQ @lv_ebelp
+   .
+ IF sy-subrc IS INITIAL.
+
+   DATA(lt_eslh_aux) = lt_eslh[].
+   SORT lt_eslh_aux BY packno.
+   DELETE ADJACENT DUPLICATES FROM lt_eslh_aux COMPARING packno.
+   IF lt_eslh_aux[] IS NOT INITIAL.
+     SELECT packno, mwskz
+       FROM esll
+       INTO TABLE @DATA(lt_esll)
+       FOR ALL ENTRIES IN @lt_eslh_aux
+       WHERE packno  EQ @lt_eslh_aux-packno
+       AND   package EQ @abap_false
+       .
+   ENDIF.
+ ENDIF.
+
+ IF nf_item-matnr IS INITIAL .
+   IF lt_esll[] IS NOT INITIAL.
+
+     DATA(lt_esll_aux) = lt_esll[].
+     SORT lt_esll_aux BY mwskz.
+     DELETE ADJACENT DUPLICATES FROM lt_esll_aux COMPARING mwskz.
+     IF lt_esll_aux[] IS NOT INITIAL.
+
+       SELECT *
+       FROM a003
+       INTO TABLE @DATA(lt_a003)
+       FOR ALL ENTRIES IN @lt_esll
+      WHERE kappl = 'TX'
+        AND mwskz = @lt_esll-mwskz
+        AND kschl = @lc_zfcp
+           .
+     ENDIF.
+
+   ENDIF.
+ ELSE.
+
+   SELECT COUNT( * )
    FROM a003
   WHERE kappl = 'TX'
     AND mwskz = nf_item-mwskz
     AND kschl = lc_zfcp.
+
+ ENDIF.
 
  IF sy-subrc IS INITIAL.
 
@@ -59,12 +111,12 @@
        READ TABLE ext_total_tax ASSIGNING FIELD-SYMBOL(<fs_total_tax>) WITH KEY taxtyp = <fs_cond_icms>-low.
        IF ( sy-subrc IS INITIAL AND <fs_total_tax> IS ASSIGNED ).
          IF <fs_total_tax>-othbas IS NOT INITIAL.
-           <fs_total_Tax>-base = <fs_total_tax>-othbas.
+           <fs_total_tax>-base = <fs_total_tax>-othbas.
            CLEAR <fs_total_tax>-othbas.
          ENDIF.
 
          IF <fs_total_tax>-othbasser IS NOT INITIAL.
-           <fs_total_Tax>-baseser = <fs_total_tax>-othbasser.
+           <fs_total_tax>-baseser = <fs_total_tax>-othbasser.
            CLEAR <fs_total_tax>-othbasser.
          ENDIF.
        ENDIF.

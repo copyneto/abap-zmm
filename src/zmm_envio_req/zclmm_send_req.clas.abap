@@ -225,12 +225,28 @@ CLASS zclmm_send_req IMPLEMENTATION.
 
     GET TIME STAMP FIELD lv_long_time_stamp.
 
-    SELECT COUNT(*) FROM ztmm_envio_req
-    WHERE tp_proc  EQ gc_tp_proc
-      AND doc_sap  EQ is_header-banfn
-      AND doc_item EQ is_items-bnfpo.
+    SELECT SINGLE * FROM ztmm_envio_req
+    WHERE tp_proc  EQ @gc_tp_proc
+      AND doc_sap  EQ @is_header-banfn
+      AND doc_item EQ @is_items-bnfpo
+      INTO @DATA(ls_req).
 
-    IF sy-subrc NE 0.
+    IF sy-subrc EQ 0.
+
+      " Quando o item for retirado da lixeira atualizar a tabela integração ME p/ ser integrado novamente
+      IF  is_items-zz1_statu IS INITIAL
+      AND ls_req-data_i IS NOT INITIAL.
+
+        CLEAR: ls_req-data_i.
+        ls_req-cod_elmnc = gc_n.
+        ls_req-lib_int   = gc_n.
+        ls_req-last_changed_at = lv_long_time_stamp.
+        ls_req-last_changed_by = sy-uname.
+        APPEND ls_req TO gt_int_save.
+
+      ENDIF.
+
+    ELSE.
 
       gt_int_save =  VALUE #( BASE  gt_int_save (
           tp_proc   = gc_tp_proc
@@ -674,7 +690,7 @@ CLASS zclmm_send_req IMPLEMENTATION.
   METHOD change_requisicao.
 
     CALL FUNCTION 'ZFMMM_UPDATE_STATUS_ME'
-      STARTING NEW TASK 'ZUPATESTATUS'
+      IN BACKGROUND TASK DESTINATION 'NONE' "ZUPATESTATUS'
       TABLES
         it_req = it_req[].
 

@@ -15,7 +15,7 @@ FUNCTION ZF_CARGACERTA_EXECUTE_QUERY.
         lc_vari         TYPE c LENGTH 4 VALUE 'VARI',
         lv_cont         TYPE i.
 
-  SELECT *
+  SELECT *   "#EC CI_NOWHERE
    FROM ztplanlog_vari
     INTO TABLE lt_planlog_vari.
 

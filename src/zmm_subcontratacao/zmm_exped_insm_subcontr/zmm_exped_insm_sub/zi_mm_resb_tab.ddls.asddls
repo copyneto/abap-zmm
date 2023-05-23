@@ -38,7 +38,8 @@ define view entity zi_mm_resb_tab
 
       case
         when _Picking.fornecida is not initial
-        then cast(_Picking.fornecida as abap.dec( 13, 3 ))
+         then cast(_Picking.fornecida as abap.dec( 13, 3 ))
+      //      then cast(_Picking.fornecida as abap.dec( 13, 3 )) - cast(_Resb.bdmng as abap.dec( 13, 3 ))
         else
           case
           when Lips.LFIMG is not null

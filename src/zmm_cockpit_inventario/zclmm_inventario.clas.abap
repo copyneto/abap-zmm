@@ -229,7 +229,7 @@ ENDCLASS.
 
 
 
-class ZCLMM_INVENTARIO implementation.
+CLASS zclmm_inventario IMPLEMENTATION.
 
 
   METHOD cancel.
@@ -341,9 +341,10 @@ class ZCLMM_INVENTARIO implementation.
     DATA: lt_file             TYPE zctgmm_inventory_file,
           lt_bapi_items       TYPE STANDARD TABLE OF bapi_physinv_create_items,
           lt_bapi_count_items TYPE STANDARD TABLE OF bapi_physinv_count_items,
-          lt_bapi_return      TYPE bapiret2_t,
+          lt_bapi_return      TYPE STANDARD TABLE OF bapiret2 WITH EMPTY KEY,  "TYPE bapiret2_t,
           ls_bapi_head        TYPE bapi_physinv_create_head,
-          lv_status           TYPE ztmm_inventory_h-status.
+          lv_status           TYPE ztmm_inventory_h-status,
+          lr_iblnr            TYPE RANGE OF iblnr.
 
     FREE: et_return.
 
@@ -429,23 +430,68 @@ class ZCLMM_INVENTARIO implementation.
       CHECK NOT line_exists( lt_bapi_return[ type = 'E' ] ). "#EC CI_STDSEQ
 
       TRY.
-          " Recupera n�mero do documento de inventario criado
-          DATA(lv_iblnr) = CONV iblnr( lt_bapi_return[ type = 'S' id = 'M7' number = '710' ]-message_v1 ). "#EC CI_STDSEQ
+          " Recupera n mero do documento de inventario criado
+
+          IF line_exists( lt_bapi_return[ type = 'S' id = 'M7' number = '710' ] ) .
+
+            SELECT 'EQ' AS option,
+                   'I' AS sign,
+                   message_v1 AS low,
+                    ' ' AS high
+            FROM @lt_bapi_return AS result
+            WHERE type   = 'S'
+              AND id     = 'M7'
+              AND number = '710'
+              INTO CORRESPONDING FIELDS OF TABLE @lr_iblnr.
+
+            LOOP AT lr_iblnr ASSIGNING FIELD-SYMBOL(<fs_iblnr>).
+              <fs_iblnr>-low = |{ <fs_iblnr>-low ALPHA = IN }|.
+            ENDLOOP.
+
+          ENDIF.
+
+*          DATA(lv_iblnr) = CONV iblnr( lt_bapi_return[ type = 'S' id = 'M7' number = '710' ]-message_v1 ).
+
           DATA(lv_gjahr) = CONV gjahr( sy-datum ).
 
+          IF lr_iblnr IS NOT INITIAL.
+
+            SELECT iblnr, matnr, werks, lgort , charg  FROM iseg
+            WHERE iblnr IN @lr_iblnr
+              AND gjahr = @lv_gjahr
+              INTO TABLE @DATA(lt_iseg).
+
+          ENDIF.
+
         CATCH cx_root INTO DATA(lo_root).
-          " Documento de invent�rio n�o foi encontrado para continuar com a contagem.
+          " Documento de invent rio n o foi encontrado para continuar com a contagem.
           et_return[] = VALUE #( BASE et_return ( type = 'E' id = 'ZMM_INVENTARIO' number = '006' ) ).
           RETURN.
       ENDTRY.
 
-      LOOP AT lt_item REFERENCE INTO ls_item WHERE plant           = ls_item_key->plant
-                                               AND storagelocation = ls_item_key->storagelocation
-                                               AND physinventory  IS INITIAL. "#EC CI_STDSEQ #EC CI_NESTED
-        ls_item->physinventory  = |{ lv_iblnr ALPHA = IN }|.
-        ls_item->fiscalyear     = lv_gjahr.
-        ls_item->status         = gc_status_item-pendente_contagem.
-        lv_status               = gc_status-incompleto.
+*      LOOP AT lt_item REFERENCE INTO ls_item WHERE plant           = ls_item_key->plant
+*                                               AND storagelocation = ls_item_key->storagelocation
+*                                               AND physinventory  IS INITIAL. "#EC CI_STDSEQ #EC CI_NESTED
+
+      LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<fs_item>).
+
+        CHECK <fs_item>-physinventory IS INITIAL.
+
+        IF line_exists( lt_iseg[ matnr = <fs_item>-material
+                                 werks = <fs_item>-plant
+                                 lgort = <fs_item>-storagelocation
+                                 charg = <fs_item>-batch ] ).
+
+          <fs_item>-physinventory  = VALUE #( lt_iseg[ matnr = <fs_item>-material
+                                                       werks = <fs_item>-plant
+                                                       lgort = <fs_item>-storagelocation
+                                                       charg = <fs_item>-batch ]-iblnr  OPTIONAL ).
+          <fs_item>-fiscalyear     = lv_gjahr.
+          <fs_item>-status         = gc_status_item-pendente_contagem.
+          lv_status                = gc_status-incompleto.
+
+        ENDIF.
+
       ENDLOOP.
 
     ENDLOOP.
@@ -1020,7 +1066,7 @@ class ZCLMM_INVENTARIO implementation.
     ENDTRY.
 
     TRY.
-        cs_item-accuracy      = ( cs_item-pricediff / cs_item-pricestock ) * 100.
+        cs_item-accuracy      = ( 1 - ( cs_item-pricediff / cs_item-pricestock ) ) * 100.
       CATCH cx_root.
         cs_item-accuracy      = 0.
     ENDTRY.

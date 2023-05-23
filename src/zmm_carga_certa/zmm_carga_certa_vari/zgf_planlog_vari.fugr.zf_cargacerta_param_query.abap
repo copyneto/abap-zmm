@@ -12,7 +12,7 @@ FUNCTION zf_cargacerta_param_query.
   DATA: lt_planlog_param TYPE TABLE OF ztplanlog_param,
         es_planlog_param TYPE zst_planlog_param.
 
-  SELECT *
+  SELECT *  "#EC CI_NOWHERE
    FROM ztplanlog_param
     INTO TABLE lt_planlog_param.
   IF i_report IS NOT INITIAL.

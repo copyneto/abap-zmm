@@ -1369,7 +1369,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 * Maps filter table lines to function module parameters
  LOOP AT lt_filter_select_options INTO ls_filter.
 
-   LOOP AT ls_filter-select_options INTO ls_filter_range.
+   LOOP AT ls_filter-select_options INTO ls_filter_range. "#EC CI_NESTED
      CASE ls_filter-property.
        WHEN 'VARI'.
          lo_filter->convert_select_option(
@@ -1738,7 +1738,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 * Maps filter table lines to function module parameters
  LOOP AT lt_filter_select_options INTO ls_filter.
 
-   LOOP AT ls_filter-select_options INTO ls_filter_range.
+   LOOP AT ls_filter-select_options INTO ls_filter_range. "#EC CI_NESTED
      CASE ls_filter-property.
        WHEN 'PARAM'.
          lo_filter->convert_select_option(

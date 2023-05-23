@@ -4,8 +4,8 @@
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Exped. Subcontratação - Union de Status'
 define view ZI_MM_EXPED_SUBCONTRT_UNION
-  as 
-  
+  as
+
   select from ZI_MM_RESB_STATUS_PROC as _Proc
   //    left outer join ztmm_sb_picking as _Picking on  _Picking.rsnum = _Proc.Rsnum
   //                                                and _Picking.rspos = '9999'
@@ -36,7 +36,7 @@ define view ZI_MM_EXPED_SUBCONTRT_UNION
       Incoterms1,
       Incoterms2,
       TRAID,
-      cast( '' as lgort_d ) as Lgort
+      cast( '' as lgort_d )                          as Lgort
 
 }
 where
@@ -120,10 +120,12 @@ union
 ////}
 ////union
 
-select from       zi_mm_resb_tab as _Resb_Tab
-  left outer join resb on  resb.rsnum = _Resb_Tab.Rsnum
-                       and resb.rspos = _Resb_Tab.Rspos
-  left outer join lfa1 on lfa1.lifnr = resb.lifnr
+select from       zi_mm_resb_tab      as _Resb_Tab
+  left outer join resb                             on  resb.rsnum = _Resb_Tab.Rsnum
+                                                   and resb.rspos = _Resb_Tab.Rspos
+  left outer join lfa1                             on lfa1.lifnr = resb.lifnr
+  left outer join ZI_MM_RESB_TAB_CONC as _ResbConc on  _ResbConc.Rsnum = _Resb_Tab.Rsnum
+                                                   and _ResbConc.Rspos = _Resb_Tab.Rspos
 {
   key _Resb_Tab.Rsnum,
   key _Resb_Tab.Rspos,
@@ -152,9 +154,12 @@ select from       zi_mm_resb_tab as _Resb_Tab
       ''                          as Incoterms1,
       ''                          as Incoterms2,
       ''                          as TRAID,
-      _Resb_Tab.Lgort as Lgort
-} where _Resb_Tab.Quantidade > 0
-//union 
+      _Resb_Tab.Lgort             as Lgort
+}
+where
+      _Resb_Tab.Quantidade > 0
+  and _ResbConc.Qtd_Pen    > 0
+//union
 //
 //select from zi_mm_tab_resb as _Tab_Resb
 //  left outer join resb on  resb.rsnum = _Tab_Resb.Rsnum

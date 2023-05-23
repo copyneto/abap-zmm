@@ -16,11 +16,11 @@ FUNCTION zf_cargacerta_vari_query.
         lc_vari         TYPE c LENGTH 4 VALUE 'VARI',
         lv_cont         TYPE i.
 
-  SELECT *
+  SELECT *  "#EC CI_NOWHERE "#EC CI_SEL_DEL
    FROM ztplanlog_vari
     INTO TABLE lt_planlog_vari.
   IF i_report IS NOT INITIAL.
-    DELETE lt_planlog_vari WHERE report <> i_report.
+    DELETE lt_planlog_vari WHERE report <> i_report. "#EC CI_SEL_DEL
     IF i_report = 'MB52'.
       CLEAR lt_planlog_vari.
       SELECT *

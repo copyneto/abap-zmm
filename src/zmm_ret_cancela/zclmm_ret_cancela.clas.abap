@@ -5,8 +5,7 @@ CLASS zclmm_ret_cancela DEFINITION
 
   PUBLIC SECTION.
 
-    TYPES: tt_item  TYPE STANDARD TABLE OF mereq_item  WITH DEFAULT KEY,
-           tt_itemx TYPE STANDARD TABLE OF mereq_itemx WITH DEFAULT KEY,
+    TYPES: tt_item  TYPE STANDARD TABLE OF ueban WITH DEFAULT KEY,
            tt_lines TYPE STANDARD TABLE OF tline  WITH DEFAULT KEY.
 
     TYPES: BEGIN OF ty_purchasereqnitem,
@@ -30,6 +29,7 @@ CLASS zclmm_ret_cancela DEFINITION
         erro            TYPE c  VALUE 'E',
         s               TYPE c  VALUE 'S',
         c               TYPE c  VALUE 'C',
+        u               TYPE c  VALUE 'U',
         error           TYPE string   VALUE 'Erro' ##NO_TEXT,
         classe          TYPE string   VALUE 'ZMM_PRE_PEDIDO',
         zmm_req_compras TYPE string   VALUE 'ZMM_REQ_COMPRAS',
@@ -84,8 +84,8 @@ CLASS zclmm_ret_cancela DEFINITION
       IMPORTING
         is_req   TYPE ty_purchasereqnitem
       EXPORTING
-        et_item  TYPE tt_item
-        et_itemx TYPE tt_itemx.
+        et_yeban TYPE tt_item
+        et_xeban TYPE tt_item.
     METHODS get_text_tab
       IMPORTING
         iv_string        TYPE string
@@ -96,7 +96,6 @@ CLASS zclmm_ret_cancela DEFINITION
         iv_purchase TYPE vdm_purchaserequisition
         it_item     TYPE tt_item
         it_msgs     TYPE bapiret2_tab.
-    METHODS release.
 
 ENDCLASS.
 
@@ -244,38 +243,45 @@ CLASS zclmm_ret_cancela IMPLEMENTATION.
 
   METHOD change_req.
 
+    DATA: lt_xebkn TYPE STANDARD TABLE OF uebkn,
+          lt_yebkn TYPE STANDARD TABLE OF uebkn.
+
     me->fill_data(
     EXPORTING
         is_req   = is_req
     IMPORTING
-        et_item    = DATA(lt_item)
-        et_itemx   = DATA(lt_itemx)
+        et_yeban    = DATA(lt_yeban)
+        et_xeban   = DATA(lt_xeban)
      ).
 
-    CALL FUNCTION 'FMFG_MM_REQ_CHANGE'
-      EXPORTING
-        im_banfn        = is_req-purchaserequisition
-        im_release_park = abap_true
+    CALL FUNCTION 'ME_UPDATE_REQUISITION'
       TABLES
-        return         = gt_return
-        im_mereq_item  = lt_item
-        im_mereq_itemx = lt_itemx.
+        xeban = lt_xeban
+        xebkn = lt_xebkn
+        yeban = lt_yeban
+        yebkn = lt_yebkn.
 
-    IF line_exists( gt_return[ type = gc_values-erro ] ).
+    CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+      EXPORTING
+        wait = abap_true.
 
-      CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
+    WAIT UP TO '0.2' SECONDS.
+
+    SELECT COUNT( * ) FROM eban
+    WHERE banfn     = @is_req-purchaserequisition
+      AND bnfpo     = @is_req-purchaserequisitionitem
+      AND zz1_statu = @gc_values-c.
+
+    IF sy-subrc NE 0.
 
       me->interface23( IMPORTING ev_ret = DATA(ls_erro) ).
       me->interface04( ls_erro ).
 
     ELSE.
 
-      me->commit(  ).
-      me->release(  ).
-
       me->save_log(
         EXPORTING
-          it_item     = lt_item
+          it_item     = lt_xeban
           it_msgs     = gt_return
           iv_purchase = is_req-purchaserequisition ).
 
@@ -288,15 +294,18 @@ CLASS zclmm_ret_cancela IMPLEMENTATION.
 
     DATA: lt_flines TYPE STANDARD TABLE OF tline.
 
-    APPEND VALUE mereq_item( bnfpo            = is_req-purchaserequisitionitem
-                             loekz            = abap_true
-                             zz1_statu        = gc_values-c
-                             wrf_charstc1_txt = gs_canc-mt_cancelar_item_requisicao-justificativa ) TO et_item.
+    SELECT * FROM eban
+    INTO TABLE @et_yeban
+    WHERE banfn     = @is_req-purchaserequisition
+      AND bnfpo     = @is_req-purchaserequisitionitem.
 
-    APPEND VALUE #( bnfpo     = abap_true
-                    loekz     = abap_true
-                    weunb     = abap_true
-                    zz1_statu = abap_true ) TO et_itemx.
+    CHECK et_yeban IS NOT INITIAL.
+
+    et_xeban = et_yeban.
+
+    et_xeban[ 1 ]-loekz     = abap_true.
+    et_xeban[ 1 ]-zz1_statu = gc_values-c.
+    et_xeban[ 1 ]-kz        = gc_values-u.
 
     IF gs_canc-mt_cancelar_item_requisicao-justificativa IS NOT INITIAL.
 
@@ -387,19 +396,6 @@ CLASS zclmm_ret_cancela IMPLEMENTATION.
                           extnumber = sy-timlo )
           it_msgs = lt_msgs.
 
-    ENDIF.
-
-  ENDMETHOD.
-
-
-  METHOD release.
-
-    UPDATE eban SET  zz1_statu   = 'C'
-    WHERE banfn = gs_canc-mt_cancelar_item_requisicao-banfn
-      AND bnfpo = gs_canc-mt_cancelar_item_requisicao-bnfpo.
-
-    IF sy-subrc EQ 0.
-      COMMIT WORK.
     ENDIF.
 
   ENDMETHOD.

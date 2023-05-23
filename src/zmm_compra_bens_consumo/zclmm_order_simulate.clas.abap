@@ -341,8 +341,15 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
     "???
     IF rv_cond_value IS INITIAL.
 
-      MOVE 200 TO rv_cond_value.
+      select SINGLE STPRS
+      from mbew
+      into @data(lv_stprs)
+      where matnr = @is_document-matnr1
+      AND bwkey = @is_document-werks.
 
+      if sy-subrc = 0.
+       MOVE lv_stprs TO rv_cond_value.
+      endif.
     ENDIF.
 
 
