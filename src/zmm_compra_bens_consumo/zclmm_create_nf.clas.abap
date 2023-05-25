@@ -692,7 +692,7 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
             menge      = is_document-menge
             meins      = ls_material-meins
             netpr      = lv_netpr
-            netwr      = lv_netpr
+            netwr      = lv_netpr * is_document-menge
             taxlw1     = ls_param-taxlw1
             taxlw2     = ls_param-taxlw2
             itmtyp     = gc_data-fixo_1

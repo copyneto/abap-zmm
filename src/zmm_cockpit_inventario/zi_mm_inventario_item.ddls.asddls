@@ -102,6 +102,8 @@ define view entity ZI_MM_INVENTARIO_ITEM
         when '  ' then 2    -- 'Pendente'
         when '01' then 3    -- 'Liberado'
         when '02' then 2    -- 'Pendente Contagem'
+        when '03' then 3    -- 'Concluido'
+        when '04' then 1    -- 'Cancelado'
                   else 0
       end                                                                  as StatusCriticality,
       _Seg.mblnr                                                           as DocMaterial,

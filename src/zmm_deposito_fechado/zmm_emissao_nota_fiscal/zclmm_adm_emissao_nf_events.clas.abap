@@ -6900,7 +6900,8 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
            bwart,
            belnr,
            gjahr,
-           matnr
+           matnr,
+           buzei
       FROM ekbe
        FOR ALL ENTRIES IN @lt_ponumber
      WHERE ebeln = @lt_ponumber-ponumber
@@ -6921,16 +6922,18 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
     DELETE ADJACENT DUPLICATES FROM lt_refkey COMPARING table_line.
     CHECK lt_refkey IS NOT INITIAL.
 
-    SELECT refkey, docnum
+    SELECT refkey,refitm, docnum, itmnum
       FROM j_1bnflin
       FOR ALL ENTRIES IN @lt_refkey
       WHERE refkey = @lt_refkey-refkey
       INTO TABLE @DATA(lt_j_1bnflin).
 
-    SORT lt_j_1bnflin BY refkey.
+    SORT lt_j_1bnflin BY refkey refitm.
 
     SORT lt_innfehd BY nfeid.
-    SORT lt_innfeit BY guid_header ponumber poitem.
+    SORT lt_innfeit BY guid_header poitem.
+
+    DATA lv_poitem TYPE /XNFE/POITEM.
 
     LOOP AT lt_his_dep_fec REFERENCE INTO DATA(ls_his_dep_fec).
       READ TABLE lt_j_1bnfe_active REFERENCE INTO DATA(ls_j_1bnfe_act) WITH KEY docnum = ls_his_dep_fec->out_br_nota_fiscal BINARY SEARCH.
@@ -6945,7 +6948,7 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 
       CHECK sy-subrc = 0.
 
-      READ TABLE lt_innfeit REFERENCE INTO DATA(ls_innfei) WITH KEY guid_header = ls_innfeh->guid_header
+      READ TABLE lt_innfeit REFERENCE INTO DATA(ls_innfei) WITH KEY guid_header = ls_innfeh->guid_header poitem = ls_his_dep_fec->PURCHASE_ORDER_ITEM
                                                            BINARY SEARCH.
 
       CHECK sy-subrc = 0.
@@ -6955,7 +6958,8 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
                                                                 matnr = ls_innfei->cprod
                                                                 BINARY SEARCH.
       IF sy-subrc IS NOT INITIAL.
-        DATA(lv_poitem) = ls_innfei->poitem * 10.
+        CLear lv_poitem.
+        lv_poitem = ls_innfei->poitem * 10.
         READ TABLE lt_ekbe REFERENCE INTO ls_ekbe1 WITH KEY ebeln = ls_innfei->ponumber
                                                             ebelp = lv_poitem
                                                             matnr = ls_innfei->cprod
@@ -6966,14 +6970,18 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 
       ls_his_dep_fec->in_material_document      = ls_ekbe1->belnr.
       ls_his_dep_fec->in_material_document_year = ls_ekbe1->gjahr.
+      ls_his_dep_fec->in_material_document_item = ls_ekbe1->buzei.
 
       DATA(lv_refkey) = |{ ls_ekbe1->belnr }{ ls_ekbe1->gjahr }|.
+      DATA lv_refitm TYPE j_1bnflin-refitm.
+      lv_refitm = ls_ekbe1->buzei.
 
-      READ TABLE lt_j_1bnflin REFERENCE INTO DATA(ls_j_1bnflin) WITH KEY refkey = lv_refkey BINARY SEARCH.
+      READ TABLE lt_j_1bnflin REFERENCE INTO DATA(ls_j_1bnflin) WITH KEY refkey = lv_refkey refitm = lv_refitm BINARY SEARCH.
 
       CHECK sy-subrc = 0.
 
       ls_his_dep_fec->in_br_nota_fiscal = ls_j_1bnflin->docnum.
+      ls_his_dep_fec->in_br_nota_fiscal_item = ls_j_1bnflin->itmnum.
       ls_his_dep_fec->status = gc_status-completo.
 
     ENDLOOP.

@@ -47,6 +47,7 @@ define root view entity ZI_MM_INVENTARIO_H
         when '00' then 2    -- 'Processamento Incompleto'
         when '01' then 3    -- 'Liberado'
         when '02' then 1    -- 'Cancelado'
+        when '03' then 3    -- 'Concluido'
                   else 0
       end                   as StatusCriticality,
 

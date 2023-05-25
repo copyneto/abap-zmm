@@ -611,29 +611,32 @@ define root view entity ZI_MM_FISCAL_ENTRADAS
       //      @Semantics.amount.currencyCode:'SalesDocumentCurrency'
       //cast( _Montante.TotalSemFrete as abap.dec(15,2))                                                                              as TotalSemFrete,
       //@Semantics.amount.currencyCode:'SalesDocumentCurrency'
-      (
-        cast(NFItem.BR_NFValueAmountWithTaxes as abap.dec(15,2)) +
-        case
-          when _IPITax.BR_NFItemBaseAmount = 0
-            or _IPITax.BR_NFItemTaxAmount is initial
-            or _IPITax.BR_NFItemTaxAmount is null
-            then cast('0' as abap.dec(15,2))
-          else cast( _IPITax.BR_NFItemTaxAmount as abap.dec(15,2))
-        end +
-        case
-          when _SubstTax.BR_NFItemBaseAmount = 0
-            or _SubstTax.BR_NFItemTaxAmount is initial
-            or _SubstTax.BR_NFItemTaxAmount is null
-            then cast('0' as abap.dec(15,2))
-          else cast( _SubstTax.BR_NFItemTaxAmount as abap.dec(15,2))
-        end +
+     (
+       cast(NFItem.BR_NFValueAmountWithTaxes as abap.dec(15,2)) +
+           cast( _IPITax.BR_NFItemTaxAmount as abap.dec(15,2)) +
+           cast( _SubstTax.BR_NFItemTaxAmount as abap.dec(15,2))
+        +
         cast(_Montante.ValorICMSFCP as abap.dec(15,2))
+     )                                                                                                                             as TotalSemFrete,
 
-      //case when _IPITax.BR_NFItemBaseAmount = 0 then cast('0' as abap.dec(15,2)) else coalesce(cast( _IPITax.BR_NFItemTaxAmount as abap.dec(15,2)),0) end +
-      //case when _SubstTax.BR_NFItemBaseAmount = 0 then cast('0' as abap.dec(15,2)) else coalesce(cast( _SubstTax.BR_NFItemTaxAmount as abap.dec(15,2)),0) end
-      )                                                                                                                             as TotalSemFrete,
-
-
+//     (
+//       cast(NFItem.BR_NFValueAmountWithTaxes as abap.dec(15,2)) +
+//       case
+//          when _IPITax.BR_NFItemBaseAmount = 0
+//           or _IPITax.BR_NFItemTaxAmount is initial
+//            or _IPITax.BR_NFItemTaxAmount is null
+//            then cast('0' as abap.dec(15,2))
+//          else cast( _IPITax.BR_NFItemTaxAmount as abap.dec(15,2))
+//        end +
+//        case
+//          when _SubstTax.BR_NFItemBaseAmount = 0
+//            or _SubstTax.BR_NFItemTaxAmount is initial
+//            or _SubstTax.BR_NFItemTaxAmount is null
+//            then cast('0' as abap.dec(15,2))
+//          else cast( _SubstTax.BR_NFItemTaxAmount as abap.dec(15,2))
+//        end +
+//        cast(_Montante.ValorICMSFCP as abap.dec(15,2))
+//     )                                                                                                                             as TotalSemFrete,
       //      @Semantics.amount.currencyCode:'SalesDocumentCurrency'
       //      case when NFItem.BR_NotaFiscalItem = '000010'
       //             or NFItem.BR_NotaFiscalItem = '000001'

@@ -6,7 +6,7 @@ FUNCTION zfmmm_recalc_lpp.
 *"     VALUE(IV_DOCNUMBER) TYPE  J_1BDOCNUM OPTIONAL
 *"----------------------------------------------------------------------
 
-  DO 5 TIMES.
+  DO 20 TIMES. " Necessário aguardar o documento ser estornado, caso libere em uma das tentativas, possui uma condição de saída do LOOP
     SELECT SINGLE docnum,
                   cancel
       FROM j_1bnfdoc

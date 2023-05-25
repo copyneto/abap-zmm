@@ -83,6 +83,7 @@ CLASS zclmm_pre_pedido DEFINITION
         f04        TYPE tdid     VALUE 'F04',
         txtitem    TYPE string   VALUE 'TEXTOITEM',
         gptipo     TYPE string   VALUE 'GrpTipoProduto',
+        dtfim      TYPE string   VALUE 'DataFim',
         EntMerc    TYPE string   VALUE 'EntradaMercadoria',
         bapi       TYPE symsgid  VALUE 'BAPI',
         mepo       TYPE symsgid  VALUE 'MEPO',
@@ -335,12 +336,11 @@ CLASS zclmm_pre_pedido DEFINITION
     METHODS concat
       RETURNING
         VALUE(rv_result) TYPE so_text255.
-
 ENDCLASS.
 
 
 
-CLASS zclmm_pre_pedido IMPLEMENTATION.
+CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
 
   METHOD validate_reg.
@@ -646,8 +646,13 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
                 FOR ls_itens IN gs_pre_pedido-itens INDEX INTO lv_index (
                 po_item        = COND #( WHEN ls_itens-ebelp IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = ls_itens-ebelp ) ELSE ( lv_index * 10 ) )
                 sched_line     = sy-tabix
-                delivery_date  = replace( ls_itens-eindt )
-                stat_date      = conv_date( ls_itens-eindt )
+*                delivery_date  = replace( ls_itens-eindt )
+*                stat_date      = conv_date( ls_itens-eindt )
+                delivery_date  = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2
+                                           THEN NEW zclmm_me_conv_num_item(  )->get_dt_fim( EXPORTING iv_dtfim = ls_itens-atributos[ nome_atributo = gc_values-dtfim ]-valor_atributo ) ELSE replace( ls_itens-eindt ) )
+                stat_date      = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2
+                                           THEN NEW zclmm_me_conv_num_item(  )->get_dt_fim( EXPORTING iv_dtfim = ls_itens-atributos[ nome_atributo = gc_values-dtfim ]-valor_atributo ) ELSE conv_date( ls_itens-eindt ) )
+                po_date        = sy-datum
                 quantity       = ls_itens-menge
                  ) ).
 
@@ -659,6 +664,7 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
                 delivery_date  = abap_true
                 quantity       = abap_true
                 stat_date      = abap_true
+                po_date        = abap_true
                  ) ).
 
   ENDMETHOD.
@@ -767,7 +773,7 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
                     plant        = ls_itens-werks
                     net_price    = ls_itens-netpr
                     po_unit      = conv_me( ls_itens-meins )
-                    ITEM_cAT     = get_cat( ls_itens )
+                    item_cat     = get_cat( ls_itens )
                     tax_code     = ls_itens-mwskz
                     preq_no      = ls_itens-banfn
                     preq_item    = ls_itens-bnfpo
@@ -781,7 +787,9 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
                     agmt_item    = ( 10 * ls_itens-agmt_item )
                     producttype  = VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL )
                     startdate    = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2 THEN ls_itens-startdate )
-                    enddate      = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2 THEN ls_itens-enddate )
+*                    enddate      = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2 THEN ls_itens-enddate )
+                    enddate      = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2
+                                           THEN NEW zclmm_me_conv_num_item(  )->get_dt_fim( EXPORTING iv_dtfim = ls_itens-atributos[ nome_atributo = gc_values-dtfim ]-valor_atributo ) )
                     distrib      = COND #( WHEN REDUCE i( INIT lv_i TYPE i FOR ls_cont IN gs_pre_pedido-classficacao_contabil WHERE ( ebelp = ls_itens-ebelp ) NEXT lv_i = lv_i + 1 ) GT 1 THEN gc_values-v1 )
                     part_inv     = COND #( WHEN REDUCE i( INIT lv_i TYPE i FOR ls_cont IN gs_pre_pedido-classficacao_contabil WHERE ( ebelp = ls_itens-ebelp ) NEXT lv_i = lv_i + 1 ) GT 1 THEN gc_values-v2 )
                     conf_ctrl    = ls_itens-conf_ctrl
@@ -1544,5 +1552,4 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
     rv_result = |&KEY&https://stg.me.com.br/comparative-panel/{ gs_pre_pedido-collect_no }|.
 
   ENDMETHOD.
-
 ENDCLASS.
