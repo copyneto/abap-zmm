@@ -1066,7 +1066,7 @@ CLASS zclmm_inventario IMPLEMENTATION.
     ENDTRY.
 
     TRY.
-          cs_item-accuracy      = ( 1 - ( cs_item-pricediff / cs_item-pricestock ) ) * 100.
+        cs_item-accuracy      = ( 1 - ( cs_item-pricediff / cs_item-pricestock ) ) * 100.
       CATCH cx_root.
         cs_item-accuracy      = 0.
     ENDTRY.

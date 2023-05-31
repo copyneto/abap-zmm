@@ -20,7 +20,7 @@
      <CATEGORY>ifmtypedef</CATEGORY>
      <X-ML_NSPCE>http://trescoracoes.com.br/suprimentos/contratocompra</X-ML_NSPCE>
      <X-ML_NAME>dtContratoCompra</X-ML_NAME>
-     <VERSION_ID>fd9d071a3b4911eda05400000085a0cb</VERSION_ID>
+     <VERSION_ID>385bdb6bfbc511eda5f800000085a0cb</VERSION_ID>
     </item>
    </PROXY_HEADER>
    <PROXY_DATA>
@@ -64,7 +64,7 @@
      <IFR_SCALE>-2</IFR_SCALE>
      <R3_TYPE>FIEL</R3_TYPE>
      <R3_NAME>CENTRO</R3_NAME>
-     <R3_SEQNUM>000021</R3_SEQNUM>
+     <R3_SEQNUM>000022</R3_SEQNUM>
     </item>
     <item>
      <OBJECT>TABL</OBJECT>
@@ -148,7 +148,7 @@
      <R3_TYPE>FIEL</R3_TYPE>
      <R3_NAME>DELETE_IND</R3_NAME>
      <R3_DATATYP>STRG</R3_DATATYP>
-     <R3_SEQNUM>000018</R3_SEQNUM>
+     <R3_SEQNUM>000019</R3_SEQNUM>
     </item>
     <item>
      <OBJECT>TABL</OBJECT>
@@ -253,7 +253,7 @@
      <IFR_SCALE>-2</IFR_SCALE>
      <R3_TYPE>FIEL</R3_TYPE>
      <R3_NAME>ITEM</R3_NAME>
-     <R3_SEQNUM>000020</R3_SEQNUM>
+     <R3_SEQNUM>000021</R3_SEQNUM>
     </item>
     <item>
      <OBJECT>TABL</OBJECT>
@@ -274,7 +274,7 @@
      <R3_TYPE>FIEL</R3_TYPE>
      <R3_NAME>OBSHEADER</R3_NAME>
      <R3_DATATYP>STRG</R3_DATATYP>
-     <R3_SEQNUM>000019</R3_SEQNUM>
+     <R3_SEQNUM>000020</R3_SEQNUM>
     </item>
     <item>
      <OBJECT>TABL</OBJECT>
@@ -401,6 +401,27 @@
      <R3_NAME>REF_1</R3_NAME>
      <R3_DATATYP>STRG</R3_DATATYP>
      <R3_SEQNUM>000013</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLMM_DT_CONTRATO_COMPRA</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>VALORFIXO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>VALORFIXO</OBJ_NAME2>
+     <ID>&lt;element&gt; VALORFIXO &lt;type&gt; dtContratoCompra http://trescoracoes.com.br/suprimentos/contratocompra http://trescoracoes.com.br/suprimentos/contratocompra</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>VALORFIXO</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>VALORFIXO</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000018</R3_SEQNUM>
     </item>
     <item>
      <OBJECT>TABL</OBJECT>

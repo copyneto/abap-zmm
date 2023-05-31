@@ -2,10 +2,10 @@ FUNCTION zf_cargacerta_vari_create.
 *"----------------------------------------------------------------------
 *"*"Interface local:
 *"  EXPORTING
-*"     VALUE(RETURN) TYPE  BAPIRET2
+*"     VALUE(ES_RETURN) TYPE  BAPIRET2
 *"  CHANGING
-*"     VALUE(IS_PLANLOG_VARI) TYPE  ZSPLANLOG_VARI OPTIONAL
-*"     VALUE(I_BATCH) TYPE  STRING OPTIONAL
+*"     VALUE(CV_PLANLOG_VARI) TYPE  ZSPLANLOG_VARI OPTIONAL
+*"     VALUE(CV_BATCH) TYPE  STRING OPTIONAL
 *"----------------------------------------------------------------------
 
   DATA: ls_planlogvari TYPE ztplanlog_vari,
@@ -18,54 +18,54 @@ FUNCTION zf_cargacerta_vari_create.
         lv_split1      TYPE string,
         lv_split2      TYPE string.
 
-  TRANSLATE is_planlog_vari-field TO UPPER CASE.
-  TRANSLATE is_planlog_vari-vari TO UPPER CASE.
+  TRANSLATE cv_planlog_vari-field TO UPPER CASE.
+  TRANSLATE cv_planlog_vari-vari TO UPPER CASE.
 
-  MOVE-CORRESPONDING is_planlog_vari TO ls_planlogvari.
+  MOVE-CORRESPONDING cv_planlog_vari TO ls_planlogvari.
 
-  IF i_batch IS INITIAL.
+  IF cv_batch IS INITIAL.
     SELECT SINGLE MAX( cont )
       FROM ztplanlog_vari
       INTO lv_cont
-      WHERE report = is_planlog_vari-report
-      AND vari = is_planlog_vari-vari.
+      WHERE report = cv_planlog_vari-report
+      AND vari = cv_planlog_vari-vari.
     IF sy-subrc EQ 0.
       SELECT SINGLE *
         FROM ztplanlog_vari
         INTO ls_planlogvari
-        WHERE report = is_planlog_vari-report
-        AND vari = is_planlog_vari-vari
-        AND low = is_planlog_vari-low
-        AND high = is_planlog_vari-high
-        AND opti = is_planlog_vari-opti.
+        WHERE report = cv_planlog_vari-report
+        AND vari = cv_planlog_vari-vari
+        AND low = cv_planlog_vari-low
+        AND high = cv_planlog_vari-high
+        AND opti = cv_planlog_vari-opti.
       IF sy-subrc EQ 0.
-        MOVE-CORRESPONDING ls_planlogvari TO is_planlog_vari.
+        MOVE-CORRESPONDING ls_planlogvari TO cv_planlog_vari.
         RETURN.
       ENDIF.
       ls_planlogvari-cont = lv_cont + 1.
-      is_planlog_vari-cont = ls_planlogvari-cont.
+      cv_planlog_vari-cont = ls_planlogvari-cont.
 
     ELSE.
       ls_planlogvari-cont = '1'.
     ENDIF.
     IF ls_planlogvari-field IS INITIAL.
-      return-type = 'E'.
-      return-message = TEXT-e01.
+      es_return-type = 'E'.
+      es_return-message = TEXT-e01.
       RETURN.
     ENDIF.
     MODIFY ztplanlog_vari FROM ls_planlogvari.
   ELSE.
 
-    ls_planlogvari-report = is_planlog_vari-report.
-    ls_planlogvari-vari = is_planlog_vari-vari.
+    ls_planlogvari-report = cv_planlog_vari-report.
+    ls_planlogvari-vari = cv_planlog_vari-vari.
 
     SELECT SINGLE MAX( cont )
      FROM ztplanlog_vari
      INTO lv_cont
-     WHERE report = is_planlog_vari-report
-     AND vari = is_planlog_vari-vari.
+     WHERE report = cv_planlog_vari-report
+     AND vari = cv_planlog_vari-vari.
     DO.
-      SPLIT i_batch AT ';' INTO lv_split1 lv_split2.
+      SPLIT cv_batch AT ';' INTO lv_split1 lv_split2.
       SPLIT lv_split1 AT '/' INTO lv_field lv_opti lv_low lv_high.
 *      IF sy-subrc EQ 0 AND lv_split1 IS NOT INITIAL.
       IF lv_split1 IS NOT INITIAL.
@@ -84,12 +84,12 @@ FUNCTION zf_cargacerta_vari_create.
         ls_planlogvari-field  = lv_field.
         ls_planlogvari-high   = lv_high.
         APPEND ls_planlogvari TO lt_planlogvari.
-        i_batch = lv_split2.
+        cv_batch = lv_split2.
       ELSE.
         EXIT.
       ENDIF.
     ENDDO.
-    MOVE-CORRESPONDING ls_planlogvari TO is_planlog_vari.
+    MOVE-CORRESPONDING ls_planlogvari TO cv_planlog_vari.
 
     IF lt_planlogvari IS NOT INITIAL.
       MODIFY ztplanlog_vari FROM TABLE lt_planlogvari.

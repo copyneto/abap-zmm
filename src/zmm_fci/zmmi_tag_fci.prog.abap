@@ -7,7 +7,8 @@
 
   DATA ls_fci_aux LIKE LINE OF lt_fci_aux.
 
-  IF is_header-direct = '2' AND it_nflin[] IS NOT INITIAL.
+*  IF is_header-direct = '2' AND it_nflin[] IS NOT INITIAL.
+  IF it_nflin[] IS NOT INITIAL.
 
     CREATE OBJECT lo_xmltext.
 

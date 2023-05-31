@@ -14,12 +14,12 @@
      <SHORT_TEXT>Carga Certa Variantes READ</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
       <RSIMP>
-       <PARAMETER>I_VARI</PARAMETER>
+       <PARAMETER>IV_VARI</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
@@ -30,18 +30,18 @@
        <TYP>ZSPLANLOG_VARI</TYP>
       </RSEXP>
       <RSEXP>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <TYP>BAPIRET2</TYP>
       </RSEXP>
      </EXPORT>
      <DOCUMENTATION>
       <RSFDO>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Report</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_VARI</PARAMETER>
+       <PARAMETER>IV_VARI</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Variante</STEXT>
       </RSFDO>
@@ -51,7 +51,7 @@
        <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
@@ -63,12 +63,12 @@
      <SHORT_TEXT>Carga Certa Query</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
       <RSIMP>
-       <PARAMETER>I_VARI</PARAMETER>
+       <PARAMETER>IV_VARI</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
@@ -81,12 +81,12 @@
      </EXPORT>
      <DOCUMENTATION>
       <RSFDO>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Report</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_VARI</PARAMETER>
+       <PARAMETER>IV_VARI</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Variante</STEXT>
       </RSFDO>
@@ -103,12 +103,12 @@
      <SHORT_TEXT>Carga Certa Query</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
       <RSIMP>
-       <PARAMETER>I_PARAM</PARAMETER>
+       <PARAMETER>IV_PARAM</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
@@ -121,12 +121,12 @@
      </EXPORT>
      <DOCUMENTATION>
       <RSFDO>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Report</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_PARAM</PARAMETER>
+       <PARAMETER>IV_PARAM</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Parametro</STEXT>
       </RSFDO>
@@ -143,35 +143,35 @@
      <SHORT_TEXT>Variantes Carga Certa</SHORT_TEXT>
      <CHANGING>
       <RSCHA>
-       <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
+       <PARAMETER>CV_PLANLOG_VARI</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>ZSPLANLOG_VARI</TYP>
       </RSCHA>
       <RSCHA>
-       <PARAMETER>I_BATCH</PARAMETER>
+       <PARAMETER>CV_BATCH</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>STRING</TYP>
       </RSCHA>
      </CHANGING>
      <EXPORT>
       <RSEXP>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <TYP>BAPIRET2</TYP>
       </RSEXP>
      </EXPORT>
      <DOCUMENTATION>
       <RSFDO>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>IS_PLANLOG_VARI</PARAMETER>
+       <PARAMETER>CV_PLANLOG_VARI</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_BATCH</PARAMETER>
+       <PARAMETER>CV_BATCH</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Batch</STEXT>
       </RSFDO>
@@ -190,7 +190,7 @@
      </IMPORT>
      <CHANGING>
       <RSCHA>
-       <PARAMETER>I_BATCH</PARAMETER>
+       <PARAMETER>CV_BATCH</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>STRING</TYP>
       </RSCHA>
@@ -213,7 +213,7 @@
        <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_BATCH</PARAMETER>
+       <PARAMETER>CV_BATCH</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Batch</STEXT>
       </RSFDO>
@@ -225,17 +225,17 @@
      <SHORT_TEXT>Carga Certa Query</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
       <RSIMP>
-       <PARAMETER>I_VARI</PARAMETER>
+       <PARAMETER>IV_VARI</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
       <RSIMP>
-       <PARAMETER>I_APP</PARAMETER>
+       <PARAMETER>IV_APP</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>CHAR30</TYP>
       </RSIMP>
@@ -248,17 +248,17 @@
      </EXPORT>
      <DOCUMENTATION>
       <RSFDO>
-       <PARAMETER>I_REPORT</PARAMETER>
+       <PARAMETER>IV_REPORT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Report</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_VARI</PARAMETER>
+       <PARAMETER>IV_VARI</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Variante</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_APP</PARAMETER>
+       <PARAMETER>IV_APP</PARAMETER>
        <KIND>P</KIND>
        <STEXT>App</STEXT>
       </RSFDO>
@@ -286,7 +286,7 @@
        <TYP>ZSPLANLOG_VARI</TYP>
       </RSEXP>
       <RSEXP>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <TYP>BAPIRET2</TYP>
       </RSEXP>
      </EXPORT>
@@ -302,7 +302,7 @@
        <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
@@ -319,14 +319,14 @@
        <TYP>ZSPLANLOG_VARI</TYP>
       </RSIMP>
       <RSIMP>
-       <PARAMETER>I_BATCH</PARAMETER>
+       <PARAMETER>IV_BATCH</PARAMETER>
        <OPTIONAL>X</OPTIONAL>
        <TYP>STRING</TYP>
       </RSIMP>
      </IMPORT>
      <EXPORT>
       <RSEXP>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <TYP>BAPIRET2</TYP>
       </RSEXP>
      </EXPORT>
@@ -337,12 +337,12 @@
        <STEXT>Variantes Carga Certa</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>I_BATCH</PARAMETER>
+       <PARAMETER>IV_BATCH</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Batch</STEXT>
       </RSFDO>
       <RSFDO>
-       <PARAMETER>RETURN</PARAMETER>
+       <PARAMETER>ES_RETURN</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>

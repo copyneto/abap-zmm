@@ -37,6 +37,11 @@ CLASS zclmm_order_simulate DEFINITION
         part_role TYPE parvw VALUE 'AG',
         tax_bco1  TYPE j_1btaxtyp VALUE 'BCO1',
         tax_bpi1  TYPE j_1btaxtyp VALUE 'BPI1',
+        tax_bx80  TYPE j_1btaxtyp VALUE 'BX80',
+        tax_bx70  TYPE j_1btaxtyp VALUE 'BX70',
+        tax_bx10  TYPE j_1btaxtyp VALUE 'BX10',
+        tax_bx20  TYPE j_1btaxtyp VALUE 'BX20',
+        tax_bx22  TYPE j_1btaxtyp VALUE 'BX22',
         tax_bx13  TYPE j_1btaxtyp VALUE 'BX13',
         tax_bx23  TYPE j_1btaxtyp VALUE 'BX23',
         tax_bx72  TYPE j_1btaxtyp VALUE 'BX72',
@@ -134,6 +139,7 @@ CLASS zclmm_order_simulate DEFINITION
       IMPORTING
         !is_document TYPE ztmm_mov_cntrl
         !it_taxes    TYPE ps_bapicond_t
+        !it_order_items_out type /SYCLO/SD_BAPIITEMEX_TAB
       EXPORTING
         !es_taxes    TYPE ztmm_mov_simul .
     "! Atribuir impostos
@@ -149,7 +155,7 @@ ENDCLASS.
 
 
 
-CLASS zclmm_order_simulate IMPLEMENTATION.
+CLASS ZCLMM_ORDER_SIMULATE IMPLEMENTATION.
 
 
   METHOD process.
@@ -161,6 +167,15 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
     DATA(lt_partner)    = set_partner( cs_document ).
 
     DATA(lt_schedule)   = set_schedule( cs_document ).
+
+    data(lt_return) = gt_return. sort lt_return BY type.
+    READ TABLE lt_return TRANSPORTING NO FIELDS WITH KEY type = gc_data-erro BINARY SEARCH.
+
+    if sy-subrc = 0.
+       et_return = gt_return.
+
+       return.
+    endif.
 
 
     call_bapi( EXPORTING
@@ -212,7 +227,8 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
 
   METHOD call_bapi.
 
-    DATA: lt_return TYPE STANDARD TABLE OF bapiret2.
+    DATA: lt_return TYPE STANDARD TABLE OF bapiret2,
+          lt_order_items_out type /SYCLO/SD_BAPIITEMEX_TAB.
 
     CALL FUNCTION 'BAPI_SALESORDER_SIMULATE'
 *    DESTINATION ' '
@@ -223,6 +239,7 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
         order_partners     = ct_partner
         order_schedule_in  = ct_schedule
         order_condition_ex = et_taxes
+        order_items_out    = lt_order_items_out
         messagetable       = lt_return.
 
     IF lines( et_taxes ) > 0.
@@ -237,6 +254,7 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
         EXPORTING
           is_document = cs_document
           it_taxes    = et_taxes
+          it_order_items_out = lt_order_items_out
         IMPORTING
           es_taxes    = es_taxes
       ).
@@ -330,7 +348,7 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
   METHOD set_cond_value.
 
 
-    SELECT SINGLE lppnet
+    SELECT SINGLE lppbrt
      FROM j_1blpp
      INTO @DATA(lv_valor)
     WHERE matnr = @is_document-matnr1
@@ -341,15 +359,12 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
     "???
     IF rv_cond_value IS INITIAL.
 
-      select SINGLE STPRS
-      from mbew
-      into @data(lv_stprs)
-      where matnr = @is_document-matnr1
-      AND bwkey = @is_document-werks.
+      APPEND INITIAL LINE TO gt_return ASSIGNING FIELD-SYMBOL(<fs_return>).
 
-      if sy-subrc = 0.
-       MOVE lv_stprs TO rv_cond_value.
-      endif.
+      <fs_return>-id = gc_data-msg_class.
+      <fs_return>-number = '029'.
+      <fs_return>-message_v1  = is_document-matnr1.
+      <fs_return>-type = gc_data-erro.
     ENDIF.
 
 
@@ -378,7 +393,6 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
 
       "???
 
-
       CASE <fs_line>-cond_type.
 
 *       ======== icms ==================
@@ -390,10 +404,10 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
           es_taxes-rate_bx13 = <fs_line>-cond_value.
           es_taxes-taxval_bx13 = <fs_line>-condvalue / 10.
 
+        WHEN gc_data-tax_bx10.
+
+          es_taxes-base_bx10 = <fs_line>-condvalue / 10.
 *       ======== icms ==================
-
-
-
 
 *       ======== ipi ==================
         WHEN gc_data-tax_ipi3.
@@ -413,7 +427,17 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
           es_taxes-taxtyp_ipi3 = <fs_line>-cond_type.
 
         WHEN gc_data-tax_bpi1.
-          es_taxes-rate_bx82 = <fs_line>-cond_value.
+          es_taxes-rate_bpi1 = <fs_line>-cond_value.
+
+
+        WHEN gc_data-tax_bx20.
+          es_taxes-base_bx20 = <fs_line>-condvalue / 10.
+
+        WHEN gc_data-tax_bx80.
+          es_taxes-base_bx80 = <fs_line>-condvalue / 10.
+
+        WHEN gc_data-tax_bx82.
+           es_taxes-taxval_bx82 = <fs_line>-condvalue / 10.
 
 *       ======== PIS ==================
 
@@ -422,13 +446,21 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
 
           es_taxes-taxtyp_ipi3 = <fs_line>-cond_type.
 
-        WHEN gc_data-tax_bco1.
-          es_taxes-rate_bx72 = <fs_line>-cond_value.
+        WHEN gc_data-tax_BX72.
 
-*        WHEN gc_data-tax_BX72.
-*
-*          es_taxes-rate_bx72 = <fs_line>-cond_value.
-*          es_taxes-taxval_bx72 = <fs_line>-condvalue / 10.
+          es_taxes-rate_bx72 = <fs_line>-cond_value.
+          es_taxes-taxval_bx72 = <fs_line>-condvalue / 10.
+
+        WHEN gc_data-tax_bx70.
+          es_taxes-base_bx70 = <fs_line>-condvalue / 10.
+
+        WHEN gc_data-tax_bx22.
+
+          es_taxes-base_bx22 = <fs_line>-condvalue / 10.
+
+        WHEN gc_data-tax_bco1.
+
+          es_taxes-rate_bco1 = <fs_line>-cond_value.
 
 *       ======== Cofins ==================
 
@@ -441,14 +473,22 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
 
       ENDCASE.
 
-    ENDLOOP.
+     read TABLE it_order_items_out ASSIGNING FIELD-SYMBOL(<fs_order_items_out>) WITH KEY itm_number = <fs_line>-itm_number BINARY SEARCH.
+      if <fs_order_items_out> is ASSIGNED.
+         es_taxes-netpr_final = <fs_order_items_out>-net_value / 1000.
+      endif.
 
-    es_taxes-taxval_bx72 = es_taxes-base_bco1 * ( es_taxes-rate_bx72 / 100 ).
-    es_taxes-taxval_bx82 = es_taxes-base_bco1 * ( es_taxes-rate_bx82 / 100 ).
+    ENDLOOP.
 
 *      NETPR
     es_taxes-netpr  = set_cond_value( is_document ).
     es_taxes-id     = is_document-id.
+
+
+    data(lt_return) = gt_return. sort lt_return BY type.
+    READ TABLE lt_return TRANSPORTING NO FIELDS WITH KEY type = gc_data-erro BINARY SEARCH.
+
+    check sy-subrc <> 0.
 
     TRY.
 
@@ -488,17 +528,22 @@ CLASS zclmm_order_simulate IMPLEMENTATION.
 
     lr_cond =  VALUE #( sign = gc_data-c_i  option = gc_data-c_eq ( low = gc_data-tax_bco1 )
                                                                   ( low = gc_data-tax_bpi1 )
-                                                                  ( low = gc_data-tax_bx13 )
                                                                   ( low = gc_data-tax_bx23 )
+                                                                  ( low = gc_data-tax_bx10 )
+                                                                  ( low = gc_data-tax_bx13 )
                                                                   ( low = gc_data-tax_bx72 )
                                                                   ( low = gc_data-tax_bx82 )
                                                                   ( low = gc_data-tax_icm3 )
+                                                                  ( low = gc_data-tax_bx20 )
                                                                   ( low = gc_data-tax_icof )
                                                                   ( low = gc_data-tax_ipi3 )
                                                                   ( low = gc_data-tax_ipis )
                                                                   ( low = gc_data-tax_ipva )
                                                                   ( low = gc_data-tax_zicm )
-                      ).
+                                                                  ( low = gc_data-tax_bx80 )
+                                                                  ( low = gc_data-tax_bx82 )
+                                                                  ( low = gc_data-tax_bx22 )
+                                                                  ( low = gc_data-tax_bx70 ) ).
 
     LOOP AT lt_taxes ASSIGNING FIELD-SYMBOL(<fs_line>).
 

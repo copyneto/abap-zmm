@@ -38,6 +38,9 @@ define view entity ZI_MM_MOV_SIMUL
       rate_bx72   as RateBx72,
       @Semantics.amount.currencyCode : 'Currency'
       taxval_bx72 as TaxvalBx72,
+      @Semantics.amount.currencyCode : 'Currency'
+      taxval_bx72 as TaxvalBx70,
+      rate_bco1   as Rate_bco1,
       netpr_final as NetprFinal,
       waers       as Currency
 }

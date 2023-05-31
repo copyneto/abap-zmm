@@ -26,15 +26,15 @@ DATA: gt_iblnr      TYPE STANDARD TABLE OF iblnr WITH EMPTY KEY,
 
 START-OF-SELECTION.
 
-  PERFORM p_concluidos.
-  PERFORM p_cancelados.
+  PERFORM f_concluidos.
+  PERFORM f_cancelados.
 
 end-of-SELECTION.
 
   WRITE: TEXT-002.
 
 
-FORM p_concluidos.
+FORM f_concluidos.
 
   SELECT a~documentid, b~physinventory FROM ztmm_inventory_h AS a
   INNER JOIN ztmm_inventory_i AS b
@@ -81,11 +81,11 @@ FORM p_concluidos.
 
       ENDLOOP.
 
-      LOOP AT gt_iblnr ASSIGNING FIELD-SYMBOL(<ls_iblnr>).
+      LOOP AT gt_iblnr ASSIGNING FIELD-SYMBOL(<fs_iblnr>).
 
         UPDATE ztmm_inventory_i
            SET status = '03'
-         WHERE physinventory = <ls_iblnr>.
+         WHERE physinventory = <fs_iblnr>.
 
       ENDLOOP.
 
@@ -97,7 +97,7 @@ FORM p_concluidos.
 
 ENDFORM.
 
-FORM p_cancelados.
+FORM f_cancelados.
 
   SELECT a~documentid, b~physinventory FROM ztmm_inventory_h AS a
  INNER JOIN ztmm_inventory_i AS b
@@ -139,11 +139,11 @@ FORM p_cancelados.
 
     ENDLOOP.
 
-    LOOP AT gt_iblnr ASSIGNING FIELD-SYMBOL(<ls_iblnr>).
+    LOOP AT gt_iblnr ASSIGNING FIELD-SYMBOL(<fs_iblnr>).
 
       UPDATE ztmm_inventory_i
          SET status = '04'
-       WHERE physinventory = <ls_iblnr>.
+       WHERE physinventory = <fs_iblnr>.
 
     ENDLOOP.
 

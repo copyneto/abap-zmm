@@ -202,7 +202,11 @@ CLASS ZCLMM_CONTRATO_COMP IMPLEMENTATION.
         our_ref    = gs_contrato-our_ref
         incoterms1 = gs_contrato-incoterms1
         incoterms2 = gs_contrato-incoterms1
-        acum_value = gs_contrato-acum_value
+* BEGIN OF CHANGE - JWSILVA - 26.05.2023
+        acum_value = COND #( WHEN gs_contrato-valorfixo is not initial
+                             THEN gs_contrato-valorfixo
+                             ELSE gs_contrato-acum_value )
+* END OF CHANGE - JWSILVA - 26.05.2023
      ).
 
     es_headerx = VALUE bapimeoutheaderx(

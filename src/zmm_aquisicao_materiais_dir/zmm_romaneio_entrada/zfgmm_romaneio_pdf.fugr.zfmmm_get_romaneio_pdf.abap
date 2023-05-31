@@ -79,18 +79,24 @@ FUNCTION zfmmm_get_romaneio_pdf.
     SORT lt_romaneio BY doc_uuid_h vbeln ebelp.
 
     LOOP AT lt_romaneio ASSIGNING FIELD-SYMBOL(<fs_romaneio>).
-      <fs_romaneio>-xped     = <fs_romaneio>-ebeln.
-      <fs_romaneio>-nitemped = <fs_romaneio>-ebelp.
+      <fs_romaneio>-xped         = <fs_romaneio>-ebeln.
+      <fs_romaneio>-nitemped     = <fs_romaneio>-ebelp.
       <fs_romaneio>-nitemped_aux = '0' && <fs_romaneio>-ebelp.
+* BEGIN OF CHANGE - JWSILVA - 31.05.2023
+      <fs_romaneio>-nfnum        = |{ <fs_romaneio>-nfnum ALPHA = OUT }|.
     ENDLOOP.
 
-    SELECT *
-      FROM i_br_nfitem_c
+    SELECT nfitem~*
+      FROM I_BR_NFItem_C AS nfitem
+      INNER JOIN I_BR_NFDocument AS nfdoc
+        ON nfdoc~BR_NotaFiscal = nfitem~BR_NotaFiscal
       FOR ALL ENTRIES IN @lt_romaneio
-      WHERE purchaseorder = @lt_romaneio-xped
-        AND ( purchaseorderitem = @lt_romaneio-nitemped OR
-              purchaseorderitem = @lt_romaneio-nitemped_aux )
+      WHERE nfitem~purchaseorder = @lt_romaneio-xped
+        AND ( nfitem~purchaseorderitem = @lt_romaneio-nitemped OR
+              nfitem~purchaseorderitem = @lt_romaneio-nitemped_aux )
+        AND nfdoc~BR_NFeNumber = @lt_romaneio-nfnum
       INTO TABLE @DATA(lt_nfitem).
+* END OF CHANGE - JWSILVA - 31.05.2023
     IF sy-subrc = 0.
 
       SORT lt_nfitem BY purchaseorder purchaseorderitem.
@@ -242,8 +248,8 @@ FUNCTION zfmmm_get_romaneio_pdf.
 *          lv_e_menge = lv_e_menge.
 *        ENDIF.
 
-    ls_cab-qtde            = lv_qtd_saca.
-    ls_cab-qtd_kg_original = lv_qtd_kg.
+        ls_cab-qtde            = lv_qtd_saca.
+        ls_cab-qtd_kg_original = lv_qtd_kg.
         APPEND VALUE #( romaneio        = <fs_romaneio>-sequence
                         recebimento     = <fs_romaneio>-vbeln
                         item            = <fs_romaneio>-ebelp

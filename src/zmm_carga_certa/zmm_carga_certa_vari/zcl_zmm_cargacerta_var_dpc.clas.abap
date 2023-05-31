@@ -256,7 +256,7 @@ CLASS ZCL_ZMM_CARGACERTA_VAR_DPC IMPLEMENTATION.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~CREATE_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_CRT_ENTITY_BASE
-*&* This class has been generated on 08.05.2023 14:11:49 in client 100
+*&* This class has been generated on 26.05.2023 11:04:08 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
@@ -359,7 +359,7 @@ ENDCASE.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~DELETE_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_DEL_ENTITY_BASE
-*&* This class has been generated on 08.05.2023 14:11:49 in client 100
+*&* This class has been generated on 26.05.2023 11:04:08 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
@@ -429,7 +429,7 @@ CASE lv_entityset_name.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~GET_ENTITY.
 *&-----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_GETENTITY_BASE
-*&* This class has been generated  on 08.05.2023 14:11:49 in client 100
+*&* This class has been generated  on 26.05.2023 11:04:08 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
@@ -548,7 +548,7 @@ CASE lv_entityset_name.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~GET_ENTITYSET.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TMP_ENTITYSET_BASE
-*&* This class has been generated on 08.05.2023 14:11:49 in client 100
+*&* This class has been generated on 26.05.2023 11:04:08 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
@@ -675,7 +675,7 @@ CASE lv_entityset_name.
   method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~UPDATE_ENTITY.
 *&----------------------------------------------------------------------------------------------*
 *&  Include           /IWBEP/DPC_TEMP_UPD_ENTITY_BASE
-*&* This class has been generated on 08.05.2023 14:11:49 in client 100
+*&* This class has been generated on 26.05.2023 11:04:08 in client 100
 *&*
 *&*       WARNING--> NEVER MODIFY THIS CLASS <--WARNING
 *&*   If you want to change the DPC implementation, use the
@@ -911,9 +911,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *-------------------------------------------------------------
 *  Data declaration
 *-------------------------------------------------------------
- DATA i_batch TYPE string.
- DATA is_planlog_vari TYPE zif_zf_cargacerta_vari_create=>zsplanlog_vari.
- DATA return TYPE zif_zf_cargacerta_vari_create=>bapiret2.
+ DATA cv_batch TYPE string.
+ DATA cv_planlog_vari TYPE zif_zf_cargacerta_vari_create=>zsplanlog_vari.
+ DATA es_return TYPE zif_zf_cargacerta_vari_create=>bapiret2.
  DATA lv_rfc_name TYPE tfdir-funcname.
  DATA lv_destination TYPE rfcdest.
  DATA lv_subrc TYPE syst-subrc.
@@ -940,15 +940,15 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
  io_data_provider->read_entry_data( IMPORTING es_data = ls_request_input_data ).
 
 * Map request input fields to function module parameters
- i_batch = ls_request_input_data-batch.
- is_planlog_vari-high = ls_request_input_data-high.
- is_planlog_vari-opti = ls_request_input_data-opti.
- is_planlog_vari-low = ls_request_input_data-low.
- is_planlog_vari-cont = ls_request_input_data-cont.
- is_planlog_vari-field = ls_request_input_data-field.
- is_planlog_vari-vari = ls_request_input_data-vari.
- is_planlog_vari-report = ls_request_input_data-report.
- is_planlog_vari-opti_desc = ls_request_input_data-opti_desc.
+ cv_batch = ls_request_input_data-batch.
+ cv_planlog_vari-high = ls_request_input_data-high.
+ cv_planlog_vari-opti = ls_request_input_data-opti.
+ cv_planlog_vari-low = ls_request_input_data-low.
+ cv_planlog_vari-cont = ls_request_input_data-cont.
+ cv_planlog_vari-field = ls_request_input_data-field.
+ cv_planlog_vari-vari = ls_request_input_data-vari.
+ cv_planlog_vari-report = ls_request_input_data-report.
+ cv_planlog_vari-opti_desc = ls_request_input_data-opti_desc.
 
 * Get RFC destination
  lo_dp_facade = /iwbep/if_mgw_conv_srv_runtime~get_dp_facade( ).
@@ -964,10 +964,10 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          IMPORTING
-           return          = return
+           es_return       = es_return
          CHANGING
-           i_batch         = i_batch
-           is_planlog_vari = is_planlog_vari
+           cv_batch        = cv_batch
+           cv_planlog_vari = cv_planlog_vari
          EXCEPTIONS
            system_failure  = 1000 message lv_exc_msg
            OTHERS          = 1002.
@@ -983,10 +983,10 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      IMPORTING
-       return                = return
+       es_return             = es_return
      CHANGING
-       i_batch               = i_batch
-       is_planlog_vari       = is_planlog_vari
+       cv_batch              = cv_batch
+       cv_planlog_vari       = cv_planlog_vari
      EXCEPTIONS
        system_failure        = 1000 MESSAGE lv_exc_msg
        communication_failure = 1001 MESSAGE lv_exc_msg
@@ -1010,11 +1010,11 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
        iv_exp_message_text = lv_exc_msg ).
  ENDIF.
 
- IF return IS NOT INITIAL.
+ IF es_return IS NOT INITIAL.
 * Call RFC call exception handling
    me->/iwbep/if_sb_dpc_comm_services~rfc_save_log(
      EXPORTING
-       is_return      = return
+       is_return      = es_return
        iv_entity_type = iv_entity_name
        it_key_tab     = it_key_tab ).
  ENDIF.
@@ -1032,19 +1032,19 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 * Create key table for the read operation
 
  ls_key-name = 'CONT'.
- ls_key-value = is_planlog_vari-cont.
+ ls_key-value = cv_planlog_vari-cont.
  IF ls_key IS NOT INITIAL.
    APPEND ls_key TO lt_keys.
  ENDIF.
 
  ls_key-name = 'VARI'.
- ls_key-value = is_planlog_vari-vari.
+ ls_key-value = cv_planlog_vari-vari.
  IF ls_key IS NOT INITIAL.
    APPEND ls_key TO lt_keys.
  ENDIF.
 
  ls_key-name = 'REPORT'.
- ls_key-value = is_planlog_vari-report.
+ ls_key-value = cv_planlog_vari-report.
  IF ls_key IS NOT INITIAL.
    APPEND ls_key TO lt_keys.
  ENDIF.
@@ -1078,7 +1078,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *-------------------------------------------------------------
 *  Data declaration
 *-------------------------------------------------------------
- DATA i_batch TYPE string.
+ DATA cv_batch TYPE string.
  DATA is_planlog_vari TYPE zif_zf_cargacerta_vari_delete=>zsplanlog_vari.
  DATA lv_rfc_name TYPE tfdir-funcname.
  DATA lv_destination TYPE rfcdest.
@@ -1102,9 +1102,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
 * Maps key fields to function module parameters
 
- is_planlog_vari-report = ls_converted_keys-report.
- is_planlog_vari-vari = ls_converted_keys-vari.
  is_planlog_vari-cont = ls_converted_keys-cont.
+ is_planlog_vari-vari = ls_converted_keys-vari.
+ is_planlog_vari-report = ls_converted_keys-report.
 * Get RFC destination
  lo_dp_facade = /iwbep/if_mgw_conv_srv_runtime~get_dp_facade( ).
  lv_destination = /iwbep/cl_sb_gen_dpc_rt_util=>get_rfc_destination( io_dp_facade = lo_dp_facade ).
@@ -1121,7 +1121,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
          EXPORTING
            is_planlog_vari = is_planlog_vari
          CHANGING
-           i_batch         = i_batch
+           cv_batch        = cv_batch
          EXCEPTIONS
            system_failure  = 1000 message lv_exc_msg
            OTHERS          = 1002.
@@ -1139,7 +1139,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
      EXPORTING
        is_planlog_vari       = is_planlog_vari
      CHANGING
-       i_batch               = i_batch
+       cv_batch              = cv_batch
      EXCEPTIONS
        system_failure        = 1000 MESSAGE lv_exc_msg
        communication_failure = 1001 MESSAGE lv_exc_msg
@@ -1176,8 +1176,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *  Data declaration
 *-------------------------------------------------------------
  DATA es_planlog_vari TYPE zif_zf_cargacerta_vari_read1=>zsplanlog_vari.
+ DATA es_return TYPE zif_zf_cargacerta_vari_read1=>bapiret2.
  DATA is_planlog_vari TYPE zif_zf_cargacerta_vari_read1=>zsplanlog_vari.
- DATA return TYPE zif_zf_cargacerta_vari_read1=>bapiret2.
  DATA lv_rfc_name TYPE tfdir-funcname.
  DATA lv_destination TYPE rfcdest.
  DATA lv_subrc TYPE syst-subrc.
@@ -1229,7 +1229,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
          EXPORTING
            is_planlog_vari = is_planlog_vari
          IMPORTING
-           return          = return
+           es_return       = es_return
            es_planlog_vari = es_planlog_vari
          EXCEPTIONS
            system_failure  = 1000 message lv_exc_msg
@@ -1248,7 +1248,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
      EXPORTING
        is_planlog_vari       = is_planlog_vari
      IMPORTING
-       return                = return
+       es_return             = es_return
        es_planlog_vari       = es_planlog_vari
      EXCEPTIONS
        system_failure        = 1000 MESSAGE lv_exc_msg
@@ -1273,11 +1273,11 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
        iv_exp_message_text = lv_exc_msg ).
  ENDIF.
 
- IF return IS NOT INITIAL.
+ IF es_return IS NOT INITIAL.
 * Call RFC call exception handling
    me->/iwbep/if_sb_dpc_comm_services~rfc_save_log(
      EXPORTING
-       is_return      = return
+       is_return      = es_return
        iv_entity_type = iv_entity_name
        it_key_tab     = it_key_tab ).
  ENDIF.
@@ -1302,9 +1302,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *-------------------------------------------------------------
 *  Data declaration
 *-------------------------------------------------------------
- DATA i_app TYPE zif_zf_cargacerta_vari_query=>char30.
- DATA i_report TYPE zif_zf_cargacerta_vari_query=>char30.
- DATA i_vari TYPE zif_zf_cargacerta_vari_query=>char30.
+ DATA iv_app TYPE zif_zf_cargacerta_vari_query=>char30.
+ DATA iv_report TYPE zif_zf_cargacerta_vari_query=>char30.
+ DATA iv_vari TYPE zif_zf_cargacerta_vari_query=>char30.
  DATA et_planlog_vari  TYPE zif_zf_cargacerta_vari_query=>zttplanlog_vari.
  DATA ls_et_planlog_vari  TYPE LINE OF zif_zf_cargacerta_vari_query=>zttplanlog_vari.
  DATA lv_rfc_name TYPE tfdir-funcname.
@@ -1369,7 +1369,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 * Maps filter table lines to function module parameters
  LOOP AT lt_filter_select_options INTO ls_filter.
 
-   LOOP AT ls_filter-select_options INTO ls_filter_range. "#EC CI_NESTED
+   LOOP AT ls_filter-select_options INTO ls_filter_range.
      CASE ls_filter-property.
        WHEN 'VARI'.
          lo_filter->convert_select_option(
@@ -1380,7 +1380,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
          READ TABLE lr_VARI INTO ls_VARI INDEX 1.
          IF sy-subrc = 0.
-           i_vari = ls_VARI-low.
+           iv_vari = ls_VARI-low.
          ENDIF.
        WHEN 'REPORT'.
          lo_filter->convert_select_option(
@@ -1391,7 +1391,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
          READ TABLE lr_REPORT INTO ls_REPORT INDEX 1.
          IF sy-subrc = 0.
-           i_report = ls_REPORT-low.
+           iv_report = ls_REPORT-low.
          ENDIF.
        WHEN 'APP'.
          lo_filter->convert_select_option(
@@ -1402,7 +1402,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
          READ TABLE lr_APP INTO ls_APP INDEX 1.
          IF sy-subrc = 0.
-           i_app = ls_APP-low.
+           iv_app = ls_APP-low.
          ENDIF.
        WHEN OTHERS.
          " Log message in the application log
@@ -1435,9 +1435,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          EXPORTING
-           i_vari          = i_vari
-           i_report        = i_report
-           i_app           = i_app
+           iv_vari         = iv_vari
+           iv_report       = iv_report
+           iv_app          = iv_app
          IMPORTING
            et_planlog_vari = et_planlog_vari
          EXCEPTIONS
@@ -1455,9 +1455,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      EXPORTING
-       i_vari                = i_vari
-       i_report              = i_report
-       i_app                 = i_app
+       iv_vari               = iv_vari
+       iv_report             = iv_report
+       iv_app                = iv_app
      IMPORTING
        et_planlog_vari       = et_planlog_vari
      EXCEPTIONS
@@ -1530,9 +1530,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *-------------------------------------------------------------
 *  Data declaration
 *-------------------------------------------------------------
- DATA i_batch TYPE string.
+ DATA iv_batch TYPE string.
+ DATA es_return TYPE zif_zf_cargacerta_vari_updat1=>bapiret2.
  DATA is_planlog_vari TYPE zif_zf_cargacerta_vari_updat1=>zsplanlog_vari.
- DATA return TYPE zif_zf_cargacerta_vari_updat1=>bapiret2.
  DATA lv_rfc_name TYPE tfdir-funcname.
  DATA lv_destination TYPE rfcdest.
  DATA lv_subrc TYPE syst-subrc.
@@ -1562,7 +1562,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
  is_planlog_vari-vari = ls_converted_keys-vari.
  is_planlog_vari-report = ls_converted_keys-report.
 * Map request input fields to function module parameters
- i_batch = ls_request_input_data-batch.
+ iv_batch = ls_request_input_data-batch.
  is_planlog_vari-high = ls_request_input_data-high.
  is_planlog_vari-opti = ls_request_input_data-opti.
  is_planlog_vari-low = ls_request_input_data-low.
@@ -1583,10 +1583,10 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          EXPORTING
-           i_batch         = i_batch
+           iv_batch        = iv_batch
            is_planlog_vari = is_planlog_vari
          IMPORTING
-           return          = return
+           es_return       = es_return
          EXCEPTIONS
            system_failure  = 1000 message lv_exc_msg
            OTHERS          = 1002.
@@ -1602,10 +1602,10 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      EXPORTING
-       i_batch               = i_batch
+       iv_batch              = iv_batch
        is_planlog_vari       = is_planlog_vari
      IMPORTING
-       return                = return
+       es_return             = es_return
      EXCEPTIONS
        system_failure        = 1000 MESSAGE lv_exc_msg
        communication_failure = 1001 MESSAGE lv_exc_msg
@@ -1629,11 +1629,11 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
        iv_exp_message_text = lv_exc_msg ).
  ENDIF.
 
- IF return IS NOT INITIAL.
+ IF es_return IS NOT INITIAL.
 * Call RFC call exception handling
    me->/iwbep/if_sb_dpc_comm_services~rfc_save_log(
      EXPORTING
-       is_return      = return
+       is_return      = es_return
        iv_entity_type = iv_entity_name
        it_key_tab     = it_key_tab ).
  ENDIF.
@@ -1674,8 +1674,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *-------------------------------------------------------------
 *  Data declaration
 *-------------------------------------------------------------
- DATA i_param TYPE zif_zf_cargacerta_param_query=>char30.
- DATA i_report TYPE zif_zf_cargacerta_param_query=>char30.
+ DATA iv_param TYPE zif_zf_cargacerta_param_query=>char30.
+ DATA iv_report TYPE zif_zf_cargacerta_param_query=>char30.
  DATA et_planlog_param  TYPE zif_zf_cargacerta_param_query=>zttplanlog_param.
  DATA ls_et_planlog_param  TYPE LINE OF zif_zf_cargacerta_param_query=>zttplanlog_param.
  DATA lv_rfc_name TYPE tfdir-funcname.
@@ -1738,7 +1738,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 * Maps filter table lines to function module parameters
  LOOP AT lt_filter_select_options INTO ls_filter.
 
-   LOOP AT ls_filter-select_options INTO ls_filter_range. "#EC CI_NESTED
+   LOOP AT ls_filter-select_options INTO ls_filter_range.
      CASE ls_filter-property.
        WHEN 'PARAM'.
          lo_filter->convert_select_option(
@@ -1749,7 +1749,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
          READ TABLE lr_PARAM INTO ls_PARAM INDEX 1.
          IF sy-subrc = 0.
-           i_param = ls_PARAM-low.
+           iv_param = ls_PARAM-low.
          ENDIF.
        WHEN 'REPORT'.
          lo_filter->convert_select_option(
@@ -1760,7 +1760,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
          READ TABLE lr_REPORT INTO ls_REPORT INDEX 1.
          IF sy-subrc = 0.
-           i_report = ls_REPORT-low.
+           iv_report = ls_REPORT-low.
          ENDIF.
        WHEN OTHERS.
          " Log message in the application log
@@ -1793,8 +1793,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          EXPORTING
-           i_param          = i_param
-           i_report         = i_report
+           iv_param         = iv_param
+           iv_report        = iv_report
          IMPORTING
            et_planlog_param = et_planlog_param
          EXCEPTIONS
@@ -1812,8 +1812,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      EXPORTING
-       i_param               = i_param
-       i_report              = i_report
+       iv_param              = iv_param
+       iv_report             = iv_report
      IMPORTING
        et_planlog_param      = et_planlog_param
      EXCEPTIONS
@@ -1897,8 +1897,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *-------------------------------------------------------------
 *  Data declaration
 *-------------------------------------------------------------
- DATA i_report TYPE zif_zf_cargacerta_execute_quer=>char30.
- DATA i_vari TYPE zif_zf_cargacerta_execute_quer=>char30.
+ DATA iv_report TYPE zif_zf_cargacerta_execute_quer=>char30.
+ DATA iv_vari TYPE zif_zf_cargacerta_execute_quer=>char30.
  DATA et_planlog_vari  TYPE zif_zf_cargacerta_execute_quer=>zttplanlog_vari.
  DATA ls_et_planlog_vari  TYPE LINE OF zif_zf_cargacerta_execute_quer=>zttplanlog_vari.
  DATA lv_rfc_name TYPE tfdir-funcname.
@@ -1972,7 +1972,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
          READ TABLE lr_VARI INTO ls_VARI INDEX 1.
          IF sy-subrc = 0.
-           i_vari = ls_VARI-low.
+           iv_vari = ls_VARI-low.
          ENDIF.
        WHEN 'REPORT'.
          lo_filter->convert_select_option(
@@ -1983,7 +1983,7 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
          READ TABLE lr_REPORT INTO ls_REPORT INDEX 1.
          IF sy-subrc = 0.
-           i_report = ls_REPORT-low.
+           iv_report = ls_REPORT-low.
          ENDIF.
        WHEN OTHERS.
          " Log message in the application log
@@ -2016,8 +2016,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          EXPORTING
-           i_vari          = i_vari
-           i_report        = i_report
+           iv_vari         = iv_vari
+           iv_report       = iv_report
          IMPORTING
            et_planlog_vari = et_planlog_vari
          EXCEPTIONS
@@ -2035,8 +2035,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      EXPORTING
-       i_vari                = i_vari
-       i_report              = i_report
+       iv_vari               = iv_vari
+       iv_report             = iv_report
      IMPORTING
        et_planlog_vari       = et_planlog_vari
      EXCEPTIONS
@@ -2104,9 +2104,9 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 *  Data declaration
 *-------------------------------------------------------------
  DATA es_planlog_vari TYPE zif_zf_cargacerta_execute=>zsplanlog_vari.
- DATA i_report TYPE zif_zf_cargacerta_execute=>char30.
- DATA i_vari TYPE zif_zf_cargacerta_execute=>char30.
- DATA return TYPE zif_zf_cargacerta_execute=>bapiret2.
+ DATA es_return TYPE zif_zf_cargacerta_execute=>bapiret2.
+ DATA iv_report TYPE zif_zf_cargacerta_execute=>char30.
+ DATA iv_vari TYPE zif_zf_cargacerta_execute=>char30.
  DATA lv_rfc_name TYPE tfdir-funcname.
  DATA lv_destination TYPE rfcdest.
  DATA lv_subrc TYPE syst-subrc.
@@ -2139,8 +2139,8 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
  ENDIF.
 
- i_vari = ls_converted_keys-vari.
- i_report = ls_converted_keys-report.
+ iv_vari = ls_converted_keys-vari.
+ iv_report = ls_converted_keys-report.
 * Get RFC destination
  lo_dp_facade = /iwbep/if_mgw_conv_srv_runtime~get_dp_facade( ).
  lv_destination = /iwbep/cl_sb_gen_dpc_rt_util=>get_rfc_destination( io_dp_facade = lo_dp_facade ).
@@ -2155,10 +2155,10 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
    TRY.
        CALL FUNCTION lv_rfc_name
          EXPORTING
-           i_vari          = i_vari
-           i_report        = i_report
+           iv_vari         = iv_vari
+           iv_report       = iv_report
          IMPORTING
-           return          = return
+           es_return       = es_return
            es_planlog_vari = es_planlog_vari
          EXCEPTIONS
            system_failure  = 1000 message lv_exc_msg
@@ -2175,10 +2175,10 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
 
    CALL FUNCTION lv_rfc_name DESTINATION lv_destination
      EXPORTING
-       i_vari                = i_vari
-       i_report              = i_report
+       iv_vari               = iv_vari
+       iv_report             = iv_report
      IMPORTING
-       return                = return
+       es_return             = es_return
        es_planlog_vari       = es_planlog_vari
      EXCEPTIONS
        system_failure        = 1000 MESSAGE lv_exc_msg
@@ -2203,11 +2203,11 @@ lo_logger = /iwbep/if_mgw_conv_srv_runtime~get_logger( ).
        iv_exp_message_text = lv_exc_msg ).
  ENDIF.
 
- IF return IS NOT INITIAL.
+ IF es_return IS NOT INITIAL.
 * Call RFC call exception handling
    me->/iwbep/if_sb_dpc_comm_services~rfc_save_log(
      EXPORTING
-       is_return      = return
+       is_return      = es_return
        iv_entity_type = iv_entity_name
        it_key_tab     = it_key_tab ).
  ENDIF.

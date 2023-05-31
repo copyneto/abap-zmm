@@ -6,7 +6,7 @@ FUNCTION zf_cargacerta_vari_delete.
 *"  EXPORTING
 *"     VALUE(ES_PLANLOG_VARI) TYPE  ZSPLANLOG_VARI
 *"  CHANGING
-*"     VALUE(I_BATCH) TYPE  STRING OPTIONAL
+*"     VALUE(CV_BATCH) TYPE  STRING OPTIONAL
 *"----------------------------------------------------------------------
 
 

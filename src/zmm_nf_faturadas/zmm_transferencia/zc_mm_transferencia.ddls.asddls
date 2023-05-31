@@ -5,8 +5,8 @@ define root view entity ZC_MM_TRANSFERENCIA
   as projection on ZI_MM_TRANSFERENCIA
 {
   
-  key NumeroDocumento,
-  key NumeroDocumentoItem,
+  key NumeroDocumento, 
+  key NumeroDocumentoItem, 
   @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CA_VH_DOCNUM', element: 'BR_NotaFiscal' } }]
       BR_NotaFiscal,
       @Consumption.filter: { selectionType: #INTERVAL }
@@ -58,13 +58,13 @@ define root view entity ZC_MM_TRANSFERENCIA
 //      @EndUserText.label: 'Data do Recebimento'      
       @EndUserText.label: 'Data de Entrada'      
       @Consumption.filter: { selectionType: #INTERVAL }
-      DataRecebimento,
+      DataRecebimento
       //      teste,
       /* Associations */
-      _AccessKey,
-      _LocNegOrigem,
-      _LocNegDestino,
-      _LocNegRecebedor 
+//      _AccessKey,
+//      _LocNegOrigem,
+//      _LocNegDestino,
+//      _LocNegRecebedor 
 //      _Mkpf
       
       //      _NFDocumentFlow,

@@ -3,9 +3,9 @@ FUNCTION zf_cargacerta_vari_update.
 *"*"Interface local:
 *"  IMPORTING
 *"     VALUE(IS_PLANLOG_VARI) TYPE  ZSPLANLOG_VARI OPTIONAL
-*"     VALUE(I_BATCH) TYPE  STRING OPTIONAL
+*"     VALUE(IV_BATCH) TYPE  STRING OPTIONAL
 *"  EXPORTING
-*"     VALUE(RETURN) TYPE  BAPIRET2
+*"     VALUE(ES_RETURN) TYPE  BAPIRET2
 *"----------------------------------------------------------------------
 
 
@@ -29,7 +29,7 @@ FUNCTION zf_cargacerta_vari_update.
 
   MOVE-CORRESPONDING is_planlog_vari TO ls_planlogvari.
 
-  IF i_batch IS INITIAL.
+  IF IV_batch IS INITIAL.
 
     SELECT SINGLE *
   FROM ztplanlog_vari
@@ -41,13 +41,13 @@ FUNCTION zf_cargacerta_vari_update.
       ls_planlogvari-low = is_planlog_vari-low.
       ls_planlogvari-high = is_planlog_vari-high.
     ELSE.
-      return-type = 'E'.
-      return-message = 'Registro não existe'.
+      es_return-type = 'E'.
+      es_return-message = 'Registro não existe'.
     ENDIF.
     MODIFY ztplanlog_vari FROM ls_planlogvari.
   ELSE.
     DO.
-      SPLIT i_batch AT ';' INTO lv_split1 lv_split2.
+      SPLIT IV_batch AT ';' INTO lv_split1 lv_split2.
       IF lv_split1 IS NOT INITIAL.
         CLEAR: lv_report, lv_vari, lv_cont_str, lv_field, lv_opti, lv_low, lv_high.
 
@@ -71,7 +71,7 @@ FUNCTION zf_cargacerta_vari_update.
           ls_planlogvari-high = lv_high.
           APPEND ls_planlogvari TO lt_planlogvari.
         ENDIF.
-        i_batch = lv_split2.
+        IV_batch = lv_split2.
       ELSE.
         EXIT.
       ENDIF.

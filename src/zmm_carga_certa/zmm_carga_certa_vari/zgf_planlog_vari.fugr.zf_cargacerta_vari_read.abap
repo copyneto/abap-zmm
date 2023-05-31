@@ -5,7 +5,7 @@ FUNCTION zf_cargacerta_vari_read.
 *"     VALUE(IS_PLANLOG_VARI) TYPE  ZSPLANLOG_VARI OPTIONAL
 *"  EXPORTING
 *"     VALUE(ES_PLANLOG_VARI) TYPE  ZSPLANLOG_VARI
-*"     VALUE(RETURN) TYPE  BAPIRET2
+*"     VALUE(ES_RETURN) TYPE  BAPIRET2
 *"----------------------------------------------------------------------
 
   DATA: ls_planlog_vari TYPE ztplanlog_Vari.
@@ -21,8 +21,8 @@ FUNCTION zf_cargacerta_vari_read.
   IF sy-subrc EQ 0.
     MOVE-CORRESPONDING ls_planlog_vari TO es_planlog_vari.
   ELSE.
-    return-type = 'E'.
-    return-message = 'Registro não existe!'.
+    es_return-type = 'E'.
+    es_return-message = 'Registro não existe!'.
 
 
   ENDIF.

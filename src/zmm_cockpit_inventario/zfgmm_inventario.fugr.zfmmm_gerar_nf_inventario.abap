@@ -170,7 +170,15 @@ FUNCTION zfmmm_gerar_nf_inventario.
            ls_return,
            lv_condvalue.
 
+* BEGIN OF INSERT - JWSILVA - 30.05.2023
+    DATA(lv_itmnum) = 0.
+* END OF INSERT - JWSILVA - 30.05.2023
+
     LOOP AT GROUP <fs_group> ASSIGNING FIELD-SYMBOL(<fs_msegx_grp>).
+
+* BEGIN OF INSERT - JWSILVA - 30.05.2023
+      ADD 10 TO lv_itmnum.
+* END OF INSERT - JWSILVA - 30.05.2023
 
       READ TABLE lt_mbew INTO DATA(ls_mbew) WITH KEY matnr = <fs_msegx_grp>-matnr
                                                      bwkey = <fs_msegx_grp>-werks
@@ -211,7 +219,9 @@ FUNCTION zfmmm_gerar_nf_inventario.
                                   WHEN <fs_msegx_grp>-shkzg EQ 'S' THEN '81' )
               cfop_10   = COND #( WHEN <fs_msegx_grp>-shkzg EQ 'H' THEN '594920'
                                   WHEN <fs_msegx_grp>-shkzg EQ 'S' THEN '194920' )
-              itmnum    = ( sy-tabix * 10 ) ).
+* BEGIN OF CHANGE - JWSILVA - 30.05.2023
+              itmnum    = lv_itmnum ).
+* END OF CHANGE - JWSILVA - 30.05.2023
 
       IF <fs_msegx_grp>-shkzg EQ 'H'. "saída
 
@@ -229,7 +239,7 @@ FUNCTION zfmmm_gerar_nf_inventario.
 
       ENDIF.
 
-      DATA(ls_nf_item_add)    = VALUE bapi_j_1bnflin_add(
+      DATA(ls_nf_item_add2)    = VALUE bapi_j_1bnflin_add(
                       itmnum  = ls_nf_item-itmnum
                       nfpri   = ls_nf_item-netpr
                       nfnet   = ls_nf_item-netwr
@@ -237,9 +247,9 @@ FUNCTION zfmmm_gerar_nf_inventario.
                       nfnett  = ls_nf_item-netwr ).
 
       IF <fs_msegx_grp>-shkzg EQ 'H' .
-        APPEND ls_nf_item_add TO lt_nf_item_add_sa.
+        APPEND ls_nf_item_add2 TO lt_nf_item_add_sa.
       ELSEIF <fs_msegx_grp>-shkzg EQ 'S'.
-        APPEND ls_nf_item_add TO lt_nf_item_add_en.
+        APPEND ls_nf_item_add2 TO lt_nf_item_add_en.
       ENDIF.
     ENDLOOP.
 
@@ -359,7 +369,7 @@ FUNCTION zfmmm_gerar_nf_inventario.
 
       LOOP AT lt_nf_item_sa ASSIGNING FIELD-SYMBOL(<fs_nf_item_sa>).
 
-        DATA(lv_tabix) = sy-tabix.
+*        DATA(lv_tabix) = sy-tabix.                                     " DELETE - JWSILVA - 30.05.2023
 
         CLEAR: ls_nf_item_tax,
                ls_dir_fiscais.
@@ -388,26 +398,26 @@ FUNCTION zfmmm_gerar_nf_inventario.
 
         <fs_nf_item_sa>-netwr = <fs_nf_item_sa>-netpr * <fs_nf_item_sa>-menge.
 
-        READ TABLE lt_nf_item_add_sa INTO ls_nf_item_add WITH KEY itmnum = <fs_nf_item_sa>-itmnum.
+* BEGIN OF CHANGE - JWSILVA -30.05.2023
+        READ TABLE lt_nf_item_add_sa REFERENCE INTO DATA(ls_r_nf_item_add) WITH KEY itmnum = <fs_nf_item_sa>-itmnum.
 
-        DATA(lv_tabix2) = sy-tabix.
-        ls_nf_item_add-nfpri  = <fs_nf_item_sa>-netpr.
-        ls_nf_item_add-nfnet  = <fs_nf_item_sa>-netwr.
-        ls_nf_item_add-netwrt = <fs_nf_item_sa>-netwr.
-        ls_nf_item_add-nfnett = <fs_nf_item_sa>-netwr.
+        IF sy-subrc EQ 0.
+          ls_r_nf_item_add->nfpri  = <fs_nf_item_sa>-netpr.
+          ls_r_nf_item_add->nfnet  = <fs_nf_item_sa>-netwr.
+          ls_r_nf_item_add->netwrt = <fs_nf_item_sa>-netwr.
+          ls_r_nf_item_add->nfnett = <fs_nf_item_sa>-netwr.
 
-
-        NEW zclmm_gerar_nf_inventario(  )->get_condition_to_field(
-            EXPORTING
-              it_conditions = lt_cond
-              iv_item_num  = <fs_nf_item_sa>-itmnum
-              iv_menge     = <fs_nf_item_sa>-menge
-              iv_req_value = gc_rate
-              iv_cond_type = 'ISTS'
-            CHANGING
-              cv_field = ls_nf_item_add-p_mvast ).
-
-        MODIFY lt_nf_item_add_sa FROM ls_nf_item_add INDEX lv_tabix2.
+          NEW zclmm_gerar_nf_inventario(  )->get_condition_to_field(
+              EXPORTING
+                it_conditions = lt_cond
+                iv_item_num  = <fs_nf_item_sa>-itmnum
+                iv_menge     = <fs_nf_item_sa>-menge
+                iv_req_value = gc_rate
+                iv_cond_type = 'ISTS'
+              CHANGING
+                cv_field = ls_r_nf_item_add->p_mvast ).
+        ENDIF.
+* END OF CHANGE - JWSILVA -30.05.2023
 
         ls_nf_item_tax-taxtyp = 'ICM3'.
         ls_nf_item_tax-itmnum = <fs_nf_item_sa>-itmnum.
@@ -870,7 +880,7 @@ FUNCTION zfmmm_gerar_nf_inventario.
 
       LOOP AT lt_nf_item_en ASSIGNING FIELD-SYMBOL(<fs_nf_item_en>).
 
-        lv_tabix = sy-tabix.
+*        lv_tabix = sy-tabix.                                                   " DELETE - JWSILVA - 30.05.2023
 
         CLEAR: ls_nf_item_tax,
                ls_dir_fiscais.
@@ -878,7 +888,6 @@ FUNCTION zfmmm_gerar_nf_inventario.
 * Direito fiscal ICMS
         READ TABLE lt_zsdtdirfiscais INTO DATA(ls_zsdtdirfiscais) WITH KEY shipfrom = ls_gerais-regio
                                                                            direcao  = '1'.
-        "cfop     = <fs_nf_item_en>-cfop_10.
         IF sy-subrc IS INITIAL.
           <fs_nf_item_en>-taxlw1 = ls_zsdtdirfiscais-taxlw1.
 
@@ -909,13 +918,18 @@ FUNCTION zfmmm_gerar_nf_inventario.
             cv_field = <fs_nf_item_en>-netpr ).
 
         <fs_nf_item_en>-netwr = <fs_nf_item_en>-netpr * <fs_nf_item_en>-menge.
-        MODIFY lt_nf_item_en FROM <fs_nf_item_en> INDEX lv_tabix.
-        READ TABLE lt_nf_item_add_en INTO ls_nf_item_add WITH KEY itmnum = <fs_nf_item_en>-itmnum.
-        ls_nf_item_add-nfpri  = <fs_nf_item_en>-netpr.
-        ls_nf_item_add-nfnet  = <fs_nf_item_en>-netwr.
-        ls_nf_item_add-netwrt = <fs_nf_item_en>-netwr.
-        ls_nf_item_add-nfnett = <fs_nf_item_en>-netwr.
-        MODIFY lt_nf_item_add_en FROM ls_nf_item_add INDEX sy-tabix.
+*        MODIFY lt_nf_item_en FROM <fs_nf_item_en> INDEX lv_tabix.              " DELETE - JWSILVA - 30.05.2023
+
+* BEGIN OF CHANGE - JWSILVA - 30.05.2023
+        READ TABLE lt_nf_item_add_en REFERENCE INTO ls_r_nf_item_add WITH KEY itmnum = <fs_nf_item_en>-itmnum.
+
+        IF sy-subrc EQ 0.
+          ls_r_nf_item_add->nfpri  = <fs_nf_item_en>-netpr.
+          ls_r_nf_item_add->nfnet  = <fs_nf_item_en>-netwr.
+          ls_r_nf_item_add->netwrt = <fs_nf_item_en>-netwr.
+          ls_r_nf_item_add->nfnett = <fs_nf_item_en>-netwr.
+        ENDIF.
+* END OF CHANGE - JWSILVA - 30.05.2023
 
         CLEAR: ls_nf_item_tax.
         ls_nf_item_tax-taxtyp = 'IPI1'.

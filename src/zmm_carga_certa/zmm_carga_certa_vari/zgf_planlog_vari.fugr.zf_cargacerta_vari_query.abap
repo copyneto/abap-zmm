@@ -1,10 +1,10 @@
-FUNCTION zf_cargacerta_vari_query.
+FUNCTION ZF_CARGACERTA_VARI_QUERY .
 *"----------------------------------------------------------------------
 *"*"Interface local:
 *"  IMPORTING
-*"     VALUE(I_REPORT) TYPE  CHAR30 OPTIONAL
-*"     VALUE(I_VARI) TYPE  CHAR30 OPTIONAL
-*"     VALUE(I_APP) TYPE  CHAR30 OPTIONAL
+*"     VALUE(IV_REPORT) TYPE  CHAR30 OPTIONAL
+*"     VALUE(IV_VARI) TYPE  CHAR30 OPTIONAL
+*"     VALUE(IV_APP) TYPE  CHAR30 OPTIONAL
 *"  EXPORTING
 *"     VALUE(ET_PLANLOG_VARI) TYPE  ZTTPLANLOG_VARI
 *"----------------------------------------------------------------------
@@ -12,16 +12,16 @@ FUNCTION zf_cargacerta_vari_query.
   CONSTANTS: lc_mb52 TYPE sy-cprog VALUE 'RM07MLBS'.
 
   DATA: lt_planlog_vari TYPE TABLE OF ztplanlog_vari,
-        es_planlog_vari TYPE zsplanlog_vari,
-        lc_vari         TYPE c LENGTH 4 VALUE 'VARI',
+        ls_planlog_vari TYPE zsplanlog_vari,
+        lv_vari         TYPE c LENGTH 4 VALUE 'VARI',
         lv_cont         TYPE i.
 
-  SELECT *  "#EC CI_NOWHERE "#EC CI_SEL_DEL
+  SELECT *   "#EC CI_NOWHERE "#EC CI_SEL_DEL
    FROM ztplanlog_vari
     INTO TABLE lt_planlog_vari.
-  IF i_report IS NOT INITIAL.
-    DELETE lt_planlog_vari WHERE report <> i_report. "#EC CI_SEL_DEL
-    IF i_report = 'MB52'.
+  IF IV_report IS NOT INITIAL.
+    DELETE lt_planlog_vari WHERE report <> IV_report. "#EC CI_SEL_DEL
+    IF IV_report = 'MB52'.
       CLEAR lt_planlog_vari.
       SELECT *
         FROM varid
@@ -30,36 +30,36 @@ FUNCTION zf_cargacerta_vari_query.
       IF sy-subrc EQ 0.
         LOOP AT lt_varid_mb52 INTO DATA(ls_varid_mb52).
           lv_cont = +1.
-          es_planlog_vari-cont = lv_cont.
-          es_planlog_vari-vari = ls_varid_mb52-variant.
-          es_planlog_vari-report = lc_mb52.
-          APPEND es_planlog_vari TO et_planlog_vari.
+          ls_planlog_vari-cont = lv_cont.
+          ls_planlog_vari-vari = ls_varid_mb52-variant.
+          ls_planlog_vari-report = lc_mb52.
+          APPEND ls_planlog_vari TO et_planlog_vari.
         ENDLOOP.
       ENDIF.
     ENDIF.
   ENDIF.
 
-  IF i_vari IS NOT INITIAL.
-    DELETE lt_planlog_vari WHERE vari <> i_vari.
+  IF IV_vari IS NOT INITIAL.
+    DELETE lt_planlog_vari WHERE vari <> IV_vari.
   ENDIF.
 
-  LOOP AT lt_planlog_vari INTO DATA(ls_planlog_vari).
-    MOVE-CORRESPONDING ls_planlog_vari TO es_planlog_vari.
+  LOOP AT lt_planlog_vari INTO DATA(ls_planlog_vari1).
+    MOVE-CORRESPONDING ls_planlog_vari1 TO ls_planlog_vari.
 
-    CASE es_planlog_vari-opti.
+    CASE ls_planlog_vari-opti.
       WHEN 'EQ'.
-        es_planlog_vari-opti_desc = 'Igual'.
+        ls_planlog_vari-optI_desc = 'Igual'.
       WHEN 'BT'.
-        es_planlog_vari-opti_desc = 'Entre'.
+        ls_planlog_vari-optI_desc = 'Entre'.
       WHEN 'NE'.
-        es_planlog_vari-opti_desc = 'Diferente de'.
+        ls_planlog_vari-optI_desc = 'Diferente de'.
     ENDCASE.
 
-    CONDENSE es_planlog_vari-cont NO-GAPS.
-    APPEND es_planlog_vari TO et_planlog_vari.
+    CONDENSE ls_planlog_vari-cont NO-GAPS.
+    APPEND ls_planlog_vari TO et_planlog_vari.
   ENDLOOP.
 
-  IF i_app = 'CARGA'.
+  IF IV_app = 'CARGA'.
     SORT et_planlog_vari BY vari.
     DELETE ADJACENT DUPLICATES FROM et_planlog_vari COMPARING vari.
   ENDIF.

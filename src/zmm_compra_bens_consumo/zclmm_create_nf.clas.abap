@@ -242,7 +242,7 @@ PRIVATE SECTION.
     IMPORTING
       !is_document         TYPE ztmm_mov_cntrl
     RETURNING
-      VALUE(rv_cond_value) TYPE kbetr .
+      VALUE(rv_cond_value) TYPE J_1BNFPRI .
   "! Atribuir valor da taxa
   "! @parameter is_document | Dados de processamento
   "! @parameter rt_item_tax | Valor da taxa
@@ -591,22 +591,22 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
               base      = ls_taxes-base_bx13
               rate      = ls_taxes-rate_bx13
               taxval    = ls_taxes-taxval_bx13
+              othbas    = cond #( when ls_taxes-base_bx13 is INITIAL then ls_taxes-base_bx10 )
           ) TO rt_item_tax.
-
 
         APPEND VALUE #(
               itmnum    = gc_data-item
               taxtyp    = gv_cond_ipi "gc_data-tax_ipi3
-              base      = ls_taxes-base_ipva
+              base      = ls_taxes-base_bx20
               rate      = ls_taxes-rate_ipva
               taxval    = ls_taxes-taxval_bx23
-          ) TO rt_item_tax.
+              othbas    = ls_taxes-base_bx22  ) TO rt_item_tax.
 
         APPEND VALUE #(
               itmnum    = gc_data-item
               taxtyp    = gv_cond_pis "gc_data-tax_ipis
-              base      = ls_taxes-base_bpi1
-              rate      = ls_taxes-rate_bx82
+              base      = ls_taxes-base_bx80
+              rate      = ls_taxes-rate_bpi1
               taxval    = ls_taxes-taxval_bx82
           ) TO rt_item_tax.
 
@@ -614,8 +614,8 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
         APPEND VALUE #(
              itmnum    = gc_data-item
              taxtyp    = gv_cond_cof " gc_data-tax_icof
-             base      = ls_taxes-base_bco1
-             rate      = ls_taxes-rate_bx72
+             base      = ls_taxes-base_bx70
+             rate      = ls_taxes-rate_bco1
              taxval    = ls_taxes-taxval_bx72
          ) TO rt_item_tax.
 
@@ -625,14 +625,14 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
         APPEND VALUE #(
               itmnum    = gc_data-item
               taxtyp    = gv_cond_icms
-              othbas    = gs_nf_doc-BR_NFTotalAmount
+              othbas    = gs_nf_doc-br_nftotalamount
 
           ) TO rt_item_tax.
 
         APPEND VALUE #(
             itmnum    = gc_data-item
             taxtyp    = gv_cond_ipi
-            othbas    = gs_nf_doc-BR_NFTotalAmount
+            othbas    = gs_nf_doc-br_nftotalamount
 
         ) TO rt_item_tax.
 
@@ -663,7 +663,7 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
                                   iv_direcao    = lv_direcao
                                   iv_cfop       = lv_cfop ).
 
-    DATA(lv_netpr) = set_cond_value( is_document ).
+    DATA(ls_taxes) = get_taxes( is_document-id ).
 
     CALL FUNCTION 'CONVERSION_EXIT_CFOBR_INPUT'
       EXPORTING
@@ -691,8 +691,8 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
             matuse     = ls_material-mtuse
             menge      = is_document-menge
             meins      = ls_material-meins
-            netpr      = lv_netpr
-            netwr      = lv_netpr * is_document-menge
+            netpr      = cond #( WHEN gv_nfe_entrada is INITIAL then ls_taxes-netpr_final / is_document-menge else ls_taxes-netpr )
+            netwr      = cond #( WHEN gv_nfe_entrada is INITIAL then ls_taxes-netpr_final else ls_taxes-netpr * is_document-menge )
             taxlw1     = ls_param-taxlw1
             taxlw2     = ls_param-taxlw2
             itmtyp     = gc_data-fixo_1
@@ -874,8 +874,14 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
 
       WHEN gc_data-etapa_5_nf_ent.
 
-        rv_cond_value = gs_nf_doc-BR_NFTotalAmount.
+        select single BR_NFPRICEAMOUNTWITHTAXES
+         from I_BR_NFITEM
+         where BR_NotaFiscal = @gs_nf_doc-BR_NotaFiscal
+         into @data(ls_BR_NFPRICEAMOUNTWITHTAXES).
 
+         if sy-subrc = 0.
+           rv_cond_value = ls_BR_NFPRICEAMOUNTWITHTAXES.
+         ENDIF.
     ENDCASE.
 
     "???teste

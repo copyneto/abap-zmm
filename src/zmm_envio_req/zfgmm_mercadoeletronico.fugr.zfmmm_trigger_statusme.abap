@@ -13,6 +13,7 @@ FUNCTION zfmmm_trigger_statusme.
                v1                     TYPE c VALUE '1',
                v2                     TYPE c VALUE '2',
                v3                     TYPE c VALUE '3',
+               l                      TYPE eloek VALUE 'L',
                v105                   TYPE char3 VALUE '105',
                po_aprov               TYPE c LENGTH 2 VALUE '05',
                po_rejei               TYPE c LENGTH 2 VALUE '08',
@@ -91,8 +92,6 @@ FUNCTION zfmmm_trigger_statusme.
 
       TRY.
 
-*          IF iv_status EQ lc_values-po_aprov.
-
           NEW zclmm_co_si_processar_status_p(  )->si_processar_status_pre_pedido(
               EXPORTING
               output = VALUE zclmm_mt_mensagem_status_pre_p( mt_mensagem_status_pre_pedido-ebeln   = is_pedido_me-ebeln
@@ -101,18 +100,6 @@ FUNCTION zfmmm_trigger_statusme.
                                                              mt_mensagem_status_pre_pedido-status  = COND #( WHEN iv_status EQ lc_values-po_aprov THEN 1 ELSE lc_values-v105 )
                                                              mt_mensagem_status_pre_pedido-obs_erp = ls_texto )
            ).
-
-*          ELSE.
-
-*            NEW zclmm_co_si_processar_mensage2(  )->si_processar_mensagem_status_p(
-*                EXPORTING
-*                output = VALUE zclmm_mt_mensagem_status_pedid( mt_mensagem_status_pedido_erp-ebeln      = is_pedido_me-ebeln
-*                                                               mt_mensagem_status_pedido_erp-vendor     = is_pedido_me-lifnr
-*                                                               mt_mensagem_status_pedido_erp-status     = lc_values-v105
-*                                                               mt_mensagem_status_pedido_erp-data_hora  = sy-datum
-*                                                               mt_mensagem_status_pedido_erp-obs_erp    = ls_texto ) ).
-*
-*          ENDIF.
 
         CATCH cx_ai_system_fault.
       ENDTRY.

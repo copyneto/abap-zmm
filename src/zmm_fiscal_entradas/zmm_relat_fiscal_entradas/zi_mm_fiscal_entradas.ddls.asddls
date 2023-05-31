@@ -611,13 +611,13 @@ define root view entity ZI_MM_FISCAL_ENTRADAS
       //      @Semantics.amount.currencyCode:'SalesDocumentCurrency'
       //cast( _Montante.TotalSemFrete as abap.dec(15,2))                                                                              as TotalSemFrete,
       //@Semantics.amount.currencyCode:'SalesDocumentCurrency'
-     (
-       cast(NFItem.BR_NFValueAmountWithTaxes as abap.dec(15,2)) +
-           cast( _IPITax.BR_NFItemTaxAmount as abap.dec(15,2)) +
-           cast( _SubstTax.BR_NFItemTaxAmount as abap.dec(15,2))
-        +
-        cast(_Montante.ValorICMSFCP as abap.dec(15,2))
-     )                                                                                                                             as TotalSemFrete,
+//     (
+//       cast(NFItem.BR_NFValueAmountWithTaxes as abap.dec(15,2)) +
+//           cast( _IPITax.BR_NFItemTaxAmount as abap.dec(15,2)) +
+//           cast( _SubstTax.BR_NFItemTaxAmount as abap.dec(15,2))
+//        +
+//        cast(_Montante.ValorICMSFCP as abap.dec(15,2))
+//     )                                                                                                                             as TotalSemFrete,
 
 //     (
 //       cast(NFItem.BR_NFValueAmountWithTaxes as abap.dec(15,2)) +
@@ -637,6 +637,59 @@ define root view entity ZI_MM_FISCAL_ENTRADAS
 //        end +
 //        cast(_Montante.ValorICMSFCP as abap.dec(15,2))
 //     )                                                                                                                             as TotalSemFrete,
+      (
+
+      case
+        when _NFDoc.BR_NFPartnerCountryCode = 'BR'
+          or _supplier.Country              = 'BR'
+          or _customer.Country              = 'BR'
+      then
+          cast( NFItem.BR_NFValueAmountWithTaxes  as abap.dec(15,2))
+          +
+          cast( NFItem.BR_NFDiscountAmountWithTaxes  as abap.dec(15,2))
+          +
+          cast( NFItem.BR_NFExemptedICMSWithTaxes   as abap.dec(15,2))
+          +
+          cast( NFItem.BR_NFFreightAmountWithTaxes    as abap.dec(15,2))
+          +
+          cast( NFItem.BR_NFInsuranceAmountWithTaxes    as abap.dec(15,2))
+          +
+          cast( NFItem.BR_NFExpensesAmountWithTaxes     as abap.dec(15,2))
+          +
+      //coalesce(cast( _SubstTax.BR_NFItemTaxAmount as abap.dec(15,2)),0) -new
+          +
+          coalesce(cast( _IPITax.BR_NFItemTaxAmount as abap.dec(15,2)),0)
+          +
+          coalesce(cast( _IITax.BR_NFItemTaxAmount as abap.dec(15,2)),0)
+          +
+          coalesce(cast( _totICST.BR_NFItemTaxAmount as abap.dec(15,2)),0)
+
+      //+
+      //coalesce(cast( _ICMSICFP.BR_NFItemTaxAmount as abap.dec(15,2)),0) -new
+      //+
+      //coalesce(cast( _ICMSFPS2.BR_NFItemTaxAmount as abap.dec(15,2)),0) - new
+      //                +
+      //                coalesce(cast( _ICMSICS1.BR_NFItemTaxAmount as abap.dec(15,2)),0)
+      else
+        cast( NFItem.BR_NFValueAmountWithTaxes  as abap.dec(15,2))
+        +
+        cast( NFItem.BR_NFDiscountAmountWithTaxes  as abap.dec(15,2))
+        +
+        cast( NFItem.BR_NFExemptedICMSWithTaxes   as abap.dec(15,2))
+        +
+        cast( NFItem.BR_NFFreightAmountWithTaxes    as abap.dec(15,2))
+        +
+        cast( NFItem.BR_NFInsuranceAmountWithTaxes    as abap.dec(15,2))
+        +
+        cast( NFItem.BR_NFExpensesAmountWithTaxes     as abap.dec(15,2))
+        +
+        coalesce(cast( _totalImposto.BR_NFItemTaxAmount  as abap.dec(15,2)),0) end       
+      
+      
+      
+      
+      
+      - cast( NFItem.BR_NFFreightAmountWithTaxes as abap.dec(15,2))  )                                                                                                                              as TotalSemFrete,
       //      @Semantics.amount.currencyCode:'SalesDocumentCurrency'
       //      case when NFItem.BR_NotaFiscalItem = '000010'
       //             or NFItem.BR_NotaFiscalItem = '000001'
@@ -814,7 +867,7 @@ define root view entity ZI_MM_FISCAL_ENTRADAS
       _AccPOText,
       _SalesDocumentTypeText,
       _MotivoOrdem
-
+           
 }
 where
       _NFDoc.BR_NFDocumentType <> '5' -- Cancelar

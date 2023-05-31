@@ -185,6 +185,12 @@
     <T100>
      <SPRSL>P</SPRSL>
      <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Item &amp;1 não encontrado na j_1blpp</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_BENS_CONSUMO</ARBGB>
      <MSGNR>100</MSGNR>
      <TEXT>Teste app</TEXT>
     </T100>
