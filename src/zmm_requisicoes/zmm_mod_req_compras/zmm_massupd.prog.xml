@@ -12,28 +12,28 @@
    <TPOOL>
     <item>
      <ID>R</ID>
-     <ENTRY>POC para Atualização em Massa de Requisição de Compra</ENTRY>
-     <LENGTH>53</LENGTH>
+     <ENTRY>Programa para Atualização em Massa de Requisição de Compra</ENTRY>
+     <LENGTH>58</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>P_TESTE</KEY>
      <ENTRY>.</ENTRY>
-     <LENGTH>9</LENGTH>
+     <LENGTH>34</LENGTH>
      <SPLIT>D</SPLIT>
     </item>
     <item>
      <ID>S</ID>
      <KEY>S_BANFN</KEY>
      <ENTRY>.</ENTRY>
-     <LENGTH>9</LENGTH>
+     <LENGTH>28</LENGTH>
      <SPLIT>D</SPLIT>
     </item>
     <item>
      <ID>S</ID>
      <KEY>S_CRTDAT</KEY>
      <ENTRY>.</ENTRY>
-     <LENGTH>9</LENGTH>
+     <LENGTH>17</LENGTH>
      <SPLIT>D</SPLIT>
     </item>
    </TPOOL>

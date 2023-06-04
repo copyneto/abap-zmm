@@ -340,7 +340,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
+CLASS zclmm_pre_pedido IMPLEMENTATION.
 
 
   METHOD validate_reg.
@@ -1048,13 +1048,17 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
     me->save_log( ).
 
-    me->table_ret( IMPORTING ev_ret = DATA(lv_ret) ).
+    IF gs_pre_pedido-cancelado NE gc_values-sim.
 
-    me->interface_12( EXPORTING iv_ebeln   = CONV string( gs_pre_pedido-ebeln  )
-                                iv_ref_1   = CONV string( gs_pre_pedido-ref_1  )
-                                iv_vendor  = CONV string( gs_pre_pedido-vendor )
-                                iv_obs_erp = lv_ret
-                                iv_status  = gc_values-e109 ).
+      me->table_ret( IMPORTING ev_ret = DATA(lv_ret) ).
+
+      me->interface_12( EXPORTING iv_ebeln   = CONV string( gs_pre_pedido-ebeln  )
+                                  iv_ref_1   = CONV string( gs_pre_pedido-ref_1  )
+                                  iv_vendor  = CONV string( gs_pre_pedido-vendor )
+                                  iv_obs_erp = lv_ret
+                                  iv_status  = gc_values-e109 ).
+
+    ENDIF.
 
   ENDMETHOD.
 
@@ -1093,7 +1097,9 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
     me->commit_work(  ).
 
-    me->gap_415r01(  ).
+    IF gs_pre_pedido-cancelado NE gc_values-sim.
+      me->gap_415r01(  ).
+    ENDIF.
 
   ENDMETHOD.
 

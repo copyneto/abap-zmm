@@ -209,7 +209,7 @@
              lv_ebelp = VALUE #( et_nfeit[ 1 ]-poitem   OPTIONAL ).
            ENDIF.
 
-           DATA(lv_item) = ( 10 * lv_ebelp ).
+           DATA(lv_item) = CONV /xnfe/poitem( 10 * lv_ebelp ).
 
            SELECT SINGLE MAX( ebeln ) AS ebeln,
                          MAX( vbeln ) AS vbeln,

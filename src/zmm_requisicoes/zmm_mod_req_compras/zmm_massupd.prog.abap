@@ -1,8 +1,17 @@
-*&---------------------------------------------------------------------*
-*& Report YPOC_PR_MASSUPD
-*&---------------------------------------------------------------------*
-*&
-*&---------------------------------------------------------------------*
+***********************************************************************
+***                           © 3corações                           ***
+***********************************************************************
+*** DESCRIÇÃO: ZMM_MASSUPD                                            *
+*** AUTOR : Thiago Lopes – 3corações                                  *
+*** FUNCIONAL: Johnatan Cruz – DK                                     *
+*** DATA : 31.05.2023                                                 *
+***********************************************************************
+*** HISTÓRICO DAS MODIFICAÇÕES                                        *
+***-------------------------------------------------------------------*
+*** DATA | AUTOR | DESCRIÇÃO                                          *
+***-------------------------------------------------------------------*
+*** | |                                                               *
+***********************************************************************
 REPORT zmm_massupd.
 
 TABLES: eban.
@@ -18,11 +27,11 @@ TYPES: BEGIN OF ty_eban,
          creationdate TYPE creationdate,
        END OF ty_eban.
 
-DATA: wa_eban TYPE ty_eban,
-      it_eban TYPE TABLE OF ty_eban.
+DATA: gs_eban TYPE ty_eban,
+      gt_eban TYPE TABLE OF ty_eban.
 
-SELECT-OPTIONS: s_banfn FOR wa_eban-banfn,
-s_crtdat FOR wa_eban-creationdate.
+SELECT-OPTIONS: s_banfn FOR gs_eban-banfn,
+s_crtdat FOR gs_eban-creationdate.
 PARAMETERS: p_teste TYPE testrun DEFAULT abap_true.
 
 * SELECT * FROM eban
@@ -30,7 +39,7 @@ PARAMETERS: p_teste TYPE testrun DEFAULT abap_true.
 * WHERE banfn IN s_banfn.
 
 SELECT * FROM eban
- INTO CORRESPONDING FIELDS OF TABLE it_eban
+ INTO CORRESPONDING FIELDS OF TABLE gt_eban
  WHERE ( estkz = 'B' OR estkz = 'U' )
  AND frgzu = ''
  AND loekz = ''
@@ -40,58 +49,65 @@ SELECT * FROM eban
 
 IF p_teste = abap_true.
 
-  PERFORM f_exibir_tabela USING it_eban.
+  PERFORM f_exibir_tabela USING gt_eban.
 
 ELSE.
 
-  PERFORM atualizar_dados.
+  PERFORM f_atualizar_dados.
 
 ENDIF.
 
 *&---------------------------------------------------------------------*
 *&      Form ATUALIZAR_DADOS
 *&---------------------------------------------------------------------*
-FORM atualizar_dados.
-  LOOP AT it_eban INTO wa_eban.
+FORM f_atualizar_dados.
+  LOOP AT gt_eban INTO gs_eban.                    "#EC CI_LOOP_INTO_WA
     DATA: ls_start_info TYPE cl_apj_rt_job_scheduling_api=>ty_start_info.
 
     DATA: ls_parameters TYPE if_apj_rt_types=>tt_job_parameter_value.
-    DATA: wa_parameter TYPE if_apj_rt_types=>ty_job_parameter_value.
+    DATA: ls_parameter TYPE if_apj_rt_types=>ty_job_parameter_value.
 
 *  DATA: ls_range TYPE if_apj_rt_types=>tt_value_range.
 
-    DATA: r_xis TYPE  if_apj_rt_types=>tt_value_range.
-    DATA: r_inclsn TYPE  if_apj_rt_types=>tt_value_range.
-    DATA: r_select TYPE  if_apj_rt_types=>tt_value_range.
-    DATA: r_comm TYPE  if_apj_rt_types=>tt_value_range.
-    DATA: r_lfdat TYPE  if_apj_rt_types=>tt_value_range.
+    DATA: lr_xis TYPE  if_apj_rt_types=>tt_value_range.
+    DATA: lr_ekorg TYPE  if_apj_rt_types=>tt_value_range.
+    DATA: lr_inclsn TYPE  if_apj_rt_types=>tt_value_range.
+    DATA: lr_select TYPE  if_apj_rt_types=>tt_value_range.
+    DATA: lr_comm TYPE  if_apj_rt_types=>tt_value_range.
+    DATA: lr_lfdat TYPE  if_apj_rt_types=>tt_value_range.
+    DATA: lr_banfn TYPE  if_apj_rt_types=>tt_value_range.
     DATA: lv_aux TYPE lfdat.
 
     ls_start_info-start_immediately = abap_true.
 *  ls_range = VALUE #( ( sign = 'I' option = 'EQ' low = '321' high = '' ) ).
 
 
-    r_xis    = VALUE #( ( sign = 'I' option = 'EQ' low = 'X' high = '' ) ).
-    r_inclsn = VALUE #( ( sign = 'I' option = 'EQ' low = |{ wa_eban-banfn }/{ wa_eban-bnfpo }| ) ).
-    r_select = VALUE #( ( sign = 'I' option = 'EQ' low = ' ' ) ).
-    r_comm   = VALUE #( ( sign = 'I' option = 'EQ' low = 'Job modificação em massa' ) ).
-    lv_aux = wa_eban-lfdat - 1.
-    r_lfdat  = VALUE #( ( sign = 'I' option = 'EQ' low = lv_aux ) ).
+    lr_xis    = VALUE #( ( sign = 'I' option = 'EQ' low = 'X' high = '' ) ).
+    lr_ekorg = VALUE #( ( sign = 'I' option = 'EQ' low = 'OC01' ) ).
+    lr_inclsn = VALUE #( ( sign = 'I' option = 'EQ' low = |{ gs_eban-banfn }/{ gs_eban-bnfpo }| ) ).
+    lr_select = VALUE #( ( sign = 'I' option = 'EQ' low = ' ' ) ).
+    lr_comm   = VALUE #( ( sign = 'I' option = 'EQ' low = 'Job modificação em massa' ) ) ##NO_TEXT.
+    lv_aux = gs_eban-lfdat - 1.
+    lr_lfdat  = VALUE #( ( sign = 'I' option = 'EQ' low = lv_aux ) ).
+    lr_banfn  = VALUE #( ( sign = 'I' option = 'EQ' low = gs_eban-banfn ) ).
 
     ls_parameters = VALUE #(
-     ( name = 'S_INCLSN' t_value = r_inclsn )
-     ( name = 'P_SELECT' t_value = r_select )
-     ( name = 'P_COMM'   t_value = r_comm )
-     ( name = 'P_COMMX'  t_value = r_xis )
-     ( name = 'P_LFDAT'  t_value = r_lfdat )
-     ( name = 'P_LFDATX'  t_value = r_xis )
+     ( name = 'P_EKORG' t_value = lr_ekorg )
+     ( name = 'P_EKORGX' t_value = lr_xis )
+     ( name = 'S_INCLSN' t_value = lr_inclsn )
+     ( name = 'P_SELECT' t_value = lr_select )
+     ( name = 'P_COMM'   t_value = lr_comm )
+     ( name = 'P_COMMX'  t_value = lr_xis )
+     ( name = 'P_LFDAT'  t_value = lr_lfdat )
+     ( name = 'P_LFDATX'  t_value = lr_xis )
+     ( name = 'S_BANFN'  t_value = lr_banfn )
     ).
 
     TRY.
-        CALL METHOD cl_apj_rt_job_scheduling_api=>schedule_job
-          EXPORTING
-            iv_job_template_name   = 'SAP_MM_PUR_MASSPRBG_T'
-            iv_job_text            = |Modificação na RC { wa_eban-banfn } no item { wa_eban-bnfpo }|
+        CALL METHOD cl_apj_rt_job_scheduling_api=>schedule_job "#EC CI_SROFC_NESTED
+          EXPORTING                                            "#EC CI_IMUD_NESTED
+            iv_job_template_name   = 'SAP_MM_PUR_MASSPRBG_T'   "#EC CI_EXEC_SQL_NESTED
+            iv_job_text            = |Modificação na RC { gs_eban-banfn } no item { gs_eban-bnfpo }| ##NO_TEXT
             is_start_info          = ls_start_info
 *           is_end_info            =
 *           is_scheduling_info     =
@@ -101,13 +117,13 @@ FORM atualizar_dados.
 *           iv_test_mode           =
           IMPORTING
             et_message             = DATA(lt_messages)
-            es_job_details         = DATA(ts_job_details).
+            es_job_details         = DATA(ls_job_details).
 
 
 *        cl_demo_output=>write( lt_messages ).
 *        cl_demo_output=>write( ts_job_details ).
 *        cl_demo_output=>display( ).
-        WRITE:/ |Modificação na RC { wa_eban-banfn } no item { wa_eban-bnfpo }|.
+        WRITE:/ |Modificação na RC { gs_eban-banfn } no item { gs_eban-bnfpo }| ##NO_TEXT.
 
       CATCH cm_apj_base.
 *        cl_demo_output=>write( 'Catch' ).

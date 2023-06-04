@@ -66,8 +66,10 @@ define view entity ZI_MM_TRANSFERENCIA_MATDOC_N
 
       case when _DocumentReversal.GoodsMovementType = '863'
              or _DocumentReversal.GoodsMovementType = '864'
+             or _DocumentReversal.GoodsMovementType = '102'
            then cast( '00000000' as bldat )
-           else _Matdoc.DocumentDate
+      //           else _Matdoc.DocumentDate
+           else _Matdoc.PostingDate
            end                        as DocumentDate,
 
       _Matdoc.Plant,
