@@ -336,6 +336,7 @@ CLASS zclmm_pre_pedido DEFINITION
     METHODS concat
       RETURNING
         VALUE(rv_result) TYPE so_text255.
+    METHODS release_table.
 ENDCLASS.
 
 
@@ -1012,12 +1013,18 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
         me->error_raise( is_ret = VALUE scx_t100key(  msgid = gc_values-classe msgno = gc_values-msgno5 ) ).
     ENDTRY.
 
+    DATA lv_long_time_stamp TYPE timestampl.
+
+    GET TIME STAMP FIELD lv_long_time_stamp.
+
     DATA(lt_pedido_me) = VALUE tt_item(
             FOR ls_item IN gs_pre_pedido-itens (
                 ebeln  = gs_pre_pedido-ebeln
                 ebelp  = ( 10 * ls_item-ebelp )
                 ped_me = gs_pre_pedido-ref_1
                 lifnr  = gs_pre_pedido-vendor
+                created_by = sy-uname
+                created_at = lv_long_time_stamp
              ) ).
 
     IF lt_pedido_me IS NOT INITIAL.
@@ -1097,7 +1104,9 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
 
     me->commit_work(  ).
 
-    IF gs_pre_pedido-cancelado NE gc_values-sim.
+    IF gs_pre_pedido-cancelado EQ gc_values-sim.
+      me->release_table(  ).
+    ELSE.
       me->gap_415r01(  ).
     ENDIF.
 
@@ -1558,4 +1567,34 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
     rv_result = |&KEY&https://stg.me.com.br/comparative-panel/{ gs_pre_pedido-collect_no }|.
 
   ENDMETHOD.
+
+  METHOD release_table.
+
+    DATA lv_long_time_stamp TYPE timestampl.
+
+    GET TIME STAMP FIELD lv_long_time_stamp.
+
+    DATA(lt_pedido_me) = VALUE tt_item(
+            FOR ls_item IN gs_pre_pedido-itens (
+                ebeln  = gs_pre_pedido-ebeln
+                ebelp  = ( 10 * ls_item-ebelp )
+                ped_me = gs_pre_pedido-ref_1
+                lifnr  = gs_pre_pedido-vendor
+                status = '3' " Deletado
+                 last_changed_by = sy-uname
+                 last_changed_at = lv_long_time_stamp
+             ) ).
+
+    IF lt_pedido_me IS NOT INITIAL.
+
+      MODIFY ztmm_pedido_me FROM TABLE lt_pedido_me.
+
+      IF sy-subrc EQ 0.
+        COMMIT WORK.
+      ENDIF.
+
+    ENDIF.
+
+  ENDMETHOD.
+
 ENDCLASS.

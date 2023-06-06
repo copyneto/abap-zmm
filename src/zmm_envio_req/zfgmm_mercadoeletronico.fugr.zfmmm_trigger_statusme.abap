@@ -34,6 +34,12 @@ FUNCTION zfmmm_trigger_statusme.
 
     WHEN lc_values-v1.
 
+      SELECT COUNT( * ) FROM ztmm_pedido_me
+      WHERE ebeln = @is_pedido_me-ebeln
+           AND status IS INITIAL.
+
+      CHECK sy-subrc EQ 0.
+
       CALL FUNCTION 'SAP_WAPI_WORKITEMS_TO_OBJECT'
         EXPORTING
           object_por               = VALUE sibflporb( instid = is_pedido_me-ebeln typeid = lc_values-cl_mm_pur_wf_object_po catid = lc_values-cl )
@@ -100,6 +106,25 @@ FUNCTION zfmmm_trigger_statusme.
                                                              mt_mensagem_status_pre_pedido-status  = COND #( WHEN iv_status EQ lc_values-po_aprov THEN 1 ELSE lc_values-v105 )
                                                              mt_mensagem_status_pre_pedido-obs_erp = ls_texto )
            ).
+
+          DATA(lv_status) = COND char1( WHEN iv_status EQ lc_values-po_aprov THEN 1 ELSE 2 ).
+
+          IF lv_status IS NOT INITIAL.
+
+            DATA lv_long_time_stamp TYPE timestampl.
+
+            GET TIME STAMP FIELD lv_long_time_stamp.
+
+            UPDATE ztmm_pedido_me SET status = lv_status
+                                                               last_changed_by = sy-uname
+                                                               last_changed_at = lv_long_time_stamp
+                                                         WHERE ebeln = is_pedido_me-ebeln.
+
+            IF sy-subrc EQ 0.
+              COMMIT WORK.
+            ENDIF.
+
+          ENDIF.
 
         CATCH cx_ai_system_fault.
       ENDTRY.
