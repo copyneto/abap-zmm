@@ -65,7 +65,7 @@ CLASS ZCLMM_ATUAL_MAT_PALETIZACAO IMPLEMENTATION.
       lv_memory_id = |{ is_palet-material }{ sy-uname(4) }|.
       DATA(lv_werks) = is_palet-centro.
       EXPORT lv_werks FROM lv_werks TO DATABASE indx(zp) ID lv_memory_id.
-      " Import na include ZXMGVU03
+      " Import na include ZXMGVU03 / ZMMI_TRIGGER_IDOC_MATMAS
 
       CALL FUNCTION 'BAPI_MATERIAL_SAVEDATA'
         EXPORTING

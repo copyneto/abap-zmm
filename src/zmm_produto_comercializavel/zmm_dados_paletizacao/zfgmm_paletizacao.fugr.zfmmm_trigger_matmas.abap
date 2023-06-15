@@ -65,8 +65,9 @@ FUNCTION zfmmm_trigger_matmas.
     FREE MEMORY ID 'TCODE_PALETIZACAO'.
     EXPORT iv_tcode TO MEMORY ID 'TCODE_PALETIZACAO'. " ZMMI_PALETIZACAO
 
-    DATA(lo_process) = NEW zclmm_saga_atualiz_hierarquia( ).
-    lo_process->process( iv_matnr = iv_matnr ).
+    " Lógica transferida para o JOB ZMMR_SAGA_ATUALIZA_HIERARQUIA
+*    DATA(lo_process) = NEW zclmm_saga_atualiz_hierarquia( ).
+*    lo_process->process( iv_matnr = iv_matnr ).
 
     " Idoc MATMAS
     SUBMIT rbdsemat
