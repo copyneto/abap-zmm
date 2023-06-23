@@ -1,20 +1,6 @@
 "Name: \PR:SAPLJ1BF\FO:TAX_VALUES_DEFAULT\SE:END\EI
 ENHANCEMENT 0 ZEIMM_CHANGE_TAXL.
-TRY.
 
-    IF F_DIRECT = '1'.
-      NEW zclmm_change_taxl( )->change_taxl( EXPORTING is_laws = f_tax_laws IMPORTING et_laws = DATA(lt_laws)  ).
+ INCLUDE zmme_change_taxl IF FOUND.
 
-      IF lt_laws[] IS NOT INITIAL.
-        REFRESH f_tax_laws.
-        DATA(ls_data) = lt_laws[ 1 ].
-        f_tax_laws-icmslaw = ls_data-icmslaw.
-        f_tax_laws-ipilaw  = ls_data-ipilaw.
-        f_tax_laws-coflaw  = ls_data-coflaw.
-        f_tax_laws-pislaw  = ls_data-pislaw.
-        append f_tax_laws.
-      ENDIF.
-    ENDIF.
-  CATCH cx_root.
-ENDTRY.
 ENDENHANCEMENT.
