@@ -41,6 +41,7 @@ CLASS zclmm_change_values DEFINITION
                  zdf                     TYPE bsart                 VALUE 'ZDF',
                  f02                     TYPE ze_mm_df_process_step VALUE 'F02',
                  f05                     TYPE ze_mm_df_process_step VALUE 'F05',
+                 f06                     TYPE ze_mm_df_process_step VALUE 'F06',
                  f12                     TYPE ze_mm_df_process_step VALUE 'F12',
                  f13                     TYPE ze_mm_df_process_step VALUE 'F13',
                  n5                      TYPE i                     VALUE 5,
@@ -164,7 +165,7 @@ CLASS ZCLMM_CHANGE_VALUES IMPLEMENTATION.
           EXPORTING
               iv_mod = gc_value-mm
               iv_c1  = COND #( WHEN gs_his_dep_fec-process_step = gc_value-f02 THEN  COND #( WHEN lv_bsart_ok EQ abap_true AND gv_bwart NE gc_value-bwart_862 THEN gc_value-remessa_simbolica_dupl  ELSE gc_value-remessa_fisica   )
-                               WHEN gs_his_dep_fec-process_step = 'F06' THEN  COND #( WHEN lv_bsart_ok EQ abap_true AND gv_bwart EQ gc_value-bwart_862 THEN gc_value-remessa_simbolica_dupl  ELSE gc_value-remessa_fisica   )
+                               WHEN gs_his_dep_fec-process_step = gc_value-f06 THEN  COND #( WHEN lv_bsart_ok EQ abap_true AND gv_bwart EQ gc_value-bwart_862 THEN gc_value-remessa_simbolica_dupl  ELSE gc_value-remessa_fisica   )
                                WHEN gs_his_dep_fec-process_step = gc_value-f05 THEN  COND #( WHEN gs_his_dep_fec-carrier IS INITIAL THEN gc_value-retorno_simbolico_saida ELSE gc_value-retorno_fisico_saida  )
                                WHEN gs_his_dep_fec-process_step = gc_value-f12 THEN  COND #( WHEN lv_bsart_ok EQ abap_true  THEN gc_value-retorno_simbolico_saida ELSE gc_value-retorno_fisico_saida  )
                                WHEN gs_his_dep_fec-process_step = gc_value-f13 THEN  COND #( WHEN lv_bsart_ok EQ abap_false THEN gc_value-retorno_fisico_saida    ELSE gc_value-retorno_simbolico_saida ) )
