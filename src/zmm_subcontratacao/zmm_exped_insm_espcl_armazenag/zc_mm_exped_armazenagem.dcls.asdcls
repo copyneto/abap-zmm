@@ -4,7 +4,7 @@ define role ZC_MM_EXPED_ARMAZENAGEM {
     grant
         select
             on
-                ZC_MM_EXPED_ARMAZENAGEM
+                ZC_MM_EXPED_ARMAZENAGEM 
                     where
                         inheriting conditions from entity ZI_MM_EXPED_ARMAZENAGEM;
                         

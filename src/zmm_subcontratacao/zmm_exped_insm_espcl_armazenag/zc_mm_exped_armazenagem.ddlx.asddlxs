@@ -88,6 +88,63 @@ annotate entity ZC_MM_EXPED_ARMAZENAGEM with
   Estornar;
   @UI.hidden: true
   URL_est;
-  
 
+  @UI.hidden: true
+  LinAuxDocnum;
+  @UI.hidden: true
+  LinAuxItmnum;
+  @UI.hidden: true
+  ekpoEbeln;
+  @UI.hidden: true
+  ekpoEbelp;
+  @UI.hidden: true
+  ActiveDocnum;
+  @UI.hidden: true
+  ActiveTabdocnum;
+  @UI.hidden: true
+  XNFEAuxguidHeader;
+  @UI.hidden: true
+  XNFEguid;
+  @UI.hidden: true
+  MsegMjahr;
+  @UI.hidden: true
+  MsegZeile;
+  @UI.hidden: true
+  Concatmblnr;
+  @UI.hidden: true
+  Concatmjahr;
+  @UI.hidden: true
+  Concatzeile;
+  @UI.hidden: true
+  FltrLindocnum;
+  @UI.hidden: true
+  FltrLinitmnum;
+  @UI.hidden: true
+  ActiveAuDocnum;
+  @UI.hidden: true
+  FltLinDocnum;
+  @UI.hidden: true
+  FltLinItmnum;
+  @UI.hidden: true
+  Lfa1AuxLifnr;
+  @UI.hidden: true
+  lfa1lifnr;
+  @UI.hidden: true
+  Kna1AuxKunnr;
+  @UI.hidden: true
+  ekkoEbeln;
+  @UI.hidden: true
+  maktMatnr;
+  @UI.hidden: true
+  maktSpras;
+  @UI.hidden: true
+  BSDICAauart;
+  @UI.hidden: true
+  BSDICApstyv;
+  @UI.hidden: true
+  URLDocnum;
+  @UI.hidden: true
+  URLItmnum;
+  @UI.hidden: true
+  T001wshwerks;
 }

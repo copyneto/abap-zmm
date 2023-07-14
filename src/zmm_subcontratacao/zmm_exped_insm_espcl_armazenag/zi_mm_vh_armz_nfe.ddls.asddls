@@ -10,7 +10,7 @@
 define view entity ZI_MM_VH_ARMZ_NFE
   as select from ZI_MM_EXPED_ARMAZENAGEM
 {
-  key DocNFENUM
+  key DocNFENUM 
 
 }
 where

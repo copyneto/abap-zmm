@@ -11,7 +11,7 @@ define view entity ZI_MM_VH_ARMZ_XML
   as select from ZI_MM_EXPED_ARMAZENAGEM
 {
   @EndUserText.label: 'Chave de Acesso'
-  key XML_EntIns
+  key XML_EntIns 
 }
 where
   XML_EntIns is not initial

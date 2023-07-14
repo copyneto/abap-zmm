@@ -1,121 +1,121 @@
-class ZCLMM_EXPED_ESPC_SUBCTRT definition
-  public
-  final
-  create public .
+CLASS zclmm_exped_espc_subctrt DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  methods EXPEDICAO
-    importing
-      !IS_XML_TRASNP type ZSMM_SUBC_XML_TRANSP
-      !IT_KEYS type ZCTGMM_SUBC_KEY
-    exporting
-      !ET_RETURN type BAPIRET2_T .
-  methods ADD_RETURN
-    importing
-      !IV_ID type SYMSGID optional
-      !IV_NUMBER type SYMSGNO optional
-      !IV_TYPE type BAPI_MTYPE optional
-      !IV_MESSAGE_V1 type SYMSGV optional
-      !IV_MESSAGE_V2 type SYMSGV optional
-      !IV_MESSAGE_V3 type SYMSGV optional
-      !IV_MESSAGE_V4 type SYMSGV optional
-      !IT_RETURN type BAPIRET2_T optional
-    changing
-      !CT_RETURN type BAPIRET2_T .
-  class-methods SETUP_MESSAGES
-    importing
-      !P_TASK type CLIKE .
-protected section.
-private section.
+    METHODS expedicao
+      IMPORTING
+        !is_xml_trasnp TYPE zsmm_subc_xml_transp
+        !it_keys       TYPE zctgmm_subc_key
+      EXPORTING
+        !et_return     TYPE bapiret2_t .
+    METHODS add_return
+      IMPORTING
+        !iv_id         TYPE symsgid OPTIONAL
+        !iv_number     TYPE symsgno OPTIONAL
+        !iv_type       TYPE bapi_mtype OPTIONAL
+        !iv_message_v1 TYPE symsgv OPTIONAL
+        !iv_message_v2 TYPE symsgv OPTIONAL
+        !iv_message_v3 TYPE symsgv OPTIONAL
+        !iv_message_v4 TYPE symsgv OPTIONAL
+        !it_return     TYPE bapiret2_t OPTIONAL
+      CHANGING
+        !ct_return     TYPE bapiret2_t .
+    CLASS-METHODS setup_messages
+      IMPORTING
+        !p_task TYPE clike .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 
-  types:
-    BEGIN OF ty_lin_aux,
-      belnr TYPE rseg-belnr,
-      gjahr TYPE rseg-gjahr,
-    END OF ty_lin_aux .
-  types:
-    BEGIN OF ty_sum_qtd,
-      matnr TYPE matnr,
-      lgort TYPE lgort_d,
-      charg TYPE charg_d,
-      qtd   TYPE zi_mm_expedinsum_espc_subcontr-quantidade,
-      meins TYPE meins,
-    END OF ty_sum_qtd .
-  types:
-    BEGIN OF ty_lin_ped,
-      ebeln TYPE ekpo-ebeln,
-      ebelp TYPE ekpo-ebelp,
-    END OF ty_lin_ped .
+    TYPES:
+      BEGIN OF ty_lin_aux,
+        belnr TYPE rseg-belnr,
+        gjahr TYPE rseg-gjahr,
+      END OF ty_lin_aux .
+    TYPES:
+      BEGIN OF ty_sum_qtd,
+        matnr TYPE matnr,
+        lgort TYPE lgort_d,
+        charg TYPE charg_d,
+        qtd   TYPE zi_mm_expedinsum_espc_subcontr-quantidade,
+        meins TYPE meins,
+      END OF ty_sum_qtd .
+    TYPES:
+      BEGIN OF ty_lin_ped,
+        ebeln TYPE ekpo-ebeln,
+        ebelp TYPE ekpo-ebelp,
+      END OF ty_lin_ped .
 
-  constants GC_MSG_ID type SYST_MSGID value 'ZMM_SUBCONTRTC' ##NO_TEXT.
-  constants GC_SUCESS type SYST_MSGTY value 'S' ##NO_TEXT.
-  constants GC_ERROR type SYST_MSGTY value 'E' ##NO_TEXT.
-  constants GC_ERRO_NO_XML type SYST_MSGNO value '010' ##NO_TEXT.
-  constants GC_ERRO_NFOD_XML type SYST_MSGNO value '011' ##NO_TEXT.
-  constants GC_ERRO_XML_TRIANG type SYST_MSGNO value '012' ##NO_TEXT.
-  constants GC_ERRO_CONCLUIDO type SYST_MSGNO value '013' ##NO_TEXT.
-  constants GC_ERRO_MAT_DIF type SYST_MSGNO value '014' ##NO_TEXT.
-  constants GC_ERRO_QTD_DIF type SYST_MSGNO value '015' ##NO_TEXT.
-  constants GC_ERRO_FORNEC type SYST_MSGNO value '016' ##NO_TEXT.
-  constants GC_ERRO_CFOP type SYST_MSGNO value '017' ##NO_TEXT.
-  constants GC_ERRO_LFART type SYST_MSGNO value '018' ##NO_TEXT.
-  constants GC_ERRO_TRANSP type SYST_MSGNO value '019' ##NO_TEXT.
-  constants GC_ERRO_PROC type SYST_MSGNO value '020' ##NO_TEXT.
-  class-data GV_WAIT_ASYNC type ABAP_BOOL .
-  class-data GV_WAIT_ASYNC_1 type ABAP_BOOL .
-  class-data GT_XVBFS type VBFS_T .
-  class-data GT_XXLIPS type TT_LIPS .
-  class-data GT_PROT type TAB_PROTT .
-  constants GC_SUCESS_EXPED type SYST_MSGNO value '021' ##NO_TEXT.
-  constants GC_ERRO_CONCL type SYST_MSGNO value '022' ##NO_TEXT.
-  constants GC_ERRO_LINES type SYST_MSGNO value '023' ##NO_TEXT.
+    CONSTANTS gc_msg_id TYPE syst_msgid VALUE 'ZMM_SUBCONTRTC' ##NO_TEXT.
+    CONSTANTS gc_sucess TYPE syst_msgty VALUE 'S' ##NO_TEXT.
+    CONSTANTS gc_error TYPE syst_msgty VALUE 'E' ##NO_TEXT.
+    CONSTANTS gc_erro_no_xml TYPE syst_msgno VALUE '010' ##NO_TEXT.
+    CONSTANTS gc_erro_nfod_xml TYPE syst_msgno VALUE '011' ##NO_TEXT.
+    CONSTANTS gc_erro_xml_triang TYPE syst_msgno VALUE '012' ##NO_TEXT.
+    CONSTANTS gc_erro_concluido TYPE syst_msgno VALUE '013' ##NO_TEXT.
+    CONSTANTS gc_erro_mat_dif TYPE syst_msgno VALUE '014' ##NO_TEXT.
+    CONSTANTS gc_erro_qtd_dif TYPE syst_msgno VALUE '015' ##NO_TEXT.
+    CONSTANTS gc_erro_fornec TYPE syst_msgno VALUE '016' ##NO_TEXT.
+    CONSTANTS gc_erro_cfop TYPE syst_msgno VALUE '017' ##NO_TEXT.
+    CONSTANTS gc_erro_lfart TYPE syst_msgno VALUE '018' ##NO_TEXT.
+    CONSTANTS gc_erro_transp TYPE syst_msgno VALUE '019' ##NO_TEXT.
+    CONSTANTS gc_erro_proc TYPE syst_msgno VALUE '020' ##NO_TEXT.
+    CLASS-DATA gv_wait_async TYPE abap_bool .
+    CLASS-DATA gv_wait_async_1 TYPE abap_bool .
+    CLASS-DATA gt_xvbfs TYPE vbfs_t .
+    CLASS-DATA gt_xxlips TYPE tt_lips .
+    CLASS-DATA gt_prot TYPE tab_prott .
+    CONSTANTS gc_sucess_exped TYPE syst_msgno VALUE '021' ##NO_TEXT.
+    CONSTANTS gc_erro_concl TYPE syst_msgno VALUE '022' ##NO_TEXT.
+    CONSTANTS gc_erro_lines TYPE syst_msgno VALUE '023' ##NO_TEXT.
 
-  methods VALIDA_EXPEDICAO
-    importing
-      !IS_XML_TRASNP type ZSMM_SUBC_XML_TRANSP
-      !IT_KEYS type ZCTGMM_SUBC_KEY
-    exporting
-      !ET_RETURN type BAPIRET2_T .
-  methods PREENCHE_BAPIS
-    importing
-      !IS_XML_TRASNP type ZSMM_SUBC_XML_TRANSP
-      !IT_KEYS type ZCTGMM_SUBC_KEY
-    exporting
-      !ET_RETURN type BAPIRET2_T .
-  methods CALL_GN_DELIVERY_CREATE
-    importing
-      !IS_VBSK_I type VBSK optional
-      !IV_NO_COMMIT type RVSEL-XFELD default ' '
-      !IV_VBLS_POS_RUECK type RVSEL-XFELD default ' '
-      !IV_IF_NO_DEQUE type XFELD default SPACE
-      !IV_IF_NO_PARTNER_DIALOG type XFELD default 'X'
-      !IT_XKOMDLGN type SHP_KOMDLGN_T optional
-      !IT_XVBLS type VBLS_T
-      !IT_GN_PARTNER type PARTNER_GN_T optional
-      iv_txsdc                 TYPE j_1btxsdc_
-    exporting
-      !ET_XVBFS type VBFS_T
-      !ET_XXLIPS type TT_LIPS .
-  methods CALL_PICKIN
-    importing
-      !IS_VBKOK_WA type ZSMM_EXPED_VBKOK optional
-      !IV_IF_ERROR type XFELD default 'X'
-      !IT_VBPOK_TAB type VBPOK_T optional
-      !IV_DOCNUM type J_1BDOCNUM optional
-      !IV_ITMNUM type J_1BITMNUM optional
-    exporting
-      !ET_PROT type TAB_PROTT .
-  methods VALIDA_ESTORNO_EXPED
-    importing
-      !IT_KEYS type ZCTGMM_SUBC_KEY
-    exporting
-      !ET_RETURN type BAPIRET2_T .
+    METHODS valida_expedicao
+      IMPORTING
+        !is_xml_trasnp TYPE zsmm_subc_xml_transp
+        !it_keys       TYPE zctgmm_subc_key
+      EXPORTING
+        !et_return     TYPE bapiret2_t .
+    METHODS preenche_bapis
+      IMPORTING
+        !is_xml_trasnp TYPE zsmm_subc_xml_transp
+        !it_keys       TYPE zctgmm_subc_key
+      EXPORTING
+        !et_return     TYPE bapiret2_t .
+    METHODS call_gn_delivery_create
+      IMPORTING
+        !is_vbsk_i               TYPE vbsk OPTIONAL
+        !iv_no_commit            TYPE rvsel-xfeld DEFAULT ' '
+        !iv_vbls_pos_rueck       TYPE rvsel-xfeld DEFAULT ' '
+        !iv_if_no_deque          TYPE xfeld DEFAULT space
+        !iv_if_no_partner_dialog TYPE xfeld DEFAULT 'X'
+        !it_xkomdlgn             TYPE shp_komdlgn_t OPTIONAL
+        !it_xvbls                TYPE vbls_t
+        !it_gn_partner           TYPE partner_gn_t OPTIONAL
+        iv_txsdc                 TYPE j_1btxsdc_
+      EXPORTING
+        !et_xvbfs                TYPE vbfs_t
+        !et_xxlips               TYPE tt_lips .
+    METHODS call_pickin
+      IMPORTING
+        !is_vbkok_wa  TYPE zsmm_exped_vbkok OPTIONAL
+        !iv_if_error  TYPE xfeld DEFAULT 'X'
+        !it_vbpok_tab TYPE vbpok_t OPTIONAL
+        !iv_docnum    TYPE j_1bdocnum OPTIONAL
+        !iv_itmnum    TYPE j_1bitmnum OPTIONAL
+      EXPORTING
+        !et_prot      TYPE tab_prott .
+    METHODS valida_estorno_exped
+      IMPORTING
+        !it_keys   TYPE zctgmm_subc_key
+      EXPORTING
+        !et_return TYPE bapiret2_t .
 ENDCLASS.
 
 
 
-CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
+CLASS zclmm_exped_espc_subctrt IMPLEMENTATION.
 
 
   METHOD expedicao.
@@ -412,7 +412,7 @@ CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
                   RETURN.
                 ENDIF.
 
-                SELECT werks,
+                SELECT werks, "#EC CI_SEL_DEL
                        vkorg,
                        vtweg
                   FROM tvkwz
@@ -422,7 +422,7 @@ CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
                   INTO TABLE @DATA(lt_tvkwz).
 
 
-                  delete lt_tvkwz where vkorg = '1410'.
+                DELETE lt_tvkwz WHERE vkorg = '1410'. "#EC CI_STDSEQ
 
                 IF sy-subrc IS INITIAL.
                   SORT lt_tvkwz BY werks.
@@ -656,12 +656,12 @@ CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
           ls_sum_qtd TYPE ty_sum_qtd,
           ls_vbkok   TYPE zsmm_exped_vbkok.
 
-    DATA: lv_matnr      TYPE matnr,
-          lv_dif        TYPE rseg-menge,
-          lv_lfimg      TYPE lfimg,
+    DATA: lv_matnr       TYPE matnr,
+          lv_dif         TYPE rseg-menge,
+          lv_lfimg       TYPE lfimg,
           lv_lfimg_saldo TYPE lfimg,
-          lv_bapi_lfimg TYPE lfimg,
-          lv_bwart      TYPE bwart.
+          lv_bapi_lfimg  TYPE lfimg,
+          lv_bwart       TYPE bwart.
 
     CONSTANTS: lc_outros    TYPE tvkwz-vtweg             VALUE '10',
                lc_sammg     TYPE sammg                   VALUE 'SUBCONTRAT',
@@ -710,7 +710,7 @@ CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
         SORT lt_relat_fae BY werks.
         DELETE ADJACENT DUPLICATES FROM lt_relat_fae COMPARING werks.
 
-        SELECT werks,
+        SELECT werks, "#EC CI_SEL_DEL
                vkorg,
                vtweg
           FROM tvkwz
@@ -722,6 +722,8 @@ CLASS ZCLMM_EXPED_ESPC_SUBCTRT IMPLEMENTATION.
         IF sy-subrc IS INITIAL.
           SORT lt_tvkwz BY werks.
         ENDIF.
+
+        DELETE lt_tvkwz WHERE vkorg = '1410'. "#EC CI_STDSEQ
 
         SELECT werks,
                regio,

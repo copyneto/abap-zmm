@@ -10,9 +10,10 @@
 define view entity ZI_MM_FILTRO_LIKP_NFE
   as select from likp
 {
-  key max(vbeln) as Vbeln,
+      //  key max(vbeln) as Vbeln,
+  key vbeln as Vbeln,
       inco3_l
 
 }
-group by
-  inco3_l
+//group by
+//  inco3_l

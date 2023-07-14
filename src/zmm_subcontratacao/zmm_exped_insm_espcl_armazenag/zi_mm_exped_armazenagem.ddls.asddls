@@ -16,7 +16,6 @@ define root view entity ZI_MM_EXPED_ARMAZENAGEM
 
     right outer join ekpo                                         on  ekpo.ebeln = LinAux.Xped
                                                                   and ekpo.ebelp = LinAux.Nitemped
-//                                                                  and ekpo.serru = 'Y'
 
     left outer join  ZI_MM_FILTRO_ACTIVE           as Active      on Active.Docnum = Lin.docnum
 
@@ -59,100 +58,140 @@ define root view entity ZI_MM_EXPED_ARMAZENAGEM
 
     left outer join  makt                                         on  makt.matnr = ekpo.matnr
                                                                   and makt.spras = $session.system_language
-                                                                  
-    left outer join j_1bsdica                      as _J_1BSDICA  on  _J_1BSDICA.auart = 'DL'
-                                                                  and _J_1BSDICA.pstyv = 'LBN'                                                                    
+
+    left outer join  j_1bsdica                     as _J_1BSDICA  on  _J_1BSDICA.auart  = 'DL'
+                                                                  and _J_1BSDICA.pstyv  = 'LBN'
                                                                   and _J_1BSDICA.itmtyp = '32'
 
-//  association [0..1] to ZC_MM_PARAM_XML_TRANSP     as _Param   on  _Param.Transptdr  = $projection.Transptdr
-//                                                               and _Param.Incoterms1 = $projection.Incoterms1
-//                                                               and _Param.Incoterms2 = $projection.Incoterms2
-//                                                               and _Param.TRAID      = $projection.TRAID
+  //  association [0..1] to ZI_MM_EXPEDARMAZ_URL_ESTRN as _URL     on  _URL.Docnum = $projection.Docnum
+  //                                                               and _URL.Itmnum = $projection.Itmnum
 
-  association [0..1] to ZI_MM_EXPEDARMAZ_URL_ESTRN as _URL     on  _URL.Docnum = $projection.Docnum
-                                                               and _URL.Itmnum = $projection.Itmnum
-
-  association [0..1] to t001w                      as _T001wsh on  _T001wsh.werks = $projection.Werks
+  association [0..1] to t001w as _T001wsh on _T001wsh.werks = $projection.Werks
 
 {
-  key Lin.docnum            as Docnum,
-  key Lin.itmnum            as Itmnum,
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_WERKS', element: 'WerksCode' } }]
-      ekpo.werks            as Werks,
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
-      Active_Tab.parid      as Parid,
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_MATERIAL', element: 'Material' } }]
-      Lin.matnr             as Matnr,
-      makt.maktx            as Maktx,
-      @Semantics.quantity.unitOfMeasure: 'Meins'
-      Lin.menge             as Menge,
-      Lin.meins             as Meins,
-      Lin.charg             as Charg,
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
-      ekpo.emlif            as Emlif,
-      lfa1.name1            as NameFornc,
+  key             Lin.docnum                      as Docnum,
+  key             Lin.itmnum                      as Itmnum,
+  key             LinAux.Docnum                   as LinAuxDocnum,
+  key             LinAux.Itmnum                   as LinAuxItmnum,
+  key             ekpo.ebeln                      as ekpoEbeln,
+  key             ekpo.ebelp                      as ekpoEbelp,
+  key             Active.Docnum                   as ActiveDocnum,
+  key             Active_Tab.docnum               as ActiveTabdocnum,
+  key             XNFEAux.guid_header             as XNFEAuxguidHeader,
+  key             XNFE.guid_header                as XNFEguid,
+                  //  key       Likp.Vbeln            as LikpVbeln,
+  key             case when ActiveAux.cancel is initial
+              then Likp.Vbeln
+              else '0000000000' end               as Vbeln,
+  key             Mseg.Mblnr                      as Mblnr,
+  key             Mseg.Mjahr                      as MsegMjahr,
+  key             Mseg.Zeile                      as MsegZeile,
+  key             _ConcatMseg.mblnr               as Concatmblnr,
+  key             _ConcatMseg.mjahr               as Concatmjahr,
+  key             _ConcatMseg.zeile               as Concatzeile,
+  key             FltrLin.docnum                  as FltrLindocnum,
+  key             FltrLin.itmnum                  as FltrLinitmnum,
+                  //  key DocAux.docnum         as Docdocnum,
+  key             case when ActiveAux.cancel is initial and Likp.inco3_l is not initial
+              then DocAux.docnum
+              else '0000000000' end               as DocDocnum,
+  key             ActiveAux.docnum                as ActiveAuDocnum,
+  key             _FltLin.Docnum                  as FltLinDocnum,
+  key             _FltLin.Itmnum                  as FltLinItmnum,
+  key             Lfa1Aux.Lifnr                   as Lfa1AuxLifnr,
+  key             lfa1.lifnr                      as lfa1lifnr,
+  key             Kna1Aux.Kunnr                   as Kna1AuxKunnr,
+  key             ekko.ebeln                      as ekkoEbeln,
+  key             makt.matnr                      as maktMatnr,
+  key             makt.spras                      as maktSpras,
+  key             _J_1BSDICA.auart                as BSDICAauart,
+  key             _J_1BSDICA.pstyv                as BSDICApstyv,
+                  //                    key             _URL.Docnum          as URLDocnum,
+                  //                    key             _URL.Itmnum          as URLItmnum,
+  key             cast( ' ' as abap.numc( 10 ) )  as URLDocnum,
+  key             cast( ' ' as  abap.numc( 6 )  ) as URLItmnum,
+  key             _T001wsh.werks                  as T001wshwerks,
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_WERKS', element: 'WerksCode' } }]
+                  ekpo.werks                      as Werks,
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
+                  Active_Tab.parid                as Parid,
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_MATERIAL', element: 'Material' } }]
+                  Lin.matnr                       as Matnr,
+                  makt.maktx                      as Maktx,
+                  @Semantics.quantity.unitOfMeasure: 'Meins'
+                  Lin.menge                       as Menge,
+                  Lin.meins                       as Meins,
+                  Lin.charg                       as Charg,
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
+                  ekpo.emlif                      as Emlif,
+                  lfa1.name1                      as NameFornc,
 
-      case when ActiveAux.cancel is initial
-      then Likp.Vbeln
-      else '0000000000' end as Vbeln,
+                  //            case when ActiveAux.cancel is initial
+                  //            then Likp.Vbeln
+                  //            else '0000000000' end as Vbeln,
 
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_EXPEDIN_STATUS', element: 'Status' } }]
-      case 
-      when Likp.Vbeln is initial
-           then 'Pendente'
-      when ( ActiveAux.action_requ = 'C' and ActiveAux.cancel <> 'X' )
-           then 'Concluído'
-      when ActiveAux.action_requ <> 'C' and ActiveAux.cancel <> 'X'
-           then 'Verificar NF-e'
-      else 'Pendente' end   as Status,
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_EXPEDIN_STATUS', element: 'Status' } }]
+                  case
+                  when Likp.Vbeln is initial
+                       then 'Pendente'
+                  when ( ActiveAux.action_requ = 'C' and ActiveAux.cancel <> 'X' )
+                       then 'Concluído'
+                  when ActiveAux.action_requ <> 'C' and ActiveAux.cancel <> 'X'
+                       then 'Verificar NF-e'
+                  else 'Pendente' end             as Status,
 
-      case 
-      when Likp.Vbeln is initial
-           then 2
-      when ( ActiveAux.action_requ = 'C' and ActiveAux.cancel <> 'X' )
-           then 3
-      when ActiveAux.action_requ <> 'C' and ActiveAux.cancel <> 'X'
-           then 1
-      else 2 end            as StatusCriticality,
+                  case
+                  when Likp.Vbeln is initial
+                       then 2
+                  when ( ActiveAux.action_requ = 'C' and ActiveAux.cancel <> 'X' )
+                       then 3
+                  when ActiveAux.action_requ <> 'C' and ActiveAux.cancel <> 'X'
+                       then 1
+                  else 2 end                      as StatusCriticality,
 
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_ARMZ_XML', element: 'XML_EntIns' } }]
-      @EndUserText.label: 'XML Entrada do Insumo'
-      case when Likp.inco3_l is not initial
-      then Likp.inco3_l
-      else XNFE.nfeid  end  as XML_EntIns,
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_ARMZ_XML', element: 'XML_EntIns' } }]
+                  @EndUserText.label: 'XML Entrada do Insumo'
+                  case when Likp.inco3_l is not initial
+                  then Likp.inco3_l
+                  else XNFE.nfeid  end            as XML_EntIns,
 
-      Mseg.Mblnr            as Mblnr,
+                  //                  Mseg.Mblnr           as Mblnr,
 
-      case when ActiveAux.cancel is initial and Likp.inco3_l is not initial
-      then DocAux.docnum
-      else '0000000000' end as DocDocnum,
+                  //      case when ActiveAux.cancel is initial and Likp.inco3_l is not initial
+                  //      then DocAux.docnum
+                  //      else '0000000000' end as DocDocnum,
 
-      @EndUserText.label: 'Data da Emissão'
-      case when ActiveAux.cancel is initial and Likp.inco3_l is not initial
-      then DocAux.pstdat
-      else '00000000' end   as DocPSTDAT,
+                  @EndUserText.label: 'Data da Emissão'
+                  case when ActiveAux.cancel is initial and Likp.inco3_l is not initial
+                  then DocAux.pstdat
+                  else '00000000' end             as DocPSTDAT,
 
-      @EndUserText.label: 'NF-e'
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_ARMZ_NFE', element: 'DocNFENUM' } }]
-      case when ActiveAux.cancel is initial and Likp.inco3_l is not initial
-      then DocAux.nfenum
-      else '' end           as DocNFENUM,
+                  @EndUserText.label: 'NF-e'
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_ARMZ_NFE', element: 'DocNFENUM' } }]
+                  case when ActiveAux.cancel is initial and Likp.inco3_l is not initial
+                  then DocAux.nfenum
+                  else '' end                     as DocNFENUM,
 
-      @EndUserText.label: 'Transportadora'
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
-      ''                    as Transptdr,
-      @EndUserText.label: 'Incoterms 1'
-      ''                    as Incoterms1,
-      @EndUserText.label: 'Incoterms 2'
-      ''                    as Incoterms2,
-      @EndUserText.label: 'Placa'
-      ''                    as TRAID,
-      @EndUserText.label: 'Código de imposto SD Padrão'
-      @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_TXSDC', element: 'taxcode' } }]
-      _J_1BSDICA.txsdc,
-//      _Param,
-      _URL,
-      _T001wsh
+                  @EndUserText.label: 'Transportadora'
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_CA_VH_LIFNR', element: 'LifnrCode' } }]
+                  ''                              as Transptdr,
+                  @EndUserText.label: 'Incoterms 1'
+                  ''                              as Incoterms1,
+                  @EndUserText.label: 'Incoterms 2'
+                  ''                              as Incoterms2,
+                  @EndUserText.label: 'Placa'
+                  ''                              as TRAID,
+                  @EndUserText.label: 'Código de imposto SD Padrão'
+                  @Consumption.valueHelpDefinition:   [{ entity: {name: 'ZI_MM_VH_TXSDC', element: 'taxcode' } }]
+                  _J_1BSDICA.txsdc,
+                  //      _Param,
+                  //                  _URL,
+                  case
+                   when ( ActiveAux.action_requ = 'C' and ActiveAux.cancel <> 'X' ) or
+                    ActiveAux.action_requ <> 'C' and ActiveAux.cancel <> 'X'
+                       then 'Estornar'
+                  else '' end                     as Estornar,
+                  _T001wsh
 }
 where
       Lin.docnum is not initial

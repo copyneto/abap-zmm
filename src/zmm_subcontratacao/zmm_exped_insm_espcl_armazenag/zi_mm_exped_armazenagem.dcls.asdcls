@@ -5,7 +5,7 @@ define role ZI_MM_EXPED_ARMAZENAGEM {
         select
             on
                 ZI_MM_EXPED_ARMAZENAGEM
-                    where
+                    where 
                          ( Werks ) = aspect pfcg_auth( ZMMWERKS, WERKS, ACTVT = '03' );
                         
                         

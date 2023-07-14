@@ -5409,6 +5409,8 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
           lt_docnum           TYPE TABLE OF ty_docnum,
           lt_historico_msg    TYPE ty_t_historico.
 
+    CONSTANTS: lc_sepr TYPE char1 VALUE '-'.
+
     FREE: et_return.
 
 * ---------------------------------------------------------------------------
@@ -5433,13 +5435,17 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 
     IF lt_docnum IS NOT INITIAL.
 
-      SELECT docnum, nfnum9, docnum9
-       FROM j_1bnfe_active
-       FOR ALL ENTRIES IN @lt_docnum
+      SELECT docnum,
+             nfnum9,
+             docnum9,
+             serie
+        FROM j_1bnfe_active
+         FOR ALL ENTRIES IN @lt_docnum
        WHERE docnum =  @lt_docnum-docnum
-       INTO TABLE @DATA(lt_j_1bnfe_active).
+        INTO TABLE @DATA(lt_j_1bnfe_active).
 
     ENDIF.
+
     DATA: lv_main_purchase_order TYPE ztmm_his_dep_fec-main_purchase_order.
 * ---------------------------------------------------------------------------
 * Prepara dados para criação da Saída de Mercadoria (Documento Material Saída)
@@ -5556,33 +5562,31 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
 *        posnr     = ls_historico->out_delivery_document_item
 *        lifnr     = ls_historico->ORIGIN_PLANT ) ).
 
-        ls_header   = VALUE #( pstng_date = sy-datum
-                               doc_date   = sy-datum
-                               ref_doc_no = CONV num9( ls_j_1bnfe_active-nfnum9 )
-                               header_txt = CONV num9( ls_j_1bnfe_active-nfnum9 )
-                               ).
+        ls_header = VALUE #( pstng_date = sy-datum
+                             doc_date   = sy-datum
+                             ref_doc_no = |{ CONV num9( ls_j_1bnfe_active-nfnum9 ) }{ lc_sepr }{ ls_j_1bnfe_active-serie }|
+                             header_txt = |{ CONV num9( ls_j_1bnfe_active-nfnum9 ) }{ lc_sepr }{ ls_j_1bnfe_active-serie }|
+                             ).
 
-        lv_code     = '01'.
+        lv_code = '01'.
 
-        lt_item     = VALUE #( BASE lt_item (
-                               material         = ls_historico->material
-                               plant            = ls_historico->destiny_plant
-                               stge_loc         = ls_historico->storage_location_dest
-                               batch            = ls_historico->batch
-                               move_type        = gc_bapi_entrada_merc-tipo_mov_z61
-                               val_type         = ls_lips-bwtar
-                               vendor           = |{ ls_historico->origin_plant ALPHA = IN }|
-                               entry_qnt        = ls_historico->order_quantity
-                               entry_uom        = ls_historico->order_quantity_unit
-                               entry_uom_iso    = ls_historico->order_quantity_unit
-                               po_number        = ls_historico->purchase_order
-                               po_item          = ls_historico->purchase_order_item
-                               no_more_gr       = abap_true
-                               mvt_ind          = gc_bapi_entrada_merc-cod_mov_b
-                               deliv_numb       = ls_historico->out_delivery_document
-                               deliv_item       = ls_historico->out_delivery_document_item
-
-                               ) ).
+        lt_item = VALUE #( BASE lt_item ( material      = ls_historico->material
+                                          plant         = ls_historico->destiny_plant
+                                          stge_loc      = ls_historico->storage_location_dest
+                                          batch         = ls_historico->batch
+                                          move_type     = gc_bapi_entrada_merc-tipo_mov_z61
+                                          val_type      = ls_lips-bwtar
+                                          vendor        = |{ ls_historico->origin_plant ALPHA = IN }|
+                                          entry_qnt     = ls_historico->order_quantity
+                                          entry_uom     = ls_historico->order_quantity_unit
+                                          entry_uom_iso = ls_historico->order_quantity_unit
+                                          po_number     = ls_historico->purchase_order
+                                          po_item       = ls_historico->purchase_order_item
+                                          no_more_gr    = abap_true
+                                          mvt_ind       = gc_bapi_entrada_merc-cod_mov_b
+                                          deliv_numb    = ls_historico->out_delivery_document
+                                          deliv_item    = ls_historico->out_delivery_document_item
+                                          ) ).
         IF lines( lt_item ) > 1.
           LOOP AT lt_item ASSIGNING FIELD-SYMBOL(<fs_item>).
             CLEAR <fs_item>-vendor.

@@ -71,7 +71,7 @@ CLASS zclmm_exped_espc_armazgm DEFINITION
         it_xkomdlgn             TYPE shp_komdlgn_t
         it_xvbls                TYPE vbls_t
         it_gn_partner           TYPE partner_gn_t
-        iv_TXSDC                type j_1btxsdc_
+        iv_TXSDC                TYPE j_1btxsdc_
       EXPORTING
         et_xvbfs                TYPE vbfs_t
         et_xxlips               TYPE tt_lips .
@@ -83,7 +83,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLMM_EXPED_ESPC_ARMAZGM IMPLEMENTATION.
+CLASS zclmm_exped_espc_armazgm IMPLEMENTATION.
 
 
   METHOD add_return.
@@ -151,9 +151,9 @@ CLASS ZCLMM_EXPED_ESPC_ARMAZGM IMPLEMENTATION.
         is_vbkok_wa  = is_vbkok_wa
         iv_if_error  = iv_if_error
         it_vbpok_tab = it_vbpok_tab
-        iv_docnum = iv_docnum
-        iv_itmnum = iv_itmnum
-      IV_ESPECIAL = abap_true.
+        iv_docnum    = iv_docnum
+        iv_itmnum    = iv_itmnum
+        iv_especial  = abap_true.
 
     WAIT UNTIL gv_wait_async = abap_true.
     et_prot = gt_prot.
@@ -167,25 +167,57 @@ CLASS ZCLMM_EXPED_ESPC_ARMAZGM IMPLEMENTATION.
     CHECK it_keys[] IS NOT INITIAL. "t
 
 
-      SELECT xml_entins
-        FROM zi_mm_exped_armazenagem
-         FOR ALL ENTRIES IN @it_keys
-       WHERE docnum = @it_keys-docnum
-         AND itmnum = @it_keys-itmnum
-        INTO TABLE @DATA(lt_relat).
+    SELECT xml_entins
+      FROM zi_mm_exped_armazenagem
+       FOR ALL ENTRIES IN @it_keys
+     WHERE docnum = @it_keys-docnum
+       AND itmnum = @it_keys-itmnum
+        AND LinAuxDocnum = @it_keys-LinAuxDocnum
+      AND LinAuxItmnum = @it_keys-LinAuxItmnum
+      AND ekpoEbeln = @it_keys-ekpoEbeln
+      AND ekpoEbelp = @it_keys-ekpoEbelp
+      AND ActiveDocnum = @it_keys-ActiveDocnum
+      AND ActiveTabdocnum = @it_keys-ActiveTabdocnum
+      AND XNFEAuxguidHeader = @it_keys-XNFEAuxguidHeader
+      AND XNFEguid = @it_keys-XNFEguid
+      AND Vbeln = @it_keys-Vbeln
+      AND Mblnr = @it_keys-Mblnr
+      AND MsegMjahr = @it_keys-MsegMjahr
+      AND MsegZeile = @it_keys-MsegZeile
+      AND Concatmblnr = @it_keys-Concatmblnr
+      AND Concatmjahr = @it_keys-Concatmjahr
+      AND Concatzeile = @it_keys-Concatzeile
+      AND FltrLindocnum = @it_keys-FltrLindocnum
+      AND FltrLinitmnum = @it_keys-FltrLinitmnum
+      AND DocDocnum = @it_keys-DocDocnum
+      AND ActiveAuDocnum = @it_keys-ActiveAuDocnum
+      AND FltLinDocnum = @it_keys-FltLinDocnum
+      AND FltLinItmnum = @it_keys-FltLinItmnum
+      AND Lfa1AuxLifnr = @it_keys-Lfa1AuxLifnr
+      AND lfa1lifnr = @it_keys-lfa1lifnr
+      AND Kna1AuxKunnr = @it_keys-Kna1AuxKunnr
+      AND ekkoEbeln = @it_keys-ekkoEbeln
+      AND maktMatnr = @it_keys-maktMatnr
+      AND maktSpras = @it_keys-maktSpras
+      AND BSDICAauart = @it_keys-BSDICAauart
+      AND BSDICApstyv = @it_keys-BSDICApstyv
+      AND URLDocnum = @it_keys-URLDocnum
+      AND URLItmnum = @it_keys-URLItmnum
+      AND T001wshwerks = @it_keys-T001wshwerks
+      INTO TABLE @DATA(lt_relat).
 
-     sort lt_relat by XML_EntIns.
-     delete ADJACENT DUPLICATES FROM lt_relat COMPARING XML_EntIns.
+    SORT lt_relat BY XML_EntIns.
+    DELETE ADJACENT DUPLICATES FROM lt_relat COMPARING XML_EntIns.
 
-     if  lines( lt_relat ) > 1.
+    IF  lines( lt_relat ) > 1.
 
       me->add_return( EXPORTING iv_id     = gc_msg_id
                                 iv_number = gc_erro_xml
                                 iv_type   = gc_error
                        CHANGING ct_return = et_return ).
-      exit.
+      EXIT.
 
-     endif.
+    ENDIF.
 
     me->valida_expedicao( EXPORTING is_xml_trasnp = is_xml_trasnp
                           IMPORTING et_return     = et_return ).
@@ -219,17 +251,17 @@ CLASS ZCLMM_EXPED_ESPC_ARMAZGM IMPLEMENTATION.
           lv_lifnr  TYPE t001w-lifnr.
 
     CONSTANTS:
-               lc_bwart_gv TYPE bwart       VALUE 'Y41',
+      lc_bwart_gv TYPE bwart       VALUE 'Y41',
 *               lc_bwart_gv TYPE bwart       VALUE 'Y51',
-               lc_bwart_nm TYPE bwart       VALUE 'Y41',
-               lc_spart_gv TYPE mara-spart  VALUE '05',
-               lc_lfart    TYPE lfart       VALUE 'LB',
-               lc_lifsk    TYPE lifsk       VALUE '05',
-               lc_parvw    TYPE parvw       VALUE 'SP',
-               lc_sammg    TYPE sammg       VALUE 'SUBCONTRAT',
-               lc_smart    TYPE smart       VALUE 'L',
-               lc_wabuc    TYPE wabuc       VALUE 'Y',
-               lc_outros   TYPE tvkwz-vtweg VALUE '10'.
+      lc_bwart_nm TYPE bwart       VALUE 'Y41',
+      lc_spart_gv TYPE mara-spart  VALUE '05',
+      lc_lfart    TYPE lfart       VALUE 'LB',
+      lc_lifsk    TYPE lifsk       VALUE '05',
+      lc_parvw    TYPE parvw       VALUE 'SP',
+      lc_sammg    TYPE sammg       VALUE 'SUBCONTRAT',
+      lc_smart    TYPE smart       VALUE 'L',
+      lc_wabuc    TYPE wabuc       VALUE 'Y',
+      lc_outros   TYPE tvkwz-vtweg VALUE '10'.
 *               lc_outros   TYPE tvkwz-vtweg VALUE '14'.
 
     IF it_keys[] IS NOT INITIAL.
@@ -473,17 +505,17 @@ CLASS ZCLMM_EXPED_ESPC_ARMAZGM IMPLEMENTATION.
 *                                                              pikmg    = <fs_xxlips>-lfimg ) ).
 *                ENDLOOP.
 
-                  lt_vbpok_tab = VALUE #( BASE lt_vbpok_tab
-                    FOR ls_xxlips1 IN lt_xxlips (
-                      vbeln_vl = ls_xxlips1-vbeln
-                      posnr_vl = ls_xxlips1-posnr
-                      vbeln    = ls_xxlips1-vbeln
-                      posnn    = ls_xxlips1-posnr
+                lt_vbpok_tab = VALUE #( BASE lt_vbpok_tab
+                  FOR ls_xxlips1 IN lt_xxlips (
+                    vbeln_vl = ls_xxlips1-vbeln
+                    posnr_vl = ls_xxlips1-posnr
+                    vbeln    = ls_xxlips1-vbeln
+                    posnn    = ls_xxlips1-posnr
 *                      vbeln    = ls_xxlips1-vgbel
 *                      posnn    = ls_xxlips1-vgpos
-                      pikmg    = ls_xxlips1-lfimg
-                      meins    = ls_xxlips1-meins
-                  ) ).
+                    pikmg    = ls_xxlips1-lfimg
+                    meins    = ls_xxlips1-meins
+                ) ).
 
                 ls_vbkok-vbeln_vl = ls_xxlips-vbeln.
                 ls_vbkok-wabuc    = lc_wabuc.
@@ -575,22 +607,22 @@ CLASS ZCLMM_EXPED_ESPC_ARMAZGM IMPLEMENTATION.
 *
 *    ENDIF.
 
-    if is_xml_trasnp-txsdc is not initial.
-       select SINGLE taxcode
-        from J_1BTXSDC
-        where taxcode = @is_xml_trasnp-txsdc
-        into @data(lv_J_1BTXSDC).
+    IF is_xml_trasnp-txsdc IS NOT INITIAL.
+      SELECT SINGLE taxcode
+       FROM j_1btxsdc
+       WHERE taxcode = @is_xml_trasnp-txsdc
+       INTO @DATA(lv_J_1BTXSDC).
 
 
-       if sy-subrc <> 0.
+      IF sy-subrc <> 0.
 
-      me->add_return( EXPORTING iv_id     = gc_msg_id
-                                iv_number = gc_erro_taxe
-                                iv_type   = gc_error
-                       CHANGING ct_return = et_return ).
-       endif.
+        me->add_return( EXPORTING iv_id     = gc_msg_id
+                                  iv_number = gc_erro_taxe
+                                  iv_type   = gc_error
+                         CHANGING ct_return = et_return ).
+      ENDIF.
 
-    endif.
+    ENDIF.
 
   ENDMETHOD.
 

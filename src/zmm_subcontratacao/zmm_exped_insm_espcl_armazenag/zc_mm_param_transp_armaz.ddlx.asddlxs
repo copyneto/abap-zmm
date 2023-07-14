@@ -10,6 +10,6 @@ annotate entity ZC_MM_PARAM_TRANSP_ARMAZ with
 //  Incoterms2;
 //  @EndUserText.label: 'Placa'
 //  TRAID;
-  @EndUserText.label: 'Imposto SD Padrão'
+  @EndUserText.label: 'Imposto SD Padrão' 
   TXSDC;
 }
