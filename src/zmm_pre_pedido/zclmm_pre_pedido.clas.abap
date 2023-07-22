@@ -341,7 +341,7 @@ ENDCLASS.
 
 
 
-CLASS zclmm_pre_pedido IMPLEMENTATION.
+CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
 
   METHOD validate_reg.
@@ -384,8 +384,9 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
   METHOD get_parameters.
 
     TRY.
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
 
-        NEW zclca_tabela_parametros( )->m_get_single(
+        lo_param->m_get_single(                                         " CHANGE - JWSILVA - 21.07.2023
         EXPORTING
             iv_modulo = gc_values-modulo
             iv_chave1 = gc_values-ch1
@@ -1222,7 +1223,7 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
         me->raise_change( lt_return ).
       ENDIF.
 
-      me->send_return( EXPORTING it_ret = lt_return is_item_delete = is_item_del ).
+*      me->send_return( EXPORTING it_ret = lt_return is_item_delete = is_item_del ).
 
     ENDIF.
 
@@ -1568,6 +1569,7 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD release_table.
 
     DATA lv_long_time_stamp TYPE timestampl.
@@ -1596,5 +1598,4 @@ CLASS zclmm_pre_pedido IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
-
 ENDCLASS.

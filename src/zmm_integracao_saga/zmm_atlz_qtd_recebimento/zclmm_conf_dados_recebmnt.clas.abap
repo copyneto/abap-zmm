@@ -492,8 +492,10 @@ CLASS ZCLMM_CONF_DADOS_RECEBMNT IMPLEMENTATION.
 
     CHECK iv_ebeln IS NOT INITIAL.
 
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
+
     TRY.
-        NEW zclca_tabela_parametros( )->m_get_range(
+        lo_param->m_get_range(                                      " CHANGE - JWSILVA - 21.07.2023
                                EXPORTING
                                  iv_modulo = gc_values-mm
                                  iv_chave1 = gc_values-dep_fech
@@ -551,7 +553,7 @@ CLASS ZCLMM_CONF_DADOS_RECEBMNT IMPLEMENTATION.
 
         IF sy-subrc IS INITIAL.
 
-          DATA(lo_object) = NEW zclca_tabela_parametros( ).
+          DATA(lo_object) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
           TRY.
               lo_object->m_get_range( EXPORTING iv_modulo = gc_param-modulo

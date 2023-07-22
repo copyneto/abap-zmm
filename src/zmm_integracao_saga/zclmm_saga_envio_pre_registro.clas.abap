@@ -140,12 +140,18 @@ CLASS zclmm_saga_envio_pre_registro DEFINITION
         iv_ebeln         TYPE ebeln
       RETURNING
         VALUE(rv_result) TYPE ze_ordemfrete.
+    METHODS validate_xblnr
+      IMPORTING
+        iv_xblnr  TYPE xblnr1
+      EXPORTING
+        ev_nfenum TYPE j_1bnfnum9
+        ev_series TYPE j_1bseries.
 
 ENDCLASS.
 
 
 
-CLASS ZCLMM_SAGA_ENVIO_PRE_REGISTRO IMPLEMENTATION.
+CLASS zclmm_saga_envio_pre_registro IMPLEMENTATION.
 
 
   METHOD busca_dados.
@@ -193,11 +199,19 @@ CLASS ZCLMM_SAGA_ENVIO_PRE_REGISTRO IMPLEMENTATION.
 
           IF sy-subrc EQ 0.
 
+            validate_xblnr(
+            EXPORTING
+                iv_xblnr = lv_mkpf_xblnr
+            IMPORTING
+                ev_nfenum = DATA(lv_nfenum)
+                ev_series = DATA(lv_series)  ).
+
             SELECT SINGLE cnpj_bupla
                      FROM j_1bnfdoc
                      INTO @DATA(lv_cgc)
                     WHERE nftype EQ 'YC'
-                      AND nfenum EQ @lv_mkpf_xblnr.     "#EC CI_NOFIELD
+                        AND nfenum EQ @lv_nfenum
+                        AND series EQ @lv_series.
 
             IF sy-subrc EQ 0.
 
@@ -505,7 +519,7 @@ CLASS ZCLMM_SAGA_ENVIO_PRE_REGISTRO IMPLEMENTATION.
 
     IF ls_output-mt_remessa_ordem-ztipo EQ 05.
       TRY.
-          DATA(lo_param) = NEW zclca_tabela_parametros( ).
+          DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
           lo_param->m_get_range( EXPORTING iv_modulo = lc_parm_mod
                                            iv_chave1 = lc_cnpj_dest
@@ -726,7 +740,7 @@ CLASS ZCLMM_SAGA_ENVIO_PRE_REGISTRO IMPLEMENTATION.
     lv_chave3_4 = is_likp-lfart.
 
 ** Seleçao dos parametros
-    DATA(lo_parametros) = NEW zclca_tabela_parametros( ).
+    DATA(lo_parametros) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
 *Buscar
     TRY.
@@ -788,4 +802,21 @@ CLASS ZCLMM_SAGA_ENVIO_PRE_REGISTRO IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
+
+  METHOD validate_xblnr.
+
+    IF iv_xblnr CA '-'.
+
+      DATA(lv_xblnr) = iv_xblnr.
+
+      SPLIT lv_xblnr AT '-' INTO ev_nfenum ev_series.
+
+    ELSE.
+      ev_nfenum = iv_xblnr.
+    ENDIF.
+
+    UNPACK ev_nfenum TO ev_nfenum.
+
+  ENDMETHOD.
+
 ENDCLASS.

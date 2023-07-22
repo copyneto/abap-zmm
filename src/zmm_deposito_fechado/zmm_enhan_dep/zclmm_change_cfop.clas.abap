@@ -24,7 +24,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
+CLASS zclmm_change_cfop IMPLEMENTATION.
 
 
   METHOD change_cfop.
@@ -57,6 +57,8 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
 
     ASSIGN ('(SAPLJ1BF)WA_XMSEG') TO <fs_mseg>.
 
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
+
     IF <fs_mseg> IS ASSIGNED.
 
       SELECT SINGLE vgbel, j_1bcfop
@@ -77,7 +79,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
       IF lv_cfop = lc_cfop5905aa.
 
         TRY.
-            NEW zclca_tabela_parametros( )->m_get_single(
+            lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
               EXPORTING
                 iv_modulo = lc_mod
                 iv_chave1 = lc_entrada_fisica
@@ -92,7 +94,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
       ELSEIF lv_cfop = lc_cfop6905aa.
 
         TRY.
-            NEW zclca_tabela_parametros( )->m_get_single(
+            lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
               EXPORTING
                 iv_modulo = lc_mod
                 iv_chave1 = lc_entrada_fisica
@@ -107,7 +109,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
       ELSEIF lv_cfop = lc_cfop5907aa.
 
         TRY.
-            NEW zclca_tabela_parametros( )->m_get_single(
+            lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
               EXPORTING
                 iv_modulo = lc_mod
                 iv_chave1 = lc_retorno_simbolico
@@ -121,7 +123,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
       ELSEIF lv_cfop = lc_cfop6907aa.
 
         TRY.
-            NEW zclca_tabela_parametros( )->m_get_single(
+            lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
               EXPORTING
                 iv_modulo = lc_mod
                 iv_chave1 = lc_retorno_simbolico
@@ -134,7 +136,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
         ENDTRY.
       ELSEIF lv_cfop = lc_cfop5906aa.
         TRY.
-            NEW zclca_tabela_parametros( )->m_get_single(
+            lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
               EXPORTING
                 iv_modulo = lc_mod
                 iv_chave1 = lc_retorno_fisico
@@ -149,7 +151,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
       ELSEIF lv_cfop = lc_cfop6906aa.
 
         TRY.
-            NEW zclca_tabela_parametros( )->m_get_single(
+            lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
               EXPORTING
                 iv_modulo = lc_mod
                 iv_chave1 = lc_retorno_fisico
@@ -189,7 +191,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
             IF sy-subrc = 0 AND lv_regio_dest = 'MG'.
               IF lv_regio_orig = lv_regio_dest.
                 TRY.
-                    NEW zclca_tabela_parametros( )->m_get_single(
+                    lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
                       EXPORTING
                         iv_modulo = lc_mod
                         iv_chave1 = lc_rem_simba_dupl
@@ -203,7 +205,7 @@ CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
                 ENDTRY.
               ELSE.
                 TRY.
-                    NEW zclca_tabela_parametros( )->m_get_single(
+                    lo_param->m_get_single(                                 " CHANGE - JWSILVA - 21.07.2023
                       EXPORTING
                         iv_modulo = lc_mod
                         iv_chave1 = lc_rem_simba_dupl

@@ -716,7 +716,7 @@ CLASS zclmm_redetermina_piscof_event IMPLEMENTATION.
     FREE ev_value.
 
     TRY.
-        DATA(lo_param) = NEW zclca_tabela_parametros( ).
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
         lo_param->m_get_single( EXPORTING iv_modulo = is_param-modulo
                                           iv_chave1 = is_param-chave1

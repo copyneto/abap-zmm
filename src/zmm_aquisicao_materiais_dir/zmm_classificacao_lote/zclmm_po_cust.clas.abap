@@ -196,7 +196,7 @@ CLASS ZCLMM_PO_CUST IMPLEMENTATION.
     DATA: lv_lagmg TYPE ztmm_control_cla-lagmg,
           lv_menge TYPE bstmg.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = me->gc_modulo

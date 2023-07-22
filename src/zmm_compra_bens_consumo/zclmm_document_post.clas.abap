@@ -225,7 +225,7 @@ CLASS ZCLMM_DOCUMENT_POST IMPLEMENTATION.
 
   METHOD set_pis.
 
-      DATA(lo_param) = NEW zclca_tabela_parametros( ).
+      DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
       TRY.
           lo_param->m_get_single(
@@ -288,7 +288,7 @@ CLASS ZCLMM_DOCUMENT_POST IMPLEMENTATION.
 
   METHOD set_ipi.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
         lo_param->m_get_single(
@@ -309,7 +309,7 @@ CLASS ZCLMM_DOCUMENT_POST IMPLEMENTATION.
 
   METHOD set_icms.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
         lo_param->m_get_single(
@@ -368,7 +368,7 @@ CLASS ZCLMM_DOCUMENT_POST IMPLEMENTATION.
 
   METHOD set_cof.
 
-      DATA(lo_param) = NEW zclca_tabela_parametros( ).
+      DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
       TRY.
           lo_param->m_get_single(

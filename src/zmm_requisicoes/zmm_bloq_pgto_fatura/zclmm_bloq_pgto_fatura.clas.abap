@@ -30,7 +30,7 @@ CLASS ZCLMM_BLOQ_PGTO_FATURA IMPLEMENTATION.
           lr_zlspr     TYPE RANGE OF dzlspr,
           lr_sgtxt     TYPE RANGE OF sgtxt.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     FIELD-SYMBOLS <fs_rbkpv> TYPE mrm_rbkpv.
     ASSIGN (lv_struc) TO <fs_rbkpv>.

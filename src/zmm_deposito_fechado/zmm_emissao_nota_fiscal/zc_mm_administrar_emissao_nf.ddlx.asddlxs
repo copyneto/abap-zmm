@@ -3,13 +3,16 @@
                      typeName: 'Depósito Fechado',
                      typeNamePlural: 'Depósitos Fechados' },
 
-       presentationVariant: [{ sortOrder: [{ by: 'CreatedAt', direction:  #DESC },
+       presentationVariant: [ { maxItems: 88, visualizations: [{ type: #AS_LINEITEM }]},
+                              { sortOrder: [{ by: 'CreatedAt', direction:  #DESC },
                                            { by: 'Material', direction:  #ASC },
                                            { by: 'OriginPlant', direction:  #ASC },
-                                           { by: 'OriginStorageLocation', direction:  #ASC } ] } ] }
+                                           { by: 'OriginStorageLocation', direction:  #ASC } ] }
+                                           ] }
+
+
 
 @UI.lineItem: [ {criticality: 'StatusCriticality'} ]
-
 annotate view ZC_MM_ADMINISTRAR_EMISSAO_NF with
 {
   // ------------------------------------------------------

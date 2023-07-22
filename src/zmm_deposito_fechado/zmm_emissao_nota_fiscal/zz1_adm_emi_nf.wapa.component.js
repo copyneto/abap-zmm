@@ -1,1 +1,2 @@
 sap.ui.define(["sap/suite/ui/generic/template/lib/AppComponent"],function(e){return e.extend("br.com.trescoracoes.administraremissaonf.Component",{metadata:{manifest:"json"}})});                                                                             
+//# sourceMappingURL=Component.js.map                                                                                                                                                                                                                          

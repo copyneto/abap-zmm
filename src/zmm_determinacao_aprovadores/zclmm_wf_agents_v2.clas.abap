@@ -24,13 +24,17 @@ CLASS ZCLMM_WF_AGENTS_V2 IMPLEMENTATION.
 
   METHOD if_mmpur_workflow_agents_v2~get_approvers.
 
-*    DATA: lv_break TYPE c VALUE 'X'.
+
+*    IF purchasingdocument EQ '1000000011'.
 *
-*    DO.
-*      IF lv_break = ''.
-*        EXIT.
-*      ENDIF.
-*    ENDDO.
+*      DATA: lv_break TYPE c VALUE 'X'.
+*      DO.
+*        IF lv_break = ''.
+*          EXIT.
+*        ENDIF.
+*      ENDDO.
+*
+*    ENDIF.
 
     DATA lv_kostl TYPE kostl.
     DATA lv_previous_approver TYPE if_mmpur_workflow_agents_v2=>bd_mmpur_s_previous_approver.
@@ -73,8 +77,16 @@ CLASS ZCLMM_WF_AGENTS_V2 IMPLEMENTATION.
 
             SELECT SINGLE responsiblecostcenter
             FROM c_wbselementbasicinfo
-            INTO @lv_kostl
-            WHERE wbselement EQ @lv_wbselement.
+            WHERE wbselement EQ @lv_wbselement
+              AND version IS INITIAL
+            INTO @lv_kostl.
+
+           IF sy-subrc <> 0.
+             SELECT SINGLE responsiblecostcenter
+             FROM c_wbselementbasicinfo
+             INTO @lv_kostl
+             WHERE wbselement EQ @lv_wbselement.
+           ENDIF.
 
           WHEN 'F'.
 

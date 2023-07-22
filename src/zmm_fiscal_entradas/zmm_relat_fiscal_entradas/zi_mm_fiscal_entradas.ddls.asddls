@@ -24,11 +24,11 @@ define root view entity ZI_MM_FISCAL_ENTRADAS
   //and (_SchedLine.PurchasingDocumentItem = lpad(NFItem.PurchaseOrderItem, 6, '0') or _SchedLine.PurchasingDocumentItem2 = lpad(NFItem.PurchaseOrderItem, 6, '0'))
   //and _SchedLine.ScheduleLine           = '0001'
 
-    left outer join        ztsd_gp_mercador            as _regra_gp_mercador        on  _regra_gp_mercador.centro        = NFItem.Plant
+    left outer to one join        ztsd_gp_mercador            as _regra_gp_mercador        on  _regra_gp_mercador.centro        = NFItem.Plant
                                                                                     and _regra_gp_mercador.uf            = 'CE'
                                                                                     and _regra_gp_mercador.grpmercadoria = NFItem.MaterialGroup
 
-    left outer join        ztsd_material               as _regra_material           on  _regra_material.centro   = NFItem.Plant
+    left outer to one join        ztsd_material               as _regra_material           on  _regra_material.centro   = NFItem.Plant
                                                                                     and _regra_material.uf       = 'CE'
                                                                                     and _regra_material.material = NFItem.Material
 
@@ -63,19 +63,19 @@ define root view entity ZI_MM_FISCAL_ENTRADAS
 
     left outer to one join ZI_MM_FIS_ENT_BASE_INSS     as _baseInssNew              on  _baseInssNew.BR_NotaFiscal     = NFItem.BR_NotaFiscal
                                                                                     and _baseInssNew.BR_NotaFiscalItem = NFItem.BR_NotaFiscalItem
-    left outer join        ZI_MM_FIS_ENT_MONT_ST       as _montanteST               on  _montanteST.BR_NotaFiscal     = NFItem.BR_NotaFiscal
+    left outer to one join        ZI_MM_FIS_ENT_MONT_ST       as _montanteST               on  _montanteST.BR_NotaFiscal     = NFItem.BR_NotaFiscal
                                                                                     and _montanteST.BR_NotaFiscalItem = NFItem.BR_NotaFiscalItem
 
-    left outer join        ZI_MM_IMPOSTOS_TOTAL        as _totalImposto             on  _totalImposto.BR_NotaFiscal     = NFItem.BR_NotaFiscal
+    left outer to one join        ZI_MM_IMPOSTOS_TOTAL        as _totalImposto             on  _totalImposto.BR_NotaFiscal     = NFItem.BR_NotaFiscal
                                                                                     and _totalImposto.BR_NotaFiscalItem = NFItem.BR_NotaFiscalItem
-    left outer join        I_Supplier                  as _supplier                 on _supplier.Supplier = _Doc.parid
-    left outer join        I_Customer                  as _customer                 on _customer.Customer = _Doc.parid
+    left outer to one join        I_Supplier                  as _supplier                 on _supplier.Supplier = _Doc.parid
+    left outer to one join        I_Customer                  as _customer                 on _customer.Customer = _Doc.parid
 
     left outer to one join ZI_MM_IMPOSTOS_TOT_ICST     as _totICST                  on  _totICST.BR_NotaFiscal     = NFItem.BR_NotaFiscal
                                                                                     and _totICST.BR_NotaFiscalItem = NFItem.BR_NotaFiscalItem
-    left outer join        ZI_MM_LAST_CLSCONTAB        as _FltEKKN                  on  _FltEKKN.Pedido = NFItem.PurchaseOrder
+    left outer to one join        ZI_MM_LAST_CLSCONTAB        as _FltEKKN                  on  _FltEKKN.Pedido = NFItem.PurchaseOrder
                                                                                     and _FltEKKN.Item   = NFItem.PurchaseOrderItem
-    left outer join        ekkn                        as _Ekkn                     on  _Ekkn.ebeln = _FltEKKN.Pedido
+    left outer to one join        ekkn                        as _Ekkn                     on  _Ekkn.ebeln = _FltEKKN.Pedido
                                                                                     and _Ekkn.ebelp = _FltEKKN.ItemNconv
                                                                                     and _Ekkn.zekkn = _FltEKKN.Contador
 

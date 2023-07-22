@@ -158,12 +158,14 @@ CLASS zclmm_mod_req_compras IMPLEMENTATION.
     "    Validar exclusão e status ME
     INCLUDE zmmi_validate_delete_me IF FOUND.
 
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).              " INSERT - JWSILVA - 21.07.2023
+
     TRY.
-        NEW zclca_tabela_parametros( )->m_get_range( EXPORTING iv_modulo = lc_parametros-modulo
-                                                               iv_chave1 = lc_parametros-chave1
-                                                               iv_chave2 = lc_parametros-chave2
-                                                               iv_chave3 = lc_parametros-chave3
-                                                     IMPORTING et_range  = lr_ativo ).
+        lo_param->m_get_range( EXPORTING iv_modulo = lc_parametros-modulo   " CHANGE - JWSILVA - 21.07.2023
+                                         iv_chave1 = lc_parametros-chave1
+                                         iv_chave2 = lc_parametros-chave2
+                                         iv_chave3 = lc_parametros-chave3
+                               IMPORTING et_range  = lr_ativo ).
       CATCH zcxca_tabela_parametros.
     ENDTRY.
 

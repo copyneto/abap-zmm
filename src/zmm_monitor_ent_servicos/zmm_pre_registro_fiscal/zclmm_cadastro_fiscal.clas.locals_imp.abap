@@ -269,7 +269,9 @@ CLASS lcl_header IMPLEMENTATION.
       RESULT DATA(lt_items).
 
     TRY.
-        NEW zclca_tabela_parametros(  )->m_get_range(
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " CHANGE - JWSILVA - 21.07.2023
+
+        lo_param->m_get_range(                                          " CHANGE - JWSILVA - 21.07.2023
         EXPORTING
         iv_modulo = 'MM'
         iv_chave1 = 'TICKET_LOG'

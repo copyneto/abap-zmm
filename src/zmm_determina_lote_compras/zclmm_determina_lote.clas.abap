@@ -102,37 +102,34 @@ CLASS zclmm_determina_lote IMPLEMENTATION.
     " Ranges
     DATA: lr_lfart TYPE RANGE OF likp-lfart.
 
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
+
     " Obter os dados cadastrados na Tabela de Parámetros
     TRY.
-        NEW zclca_tabela_parametros( )->m_get_single( EXPORTING iv_modulo  = lc_modulo
-                                                                 iv_chave1 = lc_chave1
-                                                                 iv_chave2 = lc_chave2a
-                                                                 iv_chave3 = lc_chave3a
-                                                       IMPORTING ev_param  = lv_pstyp_p ).
+        lo_param->m_get_single( EXPORTING iv_modulo  = lc_modulo    " CHANGE - JWSILVA - 21.07.2023
+                                          iv_chave1 = lc_chave1
+                                          iv_chave2 = lc_chave2a
+                                          iv_chave3 = lc_chave3a
+                                IMPORTING ev_param  = lv_pstyp_p ).
 
       CATCH zcxca_tabela_parametros.
     ENDTRY.
 
     TRY.
-        NEW zclca_tabela_parametros( )->m_get_single( EXPORTING iv_modulo  = lc_modulo
-                                                                 iv_chave1 = lc_chave1
-                                                                 iv_chave2 = lc_chave2b
-                                                                 iv_chave3 = lc_chave3b
-                                                       IMPORTING ev_param  = lv_bwart_p ).
+        lo_param->m_get_single( EXPORTING iv_modulo  = lc_modulo    " CHANGE - JWSILVA - 21.07.2023
+                                          iv_chave1 = lc_chave1
+                                          iv_chave2 = lc_chave2b
+                                          iv_chave3 = lc_chave3b
+                                IMPORTING ev_param  = lv_bwart_p ).
 
       CATCH zcxca_tabela_parametros.
     ENDTRY.
 
     TRY.
-*        NEW zclca_tabela_parametros( )->m_get_single( EXPORTING iv_modulo  = lc_modtm
-*                                                                 iv_chave1 = lc_chavetm1
-*                                                                 iv_chave2 = lc_chavetm1
-*                                                       IMPORTING ev_param  = lv_lfart ).
-
-        NEW zclca_tabela_parametros( )->m_get_range( EXPORTING iv_modulo = lc_modtm
-                                                               iv_chave1 = lc_chavetm1
-                                                               iv_chave2 = lc_chavetm2
-                                                     IMPORTING et_range  = lr_lfart ).
+        lo_param->m_get_range( EXPORTING iv_modulo = lc_modtm       " CHANGE - JWSILVA - 21.07.2023
+                                         iv_chave1 = lc_chavetm1
+                                         iv_chave2 = lc_chavetm2
+                               IMPORTING et_range  = lr_lfart ).
 
       CATCH zcxca_tabela_parametros. " Classe de exceção Tabela de Parâmetros
     ENDTRY.

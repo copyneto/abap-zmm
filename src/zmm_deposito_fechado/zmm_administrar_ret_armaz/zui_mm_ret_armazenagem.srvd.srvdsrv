@@ -9,4 +9,5 @@ define service ZUI_MM_RET_ARMAZENAGEM {
   expose ZI_CA_VH_VSBED;
   expose ZI_CA_VH_VSART;
   expose ZI_MM_VH_DF_MODALIDADE_FRETE;
+  expose ZI_MM_ADMINISTRAR_PARAM_LINHAS as Limitador;
 }

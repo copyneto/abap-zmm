@@ -78,8 +78,9 @@ CLASS ZCLMM_LIBPG_GRVDE_OP IMPLEMENTATION.
   METHOD get_parameter.
 
     TRY.
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
 
-        NEW zclca_tabela_parametros( )->m_get_range(
+        lo_param->m_get_range(                                          " CHANGE - JWSILVA - 21.07.2023
           EXPORTING
             iv_modulo = iv_modulo
             iv_chave1 = iv_chave1

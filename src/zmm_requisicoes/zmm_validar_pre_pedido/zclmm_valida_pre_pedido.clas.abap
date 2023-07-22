@@ -187,7 +187,7 @@ CLASS zclmm_valida_pre_pedido IMPLEMENTATION.
 
       ENDIF.
 
-      DATA(lo_parametro) = NEW  zclca_tabela_parametros( ).
+      DATA(lo_parametro) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
       DO 2 TIMES.
 

@@ -388,7 +388,7 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
 
   METHOD set_param_cond.
 
-     DATA(lo_param) = NEW zclca_tabela_parametros( ).
+     DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
     TRY.
         lo_param->m_get_single(
           EXPORTING
@@ -486,7 +486,7 @@ CLASS ZCLMM_CREATE_NF IMPLEMENTATION.
     DATA(lv_chave3) = COND #( WHEN iv_etapa = gc_data-etapa_3_nf_sai THEN gc_data-chave3_saida
                               WHEN iv_etapa = gc_data-etapa_5_nf_ent THEN gc_data-chave3_entrada ).
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
         lo_param->m_get_single(

@@ -42,7 +42,7 @@ CLASS zclsd_calc_reemb_ent IMPLEMENTATION.
     lt_original_data = CORRESPONDING #( it_original_data ).
     CHECK lt_original_data IS NOT INITIAL.
 
-    DATA(lo_parametros) = NEW zclca_tabela_parametros( ).
+    DATA(lo_parametros) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
         lo_parametros->m_get_range(

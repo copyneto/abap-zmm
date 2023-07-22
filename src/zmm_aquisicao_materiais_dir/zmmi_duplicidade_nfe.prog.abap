@@ -53,7 +53,7 @@ AND is_header-direct EQ 1.
       IF lv_storno IS INITIAL.
 
         TRY.
-            NEW zclca_tabela_parametros( )->m_get_range(
+            zclca_tabela_parametros=>get_instance( )->m_get_range( " CHANGE - LSCHEPP - 20.07.2023
                EXPORTING
                  iv_modulo = lc_modulo
                  iv_chave1 = lc_chave1

@@ -710,7 +710,7 @@ CLASS ZCLMM_REC_SOLICITACAO IMPLEMENTATION.
 
     DATA lv_type  TYPE ze_param_low.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     me->tabela_param(
     EXPORTING
@@ -752,7 +752,7 @@ CLASS ZCLMM_REC_SOLICITACAO IMPLEMENTATION.
           ls_wmara TYPE mara,
           lv_aufnr TYPE aufnr.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     me->tabela_param( EXPORTING iv_modulo = gc_solicita-modulo
                                 iv_chave1 = gc_solicita-chave1_o
@@ -1256,7 +1256,7 @@ CLASS ZCLMM_REC_SOLICITACAO IMPLEMENTATION.
 
     DATA: lv_mess   TYPE ze_param_low.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     me->tabela_param(
     EXPORTING
@@ -1362,7 +1362,7 @@ CLASS ZCLMM_REC_SOLICITACAO IMPLEMENTATION.
 
   METHOD tabela_param.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
 

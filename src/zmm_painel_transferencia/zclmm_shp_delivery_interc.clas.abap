@@ -304,7 +304,17 @@ CLASS ZCLMM_SHP_DELIVERY_INTERC IMPLEMENTATION.
 
 
   METHOD if_ex_le_shp_delivery_proc~save_document_prepare.
-    RETURN.
+
+    FIELD-SYMBOLS <fs_bloqueio> TYPE lifsk.
+    ASSIGN ('(SAPLZFGSD_COCKPIT_FATURAMENTO)GV_BLOQUEIO') TO <fs_bloqueio>.
+    IF <fs_bloqueio> IS ASSIGNED AND <fs_bloqueio> IS NOT INITIAL.
+      LOOP AT ct_xlikp ASSIGNING FIELD-SYMBOL(<fs_xlikp>).
+        <fs_xlikp>-lifsk = <fs_bloqueio>.
+      ENDLOOP.
+    ELSE.
+      RETURN.
+    ENDIF.
+
   ENDMETHOD.
 
 

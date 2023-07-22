@@ -390,8 +390,9 @@ CLASS ZCLMM_ARM_CAFE IMPLEMENTATION.
     DATA: lt_param TYPE STANDARD TABLE OF ztca_param_val.
 
     TRY.
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " CHANGE - JWSILVA - 21.07.2023
 
-        NEW zclca_tabela_parametros(  )->m_get_range(
+        lo_param->m_get_range(                                          " CHANGE - JWSILVA - 21.07.2023
          EXPORTING
          iv_modulo = gc_values-modulo
          iv_chave1 = gc_values-ch1

@@ -688,7 +688,7 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
     FREE et_value.
 
     TRY.
-        DATA(lo_param) = NEW zclca_tabela_parametros( ).
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
         " Recupera valor único
         IF ev_value IS SUPPLIED.

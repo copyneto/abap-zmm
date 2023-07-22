@@ -2427,7 +2427,7 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
       FROM ztsd_intercompan
       FOR ALL ENTRIES IN @lt_nflin_conv
       WHERE ( processo EQ '1' ) "    OR processo NE '' )     " Transferência entre centros
-**        AND ( tipooperacao  EQ 'TRA2' OR tipooperacao NE '' ) " Depósito Fechado
+        AND ( tipooperacao  EQ 'TRA2' OR tipooperacao NE '' ) " Depósito Fechado
         AND purchaseorder EQ @lt_nflin_conv-purchaseorder
       INTO TABLE @DATA(lt_intercompany).
     IF sy-subrc NE 0.
@@ -2436,7 +2436,7 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
 
       TRY.
           DATA(lv_purord) = lt_nflin_conv[ 1 ]-purchaseorder.
-          DATA(lo_param) = NEW zclca_tabela_parametros( ).
+          DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
           lo_param->m_get_range( EXPORTING iv_modulo = lc_param_df-modulo
                                            iv_chave1 = lc_param_df-chave1
                                            iv_chave2 = lc_param_df-excecao
@@ -2594,9 +2594,12 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
 
     DATA(ls_pedido) = is_item.
 
+    DATA(lv_cond_value) =  ls_pedido-cond_value.
 
     LOOP AT it_lips ASSIGNING FIELD-SYMBOL(<fs_lips_aux>).
       CHECK <fs_lips_aux>-uecha = ls_pedido-posnr. "itens com partição de lote
+
+      CLEAR:  ls_pedido-cond_value.
 
       ls_pedido-charg = <fs_lips_aux>-charg.
       ls_pedido-bwtar = <fs_lips_aux>-bwtar.
@@ -2604,10 +2607,11 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
       ls_pedido-vrkme = <fs_lips_aux>-vrkme.
 
       IF <fs_lips_aux>-lfimg IS NOT INITIAL.
-        ls_pedido-cond_value = ls_pedido-cond_value / <fs_lips_aux>-lfimg.
+        ls_pedido-cond_value = lv_cond_value / <fs_lips_aux>-lfimg.
       ENDIF.
 
       APPEND ls_pedido TO rv_result.
+
     ENDLOOP.
 
   ENDMETHOD.
@@ -3198,7 +3202,7 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
 *      AND ( ls_transf-tipooperacao  EQ 'TRA2' OR ls_transf-tipooperacao IS NOT INITIAL ).
 
         TRY.
-            DATA(lo_param) = NEW zclca_tabela_parametros( ).
+            DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
             lo_param->m_get_range( EXPORTING iv_modulo = lc_param_df-modulo
                                              iv_chave1 = lc_param_df-chave1
                                              iv_chave2 = lc_param_df-excecao

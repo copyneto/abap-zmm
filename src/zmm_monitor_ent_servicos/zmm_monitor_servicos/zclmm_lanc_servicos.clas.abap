@@ -1010,7 +1010,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
     DATA lt_ncm_redbase TYPE rsis_t_range.
 
     TRY.
-        DATA(lo_param) = NEW zclca_tabela_parametros( ).
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
         lo_param->m_get_range(
           EXPORTING
             iv_modulo = gc_param_module
@@ -1615,7 +1615,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
       INTO TABLE @DATA(lt_category).
 
     TRY.
-        DATA(lo_param) = NEW zclca_tabela_parametros( ).
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
         lo_param->m_get_range(
           EXPORTING
             iv_modulo = gc_param_module

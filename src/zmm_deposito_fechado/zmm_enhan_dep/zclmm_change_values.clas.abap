@@ -220,8 +220,9 @@ CLASS ZCLMM_CHANGE_VALUES IMPLEMENTATION.
   METHOD select_parameter.
 
     TRY.
+        DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
 
-        NEW zclca_tabela_parametros( )->m_get_single(
+        lo_param->m_get_single(                                         " CHANGE - JWSILVA - 21.07.2023
         EXPORTING
             iv_modulo = iv_mod
             iv_chave1 = iv_c1
@@ -305,8 +306,9 @@ CLASS ZCLMM_CHANGE_VALUES IMPLEMENTATION.
     IF sy-subrc EQ 0.
 
       TRY.
+          DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
 
-          NEW zclca_tabela_parametros( )->m_get_range(
+          lo_param->m_get_range(                                          " CHANGE - JWSILVA - 21.07.2023
           EXPORTING
               iv_modulo = gc_value-mm
               iv_chave1 = gc_value-parc

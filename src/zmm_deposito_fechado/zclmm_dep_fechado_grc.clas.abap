@@ -656,7 +656,7 @@ EV_PROCTYP = IV_PROCTYP.
       WHERE vbeln = @lt_ordem-kdauf_sd
       INTO TABLE @DATA(lt_vbap).
 
-            DATA(lo_param) = NEW zclca_tabela_parametros( ).
+            DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
             TRY.
                 lo_param->m_get_range(

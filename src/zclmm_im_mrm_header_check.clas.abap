@@ -42,7 +42,7 @@ CLASS zclmm_im_mrm_header_check IMPLEMENTATION.
     DATA:
       lr_kschl TYPE RANGE OF konv-kschl.
 
-    DATA(lo_parametros) = NEW zclca_tabela_parametros( ).
+    DATA(lo_parametros) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
         CALL METHOD lo_parametros->(lc_get_range)

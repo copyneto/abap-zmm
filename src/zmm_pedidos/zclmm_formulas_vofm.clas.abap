@@ -220,7 +220,7 @@ CLASS zclmm_formulas_vofm IMPLEMENTATION.
 
     DATA lr_bsart TYPE RANGE OF bsart.
 
-    DATA(lo_param) = NEW zclca_tabela_parametros( ).
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
         lo_param->m_get_range( EXPORTING iv_modulo = gc_modulo

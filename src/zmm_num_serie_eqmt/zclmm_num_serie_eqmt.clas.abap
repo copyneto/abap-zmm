@@ -35,12 +35,14 @@ CLASS zclmm_num_serie_eqmt IMPLEMENTATION.
 
     DATA: lr_bwart TYPE RANGE OF ser03-bwart.
 
+    DATA(lo_param) = zclca_tabela_parametros=>get_instance( ).      " INSERT - JWSILVA - 21.07.2023
+
     TRY.
-        NEW zclca_tabela_parametros( )->m_get_range( EXPORTING iv_modulo = lc_modulo
-                                                               iv_chave1 = lc_chave1
-                                                               iv_chave2 = lc_chave2
-                                                               iv_chave3 = lc_bwart
-                                                     IMPORTING et_range  = lr_bwart ).
+        lo_param->m_get_range( EXPORTING iv_modulo = lc_modulo      " CHANGE - JWSILVA - 21.07.2023
+                                         iv_chave1 = lc_chave1
+                                         iv_chave2 = lc_chave2
+                                         iv_chave3 = lc_bwart
+                               IMPORTING et_range  = lr_bwart ).
       CATCH zcxca_tabela_parametros.
     ENDTRY.
 

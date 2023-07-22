@@ -39,7 +39,7 @@ CLASS ZCLMM_SAGA_ATUALIZ_HIERARQUIA IMPLEMENTATION.
 
     IF sy-subrc IS INITIAL.
 
-      DATA(lo_params) = NEW zclca_tabela_parametros( ).
+      DATA(lo_params) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
       TRY.
           lo_params->m_get_range( EXPORTING iv_modulo = 'MM'

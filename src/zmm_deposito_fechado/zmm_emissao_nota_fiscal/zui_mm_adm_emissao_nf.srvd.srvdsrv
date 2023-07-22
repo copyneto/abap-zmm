@@ -3,4 +3,5 @@ define service ZUI_MM_ADM_EMISSAO_NF {
   expose ZC_MM_ADMINISTRAR_EMISSAO_NF as Emissao;
   expose ZC_MM_ADMINISTRAR_SERIE as Serie;
   expose ZC_MM_ADMINISTRAR_MSG as Mensagem;
+  expose ZI_MM_ADMINISTRAR_PARAM_LINHAS as Limitador;
 }

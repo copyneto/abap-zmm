@@ -96,7 +96,7 @@ CLASS zclmm_cancelar_item_req IMPLEMENTATION.
           lr_mensagem TYPE RANGE OF char50,
           lv_data     TYPE dats.
 
-    DATA(lo_parametros) = NEW zclca_tabela_parametros( ).
+    DATA(lo_parametros) = zclca_tabela_parametros=>get_instance( ).    " CHANGE - JWSILVA - 21.07.2023
 
     TRY.
 
