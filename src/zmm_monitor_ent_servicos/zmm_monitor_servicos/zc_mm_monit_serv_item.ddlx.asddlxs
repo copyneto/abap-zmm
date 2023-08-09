@@ -38,6 +38,8 @@ annotate entity ZC_MM_MONIT_SERV_ITEM with
   Filial;
   @UI.hidden: true
   Lifnr;
+//  @UI.hidden: true
+//  NrNf2;
   @UI.hidden: true
   NrNf;
   @UI: { lineItem:        [ { position: 20 } ],

@@ -48,7 +48,9 @@ annotate entity ZC_MM_CADASTRO_FISCAL_CABEC with
   @UI: { lineItem: [{ position: 30 }], identification: [{ position: 30}], selectionField: [{ position: 30 }] }
   Lifnr;
   @UI: { lineItem: [{ position: 40 }], identification: [{ position: 40}], selectionField: [{ position: 40 }] }
-  NrNf;
+   NrNf;
+// @UI.hidden: true
+//  NrNf2;
   @UI: { lineItem: [{ position: 50 }], identification: [{ position: 50}], selectionField: [{ position: 50 }] }
   Pedido;
   @UI: { lineItem: [{ position: 60 }], identification: [{ position: 60}] }

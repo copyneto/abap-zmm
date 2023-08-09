@@ -1,13 +1,9 @@
 FUNCTION zfmmm_update_status_me.
 *"----------------------------------------------------------------------
 *"*"Interface local:
-*"  TABLES
-*"      IT_REQ STRUCTURE  ZSMM_REQ
+*"  IMPORTING
+*"     VALUE(IT_REQ) TYPE  ZCTGMM_ENVIO_REQ
 *"----------------------------------------------------------------------
-  " Esse processo foi desenvolvido porque quando é aprovado o item da requisição via workflow a
-  " sessão fica presa por alguns segundos, dependendo da quantidade de itens aprovados naquele momento,
-  " com isso não é possivel fazer nenhum atualização na tabela EBAN
-
   CONSTANTS gc_m TYPE c VALUE 'M' ##NO_TEXT.
 
   DATA: lt_xeban TYPE STANDARD TABLE OF ueban,
@@ -15,74 +11,55 @@ FUNCTION zfmmm_update_status_me.
         lt_xebkn TYPE STANDARD TABLE OF uebkn,
         lt_yebkn TYPE STANDARD TABLE OF uebkn.
 
-  IF it_req[] IS NOT INITIAL.
 
-    " Registros a integrar
-*    SELECT a~* FROM eban AS a
-*    INNER JOIN mara AS b
-*    ON a~matnr = b~matnr
-*    FOR ALL ENTRIES IN @it_req
-*    WHERE banfn = @it_req-banfn
-*      AND bnfpo = @it_req-bnfpo
-*      AND zz1_statu <> 'C'
-*      AND loekz = ''
-*      INTO CORRESPONDING FIELDS OF TABLE @lt_xeban.
+  CHECK it_req IS NOT INITIAL.
 
-*    IF sy-subrc EQ 0.
+  DATA(lt_req) = it_req.
+*VALUE zclmm_send_req=>tt_req_att( FOR ls_req IN it_req
+*                                 let ls_base = VALUE ztmm_envio_req( status = gc_m )
+*                                 IN ( CORRESPONDING #( BASE ( ls_req )  ls_base ) ) ).
 
-    " Registros integrados
+  LOOP AT lt_req ASSIGNING FIELD-SYMBOL(<fs_req>).
+    <fs_req>-status = gc_m .
+  ENDLOOP.
 
-    SELECT a~* FROM eban AS a
-    INNER JOIN ztmm_envio_req AS b
-      ON  a~banfn = b~doc_sap
-      AND a~bnfpo = b~doc_item
-      AND a~zz1_statu <> 'C'
-      AND a~loekz      = ''
-    FOR ALL ENTRIES IN @it_req
-    WHERE b~doc_sap = @it_req-banfn
-      AND b~data_i IS NOT INITIAL
-      APPENDING CORRESPONDING FIELDS OF TABLE @lt_xeban.
+  " Atualizar tabela controle requisições ME - Integrados
+  SORT lt_req BY doc_item ASCENDING.
+  UPDATE ztmm_envio_req FROM TABLE lt_req.
 
-*    DELETE ADJACENT DUPLICATES FROM lt_xeban COMPARING banfn bnfpo.
-
-    lt_yeban = lt_xeban.
-
-    LOOP AT lt_xeban ASSIGNING FIELD-SYMBOL(<fs_eban>).
-      <fs_eban>-zz1_statu = gc_m .
-      <fs_eban>-kz        = 'U'.
-    ENDLOOP.
-
-    DO 500 TIMES.
-
-      CALL FUNCTION 'ME_UPDATE_REQUISITION'
-        TABLES
-          xeban = lt_xeban
-          xebkn = lt_xebkn
-          yeban = lt_yeban
-          yebkn = lt_yebkn.
-
-      CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
-        EXPORTING
-          wait = abap_true.
-
-      WAIT UP TO 1 SECONDS.
-
-      SELECT COUNT( * ) FROM eban
-      FOR ALL ENTRIES IN @lt_xeban
-      WHERE banfn     = @lt_xeban-banfn
-        AND bnfpo     = @lt_xeban-bnfpo
-        AND zz1_statu = @gc_m
-      INTO @DATA(lv_qtd).
-
-      IF lv_qtd EQ lines( lt_xeban ).
-        EXIT.
-      ENDIF.
-
-    ENDDO.
-
+  IF sy-subrc EQ 0.
+    COMMIT WORK.
   ENDIF.
 
-*  ENDIF.
+  " Atualizar campo status - Integrado
+  IF lt_req IS NOT INITIAL.
+    SELECT * FROM eban
+    FOR ALL ENTRIES IN @lt_req
+    WHERE banfn  = @lt_req-doc_sap
+      AND bnfpo = @lt_req-doc_item
+      AND zz1_statu <> 'C'
+      AND loekz      = ''
+      APPENDING  TABLE @lt_xeban.
+  ENDIF.
 
+  CHECK lt_xeban IS NOT INITIAL.
+
+  lt_yeban = lt_xeban.
+
+  LOOP AT lt_xeban ASSIGNING FIELD-SYMBOL(<fs_eban>).
+    <fs_eban>-zz1_statu = gc_m .
+    <fs_eban>-kz        = 'U'.
+  ENDLOOP.
+
+  CALL FUNCTION 'ME_UPDATE_REQUISITION'
+    TABLES
+      xeban = lt_xeban
+      xebkn = lt_xebkn
+      yeban = lt_yeban
+      yebkn = lt_yebkn.
+
+  CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+    EXPORTING
+      wait = abap_true.
 
 ENDFUNCTION.

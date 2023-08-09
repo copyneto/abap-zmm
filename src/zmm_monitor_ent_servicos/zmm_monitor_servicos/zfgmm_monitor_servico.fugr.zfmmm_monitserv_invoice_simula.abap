@@ -28,6 +28,8 @@ FUNCTION zfmmm_monitserv_invoice_simula.
   DATA lv_buzei       TYPE bseg-buzei.
   DATA lt_accountingdata TYPE TABLE OF bapi_incinv_create_account.
 
+  CONSTANTS:  lc_5 TYPE i VALUE '5'.
+
   FIELD-SYMBOLS:
     <fs_xaccit> TYPE accit,
     <fs_xacccr> TYPE acccr,
@@ -94,7 +96,7 @@ FUNCTION zfmmm_monitserv_invoice_simula.
 
   ENDIF.
 
-  SELECT ebeln, ebelp, zekkn, menge, sakto, anln1, gsber, kokrs
+  SELECT ebeln, ebelp, zekkn, menge, sakto, anln1, gsber, kokrs, kostl, aufnr, ps_psp_pnr, fistl, fkber, prctr
       FROM ekkn
       FOR ALL ENTRIES IN @ct_itemdata
       WHERE ebeln = @ct_itemdata-po_number
@@ -109,17 +111,15 @@ FUNCTION zfmmm_monitserv_invoice_simula.
   LOOP AT ct_itemdata INTO DATA(ls_itemdata).
 
     READ TABLE lt_pursh INTO DATA(ls_pursh) WITH KEY purchaseorder = ls_itemdata-po_number
-                                                    purchaseorderitem = ls_itemdata-po_item
-                                                    BINARY SEARCH.
+                                                    purchaseorderitem = ls_itemdata-po_item..
     IF sy-subrc IS INITIAL.
 
-      IF ls_pursh-consumptionposting = 'A'.
+      IF ls_pursh-consumptionposting = 'A' OR ls_pursh-consumptionposting = 'V'.
 
         READ TABLE lt_ekkn WITH KEY ebeln = ls_itemdata-po_number
                                     ebelp = ls_itemdata-po_item
-                                    BINARY SEARCH
                                     TRANSPORTING NO FIELDS.
-        CHECK sy-subrc IS INITIAL.
+
         LOOP AT lt_ekkn ASSIGNING FIELD-SYMBOL(<fs_ekkn>) FROM sy-tabix.
 
           IF <fs_ekkn>-ebeln <> ls_itemdata-po_number
@@ -135,7 +135,7 @@ FUNCTION zfmmm_monitserv_invoice_simula.
                                                                   serial_no = <fs_ekkn>-zekkn
                                                                   tax_code = ls_pursh-taxcode
                                                                   taxjurcode = ls_pursh-taxjurisdiction
-                                                                  item_amount = ls_pursh-netpriceamount
+                                                                  item_amount = ls_pursh-netpriceamount * <fs_ekkn>-menge
                                                                   quantity = <fs_ekkn>-menge
                                                                   po_unit = ls_pursh-purchaseorderquantityunit
                                                                   po_unit_iso = ls_t006-isocode
@@ -146,13 +146,25 @@ FUNCTION zfmmm_monitserv_invoice_simula.
                                                                   asset_no = <fs_ekkn>-anln1
                                                                   cmmt_item = <fs_ekkn>-sakto
                                                                   bus_area = <fs_ekkn>-gsber
-                                                                  co_area = <fs_ekkn>-kokrs                         ) ).
+                                                                  co_area = <fs_ekkn>-kokrs
+                                                                  costcenter = <fs_ekkn>-kostl
+                                                                  funds_ctr = <fs_ekkn>-fistl
+                                                                  func_area = <fs_ekkn>-fkber
+                                                                  profit_ctr = <fs_ekkn>-prctr
+                                                                  orderid =  COND #( WHEN ls_pursh-consumptionposting = 'V' OR ls_pursh-consumptionposting = 'A' THEN <fs_ekkn>-aufnr )
+                                                                  wbs_elem = COND #( WHEN ls_pursh-consumptionposting = 'V' OR ls_pursh-consumptionposting = 'A' THEN <fs_ekkn>-ps_psp_pnr ) ) ).
           ENDIF.
         ENDLOOP.
       ENDIF.
     ENDIF.
 
   ENDLOOP.
+
+  DATA(lv_posi_t) = strlen( is_headerdata-ref_doc_no ).
+  IF lv_posi_t > lc_5.
+    DATA(lv_rest) = lv_posi_t - 6.
+    is_headerdata-ref_doc_no = is_headerdata-ref_doc_no+lv_rest(6).
+  ENDIF.
 
   IF  lt_accountingdata[] IS NOT INITIAL.
 

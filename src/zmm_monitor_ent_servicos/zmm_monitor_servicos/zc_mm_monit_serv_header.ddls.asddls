@@ -21,6 +21,7 @@ define root view entity ZC_MM_MONIT_SERV_HEADER
   key NrNf,
       @EndUserText.label: 'CNPJ/CPF'
       CnpjCpf,
+//      NrNf2,
       //      @EndUserText.label: 'Razão Social'
       //      RazSocial,
       @EndUserText.label: 'Data de Emissão'

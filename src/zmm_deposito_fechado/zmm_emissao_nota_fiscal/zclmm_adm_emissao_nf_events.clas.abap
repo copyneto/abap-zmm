@@ -2550,7 +2550,61 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
         SORT et_historico BY guid material plant batch storage_location plant_dest storage_location_dest freight_order_id delivery_document process_step guid.
       ENDIF.
 
-      lt_key = et_historico.
+*      lt_key = et_historico.
+
+    ENDIF.
+
+    IF et_historico IS NOT INITIAL.
+
+      DATA(lt_historico) = et_historico[].
+
+      DELETE lt_historico WHERE out_delivery_document IS INITIAL.
+      SORT lt_historico BY out_delivery_document.
+      DELETE ADJACENT DUPLICATES FROM lt_historico COMPARING out_delivery_document.
+
+      IF lt_historico[] IS NOT INITIAL.
+
+        SELECT vbeln
+          FROM likp
+           FOR ALL ENTRIES IN @lt_historico
+         WHERE vbeln = @lt_historico-out_delivery_document
+          INTO TABLE @DATA(lt_likp_conf).
+
+        IF sy-subrc IS INITIAL.
+          SORT lt_likp_conf BY vbeln.
+        ENDIF.
+      ENDIF.
+
+      FREE: lt_historico[].
+
+      LOOP AT et_historico ASSIGNING FIELD-SYMBOL(<fs_historico>).
+
+        IF <fs_historico>-out_delivery_document IS INITIAL.
+
+          APPEND <fs_historico> TO lt_historico.
+
+        ELSE.
+
+          READ TABLE lt_likp_conf TRANSPORTING NO FIELDS
+                                                WITH KEY vbeln = <fs_historico>-out_delivery_document
+                                                BINARY SEARCH.
+          IF sy-subrc IS INITIAL.
+
+            APPEND <fs_historico> TO lt_historico.
+
+          ENDIF.
+        ENDIF.
+
+      ENDLOOP.
+
+      IF iv_status IS NOT INITIAL AND lt_key IS INITIAL.
+
+        lt_key = lt_historico.
+
+      ENDIF.
+
+      et_historico[] = lt_historico[].
+
     ENDIF.
 
 * ---------------------------------------------------------------------------
@@ -2736,14 +2790,14 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
              lips~bwtar
         FROM lips
         LEFT OUTER JOIN likp
-            ON likp~vbeln = lips~vbeln
+                     ON likp~vbeln = lips~vbeln
         LEFT OUTER JOIN j_1batl4a
-            ON j_1batl4a~taxlaw = lips~j_1btaxlw4
+                     ON j_1batl4a~taxlaw = lips~j_1btaxlw4
         LEFT OUTER JOIN j_1batl5
-            ON j_1batl5~taxlaw = lips~j_1btaxlw5
+                     ON j_1batl5~taxlaw = lips~j_1btaxlw5
         INTO TABLE @et_lips
-        FOR ALL ENTRIES IN @lt_lips_key
-        WHERE lips~vbeln = @lt_lips_key-vbeln.
+         FOR ALL ENTRIES IN @lt_lips_key
+       WHERE lips~vbeln = @lt_lips_key-vbeln.
 
       IF sy-subrc NE 0.
         FREE et_lips.
@@ -2780,14 +2834,14 @@ CLASS ZCLMM_ADM_EMISSAO_NF_EVENTS IMPLEMENTATION.
              ekpo~netpr,
              ekpo~peinh
         FROM eket
-        INNER JOIN ekko
-            ON  ekko~ebeln = eket~ebeln
-        INNER JOIN ekpo
-            ON  ekpo~ebeln = ekpo~ebeln
-            AND ekpo~ebelp = ekpo~ebelp
+       INNER JOIN ekko
+               ON ekko~ebeln = eket~ebeln
+       INNER JOIN ekpo
+               ON ekpo~ebeln = eket~ebeln
+              AND ekpo~ebelp = eket~ebelp
         INTO TABLE @et_eket
-        FOR ALL ENTRIES IN @lt_eket_key
-        WHERE eket~ebeln = @lt_eket_key-ebeln.
+         FOR ALL ENTRIES IN @lt_eket_key
+       WHERE eket~ebeln = @lt_eket_key-ebeln.
 
       IF sy-subrc NE 0.
         FREE et_eket.

@@ -23,7 +23,7 @@
 
  DATA: lv_ativo TYPE char1.
 
- DATA(lo_object) = NEW zclca_tabela_parametros( ).
+ DATA(lo_object) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
  TRY.
      lo_object->m_get_single( EXPORTING iv_modulo = lc_modulo

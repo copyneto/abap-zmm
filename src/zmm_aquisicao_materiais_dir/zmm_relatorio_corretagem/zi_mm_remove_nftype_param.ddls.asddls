@@ -16,6 +16,9 @@ define view entity ZI_MM_REMOVE_NFTYPE_PARAM
 
     inner join      C_BR_VerifyNotaFiscal          as _VERIFYnf   on  _NFITEMDOC.BR_NotaFiscal  = _VERIFYnf.BR_NotaFiscal
                                                                   and _VERIFYnf.BR_NFIsCanceled = ''
+    inner join      j_1bnfdoc                      as _doc        on  _doc.docnum =  _NFITEMDOC.BR_NotaFiscal
+                                                                  and _doc.cancel <> 'X'
+                                                                  and _doc.doctyp <> '5'
     inner join      ZI_MM_CALC_VAL_CORRETAGEM      as _calcvlrcor on  _purgdoc.DocumentoCompra = _calcvlrcor.DocumentoCompra
                                                                   and _NFITEMDOC.BR_NotaFiscal = _calcvlrcor.Docnum
   //left outer

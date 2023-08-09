@@ -6,14 +6,15 @@
    lc_mm     TYPE ztca_param_par-modulo VALUE 'MM',
    lc_nftot  TYPE ztca_param_par-chave1 VALUE 'NF_TOTAL_VALUE',
    lc_zfcp   TYPE j_1bnfstx-taxtyp      VALUE 'ZFCP',
-   lc_taxtyp TYPE ztca_param_par-chave2 VALUE 'FCP1'.
+   lc_taxtyp TYPE ztca_param_par-chave2 VALUE 'FCP1',
+   lc_6      TYPE i VALUE '6'.
 
  DATA lr_nftype_cte TYPE RANGE OF j_1bnfdoc-nftype.
  DATA lr_cond_icms  TYPE RANGE OF j_1bnfstx-taxtyp.
  DATA lv_ebeln      TYPE eslh-ebeln.
  DATA lv_ebelp      TYPE eslh-ebelp.
 
- DATA(lo_nftype_cte) = NEW zclca_tabela_parametros( ).
+ DATA(lo_nftype_cte) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
  TRY.
      lo_nftype_cte->m_get_range(
@@ -38,7 +39,12 @@
  ENDTRY.
 
  lv_ebeln = nf_item-xped(10).
- lv_ebelp = nf_item-nitemped(5).
+ DATA(lv_lines) = strlen( nf_item-nitemped ).
+ IF lv_lines EQ lc_6 .
+   lv_ebelp = nf_item-nitemped+1(5).
+ ELSE.
+   lv_ebelp = nf_item-nitemped(5).
+ ENDIF.
 
  SELECT packno, ebeln, ebelp
    FROM eslh
@@ -75,13 +81,12 @@
        SELECT *
        FROM a003
        INTO TABLE @DATA(lt_a003)
-       FOR ALL ENTRIES IN @lt_esll
+       FOR ALL ENTRIES IN @lt_esll_aux
       WHERE kappl = 'TX'
-        AND mwskz = @lt_esll-mwskz
+        AND mwskz = @lt_esll_aux-mwskz
         AND kschl = @lc_zfcp
            .
      ENDIF.
-
    ENDIF.
  ELSE.
 
@@ -130,5 +135,4 @@
 
      ENDLOOP.
    ENDIF.
-
  ENDIF.

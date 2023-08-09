@@ -27,7 +27,7 @@ FUNCTION zfmsd_saga_remessa.
 
   IF is_header-code EQ lc_parametro-v100.
 
-    DATA(lo_tabela_parametros_vstel) = NEW zclca_tabela_parametros( ).
+    DATA(lo_tabela_parametros_vstel) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
     TRY.
         lo_tabela_parametros_vstel->m_get_range(

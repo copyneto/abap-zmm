@@ -110,17 +110,35 @@
      <FUNCNAME>ZFMMM_UPDATE_STATUS_ME</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Atualizar campo de integração ME</SHORT_TEXT>
-     <TABLES>
-      <RSTBL>
+     <IMPORT>
+      <RSIMP>
        <PARAMETER>IT_REQ</PARAMETER>
-       <DBSTRUCT>ZSMM_REQ</DBSTRUCT>
-      </RSTBL>
-     </TABLES>
+       <TYP>ZCTGMM_ENVIO_REQ</TYP>
+      </RSIMP>
+     </IMPORT>
      <DOCUMENTATION>
       <RSFDO>
        <PARAMETER>IT_REQ</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Estrutur requisição</STEXT>
+       <STEXT>Requisições ME</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMMM_VALIDATE_STATUSME</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Atualiza status requisições bloqueadas</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_BANFN</PARAMETER>
+       <TYP>BANFN</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_BANFN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº requisição de compra</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

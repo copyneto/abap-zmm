@@ -24,7 +24,7 @@ ENDCLASS.
 
 
 
-CLASS zclmm_change_cfop IMPLEMENTATION.
+CLASS ZCLMM_CHANGE_CFOP IMPLEMENTATION.
 
 
   METHOD change_cfop.
@@ -271,6 +271,8 @@ CLASS zclmm_change_cfop IMPLEMENTATION.
           IF sy-subrc NE 0.
             RETURN.
           ENDIF.
+        ELSE.
+          RETURN.
         ENDIF.
       ELSE.
         CALL FUNCTION 'J_1B_NF_PARTNER_READ'

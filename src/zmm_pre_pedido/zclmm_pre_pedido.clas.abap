@@ -99,7 +99,12 @@ CLASS zclmm_pre_pedido DEFINITION
     "! Validate registers M.E
     METHODS validate_reg
       RAISING
-        !zcxmm_erro_interface_mes .
+        zcxmm_erro_interface_mes .
+    "! Deletar pedido
+    METHODS release_delete
+      IMPORTING
+        is_pedido TYPE zclmm_mt_cancelar_pedido
+        it_item   TYPE zclmm_pre_pedido=>tt_poitem.
 
     "! Return error
     METHODS interface_12
@@ -341,7 +346,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
+CLASS zclmm_pre_pedido IMPLEMENTATION.
 
 
   METHOD validate_reg.
@@ -444,7 +449,7 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
         me->schedule( IMPORTING et_poschedule = DATA(lt_shedule) et_poschedulex = DATA(lt_shedulex) ).
 
-        me->account( IMPORTING et_account = DATA(lt_account) et_accountx = DATA(lt_accountx) ).
+*        me->account( IMPORTING et_account = DATA(lt_account) et_accountx = DATA(lt_accountx) ).
 
         me->text( IMPORTING  et_theader = DATA(lt_theader) et_titem = DATA(lt_titem) ).
 
@@ -469,8 +474,8 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
             poaddrdelivery    = lt_addr
             poschedule        = lt_shedule
             poschedulex       = lt_shedulex
-            poaccount         = lt_account
-            poaccountx        = lt_accountx
+*           poaccount         = lt_account
+*           poaccountx        = lt_accountx
             potextheader      = lt_theader
             potextitem        = lt_titem
             popartner         = lt_partner.
@@ -647,9 +652,9 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
     et_poschedule = VALUE tt_poschedule(
                 FOR ls_itens IN gs_pre_pedido-itens INDEX INTO lv_index (
                 po_item        = COND #( WHEN ls_itens-ebelp IS NOT INITIAL THEN NEW zclmm_me_conv_num_item(  )->get_n_item( EXPORTING iv_num = ls_itens-ebelp ) ELSE ( lv_index * 10 ) )
-                sched_line     = sy-tabix
-*                delivery_date  = replace( ls_itens-eindt )
-*                stat_date      = conv_date( ls_itens-eindt )
+*                sched_line     = sy-tabix
+                sched_line     = '0001'
+
                 delivery_date  = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2
                                            THEN NEW zclmm_me_conv_num_item(  )->get_dt_fim( EXPORTING iv_dtfim = ls_itens-atributos[ nome_atributo = gc_values-dtfim ]-valor_atributo ) ELSE replace( ls_itens-eindt ) )
                 stat_date      = COND #( WHEN VALUE #( ls_itens-atributos[ nome_atributo = gc_values-gptipo ]-valor_atributo OPTIONAL ) EQ 2
@@ -1018,15 +1023,47 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
     GET TIME STAMP FIELD lv_long_time_stamp.
 
-    DATA(lt_pedido_me) = VALUE tt_item(
-            FOR ls_item IN gs_pre_pedido-itens (
-                ebeln  = gs_pre_pedido-ebeln
-                ebelp  = ( 10 * ls_item-ebelp )
-                ped_me = gs_pre_pedido-ref_1
-                lifnr  = gs_pre_pedido-vendor
-                created_by = sy-uname
-                created_at = lv_long_time_stamp
-             ) ).
+    SELECT ebelp, mblnr,  docnum, elikz, pago, status, b~purchasingprocessingstatus FROM ztmm_pedido_me AS a
+    LEFT OUTER JOIN i_purchaseorderapi01 AS b
+    ON b~PurchaseOrder = a~ebeln
+    WHERE ebeln     = @gs_pre_pedido-ebeln
+         AND ped_me =   @gs_pre_pedido-ref_1
+        INTO  TABLE @DATA(lt_ped_validate).
+
+    IF sy-subrc EQ 0.
+
+      DATA(lt_pedido_me) = VALUE tt_item(
+      FOR ls_item IN gs_pre_pedido-itens
+      FOR ls_item_save IN lt_ped_validate WHERE  ( ebelp =   CONV ebelp( 10 * ls_item-ebelp )  ) (
+          ebeln  = gs_pre_pedido-ebeln
+          ebelp  = ( 10 * ls_item-ebelp )
+          ped_me = gs_pre_pedido-ref_1
+          mblnr = ls_item_save-mblnr
+          docnum = ls_item_save-docnum
+          elikz = ls_item_save-elikz
+          lifnr  = gs_pre_pedido-vendor
+          pago = ls_item_save-pago
+          status = COND #( WHEN ls_item_save-status IS NOT INITIAL THEN ls_item_save-status
+                                                                                                        ELSE COND #( WHEN ls_item_save-PurchasingProcessingStatus EQ '05' THEN '1'
+                                                                                                                                WHEN ls_item_save-PurchasingProcessingStatus EQ '08' THEN '2' ) )
+          last_changed_by = sy-uname
+          last_changed_at = lv_long_time_stamp
+
+       ) ).
+
+    ELSE.
+
+      lt_pedido_me = VALUE tt_item(
+              FOR ls_item IN gs_pre_pedido-itens (
+                  ebeln  = gs_pre_pedido-ebeln
+                  ebelp  = ( 10 * ls_item-ebelp )
+                  ped_me = gs_pre_pedido-ref_1
+                  lifnr  = gs_pre_pedido-vendor
+                  created_by = sy-uname
+                  created_at = lv_long_time_stamp
+               ) ).
+
+    ENDIF.
 
     IF lt_pedido_me IS NOT INITIAL.
 
@@ -1219,6 +1256,11 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
       IF NOT line_exists( lt_return[ type = gc_values-e ] ).
         me->commit_work( ).
+
+        me->release_delete(
+             EXPORTING
+               is_pedido = is_item_del
+               it_item = lt_item ).
       ELSE.
         me->raise_change( lt_return ).
       ENDIF.
@@ -1370,6 +1412,10 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
       rv_result = lv_data.
 
+      IF rv_result LT sy-datum.
+        rv_result = sy-datum.
+      ENDIF.
+
     ENDIF.
 
   ENDMETHOD.
@@ -1381,10 +1427,22 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
 
       DATA(lv_data) = iv_eindt.
 
-      REPLACE ALL OCCURRENCES OF '-' IN lv_data WITH '.'.
-      CONDENSE lv_data NO-GAPS.
+      REPLACE ALL OCCURRENCES OF REGEX '[^0-9]' IN lv_data WITH ''.
 
-      rv_date = lv_data+8(2) && lv_data+4(4) && lv_data(4).
+      IF CONV dats( lv_data ) LT sy-datum.
+
+        rv_date = sy-datum+6(2) && '.' && sy-datum+4(2) && '.' && sy-datum(4).
+
+      ELSE.
+
+        DATA(lv_date_r) = iv_eindt.
+
+        REPLACE ALL OCCURRENCES OF '-' IN lv_date_r WITH '.'.
+        CONDENSE lv_date_r NO-GAPS.
+
+        rv_date = lv_date_r+8(2) && lv_date_r+4(4) && lv_date_r(4).
+
+      ENDIF.
 
     ENDIF.
 
@@ -1598,4 +1656,26 @@ CLASS ZCLMM_PRE_PEDIDO IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
+
+  METHOD release_delete.
+
+    DATA lv_long_time_stamp TYPE timestampl.
+
+    GET TIME STAMP FIELD lv_long_time_stamp.
+
+    MODIFY ztmm_pedido_me FROM TABLE @( VALUE #(
+        FOR ls_pedido IN it_item (
+              ebeln = is_pedido-mt_cancelar_pedido-purchaseorder
+              ebelp = ls_pedido-po_item
+              ped_me = is_pedido-mt_cancelar_pedido-ref_1
+              status = '3'
+              created_by = sy-uname
+              created_at = lv_long_time_stamp ) ) ) .
+
+    IF sy-subrc EQ 0.
+      COMMIT WORK.
+    ENDIF.
+
+  ENDMETHOD.
+
 ENDCLASS.

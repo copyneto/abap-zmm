@@ -18,8 +18,9 @@
 *&---------------------------------------------------------------------*
 
 
-DATA: lv_acckey   TYPE j_1b_nfe_access_key_dtel44,
-      lv_authcode TYPE j_1bnfeauthcode.
+DATA: lv_acckey             TYPE j_1b_nfe_access_key_dtel44,
+      lv_authcode           TYPE j_1bnfeauthcode,
+      ls_lanca_conhecimento TYPE ztmm_lanca_con.
 
 IMPORT gko_acckey TO lv_acckey FROM MEMORY ID zcltm_gko_process=>gc_memory_id-acckey.
 
@@ -45,10 +46,20 @@ IF sy-subrc IS INITIAL.
 
     IF sy-subrc IS INITIAL.
 
-      DATA(lo_gko_process) = NEW zcltm_gko_process( iv_acckey        = lv_acckey
-                                                    iv_tpprocess     = zcltm_gko_process=>gc_tpprocess-automatico
-                                                    iv_locked_in_tab = abap_true
-                                                    iv_min_data_load = abap_false ).
+* BEGIN OF INSERT - JWSILVA -02.08.2023
+      " Tratativa para hora em branco
+      ls_gkot001-hremi = COND #( WHEN ls_gkot001-hremi NE '000000'
+                                 THEN ls_gkot001-hremi
+                                 ELSE '000001').
+* END OF INSERT - JWSILVA -02.08.2023
+
+      TRY.
+          DATA(lo_gko_process) = NEW zcltm_gko_process( iv_acckey        = lv_acckey
+                                                        iv_tpprocess     = zcltm_gko_process=>gc_tpprocess-automatico
+                                                        iv_locked_in_tab = abap_true
+                                                        iv_min_data_load = abap_false ).
+        CATCH cx_root.
+      ENDTRY.
 
       CASE ls_gkot001-tpdoc.
         WHEN 'CTE'.
@@ -87,10 +98,13 @@ IF sy-subrc IS INITIAL.
 
       ENDCASE.
 
-      lv_authcode = COND #( WHEN lv_xml_ref IS NOT INITIAL
-                              THEN lo_gko_process->get_value_from_xml( iv_xml        = lv_xml_ref
-                                                                       iv_expression = '//*:nProt' )
-                            ELSE '000000000000000' ).
+      TRY.
+          lv_authcode = COND #( WHEN lv_xml_ref IS NOT INITIAL
+                                THEN lo_gko_process->get_value_from_xml( iv_xml        = lv_xml_ref
+                                                                         iv_expression = '//*:nProt' )
+                                ELSE '000000000000000' ).
+        CATCH cx_root.
+      ENDTRY.
 
       gbobj_header-authdate = ls_gkot001-dtemi.
       gbobj_header-authtime = ls_gkot001-hremi.
@@ -110,6 +124,29 @@ IF sy-subrc IS INITIAL.
   ls_active-cdv     = lv_acckey+43(1).
   ls_active-docnum9 = ls_access_key-nfnum9.
   ls_active-tpemis  = ls_access_key-model.
+
+  IF ls_gkot001 IS INITIAL.
+    SELECT SINGLE * FROM ztmm_lanca_con
+      INTO @ls_lanca_conhecimento
+      WHERE acckey EQ @lv_acckey.
+    IF ls_lanca_conhecimento IS NOT INITIAL.
+      gbobj_header-authdate = ls_lanca_conhecimento-authdate.
+      gbobj_header-authtime = ls_lanca_conhecimento-authtime.
+      gbobj_header-authcod  = ls_lanca_conhecimento-authcod.
+
+      gbobj_header[ 1 ]-authdate = ls_lanca_conhecimento-authdate.
+      gbobj_header[ 1 ]-authtime = ls_lanca_conhecimento-authtime.
+      gbobj_header[ 1 ]-authcod  = ls_lanca_conhecimento-authcod.
+
+      ls_active-authdate = ls_lanca_conhecimento-authdate.
+      ls_active-authtime = ls_lanca_conhecimento-authtime.
+      ls_active-authcod  = ls_lanca_conhecimento-authcod.
+
+      ls_active-cdv     = ls_access_key-cdv.
+      ls_active-docnum9 = ls_access_key-docnum9.
+      ls_active-tpemis  = 1 .
+    ENDIF.
+  ENDIF.
 
   CALL FUNCTION 'J_1B_NFE_DATA_TRANSFER'
     EXPORTING

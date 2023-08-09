@@ -93,6 +93,8 @@ annotate entity ZC_MM_MONIT_SERV_HEADER with
          fieldGroup:      [ { position: 30, qualifier: 'Destinat' }],
          dataPoint:         { qualifier: 'StatusHeader', criticality: 'StFiscCritic' } }
   NrNf;
+//  @UI.hidden: true
+//  NrNf2;
   @UI: { lineItem:        [ { position: 80 } ],
          fieldGroup:      [ { position: 20, qualifier: 'Emitente' }]}
   CnpjCpf;

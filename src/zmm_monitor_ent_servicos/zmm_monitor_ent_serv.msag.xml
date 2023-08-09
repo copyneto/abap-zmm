@@ -278,6 +278,12 @@
      <MSGNR>057</MSGNR>
      <TEXT>Classificação Contábil Não Válida</TEXT>
     </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZMM_MONITOR_ENT_SERV</ARBGB>
+     <MSGNR>058</MSGNR>
+     <TEXT>Número NFS-e só permite até 16 dígitos</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

@@ -5,14 +5,14 @@ define root view entity ZI_MM_FISCAL_ENTRADAS
   as select from           I_BR_NFItem                 as NFItem
     inner join             I_BR_NFDocument             as _NFDoc                    on _NFDoc.BR_NotaFiscal = NFItem.BR_NotaFiscal
     inner join             j_1bnfdoc                   as _Doc                      on _Doc.docnum = NFItem.BR_NotaFiscal
-    left outer join        I_Product                   as _Material                 on _Material.Product = NFItem.Material
+    left outer to one join        I_Product                   as _Material                 on _Material.Product = NFItem.Material
 
-    left outer join        ZI_MM_RETENCAO_FILT_ACCOUNT as _DocCont                  on _DocCont.OriginalReferenceDocument = NFItem.BR_NFSourceDocumentNumber
+    left outer to one join        ZI_MM_RETENCAO_FILT_ACCOUNT as _DocCont                  on _DocCont.OriginalReferenceDocument = NFItem.BR_NFSourceDocumentNumber
 
-    left outer join        ZI_MM_RETENCAO_FILT_BRHIST  as _DeliveryReference        on  _DeliveryReference.SubsequentDocument     = NFItem.BR_NFSourceDocumentNumber
+    left outer to one join        ZI_MM_RETENCAO_FILT_BRHIST  as _DeliveryReference        on  _DeliveryReference.SubsequentDocument     = NFItem.BR_NFSourceDocumentNumber
                                                                                     and _DeliveryReference.SubsequentDocumentItem = NFItem.BR_NFSourceDocumentItem
 
-    left outer join        I_DeliveryDocument          as _DeliveryDocument         on _DeliveryDocument.DeliveryDocument = _DeliveryReference.PrecedingDocument
+    left outer to one join        I_DeliveryDocument          as _DeliveryDocument         on _DeliveryDocument.DeliveryDocument = _DeliveryReference.PrecedingDocument
 
   //  I_PurgDocScheduleLineBasic
   //    left outer to one join ZI_MM_SCHED_LINE            as _SchedLine                on  _SchedLine.PurchasingDocument     = NFItem.PurchaseOrder

@@ -203,12 +203,14 @@ CLASS lcl_LibPgtoGraoVerde IMPLEMENTATION.
         "vVamos manter apenas registros que possuem desconto comercial
         DELETE lt_com WHERE VlrDescontoCom IS INITIAL.
 
-        SELECT  *
-        FROM ztmm_desc_pag_gv
-        FOR ALL ENTRIES IN @lt_com
-        WHERE ebeln = @lt_com-NumDocumento
-        AND   docnum = @lt_com-DocNumComercial
-        INTO TABLE @DATA(lt_gv_cab).
+        IF lt_com IS NOT INITIAL.
+          SELECT  *
+          FROM ztmm_desc_pag_gv
+          FOR ALL ENTRIES IN @lt_com
+          WHERE ebeln = @lt_com-NumDocumento
+          AND   docnum = @lt_com-DocNumComercial
+          INTO TABLE @DATA(lt_gv_cab).
+        ENDIF.
 
         IF lt_gv_cab IS NOT INITIAL.
 

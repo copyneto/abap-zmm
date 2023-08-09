@@ -37,6 +37,7 @@ define view entity ZI_MM_MONIT_SERV_ITEM
   key Item.nr_nf                                                                                                                       as NrNf,
   key Item.nr_pedido                                                                                                                   as NrPedido,
   key Item.itm_pedido                                                                                                                  as ItmPedido,
+//      Item.nr_nf                                                                                                                       as NrNf2,
       ekpo.werks                                                                                                                       as Werks,
       ekpo.sakto                                                                                                                       as CntContb,
       Item.iva                                                                                                                         as Iva,

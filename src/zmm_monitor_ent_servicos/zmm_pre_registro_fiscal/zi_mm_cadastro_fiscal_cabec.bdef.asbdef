@@ -23,7 +23,7 @@ etag master LocalLastChangedAt
   validation authorityCreate on save { create; }
 //  validation validate_dtlcto on save { create; update; }
     //  validation validatePedido on save { field Pedido; create; update; }
-
+    validation validateNF on save { field NrNf; create; update; }
     determination determine_initial_data on save { create; }
     determination determine_dados_pedido on save { field Pedido; }
     determination determine_new_duo_date on modify { field DtBase; }

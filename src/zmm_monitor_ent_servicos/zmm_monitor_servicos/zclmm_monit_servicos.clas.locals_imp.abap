@@ -10,10 +10,11 @@ ENDCLASS.
 CLASS lcl_item IMPLEMENTATION.
 
   METHOD get_features.
-    READ ENTITIES OF zi_mm_monit_serv_header ENTITY _Header
+    READ ENTITIES OF zi_mm_monit_serv_header ENTITY _Header  ##NO_LOCAL_MODE
     FIELDS ( miro )
     WITH CORRESPONDING #( keys )
     RESULT DATA(lt_document).
+
 
     DATA(lv_miro) = lt_document[ 1 ]-Miro.
 
@@ -207,7 +208,7 @@ CLASS lcl_header IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_features.
-    READ ENTITIES OF zi_mm_monit_serv_header ENTITY _Header
+    READ ENTITIES OF zi_mm_monit_serv_header ENTITY _Header  ##NO_LOCAL_MODE
     FIELDS ( miro )
     WITH CORRESPONDING #( keys )
     RESULT DATA(lt_document).

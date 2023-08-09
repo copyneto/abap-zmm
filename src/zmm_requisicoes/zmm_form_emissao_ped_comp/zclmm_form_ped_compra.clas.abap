@@ -484,6 +484,14 @@ CLASS ZCLMM_FORM_PED_COMPRA IMPLEMENTATION.
 
   METHOD get_text.
 
+    DATA: lt_obs      TYPE tline_t,
+          lt_text     TYPE STANDARD TABLE OF string,
+          lt_out_text TYPE STANDARD TABLE OF string.
+
+    DATA: ls_obs TYPE tline.
+
+    DATA: lv_text TYPE string.
+
     CALL FUNCTION 'READ_TEXT'
       EXPORTING
         id                      = cs_header-tdid
@@ -493,7 +501,7 @@ CLASS ZCLMM_FORM_PED_COMPRA IMPLEMENTATION.
       IMPORTING
         header                  = cs_header
       TABLES
-        lines                   = rt_obs
+        lines                   = lt_obs
       EXCEPTIONS
         id                      = 1
         language                = 2
@@ -506,6 +514,95 @@ CLASS ZCLMM_FORM_PED_COMPRA IMPLEMENTATION.
 
     IF sy-subrc <> 0.
       FREE rt_obs.
+    ELSE.
+
+      FREE: lt_text[].
+
+      LOOP AT lt_obs ASSIGNING FIELD-SYMBOL(<fs_obs>).
+
+        IF <fs_obs>-tdformat EQ '*'.
+
+          IF lt_text[] IS NOT INITIAL.
+
+            FREE: lt_out_text[].
+            CALL FUNCTION 'ZFMCA_TABLE_FIXEDLENGTH'
+              EXPORTING
+                iv_tablelength = 132
+              TABLES
+                it_input       = lt_text
+                et_output      = lt_out_text
+              EXCEPTIONS
+                no_data_found  = 1
+                OTHERS         = 2.
+
+            IF sy-subrc IS INITIAL.
+
+              LOOP AT lt_out_text ASSIGNING FIELD-SYMBOL(<fs_out_text>).
+
+                IF sy-tabix EQ 1.
+                  ls_obs-tdformat = '*'.
+                ELSE.
+                  ls_obs-tdformat = ''.
+                ENDIF.
+
+                ls_obs-tdline = <fs_out_text>.
+                APPEND ls_obs TO rt_obs.
+                CLEAR ls_obs.
+
+              ENDLOOP.
+            ENDIF.
+
+            FREE: lt_text[],
+                  lt_out_text[].
+
+            APPEND <fs_obs>-tdline TO lt_text.
+
+          ELSE.
+
+            APPEND <fs_obs>-tdline TO lt_text.
+
+          ENDIF.
+        ELSE.
+
+          APPEND <fs_obs>-tdline TO lt_text.
+
+        ENDIF.
+
+      ENDLOOP.
+
+      IF lt_text[] IS NOT INITIAL.
+
+        FREE: lt_out_text[].
+        CALL FUNCTION 'ZFMCA_TABLE_FIXEDLENGTH'
+          EXPORTING
+            iv_tablelength = 132
+          TABLES
+            it_input       = lt_text
+            et_output      = lt_out_text
+          EXCEPTIONS
+            no_data_found  = 1
+            OTHERS         = 2.
+
+        IF sy-subrc IS INITIAL.
+
+          LOOP AT lt_out_text ASSIGNING <fs_out_text>.
+
+            IF sy-tabix EQ 1.
+              ls_obs-tdformat = '*'.
+            ELSE.
+              ls_obs-tdformat = ''.
+            ENDIF.
+
+            ls_obs-tdline = <fs_out_text>.
+            APPEND ls_obs TO rt_obs.
+            CLEAR ls_obs.
+
+          ENDLOOP.
+
+          FREE: lt_text[].
+
+        ENDIF.
+      ENDIF.
     ENDIF.
 
   ENDMETHOD.

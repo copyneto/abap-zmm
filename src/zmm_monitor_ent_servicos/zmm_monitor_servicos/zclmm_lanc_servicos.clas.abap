@@ -25,6 +25,9 @@ CLASS zclmm_lanc_servicos DEFINITION
     CONSTANTS gc_a                  TYPE c          VALUE 'A' ##NO_TEXT.
     CONSTANTS gc_p                  TYPE c          VALUE 'P' ##NO_TEXT.
 
+    DATA:
+       gv_finished TYPE abap_bool.
+
     CONSTANTS:
       BEGIN OF gc_log_object,
         cadastro_fiscal TYPE balobj_d VALUE 'ZMM_MONITSERV_CADFIS' ##NO_TEXT,
@@ -140,6 +143,12 @@ CLASS zclmm_lanc_servicos DEFINITION
         iv_subobject  TYPE balsubobj
         iv_externalid TYPE any
         it_return     TYPE bapiret2_t.
+
+    METHODS:
+      finished
+        IMPORTING
+          p_task TYPE char32.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
     CONSTANTS:
@@ -252,6 +261,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
     CONSTANTS: lc_reason TYPE char2 VALUE '01'.
 
     CHECK is_key IS NOT INITIAL.
+
 
     SELECT SINGLE
         empresa,
@@ -439,7 +449,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
      WHERE empresa = @it_key-empresa
        AND filial  = @it_key-filial
        AND lifnr   = @it_key-lifnr
-       AND nr_nf   = @it_key-nrnf
+*       AND nr_nf   = @it_key-nrnf
       INTO TABLE @DATA(lt_header).
 
     IF sy-subrc IS INITIAL.
@@ -538,39 +548,19 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
       EXPORTING
         is_key            = is_key
       IMPORTING
-        et_return         = DATA(lt_return)
+        et_return         = et_return
         ev_step_validacao = DATA(lv_step_validacao).
 
+    CALL FUNCTION 'ZFMMM_UPDATE_CADFISCAL'
+      STARTING NEW TASK 'ZTASK'
+      CALLING finished ON END OF TASK
+      EXPORTING
+        is_key    = is_key
+        iv_step   = lv_step_validacao
+      CHANGING
+        ct_return = et_return.
 
-    IF ( lt_return IS NOT INITIAL ).
-      et_return = lt_return.
-
-      UPDATE ztmm_monit_cabec
-         SET erro     = abap_true
-             dt_reg   = '00000000'
-             hr_reg   = '000000'
-             liberado = ''
-             step_validacao = abap_false
-       WHERE empresa  = is_key-empresa
-         AND filial   = is_key-filial
-         AND lifnr    = is_key-lifnr
-         AND nr_nf    = is_key-nrnf.
-    ELSE.
-      UPDATE ztmm_monit_cabec
-         SET liberado = abap_true
-             erro     = ''
-             dt_reg   = sy-datum
-             hr_reg   = sy-uzeit
-             step_validacao = lv_step_validacao
-       WHERE empresa  = is_key-empresa
-         AND filial   = is_key-filial
-         AND lifnr    = is_key-lifnr
-         AND nr_nf    = is_key-nrnf.
-
-      et_return = VALUE #( BASE et_return ( id     = gc_msg_id
-                                            type   = gc_sucess
-                                            number = 023 ) ).
-    ENDIF.
+    WAIT FOR ASYNCHRONOUS TASKS UNTIL  gv_finished  = abap_true.
 
     CALL METHOD me->save_logs
       EXPORTING
@@ -578,6 +568,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
         iv_subobject  = gc_log_action-liberar_nf
         iv_externalid = CONV string( is_key )
         it_return     = et_return.
+
   ENDMETHOD.
 
 
@@ -601,7 +592,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
       FROM zi_mm_monit_serv_item
      WHERE empresa = @iv_empresa
        AND lifnr   = @iv_fornecedor
-       AND nrnf    = @iv_numero_nf
+       AND nrnf   = @iv_numero_nf
        AND matnr   = @iv_material
        AND werks   = @iv_centro
        INTO @rv_cfop.
@@ -681,6 +672,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
       ls_headerdata-doc_date     = ls_nfheader-dtemis.
       ls_headerdata-bline_date   = ls_nfheader-dtbase.
       ls_headerdata-pstng_date   = COND #( WHEN ls_nfheader-dtlancto IS INITIAL THEN sy-datum ELSE ls_nfheader-dtlancto ).
+*      ls_headerdata-pstng_date   = sy-datum.
       ls_headerdata-ref_doc_no   = ls_nfheader-nrnf.
       ls_headerdata-comp_code    = ls_nfheader-empresa.
       ls_headerdata-gross_amount = ls_nfheader-vltotnf.
@@ -1023,7 +1015,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
     ENDTRY.
 
     "//validar NCM se há redução de base
-    IF lt_ncm_redbase is NOT INITIAL and iv_ncm IN lt_ncm_redbase.
+    IF lt_ncm_redbase IS NOT INITIAL AND iv_ncm IN lt_ncm_redbase.
       rv_istrue = abap_true.
       RETURN.
     ENDIF.
@@ -1034,7 +1026,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
       INTO @DATA(lv_tipo_contribuinte)
      WHERE lifnr = @iv_fornecedor.
 
-    IF lc_regimes_simples CS lv_tipo_contribuinte.
+    IF lc_regimes_simples CS lv_tipo_contribuinte AND lv_tipo_contribuinte IS NOT INITIAL.
       rv_istrue = abap_true.
       RETURN.
     ENDIF.
@@ -1437,7 +1429,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
       LEFT JOIN i_serviceentrysheet AS _sh ON _sh~purchaseorder = _si~purchaseorder
       LEFT JOIN ekko                AS _cb ON _cb~ebeln         = _po~ebeln
      WHERE _po~ebeln = @iv_pedido
-       AND _po~qtdadedisponivel > 0
+*       AND _po~qtdadedisponivel > 0
       INTO TABLE @DATA(lt_po_items).
 
     IF lt_po_items IS INITIAL.
@@ -1627,7 +1619,7 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
       CATCH zcxca_tabela_parametros.
     ENDTRY.
 
-    DELETE lt_category WHERE accountassignmentcategory NOT IN lr_ctg_classif."#EC CI_SEL_DEL
+    DELETE lt_category WHERE accountassignmentcategory NOT IN lr_ctg_classif. "#EC CI_SEL_DEL
     CHECK lt_category IS NOT INITIAL.
 
     SELECT SINGLE client,
@@ -1672,13 +1664,18 @@ CLASS ZCLMM_LANC_SERVICOS IMPLEMENTATION.
         ENDIF.
 
         " Total da NF diferente do valor total calculado na contrapartida do fornecedor
-        IF lv_qtdade_lcto NE lv_quatity.
-          ct_return = VALUE #( BASE ct_return ( id     = gc_msg_id
-                                                type   = gc_error
-                                                number = 056 ) ).
-        ENDIF.
+*        IF lv_qtdade_lcto NE lv_quatity.
+*          ct_return = VALUE #( BASE ct_return ( id     = gc_msg_id
+*                                                type   = gc_error
+*                                                number = 056 ) ).
+*        ENDIF.
       ENDIF.
     ENDIF.
 
+  ENDMETHOD.
+
+
+  METHOD finished.
+    gv_finished = abap_true.
   ENDMETHOD.
 ENDCLASS.

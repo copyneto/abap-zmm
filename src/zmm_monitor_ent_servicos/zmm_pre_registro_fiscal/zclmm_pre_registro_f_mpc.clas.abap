@@ -7,7 +7,7 @@ public section.
 
   types:
   begin of TS_PDFFILE,
-     NRNF type C length 9,
+     NRNF type C length 20,
      CNPJCPF type C length 16,
      LINHA type C length 7,
   end of TS_PDFFILE .
@@ -25,7 +25,7 @@ TT_PDFFILE type standard table of TS_PDFFILE .
          tt_text_elements type standard table of ts_text_element with key text_symbol .
   types:
   begin of TS_PDFURL,
-     NRNF type C length 9,
+     NRNF type C length 20,
      CNPJCPF type C length 16,
      URL type string,
   end of TS_PDFURL .
@@ -33,7 +33,7 @@ TT_PDFFILE type standard table of TS_PDFFILE .
 TT_PDFURL type standard table of TS_PDFURL .
   types:
   begin of TS_FILEUPLOAD,
-     NR_NF type C length 9,
+     NR_NF type C length 20,
      CNPJ_CPF type C length 16,
      FILENAME type C length 100,
      MIMETYPE type C length 128,
@@ -130,8 +130,8 @@ lo_nav_property   type ref to /iwbep/if_mgw_odata_nav_prop.                     
                             iv_def_assoc_set    = abap_false ). "#EC NOTEXT
 * Referential constraint for association - UploadAssoc
 lo_ref_constraint = lo_association->create_ref_constraint( ).
-lo_ref_constraint->add_property( iv_principal_property = 'NrNf'   iv_dependent_property = 'NrNf' ). "#EC NOTEXT
 lo_ref_constraint->add_property( iv_principal_property = 'CnpjCpf'   iv_dependent_property = 'CnpjCpf' ). "#EC NOTEXT
+lo_ref_constraint->add_property( iv_principal_property = 'NrNf'   iv_dependent_property = 'NrNf' ). "#EC NOTEXT
 lo_assoc_set = model->create_association_set( iv_association_set_name  = 'UploadAssocSet'                         "#EC NOTEXT
                                               iv_left_entity_set_name  = 'PdfURLSet'              "#EC NOTEXT
                                               iv_right_entity_set_name = 'FileUploadSet'             "#EC NOTEXT
@@ -181,7 +181,7 @@ lo_entity_type->set_is_media( 'X' ).  "#EC NOTEXT
 lo_property = lo_entity_type->create_property( iv_property_name = 'NrNf' iv_abap_fieldname = 'NR_NF' ). "#EC NOTEXT
 lo_property->set_is_key( ).
 lo_property->set_type_edm_string( ).
-lo_property->set_maxlength( iv_max_length = 9 ). "#EC NOTEXT
+lo_property->set_maxlength( iv_max_length = 20 ). "#EC NOTEXT
 lo_property->set_creatable( abap_false ).
 lo_property->set_updatable( abap_false ).
 lo_property->set_sortable( abap_false ).
@@ -291,7 +291,7 @@ lo_entity_type->set_is_media( 'X' ).  "#EC NOTEXT
 lo_property = lo_entity_type->create_property( iv_property_name = 'NrNf' iv_abap_fieldname = 'NRNF' ). "#EC NOTEXT
 lo_property->set_is_key( ).
 lo_property->set_type_edm_string( ).
-lo_property->set_maxlength( iv_max_length = 9 ). "#EC NOTEXT
+lo_property->set_maxlength( iv_max_length = 20 ). "#EC NOTEXT
 lo_property->set_creatable( abap_false ).
 lo_property->set_updatable( abap_false ).
 lo_property->set_sortable( abap_false ).
@@ -378,7 +378,7 @@ lo_entity_type = model->create_entity_type( iv_entity_type_name = 'PdfURL' iv_de
 lo_property = lo_entity_type->create_property( iv_property_name = 'NrNf' iv_abap_fieldname = 'NRNF' ). "#EC NOTEXT
 lo_property->set_is_key( ).
 lo_property->set_type_edm_string( ).
-lo_property->set_maxlength( iv_max_length = 9 ). "#EC NOTEXT
+lo_property->set_maxlength( iv_max_length = 20 ). "#EC NOTEXT
 lo_property->set_creatable( abap_false ).
 lo_property->set_updatable( abap_false ).
 lo_property->set_sortable( abap_false ).
@@ -443,7 +443,7 @@ lo_entity_set->set_filter_required( abap_false ).
 *&---------------------------------------------------------------------*
 
 
-  CONSTANTS: lc_gen_date_time TYPE timestamp VALUE '20220412175705'.                  "#EC NOTEXT
+  CONSTANTS: lc_gen_date_time TYPE timestamp VALUE '20230807182051'.                  "#EC NOTEXT
   rv_last_modified = super->get_last_modified( ).
   IF rv_last_modified LT lc_gen_date_time.
     rv_last_modified = lc_gen_date_time.

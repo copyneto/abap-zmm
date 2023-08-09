@@ -14,6 +14,7 @@ define view entity ZC_MM_MONIT_SERV_SIMULA
   key NrNf,
       @EndUserText.label: 'Linha'
   key Linha,
+//      NrNf2,
       @EndUserText.label: 'Conta razão'
       Hkont,
       @EndUserText.label: 'Chave Lcto'

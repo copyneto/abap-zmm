@@ -16,6 +16,7 @@ define view entity ZC_MM_MONIT_SERV_ITEM
   key NrPedido,
       @EndUserText.label: 'Nº Item Compras'
   key ItmPedido,
+//      NrNf2,
       @EndUserText.label: 'Centro'
       @ObjectModel.text.element: ['WerksText']
       Werks,

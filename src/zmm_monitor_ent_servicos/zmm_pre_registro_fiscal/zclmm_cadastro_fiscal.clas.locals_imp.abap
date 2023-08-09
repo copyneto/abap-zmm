@@ -22,8 +22,10 @@ CLASS lcl_header DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS determine_dados_pedido FOR DETERMINE ON SAVE
       IMPORTING keys FOR header~determine_dados_pedido.
 
-    METHODS ReDeterminePOItens FOR MODIFY
-      IMPORTING keys FOR ACTION header~ReDeterminePOItens.
+    METHODS redeterminepoitens FOR MODIFY
+      IMPORTING keys FOR ACTION header~redeterminepoitens.
+    METHODS validatenf FOR VALIDATE ON SAVE
+      IMPORTING keys FOR header~validatenf.
 
     METHODS is_required_data_incomplete
       IMPORTING
@@ -117,7 +119,7 @@ CLASS lcl_header IMPLEMENTATION.
     DATA(lo_lanc_servico) = NEW zclmm_lanc_servicos( ).
 
     READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
-     IN LOCAL MODE ENTITY Header
+     IN LOCAL MODE ENTITY header
      ALL FIELDS WITH CORRESPONDING #( keys )
      RESULT DATA(lt_dados)
      FAILED DATA(lt_erro).
@@ -149,31 +151,31 @@ CLASS lcl_header IMPLEMENTATION.
     "//get payment's duo date
     DATA(lv_duo_date) = lo_lanc_servico->get_duo_date(
       iv_bline_date = COND #(
-        WHEN ls_data-DtBase   IS NOT INITIAL THEN ls_data-DtBase
-        WHEN ls_data-DtLancto IS NOT INITIAL THEN ls_data-DtLancto
-        ELSE ls_data-DtEmis
+        WHEN ls_data-dtbase   IS NOT INITIAL THEN ls_data-dtbase
+        WHEN ls_data-dtlancto IS NOT INITIAL THEN ls_data-dtlancto
+        ELSE ls_data-dtemis
      )
-      iv_pedido = ls_data-Pedido
+      iv_pedido = ls_data-pedido
     ).
 
-    DATA(lv_cnpj_cpf_bp) = lo_lanc_servico->get_cnpj_cpf_bp( ls_data-Lifnr ).
+    DATA(lv_cnpj_cpf_bp) = lo_lanc_servico->get_cnpj_cpf_bp( ls_data-lifnr ).
 
 
     "//Set calculated fields
     MODIFY ENTITIES OF zi_mm_cadastro_fiscal_cabec IN LOCAL MODE
-    ENTITY Header
-    UPDATE FIELDS ( Liberado DtBase DtVenc CnpjCpf DtLancto )
+    ENTITY header
+    UPDATE FIELDS ( liberado dtbase dtvenc cnpjcpf dtlancto )
       WITH VALUE #( FOR ls_dados2 IN lt_dados (
                       %key     = ls_data-%key
-                      DtBase   = COND #(
-                                    WHEN ls_data-DtBase   IS NOT INITIAL THEN ls_data-DtBase
-                                    WHEN ls_data-DtLancto IS NOT INITIAL THEN ls_data-DtLancto
-                                    ELSE ls_data-DtEmis
+                      dtbase   = COND #(
+                                    WHEN ls_data-dtbase   IS NOT INITIAL THEN ls_data-dtbase
+                                    WHEN ls_data-dtlancto IS NOT INITIAL THEN ls_data-dtlancto
+                                    ELSE ls_data-dtemis
                                  )
-                      DtLancto = COND #( WHEN ls_data-DtLancto IS INITIAL THEN sy-datum ELSE ls_data-DtLancto )
-                      DtVenc   = lv_duo_date
-                      CnpjCpf  = lv_cnpj_cpf_bp
-                      Liberado = ''
+                      dtlancto = COND #( WHEN ls_data-dtlancto IS INITIAL THEN sy-datum ELSE ls_data-dtlancto )
+                      dtvenc   = lv_duo_date
+                      cnpjcpf  = lv_cnpj_cpf_bp
+                      liberado = ''
                 ) )
     REPORTED DATA(lt_reported).
 *
@@ -244,7 +246,7 @@ CLASS lcl_header IMPLEMENTATION.
 *   ) )
 *    REPORTED DATA(lt_reported_items).
 *
-    reported = CORRESPONDING #( DEEP lt_REPORTED ).
+    reported = CORRESPONDING #( DEEP lt_reported ).
   ENDMETHOD.
 
   METHOD get_features.
@@ -255,7 +257,7 @@ CLASS lcl_header IMPLEMENTATION.
     DATA: lt_acessos TYPE RANGE OF ze_created_by.
 
     READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
-    IN LOCAL MODE ENTITY Header
+    IN LOCAL MODE ENTITY header
     ALL FIELDS WITH
     CORRESPONDING #( keys )
     RESULT DATA(lt_dados)
@@ -264,7 +266,7 @@ CLASS lcl_header IMPLEMENTATION.
     CHECK lt_dados IS NOT INITIAL.
 
     READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
-     IN LOCAL MODE ENTITY Header BY \_Item
+     IN LOCAL MODE ENTITY header BY \_item
       ALL FIELDS WITH CORRESPONDING #( keys )
       RESULT DATA(lt_items).
 
@@ -284,42 +286,42 @@ CLASS lcl_header IMPLEMENTATION.
 
     LOOP AT lt_dados ASSIGNING FIELD-SYMBOL(<fs_data>).
 
-      IF NOT <fs_data>-Miro  IS INITIAL
-      OR NOT <fs_data>-DtReg IS INITIAL.
+      IF NOT <fs_data>-miro  IS INITIAL
+      OR NOT <fs_data>-dtreg IS INITIAL.
         result = VALUE #( BASE result ( empresa = <fs_data>-empresa
                                         filial  = <fs_data>-filial
                                         lifnr   = <fs_data>-lifnr
-                                        nrnf    = <fs_data>-nrnf
+                                        nrnf   = <fs_data>-nrnf
                                         %update = if_abap_behv=>fc-o-disabled
                                         %delete = if_abap_behv=>fc-o-disabled
-                                        %features-%action-LiberarNF = if_abap_behv=>fc-o-disabled
+                                        %features-%action-liberarnf = if_abap_behv=>fc-o-disabled
                                     ) ).
       ELSE.
         result = VALUE #( BASE result ( empresa = <fs_data>-empresa
                                         filial  = <fs_data>-filial
                                         lifnr   = <fs_data>-lifnr
-                                        nrnf    = <fs_data>-nrnf
+                                        nrnf   = <fs_data>-nrnf
                                         %update = COND #(
-                                          WHEN ( <fs_data>-StatusFiscal = lc_pendente
-                                            OR   <fs_data>-StatusFiscal = lc_erro )
+                                          WHEN ( <fs_data>-statusfiscal = lc_pendente
+                                            OR   <fs_data>-statusfiscal = lc_erro )
                                            AND ( sy-uname IN lt_acessos
-                                            OR   <fs_data>-CreatedBy = sy-uname )
+                                            OR   <fs_data>-createdby = sy-uname )
                                           THEN if_abap_behv=>fc-o-enabled
                                           ELSE if_abap_behv=>fc-o-disabled
                                         )
                                         %delete = COND #(
-                                          WHEN ( <fs_data>-StatusFiscal = lc_pendente
-                                            OR   <fs_data>-StatusFiscal = lc_erro )
+                                          WHEN ( <fs_data>-statusfiscal = lc_pendente
+                                            OR   <fs_data>-statusfiscal = lc_erro )
                                            AND ( sy-uname IN lt_acessos
-                                            OR   <fs_data>-CreatedBy = sy-uname )
+                                            OR   <fs_data>-createdby = sy-uname )
                                           THEN if_abap_behv=>fc-o-enabled
                                           ELSE if_abap_behv=>fc-o-disabled
                                         )
-                                        %features-%action-LiberarNF = COND #(
-                                          WHEN ( <fs_data>-StatusFiscal = lc_pendente
-                                            OR   <fs_data>-StatusFiscal = lc_erro )
+                                        %features-%action-liberarnf = COND #(
+                                          WHEN ( <fs_data>-statusfiscal = lc_pendente
+                                            OR   <fs_data>-statusfiscal = lc_erro )
                                            AND ( sy-uname IN lt_acessos
-                                            OR   <fs_data>-CreatedBy = sy-uname )
+                                            OR   <fs_data>-createdby = sy-uname )
                                           THEN if_abap_behv=>fc-o-enabled
                                           ELSE if_abap_behv=>fc-o-disabled
                                         )
@@ -333,7 +335,7 @@ CLASS lcl_header IMPLEMENTATION.
     DATA(lo_lanc_servico) = NEW zclmm_lanc_servicos( ).
 
     READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
-     IN LOCAL MODE ENTITY Header
+     IN LOCAL MODE ENTITY header
      ALL FIELDS WITH CORRESPONDING #( keys )
      RESULT DATA(lt_dados)
      FAILED DATA(lt_erro).
@@ -342,33 +344,33 @@ CLASS lcl_header IMPLEMENTATION.
 
     IF sy-subrc IS INITIAL.
       DATA(lv_duo_date) = lo_lanc_servico->get_duo_date(
-        iv_bline_date = ls_data-DtBase
-        iv_pedido = ls_data-Pedido
+        iv_bline_date = ls_data-dtbase
+        iv_pedido = ls_data-pedido
       ).
 
       MODIFY ENTITIES OF zi_mm_cadastro_fiscal_cabec IN LOCAL MODE
-       ENTITY Header
-        UPDATE FIELDS ( DtVenc )
+       ENTITY header
+        UPDATE FIELDS ( dtvenc )
          WITH VALUE #( (
                         %key     = ls_data-%key
-                        DtVenc   = lv_duo_date
-                        Liberado = ''
+                        dtvenc   = lv_duo_date
+                        liberado = ''
                      ) )
          REPORTED DATA(lt_reported).
     ENDIF.
   ENDMETHOD.
 
   METHOD is_required_data_incomplete.
-    IF is_header-Empresa IS INITIAL
-    OR is_header-Filial  IS INITIAL
-    OR is_header-Lifnr   IS INITIAL
-    OR is_header-NrNf    IS INITIAL
-    OR is_header-Pedido  IS INITIAL
-    OR is_header-DtEmis  IS INITIAL
-    OR is_header-DomicilioFiscal IS INITIAL
-    OR is_header-Lc      IS INITIAL
-    OR is_header-VlTotNf IS INITIAL.
-      ct_Return = VALUE #( BASE ct_return (
+    IF is_header-empresa IS INITIAL
+    OR is_header-filial  IS INITIAL
+    OR is_header-lifnr   IS INITIAL
+    OR is_header-nrnf    IS INITIAL
+    OR is_header-pedido  IS INITIAL
+    OR is_header-dtemis  IS INITIAL
+    OR is_header-domiciliofiscal IS INITIAL
+    OR is_header-lc      IS INITIAL
+    OR is_header-vltotnf IS INITIAL.
+      ct_return = VALUE #( BASE ct_return (
           id = zclmm_lanc_servicos=>gc_msg_id
           type = zclmm_lanc_servicos=>gc_error
           number = 050
@@ -376,9 +378,9 @@ CLASS lcl_header IMPLEMENTATION.
       rv_error = abap_true.
     ENDIF.
 
-    IF is_header-DtLancto IS NOT INITIAL
-   AND is_header-DtLancto < is_header-DtEmis.
-      ct_Return = VALUE #( BASE ct_return (
+    IF is_header-dtlancto IS NOT INITIAL
+   AND is_header-dtlancto < is_header-dtemis.
+      ct_return = VALUE #( BASE ct_return (
           id = zclmm_lanc_servicos=>gc_msg_id
           type = zclmm_lanc_servicos=>gc_error
           number = 053
@@ -414,7 +416,7 @@ CLASS lcl_header IMPLEMENTATION.
     DATA(lo_lanc_servico) = NEW zclmm_lanc_servicos( ).
 
     READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
-     IN LOCAL MODE ENTITY Header
+     IN LOCAL MODE ENTITY header
      ALL FIELDS WITH CORRESPONDING #( keys )
      RESULT DATA(lt_dados)
      FAILED DATA(lt_erro).
@@ -424,10 +426,10 @@ CLASS lcl_header IMPLEMENTATION.
 
     CALL METHOD lo_lanc_servico->valida_input_pedido_compras
       EXPORTING
-        iv_pedido   = ls_data-Pedido
-        iv_Is_rpa   = ls_data-FlagRpa
-        iv_empresa  = ls_data-Empresa
-        iv_bp       = ls_data-Lifnr
+        iv_pedido   = ls_data-pedido
+        iv_is_rpa   = ls_data-flagrpa
+        iv_empresa  = ls_data-empresa
+        iv_bp       = ls_data-lifnr
       IMPORTING
         et_po_items = DATA(lt_po_items)
       CHANGING
@@ -438,7 +440,7 @@ CLASS lcl_header IMPLEMENTATION.
                       filial  = ls_data-filial
                       lifnr   = ls_data-lifnr
                       nrnf    = ls_data-nrnf
-                      %element-Pedido = if_abap_behv=>mk-on
+                      %element-pedido = if_abap_behv=>mk-on
                       %msg    = new_message( id       = ls_return-id
                                              number   = ls_return-number
                                              v1       = ls_return-message_v1
@@ -452,37 +454,37 @@ CLASS lcl_header IMPLEMENTATION.
     ENDIF.
 
     DELETE FROM ztmm_monit_item
-     WHERE empresa = ls_data-Empresa
-       AND Filial  = ls_data-Filial
-       AND Lifnr   = ls_data-Lifnr
-       AND nr_nf   = ls_data-NrNf.
+     WHERE empresa = ls_data-empresa
+       AND filial  = ls_data-filial
+       AND lifnr   = ls_data-lifnr
+       AND nr_nf   = ls_data-nrnf.
 
     MODIFY ENTITIES OF zi_mm_cadastro_fiscal_cabec IN LOCAL MODE
-    ENTITY Header CREATE BY \_Item
-    FIELDS ( Empresa Filial Lifnr NrNf NrPedido ItmPedido Qtdade Qtdade_Lcto NFType Cfop Iva Unid Descricao )
+    ENTITY header CREATE BY \_item
+    FIELDS ( empresa filial lifnr nrnf nrpedido itmpedido qtdade qtdade_lcto nftype cfop iva unid descricao )
     WITH VALUE #( (
-       Empresa   = ls_data-Empresa
-       Filial    = ls_data-Filial
-       Lifnr     = ls_data-Lifnr
-       NrNf      = ls_data-NrNf
+       empresa   = ls_data-empresa
+       filial    = ls_data-filial
+       lifnr     = ls_data-lifnr
+       nrnf     = ls_data-nrnf
        %target   = VALUE #(
         FOR ls_po_item IN lt_po_items
         LET ls_param = NEW zclmm_lanc_servicos( )->get_posting_parameters(
             iv_pedido = ls_po_item-ebeln
             iv_item   = ls_po_item-ebelp
-            iv_is_rpa = ls_data-FlagRpa
+            iv_is_rpa = ls_data-flagrpa
         ) IN (
-           Empresa     = ls_data-Empresa
-           Filial      = ls_data-Filial
-           Lifnr       = ls_data-Lifnr
-           NrNf        = ls_data-NrNf
-           NrPedido    = ls_po_item-ebeln
-           ItmPedido   = ls_po_item-ebelp
-           Qtdade_Lcto = 0
-           NFtype      = ls_param-j_1bnftype
-           Cfop        = ls_param-cfop
-           Iva         = ls_param-mwskz
-           Unid        = ls_po_item-meins
+           empresa     = ls_data-empresa
+           filial      = ls_data-filial
+           lifnr       = ls_data-lifnr
+           nrnf        = ls_data-nrnf
+           nrpedido    = ls_po_item-ebeln
+           itmpedido   = ls_po_item-ebelp
+           qtdade_lcto = 0
+           nftype      = ls_param-j_1bnftype
+           cfop        = ls_param-cfop
+           iva         = ls_param-mwskz
+           unid        = ls_po_item-meins
        ) )
     ) )
     REPORTED DATA(lt_reported_items).
@@ -490,12 +492,12 @@ CLASS lcl_header IMPLEMENTATION.
     reported = CORRESPONDING #( DEEP lt_reported_items ).
   ENDMETHOD.
 
-  METHOD ReDeterminePOItens.
+  METHOD redeterminepoitens.
     DATA lt_return TYPE bapiret2_tab.
     DATA(lo_lanc_servico) = NEW zclmm_lanc_servicos( ).
 
     READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
-     IN LOCAL MODE ENTITY Header
+     IN LOCAL MODE ENTITY header
      ALL FIELDS WITH CORRESPONDING #( keys )
      RESULT DATA(lt_dados)
      FAILED DATA(lt_erro).
@@ -505,10 +507,10 @@ CLASS lcl_header IMPLEMENTATION.
 
     CALL METHOD lo_lanc_servico->valida_input_pedido_compras
       EXPORTING
-        iv_pedido   = ls_data-Pedido
-        iv_Is_rpa   = ls_data-FlagRpa
-        iv_empresa  = ls_data-Empresa
-        iv_bp       = ls_data-Lifnr
+        iv_pedido   = ls_data-pedido
+        iv_is_rpa   = ls_data-flagrpa
+        iv_empresa  = ls_data-empresa
+        iv_bp       = ls_data-lifnr
       IMPORTING
         et_po_items = DATA(lt_po_items)
       CHANGING
@@ -519,7 +521,7 @@ CLASS lcl_header IMPLEMENTATION.
                       filial  = ls_data-filial
                       lifnr   = ls_data-lifnr
                       nrnf    = ls_data-nrnf
-                      %element-Pedido = if_abap_behv=>mk-on
+                      %element-pedido = if_abap_behv=>mk-on
                       %msg    = new_message( id       = ls_return-id
                                              number   = ls_return-number
                                              v1       = ls_return-message_v1
@@ -533,42 +535,68 @@ CLASS lcl_header IMPLEMENTATION.
     ENDIF.
 
     DELETE FROM ztmm_monit_item
-     WHERE empresa = ls_data-Empresa
-       AND Filial  = ls_data-Filial
-       AND Lifnr   = ls_data-Lifnr
-       AND nr_nf   = ls_data-NrNf.
+     WHERE empresa = ls_data-empresa
+       AND filial  = ls_data-filial
+       AND lifnr   = ls_data-lifnr
+       AND nr_nf   = ls_data-nrnf.
 
     MODIFY ENTITIES OF zi_mm_cadastro_fiscal_cabec IN LOCAL MODE
-    ENTITY Header CREATE BY \_Item
-    FIELDS ( Empresa Filial Lifnr NrNf NrPedido ItmPedido Qtdade Qtdade_Lcto NFType Cfop Iva Unid Descricao )
+    ENTITY header CREATE BY \_item
+    FIELDS ( empresa filial lifnr nrnf nrpedido itmpedido qtdade qtdade_lcto nftype cfop iva unid descricao )
     WITH VALUE #( (
-       Empresa   = ls_data-Empresa
-       Filial    = ls_data-Filial
-       Lifnr     = ls_data-Lifnr
-       NrNf      = ls_data-NrNf
+       empresa   = ls_data-empresa
+       filial    = ls_data-filial
+       lifnr     = ls_data-lifnr
+       nrnf     = ls_data-nrnf
        %target   = VALUE #(
         FOR ls_po_item IN lt_po_items
         LET ls_param = NEW zclmm_lanc_servicos( )->get_posting_parameters(
             iv_pedido = ls_po_item-ebeln
             iv_item   = ls_po_item-ebelp
-            iv_is_rpa = ls_data-FlagRpa
+            iv_is_rpa = ls_data-flagrpa
         ) IN (
-           Empresa     = ls_data-Empresa
-           Filial      = ls_data-Filial
-           Lifnr       = ls_data-Lifnr
-           NrNf        = ls_data-NrNf
-           NrPedido    = ls_po_item-ebeln
-           ItmPedido   = ls_po_item-ebelp
-           Qtdade_Lcto = 0
-           NFtype      = ls_param-j_1bnftype
-           Cfop        = ls_param-cfop
-           Iva         = ls_param-mwskz
-           Unid        = ls_po_item-meins
+           empresa     = ls_data-empresa
+           filial      = ls_data-filial
+           lifnr       = ls_data-lifnr
+           nrnf        = ls_data-nrnf
+           nrpedido    = ls_po_item-ebeln
+           itmpedido   = ls_po_item-ebelp
+           qtdade_lcto = 0
+           nftype      = ls_param-j_1bnftype
+           cfop        = ls_param-cfop
+           iva         = ls_param-mwskz
+           unid        = ls_po_item-meins
        ) )
     ) )
     REPORTED DATA(lt_reported_items).
 
     reported = CORRESPONDING #( DEEP lt_reported_items ).
+  ENDMETHOD.
+
+  METHOD validatenf.
+
+    READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
+     IN LOCAL MODE ENTITY header
+     ALL FIELDS WITH CORRESPONDING #( keys )
+     RESULT DATA(lt_dadosnf)
+     FAILED DATA(lt_erronf).
+
+    READ TABLE lt_dadosnf INTO DATA(ls_datanf) INDEX 1. "#EC CI_LOOP_INTO_WA
+
+    IF sy-subrc IS INITIAL.
+      DATA(lv_posi) = strlen( ls_datanf-nrnf ).
+
+      IF lv_posi > 16.
+
+        APPEND VALUE #( %msg        = new_message( id       = zclmm_lanc_servicos=>gc_msg_id
+                                                   number   = '058'
+                                                   severity = CONV #( 'E')
+
+                      ) ) TO reported-header.
+
+      ENDIF.
+    ENDIF.
+
   ENDMETHOD.
 
 ENDCLASS.
@@ -586,53 +614,53 @@ CLASS lcl_item IMPLEMENTATION.
 
   METHOD validate_qtdade_lcto.
     READ ENTITIES OF zi_mm_cadastro_fiscal_cabec
-     IN LOCAL MODE ENTITY Item
+     IN LOCAL MODE ENTITY item
      ALL FIELDS WITH CORRESPONDING #( keys )
      RESULT DATA(lt_item_data)
      FAILED DATA(lt_erro).
 
     CHECK keys IS NOT INITIAL.
 
-    SELECT Nr_Pedido,
-           Itm_Pedido,
-           Qtdade_Lcto
+    SELECT nr_pedido,
+           itm_pedido,
+           qtdade_lcto
       FROM ztmm_monit_item
       INTO TABLE @DATA(lt_old_items)
       FOR ALL ENTRIES IN @keys
-     WHERE empresa    = @keys-Empresa
-       AND filial     = @keys-Filial
-       AND lifnr      = @keys-Lifnr
-       AND nr_nf      = @keys-NrNf
-       AND nr_pedido  = @keys-NrPedido
-       AND itm_pedido = @keys-ItmPedido.
+     WHERE empresa    = @keys-empresa
+       AND filial     = @keys-filial
+       AND lifnr      = @keys-lifnr
+       AND nr_nf      = @keys-nrnf
+       AND nr_pedido  = @keys-nrpedido
+       AND itm_pedido = @keys-itmpedido.
 
     CHECK sy-subrc IS INITIAL.
 
     LOOP AT lt_item_data ASSIGNING FIELD-SYMBOL(<fs_data>).
       READ TABLE lt_old_items ASSIGNING FIELD-SYMBOL(<fs_old_item>)
         WITH KEY
-          nr_pedido  = <fs_data>-NrPedido
-          itm_pedido = <fs_data>-ItmPedido.              "#EC CI_STDSEQ
+          nr_pedido  = <fs_data>-nrpedido
+          itm_pedido = <fs_data>-itmpedido.              "#EC CI_STDSEQ
 
       DATA(lv_qty) = COND #(
         WHEN sy-subrc IS INITIAL
-            THEN CONV ekpo-menge( <fs_data>-Qtdade - ( <fs_data>-QtdadeUtilizada - <fs_old_item>-qtdade_lcto ) )
-            ELSE <fs_data>-Qtdade_Lcto
+            THEN CONV ekpo-menge( <fs_data>-qtdade - ( <fs_data>-qtdadeutilizada - <fs_old_item>-qtdade_lcto ) )
+            ELSE <fs_data>-qtdade_lcto
       ).
 
-      IF <fs_data>-Qtdade_Lcto > lv_qty.
+      IF <fs_data>-qtdade_lcto > lv_qty.
         APPEND VALUE #( empresa = <fs_data>-empresa
                         filial  = <fs_data>-filial
                         lifnr   = <fs_data>-lifnr
                         nrnf    = <fs_data>-nrnf
-                        nrpedido = <fs_data>-NrPedido
-                        itmpedido = <fs_data>-ItmPedido
-                        %element-Qtdade_Lcto = if_abap_behv=>mk-on
+                        nrpedido = <fs_data>-nrpedido
+                        itmpedido = <fs_data>-itmpedido
+                        %element-qtdade_lcto = if_abap_behv=>mk-on
                         %msg     = new_message( id       = zclmm_lanc_servicos=>gc_msg_id
                                                 number   = 036
-                                                v1       = <fs_data>-ItmPedido
+                                                v1       = <fs_data>-itmpedido
                                                 severity = CONV #( zclmm_lanc_servicos=>gc_error )
-                    ) ) TO reported-Item.
+                    ) ) TO reported-item.
       ENDIF.
 
     ENDLOOP.

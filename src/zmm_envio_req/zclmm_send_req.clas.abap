@@ -291,14 +291,6 @@ CLASS zclmm_send_req IMPLEMENTATION.
 
     ENDIF.
 
-    IF gt_req IS NOT INITIAL.
-
-      UPDATE ztmm_envio_req FROM TABLE gt_req.
-      IF sy-subrc EQ 0.
-        COMMIT WORK.
-      ENDIF.
-
-    ENDIF.
 
   ENDMETHOD.
 
@@ -690,9 +682,9 @@ CLASS zclmm_send_req IMPLEMENTATION.
   METHOD change_requisicao.
 
     CALL FUNCTION 'ZFMMM_UPDATE_STATUS_ME'
-      IN BACKGROUND TASK DESTINATION 'NONE' "ZUPATESTATUS'
-      TABLES
-        it_req = it_req[].
+      STARTING NEW TASK 'ZMM_UPDATEME'
+      EXPORTING
+        it_req = gt_req[].
 
   ENDMETHOD.
 

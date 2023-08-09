@@ -123,7 +123,7 @@
  ENDIF.
 
  TRY.
-     DATA(lo_param) = NEW zclca_tabela_parametros( ).
+     DATA(lo_param) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
      lo_param->m_get_range( EXPORTING iv_modulo = lc_values-mm
                                       iv_chave1 = lc_values-cnpj_dest

@@ -13,8 +13,10 @@ define view entity ZI_MM_CADASTRO_FISCAL_ANEXO_A
   key Empresa,
   key FilialHeader,
   key Lifnr,
+//  key NrNf,
   key NrNf,
   key CnpjCpf,
+//  NrNf2,
       count( distinct cast(Linha as abap.int8 ) ) as TotalAnexo
 }
 group by
@@ -22,4 +24,5 @@ group by
   FilialHeader,
   Lifnr,
   NrNf,
+//  NrNf2,
   CnpjCpf

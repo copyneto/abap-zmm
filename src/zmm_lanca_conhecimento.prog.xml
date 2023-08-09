@@ -15,6 +15,12 @@
      <ENTRY>Lançamento de Conhecimento de Transporte</ENTRY>
      <LENGTH>40</LENGTH>
     </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_FILE</KEY>
+     <ENTRY>Arquivo local</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
    </TPOOL>
   </asx:values>
  </asx:abap>

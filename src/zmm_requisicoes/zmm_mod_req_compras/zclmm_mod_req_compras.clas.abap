@@ -106,14 +106,7 @@ CLASS zclmm_mod_req_compras IMPLEMENTATION.
       EXIT.
     ENDLOOP.
 
-**********************************************************************
-** INTEGRAÇÃO REQUISIÇÃO - Mercado Eletronico
-**********************************************************************
-    TRY .
-        NEW zclmm_send_req( )->execute( is_header = im_header ).
-      CATCH cx_ai_system_fault.
-    ENDTRY.
-**********************************************************************
+    INCLUDE zmmi_mercado_eletronico IF FOUND.
 
   ENDMETHOD.
 

@@ -251,16 +251,16 @@ CLASS lcl_mm_zi_paletizacao IMPLEMENTATION.
 
       IF sy-subrc IS INITIAL.
 
-        SELECT SINGLE matnr, werks, disgr
-          FROM marc
-          WHERE matnr = @ls_palet-material
-            AND werks = @ls_palet-centro
-          INTO @DATA(ls_marc).
-
-        NEW zclmm_trigger_matmas( )->execute(
-          EXPORTING
-            iv_matnr = ls_palet-material
-            iv_mtart = ls_marc-disgr ).
+*        SELECT SINGLE matnr, werks, disgr
+*          FROM marc
+*          WHERE matnr = @ls_palet-material
+*            AND werks = @ls_palet-centro
+*          INTO @DATA(ls_marc).
+*
+*        NEW zclmm_trigger_matmas( )->execute(
+*          EXPORTING
+*            iv_matnr = ls_palet-material
+*            iv_mtart = ls_marc-disgr ).
 
         APPEND VALUE #(
                         %msg = new_message( id       = 'ZMM_PALETIZACAO'

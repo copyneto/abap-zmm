@@ -15,14 +15,19 @@ define view entity ZI_MM_CADASTRO_FISCAL_ITEM
   association        to parent ZI_MM_CADASTRO_FISCAL_CABEC as _Header      on  $projection.Empresa = _Header.Empresa
                                                                            and $projection.Filial  = _Header.Filial
                                                                            and $projection.Lifnr   = _Header.Lifnr
-                                                                           and $projection.NrNf    = _Header.NrNf
+//                                                                           and $projection.NrNf    = _Header.NrNf
+                                                                           and $projection.NrNf   = _Header.NrNf
+
+
 {
   key _Item.empresa                                                                          as Empresa,
   key _Item.filial                                                                           as Filial,
   key _Item.lifnr                                                                            as Lifnr,
+//  key _Item.nr_nf                                                                            as NrNf,
   key _Item.nr_nf                                                                            as NrNf,
   key _Item.nr_pedido                                                                        as NrPedido,
   key _Item.itm_pedido                                                                       as ItmPedido,
+//       _Item.nr_nf                                                                            as NrNf2,
       _Ekpo.matnr                                                                            as Material,
       _Ekpo.txz01                                                                            as Descricao,
       cast( _Item.cfop as abap.char(10) )                                                    as Cfop,

@@ -18,6 +18,7 @@ define view entity ZI_MM_MONIT_SERV_PO_VALUES
   sum(distinct cast( _POItem.menge as abap.dec(15, 3)))                                                                         as QtdadePedido,
   sum(cast(_NFItem.qtdade_lcto as abap.dec(15, 3)))                                                                             as QtdadeLancada,
   coalesce(sum(distinct cast( _POItem.menge as abap.dec(15, 3))), 0) - coalesce(sum(distinct cast(_NFItem.qtdade_lcto as abap.dec(15, 3))), 0) as QtdadeDisponivel
+  
 }
 group by
   _POItem.ebeln,

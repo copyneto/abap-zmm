@@ -9,7 +9,7 @@ CONSTANTS: lc_mm        TYPE ztca_param_par-modulo VALUE 'MM',
 
 DATA lr_nf_type_mm TYPE RANGE OF j_1bnfdoc-nftype .
 
-DATA(lo_param_mm) = NEW zclca_tabela_parametros( ).
+DATA(lo_param_mm) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 TRY.
     lo_param_mm->m_get_range(
       EXPORTING

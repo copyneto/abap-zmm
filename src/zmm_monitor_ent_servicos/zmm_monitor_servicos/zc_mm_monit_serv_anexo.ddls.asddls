@@ -11,6 +11,7 @@ define view entity ZC_MM_MONIT_SERV_ANEXO
   key CnpjCpf,
       @EndUserText.label: 'Linha'
   key Linha,
+//        NrNf2,
       Filename,
       Mimetype,
       @EndUserText.label: 'Conteúdo'

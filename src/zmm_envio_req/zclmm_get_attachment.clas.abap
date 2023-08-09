@@ -344,6 +344,7 @@ CLASS zclmm_get_attachment IMPLEMENTATION.
                BASE  <fs_init>
                   token  = COND #( WHEN <fs_init>-token IS INITIAL THEN ls_iput-mt_anexo_requisicao_compra_res-result
                                                                    ELSE <fs_init>-token && ';' && ls_iput-mt_anexo_requisicao_compra_res-result )
+                  data_i = sy-datum
                   ) ) ) .
 
           IF lt_req_envio IS NOT INITIAL.

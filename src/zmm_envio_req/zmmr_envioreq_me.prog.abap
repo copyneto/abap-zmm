@@ -56,7 +56,8 @@ DATA: gt_req           TYPE TABLE OF ty_req,
       gt_msg           TYPE bapiret2_tab,
       gv_dummy         TYPE string,
       go_table         TYPE REF TO cl_salv_table,
-      go_event_handler TYPE REF TO lcl_handle_events.
+      go_event_handler TYPE REF TO lcl_handle_events,
+      gv_job           TYPE char1.
 
 CLASS lcl_handle_events IMPLEMENTATION.
 
@@ -84,10 +85,16 @@ SELECTION-SCREEN END OF BLOCK txt1.
 
 START-OF-SELECTION.
 
-  PERFORM f_validate.
+  PERFORM f_check_job.
 
-  IF gt_msg IS INITIAL.
-    PERFORM f_call_me.
+  IF gv_job IS INITIAL.
+
+    PERFORM f_validate.
+
+    IF gt_msg IS INITIAL.
+      PERFORM f_call_me.
+    ENDIF.
+
   ENDIF.
 
 END-OF-SELECTION.
@@ -209,50 +216,56 @@ FORM f_erro.
 ENDFORM.
 FORM f_return_screen.
 
-  PERFORM f_progress USING 90.
+  IF gv_job EQ abap_true.
+    WRITE:/ 'Job ZMMR_ENVIA_REQUI_MERCADO_ELETR ainda esta em execução!'.
+  ELSE.
 
-  TRY.
+    PERFORM f_progress USING 90.
 
-      IF gt_msg IS NOT INITIAL.
+    TRY.
 
-        gt_return  = VALUE ty_retn( FOR ls_ret IN gt_msg (
-                                         type    = ls_ret-type
-                                         message = COND #( WHEN ls_ret-message IS INITIAL THEN ls_ret-message_v1 ELSE ls_ret-message )
-                                         banfn   = ls_ret-message_v2
-                                         bnfpo   = ls_ret-message_v3
-                                       ) ).
+        IF gt_msg IS NOT INITIAL.
 
-        cl_salv_table=>factory(
-          IMPORTING
-              r_salv_table = go_table
-          CHANGING
-              t_table = gt_return  ).
+          gt_return  = VALUE ty_retn( FOR ls_ret IN gt_msg (
+                                           type    = ls_ret-type
+                                           message = COND #( WHEN ls_ret-message IS INITIAL THEN ls_ret-message_v1 ELSE ls_ret-message )
+                                           banfn   = ls_ret-message_v2
+                                           bnfpo   = ls_ret-message_v3
+                                         ) ).
+
+          cl_salv_table=>factory(
+            IMPORTING
+                r_salv_table = go_table
+            CHANGING
+                t_table = gt_return  ).
 
 * Let's show all default buttons of ALV
-        PERFORM f_function CHANGING go_table .
+          PERFORM f_function CHANGING go_table .
 
 * Apply zebra style to lv_rows
-        PERFORM f_settings CHANGING go_table .
+          PERFORM f_settings CHANGING go_table .
 
 * Enable cell selection mode
-        PERFORM f_selections CHANGING go_table .
+          PERFORM f_selections CHANGING go_table .
 
 * Change columns
-        PERFORM f_columns CHANGING go_table .
+          PERFORM f_columns CHANGING go_table .
 
 * Display table
-        go_table->display( ).
+          go_table->display( ).
 
 *        CLEAR: gt_return[].
 
-      ELSE.
+        ELSE.
 
-        PERFORM f_write_msg.
+          PERFORM f_write_msg.
 
-      ENDIF.
+        ENDIF.
 
-    CATCH cx_salv_msg.
-  ENDTRY.
+      CATCH cx_salv_msg.
+    ENDTRY.
+
+  ENDIF.
 
 ENDFORM.
 
@@ -334,6 +347,18 @@ FORM f_progress USING uv_percent TYPE i.
 
   IF sy-subrc NE 0.
     EXIT.
+  ENDIF.
+
+ENDFORM.
+FORM f_check_job.
+
+  SELECT COUNT(*) FROM tbtco
+                     WHERE jobname = 'ZMMR_ENVIA_REQUI_MERCADO_ELETR'
+                       AND status = 'R'  " running
+                       INTO @DATA(lv_qtd).
+
+  IF lv_qtd GT 1.
+    gv_job = abap_true.
   ENDIF.
 
 ENDFORM.

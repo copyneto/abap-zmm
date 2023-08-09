@@ -164,7 +164,7 @@ CLASS zclmm_rec_characteristics IMPLEMENTATION.
                 WHEN 'YGV_DEFEITO'.
                   <fs_data>-Defeito = <fs_allocvaluesnum>-value_from.
                   IF <fs_data>-Defeito <> <fs_pedido>-Defeito.
-                    <fs_data>-DefeitoCriticality = <fs_allocvaluesnum>-value_from.
+                    <fs_data>-DefeitoCriticality = 1.                    "Ajuste 1196 - 27/07/23 - VARAUJO - Alteração de valor <fs_allocvaluesnum>-value_from para 1
                   ENDIF.
 
                 WHEN 'YGV_IMPUREZAS'.

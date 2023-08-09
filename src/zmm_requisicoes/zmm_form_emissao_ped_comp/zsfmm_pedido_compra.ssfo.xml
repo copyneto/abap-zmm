@@ -14235,10 +14235,10 @@
                            <TEXT>
                             <item>
                              <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CN&gt;&lt;TT&gt;&amp;WA_INF_GER-tdline&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
+                             <TDLINE>&lt;TT&gt;&amp;WA_INF_GER-tdline&amp;&lt;/&gt;</TDLINE>
                             </item>
                            </TEXT>
-                           <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
+                           <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
                             <NCOLS>0</NCOLS>
@@ -14388,10 +14388,10 @@
                            <TEXT>
                             <item>
                              <TDFORMAT>*</TDFORMAT>
-                             <TDLINE>&lt;CN&gt;&lt;TT&gt;&amp;WA_INF_GER-tdline&amp;&lt;/&gt;&lt;/&gt;</TDLINE>
+                             <TDLINE>&lt;TT&gt;&amp;WA_INF_GER-tdline&amp;&lt;/&gt;</TDLINE>
                             </item>
                            </TEXT>
-                           <STYLE_NAME>ZEST_PEDIDO_COMPRA</STYLE_NAME>
+                           <STYLE_NAME>ZSTMM_PEDIDO_COMPRA</STYLE_NAME>
                            <TEXT_AREA>
                             <ENABLED>F</ENABLED>
                             <NCOLS>0</NCOLS>

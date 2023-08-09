@@ -25,8 +25,16 @@ define view entity ZI_MM_PARCEIRO
       end as Parceiro,
 
       case NFHeader.BR_NFPartnerType
-        when 'C' then BR_NFPartnerName1
-        when 'V' then BR_NFPartnerName1
+      //        when 'C' then BR_NFPartnerName1
+      //        when 'V' then BR_NFPartnerName1
+        when 'C' then case when BR_NFPartnerName1 is not initial
+                             then BR_NFPartnerName1
+                           else _Cliente.name1
+                           end
+        when 'V' then case when BR_NFPartnerName1 is not initial
+                             then BR_NFPartnerName1
+                           else _Cliente.name1
+                           end
         when 'B' then CompanyCodeName
         else ''
       end as NomeParceiro,

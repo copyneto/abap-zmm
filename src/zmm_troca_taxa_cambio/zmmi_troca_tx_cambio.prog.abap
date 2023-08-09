@@ -32,7 +32,7 @@ DATA: lr_blart     TYPE RANGE OF rbkp_v-blart,
 FIELD-SYMBOLS: <fs_rbkpv>  TYPE any,
                <fs_tdrseg> TYPE ANY TABLE.
 
-DATA(lo_parametros_tx) = NEW zclca_tabela_parametros( ).
+DATA(lo_parametros_tx) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
 TRY.
     lo_parametros_tx->m_get_range(

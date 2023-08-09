@@ -1351,17 +1351,18 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
       STARTING NEW TASK 'PO_INTERCOMPANY_CREATE'
       CALLING task_finish ON END OF TASK
       EXPORTING
-        is_poheader      = gs_poheader
-        is_poheaderx     = gs_poheaderx
-        iv_tipo_operacao = is_input-tipo_operacao
+        is_poheader         = gs_poheader
+        is_poheaderx        = gs_poheaderx
+        iv_tipo_operacao    = is_input-tipo_operacao
+        iv_no_price_from_po = abap_true
       TABLES
-        it_poitem        = gt_poitem
-        it_poitemx       = gt_poitemx
-        it_poschedule    = gt_poschedule
-        it_poschedulex   = gt_poschedulex
-        it_pocond        = gt_pocond
-        it_pocondx       = gt_pocondx
-        it_popartner     = gt_popartner.
+        it_poitem           = gt_poitem
+        it_poitemx          = gt_poitemx
+        it_poschedule       = gt_poschedule
+        it_poschedulex      = gt_poschedulex
+        it_pocond           = gt_pocond
+        it_pocondx          = gt_pocondx
+        it_popartner        = gt_popartner.
 
     WAIT FOR ASYNCHRONOUS TASKS UNTIL gv_wait_async IS NOT INITIAL.
 
@@ -1603,18 +1604,16 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
              prcd2~kpein,  "Unidade de preço da condição
              prcd2~kmein   "Unidade de medida da condição
         FROM vbak
-        INNER JOIN prcd_elements AS prcd
-          ON prcd~knumv EQ vbak~knumv
-         AND prcd~kappl EQ 'V'
-         AND prcd~kschl EQ 'ZICM'  "preço + impostos
-        INNER JOIN prcd_elements AS prcd2
-          ON prcd2~knumv EQ vbak~knumv
-         AND prcd2~kposn EQ prcd~kposn
-         AND prcd2~kappl EQ 'V'
-         AND prcd2~kschl EQ 'ICMI'  "preço + impostos
+       INNER JOIN prcd_elements AS prcd ON prcd~knumv EQ vbak~knumv
+                                       AND prcd~kappl EQ 'V'
+                                       AND prcd~kschl EQ 'ZICM'  "preço + impostos
+       INNER JOIN prcd_elements AS prcd2 ON prcd2~knumv EQ vbak~knumv
+                                        AND prcd2~kposn EQ prcd~kposn
+                                        AND prcd2~kappl EQ 'V'
+                                        AND prcd2~kschl EQ 'ICMI'  "preço + impostos
         INTO TABLE @DATA(lt_elements_a)
-        FOR ALL ENTRIES IN @lt_lips_va
-        WHERE vbak~vbeln EQ @lt_lips_va-vgbel.
+         FOR ALL ENTRIES IN @lt_lips_va
+       WHERE vbak~vbeln EQ @lt_lips_va-vgbel.
 
       IF sy-subrc IS INITIAL.
         SORT lt_elements_a BY vbeln kposn.
@@ -1693,10 +1692,8 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
 
     SORT gt_itens_pedido BY vbeln posnr matnr.
 
-    DATA(lv_stge_loc) = get_parametro(
-      iv_chave1 = 'PED_INTER_ESP_SANTO'
-      iv_chave2 = 'DEP_ENT_INTER_ES'
-    ).
+    DATA(lv_stge_loc) = get_parametro( iv_chave1 = 'PED_INTER_ESP_SANTO'
+                                       iv_chave2 = 'DEP_ENT_INTER_ES' ).
 
     gt_poitem =  VALUE #( FOR ls_ped_aux IN gt_itens_pedido INDEX INTO lv_index
     LET lv_item = CONV ebelp( lv_index * 10 )
@@ -1709,21 +1706,27 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
                                   ELSE is_input-deposito_destino
                                 )
              quantity   = ls_ped_aux-lfimg
-             po_unit    = COND #( WHEN ls_ped_aux-po_unit     IS NOT INITIAL THEN ls_ped_aux-po_unit
+             po_unit    = COND #( WHEN ls_ped_aux-po_unit IS NOT INITIAL
+                                    THEN ls_ped_aux-po_unit
                                   ELSE abap_false )
-             price_unit = COND #( WHEN ls_ped_aux-price_unit     IS NOT INITIAL THEN ls_ped_aux-price_unit
+             price_unit = COND #( WHEN ls_ped_aux-price_unit IS NOT INITIAL
+                                    THEN ls_ped_aux-price_unit
                                   ELSE abap_false )
-             net_price  = COND #( WHEN ls_ped_aux-net_price IS NOT INITIAL AND ls_ped_aux-lfimg IS NOT INITIAL THEN ( ls_ped_aux-net_price / ls_ped_aux-lfimg )
+             orderpr_un = ls_ped_aux-po_unit
+             net_price  = COND #( WHEN ls_ped_aux-net_price IS NOT INITIAL
+                                   AND ls_ped_aux-lfimg IS NOT INITIAL
+                                    THEN ls_ped_aux-net_price / ls_ped_aux-lfimg
                                   ELSE abap_false )
 *             val_type   = ls_ped_aux-bwtar
              val_type    =  COND #( WHEN ls_ped_aux-bwtar+8(2) = 'IN' THEN |{ ls_ped_aux-bwtar(8) }{ 'EX' }|
                                     WHEN ls_ped_aux-bwtar+8(2) = 'EX' THEN ls_ped_aux-bwtar
                                     ELSE space )
-             batch      = ls_ped_aux-charg
+             batch       = ls_ped_aux-charg
              tax_code    = COND #( WHEN lv_taxcode IS INITIAL THEN 'I0' ELSE lv_taxcode )
-            gi_based_gr = COND #( WHEN ls_ped_aux-bwtar IS INITIAL THEN abap_true )
+             po_price    = '2'
+            gi_based_gr  = COND #( WHEN ls_ped_aux-bwtar IS INITIAL THEN abap_true )
 *            supp_vendor = COND #( WHEN is_input-tipo_operacao = 'INT2' THEN is_input-centro_receptor )
-            supp_vendor = COND #( WHEN is_input-tipo_operacao = 'INT2' THEN
+            supp_vendor  = COND #( WHEN is_input-tipo_operacao = 'INT2' THEN
           |{ CONV lifnr_wk( is_input-centro_receptor ) ALPHA = IN }| )
             ) ).
 
@@ -1734,12 +1737,14 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
       plant       = abap_true
       stge_loc    = abap_true
       quantity    = abap_true
+      orderpr_un  = abap_true
       po_unit     = COND #( WHEN ls_poitem-po_unit     IS NOT INITIAL THEN abap_true )
       price_unit  = COND #( WHEN ls_poitem-price_unit  IS NOT INITIAL THEN abap_true )
       net_price   = COND #( WHEN ls_poitem-net_price   IS NOT INITIAL THEN abap_true )
       val_type    = COND #( WHEN ls_poitem-val_type    IS NOT INITIAL THEN abap_true )
       batch       = COND #( WHEN ls_poitem-batch       IS NOT INITIAL THEN abap_true )
-      tax_code     = abap_true
+      tax_code    = abap_true
+      po_price    = abap_true
       gi_based_gr = ls_poitem-gi_based_gr
       supp_vendor = COND #( WHEN ls_poitem-supp_vendor IS NOT INITIAL THEN abap_true )
     ) ).
@@ -1838,18 +1843,20 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
 
       IN ( condition_no = '001'
            itm_number   = lv_item
-           cond_type    = 'PBXX'
-           cond_value   = ( ls_item-cond_value * 100 )
+*           cond_type    = 'PBXX'
+           cond_type    = 'PB00'
+           cond_value   = ls_item-cond_value / ls_item-lfimg
 *           cond_value   = SWITCH #( ls_mbew-vprsv
 *                                    WHEN 'S' THEN ls_mbew-stprs
 *                                    WHEN 'V' THEN ls_mbew-verpr )
 *           currency     = 'BRL'
            currency     = ls_item-currency
            cond_unit    = ls_item-cond_unit
-*           cond_p_unt   = ls_mbew-peinh
-           cond_p_unt  = ( ls_item-cond_p_unt * 100 )
+           "cond_p_unt   = ls_mbew-peinh
+           cond_p_unt  = ls_item-cond_p_unt
+           "cond_p_unt  =  ls_item-cond_p_unt
            calctypcon   = 'A'
-           conbaseval  = ls_item-condbaseval
+           conbaseval  = ls_item-condbaseval / ls_item-lfimg
            change_id   = 'U'
 *           conbaseval   = SWITCH #( ls_mbew-vprsv
 *                                    WHEN 'S' THEN ls_mbew-stprs
@@ -2590,27 +2597,55 @@ ref_doc_it       =  VALUE #( lt_ekbe[ ebeln = ls_ekpo-ebeln
 
   METHOD itens_lote.
 
+    TYPES: BEGIN OF ty_tot_lips,
+             vbeln TYPE lips-vbeln,
+             posnr TYPE lips-posnr,
+             lfimg TYPE lips-lfimg,
+           END OF ty_tot_lips.
+
+    DATA: ls_tot_lips TYPE ty_tot_lips,
+          lt_tot_lips TYPE TABLE OF ty_tot_lips.
+
     FREE rv_result.
 
     DATA(ls_pedido) = is_item.
 
     DATA(lv_cond_value) =  ls_pedido-cond_value.
 
+    LOOP AT it_lips INTO DATA(ls_lips).
+      IF ls_lips-uecha <> '000000'.
+        ls_tot_lips-vbeln = ls_lips-vbeln.
+        ls_tot_lips-posnr = ls_lips-uecha.
+        ls_tot_lips-lfimg = ls_lips-lfimg.
+        COLLECT ls_tot_lips INTO lt_tot_lips.
+        CLEAR ls_tot_lips.
+      ENDIF.
+    ENDLOOP.
+
     LOOP AT it_lips ASSIGNING FIELD-SYMBOL(<fs_lips_aux>).
       CHECK <fs_lips_aux>-uecha = ls_pedido-posnr. "itens com partição de lote
 
-      CLEAR:  ls_pedido-cond_value.
+      READ TABLE lt_tot_lips INTO ls_tot_lips WITH KEY vbeln = ls_pedido-vbeln  "#EC CI_STDSEQ
+                                                       posnr = ls_pedido-posnr. "#EC CI_STDSEQ
 
-      ls_pedido-charg = <fs_lips_aux>-charg.
-      ls_pedido-bwtar = <fs_lips_aux>-bwtar.
-      ls_pedido-lfimg = <fs_lips_aux>-lfimg.
-      ls_pedido-vrkme = <fs_lips_aux>-vrkme.
+      IF sy-subrc = 0.
 
-      IF <fs_lips_aux>-lfimg IS NOT INITIAL.
-        ls_pedido-cond_value = lv_cond_value / <fs_lips_aux>-lfimg.
+        CLEAR:  ls_pedido-cond_value.
+
+        ls_pedido-charg = <fs_lips_aux>-charg.
+        ls_pedido-bwtar = <fs_lips_aux>-bwtar.
+        ls_pedido-lfimg = <fs_lips_aux>-lfimg.
+        ls_pedido-vrkme = <fs_lips_aux>-vrkme.
+
+        IF <fs_lips_aux>-lfimg IS NOT INITIAL.
+          ls_pedido-cond_value = ( lv_cond_value * <fs_lips_aux>-lfimg ) / ls_tot_lips-lfimg.
+          ls_pedido-condbaseval = ls_pedido-cond_value.
+          ls_pedido-net_price = ls_pedido-cond_value.
+        ENDIF.
+
+        APPEND ls_pedido TO rv_result.
+
       ENDIF.
-
-      APPEND ls_pedido TO rv_result.
 
     ENDLOOP.
 

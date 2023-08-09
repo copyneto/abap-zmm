@@ -28,7 +28,7 @@ IF sy-ucomm EQ lc_parametros-ucomm.
 
   TRY.
 
-      NEW zclca_tabela_parametros( )->m_get_range(
+      zclca_tabela_parametros=>get_instance( )->m_get_range( " CHANGE - LSCHEPP - 24.07.2023
         EXPORTING
           iv_modulo = lc_parametros-modulo
           iv_chave1 = lc_parametros-chave1

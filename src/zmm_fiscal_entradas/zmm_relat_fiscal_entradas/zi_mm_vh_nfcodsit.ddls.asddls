@@ -17,13 +17,21 @@ define view entity ZI_MM_VH_NFCODSIT
                                 and _Text.ddlanguage     = $session.system_language
 {
       @ObjectModel.text.element: ['Text']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
+//      @Search.ranking: #MEDIUM
+//      @Search.defaultSearchElement: true
       @EndUserText.label: ' Código da situação NF'
   key cast( Domain.domvalue_l as j_1b_status_fisc_doc ) as NFCodSit,
 
+//Implementados para não ocorrer dump utilizando pesquisas em campos com expressões (concat, case, etc..)      
       @Search.ranking: #MEDIUM
       @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true              
+      Domain.domvalue_l as filter_sit,
+
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.7
       @EndUserText.label: 'Descrição'
       _Text.ddtext                                      as Text
 

@@ -9,15 +9,19 @@ define view entity ZI_MM_CADASTRO_FISCAL_ANEXO
   association to parent ZI_MM_CADASTRO_FISCAL_CABEC as _Header on  _Header.Empresa = $projection.Empresa
                                                                and _Header.Filial  = $projection.FilialHeader
                                                                and _Header.Lifnr   = $projection.Lifnr
+//                                                               and _Header.NrNf    = $projection.NrNf
                                                                and _Header.NrNf    = $projection.NrNf
+
 
 {
   key Header.empresa              as Empresa,
   key Header.filial               as FilialHeader,
   key Header.lifnr                as Lifnr,
+//  key Anexo.nr_nf                 as NrNf,
   key Anexo.nr_nf                 as NrNf,
   key Anexo.cnpj_cpf              as CnpjCpf,
   key Anexo.linha                 as Linha,
+//      Anexo.nr_nf                 as NrNf2,
       Anexo.filename              as Filename,
       Anexo.mimetype              as Mimetype,
       Anexo.conteudo              as Conteudo,

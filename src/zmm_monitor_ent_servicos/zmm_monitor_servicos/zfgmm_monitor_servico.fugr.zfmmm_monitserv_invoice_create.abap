@@ -29,7 +29,16 @@ FUNCTION zfmmm_monitserv_invoice_create.
 *"----------------------------------------------------------------------
   DATA lt_accountingdata TYPE TABLE OF bapi_incinv_create_account.
 
+  DATA: ls_header    TYPE j_1bnfdoc,
+        ls_historico TYPE zttm_mdfe_hist.
 
+  DATA: lt_partner    TYPE TABLE OF j_1bnfnad,
+        lt_item       TYPE TABLE OF j_1bnflin,
+        lt_item_tax   TYPE TABLE OF j_1bnfstx,
+        lt_header_msg TYPE TABLE OF j_1bnfftx,
+        lt_refer_msg  TYPE TABLE OF j_1bnfref.
+
+  CONSTANTS: lc_1 TYPE c VALUE '1'.
 
   CHECK ct_itemdata[] IS NOT INITIAL.
   DATA(ls_item) = ct_itemdata[ 1 ].
@@ -76,7 +85,7 @@ FUNCTION zfmmm_monitserv_invoice_create.
 
   ENDIF.
 
-  SELECT ebeln, ebelp, zekkn, menge, sakto, anln1, gsber, kokrs
+  SELECT ebeln, ebelp, zekkn, menge, sakto, anln1, gsber, kokrs, kostl, aufnr, ps_psp_pnr
       FROM ekkn
       FOR ALL ENTRIES IN @ct_itemdata
       WHERE ebeln = @ct_itemdata-po_number
@@ -91,17 +100,15 @@ FUNCTION zfmmm_monitserv_invoice_create.
   LOOP AT ct_itemdata INTO DATA(ls_itemdata).
 
     READ TABLE lt_pursh INTO DATA(ls_pursh) WITH KEY purchaseorder = ls_itemdata-po_number
-                                                    purchaseorderitem = ls_itemdata-po_item
-                                                    BINARY SEARCH.
+                                                    purchaseorderitem = ls_itemdata-po_item.
     IF sy-subrc IS INITIAL.
 
-      IF ls_pursh-consumptionposting = 'A'.
+      IF ls_pursh-consumptionposting = 'A' OR ls_pursh-consumptionposting = 'V'.
 
         READ TABLE lt_ekkn WITH KEY ebeln = ls_itemdata-po_number
                                     ebelp = ls_itemdata-po_item
-                                    BINARY SEARCH
                                     TRANSPORTING NO FIELDS.
-        CHECK sy-subrc IS INITIAL.
+
         LOOP AT lt_ekkn ASSIGNING FIELD-SYMBOL(<fs_ekkn>) FROM sy-tabix.
 
           IF <fs_ekkn>-ebeln <> ls_itemdata-po_number
@@ -117,7 +124,7 @@ FUNCTION zfmmm_monitserv_invoice_create.
                                                                   serial_no = <fs_ekkn>-zekkn
                                                                   tax_code = ls_pursh-taxcode
                                                                   taxjurcode = ls_pursh-taxjurisdiction
-                                                                  item_amount = ls_pursh-netpriceamount
+                                                                  item_amount = ls_pursh-netpriceamount * <fs_ekkn>-menge
                                                                   quantity = <fs_ekkn>-menge
                                                                   po_unit = ls_pursh-purchaseorderquantityunit
                                                                   po_unit_iso = ls_t006-isocode
@@ -128,13 +135,25 @@ FUNCTION zfmmm_monitserv_invoice_create.
                                                                   asset_no = <fs_ekkn>-anln1
                                                                   cmmt_item = <fs_ekkn>-sakto
                                                                   bus_area = <fs_ekkn>-gsber
-                                                                  co_area = <fs_ekkn>-kokrs                         ) ).
+                                                                  co_area = <fs_ekkn>-kokrs
+                                                                  costcenter = <fs_ekkn>-kostl
+                                                                  orderid =  COND #( WHEN ls_pursh-consumptionposting = 'V' THEN <fs_ekkn>-aufnr )
+                                                                  wbs_elem = COND #( WHEN ls_pursh-consumptionposting = 'V' THEN <fs_ekkn>-ps_psp_pnr ) ) ).
+
           ENDIF.
         ENDLOOP.
       ENDIF.
     ENDIF.
 
   ENDLOOP.
+
+  DATA(lv_nfe) = is_headerdata-ref_doc_no.
+*  is_headerdata-ref_doc_no = is_headerdata-ref_doc_no(6).
+  DATA(lv_posi_t) = strlen( is_headerdata-ref_doc_no ).
+  IF lv_posi_t > 5.
+    DATA(lv_rest) = lv_posi_t - 6.
+    is_headerdata-ref_doc_no = is_headerdata-ref_doc_no+lv_rest(6).
+  ENDIF.
 
   IF  lt_accountingdata[] IS NOT INITIAL.
 
@@ -183,8 +202,73 @@ FUNCTION zfmmm_monitserv_invoice_create.
         tm_itemdata         = ct_tm_itemdata
         assetdata           = ct_assetdata.
   ENDIF.
+
   IF ev_invoicedocnumber IS NOT INITIAL.
-    CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'.
+
+    CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+      EXPORTING
+        wait = 'X'.
+
+    SELECT  docnum
+      UP TO 1 ROWS
+      INTO @DATA(lv_docnum)
+      FROM j_1bnfdoc
+      WHERE nfnum  = @is_headerdata-ref_doc_no
+      AND   doctyp = @lc_1
+      AND   cancel = @space.
+    ENDSELECT.
+
+    IF sy-subrc IS INITIAL.
+
+      CALL FUNCTION 'J_1B_NF_DOCUMENT_READ'
+        EXPORTING
+          doc_number         = lv_docnum
+        IMPORTING
+          doc_header         = ls_header
+        TABLES
+          doc_partner        = lt_partner
+          doc_item           = lt_item
+          doc_item_tax       = lt_item_tax
+          doc_header_msg     = lt_header_msg
+          doc_refer_msg      = lt_refer_msg
+        EXCEPTIONS
+          document_not_found = 1
+          docum_lock         = 2
+          partner_blocked    = 3
+          OTHERS             = 4.
+      IF sy-subrc NE 0.
+        APPEND VALUE #( id = sy-msgid number = sy-msgno type = sy-msgty message_v1 = sy-msgv1
+                        message_v2 = sy-msgv2 message_v3 = sy-msgv3 message_v4 = sy-msgv4 ) TO ct_return.
+        RETURN.
+      ENDIF.
+
+      ls_header-prefno = lv_nfe.
+
+      CALL FUNCTION 'J_1B_NF_DOCUMENT_UPDATE'
+        EXPORTING
+          doc_number            = ls_header-docnum
+          doc_header            = ls_header
+        TABLES
+          doc_partner           = lt_partner
+          doc_item              = lt_item
+          doc_item_tax          = lt_item_tax
+          doc_header_msg        = lt_header_msg
+          doc_refer_msg         = lt_refer_msg
+        EXCEPTIONS
+          document_not_found    = 1
+          update_problem        = 2
+          doc_number_is_initial = 3
+          OTHERS                = 4.
+      IF sy-subrc <> 0.
+        APPEND VALUE #( id = sy-msgid number = sy-msgno type = sy-msgty message_v1 = sy-msgv1
+                        message_v2 = sy-msgv2 message_v3 = sy-msgv3 message_v4 = sy-msgv4 ) TO ct_return.
+        RETURN.
+      ELSE.
+        CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+          EXPORTING
+            wait = 'X'.
+      ENDIF.
+    ENDIF.
   ENDIF.
 
 ENDFUNCTION.

@@ -21,6 +21,7 @@ define view entity ZI_MM_MONIT_SERV_SIMULA
   key Simula.nr_nf                 as NrNf,
   key Simula.linha                 as Linha,
       Simula.hkont                 as Hkont,
+//      Simula.nr_nf                 as NrNf2,
       Simula.bschl                 as Bschl,
       Simula.shkzg                 as Shkzg,
       Simula.waers                 as Waers,

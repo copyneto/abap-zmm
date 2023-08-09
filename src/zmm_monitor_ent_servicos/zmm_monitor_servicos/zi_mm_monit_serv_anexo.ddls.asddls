@@ -28,6 +28,7 @@ define view entity ZI_MM_MONIT_SERV_ANEXO
   key Anexo.nr_nf                 as NrNf,
   key Anexo.cnpj_cpf              as CnpjCpf,
   key Anexo.linha                 as Linha,
+//      Anexo.nr_nf                 as NrNf2,
       Anexo.filename              as Filename,
       Anexo.mimetype              as Mimetype,
       Anexo.conteudo              as Conteudo,

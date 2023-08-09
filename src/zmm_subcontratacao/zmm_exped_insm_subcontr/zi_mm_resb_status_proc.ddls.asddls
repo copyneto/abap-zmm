@@ -27,7 +27,7 @@ define view entity ZI_MM_RESB_STATUS_PROC
                                                                       and Lin.reftyp   = 'MD'
                                                                       and Lin.xped     = Mseg.Ebeln
                                                                       and ( Lin.nitemped = Mseg.Ebelp or 
-                                                                            Lin.nitemped = concat( '00', substring( Mseg.Ebelp, 1, 4 ) )  )
+                                                                            Lin.nitemped = concat( '00', substring( Mseg.Ebelp, 1, 4 ) ) )
     left outer join j_1bnfdoc                 as Doc                  on Doc.docnum = Lin.docnum
 
     left outer join j_1bnfe_active            as Active          on Active.docnum = Doc.docnum

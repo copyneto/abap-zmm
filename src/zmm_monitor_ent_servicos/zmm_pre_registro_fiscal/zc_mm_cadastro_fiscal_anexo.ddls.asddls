@@ -7,9 +7,11 @@ define view entity ZC_MM_CADASTRO_FISCAL_ANEXO
   key Empresa,
   key FilialHeader,
   key Lifnr,
+//  key NrNf,
   key NrNf,
   key CnpjCpf,
   key Linha,
+//      NrNf2,
    @EndUserText.label: 'Descrição arquivo'
       Filename,
       Mimetype,

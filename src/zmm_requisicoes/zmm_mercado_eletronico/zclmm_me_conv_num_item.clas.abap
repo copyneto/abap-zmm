@@ -1,27 +1,27 @@
-class ZCLMM_ME_CONV_NUM_ITEM definition
-  public
-  final
-  create public .
+CLASS zclmm_me_conv_num_item DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  methods GET_N_ITEM
-    importing
-      !IV_NUM type CHAR5
-    returning
-      value(RV_NUM) type EBELP .
-  methods GET_DT_FIM
-    importing
-      !IV_DTFIM type STRING
-    returning
-      value(RV_DTFIM) type DATS .
-protected section.
-private section.
+    METHODS get_n_item
+      IMPORTING
+        !iv_num       TYPE char5
+      RETURNING
+        VALUE(rv_num) TYPE ebelp .
+    METHODS get_dt_fim
+      IMPORTING
+        !iv_dtfim       TYPE string
+      RETURNING
+        VALUE(rv_dtfim) TYPE dats .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS ZCLMM_ME_CONV_NUM_ITEM IMPLEMENTATION.
+CLASS zclmm_me_conv_num_item IMPLEMENTATION.
 
 
   METHOD get_n_item.
@@ -34,7 +34,7 @@ CLASS ZCLMM_ME_CONV_NUM_ITEM IMPLEMENTATION.
 *    IF lv_n_item >= 10.
 *      rv_num = ( iv_num / 10 ).
 *    ELSE.
-      rv_num = ( iv_num * 10 ).
+    rv_num = ( iv_num * 10 ).
 *    ENDIF.
 
   ENDMETHOD.
@@ -46,6 +46,10 @@ CLASS ZCLMM_ME_CONV_NUM_ITEM IMPLEMENTATION.
 
     REPLACE ALL OCCURRENCES OF REGEX '[^0-9]' IN lv_data WITH ''.
     rv_dtfim = lv_data.
+
+    IF rv_dtfim LT sy-datum.
+      rv_dtfim = sy-datum.
+    ENDIF.
 
   ENDMETHOD.
 ENDCLASS.

@@ -32,13 +32,18 @@ CLASS zclmm_saga_etapas_recebimento DEFINITION
         !et_xnfe  TYPE tt_xnfe.
     METHODS processo_contagem
       IMPORTING
-        !it_receb TYPE zctgmm_wms_receb
-        !it_xnfe  TYPE tt_xnfe.
+        it_receb TYPE zctgmm_wms_receb
+        it_xnfe  TYPE tt_xnfe.
+    METHODS liberado
+      IMPORTING
+        it_receb         TYPE zctgmm_wms_receb
+      RETURNING
+        VALUE(rv_result) TYPE abap_bool.
 ENDCLASS.
 
 
 
-CLASS ZCLMM_SAGA_ETAPAS_RECEBIMENTO IMPLEMENTATION.
+CLASS zclmm_saga_etapas_recebimento IMPLEMENTATION.
 
 
   METHOD libera_entrad_mercadoria.
@@ -134,9 +139,14 @@ CLASS ZCLMM_SAGA_ETAPAS_RECEBIMENTO IMPLEMENTATION.
             et_xnfe  = DATA(lt_xnfe) ).
 
     IF lt_receb[] IS NOT INITIAL.
-      me->processo_contagem(
-         EXPORTING it_receb = lt_receb
-                   it_xnfe  = lt_xnfe ).
+
+      IF liberado( lt_receb  ) EQ abap_true.
+
+        me->processo_contagem(
+           EXPORTING it_receb = lt_receb
+                     it_xnfe  = lt_xnfe ).
+      ENDIF.
+
     ENDIF.
 
   ENDMETHOD.
@@ -566,4 +576,19 @@ CLASS ZCLMM_SAGA_ETAPAS_RECEBIMENTO IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
+
+  METHOD liberado.
+
+    DATA(lv_idnfe) = VALUE /xnfe/guid_16( it_receb[ 1 ]-idnfenum OPTIONAL ).
+
+    CHECK lv_idnfe IS NOT INITIAL.
+
+    SELECT SINGLE 'X' FROM /xnfe/innfehd
+    WHERE guid_header = @lv_idnfe
+    AND ( actstat EQ '11'
+       OR  actstat EQ '99' )
+    INTO @rv_result.
+
+  ENDMETHOD.
+
 ENDCLASS.

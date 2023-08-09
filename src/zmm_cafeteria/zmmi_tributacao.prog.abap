@@ -9,7 +9,7 @@ CONSTANTS: lc_segnam_tribu TYPE edilsegtyp       VALUE 'ZMM_TRIBUTACAO',
 
 DATA: lv_resul TYPE char2.
 
-IF segment_name = lc_E1MARMM.
+IF segment_name = lc_e1marmm.
 
   TRY.
 
@@ -27,7 +27,7 @@ IF segment_name = lc_E1MARMM.
 
         IF ls_result IS NOT INITIAL.
 
-          NEW zclca_tabela_parametros( )->m_get_single(
+          zclca_tabela_parametros=>get_instance( )->m_get_single( " CHANGE - LSCHEPP - 24.07.2023
             EXPORTING
               iv_modulo = lc_mm
               iv_chave1 = CONV #( ls_result-werks ) " WERKS

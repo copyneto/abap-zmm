@@ -107,7 +107,7 @@ FUNCTION zfmmm_trigger_statusme.
                                                              mt_mensagem_status_pre_pedido-obs_erp = ls_texto )
            ).
 
-          DATA(lv_status) = COND char1( WHEN iv_status EQ lc_values-po_aprov THEN 1 ELSE 2 ).
+          DATA(lv_status) = COND char1( WHEN iv_status EQ lc_values-po_aprov THEN '1' ELSE '2' ).
 
           IF lv_status IS NOT INITIAL.
 

@@ -24,7 +24,7 @@
 
  TRY.
 
-     NEW zclca_tabela_parametros( )->m_get_single(
+     zclca_tabela_parametros=>get_instance( )->m_get_single( " CHANGE - LSCHEPP - 24.07.2023
        EXPORTING
          iv_modulo = lc_values-mm
          iv_chave1 = lc_values-enhan
@@ -54,7 +54,7 @@
 
          ENDIF.
 
-         NEW zclca_tabela_parametros( )->m_get_single(
+         zclca_tabela_parametros=>get_instance( )->m_get_single( " CHANGE - LSCHEPP - 24.07.2023
            EXPORTING
              iv_modulo = lc_values-mod
              iv_chave1 = lc_values-c1

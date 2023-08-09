@@ -27,9 +27,11 @@ define view entity ZI_MM_VH_DF_MOTORISTA
       @Search.fuzzinessThreshold: 0.8
   key Pessoa.partner as Parceiro,
       @EndUserText.label: 'Nome completo'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
+
+//Comentado pois ocorre dump quando utiliza pesquisa em campos com expressões (concat, case, etc..)
+//      @Search.defaultSearchElement: true
+//      @Search.ranking: #HIGH
+//      @Search.fuzzinessThreshold: 0.7
       case
         when length( Pessoa.name1_text ) < 1
          then concat_with_space(Pessoa.name_first, Pessoa.name_last, 1 )
@@ -39,9 +41,10 @@ define view entity ZI_MM_VH_DF_MOTORISTA
       @UI.hidden: true
       _Cnpj.taxnum   as CNPJ,
       @EndUserText.label: 'CNPJ'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
+//Comentado pois ocorre dump quando utiliza pesquisa em campos com expressões (concat, case, etc..)
+//      @Search.defaultSearchElement: true
+//      @Search.ranking: #HIGH
+//      @Search.fuzzinessThreshold: 0.7
       case when _Cnpj.taxnum is initial then ''
            else concat( substring(_Cnpj.taxnum, 1, 2),
                 concat( '.',
@@ -56,9 +59,10 @@ define view entity ZI_MM_VH_DF_MOTORISTA
       @UI.hidden: true
       _Cpf.taxnum    as CPF,
       @EndUserText.label: 'CPF'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
+//Comentado pois ocorre dump quando utiliza pesquisa em campos com expressões (concat, case, etc..)      
+//      @Search.defaultSearchElement: true
+//      @Search.ranking: #HIGH
+//      @Search.fuzzinessThreshold: 0.7
       case when _Cpf.taxnum is initial then ''
            else concat( substring(_Cpf.taxnum, 1, 3),
                 concat( '.',
@@ -76,7 +80,35 @@ define view entity ZI_MM_VH_DF_MOTORISTA
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Im.taxnum     as InscricaoMunicipal
+      _Im.taxnum     as InscricaoMunicipal,
+      
+//Implementados para não ocorrer dump utilizando pesquisas em campos com expressões (concat, case, etc..)
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true      
+      Pessoa.name_first as search_name_first,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true      
+      Pessoa.name_last as  search_name_last,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true      
+      Pessoa.name1_text as search_name_text,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true      
+      _Cnpj.taxnum as search_cnpj,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true      
+      _Cpf.taxnum as search_cpf
+      
 }
 where
   Pessoa.bpkind = '0011'

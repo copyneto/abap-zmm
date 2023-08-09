@@ -43,6 +43,7 @@ define root view entity ZI_MM_MONIT_SERV_HEADER
   key Header.lifnr                                                                                    as Lifnr,
   key Header.nr_nf                                                                                    as NrNf,
       Header.cnpj_cpf                                                                                 as CnpjCpf,
+//      Header.nr_nf                                                                                    as NrNf2,
       lfa1.name1                                                                                      as RazSocial,
       Header.dt_emis                                                                                  as DtEmis,
       Header.dt_venc                                                                                  as DtVenc,

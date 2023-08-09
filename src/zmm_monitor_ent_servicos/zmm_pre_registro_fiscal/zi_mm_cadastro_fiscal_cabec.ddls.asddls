@@ -15,15 +15,19 @@ define root view entity ZI_MM_CADASTRO_FISCAL_CABEC
   association [0..1] to ZI_CA_VH_LIFNR                as _Lfa1        on  _Lfa1.LifnrCode = $projection.Lifnr
   association [0..1] to ZI_CA_VH_USER                 as _User        on  _User.Bname = $projection.Uname
   association [0..1] to ZI_CA_VH_USER                 as _UserCanc    on  _UserCanc.Bname = $projection.CancelUser
-  association [0..1] to ZI_MM_CADASTRO_FISCAL_ANEXO_A as _AnexoCount  on  _AnexoCount.NrNf    = $projection.NrNf
+  association [0..1] to ZI_MM_CADASTRO_FISCAL_ANEXO_A as _AnexoCount  on
+                                                                          //  _AnexoCount.NrNf     = $projection.NrNf
+                                                                          //                                                                      and
+                                                                          _AnexoCount.NrNf   = $projection.NrNf
                                                                       and _AnexoCount.CnpjCpf = $projection.CnpjCpf
 
 {
   key Header.empresa                                                                    as Empresa,
   key Header.filial                                                                     as Filial,
   key Header.lifnr                                                                      as Lifnr,
+      //  key Header.nr_nf                                                                      as NrNf,
   key Header.nr_nf                                                                      as NrNf,
-
+//      Header.nr_nf                                                                      as NrNf2,
       @EndUserText.label: 'Status'
       case
         when Header.erro     is not initial then 'Erro'

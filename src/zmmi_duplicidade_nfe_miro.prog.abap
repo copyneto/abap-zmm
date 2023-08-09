@@ -31,7 +31,7 @@ DATA: lv_nfenum_in  TYPE j_1bnfdoc-nfenum,
 
 FIELD-SYMBOLS <fs_fcode> TYPE any.
 
-DATA(lo_parametros) = NEW zclca_tabela_parametros( ).
+DATA(lo_parametros) = zclca_tabela_parametros=>get_instance( ). " CHANGE - LSCHEPP - 24.07.2023
 
 TRY.
     lo_parametros->m_get_range(
