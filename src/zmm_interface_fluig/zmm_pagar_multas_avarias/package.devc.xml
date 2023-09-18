@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Partida em Aberto desbloqueada para pagamento</CTEXT>
+    <CTEXT>ZMM_PAGAR_MULTAS_AVARIAS</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

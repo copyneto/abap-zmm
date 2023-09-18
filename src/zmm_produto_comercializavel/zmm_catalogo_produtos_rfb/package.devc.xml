@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Controle - Catálogo de Produtos RFB</CTEXT>
+    <CTEXT>ZMM_CATALOGO_PRODUTOS_RFB</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

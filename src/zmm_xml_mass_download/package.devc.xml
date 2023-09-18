@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Download em massa de XML</CTEXT>
+    <CTEXT>ZMM_XML_MASS_DOWNLOAD</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

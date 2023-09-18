@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>ADM Retorno de Armazenagem Grão Verde</CTEXT>
+    <CTEXT>ZMM_RET_ARM_GRAOVERDE</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

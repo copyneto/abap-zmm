@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Processo ZMM 242 - Determinação de CST</CTEXT>
+    <CTEXT>ZMM_DETERMINACAO_CST</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

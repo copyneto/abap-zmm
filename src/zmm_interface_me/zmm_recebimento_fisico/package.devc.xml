@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Recebimento Físico</CTEXT>
+    <CTEXT>ZMM_RECEBIMENTO_FISICO</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

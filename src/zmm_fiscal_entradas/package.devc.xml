@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Processo J58 - Fiscal de Entradas</CTEXT>
+    <CTEXT>ZMM_FISCAL_ENTRADAS</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

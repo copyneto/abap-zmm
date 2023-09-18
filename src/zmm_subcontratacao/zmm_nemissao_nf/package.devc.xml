@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>App - Não Emissão de Nota Fiscal</CTEXT>
+    <CTEXT>ZMM_NEMISSAO_NF</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

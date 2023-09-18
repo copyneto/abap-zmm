@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Integrações ME</CTEXT>
+    <CTEXT>ZMM_APP_INTME</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

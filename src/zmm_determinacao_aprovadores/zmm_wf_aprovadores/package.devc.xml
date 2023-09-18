@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>APP Aprovadores Workflow</CTEXT>
+    <CTEXT>ZMM_WF_APROVADORES</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

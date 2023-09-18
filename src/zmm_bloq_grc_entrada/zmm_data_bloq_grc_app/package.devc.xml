@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>APP cadastro período de bloqueio</CTEXT>
+    <CTEXT>ZMM_DATA_BLOQ_GRC_APP</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

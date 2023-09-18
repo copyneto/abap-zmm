@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Processo BMC - Administração de estoque central</CTEXT>
+    <CTEXT>ZMM_ADM_ESTOQUE</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Relatório de Log Dados Mestres de Materiais</CTEXT>
+    <CTEXT>ZMM_MESTRE_MATERIAIS_LOG</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

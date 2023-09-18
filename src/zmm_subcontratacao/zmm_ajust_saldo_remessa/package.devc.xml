@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Ajuste de Saldo de Remessa</CTEXT>
+    <CTEXT>ZMM_AJUST_SALDO_REMESSA</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

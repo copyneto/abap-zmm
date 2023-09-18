@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Decisão de Estocagem</CTEXT>
+    <CTEXT>ZMM_DEC_ESTOCAGEM</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

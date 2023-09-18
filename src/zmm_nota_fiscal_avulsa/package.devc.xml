@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Nota fiscal Avulsa - Fornecedor</CTEXT>
+    <CTEXT>ZMM_NOTA_FISCAL_AVULSA</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

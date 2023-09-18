@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Processo BNF - Dados Mestres - NF SAP ERP x XML SEFAZ</CTEXT>
+    <CTEXT>ZMM_NF_ERP_SEFAZ</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Manifestacao Automatica de NF-e</CTEXT>
+    <CTEXT>ZMM_NFE_MDE_PROCESS</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

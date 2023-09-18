@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Monitor de serviços - Pré-registro fiscal</CTEXT>
+    <CTEXT>ZMM_PRE_REGISTRO_FISCAL</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

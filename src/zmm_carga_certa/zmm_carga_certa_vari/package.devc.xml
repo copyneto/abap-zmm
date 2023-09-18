@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Variantes ZMM_CARGA_CERTA</CTEXT>
+    <CTEXT>ZMM_CARGA_CERTA_VARI</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

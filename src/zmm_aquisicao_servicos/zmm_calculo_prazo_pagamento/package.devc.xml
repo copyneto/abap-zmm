@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Cálculo de prazo de pagamento</CTEXT>
+    <CTEXT>ZMM_CALCULO_PRAZO_PAGAMENTO</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

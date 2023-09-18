@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Processo Relatório Visão Remessa e Retorno</CTEXT>
+    <CTEXT>ZMM_VISAO_REMESSA_RETORNO</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

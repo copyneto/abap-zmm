@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>ALC CC</CTEXT>
+    <CTEXT>ZMM_ALV_CC</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

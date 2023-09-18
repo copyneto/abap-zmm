@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Intrfaces para o Mercado Eletrônico</CTEXT>
+    <CTEXT>ZMM_INTERFACE_ME</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Atualização Hierarquia Saga</CTEXT>
+    <CTEXT>ZMM_SAGA_ATUALIZA_HIERARQUIA</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>
